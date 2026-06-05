@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News — The Sham Report</title>
+  <meta name="description" content="Investigations, tournament reports, and breaking news from the Texas poker scene.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Shared site styles -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* ============================================================
+       COVERAGE PAGE — scoped styles
+       All tokens inherit from css/styles.css
+    ============================================================ */
+
+    /* ── Page Hero (compact) ─────────────────────────────────── */
+    .page-hero {
+      background: #0A0A0A;
+      border-bottom: 1px solid #2A2A2A;
+      padding: 64px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Faint repeating diagonal texture */
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(255,255,255,0.012) 40px,
+        rgba(255,255,255,0.012) 41px
+      );
+      pointer-events: none;
+    }
+
+    .page-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+    }
+
+    .page-hero-rule {
+      width: 40px;
+      height: 2px;
+      background: #D4AF37;
+      margin-bottom: 20px;
+    }
+
+    .page-hero-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #D4AF37;
+      margin-bottom: 14px;
+    }
+
+    .page-hero-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .page-hero-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(15px, 1.2vw, 17px);
+      color: #CCCCCC;
+      line-height: 1.65;
+      max-width: 520px;
+    }
+
+    /* ── Tab Bar ─────────────────────────────────────────────── */
+    .tab-bar-wrap {
+      background: #0A0A0A;
+      border-bottom: 1px solid #222222;
+      position: sticky;
+      top: 68px; /* height of primary nav */
+      z-index: 90;
+    }
+
+    .tab-bar {
+      display: flex;
+      align-items: flex-end;
+      gap: 0;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .tab-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #777777;
+      background: none;
+      border: none;
+      padding: 16px 24px 14px;
+      cursor: pointer;
+      position: relative;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px; /* sit on top of the wrap border */
+      transition: color 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .tab-btn:hover {
+      color: #CCCCCC;
+    }
+
+    .tab-btn.active {
+      color: #FFFFFF;
+      border-bottom-color: #D4AF37;
+    }
+
+    /* ── Coverage Grid Section ───────────────────────────────── */
+    .coverage-section {
+      background: #0A0A0A;
+      padding: 64px 0 80px;
+    }
+
+    /* Tab panels */
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    .tab-panel-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 36px;
+    }
+
+    .tab-panel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(22px, 2.5vw, 32px);
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1;
+    }
+
+    .tab-panel-count {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #777777;
+    }
+
+    /* ── Coverage Cards ──────────────────────────────────────── */
+    .coverage-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .cov-card {
+      background: #111111;
+      border: 1px solid #2A2A2A;
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .cov-card:hover {
+      border-color: #D4AF37;
+      transform: translateY(-3px);
+    }
+
+    /* Image placeholder — 16:9, solid dark */
+    .cov-card-img {
+      aspect-ratio: 16 / 9;
+      background: #1A1A1A;
+      border-bottom: 1px solid #2A2A2A;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    /* Subtle tone variation */
+    .cov-card-img.t1 { background: #141414; }
+    .cov-card-img.t2 { background: #161210; }
+    .cov-card-img.t3 { background: #101414; }
+    .cov-card-img.t4 { background: #131318; }
+    .cov-card-img.t5 { background: #151210; }
+    .cov-card-img.t6 { background: #101210; }
+    .cov-card-img.t7 { background: #141414; }
+    .cov-card-img.t8 { background: #121516; }
+    .cov-card-img.t9 { background: #111316; }
+
+    .cov-card-img-label {
+      position: absolute;
+      bottom: 10px;
+      left: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.18);
+    }
+
+    /* Card body */
+    .cov-card-body {
+      padding: 20px 20px 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .cov-card-category {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #D4AF37;
+      margin-bottom: 10px;
+    }
+
+    .cov-card-headline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(16px, 1.3vw, 19px);
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.3;
+      margin-bottom: 14px;
+      flex: 1;
+    }
+
+    .cov-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .cov-card-byline {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #777777;
+      letter-spacing: 0.02em;
+    }
+
+    .cov-card-date {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #555555;
+    }
+
+    .cov-card-read {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #D4AF37;
+      text-decoration: none;
+      transition: color 0.2s ease, gap 0.2s ease;
+      align-self: flex-start;
+      margin-top: auto;
+    }
+
+    .cov-card:hover .cov-card-read {
+      color: #B8962E;
+      gap: 10px;
+    }
+
+    /* ── Responsive ──────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .coverage-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero { padding: 48px 0 44px; }
+      .coverage-grid { grid-template-columns: 1fr; }
+      .tab-btn { padding: 14px 16px 12px; letter-spacing: 0.1em; }
+      .tab-bar { padding: 0 20px; }
+      .tab-bar-wrap { top: 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════
+       UTILITY BAR — exact copy from index.html
+  ═══════════════════════════════════════════════════════════ -->
+  <div class="utility-bar">
+    <div class="container">
+      <div class="util-icons">
+        <a href="#" aria-label="Facebook"><img src="assets/icons/facebook.svg" alt="Facebook" width="18" height="18"></a>
+        <a href="#" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="Instagram" width="18" height="18"></a>
+        <a href="#" aria-label="X / Twitter"><img src="assets/icons/x.svg" alt="X" width="18" height="18"></a>
+        <a href="#" aria-label="TikTok"><img src="assets/icons/tiktok.svg" alt="TikTok" width="18" height="18"></a>
+        <a href="#" aria-label="YouTube"><img src="assets/icons/youtube.svg" alt="YouTube" width="18" height="18"></a>
+      </div>
+      <button class="btn-util-subscribe" data-modal="subscribe">SUBSCRIBE</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       PRIMARY NAVIGATION — NEWS active
+  ═══════════════════════════════════════════════════════════ -->
+  <nav class="primary-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" style="text-decoration:none; padding:0; margin:0; line-height:0;">
+        <img src="logo.svg" alt="The Sham Report" height="50">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="news.html" class="active">NEWS</a></li>
+        <li><a href="#">TOURNAMENTS</a></li>
+        <li><a href="#">MEDIA</a></li>
+        <li><a href="#">ABOUT</a></li>
+      </ul>
+      <button class="btn-nav-subscribe" data-modal="subscribe">SUBSCRIBE</button>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button class="nav-overlay-close" id="nav-overlay-close" aria-label="Close menu">&times;</button>
+    <a href="news.html" class="active">News</a>
+    <a href="#">Tournaments</a>
+    <a href="#">Media</a>
+    <a href="#">About</a>
+    <button class="btn-nav-subscribe" data-modal="subscribe" style="margin-top:16px;">SUBSCRIBE</button>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       BREAKING TICKER
+  ═══════════════════════════════════════════════════════════ -->
+  <div class="ticker-bar" aria-label="Breaking news">
+    <div class="ticker-label">BREAKING</div>
+    <div class="ticker-track-wrap">
+      <div class="ticker-track" id="ticker-track"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       PAGE HERO — compact
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="page-hero" aria-label="News page header">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="page-hero-rule" aria-hidden="true"></div>
+        <p class="page-hero-label">The Sham Report</p>
+        <h1 class="page-hero-title">News</h1>
+        <p class="page-hero-sub">Investigations, tournament reports, and breaking news from the Texas poker scene.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       TAB BAR
+  ═══════════════════════════════════════════════════════════ -->
+  <div class="tab-bar-wrap" role="navigation" aria-label="Content filter">
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="investigations" aria-selected="true">Investigations</button>
+      <button class="tab-btn"        data-tab="tournaments"    aria-selected="false">Tournaments</button>
+      <button class="tab-btn"        data-tab="news"           aria-selected="false">News</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       COVERAGE GRID
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="coverage-section">
+    <div class="container">
+
+      <!-- ── INVESTIGATIONS ─────────────────────────────────── -->
+      <div class="tab-panel active" id="panel-investigations" role="tabpanel">
+        <div class="tab-panel-header">
+          <h2 class="tab-panel-title">Investigations</h2>
+          <span class="tab-panel-count">3 Reports</span>
+        </div>
+        <div class="coverage-grid">
+
+          <a href="#" class="cov-card">
+            <div class="cov-card-img t1" aria-hidden="true">
+              <span class="cov-card-img-label">Image Placeholder</span>
+            </div>
+            <div class="cov-card-body">
+              <p class="cov-card-category">Investigation&nbsp;&nbsp;·&nbsp;&nbsp;Exclusive</p>
+              <h3 class="cov-card-headline">The Lodge Raid: What Really Happened</h3>
+              <div class="cov-card-meta">
+                <span class="cov-card-byline">By TSR Staff</span>
+                <span class="cov-card-date">Nov 18, 2024</span>
+              </div>
+              <span class="cov-card-read">Read More &nbsp;→</span>
+            </div>
+          </a>
+
+          <a href="#" class="cov-card">
+            <div class="cov-card-img t2" aria-hidden="true">
+              <span class="cov-card-img-label">Image Placeholder</span>
+            </div>
+            <div class="cov-card-body">
+              <p class="cov-card-category">Investigation&nbsp;&nbsp;·&nbsp;&nbsp;Legal</p>
+              <h3 class="cov-card-headline">Champions Social Club and the Law</h3>
+              <div class="cov-card-meta">
+                <span class="cov-card-byline">By TSR Staff</span>
+                <span class="cov-card-date">Nov 11, 2024</span>
+              </div>
+              <span class="cov-card-read">Read More &nbsp;→</span>
+            </div>
+          </a>
+
+          <a href="#" class="cov-card">
+            <div class="cov-card-img t3" aria-hidden="true">
+              <span class="cov-card-img-label">Image Placeholder</span>
+            </div>
+            <div class="cov-card-body">
+              <p class="cov-card-category">Investigation&nbsp;&nbsp;·&nbsp;&nbsp;Analysis</p>
+              <h3 class="cov-card-headline">Civil Asset Forfeiture in Texas Card Rooms</h3>
+              <div class="cov-card-meta">
+                <span class="cov-card-byline">By TSR Staff</span>
+                <span class="cov-card-date">Nov 4, 2024</span>
+              </div>
+              <span class="cov-card-read">Read More &nbsp;→</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ── TOURNAMENTS ─────────────────────────────────────── -->
+      <div class="tab-panel" id="panel-tournaments" role="tabpanel">
+        <div class="tab-panel-header">
+          <h2 class="tab-panel-title">Tournaments</h2>
+          <span class="tab-panel-count">3 Reports</span>
+        </div>
+        <div class="coverage-grid">
+
+          <a href="#" class="cov-card">
+            <div class="cov-card-img t4" aria-hidden="true">
+              <span class="cov-card-img-label">Image Placeholder</span>
+            </div>
+            <div class="cov-card-body">
+              <p class="cov-card-category">Tournaments&nbsp;&nbsp;·&nbsp;&nbsp;Results</p>
+              <h3 class="cov-card-headline">WPT Prime Dallas: Full Results</h3>
+              <div class="cov-card-meta">
+                <span class="cov-card-byline">By TSR Staff</span>
+                <span class="cov-card-date">Nov 20, 2024</span>
+              </div>
+              <span class="cov-card-read">Read More &nbsp;→</span>
+            </div>
+          </a>
+
+          <a href="#" class="cov-card">
+            <div class="cov-card-img t5" aria-hidden="true">
+              <span class="cov-card-img-label">Image Placeholder</span>
+            </div>
+            <div class="cov-card-body">
+              <p class="cov-card-category">Tournaments&nbsp;&nbsp;·&nbsp;&nbsp;Rankings</p>
+              <h3 class="cov-card-headline">Best Value Tournaments in DFW — 2025 Rankings</h3>
+              <div class="cov-card-meta">
+                <span class="cov-card-byline">By TSR Staff</span>
+                <span class="cov-card-date">Nov 14, 2024</span>
+              </div>
+              <span class="cov-card-read">Read More &nbsp;→</span>
+            </div>
+          </a>
+
+          <a href="#" class="cov-card">
+            <div class="cov-card-img t6" aria-hidden="true">
+              <span class="cov-card-img-label">Image Placeholder</span>
+            </div>
+            <div class="cov-card-body">
+              <p class="cov-card-category">Tournaments&nbsp;&nbsp;·&nbsp;&nbsp;Coverage</p>
+              <h3 class="cov-card-headline">TCH Summer Series Coverage</h3>
+              <div class="cov-card-meta">
+                <span class="cov-card-byline">By TSR Staff</span>
+                <span class="cov-card-date">Nov 7, 2024</span>
+              </div>
+              <span class="cov-card-read">Read More &nbsp;→</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ── NEWS ───────────────────────────────────────────── -->
+      <div class="tab-panel" id="panel-news" role="tabpanel">
+        <div class="tab-panel-header">
+          <h2 class="tab-panel-title">News</h2>
+          <span class="tab-panel-count">3 Reports</span>
+        </div>
+        <div class="coverage-grid">
+
+          <a href="#" class="cov-card">
+            <div class="cov-card-img t7" aria-hidden="true">
+              <span class="cov-card-img-label">Image Placeholder</span>
+            </div>
+            <div class="cov-card-body">
+              <p class="cov-card-category">News&nbsp;&nbsp;·&nbsp;&nbsp;Legislation</p>
+              <h3 class="cov-card-headline">House Bill 4417 Stalls in Committee</h3>
+              <div class="cov-card-meta">
+                <span class="cov-card-byline">By TSR Staff</span>
+                <span class="cov-card-date">Nov 22, 2024</span>
+              </div>
+              <span class="cov-card-read">Read More &nbsp;→</span>
+            </div>
+          </a>
+
+          <a href="#" class="cov-card">
+            <div class="cov-card-img t8" aria-hidden="true">
+              <span class="cov-card-img-label">Image Placeholder</span>
+            </div>
+            <div class="cov-card-body">
+              <p class="cov-card-category">News&nbsp;&nbsp;·&nbsp;&nbsp;Legal</p>
+              <h3 class="cov-card-headline">Beaumont Card Room Operator Charged</h3>
+              <div class="cov-card-meta">
+                <span class="cov-card-byline">By TSR Staff</span>
+                <span class="cov-card-date">Nov 16, 2024</span>
+              </div>
+              <span class="cov-card-read">Read More &nbsp;→</span>
+            </div>
+          </a>
+
+          <a href="#" class="cov-card">
+            <div class="cov-card-img t9" aria-hidden="true">
+              <span class="cov-card-img-label">Image Placeholder</span>
+            </div>
+            <div class="cov-card-body">
+              <p class="cov-card-category">News&nbsp;&nbsp;·&nbsp;&nbsp;Analysis</p>
+              <h3 class="cov-card-headline">AG Opinion on Texas Poker Clubs: A Breakdown</h3>
+              <div class="cov-card-meta">
+                <span class="cov-card-byline">By TSR Staff</span>
+                <span class="cov-card-date">Nov 9, 2024</span>
+              </div>
+              <span class="cov-card-read">Read More &nbsp;→</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       EMAIL CAPTURE — exact copy from index.html
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="email-capture">
+    <div class="container">
+      <div class="email-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      </div>
+      <h2 class="email-capture-title">STAY ON THE FELT</h2>
+      <p class="email-capture-sub">The only newsletter for the 1%. Get raw tournament data, deep-state poker analysis, and exclusive high-stakes reports delivered to your inbox weekly.</p>
+      <form class="email-form" id="email-capture-form" novalidate>
+        <input class="email-input" type="email" name="email" placeholder="Your email address" required aria-label="Email address">
+        <button class="btn-email-submit" type="submit">Subscribe</button>
+      </form>
+      <p class="email-disclaimer">No Fluff. No Spam. Only the Cards.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       FOOTER — exact copy from index.html
+  ═══════════════════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p class="footer-logo-mark">TSR</p>
+      <p class="footer-wordmark">The Sham Report</p>
+      <p class="footer-tagline">Texas Poker. Unfiltered.</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="news.html">News</a>
+        <a href="#">Tournaments</a>
+        <a href="#">Media</a>
+        <a href="#">About</a>
+      </nav>
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook"><img src="assets/icons/facebook.svg" alt="Facebook" width="18" height="18"></a>
+        <a href="#" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="Instagram" width="18" height="18"></a>
+        <a href="#" aria-label="X / Twitter"><img src="assets/icons/x.svg" alt="X" width="18" height="18"></a>
+        <a href="#" aria-label="TikTok"><img src="assets/icons/tiktok.svg" alt="TikTok" width="18" height="18"></a>
+        <a href="#" aria-label="YouTube"><img src="assets/icons/youtube.svg" alt="YouTube" width="18" height="18"></a>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-copy">&copy; 2025 The Sham Report. All Rights Reserved. High-stakes journalism for the elite circuit.</p>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SUBSCRIBE MODAL — exact copy from index.html
+  ═══════════════════════════════════════════════════════════ -->
+  <div class="modal-overlay" id="subscribe-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <h2 class="modal-title" id="modal-title">Stay on the Felt</h2>
+      <p class="modal-sub">Raw tournament data, insider analysis, and exclusive high-stakes reports — weekly.</p>
+      <form class="modal-form" id="modal-form" novalidate>
+        <input class="modal-input" type="email" name="email" placeholder="Your email address" required aria-label="Email address">
+        <button class="btn-modal-submit" type="submit">Subscribe Now</button>
+      </form>
+      <div class="modal-success" id="modal-success" aria-live="polite">
+        <span class="modal-success-icon">◆</span>
+        <p>You're in. Welcome to the circuit.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared JS (ticker, modal, mobile nav) -->
+  <script src="js/main.js"></script>
+
+  <!-- Coverage tab switching -->
+  <script>
+    (function () {
+      const tabs   = document.querySelectorAll('.tab-btn');
+      const panels = document.querySelectorAll('.tab-panel');
+
+      tabs.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const target = btn.dataset.tab;
+
+          // Update tab buttons
+          tabs.forEach(function (t) {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+
+          // Update panels
+          panels.forEach(function (panel) {
+            panel.classList.remove('active');
+          });
+          var activePanel = document.getElementById('panel-' + target);
+          if (activePanel) activePanel.classList.add('active');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

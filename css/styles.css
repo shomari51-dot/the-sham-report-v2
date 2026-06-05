@@ -149,12 +149,14 @@ body {
   height: 68px;
 }
 
-/* Wordmark */
+/* Logo image */
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
   flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
   text-decoration: none;
 }
 
