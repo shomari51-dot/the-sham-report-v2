@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tournaments — The Sham Report</title>
+  <meta name="description" content="Results, best value picks, and tournament trail coverage from across Texas and beyond.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* ============================================================
+       TOURNAMENTS PAGE — scoped styles
+    ============================================================ */
+
+    /* ── Page Hero (compact — matches news.html) ─────────────── */
+    .page-hero {
+      background: #0A0A0A;
+      border-bottom: 1px solid #2A2A2A;
+      padding: 64px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(255,255,255,0.012) 40px,
+        rgba(255,255,255,0.012) 41px
+      );
+      pointer-events: none;
+    }
+
+    .page-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+    }
+
+    .page-hero-rule {
+      width: 40px;
+      height: 2px;
+      background: #D4AF37;
+      margin-bottom: 20px;
+    }
+
+    .page-hero-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #D4AF37;
+      margin-bottom: 14px;
+    }
+
+    .page-hero-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .page-hero-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(15px, 1.2vw, 17px);
+      color: #CCCCCC;
+      line-height: 1.65;
+      max-width: 520px;
+    }
+
+    /* ── Shared Section Layout ───────────────────────────────── */
+    .tourn-section {
+      padding: 72px 0 80px;
+    }
+
+    .tourn-section + .tourn-section {
+      border-top: 1px solid #2A2A2A;
+    }
+
+    .tourn-section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #D4AF37;
+      margin-bottom: 10px;
+    }
+
+    .tourn-section-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .tourn-section-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: #777777;
+      margin-bottom: 40px;
+      letter-spacing: 0.01em;
+    }
+
+    /* ── Card Grid ───────────────────────────────────────────── */
+    .tourn-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    /* ── Best Value Cards ────────────────────────────────────── */
+    .value-card {
+      background: #111111;
+      border: 1px solid #2A2A2A;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .value-card:hover {
+      border-color: #D4AF37;
+      transform: translateY(-3px);
+    }
+
+    /* Dark image placeholder */
+    .value-card-img {
+      aspect-ratio: 16 / 9;
+      background: #161616;
+      border-bottom: 1px solid #2A2A2A;
+      position: relative;
+    }
+
+    .value-card-img.t1 { background: #141414; }
+    .value-card-img.t2 { background: #131318; }
+    .value-card-img.t3 { background: #141210; }
+
+    .value-card-img-label {
+      position: absolute;
+      bottom: 10px;
+      left: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.18);
+    }
+
+    .value-card-body {
+      padding: 22px 22px 24px;
+    }
+
+    .value-card-venue {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #D4AF37;
+      margin-bottom: 8px;
+    }
+
+    .value-card-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(17px, 1.4vw, 20px);
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+
+    /* Two-column stat layout */
+    .value-card-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: #2A2A2A;
+      border: 1px solid #2A2A2A;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+
+    .stat-cell {
+      background: #0F0F0F;
+      padding: 12px 14px;
+    }
+
+    .stat-cell-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #555555;
+      margin-bottom: 5px;
+    }
+
+    .stat-cell-value {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #FFFFFF;
+      line-height: 1;
+    }
+
+    .stat-cell.full-width {
+      grid-column: 1 / -1;
+    }
+
+    /* Star rating */
+    .value-card-rating {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .rating-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #555555;
+    }
+
+    .rating-stars {
+      color: #D4AF37;
+      font-size: 14px;
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+
+    .rating-stars .dim {
+      color: #333333;
+    }
+
+    /* ── Results Cards ───────────────────────────────────────── */
+    .result-card {
+      background: #111111;
+      border: 1px solid #2A2A2A;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .result-card:hover {
+      border-color: #D4AF37;
+      transform: translateY(-3px);
+    }
+
+    /* Dark placeholder */
+    .result-card-img {
+      aspect-ratio: 16 / 9;
+      background: #141414;
+      border-bottom: 1px solid #2A2A2A;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 14px;
+    }
+
+    .result-card-img.t4 { background: #131318; }
+    .result-card-img.t5 { background: #101414; }
+    .result-card-img.t6 { background: #141210; }
+
+    .result-card-img-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.18);
+    }
+
+    .result-card-body {
+      padding: 22px 22px 24px;
+    }
+
+    .result-card-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #CC0000;
+      margin-bottom: 10px;
+    }
+
+    .result-card-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(17px, 1.4vw, 20px);
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+
+    .result-card-divider {
+      height: 1px;
+      background: #D4AF37;
+      opacity: 0.25;
+      margin-bottom: 18px;
+    }
+
+    /* Champion + prize row */
+    .result-card-meta {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .result-card-champion-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #555555;
+      margin-bottom: 5px;
+    }
+
+    .result-card-champion-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #CCCCCC;
+      font-style: italic;
+    }
+
+    .result-card-prize-wrap {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .result-card-prize-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #555555;
+      margin-bottom: 5px;
+    }
+
+    .result-card-prize {
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #D4AF37;
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── Responsive ──────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .tourn-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero { padding: 48px 0 44px; }
+      .tourn-grid { grid-template-columns: 1fr; }
+      .tourn-section { padding: 52px 0 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════
+       UTILITY BAR
+  ═══════════════════════════════════════════════════════════ -->
+  <div class="utility-bar">
+    <div class="container">
+      <div class="util-icons">
+        <a href="#" aria-label="Facebook"><img src="assets/icons/facebook.svg" alt="Facebook" width="18" height="18"></a>
+        <a href="#" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="Instagram" width="18" height="18"></a>
+        <a href="#" aria-label="X / Twitter"><img src="assets/icons/x.svg" alt="X" width="18" height="18"></a>
+        <a href="#" aria-label="TikTok"><img src="assets/icons/tiktok.svg" alt="TikTok" width="18" height="18"></a>
+        <a href="#" aria-label="YouTube"><img src="assets/icons/youtube.svg" alt="YouTube" width="18" height="18"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       PRIMARY NAVIGATION — TOURNAMENTS active
+  ═══════════════════════════════════════════════════════════ -->
+  <nav class="primary-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" style="text-decoration:none; padding:0; margin:0; line-height:0;">
+        <img src="logo.svg" alt="The Sham Report" height="50">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="news.html">NEWS</a></li>
+        <li><a href="tournaments.html" class="active">TOURNAMENTS</a></li>
+        <li><a href="#">MEDIA</a></li>
+        <li><a href="#">ABOUT</a></li>
+      </ul>
+      <button class="btn-nav-subscribe" data-modal="subscribe">SUBSCRIBE</button>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button class="nav-overlay-close" id="nav-overlay-close" aria-label="Close menu">&times;</button>
+    <a href="news.html">News</a>
+    <a href="tournaments.html" class="active">Tournaments</a>
+    <a href="#">Media</a>
+    <a href="#">About</a>
+    <button class="btn-nav-subscribe" data-modal="subscribe" style="margin-top:16px;">SUBSCRIBE</button>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       BREAKING TICKER
+  ═══════════════════════════════════════════════════════════ -->
+  <div class="ticker-bar" aria-label="Breaking news">
+    <div class="ticker-label">BREAKING</div>
+    <div class="ticker-track-wrap">
+      <div class="ticker-track" id="ticker-track"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       PAGE HERO — compact
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="page-hero" aria-label="Tournaments page header">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="page-hero-rule" aria-hidden="true"></div>
+        <p class="page-hero-label">The Sham Report</p>
+        <h1 class="page-hero-title">Tournaments</h1>
+        <p class="page-hero-sub">Results, best value picks, and tournament trail coverage from across Texas and beyond.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECTION 1 — BEST VALUE TOURNAMENTS
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="tourn-section" style="background:#0A0A0A;">
+    <div class="container">
+
+      <p class="tourn-section-label">Best Value &nbsp;·&nbsp; Updated Monthly</p>
+      <h2 class="tourn-section-title">Best Value Tournaments in DFW</h2>
+      <p class="tourn-section-sub">Ranked by prize pool, structure, and buy-in value</p>
+
+      <div class="tourn-grid">
+
+        <!-- Card 1 -->
+        <div class="value-card">
+          <div class="value-card-img t1" aria-hidden="true">
+            <span class="value-card-img-label">Image Placeholder</span>
+          </div>
+          <div class="value-card-body">
+            <p class="value-card-venue">Poker Club of Texas</p>
+            <h3 class="value-card-name">Wednesday Deep Stack</h3>
+            <div class="value-card-stats">
+              <div class="stat-cell">
+                <p class="stat-cell-label">Buy-In</p>
+                <p class="stat-cell-value">$125</p>
+              </div>
+              <div class="stat-cell">
+                <p class="stat-cell-label">Guarantee</p>
+                <p class="stat-cell-value">$3,000</p>
+              </div>
+              <div class="stat-cell full-width">
+                <p class="stat-cell-label">Structure</p>
+                <p class="stat-cell-value">30-min levels</p>
+              </div>
+            </div>
+            <div class="value-card-rating">
+              <span class="rating-label">Value</span>
+              <span class="rating-stars">★★★★★</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="value-card">
+          <div class="value-card-img t2" aria-hidden="true">
+            <span class="value-card-img-label">Image Placeholder</span>
+          </div>
+          <div class="value-card-body">
+            <p class="value-card-venue">TCH Dallas</p>
+            <h3 class="value-card-name">Sunday Funday</h3>
+            <div class="value-card-stats">
+              <div class="stat-cell">
+                <p class="stat-cell-label">Buy-In</p>
+                <p class="stat-cell-value">$200</p>
+              </div>
+              <div class="stat-cell">
+                <p class="stat-cell-label">Guarantee</p>
+                <p class="stat-cell-value">$5,000</p>
+              </div>
+              <div class="stat-cell full-width">
+                <p class="stat-cell-label">Structure</p>
+                <p class="stat-cell-value">25-min levels</p>
+              </div>
+            </div>
+            <div class="value-card-rating">
+              <span class="rating-label">Value</span>
+              <span class="rating-stars">★★★★<span class="dim">★</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="value-card">
+          <div class="value-card-img t3" aria-hidden="true">
+            <span class="value-card-img-label">Image Placeholder</span>
+          </div>
+          <div class="value-card-body">
+            <p class="value-card-venue">The Lodge</p>
+            <h3 class="value-card-name">Friday Night Special</h3>
+            <div class="value-card-stats">
+              <div class="stat-cell">
+                <p class="stat-cell-label">Buy-In</p>
+                <p class="stat-cell-value">$300</p>
+              </div>
+              <div class="stat-cell">
+                <p class="stat-cell-label">Guarantee</p>
+                <p class="stat-cell-value">$10,000</p>
+              </div>
+              <div class="stat-cell full-width">
+                <p class="stat-cell-label">Structure</p>
+                <p class="stat-cell-value">40-min levels</p>
+              </div>
+            </div>
+            <div class="value-card-rating">
+              <span class="rating-label">Value</span>
+              <span class="rating-stars">★★★★★</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECTION 2 — RECENT RESULTS
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="tourn-section" style="background:#0D0D0D;">
+    <div class="container">
+
+      <p class="tourn-section-label">Recent Results</p>
+      <h2 class="tourn-section-title">Tournament Results</h2>
+      <p class="tourn-section-sub">&nbsp;</p>
+
+      <div class="tourn-grid">
+
+        <!-- Result 1 -->
+        <div class="result-card">
+          <div class="result-card-img t4" aria-hidden="true">
+            <span class="result-card-img-label">Image Placeholder</span>
+          </div>
+          <div class="result-card-body">
+            <p class="result-card-label">Tournaments &nbsp;·&nbsp; Results</p>
+            <h3 class="result-card-name">WPT Prime Dallas</h3>
+            <div class="result-card-divider"></div>
+            <div class="result-card-meta">
+              <div>
+                <p class="result-card-champion-label">Champion</p>
+                <p class="result-card-champion-name">TBD</p>
+              </div>
+              <div class="result-card-prize-wrap">
+                <p class="result-card-prize-label">1st Place</p>
+                <p class="result-card-prize">$125,000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result 2 -->
+        <div class="result-card">
+          <div class="result-card-img t5" aria-hidden="true">
+            <span class="result-card-img-label">Image Placeholder</span>
+          </div>
+          <div class="result-card-body">
+            <p class="result-card-label">Tournaments &nbsp;·&nbsp; Results</p>
+            <h3 class="result-card-name">TCH Summer Series Main Event</h3>
+            <div class="result-card-divider"></div>
+            <div class="result-card-meta">
+              <div>
+                <p class="result-card-champion-label">Champion</p>
+                <p class="result-card-champion-name">TBD</p>
+              </div>
+              <div class="result-card-prize-wrap">
+                <p class="result-card-prize-label">1st Place</p>
+                <p class="result-card-prize">$45,000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result 3 -->
+        <div class="result-card">
+          <div class="result-card-img t6" aria-hidden="true">
+            <span class="result-card-img-label">Image Placeholder</span>
+          </div>
+          <div class="result-card-body">
+            <p class="result-card-label">Tournaments &nbsp;·&nbsp; Results</p>
+            <h3 class="result-card-name">Houston Poker Open</h3>
+            <div class="result-card-divider"></div>
+            <div class="result-card-meta">
+              <div>
+                <p class="result-card-champion-label">Champion</p>
+                <p class="result-card-champion-name">TBD</p>
+              </div>
+              <div class="result-card-prize-wrap">
+                <p class="result-card-prize-label">1st Place</p>
+                <p class="result-card-prize">$28,500</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       EMAIL CAPTURE
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="email-capture">
+    <div class="container">
+      <div class="email-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      </div>
+      <h2 class="email-capture-title">STAY ON THE FELT</h2>
+      <p class="email-capture-sub">Get exclusive investigations, tournament reports, and breaking news from the Texas poker scene delivered to your inbox.</p>
+      <form class="email-form" id="email-capture-form" novalidate>
+        <input class="email-input" type="email" name="email" placeholder="Your email address" required aria-label="Email address">
+        <button class="btn-email-submit" type="submit">Subscribe</button>
+      </form>
+      <p class="email-disclaimer">No Fluff. No Spam. Only the Cards.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <a href="index.html" style="display:inline-block; line-height:0; margin-bottom:28px;">
+        <img src="logo.svg" alt="The Sham Report" height="50">
+      </a>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="news.html">News</a>
+        <a href="tournaments.html">Tournaments</a>
+        <a href="#">Media</a>
+        <a href="#">About</a>
+      </nav>
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook"><img src="assets/icons/facebook.svg" alt="Facebook" width="18" height="18"></a>
+        <a href="#" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="Instagram" width="18" height="18"></a>
+        <a href="#" aria-label="X / Twitter"><img src="assets/icons/x.svg" alt="X" width="18" height="18"></a>
+        <a href="#" aria-label="TikTok"><img src="assets/icons/tiktok.svg" alt="TikTok" width="18" height="18"></a>
+        <a href="#" aria-label="YouTube"><img src="assets/icons/youtube.svg" alt="YouTube" width="18" height="18"></a>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-copy">&copy; 2026 The Sham Report. All Rights Reserved. Texas Poker. Unfiltered.</p>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SUBSCRIBE MODAL
+  ═══════════════════════════════════════════════════════════ -->
+  <div class="modal-overlay" id="subscribe-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <h2 class="modal-title" id="modal-title">Stay on the Felt</h2>
+      <p class="modal-sub">Raw tournament data, insider analysis, and exclusive high-stakes reports — weekly.</p>
+      <form class="modal-form" id="modal-form" novalidate>
+        <input class="modal-input" type="email" name="email" placeholder="Your email address" required aria-label="Email address">
+        <button class="btn-modal-submit" type="submit">Subscribe Now</button>
+      </form>
+      <div class="modal-success" id="modal-success" aria-live="polite">
+        <span class="modal-success-icon">◆</span>
+        <p>You're in. Welcome to the circuit.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
