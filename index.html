@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Sham Report — Texas Poker. Unfiltered.</title>
+  <meta name="description" content="Investigative poker journalism covering Texas poker rooms, tournaments, players, and the legal landscape shaping the game.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════
+       1. UTILITY BAR
+  ═══════════════════════════════════════════════════════════ -->
+  <div class="utility-bar">
+    <div class="container">
+      <div class="util-icons">
+        <a href="#" aria-label="Facebook"><img src="assets/icons/facebook.svg" alt="Facebook" width="18" height="18"></a>
+        <a href="#" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="Instagram" width="18" height="18"></a>
+        <a href="#" aria-label="X / Twitter"><img src="assets/icons/x.svg" alt="X" width="18" height="18"></a>
+        <a href="#" aria-label="TikTok"><img src="assets/icons/tiktok.svg" alt="TikTok" width="18" height="18"></a>
+        <a href="#" aria-label="YouTube"><img src="assets/icons/youtube.svg" alt="YouTube" width="18" height="18"></a>
+      </div>
+      <button class="btn-util-subscribe" data-modal="subscribe">SUBSCRIBE</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       2. PRIMARY NAVIGATION
+  ═══════════════════════════════════════════════════════════ -->
+  <nav class="primary-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+
+      <!-- Wordmark -->
+      <a href="/" class="nav-logo" aria-label="The Sham Report home">
+        <span class="logo-mark">TSR</span>
+        <span class="logo-wordmark">THE SHAM<br>REPORT</span>
+      </a>
+
+      <!-- Center links -->
+      <ul class="nav-links" role="list">
+        <li><a href="#" class="active">NEWS</a></li>
+        <li><a href="#">COVERAGE</a></li>
+        <li><a href="#">TOURNAMENTS</a></li>
+        <li><a href="#">MEDIA</a></li>
+        <li><a href="#">ABOUT</a></li>
+      </ul>
+
+      <!-- CTA -->
+      <button class="btn-nav-subscribe" data-modal="subscribe">SUBSCRIBE</button>
+
+      <!-- Hamburger (mobile) -->
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay nav -->
+  <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button class="nav-overlay-close" id="nav-overlay-close" aria-label="Close menu">&times;</button>
+    <a href="#" class="active">News</a>
+    <a href="#">Coverage</a>
+    <a href="#">Tournaments</a>
+    <a href="#">Media</a>
+    <a href="#">About</a>
+    <button class="btn-nav-subscribe" data-modal="subscribe" style="margin-top:16px;">SUBSCRIBE</button>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       3. BREAKING NEWS TICKER
+  ═══════════════════════════════════════════════════════════ -->
+  <div class="ticker-bar" aria-label="Breaking news">
+    <div class="ticker-label">BREAKING</div>
+    <div class="ticker-track-wrap">
+      <div class="ticker-track" id="ticker-track">
+        <!-- Populated by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       4. HERO FEATURE
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="hero" aria-label="Feature story">
+
+    <!-- Mosaic wireframe background -->
+    <div class="hero-mosaic" aria-hidden="true">
+      <!-- 24 tiles (8 cols × 3 rows) -->
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div><div class="mosaic-tile-line xshort"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div><div class="mosaic-tile-line xshort"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div><div class="mosaic-tile-line xshort"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div><div class="mosaic-tile-line xshort"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div><div class="mosaic-tile-line xshort"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div><div class="mosaic-tile-line xshort"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div><div class="mosaic-tile-line xshort"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div><div class="mosaic-tile-line xshort"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div><div class="mosaic-tile-line xshort"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div><div class="mosaic-tile-line xshort"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div><div class="mosaic-tile-line xshort"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div><div class="mosaic-tile-line xshort"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div><div class="mosaic-tile-line xshort"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div><div class="mosaic-tile-line xshort"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div><div class="mosaic-tile-line xshort"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div><div class="mosaic-tile-line xshort"></div></div>
+      <div class="mosaic-tile"><div class="mosaic-tile-img"></div><div class="mosaic-tile-line"></div><div class="mosaic-tile-line short"></div></div>
+    </div>
+
+    <!-- Dark gradient overlay -->
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- Content -->
+    <div class="hero-content">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-rule" aria-hidden="true"></div>
+          <p class="hero-category label-tag">Investigation · Exclusive</p>
+          <h1 class="hero-headline">The Texas High<br>Roller Circuit</h1>
+          <p class="hero-deck">Beneath the neon lights and behind closed doors, a new era of unbridled aggression defines the highest stakes in the Lone Star State. We go inside the underground rooms reshaping global poker.</p>
+          <a href="#" class="btn-hero">Read the Investigation &nbsp;→</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       5. LATEST REPORTS
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="latest-reports">
+    <div class="container">
+
+      <div class="section-header">
+        <h2 class="section-title">LATEST REPORTS</h2>
+        <a href="#" class="section-link">View All Archives</a>
+      </div>
+
+      <div class="card-grid">
+
+        <!-- Card 1 -->
+        <article class="article-card">
+          <div class="card-img tone-1" aria-hidden="true">
+            <span class="card-img-label">Image Placeholder</span>
+          </div>
+          <div class="card-body">
+            <p class="card-tags">Tournaments&nbsp;&nbsp;|&nbsp;&nbsp;Exclusive</p>
+            <h3 class="card-headline">The $50M Pot That Changed Everything in Dallas</h3>
+            <div class="card-divider"></div>
+            <div class="card-meta">
+              <span class="card-date">Nov 14, 2024</span>
+              <span class="card-arrow" aria-hidden="true">↗</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="article-card">
+          <div class="card-img tone-2" aria-hidden="true">
+            <span class="card-img-label">Image Placeholder</span>
+          </div>
+          <div class="card-body">
+            <p class="card-tags">Players&nbsp;&nbsp;|&nbsp;&nbsp;Profile</p>
+            <h3 class="card-headline">Unmasking 'The Ghost': Poker's Most Private Pro</h3>
+            <div class="card-divider"></div>
+            <div class="card-meta">
+              <span class="card-date">Nov 12, 2024</span>
+              <span class="card-arrow" aria-hidden="true">↗</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="article-card">
+          <div class="card-img tone-3" aria-hidden="true">
+            <span class="card-img-label">Image Placeholder</span>
+          </div>
+          <div class="card-body">
+            <p class="card-tags">Legal&nbsp;&nbsp;|&nbsp;&nbsp;Analysis</p>
+            <h3 class="card-headline">New Texas Regulations: The Death of the Social Club?</h3>
+            <div class="card-divider"></div>
+            <div class="card-meta">
+              <span class="card-date">Nov 10, 2024</span>
+              <span class="card-arrow" aria-hidden="true">↗</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       6. TOURNAMENT RESULTS + PLAYER SPOTLIGHT
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="tournament-section">
+    <div class="container">
+      <div class="tournament-layout">
+
+        <!-- Left — Results -->
+        <div class="results-col">
+          <p class="results-tracker-label label-tag">Live Tracker</p>
+          <div class="results-header">
+            <div class="results-header-bar" aria-hidden="true"></div>
+            <h2 class="results-title">Latest Tournament<br>Results</h2>
+          </div>
+
+          <ul class="results-list" role="list">
+            <li class="result-entry">
+              <span class="result-num">01</span>
+              <div>
+                <p class="result-player">Daniel Negreanu</p>
+                <p class="result-detail">Triton Series&nbsp;&nbsp;|&nbsp;&nbsp;Monte Carlo Invite</p>
+              </div>
+              <span class="result-prize">$3,240,000</span>
+            </li>
+            <li class="result-entry">
+              <span class="result-num">02</span>
+              <div>
+                <p class="result-player">Phil Ivey</p>
+                <p class="result-detail">Triton Series&nbsp;&nbsp;|&nbsp;&nbsp;Monte Carlo Invite</p>
+              </div>
+              <span class="result-prize">$2,100,000</span>
+            </li>
+            <li class="result-entry">
+              <span class="result-num">03</span>
+              <div>
+                <p class="result-player">Bryn Kenney</p>
+                <p class="result-detail">Triton Series&nbsp;&nbsp;|&nbsp;&nbsp;Monte Carlo Invite</p>
+              </div>
+              <span class="result-prize">$1,450,000</span>
+            </li>
+          </ul>
+
+          <div class="results-footer">
+            <a href="#">View Full Standings &nbsp;&#9776;</a>
+          </div>
+        </div>
+
+        <!-- Right — Spotlight -->
+        <div class="spotlight-col">
+          <div class="spotlight-card">
+            <div class="spotlight-badge">Player Spotlight</div>
+
+            <!-- Dark placeholder — no image -->
+            <div class="spotlight-photo" aria-label="Player photo placeholder">
+              <div class="spotlight-photo-bg"></div>
+              <div class="spotlight-photo-gradient"></div>
+              <div class="spotlight-name-overlay">Adrian Mateos</div>
+            </div>
+
+            <div class="spotlight-body">
+              <p class="spotlight-quote">"Winning isn't about the cards; it's about the silence before you reveal them."</p>
+              <div class="spotlight-stats">
+                <div class="stat-item">
+                  <p class="stat-label">Cash Winnings</p>
+                  <p class="stat-value">$39.2M</p>
+                </div>
+                <div class="stat-item">
+                  <p class="stat-label">WSOP Bracelets</p>
+                  <p class="stat-value">4</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       7. EMAIL CAPTURE
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="email-capture">
+    <div class="container">
+
+      <div class="email-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      </div>
+
+      <h2 class="email-capture-title">STAY ON THE FELT</h2>
+      <p class="email-capture-sub">The only newsletter for the 1%. Get raw tournament data, deep-state poker analysis, and exclusive high-stakes reports delivered to your inbox weekly.</p>
+
+      <form class="email-form" id="email-capture-form" novalidate>
+        <input
+          class="email-input"
+          type="email"
+          name="email"
+          placeholder="Your email address"
+          required
+          aria-label="Email address"
+        >
+        <button class="btn-email-submit" type="submit">Subscribe</button>
+      </form>
+
+      <p class="email-disclaimer">No Fluff. No Spam. Only the Cards.</p>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       8. FOOTER
+  ═══════════════════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <p class="footer-logo-mark">TSR</p>
+      <p class="footer-wordmark">The Sham Report</p>
+      <p class="footer-tagline">Texas Poker. Unfiltered.</p>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#">News</a>
+        <a href="#">Coverage</a>
+        <a href="#">Tournaments</a>
+        <a href="#">Media</a>
+        <a href="#">About</a>
+      </nav>
+
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook"><img src="assets/icons/facebook.svg" alt="Facebook" width="18" height="18"></a>
+        <a href="#" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="Instagram" width="18" height="18"></a>
+        <a href="#" aria-label="X / Twitter"><img src="assets/icons/x.svg" alt="X" width="18" height="18"></a>
+        <a href="#" aria-label="TikTok"><img src="assets/icons/tiktok.svg" alt="TikTok" width="18" height="18"></a>
+        <a href="#" aria-label="YouTube"><img src="assets/icons/youtube.svg" alt="YouTube" width="18" height="18"></a>
+      </div>
+
+      <div class="footer-divider"></div>
+      <p class="footer-copy">&copy; 2025 The Sham Report. All Rights Reserved. High-stakes journalism for the elite circuit.</p>
+
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SUBSCRIBE MODAL
+  ═══════════════════════════════════════════════════════════ -->
+  <div class="modal-overlay" id="subscribe-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+
+      <h2 class="modal-title" id="modal-title">Stay on the Felt</h2>
+      <p class="modal-sub">Raw tournament data, insider analysis, and exclusive high-stakes reports — weekly.</p>
+
+      <form class="modal-form" id="modal-form" novalidate>
+        <input
+          class="modal-input"
+          type="email"
+          name="email"
+          placeholder="Your email address"
+          required
+          aria-label="Email address"
+        >
+        <button class="btn-modal-submit" type="submit">Subscribe Now</button>
+      </form>
+
+      <div class="modal-success" id="modal-success" aria-live="polite">
+        <span class="modal-success-icon">◆</span>
+        <p>You're in. Welcome to the circuit.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
