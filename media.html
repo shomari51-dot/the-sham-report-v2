@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tournaments — The Sham Report</title>
-  <meta name="description" content="Results, best value picks, and tournament trail coverage from across Texas and beyond.">
+  <title>Media — The Sham Report</title>
+  <meta name="description" content="Video coverage, interviews, and content from the Texas poker scene.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,10 +14,10 @@
 
   <style>
     /* ============================================================
-       TOURNAMENTS PAGE — scoped styles
+       MEDIA PAGE — scoped styles
     ============================================================ */
 
-    /* ── Page Hero (compact — matches news.html) ─────────────── */
+    /* ── Page Hero (compact — matches news/tournaments) ──────── */
     .page-hero {
       background: #0A0A0A;
       border-bottom: 1px solid #2A2A2A;
@@ -81,16 +81,17 @@
       max-width: 520px;
     }
 
-    /* ── Shared Section Layout ───────────────────────────────── */
-    .tourn-section {
+    /* ── Shared section scaffolding ──────────────────────────── */
+    .media-section {
       padding: 72px 0 80px;
+      background: #0A0A0A;
     }
 
-    .tourn-section + .tourn-section {
+    .media-section + .media-section {
       border-top: 1px solid #2A2A2A;
     }
 
-    .tourn-section-label {
+    .media-section-label {
       font-family: 'Inter', sans-serif;
       font-size: 11px;
       font-weight: 600;
@@ -100,282 +101,242 @@
       margin-bottom: 10px;
     }
 
-    .tourn-section-title {
+    .media-section-title {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: clamp(26px, 3vw, 38px);
       font-weight: 700;
       color: #FFFFFF;
       line-height: 1.1;
-      margin-bottom: 6px;
+      margin-bottom: 36px;
     }
 
-    .tourn-section-sub {
+    /* ── Play button SVG (reused inline) ─────────────────────── */
+    .play-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      transition: transform 0.2s ease;
+    }
+
+    /* ── Section 1 — Featured Video ──────────────────────────── */
+    .featured-video-wrap {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: #111111;
+      border: 1px solid #2A2A2A;
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+      margin-bottom: 24px;
+      transition: border-color 0.2s ease;
+    }
+
+    .featured-video-wrap:hover {
+      border-color: #D4AF37;
+    }
+
+    .featured-video-wrap:hover .play-btn {
+      transform: translate(-50%, -50%) scale(1.08);
+    }
+
+    .featured-video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.65) 0%,
+        transparent 60%
+      );
+    }
+
+    .featured-video-meta {
+      max-width: 800px;
+    }
+
+    .featured-video-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(20px, 2vw, 26px);
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .featured-video-desc {
       font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      color: #777777;
-      margin-bottom: 40px;
-      letter-spacing: 0.01em;
+      font-size: 15px;
+      color: #CCCCCC;
+      line-height: 1.65;
+      margin-bottom: 10px;
+      max-width: 680px;
     }
 
-    /* ── Card Grid ───────────────────────────────────────────── */
-    .tourn-grid {
+    .featured-video-date {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #D4AF37;
+      text-transform: uppercase;
+    }
+
+    /* ── Section 2 — Video Grid ──────────────────────────────── */
+    .video-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
-    /* ── Best Value Cards ────────────────────────────────────── */
-    .value-card {
+    .video-card {
       background: #111111;
       border: 1px solid #2A2A2A;
       border-radius: 4px;
       overflow: hidden;
+      cursor: pointer;
       transition: border-color 0.2s ease, transform 0.2s ease;
     }
 
-    .value-card:hover {
+    .video-card:hover {
       border-color: #D4AF37;
       transform: translateY(-3px);
     }
 
-    /* Dark image placeholder */
-    .value-card-img {
+    /* Thumbnail placeholder */
+    .video-thumb {
       aspect-ratio: 16 / 9;
-      background: #161616;
-      border-bottom: 1px solid #2A2A2A;
       position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
     }
 
-    .value-card-img.t1 { background: #141414; }
-    .value-card-img.t2 { background: #131318; }
-    .value-card-img.t3 { background: #141210; }
+    .video-thumb.v1 { background: #141414; }
+    .video-thumb.v2 { background: #131318; }
+    .video-thumb.v3 { background: #141210; }
+    .video-thumb.v4 { background: #101414; }
 
-    .value-card-img-label {
+    .video-card:hover .play-btn {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    /* Duration badge */
+    .duration-badge {
       position: absolute;
       bottom: 10px;
-      left: 12px;
-      font-family: 'Inter', sans-serif;
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.18);
-    }
-
-    .value-card-body {
-      padding: 22px 22px 24px;
-    }
-
-    .value-card-venue {
+      right: 10px;
+      background: #D4AF37;
+      color: #0A0A0A;
       font-family: 'Inter', sans-serif;
       font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 3px 8px;
+      border-radius: 2px;
+      line-height: 1.4;
+    }
+
+    /* Card body */
+    .video-card-body {
+      padding: 18px 18px 20px;
+    }
+
+    .video-card-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(15px, 1.3vw, 18px);
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .video-card-date {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #555555;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Section 3 — Podcast strip ───────────────────────────── */
+    .podcast-strip {
+      background: #111111;
+      border-top: 1px solid #2A2A2A;
+      border-bottom: 1px solid #2A2A2A;
+      padding: 52px 0;
+    }
+
+    .podcast-strip-inner {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    /* Mic icon container */
+    .podcast-icon {
+      flex-shrink: 0;
+      width: 60px;
+      height: 60px;
+      border: 1px solid #2A2A2A;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0A0A0A;
+    }
+
+    .podcast-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: #D4AF37;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0.7;
+    }
+
+    .podcast-text {}
+
+    .podcast-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
       font-weight: 600;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: #D4AF37;
       margin-bottom: 8px;
     }
 
-    .value-card-name {
+    .podcast-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(17px, 1.4vw, 20px);
+      font-size: clamp(20px, 2vw, 26px);
       font-weight: 700;
       color: #FFFFFF;
-      line-height: 1.25;
-      margin-bottom: 20px;
+      line-height: 1.1;
+      margin-bottom: 8px;
     }
 
-    /* Two-column stat layout */
-    .value-card-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: #2A2A2A;
-      border: 1px solid #2A2A2A;
-      border-radius: 3px;
-      overflow: hidden;
-      margin-bottom: 18px;
-    }
-
-    .stat-cell {
-      background: #0F0F0F;
-      padding: 12px 14px;
-    }
-
-    .stat-cell-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #555555;
-      margin-bottom: 5px;
-    }
-
-    .stat-cell-value {
+    .podcast-sub {
       font-family: 'Inter', sans-serif;
       font-size: 14px;
-      font-weight: 600;
-      color: #FFFFFF;
-      line-height: 1;
-    }
-
-    .stat-cell.full-width {
-      grid-column: 1 / -1;
-    }
-
-    /* Star rating */
-    .value-card-rating {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .rating-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #555555;
-    }
-
-    .rating-stars {
-      color: #D4AF37;
-      font-size: 14px;
-      letter-spacing: 2px;
-      line-height: 1;
-    }
-
-    .rating-stars .dim {
-      color: #333333;
-    }
-
-    /* ── Results Cards ───────────────────────────────────────── */
-    .result-card {
-      background: #111111;
-      border: 1px solid #2A2A2A;
-      border-radius: 4px;
-      overflow: hidden;
-      transition: border-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .result-card:hover {
-      border-color: #D4AF37;
-      transform: translateY(-3px);
-    }
-
-    /* Dark placeholder */
-    .result-card-img {
-      aspect-ratio: 16 / 9;
-      background: #141414;
-      border-bottom: 1px solid #2A2A2A;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      padding: 14px;
-    }
-
-    .result-card-img.t4 { background: #131318; }
-    .result-card-img.t5 { background: #101414; }
-    .result-card-img.t6 { background: #141210; }
-
-    .result-card-img-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.18);
-    }
-
-    .result-card-body {
-      padding: 22px 22px 24px;
-    }
-
-    .result-card-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #D4AF37;
-      margin-bottom: 10px;
-    }
-
-    .result-card-name {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(17px, 1.4vw, 20px);
-      font-weight: 700;
-      color: #FFFFFF;
-      line-height: 1.25;
-      margin-bottom: 20px;
-    }
-
-    .result-card-divider {
-      height: 1px;
-      background: #D4AF37;
-      opacity: 0.25;
-      margin-bottom: 18px;
-    }
-
-    /* Champion + prize row */
-    .result-card-meta {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .result-card-champion-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #555555;
-      margin-bottom: 5px;
-    }
-
-    .result-card-champion-name {
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      color: #CCCCCC;
-      font-style: italic;
-    }
-
-    .result-card-prize-wrap {
-      text-align: right;
-      flex-shrink: 0;
-    }
-
-    .result-card-prize-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #555555;
-      margin-bottom: 5px;
-    }
-
-    .result-card-prize {
-      font-family: 'Inter', sans-serif;
-      font-size: 20px;
-      font-weight: 700;
-      color: #D4AF37;
-      line-height: 1;
-      letter-spacing: -0.01em;
+      color: #777777;
+      line-height: 1.6;
+      max-width: 560px;
     }
 
     /* ── Responsive ──────────────────────────────────────────── */
     @media (max-width: 1024px) {
-      .tourn-grid { grid-template-columns: repeat(2, 1fr); }
+      .video-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 768px) {
-      .page-hero { padding: 48px 0 44px; }
-      .tourn-grid { grid-template-columns: 1fr; }
-      .tourn-section { padding: 52px 0 60px; }
+      .page-hero  { padding: 48px 0 44px; }
+      .media-section { padding: 52px 0 60px; }
+      .video-grid { grid-template-columns: 1fr; }
+      .podcast-strip-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
     }
   </style>
 </head>
@@ -397,7 +358,7 @@
   </div>
 
   <!-- ══════════════════════════════════════════════════════════
-       PRIMARY NAVIGATION — TOURNAMENTS active
+       PRIMARY NAVIGATION — MEDIA active
   ═══════════════════════════════════════════════════════════ -->
   <nav class="primary-nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
@@ -406,8 +367,8 @@
       </a>
       <ul class="nav-links" role="list">
         <li><a href="news.html">NEWS</a></li>
-        <li><a href="tournaments.html" class="active">TOURNAMENTS</a></li>
-        <li><a href="media.html">MEDIA</a></li>
+        <li><a href="tournaments.html">TOURNAMENTS</a></li>
+        <li><a href="media.html" class="active">MEDIA</a></li>
         <li><a href="#">ABOUT</a></li>
       </ul>
       <button class="btn-nav-subscribe" data-modal="subscribe">SUBSCRIBE</button>
@@ -421,8 +382,8 @@
   <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <button class="nav-overlay-close" id="nav-overlay-close" aria-label="Close menu">&times;</button>
     <a href="news.html">News</a>
-    <a href="tournaments.html" class="active">Tournaments</a>
-    <a href="media.html">Media</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="media.html" class="active">Media</a>
     <a href="#">About</a>
     <button class="btn-nav-subscribe" data-modal="subscribe" style="margin-top:16px;">SUBSCRIBE</button>
   </div>
@@ -440,113 +401,124 @@
   <!-- ══════════════════════════════════════════════════════════
        PAGE HERO — compact
   ═══════════════════════════════════════════════════════════ -->
-  <section class="page-hero" aria-label="Tournaments page header">
+  <section class="page-hero" aria-label="Media page header">
     <div class="container">
       <div class="page-hero-inner">
         <div class="page-hero-rule" aria-hidden="true"></div>
         <p class="page-hero-label">The Sham Report</p>
-        <h1 class="page-hero-title">Tournaments</h1>
-        <p class="page-hero-sub">Results, best value picks, and tournament trail coverage from across Texas and beyond.</p>
+        <h1 class="page-hero-title">Media</h1>
+        <p class="page-hero-sub">Video coverage, interviews, and content from the Texas poker scene.</p>
       </div>
     </div>
   </section>
 
   <!-- ══════════════════════════════════════════════════════════
-       SECTION 1 — BEST VALUE TOURNAMENTS
+       SECTION 1 — FEATURED VIDEO
   ═══════════════════════════════════════════════════════════ -->
-  <section class="tourn-section" style="background:#0A0A0A;">
+  <section class="media-section">
     <div class="container">
 
-      <p class="tourn-section-label">Best Value &nbsp;·&nbsp; Updated Monthly</p>
-      <h2 class="tourn-section-title">Best Value Tournaments in DFW</h2>
-      <p class="tourn-section-sub">Ranked by prize pool, structure, and buy-in value</p>
+      <p class="media-section-label">Featured</p>
+      <h2 class="media-section-title">Latest from The Sham Report</h2>
 
-      <div class="tourn-grid">
+      <!-- Large featured video placeholder -->
+      <div class="featured-video-wrap" role="button" aria-label="Play featured video" tabindex="0">
+        <div class="featured-video-overlay" aria-hidden="true"></div>
+        <!-- Gold play button -->
+        <div class="play-btn" aria-hidden="true">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <circle cx="40" cy="40" r="38" fill="rgba(10,10,10,0.55)" stroke="#D4AF37" stroke-width="1.5"/>
+            <polygon points="32,24 32,56 60,40" fill="#D4AF37"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Featured video meta -->
+      <div class="featured-video-meta">
+        <h3 class="featured-video-title">The Lodge Raid: A Full Breakdown</h3>
+        <p class="featured-video-desc">Sham breaks down everything that happened the night of the raid, who was there, and what it means for Texas poker.</p>
+        <span class="featured-video-date">Nov 18, 2024</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECTION 2 — VIDEO GRID
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="media-section">
+    <div class="container">
+
+      <p class="media-section-label">All Videos</p>
+      <h2 class="media-section-title">More from TSR</h2>
+
+      <div class="video-grid">
 
         <!-- Card 1 -->
-        <div class="value-card">
-          <div class="value-card-img t1" aria-hidden="true">
-            <span class="value-card-img-label">Image Placeholder</span>
+        <div class="video-card">
+          <div class="video-thumb v1">
+            <div class="play-btn" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="22" fill="rgba(10,10,10,0.55)" stroke="#D4AF37" stroke-width="1.5"/>
+                <polygon points="19,14 19,34 36,24" fill="#D4AF37"/>
+              </svg>
+            </div>
+            <span class="duration-badge">18:42</span>
           </div>
-          <div class="value-card-body">
-            <p class="value-card-venue">Poker Club of Texas</p>
-            <h3 class="value-card-name">Wednesday Deep Stack</h3>
-            <div class="value-card-stats">
-              <div class="stat-cell">
-                <p class="stat-cell-label">Buy-In</p>
-                <p class="stat-cell-value">$125</p>
-              </div>
-              <div class="stat-cell">
-                <p class="stat-cell-label">Guarantee</p>
-                <p class="stat-cell-value">$3,000</p>
-              </div>
-              <div class="stat-cell full-width">
-                <p class="stat-cell-label">Structure</p>
-                <p class="stat-cell-value">30-min levels</p>
-              </div>
-            </div>
-            <div class="value-card-rating">
-              <span class="rating-label">Value</span>
-              <span class="rating-stars">★★★★★</span>
-            </div>
+          <div class="video-card-body">
+            <h3 class="video-card-title">Champions Social Club: The Full Story</h3>
+            <p class="video-card-date">Nov 11, 2024</p>
           </div>
         </div>
 
         <!-- Card 2 -->
-        <div class="value-card">
-          <div class="value-card-img t2" aria-hidden="true">
-            <span class="value-card-img-label">Image Placeholder</span>
+        <div class="video-card">
+          <div class="video-thumb v2">
+            <div class="play-btn" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="22" fill="rgba(10,10,10,0.55)" stroke="#D4AF37" stroke-width="1.5"/>
+                <polygon points="19,14 19,34 36,24" fill="#D4AF37"/>
+              </svg>
+            </div>
+            <span class="duration-badge">12:15</span>
           </div>
-          <div class="value-card-body">
-            <p class="value-card-venue">TCH Dallas</p>
-            <h3 class="value-card-name">Sunday Funday</h3>
-            <div class="value-card-stats">
-              <div class="stat-cell">
-                <p class="stat-cell-label">Buy-In</p>
-                <p class="stat-cell-value">$200</p>
-              </div>
-              <div class="stat-cell">
-                <p class="stat-cell-label">Guarantee</p>
-                <p class="stat-cell-value">$5,000</p>
-              </div>
-              <div class="stat-cell full-width">
-                <p class="stat-cell-label">Structure</p>
-                <p class="stat-cell-value">25-min levels</p>
-              </div>
-            </div>
-            <div class="value-card-rating">
-              <span class="rating-label">Value</span>
-              <span class="rating-stars">★★★★<span class="dim">★</span></span>
-            </div>
+          <div class="video-card-body">
+            <h3 class="video-card-title">Best Value Tournaments in DFW — November Rankings</h3>
+            <p class="video-card-date">Nov 5, 2024</p>
           </div>
         </div>
 
         <!-- Card 3 -->
-        <div class="value-card">
-          <div class="value-card-img t3" aria-hidden="true">
-            <span class="value-card-img-label">Image Placeholder</span>
+        <div class="video-card">
+          <div class="video-thumb v3">
+            <div class="play-btn" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="22" fill="rgba(10,10,10,0.55)" stroke="#D4AF37" stroke-width="1.5"/>
+                <polygon points="19,14 19,34 36,24" fill="#D4AF37"/>
+              </svg>
+            </div>
+            <span class="duration-badge">22:08</span>
           </div>
-          <div class="value-card-body">
-            <p class="value-card-venue">The Lodge</p>
-            <h3 class="value-card-name">Friday Night Special</h3>
-            <div class="value-card-stats">
-              <div class="stat-cell">
-                <p class="stat-cell-label">Buy-In</p>
-                <p class="stat-cell-value">$300</p>
-              </div>
-              <div class="stat-cell">
-                <p class="stat-cell-label">Guarantee</p>
-                <p class="stat-cell-value">$10,000</p>
-              </div>
-              <div class="stat-cell full-width">
-                <p class="stat-cell-label">Structure</p>
-                <p class="stat-cell-value">40-min levels</p>
-              </div>
+          <div class="video-card-body">
+            <h3 class="video-card-title">Texas Poker Law Explained</h3>
+            <p class="video-card-date">Oct 28, 2024</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="video-card">
+          <div class="video-thumb v4">
+            <div class="play-btn" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="22" fill="rgba(10,10,10,0.55)" stroke="#D4AF37" stroke-width="1.5"/>
+                <polygon points="19,14 19,34 36,24" fill="#D4AF37"/>
+              </svg>
             </div>
-            <div class="value-card-rating">
-              <span class="rating-label">Value</span>
-              <span class="rating-stars">★★★★★</span>
-            </div>
+            <span class="duration-badge">15:33</span>
+          </div>
+          <div class="video-card-body">
+            <h3 class="video-card-title">Inside the High Stakes PLO Scene</h3>
+            <p class="video-card-date">Oct 20, 2024</p>
           </div>
         </div>
 
@@ -555,86 +527,31 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════════════
-       SECTION 2 — RECENT RESULTS
+       SECTION 3 — PODCAST STRIP
   ═══════════════════════════════════════════════════════════ -->
-  <section class="tourn-section" style="background:#0D0D0D;">
+  <div class="podcast-strip">
     <div class="container">
+      <div class="podcast-strip-inner">
 
-      <p class="tourn-section-label">Recent Results</p>
-      <h2 class="tourn-section-title">Tournament Results</h2>
-      <p class="tourn-section-sub">&nbsp;</p>
-
-      <div class="tourn-grid">
-
-        <!-- Result 1 -->
-        <div class="result-card">
-          <div class="result-card-img t4" aria-hidden="true">
-            <span class="result-card-img-label">Image Placeholder</span>
-          </div>
-          <div class="result-card-body">
-            <p class="result-card-label">Tournaments &nbsp;|&nbsp; Results</p>
-            <h3 class="result-card-name">WPT Prime Dallas</h3>
-            <div class="result-card-divider"></div>
-            <div class="result-card-meta">
-              <div>
-                <p class="result-card-champion-label">Champion</p>
-                <p class="result-card-champion-name">TBD</p>
-              </div>
-              <div class="result-card-prize-wrap">
-                <p class="result-card-prize-label">1st Place</p>
-                <p class="result-card-prize">$125,000</p>
-              </div>
-            </div>
-          </div>
+        <!-- Mic icon -->
+        <div class="podcast-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <rect x="9" y="2" width="6" height="11" rx="3"/>
+            <path d="M5 10a7 7 0 0 0 14 0"/>
+            <line x1="12" y1="19" x2="12" y2="22"/>
+            <line x1="8" y1="22" x2="16" y2="22"/>
+          </svg>
         </div>
 
-        <!-- Result 2 -->
-        <div class="result-card">
-          <div class="result-card-img t5" aria-hidden="true">
-            <span class="result-card-img-label">Image Placeholder</span>
-          </div>
-          <div class="result-card-body">
-            <p class="result-card-label">Tournaments &nbsp;|&nbsp; Results</p>
-            <h3 class="result-card-name">TCH Summer Series Main Event</h3>
-            <div class="result-card-divider"></div>
-            <div class="result-card-meta">
-              <div>
-                <p class="result-card-champion-label">Champion</p>
-                <p class="result-card-champion-name">TBD</p>
-              </div>
-              <div class="result-card-prize-wrap">
-                <p class="result-card-prize-label">1st Place</p>
-                <p class="result-card-prize">$45,000</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Result 3 -->
-        <div class="result-card">
-          <div class="result-card-img t6" aria-hidden="true">
-            <span class="result-card-img-label">Image Placeholder</span>
-          </div>
-          <div class="result-card-body">
-            <p class="result-card-label">Tournaments &nbsp;|&nbsp; Results</p>
-            <h3 class="result-card-name">Houston Poker Open</h3>
-            <div class="result-card-divider"></div>
-            <div class="result-card-meta">
-              <div>
-                <p class="result-card-champion-label">Champion</p>
-                <p class="result-card-champion-name">TBD</p>
-              </div>
-              <div class="result-card-prize-wrap">
-                <p class="result-card-prize-label">1st Place</p>
-                <p class="result-card-prize">$28,500</p>
-              </div>
-            </div>
-          </div>
+        <div class="podcast-text">
+          <p class="podcast-label">Coming Soon</p>
+          <h2 class="podcast-title">The Sham Report Podcast</h2>
+          <p class="podcast-sub">Long-form conversations with players, operators, and insiders from the Texas poker world.</p>
         </div>
 
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- ══════════════════════════════════════════════════════════
        EMAIL CAPTURE
@@ -700,6 +617,5 @@
   </div>
 
   <script src="js/main.js"></script>
-
 </body>
 </html>
