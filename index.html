@@ -12,6 +12,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Fix 1: eliminate mosaic gap lines — seamless tile texture */
+    .hero-mosaic { gap: 0; padding: 0; }
+    .mosaic-tile  { border-radius: 0; border: none; border-right: 1px solid #1A1A1A; border-bottom: 1px solid #1A1A1A; }
+
+    /* Fix 2: card category labels gold, not red */
+    .card-tags { color: #D4AF37; }
+  </style>
 </head>
 <body>
 
@@ -147,7 +155,7 @@
 
       <div class="section-header">
         <h2 class="section-title">LATEST REPORTS</h2>
-        <a href="#" class="section-link">View All Archives</a>
+        <a href="news.html" class="section-link">View All Archives</a>
       </div>
 
       <div class="card-grid">
@@ -223,26 +231,26 @@
             <li class="result-entry">
               <span class="result-num">01</span>
               <div>
-                <p class="result-player">Daniel Negreanu</p>
-                <p class="result-detail">Triton Series&nbsp;&nbsp;|&nbsp;&nbsp;Monte Carlo Invite</p>
+                <p class="result-player">[Champion TBD]</p>
+                <p class="result-detail">TCH Dallas Main Event</p>
               </div>
-              <span class="result-prize">$3,240,000</span>
+              <span class="result-prize">$42,000</span>
             </li>
             <li class="result-entry">
               <span class="result-num">02</span>
               <div>
-                <p class="result-player">Phil Ivey</p>
-                <p class="result-detail">Triton Series&nbsp;&nbsp;|&nbsp;&nbsp;Monte Carlo Invite</p>
+                <p class="result-player">[Champion TBD]</p>
+                <p class="result-detail">Poker Club of Texas Series</p>
               </div>
-              <span class="result-prize">$2,100,000</span>
+              <span class="result-prize">$18,500</span>
             </li>
             <li class="result-entry">
               <span class="result-num">03</span>
               <div>
-                <p class="result-player">Bryn Kenney</p>
-                <p class="result-detail">Triton Series&nbsp;&nbsp;|&nbsp;&nbsp;Monte Carlo Invite</p>
+                <p class="result-player">[Champion TBD]</p>
+                <p class="result-detail">Houston Poker Open</p>
               </div>
-              <span class="result-prize">$1,450,000</span>
+              <span class="result-prize">$24,000</span>
             </li>
           </ul>
 
@@ -256,25 +264,18 @@
           <div class="spotlight-card">
             <div class="spotlight-badge">Player Spotlight</div>
 
-            <!-- Dark placeholder — no image -->
-            <div class="spotlight-photo" aria-label="Player photo placeholder">
+            <!-- Placeholder — no player yet -->
+            <div class="spotlight-photo" aria-label="Player spotlight placeholder" style="align-items:center; justify-content:center;">
               <div class="spotlight-photo-bg"></div>
               <div class="spotlight-photo-gradient"></div>
-              <div class="spotlight-name-overlay">Adrian Mateos</div>
+              <div style="position:relative;z-index:2;text-align:center;padding:20px;">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.4;margin-bottom:12px;"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+              </div>
             </div>
 
             <div class="spotlight-body">
-              <p class="spotlight-quote">"Winning isn't about the cards; it's about the silence before you reveal them."</p>
-              <div class="spotlight-stats">
-                <div class="stat-item">
-                  <p class="stat-label">Cash Winnings</p>
-                  <p class="stat-value">$39.2M</p>
-                </div>
-                <div class="stat-item">
-                  <p class="stat-label">WSOP Bracelets</p>
-                  <p class="stat-value">4</p>
-                </div>
-              </div>
+              <p style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#FFFFFF;margin-bottom:10px;">Coming Soon</p>
+              <p style="font-family:'Inter',sans-serif;font-size:14px;color:#777777;line-height:1.6;">Featured player profiles from the Texas poker scene.</p>
             </div>
           </div>
         </div>
