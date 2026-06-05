@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tournaments — The Sham Report</title>
-  <meta name="description" content="Results, best value picks, and tournament trail coverage from across Texas and beyond.">
+  <title>About — The Sham Report</title>
+  <meta name="description" content="The story behind The Sham Report and ShamGod Media LLC.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,10 +14,10 @@
 
   <style>
     /* ============================================================
-       TOURNAMENTS PAGE — scoped styles
+       ABOUT PAGE — scoped styles
     ============================================================ */
 
-    /* ── Page Hero (compact — matches news.html) ─────────────── */
+    /* ── Page Hero (compact — matches all inner pages) ───────── */
     .page-hero {
       background: #0A0A0A;
       border-bottom: 1px solid #2A2A2A;
@@ -81,301 +81,312 @@
       max-width: 520px;
     }
 
-    /* ── Shared Section Layout ───────────────────────────────── */
-    .tourn-section {
-      padding: 72px 0 80px;
+    /* ── Shared section chrome ───────────────────────────────── */
+    .about-section {
+      padding: 80px 0;
+      background: #0A0A0A;
     }
 
-    .tourn-section + .tourn-section {
+    .about-section.surface {
+      background: #111111;
       border-top: 1px solid #2A2A2A;
+      border-bottom: 1px solid #2A2A2A;
     }
 
-    .tourn-section-label {
+    .about-section-label {
       font-family: 'Inter', sans-serif;
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: #D4AF37;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
-    .tourn-section-title {
+    .about-section-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(26px, 3vw, 38px);
+      font-size: clamp(28px, 3.5vw, 44px);
       font-weight: 700;
       color: #FFFFFF;
       line-height: 1.1;
-      margin-bottom: 6px;
+      margin-bottom: 28px;
     }
 
-    .tourn-section-sub {
+    /* ── Section 1 — The Story ───────────────────────────────── */
+    .story-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .story-body p {
       font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      color: #777777;
-      margin-bottom: 40px;
-      letter-spacing: 0.01em;
+      font-size: clamp(15px, 1.2vw, 17px);
+      color: #CCCCCC;
+      line-height: 1.8;
+      margin-bottom: 22px;
     }
 
-    /* ── Card Grid ───────────────────────────────────────────── */
-    .tourn-grid {
+    .story-body p:last-child { margin-bottom: 0; }
+
+    /* Image placeholder — square dark block */
+    .story-image {
+      aspect-ratio: 1 / 1;
+      background: #141414;
+      border: 1px solid #2A2A2A;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .story-image-icon {
+      opacity: 0.12;
+    }
+
+    .story-image-icon svg {
+      width: 64px;
+      height: 64px;
+      stroke: #FFFFFF;
+      fill: none;
+      stroke-width: 1;
+      stroke-linecap: round;
+    }
+
+    .story-image-label {
+      position: absolute;
+      bottom: 14px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.18);
+    }
+
+    /* ── Section 2 — By the Numbers ─────────────────────────── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: #2A2A2A;
+      border: 1px solid #2A2A2A;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .stat-block {
+      background: #111111;
+      padding: 36px 28px;
+      text-align: center;
+      transition: background 0.2s ease;
+    }
+
+    .stat-block:hover { background: #161616; }
+
+    .stat-number {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(32px, 3.5vw, 48px);
+      font-weight: 900;
+      color: #D4AF37;
+      line-height: 1;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #666666;
+      line-height: 1.4;
+    }
+
+    /* ── Section 3 — What We Cover ──────────────────────────── */
+    .coverage-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
-    /* ── Best Value Cards ────────────────────────────────────── */
-    .value-card {
+    .coverage-card {
       background: #111111;
       border: 1px solid #2A2A2A;
       border-radius: 4px;
-      overflow: hidden;
+      padding: 32px 28px;
       transition: border-color 0.2s ease, transform 0.2s ease;
     }
 
-    .value-card:hover {
+    .coverage-card:hover {
       border-color: #D4AF37;
       transform: translateY(-3px);
     }
 
-    /* Dark image placeholder */
-    .value-card-img {
-      aspect-ratio: 16 / 9;
-      background: #161616;
-      border-bottom: 1px solid #2A2A2A;
-      position: relative;
-    }
-
-    .value-card-img.t1 { background: #141414; }
-    .value-card-img.t2 { background: #131318; }
-    .value-card-img.t3 { background: #141210; }
-
-    .value-card-img-label {
-      position: absolute;
-      bottom: 10px;
-      left: 12px;
-      font-family: 'Inter', sans-serif;
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.18);
-    }
-
-    .value-card-body {
-      padding: 22px 22px 24px;
-    }
-
-    .value-card-venue {
-      font-family: 'Inter', sans-serif;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #D4AF37;
-      margin-bottom: 8px;
-    }
-
-    .value-card-name {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(17px, 1.4vw, 20px);
-      font-weight: 700;
-      color: #FFFFFF;
-      line-height: 1.25;
-      margin-bottom: 20px;
-    }
-
-    /* Two-column stat layout */
-    .value-card-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: #2A2A2A;
-      border: 1px solid #2A2A2A;
-      border-radius: 3px;
-      overflow: hidden;
-      margin-bottom: 18px;
-    }
-
-    .stat-cell {
-      background: #0F0F0F;
-      padding: 12px 14px;
-    }
-
-    .stat-cell-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #555555;
-      margin-bottom: 5px;
-    }
-
-    .stat-cell-value {
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      color: #FFFFFF;
-      line-height: 1;
-    }
-
-    .stat-cell.full-width {
-      grid-column: 1 / -1;
-    }
-
-    /* Star rating */
-    .value-card-rating {
+    /* Gold icon placeholder */
+    .coverage-icon {
+      width: 44px;
+      height: 44px;
+      border: 1px solid #D4AF37;
+      border-radius: 4px;
       display: flex;
       align-items: center;
-      gap: 10px;
-    }
-
-    .rating-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #555555;
-    }
-
-    .rating-stars {
-      color: #D4AF37;
-      font-size: 14px;
-      letter-spacing: 2px;
-      line-height: 1;
-    }
-
-    .rating-stars .dim {
-      color: #333333;
-    }
-
-    /* ── Results Cards ───────────────────────────────────────── */
-    .result-card {
-      background: #111111;
-      border: 1px solid #2A2A2A;
-      border-radius: 4px;
-      overflow: hidden;
-      transition: border-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .result-card:hover {
-      border-color: #D4AF37;
-      transform: translateY(-3px);
-    }
-
-    /* Dark placeholder */
-    .result-card-img {
-      aspect-ratio: 16 / 9;
-      background: #141414;
-      border-bottom: 1px solid #2A2A2A;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      padding: 14px;
-    }
-
-    .result-card-img.t4 { background: #131318; }
-    .result-card-img.t5 { background: #101414; }
-    .result-card-img.t6 { background: #141210; }
-
-    .result-card-img-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.18);
-    }
-
-    .result-card-body {
-      padding: 22px 22px 24px;
-    }
-
-    .result-card-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #D4AF37;
-      margin-bottom: 10px;
-    }
-
-    .result-card-name {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(17px, 1.4vw, 20px);
-      font-weight: 700;
-      color: #FFFFFF;
-      line-height: 1.25;
+      justify-content: center;
       margin-bottom: 20px;
     }
 
-    .result-card-divider {
-      height: 1px;
-      background: #D4AF37;
-      opacity: 0.25;
-      margin-bottom: 18px;
+    .coverage-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: #D4AF37;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
-    /* Champion + prize row */
-    .result-card-meta {
+    .coverage-card-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+    }
+
+    .coverage-card-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: #777777;
+      line-height: 1.65;
+    }
+
+    /* ── Section 4 — Contact ─────────────────────────────────── */
+    .contact-layout {
+      max-width: 660px;
+    }
+
+    .contact-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(14px, 1.1vw, 16px);
+      color: #777777;
+      line-height: 1.6;
+      margin-bottom: 36px;
+      margin-top: -12px;
+    }
+
+    /* Form */
+    .contact-form {
       display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
+      flex-direction: column;
       gap: 16px;
     }
 
-    .result-card-champion-label {
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-label {
       font-family: 'Inter', sans-serif;
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 600;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: #555555;
-      margin-bottom: 5px;
     }
 
-    .result-card-champion-name {
+    .form-input,
+    .form-select,
+    .form-textarea {
+      background: #111111;
+      border: 1px solid #2A2A2A;
+      border-radius: 4px;
+      color: #FFFFFF;
       font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      color: #CCCCCC;
-      font-style: italic;
+      font-size: 15px;
+      padding: 14px 16px;
+      outline: none;
+      transition: border-color 0.2s ease;
+      width: 100%;
     }
 
-    .result-card-prize-wrap {
-      text-align: right;
-      flex-shrink: 0;
+    .form-input::placeholder,
+    .form-textarea::placeholder { color: #444444; }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus { border-color: #D4AF37; }
+
+    .form-select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23555555' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+      cursor: pointer;
     }
 
-    .result-card-prize-label {
+    .form-select option {
+      background: #111111;
+      color: #FFFFFF;
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 130px;
+      line-height: 1.6;
+    }
+
+    .btn-contact-submit {
       font-family: 'Inter', sans-serif;
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #555555;
-      margin-bottom: 5px;
-    }
-
-    .result-card-prize {
-      font-family: 'Inter', sans-serif;
-      font-size: 20px;
+      font-size: 11px;
       font-weight: 700;
-      color: #D4AF37;
-      line-height: 1;
-      letter-spacing: -0.01em;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #0A0A0A;
+      background: #D4AF37;
+      border: none;
+      border-radius: 4px;
+      padding: 16px 32px;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background 0.2s ease;
+    }
+
+    .btn-contact-submit:hover { background: #B8962E; }
+
+    .contact-tip {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #444444;
+      margin-top: 16px;
+      line-height: 1.5;
     }
 
     /* ── Responsive ──────────────────────────────────────────── */
     @media (max-width: 1024px) {
-      .tourn-grid { grid-template-columns: repeat(2, 1fr); }
+      .story-layout { grid-template-columns: 1fr; gap: 40px; }
+      .story-image  { max-width: 420px; }
+      .stats-grid   { grid-template-columns: repeat(2, 1fr); }
+      .coverage-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 768px) {
-      .page-hero { padding: 48px 0 44px; }
-      .tourn-grid { grid-template-columns: 1fr; }
-      .tourn-section { padding: 52px 0 60px; }
+      .page-hero    { padding: 48px 0 44px; }
+      .about-section { padding: 56px 0 64px; }
+      .stats-grid   { grid-template-columns: repeat(2, 1fr); }
+      .coverage-grid { grid-template-columns: 1fr; }
+      .stat-block   { padding: 28px 20px; }
     }
   </style>
 </head>
@@ -397,7 +408,7 @@
   </div>
 
   <!-- ══════════════════════════════════════════════════════════
-       PRIMARY NAVIGATION — TOURNAMENTS active
+       PRIMARY NAVIGATION — ABOUT active
   ═══════════════════════════════════════════════════════════ -->
   <nav class="primary-nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
@@ -406,9 +417,9 @@
       </a>
       <ul class="nav-links" role="list">
         <li><a href="news.html">NEWS</a></li>
-        <li><a href="tournaments.html" class="active">TOURNAMENTS</a></li>
+        <li><a href="tournaments.html">TOURNAMENTS</a></li>
         <li><a href="media.html">MEDIA</a></li>
-        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="about.html" class="active">ABOUT</a></li>
       </ul>
       <button class="btn-nav-subscribe" data-modal="subscribe">SUBSCRIBE</button>
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
@@ -421,9 +432,9 @@
   <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <button class="nav-overlay-close" id="nav-overlay-close" aria-label="Close menu">&times;</button>
     <a href="news.html">News</a>
-    <a href="tournaments.html" class="active">Tournaments</a>
+    <a href="tournaments.html">Tournaments</a>
     <a href="media.html">Media</a>
-    <a href="about.html">About</a>
+    <a href="about.html" class="active">About</a>
     <button class="btn-nav-subscribe" data-modal="subscribe" style="margin-top:16px;">SUBSCRIBE</button>
   </div>
 
@@ -440,114 +451,41 @@
   <!-- ══════════════════════════════════════════════════════════
        PAGE HERO — compact
   ═══════════════════════════════════════════════════════════ -->
-  <section class="page-hero" aria-label="Tournaments page header">
+  <section class="page-hero" aria-label="About page header">
     <div class="container">
       <div class="page-hero-inner">
         <div class="page-hero-rule" aria-hidden="true"></div>
         <p class="page-hero-label">The Sham Report</p>
-        <h1 class="page-hero-title">Tournaments</h1>
-        <p class="page-hero-sub">Results, best value picks, and tournament trail coverage from across Texas and beyond.</p>
+        <h1 class="page-hero-title">About</h1>
+        <p class="page-hero-sub">The story behind The Sham Report and ShamGod Media.</p>
       </div>
     </div>
   </section>
 
   <!-- ══════════════════════════════════════════════════════════
-       SECTION 1 — BEST VALUE TOURNAMENTS
+       SECTION 1 — THE STORY
   ═══════════════════════════════════════════════════════════ -->
-  <section class="tourn-section" style="background:#0A0A0A;">
+  <section class="about-section">
     <div class="container">
+      <div class="story-layout">
 
-      <p class="tourn-section-label">Best Value &nbsp;·&nbsp; Updated Monthly</p>
-      <h2 class="tourn-section-title">Best Value Tournaments in DFW</h2>
-      <p class="tourn-section-sub">Ranked by prize pool, structure, and buy-in value</p>
-
-      <div class="tourn-grid">
-
-        <!-- Card 1 -->
-        <div class="value-card">
-          <div class="value-card-img t1" aria-hidden="true">
-            <span class="value-card-img-label">Image Placeholder</span>
-          </div>
-          <div class="value-card-body">
-            <p class="value-card-venue">Poker Club of Texas</p>
-            <h3 class="value-card-name">Wednesday Deep Stack</h3>
-            <div class="value-card-stats">
-              <div class="stat-cell">
-                <p class="stat-cell-label">Buy-In</p>
-                <p class="stat-cell-value">$125</p>
-              </div>
-              <div class="stat-cell">
-                <p class="stat-cell-label">Guarantee</p>
-                <p class="stat-cell-value">$3,000</p>
-              </div>
-              <div class="stat-cell full-width">
-                <p class="stat-cell-label">Structure</p>
-                <p class="stat-cell-value">30-min levels</p>
-              </div>
-            </div>
-            <div class="value-card-rating">
-              <span class="rating-label">Value</span>
-              <span class="rating-stars">★★★★★</span>
-            </div>
+        <!-- Left — text -->
+        <div class="story-text">
+          <p class="about-section-label">The Story</p>
+          <h2 class="about-section-title">Texas Poker. Unfiltered.</h2>
+          <div class="story-body">
+            <p>The Sham Report was built for one reason — because Texas poker deserved better coverage. Not press releases. Not sponsored content. Real reporting from someone who has lived the game.</p>
+            <p>Shomari Williams — known in poker circles as Sham — brings over 15 years of live poker experience and a broadcast journalism background to every story. He has sat in the rooms, played the games, and knows the players. That access drives the reporting.</p>
+            <p>The Sham Report is an independent publication under ShamGod Media LLC, based in the Dallas-Fort Worth area. No corporate backing. No conflicts of interest. Just the story.</p>
           </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="value-card">
-          <div class="value-card-img t2" aria-hidden="true">
-            <span class="value-card-img-label">Image Placeholder</span>
+        <!-- Right — image placeholder -->
+        <div class="story-image" aria-label="Photo placeholder">
+          <div class="story-image-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
           </div>
-          <div class="value-card-body">
-            <p class="value-card-venue">TCH Dallas</p>
-            <h3 class="value-card-name">Sunday Funday</h3>
-            <div class="value-card-stats">
-              <div class="stat-cell">
-                <p class="stat-cell-label">Buy-In</p>
-                <p class="stat-cell-value">$200</p>
-              </div>
-              <div class="stat-cell">
-                <p class="stat-cell-label">Guarantee</p>
-                <p class="stat-cell-value">$5,000</p>
-              </div>
-              <div class="stat-cell full-width">
-                <p class="stat-cell-label">Structure</p>
-                <p class="stat-cell-value">25-min levels</p>
-              </div>
-            </div>
-            <div class="value-card-rating">
-              <span class="rating-label">Value</span>
-              <span class="rating-stars">★★★★<span class="dim">★</span></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="value-card">
-          <div class="value-card-img t3" aria-hidden="true">
-            <span class="value-card-img-label">Image Placeholder</span>
-          </div>
-          <div class="value-card-body">
-            <p class="value-card-venue">The Lodge</p>
-            <h3 class="value-card-name">Friday Night Special</h3>
-            <div class="value-card-stats">
-              <div class="stat-cell">
-                <p class="stat-cell-label">Buy-In</p>
-                <p class="stat-cell-value">$300</p>
-              </div>
-              <div class="stat-cell">
-                <p class="stat-cell-label">Guarantee</p>
-                <p class="stat-cell-value">$10,000</p>
-              </div>
-              <div class="stat-cell full-width">
-                <p class="stat-cell-label">Structure</p>
-                <p class="stat-cell-value">40-min levels</p>
-              </div>
-            </div>
-            <div class="value-card-rating">
-              <span class="rating-label">Value</span>
-              <span class="rating-stars">★★★★★</span>
-            </div>
-          </div>
+          <span class="story-image-label">Photo Placeholder</span>
         </div>
 
       </div>
@@ -555,84 +493,126 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════════════
-       SECTION 2 — RECENT RESULTS
+       SECTION 2 — BY THE NUMBERS
   ═══════════════════════════════════════════════════════════ -->
-  <section class="tourn-section" style="background:#0D0D0D;">
+  <section class="about-section surface">
     <div class="container">
 
-      <p class="tourn-section-label">Recent Results</p>
-      <h2 class="tourn-section-title">Tournament Results</h2>
-      <p class="tourn-section-sub">&nbsp;</p>
+      <p class="about-section-label">By the Numbers</p>
 
-      <div class="tourn-grid">
+      <div class="stats-grid">
+        <div class="stat-block">
+          <p class="stat-number">15+</p>
+          <p class="stat-desc">Years Playing<br>Live Poker</p>
+        </div>
+        <div class="stat-block">
+          <p class="stat-number">2,400+</p>
+          <p class="stat-desc">Tracked Hours<br>at the Table</p>
+        </div>
+        <div class="stat-block">
+          <p class="stat-number">813K+</p>
+          <p class="stat-desc">Views on Lodge<br>Raid Coverage</p>
+        </div>
+        <div class="stat-block">
+          <p class="stat-number">200+</p>
+          <p class="stat-desc">Tournament Pulse<br>Community Members</p>
+        </div>
+      </div>
 
-        <!-- Result 1 -->
-        <div class="result-card">
-          <div class="result-card-img t4" aria-hidden="true">
-            <span class="result-card-img-label">Image Placeholder</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECTION 3 — WHAT WE COVER
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="about-section">
+    <div class="container">
+
+      <p class="about-section-label">What We Cover</p>
+      <h2 class="about-section-title">The Full Picture</h2>
+
+      <div class="coverage-grid">
+
+        <!-- Investigations -->
+        <div class="coverage-card">
+          <div class="coverage-icon" aria-hidden="true">
+            <!-- Magnifying glass -->
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
           </div>
-          <div class="result-card-body">
-            <p class="result-card-label">Tournaments &nbsp;|&nbsp; Results</p>
-            <h3 class="result-card-name">WPT Prime Dallas</h3>
-            <div class="result-card-divider"></div>
-            <div class="result-card-meta">
-              <div>
-                <p class="result-card-champion-label">Champion</p>
-                <p class="result-card-champion-name">TBD</p>
-              </div>
-              <div class="result-card-prize-wrap">
-                <p class="result-card-prize-label">1st Place</p>
-                <p class="result-card-prize">$125,000</p>
-              </div>
-            </div>
-          </div>
+          <p class="coverage-card-title">Investigations</p>
+          <p class="coverage-card-desc">Deep dives into the people, politics, and legal battles shaping the Texas poker scene.</p>
         </div>
 
-        <!-- Result 2 -->
-        <div class="result-card">
-          <div class="result-card-img t5" aria-hidden="true">
-            <span class="result-card-img-label">Image Placeholder</span>
+        <!-- Tournaments -->
+        <div class="coverage-card">
+          <div class="coverage-icon" aria-hidden="true">
+            <!-- Trophy -->
+            <svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4H4a1 1 0 0 0-1 1v2a4 4 0 0 0 4 4h0M17 4h3a1 1 0 0 1 1 1v2a4 4 0 0 1-4 4h0"/><path d="M7 4h10v6a5 5 0 0 1-10 0V4z"/></svg>
           </div>
-          <div class="result-card-body">
-            <p class="result-card-label">Tournaments &nbsp;|&nbsp; Results</p>
-            <h3 class="result-card-name">TCH Summer Series Main Event</h3>
-            <div class="result-card-divider"></div>
-            <div class="result-card-meta">
-              <div>
-                <p class="result-card-champion-label">Champion</p>
-                <p class="result-card-champion-name">TBD</p>
-              </div>
-              <div class="result-card-prize-wrap">
-                <p class="result-card-prize-label">1st Place</p>
-                <p class="result-card-prize">$45,000</p>
-              </div>
-            </div>
-          </div>
+          <p class="coverage-card-title">Tournaments</p>
+          <p class="coverage-card-desc">Results, value analysis, and coverage from the Texas tournament trail.</p>
         </div>
 
-        <!-- Result 3 -->
-        <div class="result-card">
-          <div class="result-card-img t6" aria-hidden="true">
-            <span class="result-card-img-label">Image Placeholder</span>
+        <!-- Media -->
+        <div class="coverage-card">
+          <div class="coverage-icon" aria-hidden="true">
+            <!-- Play circle -->
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="10,8 10,16 17,12"/></svg>
           </div>
-          <div class="result-card-body">
-            <p class="result-card-label">Tournaments &nbsp;|&nbsp; Results</p>
-            <h3 class="result-card-name">Houston Poker Open</h3>
-            <div class="result-card-divider"></div>
-            <div class="result-card-meta">
-              <div>
-                <p class="result-card-champion-label">Champion</p>
-                <p class="result-card-champion-name">TBD</p>
-              </div>
-              <div class="result-card-prize-wrap">
-                <p class="result-card-prize-label">1st Place</p>
-                <p class="result-card-prize">$28,500</p>
-              </div>
-            </div>
-          </div>
+          <p class="coverage-card-title">Media</p>
+          <p class="coverage-card-desc">Video breakdowns, interviews, and content from inside the rooms.</p>
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECTION 4 — CONTACT
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="about-section surface">
+    <div class="container">
+
+      <div class="contact-layout">
+        <p class="about-section-label">Get in Touch</p>
+        <h2 class="about-section-title">Contact The Sham Report</h2>
+        <p class="contact-sub">Tips, press inquiries, and business contact.</p>
+
+        <form class="contact-form" id="contact-form" novalidate>
+
+          <div class="form-field">
+            <label class="form-label" for="contact-name">Name</label>
+            <input class="form-input" type="text" id="contact-name" name="name" placeholder="Your full name" required>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="contact-email">Email</label>
+            <input class="form-input" type="email" id="contact-email" name="email" placeholder="Your email address" required>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="contact-subject">Subject</label>
+            <select class="form-select" id="contact-subject" name="subject">
+              <option value="" disabled selected>Select a subject</option>
+              <option value="tip">News Tip</option>
+              <option value="press">Press Inquiry</option>
+              <option value="business">Business</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="contact-message">Message</label>
+            <textarea class="form-textarea" id="contact-message" name="message" rows="5" placeholder="Your message"></textarea>
+          </div>
+
+          <button class="btn-contact-submit" type="submit">Send Message</button>
+
+        </form>
+
+        <p class="contact-tip">For sensitive tips requiring anonymity, use Signal.</p>
+      </div>
+
     </div>
   </section>
 
@@ -700,6 +680,5 @@
   </div>
 
   <script src="js/main.js"></script>
-
 </body>
 </html>
