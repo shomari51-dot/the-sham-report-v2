@@ -137,12 +137,11 @@
       transition: border-color 0.2s ease;
     }
 
-    .featured-video-wrap:hover {
-      border-color: #D4AF37;
-    }
-
-    .featured-video-wrap:hover .play-btn {
-      transform: translate(-50%, -50%) scale(1.08);
+    .featured-video-iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
     }
 
     .featured-video-overlay {
@@ -422,16 +421,16 @@
       <p class="media-section-label">Featured</p>
       <h2 class="media-section-title">Latest from The Sham Report</h2>
 
-      <!-- Large featured video placeholder -->
-      <div class="featured-video-wrap" role="button" aria-label="Play featured video" tabindex="0">
-        <div class="featured-video-overlay" aria-hidden="true"></div>
-        <!-- Gold play button -->
-        <div class="play-btn" aria-hidden="true">
-          <svg width="80" height="80" viewBox="0 0 80 80">
-            <circle cx="40" cy="40" r="38" fill="rgba(10,10,10,0.55)" stroke="#D4AF37" stroke-width="1.5"/>
-            <polygon points="32,24 32,56 60,40" fill="#D4AF37"/>
-          </svg>
-        </div>
+      <!-- Featured video embed -->
+      <div class="featured-video-wrap">
+        <iframe
+          class="featured-video-iframe"
+          src="https://www.youtube.com/embed/O2QB6xLyfBQ"
+          title="The Lodge Raid: A Full Breakdown"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
       </div>
 
       <!-- Featured video meta -->
