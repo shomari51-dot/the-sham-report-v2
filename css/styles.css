@@ -358,58 +358,29 @@ body {
   background: #080808;
 }
 
-/* Mosaic background — faint wireframe grid */
-.hero-mosaic {
+/* Hero background photo */
+.hero-bg-image {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   z-index: 0;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 6px;
-  padding: 6px;
-  opacity: 0.22;
   pointer-events: none;
 }
 
-.mosaic-tile {
-  background: #1C1C1C;
-  border-radius: 2px;
-  border: 1px solid #2A2A2A;
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  padding: 10px 8px;
-  overflow: hidden;
-}
-
-.mosaic-tile-img {
-  background: #252525;
-  height: 56px;
-  border-radius: 2px;
-  flex-shrink: 0;
-}
-
-.mosaic-tile-line {
-  background: #303030;
-  height: 5px;
-  border-radius: 1px;
-  width: 90%;
-}
-.mosaic-tile-line.short  { width: 65%; background: #2a2a2a; }
-.mosaic-tile-line.xshort { width: 42%; background: #242424; }
-
-/* Dark gradient overlay */
+/* Dark overlay — keeps white text readable over the photo */
 .hero-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
   background: linear-gradient(
     to bottom,
-    rgba(8,8,8,0.25) 0%,
-    rgba(8,8,8,0.45) 40%,
-    rgba(8,8,8,0.88) 72%,
-    #0A0A0A 100%
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.65) 40%,
+    rgba(0,0,0,0.88) 72%,
+    rgba(0,0,0,0.96) 100%
   );
 }
 
