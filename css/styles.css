@@ -518,6 +518,15 @@ body {
 .card-img.tone-2 { background: #161210; }
 .card-img.tone-3 { background: #101414; }
 
+.card-img-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .card-img-label {
   position: absolute;
   bottom: 12px;
