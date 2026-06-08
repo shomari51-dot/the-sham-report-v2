@@ -144,6 +144,7 @@
       background: #161616;
       border-bottom: 1px solid #2A2A2A;
       position: relative;
+      overflow: hidden;
     }
 
     .value-card-img.t1 { background: #141414; }
@@ -159,6 +160,15 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: rgba(255,255,255,0.18);
+    }
+
+    .tourn-card-img-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
 
     .value-card-body {
@@ -270,6 +280,7 @@
       background: #141414;
       border-bottom: 1px solid #2A2A2A;
       position: relative;
+      overflow: hidden;
       display: flex;
       align-items: flex-end;
       padding: 14px;
@@ -465,8 +476,8 @@
 
         <!-- Card 1 -->
         <div class="value-card">
-          <div class="value-card-img t1" aria-hidden="true">
-            <span class="value-card-img-label">Image Placeholder</span>
+          <div class="value-card-img t1">
+            <img src="images/IMG_2434.jpg" alt="Wednesday Deep Stack" class="tourn-card-img-photo">
           </div>
           <div class="value-card-body">
             <p class="value-card-venue">Poker Club of Texas</p>
@@ -523,8 +534,8 @@
 
         <!-- Card 3 -->
         <div class="value-card">
-          <div class="value-card-img t3" aria-hidden="true">
-            <span class="value-card-img-label">Image Placeholder</span>
+          <div class="value-card-img t3">
+            <img src="images/DSC00356.jpg" alt="Friday Night Special" class="tourn-card-img-photo">
           </div>
           <div class="value-card-body">
             <p class="value-card-venue">The Lodge</p>
@@ -590,8 +601,8 @@
 
         <!-- Result 2 -->
         <div class="result-card">
-          <div class="result-card-img t5" aria-hidden="true">
-            <span class="result-card-img-label">Image Placeholder</span>
+          <div class="result-card-img t5">
+            <img src="images/IMG_4540.jpg" alt="TCH Summer Series Main Event" class="tourn-card-img-photo">
           </div>
           <div class="result-card-body">
             <p class="result-card-label">Tournaments &nbsp;|&nbsp; Results</p>
