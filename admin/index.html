@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TSR Content Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0D0D0D;
+      color: #FFFFFF;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 14px;
+      min-height: 100vh;
+    }
+
+    /* ── Login ─────────────────────────────────────────────── */
+    #login-screen {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(ellipse at center, #1a1200 0%, #0D0D0D 70%);
+    }
+    .login-box {
+      background: #111;
+      border: 1px solid #2A2A2A;
+      padding: 48px 44px;
+      width: 380px;
+      text-align: center;
+    }
+    .login-wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .login-tsr {
+      background: #D4AF37;
+      color: #000;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 8px 12px;
+    }
+    .login-name {
+      color: #FFF;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-align: left;
+      line-height: 1.5;
+    }
+    .login-heading {
+      color: #888;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .login-input {
+      width: 100%;
+      background: #0D0D0D;
+      border: 1px solid #333;
+      color: #FFF;
+      padding: 12px 16px;
+      font-size: 15px;
+      font-family: inherit;
+      outline: none;
+      margin-bottom: 16px;
+      text-align: center;
+      letter-spacing: 0.05em;
+    }
+    .login-input:focus { border-color: #D4AF37; }
+    .login-btn {
+      width: 100%;
+      background: #D4AF37;
+      color: #000;
+      border: none;
+      padding: 13px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .login-btn:hover { background: #B8962E; }
+    .login-error {
+      color: #f44336;
+      font-size: 13px;
+      margin-top: 14px;
+      min-height: 20px;
+    }
+
+    /* ── App shell ─────────────────────────────────────────── */
+    #admin-app { display: none; }
+
+    .admin-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 54px;
+      background: #111;
+      border-bottom: 1px solid #2A2A2A;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      gap: 14px;
+      z-index: 200;
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-tsr {
+      background: #D4AF37;
+      color: #000;
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 4px 9px;
+    }
+    .header-title {
+      color: #888;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .header-badge {
+      background: #1a3a1a;
+      color: #4CAF50;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 10px;
+      letter-spacing: 0.1em;
+      border-radius: 20px;
+    }
+    .header-spacer { flex: 1; }
+    .header-live-link {
+      color: #666;
+      text-decoration: none;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .header-live-link:hover { color: #D4AF37; }
+    .btn-logout {
+      background: none;
+      border: 1px solid #333;
+      color: #888;
+      padding: 6px 14px;
+      cursor: pointer;
+      font-size: 12px;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+    .btn-logout:hover { border-color: #666; color: #FFF; }
+
+    /* ── Layout ───────────────────────────────────────────── */
+    .admin-layout {
+      display: flex;
+      margin-top: 54px;
+      min-height: calc(100vh - 54px);
+    }
+    .sidebar {
+      width: 210px;
+      background: #0D0D0D;
+      border-right: 1px solid #1E1E1E;
+      position: fixed;
+      top: 54px; bottom: 0;
+      overflow-y: auto;
+      padding: 12px 0;
+    }
+    .sidebar-group-label {
+      color: #444;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 16px 20px 8px;
+    }
+    .sidebar-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      border-left: 3px solid transparent;
+      color: #777;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 13px;
+      font-family: inherit;
+      transition: all 0.12s;
+    }
+    .sidebar-btn:hover { color: #CCC; background: #111; }
+    .sidebar-btn.active { color: #D4AF37; background: #111; border-left-color: #D4AF37; }
+    .sidebar-icon { font-size: 15px; width: 20px; text-align: center; }
+
+    .content-area {
+      flex: 1;
+      margin-left: 210px;
+      padding: 36px 44px;
+      max-width: 860px;
+    }
+
+    /* ── Section Panels ───────────────────────────────────── */
+    .section-panel { display: none; }
+    .section-panel.active { display: block; }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: #D4AF37;
+      margin-bottom: 6px;
+    }
+    .section-desc {
+      color: #666;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    /* ── Form Elements ────────────────────────────────────── */
+    .form-group { margin-bottom: 22px; }
+    .form-label {
+      display: block;
+      color: #999;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .form-hint { color: #555; font-size: 11px; margin-top: 5px; }
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      background: #111;
+      border: 1px solid #2A2A2A;
+      color: #FFF;
+      padding: 10px 14px;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .form-input:focus, .form-textarea:focus, .form-select:focus { border-color: #D4AF37; }
+    .form-textarea { resize: vertical; min-height: 80px; line-height: 1.5; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+
+    .color-row { display: flex; align-items: center; gap: 12px; }
+    .color-swatch {
+      width: 42px; height: 40px;
+      border: 1px solid #333;
+      cursor: pointer;
+      padding: 3px;
+      background: #111;
+      flex-shrink: 0;
+    }
+    .color-row .form-input { flex: 1; }
+
+    /* ── Dividers & Subsections ───────────────────────────── */
+    .section-divider { border: none; border-top: 1px solid #1E1E1E; margin: 32px 0; }
+    .subsection-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 18px;
+    }
+
+    /* ── Ticker Items ─────────────────────────────────────── */
+    #ticker-list { margin-bottom: 8px; }
+    .ticker-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #111;
+      border: 1px solid #1E1E1E;
+      padding: 8px 10px;
+      margin-bottom: 6px;
+    }
+    .ticker-arrows { display: flex; flex-direction: column; gap: 1px; }
+    .ticker-arrow-btn {
+      background: none; border: none; color: #444;
+      cursor: pointer; font-size: 10px; padding: 1px 4px; line-height: 1;
+    }
+    .ticker-arrow-btn:hover { color: #D4AF37; }
+    .ticker-item input {
+      flex: 1; background: transparent; border: none;
+      color: #DDD; font-size: 13px; font-family: inherit; outline: none;
+    }
+    .ticker-remove {
+      background: none; border: none; color: #444;
+      cursor: pointer; font-size: 18px; line-height: 1; padding: 0 4px;
+    }
+    .ticker-remove:hover { color: #CC3333; }
+
+    /* ── Card Items (Latest Reports) ──────────────────────── */
+    .card-item {
+      background: #111;
+      border: 1px solid #1E1E1E;
+      padding: 20px;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .card-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .card-item-label {
+      color: #555;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* ── Result Rows ──────────────────────────────────────── */
+    .result-row {
+      display: grid;
+      grid-template-columns: 28px 1fr 1fr 120px auto;
+      gap: 10px;
+      align-items: center;
+      background: #111;
+      border: 1px solid #1E1E1E;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+    }
+    .result-num-badge { color: #D4AF37; font-weight: 700; font-size: 14px; text-align: center; }
+    .result-row input {
+      background: #0D0D0D; border: 1px solid #222; color: #DDD;
+      padding: 8px 10px; font-size: 13px; font-family: inherit; outline: none; width: 100%;
+    }
+    .result-row input:focus { border-color: #D4AF37; }
+
+    /* ── Social Platform Rows ─────────────────────────────── */
+    .platform-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+      padding: 10px 14px;
+      background: #111;
+      border: 1px solid #1E1E1E;
+    }
+    .platform-icon { font-size: 16px; width: 22px; text-align: center; flex-shrink: 0; }
+    .platform-name { color: #CCC; font-size: 13px; font-weight: 600; width: 80px; flex-shrink: 0; }
+    .platform-row .form-input { flex: 1; margin: 0; }
+    .platform-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .toggle-switch {
+      position: relative;
+      width: 38px; height: 21px;
+      background: #333; border-radius: 11px;
+      cursor: pointer; border: none; outline: none;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+    .toggle-switch.on { background: #D4AF37; }
+    .toggle-switch::after {
+      content: '';
+      position: absolute;
+      width: 15px; height: 15px;
+      background: #FFF; border-radius: 50%;
+      top: 3px; left: 3px;
+      transition: left 0.2s;
+    }
+    .toggle-switch.on::after { left: 20px; }
+    .toggle-label { color: #666; font-size: 11px; width: 32px; }
+
+    /* ── Buttons ──────────────────────────────────────────── */
+    .btn-save {
+      background: #D4AF37;
+      color: #000;
+      border: none;
+      padding: 12px 32px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-top: 28px;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+    .btn-save:hover { background: #B8962E; }
+    .btn-save:disabled { background: #555; color: #888; cursor: not-allowed; }
+    .btn-add {
+      background: none;
+      border: 1px solid #333;
+      color: #888;
+      padding: 8px 18px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: inherit;
+      margin-bottom: 16px;
+      transition: all 0.15s;
+    }
+    .btn-add:hover { border-color: #D4AF37; color: #D4AF37; }
+    .btn-remove {
+      background: none; border: 1px solid #2A2A2A; color: #666;
+      padding: 5px 12px; font-size: 12px; cursor: pointer; font-family: inherit;
+    }
+    .btn-remove:hover { border-color: #CC3333; color: #CC3333; }
+
+    /* ── Status ───────────────────────────────────────────── */
+    .save-row { display: flex; align-items: center; gap: 16px; margin-top: 28px; }
+    .status-msg {
+      font-size: 13px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .status-msg.show { opacity: 1; }
+    .status-msg.success { color: #4CAF50; }
+    .status-msg.error   { color: #f44336; }
+
+    /* ── Checkbox ─────────────────────────────────────────── */
+    .check-row { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+    .check-row input[type="checkbox"] { width: 15px; height: 15px; cursor: pointer; accent-color: #D4AF37; }
+    .check-row label { color: #CCC; font-size: 13px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     LOGIN SCREEN
+══════════════════════════════════════════════ -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="login-wordmark">
+      <div class="login-tsr">TSR</div>
+      <div class="login-name">THE SHAM<br>REPORT</div>
+    </div>
+    <p class="login-heading">Content Manager</p>
+    <input id="login-password" class="login-input" type="password" placeholder="Admin password" autocomplete="current-password">
+    <button class="login-btn" onclick="doLogin()">Sign In</button>
+    <p class="login-error" id="login-error"></p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     ADMIN DASHBOARD
+══════════════════════════════════════════════ -->
+<div id="admin-app">
+
+  <!-- Header -->
+  <header class="admin-header">
+    <div class="header-logo">
+      <div class="header-tsr">TSR</div>
+      <span class="header-title">Content Manager</span>
+    </div>
+    <span class="header-badge">● LIVE</span>
+    <div class="header-spacer"></div>
+    <a href="/" target="_blank" class="header-live-link">↗ View Live Site</a>
+    <button class="btn-logout" onclick="doLogout()">Log Out</button>
+  </header>
+
+  <div class="admin-layout">
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="sidebar-group-label">Homepage</div>
+      <button class="sidebar-btn active" onclick="showSection('ticker')">
+        <span class="sidebar-icon">📡</span> Ticker
+      </button>
+      <button class="sidebar-btn" onclick="showSection('hero')">
+        <span class="sidebar-icon">🎭</span> Hero
+      </button>
+      <button class="sidebar-btn" onclick="showSection('reports')">
+        <span class="sidebar-icon">📰</span> Latest Reports
+      </button>
+      <button class="sidebar-btn" onclick="showSection('tournament')">
+        <span class="sidebar-icon">🏆</span> Tournament Results
+      </button>
+      <button class="sidebar-btn" onclick="showSection('email')">
+        <span class="sidebar-icon">📧</span> Email Capture
+      </button>
+      <div class="sidebar-group-label" style="margin-top:8px;">Global</div>
+      <button class="sidebar-btn" onclick="showSection('social')">
+        <span class="sidebar-icon">📱</span> Social Media
+      </button>
+      <button class="sidebar-btn" onclick="showSection('logo')">
+        <span class="sidebar-icon">🎨</span> Logo & Subscribe
+      </button>
+      <button class="sidebar-btn" onclick="showSection('footer')">
+        <span class="sidebar-icon">🦶</span> Footer
+      </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content-area">
+
+      <!-- ── TICKER ────────────────────────────── -->
+      <div id="section-ticker" class="section-panel active">
+        <h1 class="section-title">Breaking News Ticker</h1>
+        <p class="section-desc">These headlines scroll across the red bar at the top of every page. Add, edit, remove, or reorder them. Changes go live the moment you save.</p>
+        <button class="btn-add" onclick="addTickerItem()">+ Add Headline</button>
+        <div id="ticker-list"></div>
+        <div class="save-row">
+          <button class="btn-save" onclick="saveSection('ticker')">Save Ticker</button>
+          <span class="status-msg" id="status-ticker"></span>
+        </div>
+      </div>
+
+      <!-- ── HERO ──────────────────────────────── -->
+      <div id="section-hero" class="section-panel">
+        <h1 class="section-title">Hero Section</h1>
+        <p class="section-desc">The full-screen feature at the top of the homepage. Edit the big headline, deck text, call-to-action button, and background photo.</p>
+
+        <div class="form-group">
+          <label class="form-label">Category Labels <span style="color:#555;font-weight:400;">(comma separated)</span></label>
+          <input id="hero-categories" class="form-input" type="text" placeholder="Investigation, Exclusive">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Headline</label>
+          <textarea id="hero-headline" class="form-textarea" rows="2" placeholder="The Texas High Roller Circuit"></textarea>
+          <p class="form-hint">Use &lt;br&gt; to force a line break, e.g. "The Texas High&lt;br&gt;Roller Circuit"</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Deck / Subtext</label>
+          <textarea id="hero-subtext" class="form-textarea" rows="3" placeholder="Beneath the neon lights..."></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">CTA Button Text</label>
+            <input id="hero-cta-text" class="form-input" type="text" placeholder="Read the Investigation">
+          </div>
+          <div class="form-group">
+            <label class="form-label">CTA Button Link</label>
+            <input id="hero-cta-link" class="form-input" type="text" placeholder="https://...">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Background Image</label>
+          <input id="hero-bg-image" class="form-input" type="text" placeholder="images/IMG_3745.jpg  or  https://...">
+          <p class="form-hint">Use a relative path for images already uploaded to the site, or paste a full URL.</p>
+        </div>
+
+        <div class="save-row">
+          <button class="btn-save" onclick="saveSection('hero')">Save Hero</button>
+          <span class="status-msg" id="status-hero"></span>
+        </div>
+      </div>
+
+      <!-- ── LATEST REPORTS ─────────────────────── -->
+      <div id="section-reports" class="section-panel">
+        <h1 class="section-title">Latest Reports</h1>
+        <p class="section-desc">The three article cards below the hero. Add, remove, or update any card. Each card can link to a full article page.</p>
+        <button class="btn-add" onclick="addReportCard()">+ Add Card</button>
+        <div id="reports-list"></div>
+        <div class="save-row">
+          <button class="btn-save" onclick="saveSection('reports')">Save Reports</button>
+          <span class="status-msg" id="status-reports"></span>
+        </div>
+      </div>
+
+      <!-- ── TOURNAMENT RESULTS ─────────────────── -->
+      <div id="section-tournament" class="section-panel">
+        <h1 class="section-title">Tournament Results</h1>
+        <p class="section-desc">The numbered results list and the Player Spotlight card on the right.</p>
+
+        <div class="subsection-label">Results List</div>
+        <button class="btn-add" onclick="addResultRow()">+ Add Result</button>
+        <div id="results-list"></div>
+
+        <div class="form-group" style="margin-top:16px;">
+          <label class="form-label">View Full Standings Link</label>
+          <input id="standings-link" class="form-input" type="text" placeholder="https://...">
+        </div>
+
+        <hr class="section-divider">
+        <div class="subsection-label">Player Spotlight</div>
+
+        <div class="form-group">
+          <label class="form-label">Spotlight Image</label>
+          <input id="spotlight-image" class="form-input" type="text" placeholder="images/anthony-tch-kickoff.jpg">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Spotlight Headline</label>
+          <textarea id="spotlight-headline" class="form-textarea" rows="2"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Spotlight Body Text</label>
+          <textarea id="spotlight-body" class="form-textarea" rows="3"></textarea>
+        </div>
+
+        <div class="save-row">
+          <button class="btn-save" onclick="saveSection('tournament')">Save Tournament Results</button>
+          <span class="status-msg" id="status-tournament"></span>
+        </div>
+      </div>
+
+      <!-- ── EMAIL CAPTURE ──────────────────────── -->
+      <div id="section-email" class="section-panel">
+        <h1 class="section-title">Email Capture</h1>
+        <p class="section-desc">The "Stay on the Felt" newsletter section above the footer.</p>
+
+        <div class="form-group">
+          <label class="form-label">Headline</label>
+          <input id="email-headline" class="form-input" type="text" placeholder="STAY ON THE FELT">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Subtext</label>
+          <textarea id="email-subtext" class="form-textarea" rows="3"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Button Text</label>
+            <input id="email-btn-text" class="form-input" type="text" placeholder="Subscribe">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Fine Print</label>
+            <input id="email-fine-print" class="form-input" type="text" placeholder="No Fluff. No Spam. Only the Cards.">
+          </div>
+        </div>
+
+        <div class="save-row">
+          <button class="btn-save" onclick="saveSection('email')">Save Email Section</button>
+          <span class="status-msg" id="status-email"></span>
+        </div>
+      </div>
+
+      <!-- ── SOCIAL MEDIA ────────────────────────── -->
+      <div id="section-social" class="section-panel">
+        <h1 class="section-title">Social Media Links</h1>
+        <p class="section-desc">URLs and visibility for each platform. These apply to both the top icon bar and the footer simultaneously. Toggle to show/hide a platform on the site.</p>
+
+        <div id="social-list">
+          <div class="platform-row" data-platform="facebook">
+            <span class="platform-icon">📘</span>
+            <span class="platform-name">Facebook</span>
+            <input class="form-input" type="url" placeholder="https://facebook.com/...">
+            <div class="platform-toggle">
+              <button class="toggle-switch on" onclick="togglePlatform(this)"></button>
+              <span class="toggle-label">Show</span>
+            </div>
+          </div>
+          <div class="platform-row" data-platform="instagram">
+            <span class="platform-icon">📸</span>
+            <span class="platform-name">Instagram</span>
+            <input class="form-input" type="url" placeholder="https://instagram.com/...">
+            <div class="platform-toggle">
+              <button class="toggle-switch on" onclick="togglePlatform(this)"></button>
+              <span class="toggle-label">Show</span>
+            </div>
+          </div>
+          <div class="platform-row" data-platform="x">
+            <span class="platform-icon">𝕏</span>
+            <span class="platform-name">X / Twitter</span>
+            <input class="form-input" type="url" placeholder="https://x.com/...">
+            <div class="platform-toggle">
+              <button class="toggle-switch on" onclick="togglePlatform(this)"></button>
+              <span class="toggle-label">Show</span>
+            </div>
+          </div>
+          <div class="platform-row" data-platform="tiktok">
+            <span class="platform-icon">🎵</span>
+            <span class="platform-name">TikTok</span>
+            <input class="form-input" type="url" placeholder="https://tiktok.com/@...">
+            <div class="platform-toggle">
+              <button class="toggle-switch on" onclick="togglePlatform(this)"></button>
+              <span class="toggle-label">Show</span>
+            </div>
+          </div>
+          <div class="platform-row" data-platform="youtube">
+            <span class="platform-icon">▶️</span>
+            <span class="platform-name">YouTube</span>
+            <input class="form-input" type="url" placeholder="https://youtube.com/@...">
+            <div class="platform-toggle">
+              <button class="toggle-switch on" onclick="togglePlatform(this)"></button>
+              <span class="toggle-label">Show</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="save-row">
+          <button class="btn-save" onclick="saveSection('social')">Save Social Links</button>
+          <span class="status-msg" id="status-social"></span>
+        </div>
+      </div>
+
+      <!-- ── LOGO & SUBSCRIBE ────────────────────── -->
+      <div id="section-logo" class="section-panel">
+        <h1 class="section-title">Logo &amp; Subscribe Button</h1>
+        <p class="section-desc">Edit the site logo and the Subscribe button in the navigation bar.</p>
+
+        <div class="subsection-label">Logo</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Box Text (e.g. TSR)</label>
+            <input id="logo-tsr" class="form-input" type="text" placeholder="TSR">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Full Name (use two spaces or newline for line break)</label>
+            <input id="logo-name" class="form-input" type="text" placeholder="THE SHAM  REPORT">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Box Background Color</label>
+            <div class="color-row">
+              <input id="logo-color-swatch" class="color-swatch" type="color" value="#D4AF37" oninput="document.getElementById('logo-color-text').value=this.value">
+              <input id="logo-color-text" class="form-input" type="text" value="#D4AF37" oninput="document.getElementById('logo-color-swatch').value=this.value">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Logo Link (click destination)</label>
+            <input id="logo-link" class="form-input" type="text" placeholder="/">
+          </div>
+        </div>
+
+        <hr class="section-divider">
+        <div class="subsection-label">Subscribe Button</div>
+
+        <div class="check-row">
+          <input id="subscribe-visible" type="checkbox" checked>
+          <label for="subscribe-visible">Show Subscribe button in the nav bar</label>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Button Text</label>
+            <input id="subscribe-text" class="form-input" type="text" placeholder="SUBSCRIBE">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Button Link <span style="color:#555;font-weight:400;">(leave blank to open email modal)</span></label>
+            <input id="subscribe-link" class="form-input" type="text" placeholder="https://... or leave blank">
+          </div>
+        </div>
+
+        <div class="save-row">
+          <button class="btn-save" onclick="saveSection('logo')">Save Logo &amp; Subscribe</button>
+          <span class="status-msg" id="status-logo"></span>
+        </div>
+      </div>
+
+      <!-- ── FOOTER ──────────────────────────────── -->
+      <div id="section-footer" class="section-panel">
+        <h1 class="section-title">Footer</h1>
+        <p class="section-desc">The copyright line and tagline at the very bottom of the page.</p>
+
+        <div class="form-group">
+          <label class="form-label">Copyright Text</label>
+          <input id="footer-copyright" class="form-input" type="text" placeholder="© 2026 The Sham Report. All Rights Reserved.">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tagline</label>
+          <input id="footer-tagline" class="form-input" type="text" placeholder="TEXAS POKER. UNFILTERED.">
+        </div>
+
+        <div class="save-row">
+          <button class="btn-save" onclick="saveSection('footer')">Save Footer</button>
+          <span class="status-msg" id="status-footer"></span>
+        </div>
+      </div>
+
+    </main>
+  </div><!-- /.admin-layout -->
+</div><!-- /#admin-app -->
+
+<script>
+/* ================================================================
+   TSR Admin Dashboard — JavaScript
+   ================================================================ */
+
+let AUTH_TOKEN   = '';
+let currentContent = {};
+
+/* ── Startup ──────────────────────────────────────────────── */
+(async function init() {
+  AUTH_TOKEN = sessionStorage.getItem('tsr_admin_token') || '';
+  if (AUTH_TOKEN) {
+    await loadContent();
+    showAdmin();
+  } else {
+    showLogin();
+  }
+})();
+
+/* ── Auth ─────────────────────────────────────────────────── */
+async function doLogin() {
+  const pw  = document.getElementById('login-password').value;
+  const err = document.getElementById('login-error');
+  err.textContent = '';
+  if (!pw) { err.textContent = 'Please enter your password.'; return; }
+
+  try {
+    const res  = await fetch('/api/auth', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ password: pw })
+    });
+    const data = await res.json();
+    if (data.success) {
+      AUTH_TOKEN = data.token;
+      sessionStorage.setItem('tsr_admin_token', AUTH_TOKEN);
+      await loadContent();
+      showAdmin();
+    } else {
+      err.textContent = 'Incorrect password. Please try again.';
+    }
+  } catch (e) {
+    err.textContent = 'Connection error. Check your internet and try again.';
+  }
+}
+
+function doLogout() {
+  sessionStorage.removeItem('tsr_admin_token');
+  AUTH_TOKEN = '';
+  document.getElementById('admin-app').style.display  = 'none';
+  document.getElementById('login-screen').style.display = 'flex';
+  document.getElementById('login-password').value = '';
+}
+
+document.getElementById('login-password').addEventListener('keydown', e => {
+  if (e.key === 'Enter') doLogin();
+});
+
+/* ── UI Switches ──────────────────────────────────────────── */
+function showLogin() {
+  document.getElementById('login-screen').style.display = 'flex';
+  document.getElementById('admin-app').style.display    = 'none';
+}
+function showAdmin() {
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('admin-app').style.display    = 'block';
+}
+
+function showSection(name) {
+  document.querySelectorAll('.section-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.sidebar-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('section-' + name).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+/* ── Load content from API ────────────────────────────────── */
+async function loadContent() {
+  try {
+    const res = await fetch('/api/content?page=homepage');
+    currentContent = await res.json();
+    populateAll();
+  } catch (e) {
+    console.error('Failed to load content:', e);
+  }
+}
+
+function populateAll() {
+  populateTicker();
+  populateHero();
+  populateReports();
+  populateTournament();
+  populateEmail();
+  populateSocial();
+  populateLogo();
+  populateFooter();
+}
+
+/* ── POPULATE functions ────────────────────────────────────── */
+function populateTicker() {
+  const list = document.getElementById('ticker-list');
+  list.innerHTML = '';
+  const headlines = currentContent.ticker || [];
+  headlines.forEach(h => addTickerItem(h));
+}
+
+function populateHero() {
+  const h = currentContent.hero || {};
+  document.getElementById('hero-categories').value = (h.categories || []).join(', ');
+  document.getElementById('hero-headline').value   = h.headline  || '';
+  document.getElementById('hero-subtext').value    = h.subtext   || '';
+  document.getElementById('hero-cta-text').value   = h.ctaText   || '';
+  document.getElementById('hero-cta-link').value   = h.ctaLink   || '';
+  document.getElementById('hero-bg-image').value   = h.backgroundImage || '';
+}
+
+function populateReports() {
+  const list = document.getElementById('reports-list');
+  list.innerHTML = '';
+  (currentContent.latestReports || []).forEach((card, i) => addReportCard(card));
+}
+
+function populateTournament() {
+  const tr = currentContent.tournamentResults || {};
+  const list = document.getElementById('results-list');
+  list.innerHTML = '';
+  (tr.results || []).forEach(r => addResultRow(r));
+  document.getElementById('standings-link').value       = tr.standingsLink || '';
+  document.getElementById('spotlight-image').value    = (tr.spotlight || {}).image    || '';
+  document.getElementById('spotlight-headline').value = (tr.spotlight || {}).headline || '';
+  document.getElementById('spotlight-body').value     = (tr.spotlight || {}).body     || '';
+}
+
+function populateEmail() {
+  const ec = currentContent.emailCapture || {};
+  document.getElementById('email-headline').value   = ec.headline   || '';
+  document.getElementById('email-subtext').value    = ec.subtext    || '';
+  document.getElementById('email-btn-text').value   = ec.buttonText || '';
+  document.getElementById('email-fine-print').value = ec.finePrint  || '';
+}
+
+function populateSocial() {
+  const sm = currentContent.socialMedia || {};
+  const platforms = ['facebook','instagram','x','tiktok','youtube'];
+  platforms.forEach(p => {
+    const row = document.querySelector(`[data-platform="${p}"]`);
+    if (!row) return;
+    const data   = sm[p] || { url: '', visible: true };
+    row.querySelector('input').value = data.url || '';
+    const toggle = row.querySelector('.toggle-switch');
+    const label  = row.querySelector('.toggle-label');
+    setToggle(toggle, label, data.visible !== false);
+  });
+}
+
+function populateLogo() {
+  const l = currentContent.logo || {};
+  document.getElementById('logo-tsr').value  = l.tsrText        || 'TSR';
+  document.getElementById('logo-name').value = (l.shamReportText || 'THE SHAM\nREPORT').replace('\n', '  ');
+  const col = l.bgColor || '#D4AF37';
+  document.getElementById('logo-color-swatch').value = col;
+  document.getElementById('logo-color-text').value   = col;
+  document.getElementById('logo-link').value = l.link || '/';
+
+  const sb = currentContent.subscribeButton || {};
+  document.getElementById('subscribe-visible').checked = sb.visible !== false;
+  document.getElementById('subscribe-text').value      = sb.text    || 'SUBSCRIBE';
+  document.getElementById('subscribe-link').value      = sb.link    || '';
+}
+
+function populateFooter() {
+  const f = currentContent.footer || {};
+  document.getElementById('footer-copyright').value = f.copyright || '';
+  document.getElementById('footer-tagline').value   = f.tagline   || '';
+}
+
+/* ── COLLECT functions ─────────────────────────────────────── */
+function collectTicker() {
+  currentContent.ticker = Array.from(
+    document.querySelectorAll('#ticker-list .ticker-item input')
+  ).map(i => i.value.trim()).filter(Boolean);
+}
+
+function collectHero() {
+  const cats = document.getElementById('hero-categories').value;
+  currentContent.hero = {
+    categories:      cats.split(',').map(s => s.trim()).filter(Boolean),
+    headline:        document.getElementById('hero-headline').value,
+    subtext:         document.getElementById('hero-subtext').value,
+    ctaText:         document.getElementById('hero-cta-text').value,
+    ctaLink:         document.getElementById('hero-cta-link').value,
+    backgroundImage: document.getElementById('hero-bg-image').value
+  };
+}
+
+function collectReports() {
+  currentContent.latestReports = Array.from(
+    document.querySelectorAll('#reports-list .card-item')
+  ).map((card, i) => ({
+    id:         i + 1,
+    image:      card.querySelector('[data-f="image"]').value,
+    categories: [
+      card.querySelector('[data-f="cat1"]').value,
+      card.querySelector('[data-f="cat2"]').value
+    ].filter(Boolean),
+    headline:   card.querySelector('[data-f="headline"]').value,
+    date:       card.querySelector('[data-f="date"]').value,
+    link:       card.querySelector('[data-f="link"]').value
+  }));
+}
+
+function collectTournament() {
+  const results = Array.from(
+    document.querySelectorAll('#results-list .result-row')
+  ).map(row => ({
+    champion:   row.querySelector('[data-f="champion"]').value,
+    tournament: row.querySelector('[data-f="tournament"]').value,
+    prize:      row.querySelector('[data-f="prize"]').value
+  }));
+
+  currentContent.tournamentResults = {
+    results,
+    standingsLink: document.getElementById('standings-link').value,
+    spotlight: {
+      image:    document.getElementById('spotlight-image').value,
+      headline: document.getElementById('spotlight-headline').value,
+      body:     document.getElementById('spotlight-body').value
+    }
+  };
+}
+
+function collectEmail() {
+  currentContent.emailCapture = {
+    headline:   document.getElementById('email-headline').value,
+    subtext:    document.getElementById('email-subtext').value,
+    buttonText: document.getElementById('email-btn-text').value,
+    finePrint:  document.getElementById('email-fine-print').value
+  };
+}
+
+function collectSocial() {
+  const sm = {};
+  document.querySelectorAll('#social-list .platform-row').forEach(row => {
+    const platform = row.getAttribute('data-platform');
+    const url    = row.querySelector('input').value.trim();
+    const toggle = row.querySelector('.toggle-switch');
+    sm[platform] = { url, visible: toggle.classList.contains('on') };
+  });
+  currentContent.socialMedia = sm;
+}
+
+function collectLogo() {
+  currentContent.logo = {
+    tsrText:        document.getElementById('logo-tsr').value,
+    shamReportText: document.getElementById('logo-name').value.replace(/  +/, '\n'),
+    bgColor:        document.getElementById('logo-color-text').value,
+    link:           document.getElementById('logo-link').value
+  };
+  currentContent.subscribeButton = {
+    text:    document.getElementById('subscribe-text').value,
+    link:    document.getElementById('subscribe-link').value,
+    visible: document.getElementById('subscribe-visible').checked
+  };
+}
+
+function collectFooter() {
+  currentContent.footer = {
+    copyright: document.getElementById('footer-copyright').value,
+    tagline:   document.getElementById('footer-tagline').value
+  };
+}
+
+/* ── SAVE ─────────────────────────────────────────────────── */
+const COLLECTORS = {
+  ticker:     collectTicker,
+  hero:       collectHero,
+  reports:    collectReports,
+  tournament: collectTournament,
+  email:      collectEmail,
+  social:     collectSocial,
+  logo:       collectLogo,
+  footer:     collectFooter
+};
+
+async function saveSection(name) {
+  const btn = event.currentTarget;
+  btn.disabled = true;
+  btn.textContent = 'Saving…';
+
+  // Collect this section's data into currentContent
+  if (COLLECTORS[name]) COLLECTORS[name]();
+  currentContent.page = 'homepage';
+
+  try {
+    const res  = await fetch('/api/content', {
+      method:  'POST',
+      headers: {
+        'Content-Type':    'application/json',
+        'X-Admin-Secret':  AUTH_TOKEN
+      },
+      body: JSON.stringify(currentContent)
+    });
+    const data = await res.json();
+    if (data.success) {
+      showStatus(name, 'success', '✓ Saved & live');
+    } else {
+      showStatus(name, 'error', '✗ ' + (data.error || 'Save failed'));
+    }
+  } catch (e) {
+    showStatus(name, 'error', '✗ Network error');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Save ' + btn.textContent.replace('Save ','').replace('Saving…','');
+    // Restore original button text
+    const labels = {
+      ticker:'Ticker', hero:'Hero', reports:'Reports',
+      tournament:'Tournament Results', email:'Email Section',
+      social:'Social Links', logo:'Logo & Subscribe', footer:'Footer'
+    };
+    btn.textContent = 'Save ' + (labels[name] || name);
+  }
+}
+
+function showStatus(section, type, msg) {
+  const el = document.getElementById('status-' + section);
+  if (!el) return;
+  el.textContent   = msg;
+  el.className     = 'status-msg show ' + type;
+  setTimeout(() => el.classList.remove('show'), 4000);
+}
+
+/* ── TICKER helpers ────────────────────────────────────────── */
+function addTickerItem(value = '') {
+  const list = document.getElementById('ticker-list');
+  const div  = document.createElement('div');
+  div.className = 'ticker-item';
+  div.innerHTML = `
+    <div class="ticker-arrows">
+      <button class="ticker-arrow-btn" onclick="moveTickerItem(this,-1)" title="Move up">▲</button>
+      <button class="ticker-arrow-btn" onclick="moveTickerItem(this,1)"  title="Move down">▼</button>
+    </div>
+    <input type="text" value="${escAttr(value)}" placeholder="Enter headline text…">
+    <button class="ticker-remove" onclick="this.closest('.ticker-item').remove()" title="Remove">✕</button>`;
+  list.appendChild(div);
+}
+
+function moveTickerItem(btn, dir) {
+  const item = btn.closest('.ticker-item');
+  const list = item.parentNode;
+  const items = [...list.children];
+  const idx = items.indexOf(item);
+  const target = items[idx + dir];
+  if (!target) return;
+  if (dir === -1) list.insertBefore(item, target);
+  else            list.insertBefore(target, item);
+}
+
+/* ── REPORTS helpers ──────────────────────────────────────── */
+function addReportCard(card = {}) {
+  const list  = document.getElementById('reports-list');
+  const count = list.children.length + 1;
+  const div   = document.createElement('div');
+  div.className = 'card-item';
+  div.innerHTML = `
+    <div class="card-item-header">
+      <span class="card-item-label">Card ${count}</span>
+      <button class="btn-remove" onclick="this.closest('.card-item').remove()">✕ Remove</button>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Image (path or URL)</label>
+      <input class="form-input" type="text" data-f="image" value="${escAttr(card.image||'')}" placeholder="images/DSC00353.jpg">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Category 1</label>
+        <input class="form-input" type="text" data-f="cat1" value="${escAttr((card.categories||[])[0]||'')}" placeholder="Tournaments">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Category 2</label>
+        <input class="form-input" type="text" data-f="cat2" value="${escAttr((card.categories||[])[1]||'')}" placeholder="Exclusive">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Headline</label>
+      <textarea class="form-textarea" data-f="headline" rows="2" placeholder="Article headline…">${escHTML(card.headline||'')}</textarea>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Date</label>
+        <input class="form-input" type="text" data-f="date" value="${escAttr(card.date||'')}" placeholder="Nov 14, 2024">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Article Link</label>
+        <input class="form-input" type="text" data-f="link" value="${escAttr(card.link||'')}" placeholder="https://...">
+      </div>
+    </div>`;
+  list.appendChild(div);
+}
+
+/* ── TOURNAMENT helpers ────────────────────────────────────── */
+function addResultRow(row = {}) {
+  const list  = document.getElementById('results-list');
+  const num   = list.children.length + 1;
+  const div   = document.createElement('div');
+  div.className = 'result-row';
+  div.innerHTML = `
+    <span class="result-num-badge">${String(num).padStart(2,'0')}</span>
+    <input type="text" data-f="champion"   value="${escAttr(row.champion||'')}"   placeholder="Champion name">
+    <input type="text" data-f="tournament" value="${escAttr(row.tournament||'')}" placeholder="Tournament name">
+    <input type="text" data-f="prize"      value="${escAttr(row.prize||'')}"      placeholder="$42,000">
+    <button class="btn-remove" onclick="removeResultRow(this)">✕</button>`;
+  list.appendChild(div);
+}
+
+function removeResultRow(btn) {
+  btn.closest('.result-row').remove();
+  // Renumber
+  document.querySelectorAll('#results-list .result-row').forEach((row, i) => {
+    row.querySelector('.result-num-badge').textContent = String(i+1).padStart(2,'0');
+  });
+}
+
+/* ── SOCIAL toggle ─────────────────────────────────────────── */
+function togglePlatform(btn) {
+  const isOn = btn.classList.toggle('on');
+  btn.nextElementSibling.textContent = isOn ? 'Show' : 'Hide';
+}
+
+function setToggle(btn, label, on) {
+  if (on) { btn.classList.add('on');    if (label) label.textContent = 'Show'; }
+  else    { btn.classList.remove('on'); if (label) label.textContent = 'Hide'; }
+}
+
+/* ── Helpers ──────────────────────────────────────────────── */
+function escAttr(s) { return String(s||'').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+function escHTML(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+</script>
+</body>
+</html>

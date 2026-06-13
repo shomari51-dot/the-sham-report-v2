@@ -1,0 +1,9 @@
+{
+  "name": "the-sham-report",
+  "version": "1.0.0",
+  "private": true,
+  "engines": { "node": "18.x" },
+  "dependencies": {
+    "mongodb": "^6.12.0"
+  }
+}
