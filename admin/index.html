@@ -496,6 +496,10 @@
       <button class="sidebar-btn" onclick="showSection('email')">
         <span class="sidebar-icon">📧</span> Email Capture
       </button>
+      <div class="sidebar-group-label" style="margin-top:8px;">Content</div>
+      <button class="sidebar-btn" onclick="showSection('articles'); showArticlesList(); loadArticles();">
+        <span class="sidebar-icon">📝</span> Articles
+      </button>
       <div class="sidebar-group-label" style="margin-top:8px;">Global</div>
       <button class="sidebar-btn" onclick="showSection('social')">
         <span class="sidebar-icon">📱</span> Social Media
@@ -771,6 +775,116 @@
         <div class="save-row">
           <button class="btn-save" onclick="saveSection('footer')">Save Footer</button>
           <span class="status-msg" id="status-footer"></span>
+        </div>
+      </div>
+
+      <!-- ── ARTICLES ──────────────────────────── -->
+      <div id="section-articles" class="section-panel">
+        <style>
+          .art-toolbar { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
+          .art-list { display:flex; flex-direction:column; gap:10px; }
+          .art-row { display:flex; align-items:center; gap:14px; background:#111; border:1px solid #2A2A2A;
+                     padding:14px 16px; }
+          .art-row-main { flex:1; min-width:0; }
+          .art-row-title { color:#fff; font-weight:600; font-size:15px; margin-bottom:4px;
+                           white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+          .art-row-sub { color:#777; font-size:12px; }
+          .art-row-sub a { color:#D4AF37; text-decoration:none; }
+          .art-badge { font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+                       padding:3px 9px; border-radius:2px; }
+          .art-badge.published { background:#143d14; color:#5fd35f; }
+          .art-badge.draft { background:#3d3413; color:#e0c040; }
+          .art-row-actions { display:flex; gap:8px; }
+          .art-empty { color:#777; padding:24px; text-align:center; border:1px dashed #2A2A2A; }
+          .art-editor { display:none; }
+          .art-editor.open { display:block; }
+          .seo-score { font-size:12px; color:#888; margin-top:6px; }
+          .seo-score b { color:#D4AF37; }
+        </style>
+
+        <!-- LIST VIEW -->
+        <div id="articles-listview">
+          <h1 class="section-title">Articles</h1>
+          <p class="section-desc">Write and publish full article pages. Each published article gets its own SEO-friendly URL at <code>/post/&lt;slug&gt;</code> and goes live the moment you publish.</p>
+          <div class="art-toolbar">
+            <button class="btn-add" onclick="newArticle()">+ New Article</button>
+            <span class="status-msg" id="status-articles"></span>
+          </div>
+          <div class="art-list" id="articles-list"></div>
+        </div>
+
+        <!-- EDITOR VIEW -->
+        <div class="art-editor" id="articles-editor">
+          <h1 class="section-title" id="art-editor-title">New Article</h1>
+          <p class="section-desc">Fields marked with an asterisk are required. Drafts are saved privately; publishing pushes the page live.</p>
+
+          <input type="hidden" id="art-original-slug" value="">
+
+          <div class="form-group">
+            <label class="form-label">Title *</label>
+            <input id="art-title" class="form-input" type="text" placeholder="The Texas High Roller Circuit" oninput="onTitleInput()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">URL Slug</label>
+            <input id="art-slug" class="form-input" type="text" placeholder="the-texas-high-roller-circuit" oninput="updateSlugPreview()">
+            <p class="form-hint">Live URL: <span id="art-url-preview" style="color:#D4AF37;">/post/…</span></p>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Deck / Subtitle</label>
+            <textarea id="art-deck" class="form-textarea" rows="2" placeholder="A one or two sentence summary shown under the headline and in search results."></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Category 1</label>
+              <input id="art-cat1" class="form-input" type="text" placeholder="Investigation">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Category 2</label>
+              <input id="art-cat2" class="form-input" type="text" placeholder="Exclusive">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Author</label>
+              <input id="art-author" class="form-input" type="text" placeholder="By the TSR Desk">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Display Date</label>
+              <input id="art-date" class="form-input" type="text" placeholder="Jun 14, 2026">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Hero Image</label>
+            <input id="art-hero" class="form-input" type="text" placeholder="images/IMG_3745.jpg  or  https://...">
+            <p class="form-hint">Relative path for images already on the site, or a full URL.</p>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Body</label>
+            <textarea id="art-body" class="form-textarea" rows="16" placeholder="Write your article here…" oninput="updateSeoScore()" style="font-family:ui-monospace,Menlo,Consolas,monospace;line-height:1.6;"></textarea>
+            <p class="form-hint">Formatting: <code>## Heading</code> · <code>**bold**</code> · <code>*italic*</code> · <code>[link](url)</code> · <code>&gt; quote</code> · <code>- list item</code> · <code>![caption](image.jpg)</code> · blank line = new paragraph.</p>
+          </div>
+
+          <h2 class="section-title" style="font-size:18px;margin-top:32px;">SEO</h2>
+          <div class="form-group">
+            <label class="form-label">Focus Keyphrase</label>
+            <input id="art-seo-key" class="form-input" type="text" placeholder="texas high roller poker" oninput="updateSeoScore()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Meta Title <span style="color:#555;font-weight:400;">(blank = use article title)</span></label>
+            <input id="art-seo-title" class="form-input" type="text" placeholder="The Texas High Roller Circuit" oninput="updateSeoScore()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Meta Description</label>
+            <textarea id="art-seo-desc" class="form-textarea" rows="2" placeholder="Shown in Google results. Aim for 120–155 characters." oninput="updateSeoScore()"></textarea>
+            <div class="seo-score" id="art-seo-score">SEO score: <b>—</b></div>
+          </div>
+
+          <div class="save-row" style="gap:12px;">
+            <button class="btn-save" onclick="saveArticle('draft')">Save Draft</button>
+            <button class="btn-save" style="background:#143d14;color:#5fd35f;" onclick="saveArticle('published')">Publish</button>
+            <button class="btn-remove" style="margin-left:auto;" onclick="closeArticleEditor()">Cancel</button>
+            <span class="status-msg" id="status-art-editor"></span>
+          </div>
         </div>
       </div>
 
@@ -1208,6 +1322,196 @@ function togglePlatform(btn) {
 function setToggle(btn, label, on) {
   if (on) { btn.classList.add('on');    if (label) label.textContent = 'Show'; }
   else    { btn.classList.remove('on'); if (label) label.textContent = 'Hide'; }
+}
+
+/* ════════════════════════════════════════════════════════════
+   ARTICLES MANAGER
+════════════════════════════════════════════════════════════ */
+let _articlesCache = [];
+let _slugTouched = false;
+
+function artSlugify(s) {
+  return String(s||'').toLowerCase().trim()
+    .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80);
+}
+
+async function loadArticles() {
+  const list = document.getElementById('articles-list');
+  list.innerHTML = '<div class="art-empty">Loading…</div>';
+  try {
+    const res = await fetch('/api/articles', { headers: { 'X-Admin-Secret': AUTH_TOKEN } });
+    _articlesCache = await res.json();
+    renderArticleList();
+  } catch (e) {
+    list.innerHTML = '<div class="art-empty">Could not load articles.</div>';
+  }
+}
+
+function renderArticleList() {
+  const list = document.getElementById('articles-list');
+  if (!Array.isArray(_articlesCache) || !_articlesCache.length) {
+    list.innerHTML = '<div class="art-empty">No articles yet. Click “+ New Article” to write your first one.</div>';
+    return;
+  }
+  list.innerHTML = _articlesCache.map(a => {
+    const url = '/post/' + a.slug;
+    const cats = (a.categories || []).join(' · ');
+    const live = a.status === 'published'
+      ? `<a href="${url}" target="_blank">${url} ↗</a>`
+      : `<span style="color:#666;">${url} (not live)</span>`;
+    return `
+      <div class="art-row">
+        <span class="art-badge ${a.status}">${a.status}</span>
+        <div class="art-row-main">
+          <div class="art-row-title">${escHTML(a.title)}</div>
+          <div class="art-row-sub">${cats ? escHTML(cats) + ' &nbsp;·&nbsp; ' : ''}${a.date ? escHTML(a.date) + ' &nbsp;·&nbsp; ' : ''}${live}</div>
+        </div>
+        <div class="art-row-actions">
+          <button class="btn-add" style="padding:8px 14px;" onclick="editArticle('${escAttr(a.slug)}')">Edit</button>
+          <button class="btn-remove" onclick="deleteArticle('${escAttr(a.slug)}')">✕ Delete</button>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function showArticlesList() {
+  document.getElementById('articles-listview').style.display = 'block';
+  document.getElementById('articles-editor').classList.remove('open');
+}
+function showArticlesEditor() {
+  document.getElementById('articles-listview').style.display = 'none';
+  document.getElementById('articles-editor').classList.add('open');
+  window.scrollTo(0, 0);
+}
+
+function fillEditor(a) {
+  a = a || {};
+  document.getElementById('art-original-slug').value = a.slug || '';
+  document.getElementById('art-title').value   = a.title || '';
+  document.getElementById('art-slug').value    = a.slug || '';
+  document.getElementById('art-deck').value    = a.deck || '';
+  document.getElementById('art-cat1').value    = (a.categories || [])[0] || '';
+  document.getElementById('art-cat2').value    = (a.categories || [])[1] || '';
+  document.getElementById('art-author').value  = a.author || '';
+  document.getElementById('art-date').value    = a.date || '';
+  document.getElementById('art-hero').value    = a.heroImage || '';
+  document.getElementById('art-body').value    = a.body || '';
+  document.getElementById('art-seo-key').value   = (a.seo || {}).keyphrase || '';
+  document.getElementById('art-seo-title').value = (a.seo || {}).metaTitle || '';
+  document.getElementById('art-seo-desc').value  = (a.seo || {}).metaDescription || '';
+  updateSlugPreview();
+  updateSeoScore();
+}
+
+function newArticle() {
+  _slugTouched = false;
+  fillEditor({ date: new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}) });
+  document.getElementById('art-editor-title').textContent = 'New Article';
+  showArticlesEditor();
+}
+
+async function editArticle(slug) {
+  _slugTouched = true; // keep existing slug stable
+  try {
+    const res = await fetch('/api/articles?slug=' + encodeURIComponent(slug), { headers: { 'X-Admin-Secret': AUTH_TOKEN } });
+    if (!res.ok) throw new Error('not found');
+    const a = await res.json();
+    fillEditor(a);
+    document.getElementById('art-editor-title').textContent = 'Edit Article';
+    showArticlesEditor();
+  } catch (e) {
+    showStatus('articles', 'error', '✗ Could not open article');
+  }
+}
+
+function closeArticleEditor() { showArticlesList(); }
+
+function onTitleInput() {
+  if (!_slugTouched) {
+    document.getElementById('art-slug').value = artSlugify(document.getElementById('art-title').value);
+    updateSlugPreview();
+  }
+  updateSeoScore();
+}
+function updateSlugPreview() {
+  const s = artSlugify(document.getElementById('art-slug').value);
+  document.getElementById('art-url-preview').textContent = '/post/' + (s || '…');
+}
+document.getElementById('art-slug').addEventListener('input', () => { _slugTouched = true; });
+
+function updateSeoScore() {
+  const key   = document.getElementById('art-seo-key').value.trim().toLowerCase();
+  const title = (document.getElementById('art-seo-title').value || document.getElementById('art-title').value).toLowerCase();
+  const desc  = document.getElementById('art-seo-desc').value.trim();
+  const body  = document.getElementById('art-body').value.toLowerCase();
+  const el = document.getElementById('art-seo-score');
+
+  if (!key) { el.innerHTML = 'SEO score: <b>—</b> <span style="color:#666;">add a focus keyphrase to score</span>'; return; }
+
+  let score = 0; const tips = [];
+  if (title.includes(key)) score += 30; else tips.push('keyphrase in title');
+  if (desc) { score += 15; if (desc.toLowerCase().includes(key)) score += 15; else tips.push('keyphrase in meta description'); }
+  else tips.push('write a meta description');
+  if (desc.length >= 120 && desc.length <= 160) score += 15; else if (desc) tips.push('meta description 120–160 chars (now ' + desc.length + ')');
+  if (body.includes(key)) score += 25; else tips.push('use the keyphrase in the body');
+
+  const color = score >= 70 ? '#5fd35f' : score >= 40 ? '#e0c040' : '#f44336';
+  el.innerHTML = `SEO score: <b style="color:${color};">${score}/100</b>` +
+    (tips.length ? ` <span style="color:#777;">— to improve: ${tips.slice(0,2).join(', ')}</span>` : ' — looking great!');
+}
+
+async function saveArticle(status) {
+  const title = document.getElementById('art-title').value.trim();
+  if (!title) { showStatus('art-editor', 'error', '✗ Title is required'); return; }
+
+  const payload = {
+    slug:  artSlugify(document.getElementById('art-slug').value || title),
+    title,
+    deck:  document.getElementById('art-deck').value.trim(),
+    categories: [document.getElementById('art-cat1').value, document.getElementById('art-cat2').value]
+                  .map(s => s.trim()).filter(Boolean),
+    author: document.getElementById('art-author').value.trim(),
+    date:   document.getElementById('art-date').value.trim(),
+    heroImage: document.getElementById('art-hero').value.trim(),
+    body:   document.getElementById('art-body').value,
+    status,
+    seo: {
+      keyphrase:       document.getElementById('art-seo-key').value.trim(),
+      metaTitle:       document.getElementById('art-seo-title').value.trim(),
+      metaDescription: document.getElementById('art-seo-desc').value.trim()
+    }
+  };
+
+  showStatus('art-editor', '', status === 'published' ? 'Publishing…' : 'Saving…');
+  try {
+    const res = await fetch('/api/articles', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Admin-Secret': AUTH_TOKEN },
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    if (data.success) {
+      showStatus('art-editor', 'success', status === 'published' ? '✓ Published & live' : '✓ Draft saved');
+      await loadArticles();
+      setTimeout(showArticlesList, 700);
+    } else {
+      showStatus('art-editor', 'error', '✗ ' + (data.error || 'Save failed'));
+    }
+  } catch (e) {
+    showStatus('art-editor', 'error', '✗ Network error');
+  }
+}
+
+async function deleteArticle(slug) {
+  if (!confirm('Delete this article permanently? This cannot be undone.')) return;
+  try {
+    const res = await fetch('/api/articles?slug=' + encodeURIComponent(slug), {
+      method: 'DELETE', headers: { 'X-Admin-Secret': AUTH_TOKEN }
+    });
+    const data = await res.json();
+    if (data.success) { showStatus('articles', 'success', '✓ Deleted'); loadArticles(); }
+    else showStatus('articles', 'error', '✗ ' + (data.error || 'Delete failed'));
+  } catch (e) { showStatus('articles', 'error', '✗ Network error'); }
 }
 
 /* ── Helpers ──────────────────────────────────────────────── */
