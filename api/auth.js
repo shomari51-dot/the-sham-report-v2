@@ -21,18 +21,7 @@ module.exports = async function handler(req, res) {
   await new Promise(r => setTimeout(r, 300));
 
   if (!expected || password !== expected) {
-    // TEMP DIAGNOSTIC — reveals config state without leaking the secret value.
-    // Remove once login is confirmed working.
-    return res.status(401).json({
-      error: 'Invalid password',
-      _diag: {
-        adminPasswordSet: Boolean(process.env.ADMIN_PASSWORD),
-        adminPasswordLen: expected.length,
-        receivedLen: password.length,
-        adminSecretSet: Boolean(process.env.ADMIN_SECRET),
-        mongoUriSet: Boolean(process.env.MONGODB_URI)
-      }
-    });
+    return res.status(401).json({ error: 'Invalid password' });
   }
 
   return res.status(200).json({ success: true, token: process.env.ADMIN_SECRET });
