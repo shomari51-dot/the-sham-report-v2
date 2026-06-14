@@ -189,6 +189,8 @@
     if (content.footer) {
       const copy = document.querySelector('.footer-copy');
       if (copy && content.footer.copyright) copy.textContent = content.footer.copyright;
+      const tag = document.querySelector('.footer-tagline');
+      if (tag && content.footer.tagline) tag.textContent = content.footer.tagline;
     }
   }
 
