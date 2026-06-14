@@ -523,55 +523,11 @@
       <div class="tab-panel" id="panel-news" role="tabpanel">
         <div class="tab-panel-header">
           <h2 class="tab-panel-title">News</h2>
-          <span class="tab-panel-count">3 Reports</span>
+          <span class="tab-panel-count" id="news-count">Loading…</span>
         </div>
-        <div class="coverage-grid">
-
-          <a href="#" class="cov-card">
-            <div class="cov-card-img t7" aria-hidden="true">
-              <span class="cov-card-img-label">Image Placeholder</span>
-            </div>
-            <div class="cov-card-body">
-              <p class="cov-card-category">News&nbsp;&nbsp;|&nbsp;&nbsp;Legislation</p>
-              <h3 class="cov-card-headline">House Bill 4417 Stalls in Committee</h3>
-              <div class="cov-card-meta">
-                <span class="cov-card-byline">By TSR Staff</span>
-                <span class="cov-card-date">Nov 22, 2024</span>
-              </div>
-              <span class="cov-card-read">Read More &nbsp;→</span>
-            </div>
-          </a>
-
-          <a href="#" class="cov-card">
-            <div class="cov-card-img t8" aria-hidden="true">
-              <span class="cov-card-img-label">Image Placeholder</span>
-            </div>
-            <div class="cov-card-body">
-              <p class="cov-card-category">News&nbsp;&nbsp;|&nbsp;&nbsp;Legal</p>
-              <h3 class="cov-card-headline">Beaumont Card Room Operator Charged</h3>
-              <div class="cov-card-meta">
-                <span class="cov-card-byline">By TSR Staff</span>
-                <span class="cov-card-date">Nov 16, 2024</span>
-              </div>
-              <span class="cov-card-read">Read More &nbsp;→</span>
-            </div>
-          </a>
-
-          <a href="#" class="cov-card">
-            <div class="cov-card-img t9" aria-hidden="true">
-              <span class="cov-card-img-label">Image Placeholder</span>
-            </div>
-            <div class="cov-card-body">
-              <p class="cov-card-category">News&nbsp;&nbsp;|&nbsp;&nbsp;Analysis</p>
-              <h3 class="cov-card-headline">AG Opinion on Texas Poker Clubs: A Breakdown</h3>
-              <div class="cov-card-meta">
-                <span class="cov-card-byline">By TSR Staff</span>
-                <span class="cov-card-date">Nov 9, 2024</span>
-              </div>
-              <span class="cov-card-read">Read More &nbsp;→</span>
-            </div>
-          </a>
-
+        <!-- Live feed: published articles from the CMS, newest first -->
+        <div class="coverage-grid" id="news-articles-grid">
+          <p style="color:#777;grid-column:1/-1;">Loading latest articles…</p>
         </div>
       </div>
 
@@ -672,6 +628,46 @@
         });
       });
     })();
+  </script>
+
+  <!-- News tab: live CMS article feed → /post/<slug> -->
+  <script>
+  window.loadNewsFeed = function () {
+    function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+    var grid  = document.getElementById('news-articles-grid');
+    var count = document.getElementById('news-count');
+    if (!grid) return;
+    fetch('/api/articles')
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (list) {
+        if (!Array.isArray(list) || !list.length) {
+          grid.innerHTML = '<p style="color:#777;grid-column:1/-1;">No articles published yet. New articles appear here automatically once you publish them.</p>';
+          if (count) count.textContent = '0 Reports';
+          return;
+        }
+        if (count) count.textContent = list.length + (list.length === 1 ? ' Report' : ' Reports');
+        grid.innerHTML = list.map(function (a, i) {
+          var tone = 't' + ((i % 9) + 1);
+          var cats = (a.categories || []).map(esc).join('&nbsp;&nbsp;|&nbsp;&nbsp;');
+          var img  = a.heroImage
+            ? '<div class="cov-card-img ' + tone + '"><img src="' + esc(a.heroImage) + '" alt="' + esc(a.title) + '" class="cov-card-img-photo" loading="lazy"></div>'
+            : '<div class="cov-card-img ' + tone + '" aria-hidden="true"><span class="cov-card-img-label">The Sham Report</span></div>';
+          return '<a href="/post/' + esc(a.slug) + '" class="cov-card">' + img +
+            '<div class="cov-card-body">' +
+            (cats ? '<p class="cov-card-category">' + cats + '</p>' : '') +
+            '<h3 class="cov-card-headline">' + esc(a.title) + '</h3>' +
+            '<div class="cov-card-meta"><span class="cov-card-byline">' + esc(a.author || 'By TSR Staff') + '</span>' +
+            '<span class="cov-card-date">' + esc(a.date || '') + '</span></div>' +
+            '<span class="cov-card-read">Read More &nbsp;→</span>' +
+            '</div></a>';
+        }).join('');
+      })
+      .catch(function () {
+        grid.innerHTML = '<p style="color:#777;grid-column:1/-1;">Could not load articles right now.</p>';
+        if (count) count.textContent = '';
+      });
+  };
+  window.loadNewsFeed();
   </script>
 
 </body>
