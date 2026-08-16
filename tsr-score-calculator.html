@@ -1,0 +1,2050 @@
+<title>TSR Score Calculator — The Sham Report</title>
+
+<style>
+/* ============================================================
+   THE SHAM REPORT — TSR SCORE CALCULATOR
+   Self-contained page. Drop into the existing repo as its own
+   route; it inherits nothing and collides with nothing.
+
+   Fonts: Playfair Display + Inter are listed first in the stacks
+   below. If the parent site already loads them (per the TSR design
+   system) they are picked up automatically. Otherwise the page
+   falls back to a matched system stack — no silent breakage.
+   ============================================================ */
+
+:root {
+  color-scheme: dark;
+
+  /* Ground — near-black with a faint warm bias so it reads as chosen,
+     not as #000 left on the default. */
+  --bg:            #0A0A0A;
+  --panel:         #111111;
+  --panel-2:       #1A1A1A;
+  --line:          #2A2A2A;
+  --line-soft:     #1E1E1E;
+
+  /* Ink */
+  --ink:           #FFFFFF;
+  --ink-2:         #CCCCCC;
+  --ink-3:         #888888;
+
+  /* Brand accent — gold, matching the theshamreport.com logo + site */
+  --gold:          #D4AF37;
+  --gold-hi:       #B8962E;
+  --gold-soft:     rgba(212, 175, 55, 0.35);
+  --gold-tint:     rgba(212, 175, 55, 0.08);
+
+  /* Red — reserved for the live ticker, subscribe CTA, and grade F,
+     exactly as red is used on the main site. */
+  --red-bright:    #CC0000;
+  --red-deep:      #8B0000;
+  --red-soft:      rgba(204, 0, 0, 0.40);
+  --red-tint:      rgba(204, 0, 0, 0.07);
+
+  /* Grade ramp — semantic severity */
+  --g-a:           #4FD675;
+  --g-b:           #9BD24C;
+  --g-c:           #D4AF37;
+  --g-d:           #E07A3A;
+  --g-f:           #CC0000;
+
+  --font-display: 'Inter', 'Archivo', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-ui:      'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-serif:   'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-mono:    ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace;
+
+  --r:    4px;
+  --r-lg: 6px;
+  --maxw: 1180px;
+}
+
+/* This design commits to a single dark world on purpose — it is the
+   publication's identity, not an omission. Pin it so a light-mode
+   viewer still gets the intended page. */
+:root[data-theme="light"] { color-scheme: dark; }
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Any author `display` rule outranks the UA stylesheet's
+   [hidden] { display: none }, which silently breaks the hidden
+   attribute on .notebox, .score-empty and anything else with a
+   display of its own. Restore it once, globally. */
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+:focus-visible {
+  outline: 2px solid var(--gold-hi);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.num { font-variant-numeric: tabular-nums; }
+
+/* ---------- Site chrome ------------------------------------- */
+
+.masthead {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+.masthead .wrap {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  min-height: 84px;
+}
+
+.wordmark { line-height: 1.05; flex-shrink: 0; }
+.wordmark b {
+  display: block;
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: 27px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+.wordmark b i { color: var(--gold); font-style: normal; }
+.wordmark span {
+  display: block;
+  font-size: 11px;
+  color: var(--ink-3);
+  letter-spacing: 0.02em;
+  margin-top: 3px;
+}
+
+.mainnav {
+  display: flex;
+  gap: 26px;
+  margin-left: auto;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.mainnav a { padding: 6px 0; border-bottom: 2px solid transparent; }
+.mainnav a:hover { color: var(--ink); border-bottom-color: var(--gold); }
+.mainnav a[aria-current] { color: var(--ink); border-bottom-color: var(--gold); }
+
+.utils { display: flex; align-items: center; gap: 16px; }
+.iconbtn {
+  background: none; border: 0; padding: 4px; cursor: pointer;
+  color: var(--ink-2); line-height: 0;
+}
+.iconbtn:hover { color: var(--ink); }
+.login {
+  background: var(--red-bright);
+  color: #fff;
+  border: 0;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  border-radius: var(--r);
+  cursor: pointer;
+}
+.login:hover { background: #aa0000; }
+
+.ticker {
+  border-bottom: 1px solid var(--line);
+  background: #0D0D0D;
+  font-size: 12.5px;
+}
+.ticker .wrap {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  min-height: 44px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+.ticker .wrap::-webkit-scrollbar { display: none; }
+.live {
+  display: inline-flex; align-items: center; gap: 7px;
+  color: var(--red-bright);
+  font-weight: 700; font-size: 11px;
+  letter-spacing: 0.11em; text-transform: uppercase;
+}
+.dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--red-bright);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
+.ticker .headline { color: var(--ink); font-weight: 600; }
+.ticker .stat { color: var(--ink-2); }
+.ticker .all {
+  margin-left: auto;
+  color: var(--ink);
+  font-weight: 600; font-size: 11.5px;
+  letter-spacing: 0.09em; text-transform: uppercase;
+}
+.ticker .all:hover { color: var(--gold); }
+
+/* ---------- Page head --------------------------------------- */
+
+.pagehead .wrap {
+  display: flex;
+  align-items: flex-end;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding-top: 52px;
+  padding-bottom: 34px;
+}
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 5.2vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.022em;
+  line-height: 1;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+  text-wrap: balance;
+}
+.pagehead p {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 16px;
+  max-width: 46ch;
+}
+.ghost {
+  margin-left: auto;
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  color: var(--ink);
+  font: inherit;
+  font-size: 11.5px; font-weight: 700;
+  letter-spacing: 0.09em; text-transform: uppercase;
+  padding: 12px 18px;
+  cursor: pointer;
+}
+.ghost:hover { border-color: #3A3A3A; background: var(--panel-2); }
+.ghost .chev { transition: transform 0.2s; color: var(--ink-3); }
+.ghost[aria-expanded="true"] .chev { transform: rotate(180deg); }
+
+/* ---------- Panels ------------------------------------------ */
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+}
+.panel-pad { padding: 26px 28px 28px; }
+
+.panel-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  margin: 0 0 22px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+/* ---------- Calculator grid --------------------------------- */
+
+.calc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+/* ---------- Form -------------------------------------------- */
+
+.field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 20px;
+}
+.field { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+.field.full { grid-column: 1 / -1; }
+
+label, .lbl {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hint {
+  width: 14px; height: 14px; flex: none;
+  border-radius: 50%;
+  border: 1px solid var(--ink-3);
+  color: var(--ink-3);
+  font-size: 9px; font-weight: 700;
+  display: inline-flex; align-items: center; justify-content: center;
+  cursor: help;
+  background: none;
+  padding: 0;
+  font-family: inherit;
+}
+.hint:hover { color: var(--ink); border-color: var(--ink); }
+
+.control {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #0C0C0C;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+}
+.control:focus-within { border-color: #454545; }
+.control .pre {
+  padding-left: 13px;
+  color: var(--ink-3);
+  font-size: 14px;
+  pointer-events: none;
+}
+input[type="text"], select, textarea {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  color: var(--ink);
+  font: inherit;
+  font-size: 14.5px;
+  padding: 12px 13px;
+  border-radius: var(--r);
+  font-variant-numeric: tabular-nums;
+}
+input:focus, select:focus, textarea:focus { outline: none; }
+input::placeholder, textarea::placeholder { color: #4A4A4A; }
+select {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 38px;
+}
+.control.sel::after {
+  content: "";
+  position: absolute; right: 15px; top: 50%;
+  width: 7px; height: 7px;
+  border-right: 1.5px solid var(--ink-2);
+  border-bottom: 1.5px solid var(--ink-2);
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none;
+}
+option { background: #141414; color: var(--ink); }
+
+/* Segmented control — game format */
+.seg { display: flex; gap: 0; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+.seg button {
+  flex: 1;
+  background: #0C0C0C;
+  border: 0;
+  border-right: 1px solid var(--line);
+  color: var(--ink-2);
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 10px 8px;
+  cursor: pointer;
+}
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--panel-2); color: var(--ink); box-shadow: inset 0 -2px 0 var(--gold); }
+.seg button:hover { color: var(--ink); }
+
+.lenchange {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.lenchange > span { font-size: 13px; color: var(--ink-3); white-space: nowrap; }
+.lenchange .control { flex: 1 1 auto; min-width: 0; }
+
+/* Blind structure */
+.struct-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 7px;
+}
+.linky {
+  background: none; border: 0; padding: 0;
+  font: inherit; font-size: 12.5px;
+  color: var(--gold);
+  cursor: pointer;
+}
+.linky:hover { color: var(--gold-hi); text-decoration: underline; }
+
+.struct-wrap {
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: #0C0C0C;
+  overflow: hidden;
+}
+.struct-wrap:focus-within { border-color: #454545; }
+textarea#structure {
+  display: block;
+  height: 168px;
+  resize: vertical;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.85;
+  white-space: pre;
+  overflow: auto;
+  padding: 12px 14px;
+}
+.subnote { font-size: 12px; color: var(--ink-3); margin: 8px 0 0; }
+
+.guide {
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--gold);
+  border-radius: var(--r);
+  background: var(--panel-2);
+  padding: 15px 17px;
+  font-size: 13px;
+  color: var(--ink-2);
+}
+.guide p { margin: 0 0 9px; }
+.guide p:last-child { margin-bottom: 0; }
+.guide code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink);
+  background: #0C0C0C;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 1px 5px;
+}
+
+.actions { display: flex; gap: 12px; margin-top: 22px; }
+.btn-primary {
+  flex: 1;
+  background: var(--gold);
+  color: #0A0A0A;
+  border: 0;
+  font: inherit;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 15px 20px;
+  border-radius: var(--r);
+  cursor: pointer;
+}
+.btn-primary:hover { background: var(--gold-hi); }
+.btn-secondary {
+  background: transparent;
+  color: var(--ink-2);
+  border: 1px solid var(--line);
+  font: inherit;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 15px 28px;
+  border-radius: var(--r);
+  cursor: pointer;
+}
+.btn-secondary:hover { color: var(--ink); border-color: #3A3A3A; }
+
+.privacy {
+  display: flex; align-items: center; gap: 8px;
+  margin: 16px 0 0;
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+.errors {
+  margin-top: 16px;
+  border: 1px solid var(--red-soft);
+  border-left: 2px solid var(--red-bright);
+  background: var(--red-tint);
+  border-radius: var(--r);
+  padding: 13px 16px;
+  font-size: 13px;
+  color: #F0B8BA;
+}
+.errors ul { margin: 0; padding-left: 18px; }
+.errors li + li { margin-top: 5px; }
+
+/* ---------- Score panel ------------------------------------- */
+
+.score-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 320px;
+  gap: 14px;
+  padding: 30px;
+  color: var(--ink-3);
+}
+.score-empty .mark {
+  font-family: var(--font-display);
+  font-size: 84px;
+  font-weight: 800;
+  line-height: 1;
+  color: #1F1F1F;
+}
+.score-empty p { margin: 0; max-width: 34ch; font-size: 13.5px; }
+
+.grade-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 30px;
+  align-items: center;
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.grade {
+  font-family: var(--font-display);
+  font-size: 96px;
+  font-weight: 800;
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+  min-width: 132px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.score-meta .k {
+  font-size: 11.5px; font-weight: 700;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--ink-2);
+}
+.score-meta .v {
+  font-family: var(--font-display);
+  font-size: 40px; font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.score-meta .tier {
+  font-size: 12.5px;
+  color: var(--ink-3);
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 2px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--line-soft);
+}
+.stat {
+  padding: 20px 0;
+  border-right: 1px solid var(--line-soft);
+  padding-right: 20px;
+}
+.stat:nth-child(2n) { border-right: 0; padding-left: 24px; padding-right: 0; }
+.stat:nth-child(-n+2) { border-bottom: 1px solid var(--line-soft); }
+.stat .k {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink-2);
+  margin-bottom: 7px;
+}
+.stat .v {
+  font-size: 25px; font-weight: 700;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+}
+.stat .sub { font-size: 12px; color: var(--ink-3); margin-top: 3px; }
+.stat .v.flag { font-size: 15.5px; display: inline-flex; align-items: center; gap: 8px; }
+
+.notebox {
+  display: flex;
+  gap: 13px;
+  margin-top: 22px;
+  padding: 16px 18px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+}
+.notebox.accent { border-left: 2px solid var(--g-c); }
+.notebox.context { border-left: 2px solid var(--red-deep); }
+.notebox h4 {
+  margin: 0 0 6px;
+  font-size: 13.5px;
+  font-weight: 700;
+}
+.notebox p { margin: 0; font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+.notebox p + p { margin-top: 7px; }
+
+.score-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line-soft);
+}
+.score-actions button {
+  display: flex; align-items: center; gap: 13px;
+  background: none; border: 0;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  padding: 4px 0;
+  cursor: pointer;
+}
+.score-actions button:first-child { border-right: 1px solid var(--line-soft); }
+.score-actions button:last-child { padding-left: 24px; }
+.score-actions .t { font-size: 13px; font-weight: 600; }
+.score-actions .s { font-size: 11.5px; color: var(--ink-3); }
+.score-actions svg { color: var(--ink-2); flex: none; }
+.score-actions button:hover svg { color: var(--gold); }
+
+/* ---------- Explainer row ----------------------------------- */
+
+.explain {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: 24px;
+  margin-top: 24px;
+  align-items: start;
+}
+.how-list { display: flex; flex-direction: column; gap: 20px; }
+.how-item { display: grid; grid-template-columns: 34px 1fr; gap: 15px; }
+.how-icon {
+  width: 34px; height: 34px;
+  border: 1px solid var(--gold-soft);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+}
+.how-item h4 { margin: 0 0 3px; font-size: 14px; font-weight: 700; }
+.how-item p { margin: 0; font-size: 13px; color: var(--ink-2); line-height: 1.55; }
+.how-more { margin-top: 22px; display: inline-block; font-size: 13px; color: var(--gold); font-weight: 500; }
+.how-more:hover { text-decoration: underline; }
+
+.tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.tier-card { border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+.tier-card h4 {
+  margin: 0;
+  padding: 13px 16px;
+  font-size: 11.5px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-2);
+}
+table { width: 100%; border-collapse: collapse; }
+th {
+  text-align: left;
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.11em; text-transform: uppercase;
+  color: var(--ink-3);
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line-soft);
+}
+td {
+  padding: 10px 16px;
+  font-size: 13.5px;
+  border-bottom: 1px solid var(--line-soft);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-2);
+}
+tr:last-child td { border-bottom: 0; }
+td.g { font-weight: 700; font-size: 14px; }
+tr.here td { background: var(--gold-tint); color: var(--ink); }
+tr.here td.g::after {
+  content: "◂ you";
+  font-size: 9.5px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gold);
+  margin-left: 9px;
+  vertical-align: 1px;
+}
+.stance { margin: 22px 0 0; font-size: 13px; color: var(--ink-2); line-height: 1.65; }
+.stance b { color: var(--ink); font-weight: 600; }
+
+/* ---------- Recently graded --------------------------------- */
+
+.recent { margin-top: 24px; }
+.recent-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; margin-bottom: 20px;
+}
+.recent-head h3 {
+  margin: 0;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.13em; text-transform: uppercase;
+}
+.rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(232px, 1fr);
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: #2E2E2E transparent;
+}
+.rail::-webkit-scrollbar { height: 5px; }
+.rail::-webkit-scrollbar-thumb { background: #2E2E2E; border-radius: 3px; }
+.rcard {
+  scroll-snap-align: start;
+  text-align: left;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 16px;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+.rcard:hover { border-color: #3E3E3E; }
+.rcard .top { display: grid; grid-template-columns: 60px 1fr; gap: 13px; align-items: start; }
+.rcard .g {
+  font-family: var(--font-display);
+  font-size: 38px; font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-align: center;
+}
+.rcard .gs {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 9.5px; font-weight: 700;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  color: var(--ink-3);
+  margin-top: 7px;
+  font-variant-numeric: tabular-nums;
+}
+.rcard .nm { font-size: 13.5px; font-weight: 700; line-height: 1.3; }
+.rcard .rm { font-size: 12px; color: var(--ink-3); margin-top: 2px; }
+.rcard .row {
+  display: flex; gap: 12px;
+  font-size: 11.5px; color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+  flex-wrap: wrap;
+}
+.rcard .fl { font-size: 11.5px; display: inline-flex; align-items: center; gap: 6px; }
+.rcard .dt {
+  font-size: 11px; color: var(--ink-3);
+  padding-top: 11px;
+  border-top: 1px solid var(--line-soft);
+  margin-top: auto;
+}
+
+/* ---------- Newsletter + footer ----------------------------- */
+
+.news {
+  margin-top: 24px;
+  display: flex; align-items: center; gap: 26px; flex-wrap: wrap;
+  padding: 24px 28px;
+}
+.news h3 {
+  margin: 0 0 3px;
+  font-size: 16px; font-weight: 800;
+  letter-spacing: 0.02em; text-transform: uppercase;
+}
+.news p { margin: 0; font-size: 13px; color: var(--ink-3); }
+.news form { display: flex; gap: 10px; margin-left: auto; flex-wrap: wrap; }
+.news .control { min-width: 250px; }
+.news button {
+  background: var(--red-bright); color: #fff; border: 0;
+  font: inherit; font-size: 12.5px; font-weight: 700;
+  letter-spacing: 0.09em; text-transform: uppercase;
+  padding: 12px 26px; border-radius: var(--r); cursor: pointer;
+}
+.news button:hover { background: #aa0000; }
+.news .said { font-size: 12px; color: var(--g-c); width: 100%; text-align: right; margin: 0; }
+
+footer { border-top: 1px solid var(--line); margin-top: 48px; }
+.foot-grid {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(4, 1fr) auto;
+  gap: 32px;
+  padding: 40px 0 34px;
+}
+.foot-grid h5 {
+  margin: 0 0 13px;
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.foot-grid ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.foot-grid li a { font-size: 13px; color: var(--ink-2); }
+.foot-grid li a:hover { color: var(--gold); }
+.socials { display: flex; gap: 9px; }
+.socials a {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--panel-2); border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-2);
+}
+.socials a:hover { color: var(--ink); border-color: #3E3E3E; }
+.legal {
+  display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  padding: 18px 0 30px;
+  border-top: 1px solid var(--line-soft);
+  font-size: 12px;
+  color: var(--ink-3);
+}
+.legal nav { display: flex; gap: 22px; }
+.legal a:hover { color: var(--ink-2); }
+
+.toast {
+  position: fixed;
+  left: 50%; bottom: 28px;
+  transform: translate(-50%, 14px);
+  background: #1C1C1C;
+  border: 1px solid #383838;
+  border-left: 2px solid var(--gold);
+  border-radius: var(--r);
+  padding: 12px 20px;
+  font-size: 13px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+  z-index: 50;
+}
+.toast.on { opacity: 1; transform: translate(-50%, 0); }
+
+/* ---------- Responsive -------------------------------------- */
+
+@media (max-width: 980px) {
+  /* Below the desktop breakpoint the nav drops to its own full-width
+     row and scrolls sideways rather than disappearing. */
+  .masthead .wrap {
+    flex-wrap: wrap;
+    gap: 0 20px;
+    padding-top: 14px;
+    min-height: 0;
+  }
+  .utils { margin-left: auto; }
+  .utils .iconbtn { display: none; }
+  .mainnav {
+    order: 3;
+    width: 100%;
+    margin: 12px -24px 0;
+    padding: 0 24px;
+    gap: 22px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mainnav::-webkit-scrollbar { display: none; }
+  .mainnav a { white-space: nowrap; padding-bottom: 10px; }
+  .calc, .explain { grid-template-columns: minmax(0, 1fr); }
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 620px) {
+  .wrap { padding: 0 16px; }
+  .mainnav { margin: 12px -16px 0; padding: 0 16px; }
+  .wordmark b { font-size: 22px; }
+  .field-grid { grid-template-columns: 1fr; }
+  .tiers { grid-template-columns: 1fr; }
+  .grade-row { grid-template-columns: 1fr; gap: 14px; text-align: center; }
+  .grade { min-width: 0; }
+  .actions { flex-direction: column; }
+  .news form { margin-left: 0; width: 100%; }
+  .news .control { flex: 1; }
+  .foot-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+/* ---------- Print / Save as PDF ----------------------------- */
+
+@media print {
+  :root { --bg: #fff; --panel: #fff; --panel-2: #fff; --ink: #000; --ink-2: #333; --ink-3: #555; --line: #bbb; --line-soft: #ddd; }
+  body { background: #fff; color: #000; }
+  .masthead, .ticker, .ghost, .actions, .score-actions, .news, footer,
+  .recent, .explain, #formPanel, .toast, .privacy, .guide { display: none !important; }
+  .pagehead .wrap { padding-top: 0; }
+  .panel { border: 1px solid #bbb; }
+  #printSummary { display: block !important; }
+}
+#printSummary { display: none; }
+#printSummary table { margin-top: 10px; }
+</style>
+
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="index.html" aria-label="The Sham Report — home">
+      <svg viewBox="0 0 220 60" height="46" width="169" role="img" aria-label="The Sham Report">
+        <rect x="0" y="0" width="72" height="60" fill="#D4AF37"/>
+        <text x="36" y="40" font-family="Inter, 'Helvetica Neue', sans-serif" font-weight="900" font-size="22" fill="#0A0A0A" letter-spacing="4" text-anchor="middle">TSR</text>
+        <text x="85" y="24" font-family="Inter, 'Helvetica Neue', sans-serif" font-weight="700" font-size="12" fill="#FFFFFF" letter-spacing="2">THE SHAM</text>
+        <text x="85" y="42" font-family="Inter, 'Helvetica Neue', sans-serif" font-weight="700" font-size="12" fill="#FFFFFF" letter-spacing="2">REPORT</text>
+      </svg>
+    </a>
+    <nav class="mainnav" aria-label="Main">
+      <a href="news.html">News</a>
+      <a href="tournaments.html">Tournaments</a>
+      <a href="hosted-games.html">Hosted Games</a>
+      <a href="media.html">Media</a>
+      <a href="about.html">About</a>
+      <a href="tsr-score-calculator.html" aria-current="page">TSR Score</a>
+    </nav>
+    <div class="utils">
+      <button class="iconbtn" aria-label="Search">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+      <button class="iconbtn" aria-label="Notifications">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg>
+      </button>
+      <button class="login">Login</button>
+    </div>
+  </div>
+</header>
+
+<div class="ticker">
+  <div class="wrap">
+    <span class="live"><span class="dot"></span>Live Updates</span>
+    <span class="headline">WSOP Circuit Dallas $1,700 Main Event — Day 2</span>
+    <span class="stat">327 players remaining</span>
+    <span class="stat">$412,530 prize pool</span>
+    <a class="all" href="/live">View all live events →</a>
+  </div>
+</div>
+
+<section class="pagehead">
+  <div class="wrap">
+    <div>
+      <h1>TSR Score Calculator</h1>
+      <p>Grade any poker tournament's structure. Know before you buy in.</p>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <div class="calc">
+
+    <!-- ================= FORM ================= -->
+    <section class="panel panel-pad" id="formPanel">
+      <h2 class="panel-title">Tournament Information</h2>
+
+      <div class="field-grid">
+        <div class="field full">
+          <label for="tname">Tournament name <span style="color:var(--ink-3)">(optional)</span></label>
+          <div class="control"><input type="text" id="tname" placeholder="e.g. Lone Star Showdown"></div>
+        </div>
+
+        <div class="field">
+          <label for="buyin">Total Buy-In (USD)
+            <button class="hint" type="button" title="The advertised price — what you hand over at the cage, fees included. A &quot;$250 tournament&quot; is 250 here.">i</button>
+          </label>
+          <div class="control"><span class="pre">$</span><input type="text" inputmode="decimal" id="buyin" placeholder="250"></div>
+        </div>
+
+        <div class="field">
+          <label for="fees">Total Fees (USD)
+            <button class="hint" type="button" title="The part of that buy-in which never reaches the prize pool: house fee, dealer gratuity, member or admin fees.">i</button>
+          </label>
+          <div class="control"><span class="pre">$</span><input type="text" inputmode="decimal" id="fees" placeholder="51"></div>
+        </div>
+
+        <div class="field">
+          <label for="stack">Starting Stack
+            <button class="hint" type="button" title="Chips you sit down with on a single buy-in.">i</button>
+          </label>
+          <div class="control"><input type="text" inputmode="numeric" id="stack" placeholder="30,000"></div>
+        </div>
+
+        <div class="field">
+          <label for="gtd">Guarantee <span style="color:var(--ink-3)">(optional)</span>
+            <button class="hint" type="button" title="Advertised prize pool guarantee. Does not affect the score — it is shown as context for the fee.">i</button>
+          </label>
+          <div class="control"><span class="pre">$</span><input type="text" inputmode="numeric" id="gtd" placeholder="10,000"></div>
+        </div>
+
+        <div class="field">
+          <label for="addcost">Add-On Cost <span style="color:var(--ink-3)">(optional)</span>
+            <button class="hint" type="button" title="Cost of the optional add-on. Assumed to go entirely to the prize pool with no extra fee.">i</button>
+          </label>
+          <div class="control"><span class="pre">$</span><input type="text" inputmode="decimal" id="addcost" placeholder="100"></div>
+        </div>
+
+        <div class="field">
+          <label for="addchips">Add-On Chips
+            <button class="hint" type="button" title="Chips the add-on buys. These are added to your starting stack, which changes playable depth and therefore the score.">i</button>
+          </label>
+          <div class="control"><input type="text" inputmode="numeric" id="addchips" placeholder="40,000"></div>
+        </div>
+
+        <div class="field">
+          <label for="levellen">Level Length
+            <button class="hint" type="button" title="Minutes per blind level during regular play.">i</button>
+          </label>
+          <div class="control sel">
+            <select id="levellen">
+              <option value="15">15 minutes</option>
+              <option value="20">20 minutes</option>
+              <option value="25">25 minutes</option>
+              <option value="30" selected>30 minutes</option>
+              <option value="40">40 minutes</option>
+              <option value="45">45 minutes</option>
+              <option value="60">60 minutes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field full">
+          <span class="lbl" id="len2lbl">Level Length Change <span style="color:var(--ink-3)">(optional)</span>
+            <button class="hint" type="button" title="For structures that slow down or speed up partway, e.g. 30-minute levels through 20, then 40 minutes from level 21.">i</button>
+          </span>
+          <div class="lenchange" role="group" aria-labelledby="len2lbl">
+            <span>Changes to</span>
+            <div class="control sel">
+              <select id="len2">
+                <option value="">no change</option>
+                <option value="15">15 minutes</option>
+                <option value="20">20 minutes</option>
+                <option value="25">25 minutes</option>
+                <option value="30">30 minutes</option>
+                <option value="40">40 minutes</option>
+                <option value="45">45 minutes</option>
+                <option value="60">60 minutes</option>
+                <option value="75">75 minutes</option>
+                <option value="90">90 minutes</option>
+              </select>
+            </div>
+            <span>from level</span>
+            <div class="control" style="max-width:88px">
+              <input type="text" inputmode="numeric" id="len2from" placeholder="21" aria-label="Level the new length starts at">
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <span class="lbl" id="fmtlbl">Game Format</span>
+          <div class="seg" role="group" aria-labelledby="fmtlbl">
+            <button type="button" data-fmt="nlh" aria-pressed="true">No Limit Hold'em</button>
+            <button type="button" data-fmt="plo" aria-pressed="false">PLO / Big Bet</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px">
+        <div class="struct-head">
+          <span class="lbl">Blind Structure</span>
+          <button class="linky" id="guideToggle" aria-expanded="false" aria-controls="guidePanel">Need help? View guide →</button>
+        </div>
+        <div class="struct-wrap">
+          <textarea id="structure" spellcheck="false" aria-label="Blind structure, one level per line"></textarea>
+        </div>
+        <div class="struct-head" style="margin-top:8px">
+          <p class="subnote">Enter one level per line: SB / BB / Ante</p>
+          <button class="linky" id="exampleBtn">Add Example Structure</button>
+        </div>
+        <div class="guide" id="guidePanel" hidden>
+          <p>One level per line. Small blind, big blind, then the big blind ante. Any separator works — slashes, commas, or spaces.</p>
+          <p><code>100 / 200 / 200</code> &nbsp; <code>100,200,200</code> &nbsp; <code>6&nbsp;&nbsp;100 200 200</code></p>
+          <p>Leading level numbers are detected and ignored, so you can paste a structure sheet straight in. No ante? Leave it off: <code>100 / 200</code>. Lines containing the word "break" are skipped.</p>
+          <p>If the level length varies from level to level, add it as a fourth number — <code>100 / 200 / 200 / 30</code> — on every line. For a single change partway through, the Level Length Change field above is easier.</p>
+          <p>The score samples levels 6, 10, 14 and 18, so <b style="color:var(--ink)">at least 18 levels are required</b>.</p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn-primary" id="calcBtn">Calculate TSR Score</button>
+        <button class="btn-secondary" id="resetBtn">Reset</button>
+      </div>
+
+      <div class="errors" id="errors" hidden role="alert"></div>
+
+      <p class="privacy">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+        Your data is not stored. Calculations run in your browser.
+      </p>
+    </section>
+
+    <!-- ================= SCORE ================= -->
+    <section class="panel panel-pad">
+      <h2 class="panel-title">Your TSR Score</h2>
+
+      <div id="empty" class="score-empty">
+        <div class="mark">?</div>
+        <p>Enter the tournament's buy-in, stack and blind levels, then hit calculate. Or load the example structure to see how a graded card reads.</p>
+      </div>
+
+      <div id="result" hidden aria-live="polite">
+        <div class="grade-row">
+          <div class="grade" id="gradeLetter">—</div>
+          <div class="score-meta">
+            <div class="k">TSR Score</div>
+            <div class="v" id="scoreNum">—</div>
+            <div class="tier" id="tierLabel"></div>
+          </div>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat">
+            <div class="k">Vig %</div>
+            <div class="v num" id="vigVal">—</div>
+            <div class="sub" id="vigSub"></div>
+          </div>
+          <div class="stat">
+            <div class="k">Playable Depth</div>
+            <div class="v num" id="depthVal">—</div>
+            <div class="sub" id="depthSub"></div>
+          </div>
+          <div class="stat">
+            <div class="k">Largest Blind Jump</div>
+            <div class="v num" id="jumpVal">—</div>
+            <div class="sub" id="jumpSub"></div>
+          </div>
+          <div class="stat">
+            <div class="k">Structure Quality</div>
+            <div class="v flag" id="qualVal">—</div>
+            <div class="sub" id="qualSub"></div>
+          </div>
+        </div>
+
+        <div class="notebox accent" id="ploNote" hidden>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--g-c);flex:none;margin-top:2px"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 16.2v.1"/></svg>
+          <div>
+            <h4>Pot Limit Omaha / Big Bet Games</h4>
+            <p id="ploBody">PLO and other four- and five-card games play faster than the hold'em assumptions in this formula. The score is not adjusted. Read the effective quality as roughly one letter grade worse than the number suggests.</p>
+          </div>
+        </div>
+
+        <div class="notebox context" id="contextNote">
+          <div>
+            <h4 id="contextTitle">What this grade means for you</h4>
+            <p id="contextBody"></p>
+          </div>
+        </div>
+
+        <div class="score-actions">
+          <button id="pdfBtn">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12"/><path d="M7.5 10.5L12 15l4.5-4.5"/><path d="M4 19h16"/></svg>
+            <span><span class="t">Save as PDF</span><br><span class="s">Print this card</span></span>
+          </button>
+          <button id="shareBtn">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="18" cy="5.5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="18.5" r="2.6"/><path d="M8.3 10.7l7.4-4"/><path d="M8.3 13.3l7.4 4"/></svg>
+            <span><span class="t">Share</span><br><span class="s">Copy link to this score</span></span>
+          </button>
+        </div>
+
+        <div id="printSummary">
+          <table>
+            <tbody id="printRows"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= EXPLAINERS ================= -->
+  <div class="explain">
+    <section class="panel panel-pad">
+      <h2 class="panel-title">How TSR Score Works</h2>
+      <p style="margin:0 0 22px;font-size:13.5px;color:var(--ink-2);line-height:1.6">
+        TSR Score is an objective grading system. It reads starting stack, blind structure, level length and fees, and returns an unbiased grade before you put money on the table.
+      </p>
+      <div class="how-list">
+        <div class="how-item">
+          <div class="how-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3v18"/><path d="M6 8l6-5 6 5"/><path d="M6 16l6 5 6-5"/></svg></div>
+          <div><h4>Depth</h4><p>Measures how long your stack lasts relative to the blinds.</p></div>
+        </div>
+        <div class="how-item">
+          <div class="how-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 18L9.5 11l4 4L21 6"/><path d="M15 6h6v6"/></svg></div>
+          <div><h4>Acceleration</h4><p>Penalises fast blind increases that shorten playability.</p></div>
+        </div>
+        <div class="how-item">
+          <div class="how-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.2v9.6"/><path d="M14.6 9.4a2.6 2.6 0 00-2.6-1.3c-1.6 0-2.6.9-2.6 2s1 1.8 2.6 1.9 2.6.8 2.6 1.9-1 2-2.6 2a2.6 2.6 0 01-2.6-1.3"/></svg></div>
+          <div><h4>Vig</h4><p>Calculates total fees as a percentage of the buy-in.</p></div>
+        </div>
+        <div class="how-item">
+          <div class="how-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 20h5V9H3zM10.5 20h5V4h-5zM18 20h3v-7h-3z"/></svg></div>
+          <div><h4>Blind Jumps</h4><p>Detects and penalises uneven structures that spike too hard.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel-pad">
+      <h2 class="panel-title">Understanding TSR Scores</h2>
+      <div class="tiers">
+        <div class="tier-card">
+          <h4>Tier 1 — Weekly &amp; Daily (buy-in ≤ $300)</h4>
+          <table>
+            <thead><tr><th>Grade</th><th>TSR Score</th></tr></thead>
+            <tbody id="t1body">
+              <tr data-g="A"><td class="g" style="color:var(--g-a)">A</td><td>48+</td></tr>
+              <tr data-g="B"><td class="g" style="color:var(--g-b)">B</td><td>40–47</td></tr>
+              <tr data-g="C"><td class="g" style="color:var(--g-c)">C</td><td>32–39</td></tr>
+              <tr data-g="D"><td class="g" style="color:var(--g-d)">D</td><td>24–31</td></tr>
+              <tr data-g="F"><td class="g" style="color:var(--g-f)">F</td><td>below 24</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tier-card">
+          <h4>Tier 2 — Series &amp; Special Events (&gt; $300)</h4>
+          <table>
+            <thead><tr><th>Grade</th><th>TSR Score</th></tr></thead>
+            <tbody id="t2body">
+              <tr data-g="A"><td class="g" style="color:var(--g-a)">A</td><td>85+</td></tr>
+              <tr data-g="B"><td class="g" style="color:var(--g-b)">B</td><td>65–84</td></tr>
+              <tr data-g="C"><td class="g" style="color:var(--g-c)">C</td><td>50–64</td></tr>
+              <tr data-g="D"><td class="g" style="color:var(--g-d)">D</td><td>38–49</td></tr>
+              <tr data-g="F"><td class="g" style="color:var(--g-f)">F</td><td>below 38</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="stance">
+        The grade measures <b>structure quality</b>, not "should you play it." A C-grade tournament can still be the right choice for your bankroll and your goals. Tournaments are graded against their own peer group, and every card says which tier it was graded in.
+      </p>
+    </section>
+  </div>
+
+  <!-- ================= RECENTLY GRADED ================= -->
+  <section class="panel panel-pad recent">
+    <div class="recent-head">
+      <h3>Recently Graded Tournaments</h3>
+      <a class="all" href="/tournament-index" style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2)">View all →</a>
+    </div>
+    <div class="rail" id="rail"></div>
+    <p class="subnote" style="margin-top:14px">Every card above is scored live by the same engine on this page — click one to load it into the calculator.</p>
+  </section>
+
+  <!-- ================= NEWSLETTER ================= -->
+  <section class="panel news">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" style="color:var(--ink-2)"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+    <div>
+      <h3>Stay on the Felt</h3>
+      <p>No fluff. No spam. Only the cards.</p>
+    </div>
+    <form id="newsForm">
+      <div class="control"><input type="text" id="email" placeholder="Enter your email" aria-label="Email address"></div>
+      <button type="submit">Subscribe</button>
+      <p class="said" id="newsSaid" hidden></p>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="wordmark" href="/"><b>The <i>Sham</i> Report</b><span>Texas Poker. Unfiltered.</span></a>
+      </div>
+      <div><h5>Site</h5><ul><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li><li><a href="/advertise">Advertise</a></li></ul></div>
+      <div><h5>Content</h5><ul><li><a href="/news">News</a></li><li><a href="/strategy">Strategy</a></li><li><a href="/tournaments">Tournaments</a></li></ul></div>
+      <div><h5>Community</h5><ul><li><a href="/forum">Forum</a></li><li><a href="/reviews">Reviews</a></li><li><a href="/promotions">Promotions</a></li></ul></div>
+      <div><h5>Poker Rooms</h5><ul><li><a href="/rooms/texas">Texas Card Rooms</a></li><li><a href="/tournament-index">Tournament Index</a></li><li><a href="/tsr-score">TSR Score</a></li></ul></div>
+      <div>
+        <h5>Follow Us</h5>
+        <div class="socials">
+          <a href="#" aria-label="X"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2h3.3l-7.2 8.3L22.8 22h-6.6l-5.2-6.8L5.1 22H1.8l7.7-8.8L1.2 2h6.8l4.7 6.2zm-1.2 18h1.8L7.1 3.9H5.2z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v1.8H8V12h2.5v9H14v-9h2.5l.4-3.5z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.5 7.4a2.7 2.7 0 00-1.9-1.9C18.9 5 12 5 12 5s-6.9 0-8.6.5A2.7 2.7 0 001.5 7.4C1 9.1 1 12 1 12s0 2.9.5 4.6a2.7 2.7 0 001.9 1.9C5.1 19 12 19 12 19s6.9 0 8.6-.5a2.7 2.7 0 001.9-1.9c.5-1.7.5-4.6.5-4.6s0-2.9-.5-4.6zM9.8 15.3V8.7l5.7 3.3z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 The Sham Report. All rights reserved.</span>
+      <nav><a href="/terms">Terms of Service</a><a href="/privacy">Privacy Policy</a><a href="/responsible-gaming">Responsible Gaming</a></nav>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ==========================================================
+     ENGINE
+     ========================================================== */
+
+  var CFG = {
+    // The score samples these four levels (1-indexed).
+    SAMPLE: [6, 10, 14, 18],
+    // Spoofing guard thresholds, as a percentage increase in Orbit Cost
+    // over the previous level.
+    JUMP_WARN: 60,   // > 60%  -> -4
+    JUMP_HARD: 100,  // > 100% -> -8
+    PENALTY_WARN: 4,
+    PENALTY_HARD: 8,
+    // First transition the jump detector examines. 2 means "compare
+    // level 2 against level 1", i.e. read every level, per spec.
+    // Raise to 3 to stop the opening 100/100 -> 100/200 double from
+    // flagging almost every real structure. See notes in the README.
+    JUMP_SCAN_FROM_LEVEL: 2,
+    // Tier split on buy-in (prize-pool portion), in dollars.
+    TIER_SPLIT: 300
+  };
+
+  // Grade bands per tier. `max` on the top band is not a ceiling on the
+  // score, only the span used to place the +/- modifier.
+  var BANDS = {
+    1: [
+      { g: "A", min: 48, max: 56 },
+      { g: "B", min: 40, max: 48 },
+      { g: "C", min: 32, max: 40 },
+      { g: "D", min: 24, max: 32 },
+      { g: "F", min: -Infinity, max: 24 }
+    ],
+    2: [
+      { g: "A", min: 85, max: 105 },
+      { g: "B", min: 65, max: 85 },
+      { g: "C", min: 50, max: 65 },
+      { g: "D", min: 38, max: 50 },
+      { g: "F", min: -Infinity, max: 38 }
+    ]
+  };
+
+  var GRADE_COLOR = { A: "var(--g-a)", B: "var(--g-b)", C: "var(--g-c)", D: "var(--g-d)", F: "var(--g-f)" };
+
+  /**
+   * Parse a pasted blind structure into levels.
+   * Accepts "SB / BB / Ante", "SB BB Ante", "SB,BB,Ante", with or
+   * without a leading level number, with or without thousands commas.
+   */
+  function parseStructure(text) {
+    var rows = [];
+    var bad = [];
+    var lines = String(text || "").split(/\r?\n/);
+
+    for (var i = 0; i < lines.length; i++) {
+      var line = lines[i].trim();
+      if (!line) continue;
+      if (/break|colou?r\s*up|registration\s*closes/i.test(line)) continue;
+
+      // 1,000 -> 1000 so thousands separators don't split into tokens.
+      var nums = line.replace(/(\d),(?=\d{3}\b)/g, "$1").match(/\d+(?:\.\d+)?/g);
+      if (!nums || nums.length < 2) { bad.push(line); continue; }
+      rows.push(nums.map(Number));
+    }
+
+    // If every row opens with its own 1-based position, that column is a
+    // level number pasted from a structure sheet — drop it.
+    var hasIndex = rows.length > 0 && rows.every(function (r, i) {
+      return r.length >= 3 && r[0] === i + 1;
+    });
+    if (hasIndex) rows = rows.map(function (r) { return r.slice(1); });
+
+    // An optional 4th column is that level's length in minutes. Only
+    // trust it when every row carries one and they all look like a
+    // plausible duration — otherwise it is an ante we would be misreading.
+    var perLevelMins = rows.length > 0 && rows.every(function (r) {
+      return r.length === 4 && r[3] >= 3 && r[3] <= 180;
+    });
+
+    var levels = rows.map(function (r, i) {
+      var sb = r[0], bb = r[1], ante = r.length > 2 ? r[2] : 0;
+      return {
+        level: i + 1, sb: sb, bb: bb, ante: ante, orbit: sb + bb + ante,
+        mins: perLevelMins ? r[3] : 0
+      };
+    });
+
+    return { levels: levels, unparsed: bad, perLevelMins: perLevelMins };
+  }
+
+  /** Run the full TSR grading on a parsed input set. */
+  function grade(input) {
+    var errs = [];
+    var buyin = input.buyin, fees = input.fees, stack = input.stack;
+    var levelLen = input.levelLen, levels = input.levels;
+
+    if (!(buyin > 0)) errs.push("Enter the total buy-in — the advertised price, fees included.");
+    if (!(fees >= 0)) errs.push("Enter total fees. Use 0 if the event genuinely has none.");
+    if (buyin > 0 && fees >= buyin) errs.push("Fees ($" + fmtNum(fees) + ") cannot be the whole buy-in ($" + fmtNum(buyin) + "). Fees are the part of the buy-in that does not reach the prize pool.");
+    if (!(stack > 0)) errs.push("Enter the starting stack in chips.");
+    if (!levels.length) errs.push("Enter the blind structure, one level per line.");
+    else if (levels.length < 18) {
+      errs.push("The score samples levels 6, 10, 14 and 18, so it needs at least 18 levels. You entered " + levels.length + ".");
+    }
+    if (levels.length && levels.some(function (l) { return !(l.orbit > 0); })) {
+      errs.push("Every level needs a small blind and a big blind greater than zero.");
+    }
+    if (input.len2 > 0 && !(input.len2From >= 2)) {
+      errs.push("Say which level the new length starts at — it has to be level 2 or later.");
+    }
+    if (errs.length) return { ok: false, errors: errs };
+
+    var O = levels.map(function (l) { return l.orbit; });
+    var o6 = O[5], o10 = O[9], o14 = O[13], o18 = O[17];
+
+    var denom = (o10 / o6) + (o14 / o10) + (o18 / o14);
+    if (!(denom > 0) || !isFinite(denom)) {
+      return { ok: false, errors: ["Levels 6, 10, 14 and 18 must all have a real orbit cost."] };
+    }
+
+    // Playable depth: the last level whose orbit cost still fits inside
+    // the stack. An add-on buys chips, so it moves this — the add-on is
+    // a structural input, not just a change to the fee.
+    // Minutes for each level: an explicit 4th column wins, then a
+    // scheduled change ("40 min from level 21"), then the base length.
+    var len2 = input.len2 > 0 ? input.len2 : 0;
+    var len2From = input.len2From > 0 ? input.len2From : 0;
+    var minsAt = levels.map(function (l, i) {
+      if (l.mins > 0) return l.mins;
+      if (len2 > 0 && len2From > 0 && (i + 1) >= len2From) return len2;
+      return levelLen;
+    });
+
+    function depthFor(chips) {
+      var last = 0;
+      for (var i = O.length - 1; i >= 0; i--) {
+        if (O[i] <= chips) { last = i + 1; break; }
+      }
+      var mins = 0;
+      for (var j = 0; j < last; j++) mins += minsAt[j];
+      return { lastDeep: last, depthMin: mins };
+    }
+
+    var addonChips = input.addonChips > 0 ? input.addonChips : 0;
+    var addonCost = input.addonCost > 0 ? input.addonCost : 0;
+    var hasAddon = addonChips > 0 || addonCost > 0;
+
+    var dBase = depthFor(stack);
+    var dEff = depthFor(stack + addonChips);
+    var lastDeep = dEff.lastDeep;
+    var depthMin = dEff.depthMin;
+    var raw = depthMin / denom;
+    var rawBase = dBase.depthMin / denom;
+
+    // Spoofing guard: read every level, not just the four samples.
+    var maxJump = 0, maxJumpAt = null;
+    for (var j = CFG.JUMP_SCAN_FROM_LEVEL - 1; j < O.length; j++) {
+      if (!(O[j - 1] > 0)) continue;
+      var pct = ((O[j] - O[j - 1]) / O[j - 1]) * 100;
+      if (pct > maxJump) { maxJump = pct; maxJumpAt = j + 1; }
+    }
+    var penalty = 0;
+    if (maxJump > CFG.JUMP_HARD) penalty = CFG.PENALTY_HARD;
+    else if (maxJump > CFG.JUMP_WARN) penalty = CFG.PENALTY_WARN;
+
+    var score = raw - penalty;
+    var scoreBase = rawBase - penalty;
+    var tier = buyin > CFG.TIER_SPLIT ? 2 : 1;
+    var g = letterFor(score, tier);
+    var gBase = letterFor(scoreBase, tier);
+
+    // Entry vig is fees over the advertised buy-in. Effective vig spreads
+    // the same fees over everything the player actually hands over, since
+    // the add-on adds prize pool without adding fee.
+    var entryVig = (fees / buyin) * 100;
+    var effVig = (fees / (buyin + addonCost)) * 100;
+
+    return {
+      ok: true,
+      tier: tier,
+      score: score,
+      raw: raw,
+      penalty: penalty,
+      letter: g.letter,
+      base: g.base,
+      hasAddon: hasAddon,
+      addonCost: addonCost,
+      addonChips: addonChips,
+      effStack: stack + addonChips,
+      scoreBase: scoreBase,
+      letterBase: gBase.letter,
+      lastDeepBase: dBase.lastDeep,
+      vig: effVig,
+      entryVig: entryVig,
+      lastDeep: lastDeep,
+      depthMin: depthMin,
+      minsAt: minsAt,
+      // A speed change past the depth window cannot move the score, and
+      // saying so out loud is better than letting it look ignored.
+      len2: len2,
+      len2From: len2From,
+      len2OutsideWindow: len2 > 0 && len2From > lastDeep,
+      maxJump: maxJump,
+      maxJumpAt: maxJumpAt,
+      smooth: maxJump <= CFG.JUMP_WARN,
+      samples: { o6: o6, o10: o10, o14: o14, o18: o18 },
+      denom: denom,
+      levelCount: levels.length
+    };
+  }
+
+  /** Place a score in its band, then split the band into thirds for +/-. */
+  function letterFor(score, tier) {
+    var bands = BANDS[tier];
+    for (var i = 0; i < bands.length; i++) {
+      var b = bands[i];
+      if (score >= b.min) {
+        if (b.g === "F") return { letter: "F", base: "F" };
+        var t = (score - b.min) / (b.max - b.min);
+        var mod = t < 1 / 3 ? "−" : (t < 2 / 3 ? "" : "+");
+        return { letter: b.g + mod, base: b.g };
+      }
+    }
+    return { letter: "F", base: "F" };
+  }
+
+  /* ==========================================================
+     COPY
+     ========================================================== */
+
+  function tierName(tier) {
+    return tier === 1 ? "Weekly & Daily" : "Series & Special Events";
+  }
+
+  function contextNote(r, input) {
+    var buyin = input.buyin, fees = input.fees, fmt = input.fmt, gtd = input.gtd;
+    var toPrizePool = buyin - fees;
+    var out = [];
+    var money = "$" + fmtNum(buyin);
+
+    // The grade describes where an event sits on the skill/variance axis.
+    // It is never a verdict on whether to enter — see the editorial stance.
+    var byGrade = {
+      A: "This is a deep structure. Stacks stay meaningful well into the event, so pots get played rather than shoved, and the skill component is about as high as this format gets.",
+      B: "A solid structure with room to play. Stacks stay workable through the middle levels, though the blinds start applying real pressure earlier than the best events in its class.",
+      C: "A middling structure. There is genuine play early, but depth drains fast enough that the back half tilts toward push-fold, and variance carries more of the result than it would in a deeper event.",
+      D: "A short structure with a large variance component. Stacks get shallow early and postflop play is limited, so the outcome leans more on how the cards fall than on edge.",
+      F: "This is a high-variance structure. The blinds outrun the stacks early enough that most decisions become all-in or fold rather than hands that get played out. Results here turn far more on card distribution than on skill. That is a description of the format, not a verdict on the event."
+    };
+    out.push(byGrade[r.base]);
+
+    // The add-on is doing two separate jobs — chips and fee dilution —
+    // and they are worth naming separately.
+    if (r.hasAddon) {
+      var parts = [];
+      if (r.addonChips > 0) {
+        parts.push("The $" + fmtNum(r.addonCost) + " add-on takes you to " + fmtNum(r.effStack) +
+          " chips, which buys you through level " + r.lastDeep + " instead of level " + r.lastDeepBase +
+          " — worth " + (r.score - r.scoreBase).toFixed(1) + " points of score" +
+          (r.letter !== r.letterBase ? " and moves the grade from " + r.letterBase + " to " + r.letter : "") + ".");
+      }
+      if (r.addonCost > 0) {
+        parts.push("It also dilutes the fee: the same $" + fmtNum(fees) + " spread across $" +
+          fmtNum(buyin + r.addonCost) + " of spend is " + r.vig.toFixed(1) + "% rather than " +
+          r.entryVig.toFixed(1) + "% on the entry alone.");
+        // Cost per chip, entry vs add-on, from the player's wallet.
+        if (r.addonChips > 0 && input.stack > 0 &&
+            (r.addonCost / r.addonChips) < (buyin / input.stack)) {
+          parts.push("Chip for chip the add-on is the cheaper of the two buys, so passing on it costs you twice.");
+        }
+      }
+      out.push(parts.join(" "));
+    }
+
+    var v = r.vig;
+    if (r.tier === 1) {
+      if (v >= 25) out.push("At " + v.toFixed(1) + "%, the vig is very high — close to a third of what you hand over never reaches the prize pool. Small fields do genuinely cost more per player to run, but this sits at the top of the range for a " + money + " event.");
+      else if (v >= 18) out.push("The " + v.toFixed(1) + "% vig is steep, but a " + money + " event has to cover dealers, staff and floor time out of a small field. That is the cost of running a small tournament, not automatically a room taking liberties.");
+      else if (v >= 12) out.push("At " + v.toFixed(1) + "%, the vig is about normal for a " + money + " local event — small fields cost real money to run.");
+      else out.push("At " + v.toFixed(1) + "%, the vig is low for a " + money + " event. More of your money is reaching the prize pool than usual at this level.");
+    } else {
+      if (v >= 15) out.push("A " + v.toFixed(1) + "% vig is high for a " + money + " event. At series buy-ins the field is large enough that the fixed costs should spread further than this.");
+      else if (v >= 9) out.push("At " + v.toFixed(1) + "%, the vig sits in the normal band for a series event at this buy-in.");
+      else out.push("At " + v.toFixed(1) + "%, the vig is genuinely good for a " + money + " event.");
+    }
+
+    // A guarantee reframes the vig: the room is carrying overlay risk.
+    if (gtd > 0 && toPrizePool > 0) {
+      var need = Math.ceil(gtd / toPrizePool);
+      out.push("The $" + fmtNum(gtd) + " guarantee needs " + fmtNum(need) + " entries to fill, since only $" + fmtNum(toPrizePool) + " of each " + money + " entry reaches the prize pool. Below that the room covers the difference itself, which is part of what the fee is buying.");
+    }
+
+    if (r.len2OutsideWindow) {
+      out.push("The move to " + r.len2 + "-minute levels at level " + r.len2From +
+        " does not change the score: depth runs out at level " + r.lastDeep +
+        ", so the slower levels sit past the window the formula measures. They still matter once you are deep in the event — they just are not what this grade is rating.");
+    }
+
+    if (!r.smooth) {
+      out.push("The structure is uneven: level " + r.maxJumpAt + " raises the orbit cost " + Math.round(r.maxJump) + "% over the level before it, which cost the score " + r.penalty + " points. A single spike like that shortens the event more than the average pace suggests.");
+    }
+
+    if (fmt === "plo") {
+      if (r.base === "F") {
+        out.push("It is also a big-bet game, which plays faster still than the hold'em assumptions in the formula — the variance runs higher than even this number shows.");
+      } else {
+        out.push("Because this is a big-bet game, treat the effective quality as about one letter grade below the number.");
+      }
+    }
+
+    if (r.base === "A" || r.base === "B") {
+      out.push("The grade rates the structure, not the decision — a good structure is still only worth it at a buy-in you are comfortable playing.");
+    } else if (r.base === "F") {
+      out.push("The grade rates the structure, not the decision. A high-variance tournament is a perfectly legitimate thing to enter with your eyes open. It just is not where a skill edge gets paid.");
+    } else {
+      out.push("The grade rates the structure, not the decision. A cheap tournament with a middling grade can still be exactly the right event for your bankroll.");
+    }
+    return out.join(" ");
+  }
+
+  /* ==========================================================
+     SAMPLE TOURNAMENTS
+     Scored live by the engine above — no hardcoded grades.
+     The first three reproduce the verified test cases in the spec.
+     ========================================================== */
+
+  function ladder(bbs) {
+    // Standard modern structure: SB = BB/2, big blind ante = BB.
+    return bbs.map(function (bb) {
+      return (bb / 2) + " / " + bb + " / " + bb;
+    }).join("\n");
+  }
+
+  var SAMPLES = [
+    {
+      name: "Lone Star Showdown",
+      room: "TCH Dallas",
+      date: "Aug 9, 2026",
+      buyin: 250, fees: 40, stack: 40000, levelLen: 30, fmt: "nlh",
+      bbs: [200, 300, 400, 500, 700, 1000, 1500, 2000, 2500, 3000, 4000, 6000, 8000, 10000, 12000, 15000, 20000, 30000, 40000, 60000]
+    },
+    {
+      name: "Thirty Throwdown",
+      room: "Palace Poker",
+      date: "Aug 9, 2026",
+      buyin: 150, fees: 30, stack: 30000, levelLen: 30, fmt: "nlh",
+      bbs: [200, 300, 400, 500, 700, 1000, 1500, 2000, 3000, 4000, 6000, 8000, 12000, 16000, 20000, 30000, 40000, 50000, 70000, 100000]
+    },
+    {
+      name: "Championship Series #9",
+      room: "Series & Special Events",
+      date: "Aug 8, 2026",
+      buyin: 310, fees: 62, stack: 15000, levelLen: 30, fmt: "nlh",
+      bbs: [100, 150, 200, 250, 300, 400, 500, 700, 900, 1200, 1500, 2000, 2500, 3000, 4000, 5000, 7000, 10000, 14000, 20000]
+    },
+    {
+      name: "Friday Night Lights",
+      room: "San Antonio Card House",
+      date: "Aug 7, 2026",
+      buyin: 200, fees: 38, stack: 25000, levelLen: 30, fmt: "nlh",
+      bbs: [100, 200, 300, 400, 600, 800, 1200, 1600, 2400, 3200, 4000, 6000, 8000, 12000, 16000, 25000, 40000, 60000, 80000, 120000]
+    },
+    {
+      name: "Mega Stack Turbo",
+      room: "Local Room",
+      date: "Aug 7, 2026",
+      buyin: 120, fees: 28, stack: 20000, levelLen: 15, fmt: "nlh", gtd: 5000,
+      bbs: [100, 200, 300, 400, 600, 800, 1200, 1600, 2400, 3200, 4800, 6400, 10000, 15000, 20000, 30000, 40000, 60000, 90000, 130000]
+    }
+  ];
+
+  SAMPLES.forEach(function (s) { s.structure = ladder(s.bbs); });
+
+  /* ==========================================================
+     DOM
+     ========================================================== */
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  var els = {
+    tname: $("tname"), buyin: $("buyin"), fees: $("fees"), stack: $("stack"),
+    gtd: $("gtd"), addcost: $("addcost"), addchips: $("addchips"),
+    levellen: $("levellen"), len2: $("len2"), len2from: $("len2from"),
+    structure: $("structure"),
+    errors: $("errors"), empty: $("empty"), result: $("result"),
+    gradeLetter: $("gradeLetter"), scoreNum: $("scoreNum"), tierLabel: $("tierLabel"),
+    vigVal: $("vigVal"), vigSub: $("vigSub"),
+    depthVal: $("depthVal"), depthSub: $("depthSub"),
+    jumpVal: $("jumpVal"), jumpSub: $("jumpSub"),
+    qualVal: $("qualVal"), qualSub: $("qualSub"),
+    ploNote: $("ploNote"), contextBody: $("contextBody"),
+    rail: $("rail"), toast: $("toast"), printRows: $("printRows")
+  };
+
+  var format = "nlh";
+
+  function fmtNum(n) {
+    return Math.round(n).toLocaleString("en-US");
+  }
+  function parseMoney(v) {
+    var n = parseFloat(String(v || "").replace(/[^0-9.\-]/g, ""));
+    return isNaN(n) ? NaN : n;
+  }
+  function hhmm(mins) {
+    var h = Math.floor(mins / 60), m = mins % 60;
+    if (!h) return m + "m";
+    return h + "h" + (m ? " " + m + "m" : "");
+  }
+  function toast(msg) {
+    els.toast.textContent = msg;
+    els.toast.classList.add("on");
+    clearTimeout(toast._t);
+    toast._t = setTimeout(function () { els.toast.classList.remove("on"); }, 2600);
+  }
+
+  function readForm() {
+    var parsed = parseStructure(els.structure.value);
+    return {
+      name: els.tname.value.trim(),
+      buyin: parseMoney(els.buyin.value),
+      fees: els.fees.value.trim() === "" ? NaN : parseMoney(els.fees.value),
+      stack: parseMoney(els.stack.value),
+      gtd: els.gtd.value.trim() === "" ? 0 : (parseMoney(els.gtd.value) || 0),
+      addonCost: els.addcost.value.trim() === "" ? 0 : (parseMoney(els.addcost.value) || 0),
+      addonChips: els.addchips.value.trim() === "" ? 0 : (parseMoney(els.addchips.value) || 0),
+      levelLen: parseInt(els.levellen.value, 10),
+      len2: els.len2.value ? parseInt(els.len2.value, 10) : 0,
+      len2From: els.len2from.value.trim() === "" ? 0 : (parseMoney(els.len2from.value) || 0),
+      levels: parsed.levels,
+      unparsed: parsed.unparsed,
+      fmt: format
+    };
+  }
+
+  function showErrors(list) {
+    if (!list.length) { els.errors.hidden = true; return; }
+    els.errors.innerHTML = "<ul>" + list.map(function (e) {
+      return "<li>" + e.replace(/&/g, "&amp;").replace(/</g, "&lt;") + "</li>";
+    }).join("") + "</ul>";
+    els.errors.hidden = false;
+  }
+
+  function calculate(opts) {
+    var input = readForm();
+    var r = grade(input);
+
+    if (!r.ok) {
+      showErrors(r.errors);
+      els.result.hidden = true;
+      els.empty.hidden = false;
+      return null;
+    }
+
+    var warn = [];
+    if (input.unparsed.length) {
+      warn.push(input.unparsed.length + " line(s) could not be read and were skipped: “" + input.unparsed[0] + "”");
+    }
+    showErrors(warn);
+
+    render(r, input);
+    if (!opts || opts.scroll !== false) {
+      if (window.matchMedia("(max-width: 980px)").matches) {
+        els.result.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+    return r;
+  }
+
+  function render(r, input) {
+    els.empty.hidden = true;
+    els.result.hidden = false;
+
+    var color = GRADE_COLOR[r.base];
+    els.gradeLetter.textContent = r.letter;
+    els.gradeLetter.style.color = color;
+    els.scoreNum.textContent = r.score.toFixed(1);
+    els.scoreNum.style.color = color;
+
+    els.tierLabel.innerHTML = "Graded within the " + tierName(r.tier) + " tier" +
+      (r.penalty ? " &nbsp;·&nbsp; <span style=\"color:var(--g-d)\">−" + r.penalty + " structure penalty applied</span>" : "") +
+      (r.hasAddon ? " &nbsp;·&nbsp; <span style=\"color:var(--ink-2)\">taking the add-on; " +
+        r.scoreBase.toFixed(1) + " (" + r.letterBase + ") without it</span>" : "");
+
+    els.vigVal.textContent = r.vig.toFixed(1) + "%";
+    els.vigSub.textContent = r.hasAddon
+      ? "Effective, across $" + fmtNum(input.buyin + r.addonCost) + " total spend · " +
+        r.entryVig.toFixed(1) + "% on the $" + fmtNum(input.buyin) + " entry alone"
+      : "$" + fmtNum(input.fees) + " of the $" + fmtNum(input.buyin) +
+        " entry · $" + fmtNum(input.buyin - input.fees) + " reaches the prize pool";
+
+    els.depthVal.textContent = hhmm(r.depthMin);
+    els.depthSub.textContent = r.hasAddon
+      ? "Through level " + r.lastDeep + " on a " + fmtNum(r.effStack) + " stack · level " +
+        r.lastDeepBase + " without the add-on"
+      : "Orbit cost stays inside your stack through level " + r.lastDeep +
+        (r.len2OutsideWindow
+          ? " · the " + r.len2 + "-min levels start after that"
+          : (r.len2 ? " · includes the " + r.len2 + "-min levels from " + r.len2From : ""));
+
+    els.jumpVal.textContent = (r.maxJump >= 0 ? "+" : "") + Math.round(r.maxJump) + "%";
+    els.jumpVal.style.color = r.maxJump > CFG.JUMP_HARD ? "var(--g-f)"
+      : (r.maxJump > CFG.JUMP_WARN ? "var(--g-c)" : "var(--g-a)");
+    els.jumpSub.textContent = r.maxJumpAt ? "Largest single rise, at level " + r.maxJumpAt : "";
+
+    if (r.smooth) {
+      els.qualVal.innerHTML = "<svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M8 12.4l2.7 2.7L16 9.6\"/></svg> Smooth structure";
+      els.qualVal.style.color = "var(--g-a)";
+      els.qualSub.textContent = "No level rises more than " + CFG.JUMP_WARN + "% over the last";
+    } else {
+      els.qualVal.innerHTML = "<svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"><path d=\"M12 4l9 16H3z\"/><path d=\"M12 10v4\"/><path d=\"M12 17.3v.1\"/></svg> Uneven structure";
+      els.qualVal.style.color = r.maxJump > CFG.JUMP_HARD ? "var(--g-f)" : "var(--g-c)";
+      els.qualSub.textContent = "Level " + r.maxJumpAt + " jumps " + Math.round(r.maxJump) + "% over level " + (r.maxJumpAt - 1);
+    }
+
+    els.ploNote.hidden = input.fmt !== "plo";
+    // "One grade worse" has nowhere to go once the grade is already F.
+    $("ploBody").textContent = r.base === "F"
+      ? "PLO and other four- and five-card games play faster than the hold'em assumptions in this formula. The score is not adjusted. The grade is already at the floor, so read this as the high-variance end of an already high-variance structure."
+      : "PLO and other four- and five-card games play faster than the hold'em assumptions in this formula. The score is not adjusted. Read the effective quality as roughly one letter grade worse than the number suggests.";
+    els.contextBody.textContent = contextNote(r, input);
+
+    highlightBand(r);
+    buildPrintSummary(r, input);
+    writeHash(input);
+  }
+
+  function highlightBand(r) {
+    ["t1body", "t2body"].forEach(function (id) {
+      var body = $(id);
+      var mine = (id === "t1body" ? 1 : 2) === r.tier;
+      Array.prototype.forEach.call(body.rows, function (row) {
+        row.classList.toggle("here", mine && row.getAttribute("data-g") === r.base);
+      });
+    });
+  }
+
+  function buildPrintSummary(r, input) {
+    var rows = [
+      ["Tournament", input.name || "Untitled tournament"],
+      ["Total buy-in", "$" + fmtNum(input.buyin) + "  ($" + fmtNum(input.buyin - input.fees) + " to prize pool, $" + fmtNum(input.fees) + " fees)"],
+      ["Guarantee", input.gtd ? "$" + fmtNum(input.gtd) + " (" + fmtNum(Math.ceil(input.gtd / (input.buyin - input.fees))) + " entries to fill)" : "none stated"],
+      ["Starting stack", fmtNum(input.stack) + " chips" +
+        (r.hasAddon ? "  (" + fmtNum(r.effStack) + " taking the $" + fmtNum(r.addonCost) + " add-on)" : "")],
+      ["Level length", input.levelLen + " minutes" +
+        (r.len2 ? ", then " + r.len2 + " minutes from level " + r.len2From : "")],
+      ["Format", input.fmt === "plo" ? "PLO / Big Bet" : "No Limit Hold'em"],
+      ["Levels entered", String(r.levelCount)],
+      ["Orbit cost L6 / L10 / L14 / L18",
+        fmtNum(r.samples.o6) + " / " + fmtNum(r.samples.o10) + " / " + fmtNum(r.samples.o14) + " / " + fmtNum(r.samples.o18)],
+      ["Playable depth", hhmm(r.depthMin) + " (through level " + r.lastDeep + ")"],
+      ["Raw score", r.raw.toFixed(2)],
+      ["Structure penalty", r.penalty ? "−" + r.penalty : "none"],
+      ["TSR Score", r.score.toFixed(1) + "  (" + r.letter + ", Tier " + r.tier + ")" +
+        (r.hasAddon ? "  —  " + r.scoreBase.toFixed(1) + " (" + r.letterBase + ") without the add-on" : "")],
+      ["Vig", r.hasAddon
+        ? r.vig.toFixed(1) + "% effective  /  " + r.entryVig.toFixed(1) + "% on the entry alone"
+        : r.vig.toFixed(1) + "%"],
+      ["Graded", new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })]
+    ];
+    els.printRows.innerHTML = rows.map(function (p) {
+      return "<tr><td style=\"color:#555;width:40%\">" + p[0] + "</td><td><b>" + p[1] + "</b></td></tr>";
+    }).join("");
+  }
+
+  /* ==========================================================
+     SHAREABLE STATE
+     ========================================================== */
+
+  function writeHash(input) {
+    var p = new URLSearchParams();
+    if (input.name) p.set("n", input.name);
+    p.set("b", input.buyin);
+    p.set("f", input.fees);
+    p.set("s", input.stack);
+    if (input.gtd) p.set("q", input.gtd);
+    if (input.addonCost) p.set("ac", input.addonCost);
+    if (input.addonChips) p.set("ak", input.addonChips);
+    p.set("l", input.levelLen);
+    if (input.len2 && input.len2From) { p.set("l2", input.len2); p.set("l2f", input.len2From); }
+    if (input.fmt !== "nlh") p.set("g", input.fmt);
+    p.set("v", input.levels.map(function (x) { return x.sb + "-" + x.bb + "-" + x.ante; }).join("_"));
+    history.replaceState(null, "", "#" + p.toString());
+  }
+
+  function readHash() {
+    if (!location.hash || location.hash.length < 2) return false;
+    var p = new URLSearchParams(location.hash.slice(1));
+    if (!p.get("v")) return false;
+    els.tname.value = p.get("n") || "";
+    els.buyin.value = p.get("b") || "";
+    els.fees.value = p.get("f") || "";
+    els.stack.value = p.get("s") || "";
+    els.gtd.value = p.get("q") || "";
+    els.addcost.value = p.get("ac") || "";
+    els.addchips.value = p.get("ak") || "";
+    els.levellen.value = p.get("l") || "30";
+    els.len2.value = p.get("l2") || "";
+    els.len2from.value = p.get("l2f") || "";
+    setFormat(p.get("g") === "plo" ? "plo" : "nlh");
+    els.structure.value = p.get("v").split("_").map(function (t) {
+      var a = t.split("-");
+      return a[0] + " / " + a[1] + " / " + (a[2] || 0);
+    }).join("\n");
+    return true;
+  }
+
+  /* ==========================================================
+     SAMPLE RAIL
+     ========================================================== */
+
+  function loadSample(s) {
+    els.tname.value = s.name;
+    els.buyin.value = s.buyin;
+    els.fees.value = s.fees;
+    els.stack.value = fmtNum(s.stack);
+    els.gtd.value = s.gtd ? fmtNum(s.gtd) : "";
+    els.addcost.value = s.addonCost ? fmtNum(s.addonCost) : "";
+    els.addchips.value = s.addonChips ? fmtNum(s.addonChips) : "";
+    els.levellen.value = String(s.levelLen);
+    els.len2.value = s.len2 ? String(s.len2) : "";
+    els.len2from.value = s.len2From ? String(s.len2From) : "";
+    els.structure.value = s.structure;
+    setFormat(s.fmt);
+  }
+
+  function scoreSample(s) {
+    var p = parseStructure(s.structure);
+    return grade({
+      buyin: s.buyin, fees: s.fees, stack: s.stack,
+      addonCost: s.addonCost || 0, addonChips: s.addonChips || 0,
+      levelLen: s.levelLen, levels: p.levels
+    });
+  }
+
+  function buildRail() {
+    els.rail.innerHTML = "";
+    SAMPLES.forEach(function (s) {
+      var r = scoreSample(s);
+      if (!r.ok) return;
+      var card = document.createElement("button");
+      card.type = "button";
+      card.className = "rcard";
+      card.innerHTML =
+        '<div class="top">' +
+          '<div><div class="g" style="color:' + GRADE_COLOR[r.base] + '">' + r.letter + '</div>' +
+          '<span class="gs">TSR ' + r.score.toFixed(1) + '</span></div>' +
+          '<div><div class="nm">' + s.name + '</div><div class="rm">' + s.room + '</div></div>' +
+        '</div>' +
+        '<div class="row"><span>$' + fmtNum(s.buyin) + ' buy-in</span><span>' + r.vig.toFixed(1) + '% vig</span></div>' +
+        '<div class="fl" style="color:' + (r.smooth ? "var(--g-a)" : "var(--g-c)") + '">' +
+          (r.smooth ? "&#10003; Smooth structure" : "&#9888; Uneven structure") +
+        '</div>' +
+        '<div class="dt">' + s.date + '</div>';
+      card.addEventListener("click", function () {
+        loadSample(s);
+        calculate();
+        els.buyin.scrollIntoView({ behavior: "smooth", block: "center" });
+        toast("Loaded " + s.name + " into the calculator.");
+      });
+      els.rail.appendChild(card);
+    });
+  }
+
+  /* ==========================================================
+     WIRING
+     ========================================================== */
+
+  function setFormat(f) {
+    format = f;
+    Array.prototype.forEach.call(document.querySelectorAll(".seg button"), function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-fmt") === f));
+    });
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll(".seg button"), function (b) {
+    b.addEventListener("click", function () {
+      setFormat(b.getAttribute("data-fmt"));
+      if (!els.result.hidden) calculate({ scroll: false });
+    });
+  });
+
+  $("calcBtn").addEventListener("click", function () { calculate(); });
+
+  $("resetBtn").addEventListener("click", function () {
+    ["tname", "buyin", "fees", "stack", "gtd", "addcost", "addchips", "structure"]
+      .forEach(function (k) { els[k].value = ""; });
+    els.levellen.value = "30";
+    els.len2.value = "";
+    els.len2from.value = "";
+    setFormat("nlh");
+    els.result.hidden = true;
+    els.empty.hidden = false;
+    showErrors([]);
+    history.replaceState(null, "", location.pathname + location.search);
+    els.tname.focus();
+  });
+
+  $("exampleBtn").addEventListener("click", function () {
+    loadSample(SAMPLES[0]);
+    calculate();
+    toast("Loaded a verified example structure.");
+  });
+
+  function toggler(btnId, panelId) {
+    var btn = $(btnId), panel = $(panelId);
+    btn.addEventListener("click", function () {
+      var open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!open));
+      panel.hidden = open;
+    });
+  }
+  toggler("guideToggle", "guidePanel");
+
+  $("pdfBtn").addEventListener("click", function () { window.print(); });
+
+  $("shareBtn").addEventListener("click", function () {
+    var url = location.href;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(
+        function () { toast("Link copied — it reopens with this exact tournament loaded."); },
+        function () { toast("Copy failed. The link is in your address bar."); }
+      );
+    } else {
+      toast("The link is in your address bar.");
+    }
+  });
+
+  $("newsForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var said = $("newsSaid");
+    said.hidden = false;
+    said.textContent = "Signup is not connected in this build — wire this form to your email provider.";
+  });
+
+  // Enter key anywhere in the form calculates.
+  $("formPanel").addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && e.target.tagName !== "TEXTAREA" && e.target.tagName !== "BUTTON") {
+      e.preventDefault();
+      calculate();
+    }
+  });
+
+  /* ==========================================================
+     BOOT
+     ========================================================== */
+
+  buildRail();
+  if (readHash()) calculate({ scroll: false });
+
+  // Regression checks from the spec. Logged, never shown — if the
+  // formula is ever edited these fail loudly in the console.
+  (function selfTest() {
+    var cases = [
+      { i: 2, name: "Championship Series #9", score: 54, vig: 20.0, deep: 16, o: [1000, 3000, 7500, 25000] },
+      { i: 1, name: "Thirty Throwdown",       score: 35, vig: 20.0, deep: 13, o: [2500, 10000, 40000, 125000] },
+      { i: 0, name: "Lone Star Showdown",     score: 51, vig: 16.0, deep: 16, o: [2500, 7500, 25000, 75000] }
+    ];
+    var pass = true;
+    cases.forEach(function (c) {
+      var r = scoreSample(SAMPLES[c.i]);
+      var got = [r.samples.o6, r.samples.o10, r.samples.o14, r.samples.o18];
+      var ok = r.ok &&
+        Math.round(r.score) === c.score &&
+        Math.abs(r.vig - c.vig) < 0.05 &&
+        r.lastDeep === c.deep &&
+        got.every(function (v, k) { return v === c.o[k]; });
+      if (!ok) {
+        pass = false;
+        console.error("[TSR] regression FAILED:", c.name, { expected: c, got: r });
+      }
+    });
+    console.log(pass ? "[TSR] all 3 spec regression cases pass." : "[TSR] REGRESSION FAILURES — see above.");
+    window.__TSR__ = { grade: grade, parseStructure: parseStructure, SAMPLES: SAMPLES, scoreSample: scoreSample, pass: pass };
+  })();
+})();
+</script>

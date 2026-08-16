@@ -30,6 +30,82 @@
       color: #888888;
       margin: -14px 0 26px;
     }
+
+    /* ── TSR Score Calculator promo (homepage entry point) ── */
+    /* Tight top padding pulls the card up under the hero; the override
+       below pulls Latest Reports up so the calculator isn't marooned. */
+    .tsr-promo-section { padding: 28px 0 36px; background: var(--color-bg); }
+    .latest-reports { padding-top: 36px; }
+    .tsr-promo {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      border: 1px solid var(--color-border);
+      border-left: 3px solid var(--color-gold);
+      background: linear-gradient(150deg, #141414 0%, #0d0d0d 100%);
+    }
+    .tsr-promo-main {
+      padding: 42px 46px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .tsr-promo-label { color: var(--color-gold); margin-bottom: 14px; }
+    .tsr-promo-title {
+      font-family: var(--font-headline);
+      font-size: clamp(28px, 3.4vw, 40px);
+      font-weight: 700; color: var(--color-white);
+      line-height: 1.05; margin-bottom: 16px;
+    }
+    .tsr-promo-deck {
+      font-family: var(--font-body); font-size: 15px;
+      color: var(--color-white-muted); line-height: 1.6;
+      max-width: 48ch; margin-bottom: 28px;
+    }
+    .tsr-promo-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .tsr-promo-link {
+      font-family: var(--font-label); font-size: var(--text-label);
+      font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--color-white-muted); transition: color 0.2s ease;
+    }
+    .tsr-promo-link:hover { color: var(--color-gold); }
+    .tsr-promo-score {
+      border-left: 1px solid var(--color-border);
+      padding: 38px 42px;
+      display: grid; grid-template-columns: auto 1fr; gap: 30px;
+      align-items: center;
+    }
+    .tsr-promo-grade {
+      font-family: var(--font-headline); font-weight: 900;
+      font-size: 88px; line-height: 0.82; color: #4FD675; /* A-grade green, matching the calculator's grade ramp */
+      text-align: center;
+    }
+    .tsr-promo-grade small {
+      display: block; font-family: var(--font-body);
+      font-size: 13px; font-weight: 600; color: var(--color-white-muted);
+      letter-spacing: 0.03em; margin-top: 10px;
+    }
+    .tsr-promo-stats { display: flex; flex-direction: column; }
+    .tsr-promo-stat {
+      display: flex; justify-content: space-between; gap: 16px;
+      padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 13.5px;
+    }
+    .tsr-promo-stat:last-of-type { border-bottom: 0; }
+    .tsr-promo-stat span:first-child { color: var(--color-white-muted); }
+    .tsr-promo-stat span:last-child { color: var(--color-white); font-weight: 600; }
+    .tsr-promo-stat .smooth { color: var(--color-gold); }
+    .tsr-promo-tier {
+      grid-column: 1 / -1; margin-top: 6px; padding-top: 14px;
+      border-top: 1px solid var(--color-border);
+      font-family: 'Inter', sans-serif; font-size: 11.5px; color: #888888;
+    }
+    @media (max-width: 860px) {
+      .tsr-promo { grid-template-columns: 1fr; }
+      .tsr-promo-main { padding: 32px 26px; }
+      .tsr-promo-score { border-left: 0; border-top: 1px solid var(--color-border); padding: 30px 26px; }
+    }
+    @media (max-width: 520px) {
+      .tsr-promo-score { grid-template-columns: 1fr; gap: 20px; text-align: center; }
+      .tsr-promo-grade { font-size: 72px; }
+    }
   </style>
 </head>
 <body>
@@ -63,6 +139,7 @@
       <!-- Center links -->
       <ul class="nav-links" role="list">
         <li><a href="news.html" class="active">NEWS</a></li>
+        <li><a href="tsr-score-calculator.html">TSR SCORE</a></li>
         <li><a href="tournaments.html">TOURNAMENTS</a></li>
         <li><a href="hosted-games.html">HOSTED GAMES</a></li>
         <li><a href="media.html">MEDIA</a></li>
@@ -83,6 +160,7 @@
   <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <button class="nav-overlay-close" id="nav-overlay-close" aria-label="Close menu">&times;</button>
     <a href="news.html" class="active">News</a>
+    <a href="tsr-score-calculator.html">TSR Score</a>
     <a href="tournaments.html">Tournaments</a>
     <a href="hosted-games.html">Hosted Games</a>
     <a href="media.html">Media</a>
@@ -123,6 +201,39 @@
           <p class="hero-deck">Beneath the neon lights and behind closed doors, a new era of unbridled aggression defines the highest stakes in the Lone Star State. We go inside the underground rooms reshaping global poker.</p>
           <a href="#" class="btn-hero">Read the Investigation &nbsp;→</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       4b. TSR SCORE CALCULATOR — PROMO
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="tsr-promo-section" aria-label="TSR Score Calculator">
+    <div class="container">
+      <div class="tsr-promo">
+
+        <div class="tsr-promo-main">
+          <p class="tsr-promo-label label-tag">TSR Score Calculator</p>
+          <h2 class="tsr-promo-title">Grade a Tournament<br>Before You Play</h2>
+          <p class="tsr-promo-deck">Our objective formula weighs structure, fees, and blind jumps to score any Texas tournament — so you know exactly what you're buying into before you post a single chip.</p>
+          <div class="tsr-promo-actions">
+            <a href="tsr-score-calculator.html" class="btn-hero">Calculate Now &nbsp;→</a>
+            <a href="tsr-score-calculator.html" class="tsr-promo-link">See a graded example ↗</a>
+          </div>
+        </div>
+
+        <div class="tsr-promo-score">
+          <div class="tsr-promo-grade">A&minus;<small>88.6 TSR Score</small></div>
+          <div class="tsr-promo-stats">
+            <div class="tsr-promo-stat"><span>Buy-In</span><span>$400</span></div>
+            <div class="tsr-promo-stat"><span>Starting Stack</span><span>30,000</span></div>
+            <div class="tsr-promo-stat"><span>Level Length</span><span>30 min</span></div>
+            <div class="tsr-promo-stat"><span>Vig</span><span>12.5%</span></div>
+            <div class="tsr-promo-stat"><span>Blind Jumps</span><span class="smooth">✓ Smooth</span></div>
+          </div>
+          <p class="tsr-promo-tier">Graded within the Series &amp; Special Events tier</p>
+        </div>
+
       </div>
     </div>
   </section>
