@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TSR Score Calculator — The Sham Report</title>
 
 <style>
@@ -863,6 +868,24 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
   .foot-grid { grid-template-columns: 1fr; }
 }
 
+/* ---------- Mobile usability -------------------------------- */
+@media (max-width: 640px) {
+  /* 16px form controls stop iOS Safari from zooming in on focus and
+     read better on a phone; the structure box gets more room. */
+  input[type="text"], select, textarea { font-size: 16px; }
+  textarea#structure { font-size: 16px; line-height: 1.9; height: 210px; }
+  /* Larger tap target for the info toggles. */
+  .hint { width: 20px; height: 20px; font-size: 11px; }
+  /* A grade that owns the phone screen without overwhelming it. */
+  .grade { font-size: 74px; }
+  .score-meta .v { font-size: 34px; }
+  /* Comfortable spacing on small screens. */
+  .panel-pad { padding: 22px 18px 24px; }
+  .pagehead .wrap { padding-top: 36px; padding-bottom: 24px; }
+  /* Keep the page title from crowding the edge on common phone widths. */
+  h1 { font-size: 28px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
 }
@@ -881,6 +904,8 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
 #printSummary { display: none; }
 #printSummary table { margin-top: 10px; }
 </style>
+</head>
+<body>
 
 
 <header class="masthead">
@@ -2048,3 +2073,5 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
   })();
 })();
 </script>
+</body>
+</html>
