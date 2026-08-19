@@ -1217,7 +1217,9 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
 
         <div id="bbPane" hidden>
           <div class="struct-wrap">
-            <textarea id="bbtext" spellcheck="false" inputmode="numeric" aria-label="Big blind for each level, one per line"></textarea>
+            <textarea id="bbtext" spellcheck="false" autocapitalize="off" autocorrect="off"
+              placeholder="100&#10;200&#10;300&#10;&#10;or: 100, 200, 300, 400"
+              aria-label="Big blind for each level, one per line"></textarea>
           </div>
           <div class="bbopts">
             <div class="field">
