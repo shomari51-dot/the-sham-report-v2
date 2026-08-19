@@ -145,7 +145,7 @@
     .tsr-rcard-flag.uneven { color: #E0A34A; }
     .g-A { color: #4FD675; } .g-B { color: #9BD24C; } .g-C { color: #D4AF37; }
     .g-D { color: #E07A3A; } .g-F { color: #CC0000; }
-    .tsr-recent-note { font-size: 12px; color: #888888; margin-top: 16px; }
+      <p class="tsr-recent-note" id="tsrRecentNote">A snapshot of recent structure grades, scored by the same TSR engine. Tap any card to open the calculator.</p>
   </style>
 </head>
 <body>
@@ -291,7 +291,7 @@
         <a href="tsr-score-calculator.html" class="section-link">Grade a Tournament →</a>
       </div>
 
-      <div class="tsr-rail">
+      <div class="tsr-rail" id="tsrRail" data-fallback="1">
 
         <a class="tsr-rcard" href="tsr-score-calculator.html">
           <div class="tsr-rcard-top">
@@ -334,15 +334,15 @@
 
         <a class="tsr-rcard" href="tsr-score-calculator.html">
           <div class="tsr-rcard-top">
-            <div class="tsr-rcard-grade g-D">D&minus;</div>
+            <div class="tsr-rcard-grade g-D">D+</div>
             <div>
               <div class="tsr-rcard-name">Friday Night Lights</div>
               <div class="tsr-rcard-room">San Antonio Card House</div>
-              <div class="tsr-rcard-score">TSR 26.6</div>
+              <div class="tsr-rcard-score">TSR 30.6</div>
             </div>
           </div>
           <div class="tsr-rcard-row"><span>$200 buy-in</span><span>19% fee</span></div>
-          <div class="tsr-rcard-flag uneven">⚠ Uneven</div>
+          <div class="tsr-rcard-flag smooth">✓ Smooth</div>
         </a>
 
         <a class="tsr-rcard" href="tsr-score-calculator.html">
@@ -351,11 +351,11 @@
             <div>
               <div class="tsr-rcard-name">Mega Stack Turbo</div>
               <div class="tsr-rcard-room">Local Room</div>
-              <div class="tsr-rcard-score">TSR 10.2</div>
+              <div class="tsr-rcard-score">TSR 14.2</div>
             </div>
           </div>
           <div class="tsr-rcard-row"><span>$120 buy-in</span><span>23% fee</span></div>
-          <div class="tsr-rcard-flag uneven">⚠ Uneven</div>
+          <div class="tsr-rcard-flag smooth">✓ Smooth</div>
         </a>
 
       </div>
@@ -598,5 +598,54 @@
 
   <script src="js/main.js"></script>
   <script src="js/cms-content.js"></script>
+  <script>
+  /* ── Recently Graded ────────────────────────────────────────
+     Published grades come from /api/grades. The cards already in
+     the markup are the fallback: if the feed is unreachable the
+     section still reads, it just is not live. Each card carries
+     the calculator's own share fragment, so opening one restores
+     the exact tournament rather than a blank form.             */
+  (function () {
+    var rail = document.getElementById('tsrRail');
+    if (!rail || !window.fetch) return;
+
+    var GRADE_CLASS = { 'A': 'g-A', 'B': 'g-B', 'C': 'g-C', 'D': 'g-D', 'F': 'g-F' };
+
+    function esc(v) {
+      return String(v == null ? '' : v)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function card(g) {
+      var base = GRADE_CLASS[String(g.base || g.grade || '').charAt(0)] || 'g-C';
+      var href = 'tsr-score-calculator.html' + (g.hash ? '#' + g.hash : '');
+      var bits = [];
+      if (g.buyin) bits.push('<span>$' + esc(Math.round(g.buyin).toLocaleString('en-US')) + ' buy-in</span>');
+      if (typeof g.vig === 'number') bits.push('<span>' + esc(g.vig.toFixed(0)) + '% fee</span>');
+      return '<a class="tsr-rcard" href="' + esc(href) + '">' +
+        '<div class="tsr-rcard-top">' +
+          '<div class="tsr-rcard-grade ' + base + '">' + esc(g.grade || '') + '</div>' +
+          '<div>' +
+            '<div class="tsr-rcard-name">' + esc(g.name || '') + '</div>' +
+            (g.room ? '<div class="tsr-rcard-room">' + esc(g.room) + '</div>' : '') +
+            '<div class="tsr-rcard-score">TSR ' + esc(Number(g.score || 0).toFixed(1)) + '</div>' +
+          '</div>' +
+        '</div>' +
+        (bits.length ? '<div class="tsr-rcard-row">' + bits.join('') + '</div>' : '') +
+        '<div class="tsr-rcard-flag ' + (g.smooth ? 'smooth">\u2713 Smooth' : 'uneven">\u26a0 Uneven') + '</div>' +
+      '</a>';
+    }
+
+    fetch('/api/grades?limit=6')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (out) {
+        if (!out || !out.grades || !out.grades.length) return;
+        rail.innerHTML = out.grades.map(card).join('');
+        rail.removeAttribute('data-fallback');
+      })
+      .catch(function () { /* markup fallback stands */ });
+  })();
+  </script>
 </body>
 </html>
