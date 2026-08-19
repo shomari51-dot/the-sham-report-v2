@@ -438,6 +438,122 @@ textarea#structure {
   padding: 1px 5px;
 }
 
+/* ---------- Entry modes + structure preview ----------------- */
+
+.vh {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+#modeSeg { max-width: 340px; margin-bottom: 10px; }
+
+textarea#bbtext {
+  display: block;
+  height: 168px;
+  resize: vertical;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.85;
+  white-space: pre;
+  overflow: auto;
+  padding: 12px 14px;
+}
+
+.bbopts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 20px;
+  margin-top: 12px;
+}
+
+/* The preview is the confirmation step: it shows every level exactly
+   as the engine will read it, and each number stays correctable. */
+.preview {
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--panel-2);
+  overflow: hidden;
+}
+.pv-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+}
+.pv-count { font-size: 12px; color: var(--ink-2); }
+.pv-count b { color: var(--ink); font-weight: 600; }
+.pv-count .short { color: var(--g-d); }
+
+.pv-body { max-height: 292px; overflow: auto; }
+
+.pv-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.pv-table th {
+  position: sticky; top: 0; z-index: 1;
+  background: var(--panel-2);
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--ink-3);
+  text-align: right;
+  padding: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.pv-table td {
+  text-align: right;
+  padding: 0 8px;
+  height: 33px;
+  font-size: 12.5px;
+  color: var(--ink-2);
+  border-bottom: 1px solid var(--line-soft);
+}
+.pv-table tr:last-child td { border-bottom: 0; }
+
+.pv-table th.c-lvl, .pv-table td.c-lvl {
+  text-align: left; width: 38px;
+  color: var(--ink-3); font-size: 11.5px;
+}
+/* Levels 6 / 10 / 14 / 18 are the ones the score samples. */
+.pv-table tr.key td.c-lvl { color: var(--gold); font-weight: 700; }
+.pv-table td.c-orb { color: var(--ink); font-weight: 600; }
+.pv-table td.ro { color: var(--ink-3); }
+.pv-table td.in { padding: 0 2px; }
+.pv-table th.c-x, .pv-table td.c-x { width: 28px; padding: 0 4px 0 0; }
+
+input.pv-in {
+  width: 100%;
+  padding: 6px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  text-align: right;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--ink);
+}
+input.pv-in:hover { border-color: var(--line); }
+input.pv-in:focus { border-color: var(--gold-soft); background: #0C0C0C; }
+
+.pv-x {
+  background: none; border: 0;
+  color: var(--ink-3);
+  font-size: 16px; line-height: 1;
+  cursor: pointer;
+  padding: 5px 3px;
+}
+.pv-x:hover { color: var(--red-bright); }
+
+.pv-note {
+  margin: 0;
+  padding: 10px 14px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--g-d);
+}
+
 .actions { display: flex; gap: 12px; margin-top: 22px; }
 .btn-primary {
   flex: 1;
@@ -874,6 +990,17 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
      read better on a phone; the structure box gets more room. */
   input[type="text"], select, textarea { font-size: 16px; }
   textarea#structure { font-size: 16px; line-height: 1.9; height: 210px; }
+  textarea#bbtext { font-size: 16px; line-height: 1.9; height: 190px; }
+  .bbopts { grid-template-columns: 1fr; }
+  /* Tighter table so a full structure reads on a phone without zooming. */
+  .pv-table th, .pv-table td { padding: 0 5px; font-size: 12px; }
+  .pv-table td { height: 38px; }
+  input.pv-in { font-size: 16px; padding: 8px 4px; }
+  .pv-body { max-height: 340px; -webkit-overflow-scrolling: touch; }
+  /* Seven columns of five- and six-figure blinds do not fit a phone.
+     Hold the columns wide enough to read and let the table scroll
+     sideways inside its own box rather than crushing every number. */
+  .pv-table { min-width: 460px; }
   /* Larger tap target for the info toggles. */
   .hint { width: 20px; height: 20px; font-size: 11px; }
   /* A grade that owns the phone screen without overwhelming it. */
@@ -884,6 +1011,12 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
   .pagehead .wrap { padding-top: 36px; padding-bottom: 24px; }
   /* Keep the page title from crowding the edge on common phone widths. */
   h1 { font-size: 28px; }
+}
+
+@media (max-width: 520px) {
+  .preview.derived .c-sb, .preview.derived .c-ante { display: none; }
+  /* With those two columns gone the shorthand table fits outright. */
+  .preview.derived .pv-table { min-width: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1059,7 +1192,7 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
 
         <div class="field">
           <span class="lbl" id="fmtlbl">Game Format</span>
-          <div class="seg" role="group" aria-labelledby="fmtlbl">
+          <div class="seg" id="fmtSeg" role="group" aria-labelledby="fmtlbl">
             <button type="button" data-fmt="nlh" aria-pressed="true">No Limit Hold'em</button>
             <button type="button" data-fmt="plo" aria-pressed="false">PLO / Big Bet</button>
           </div>
@@ -1071,19 +1204,87 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
           <span class="lbl">Blind Structure</span>
           <button class="linky" id="guideToggle" aria-expanded="false" aria-controls="guidePanel">Need help? View guide →</button>
         </div>
-        <div class="struct-wrap">
-          <textarea id="structure" spellcheck="false" aria-label="Blind structure, one level per line"></textarea>
+        <div class="seg" id="modeSeg" role="group" aria-label="Blind structure entry mode">
+          <button type="button" data-mode="full" aria-pressed="true">Full table</button>
+          <button type="button" data-mode="bb" aria-pressed="false">Big blinds only</button>
         </div>
+
+        <div id="fullPane">
+          <div class="struct-wrap">
+            <textarea id="structure" spellcheck="false" aria-label="Blind structure, one level per line"></textarea>
+          </div>
+        </div>
+
+        <div id="bbPane" hidden>
+          <div class="struct-wrap">
+            <textarea id="bbtext" spellcheck="false" inputmode="numeric" aria-label="Big blind for each level, one per line"></textarea>
+          </div>
+          <div class="bbopts">
+            <div class="field">
+              <span class="lbl" id="bbAnteLbl">Ante</span>
+              <div class="control sel">
+                <select id="bbAnte" aria-labelledby="bbAnteLbl">
+                  <option value="bb">Big blind ante — equals the BB</option>
+                  <option value="half">Half ante — half the BB</option>
+                  <option value="none">No ante</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <span class="lbl" id="bbFromLbl">Antes start at</span>
+              <div class="control sel">
+                <select id="bbAnteFrom" aria-labelledby="bbFromLbl">
+                  <option value="1">Level 1</option>
+                  <option value="2">Level 2</option>
+                  <option value="3">Level 3</option>
+                  <option value="4">Level 4</option>
+                  <option value="5">Level 5</option>
+                  <option value="6">Level 6</option>
+                  <option value="7">Level 7</option>
+                  <option value="8">Level 8</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="struct-head" style="margin-top:8px">
-          <p class="subnote">Enter one level per line: SB / BB / Ante</p>
+          <p class="subnote" id="structNote">Enter one level per line: SB / BB / Ante</p>
           <button class="linky" id="exampleBtn">Add Example Structure</button>
         </div>
+
+        <div class="preview" id="previewWrap" hidden>
+          <div class="pv-head">
+            <span class="pv-count" id="pvCount"></span>
+            <button class="linky" id="pvToggle" aria-expanded="true" aria-controls="pvBody">Hide preview</button>
+          </div>
+          <div class="pv-body" id="pvBody">
+            <table class="pv-table">
+              <thead>
+                <tr>
+                  <th class="c-lvl" scope="col">Lvl</th>
+                  <th class="c-sb" scope="col">SB</th>
+                  <th class="c-bb" scope="col">BB</th>
+                  <th class="c-ante" scope="col">Ante</th>
+                  <th class="c-orb" scope="col">Orbit</th>
+                  <th class="c-chg" scope="col">Change</th>
+                  <th class="c-x" scope="col"><span class="vh">Remove level</span></th>
+                </tr>
+              </thead>
+              <tbody id="pvRows"></tbody>
+            </table>
+          </div>
+          <p class="pv-note" id="pvNote" hidden></p>
+        </div>
+
         <div class="guide" id="guidePanel" hidden>
-          <p>One level per line. Small blind, big blind, then the big blind ante. Any separator works — slashes, commas, or spaces.</p>
+          <p><b style="color:var(--ink)">Full table</b> — one level per line: small blind, big blind, then the big blind ante. Any separator works — slashes, commas, or spaces.</p>
           <p><code>100 / 200 / 200</code> &nbsp; <code>100,200,200</code> &nbsp; <code>6&nbsp;&nbsp;100 200 200</code></p>
           <p>Leading level numbers are detected and ignored, so you can paste a structure sheet straight in. No ante? Leave it off: <code>100 / 200</code>. Lines containing the word "break" are skipped.</p>
           <p>If the level length varies from level to level, add it as a fourth number — <code>100 / 200 / 200 / 30</code> — on every line. For a single change partway through, the Level Length Change field above is easier.</p>
-          <p>The score samples levels 6, 10, 14 and 18, so <b style="color:var(--ink)">at least 18 levels are required</b>.</p>
+          <p><b style="color:var(--ink)">Big blinds only</b> — built for a phone. Enter just the big blind for each level; the small blind is taken as half the big blind, and the ante follows the two settings beside the box. Every level is still read, so the structure gets the same full check as a typed-out table.</p>
+          <p>Type them one per line or separated by commas: <code>100, 200, 300, 400</code>. If one level breaks the pattern, switch to Full table — your levels come with you.</p>
+          <p>Either way, the preview below shows every level exactly as it will be graded, and you can correct any number right in the table. The score samples levels 6, 10, 14 and 18, so <b style="color:var(--ink)">at least 18 levels are required</b>.</p>
         </div>
       </div>
 
@@ -1387,6 +1588,82 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
     return { levels: levels, unparsed: bad, perLevelMins: perLevelMins };
   }
 
+  /**
+   * The ante a level carries under the shorthand convention.
+   * `from` is the 1-based level antes begin at.
+   */
+  function anteValue(bb, idx, mode, from) {
+    if (mode === "none" || (idx + 1) < from) return 0;
+    return mode === "half" ? Math.round(bb / 2) : bb;
+  }
+
+  /**
+   * Parse "big blinds only" shorthand into the same level shape
+   * parseStructure returns.
+   *
+   * Every real structure is two-thirds redundant: the small blind is
+   * half the big blind and, under big-blind-ante, so is the ante. One
+   * number per level therefore reconstructs the whole table, which is
+   * what makes this usable on a phone. Because every level is still
+   * built, the blind-jump scan reads the structure in full — nothing
+   * about the grade is estimated or skipped.
+   */
+  function parseShorthand(text, anteMode, anteFrom) {
+    var raw = String(text || "").replace(/(\d),(?=\d{3}\b)/g, "$1");
+    var lines = raw.split(/\r?\n/);
+    var bbs = [];
+    var bad = [];
+
+    for (var i = 0; i < lines.length; i++) {
+      var line = lines[i].trim();
+      if (!line) continue;
+      if (/break|colou?r\s*up|registration\s*closes/i.test(line)) continue;
+      // Numbers may be one per line or run together on one line, so a
+      // comma-separated list typed on a phone works as well as a column.
+      var nums = line.match(/\d+(?:\.\d+)?/g);
+      if (!nums) { bad.push(line); continue; }
+      for (var j = 0; j < nums.length; j++) bbs.push(Number(nums[j]));
+    }
+
+    var levels = bbs.map(function (bb, k) {
+      var sb = Math.round(bb / 2);
+      var ante = anteValue(bb, k, anteMode, anteFrom);
+      return {
+        level: k + 1, sb: sb, bb: bb, ante: ante,
+        orbit: sb + bb + ante, mins: 0
+      };
+    });
+
+    return { levels: levels, unparsed: bad, perLevelMins: false };
+  }
+
+  /**
+   * Can a full table be re-expressed as big blinds only? Returns the
+   * matching ante settings, or null when the structure does not follow
+   * the convention and shorthand would silently change the grade.
+   */
+  function detectConvention(levels) {
+    if (!levels.length) return { ante: "bb", from: 1 };
+    var i;
+    for (i = 0; i < levels.length; i++) {
+      if (levels[i].sb !== Math.round(levels[i].bb / 2)) return null;
+    }
+    var first = -1;
+    for (i = 0; i < levels.length; i++) {
+      if (levels[i].ante > 0) { first = i; break; }
+    }
+    if (first === -1) return { ante: "none", from: 1 };
+    if (first > 7) return null;  // outside the range the selector offers
+    var mode;
+    if (levels[first].ante === levels[first].bb) mode = "bb";
+    else if (levels[first].ante === Math.round(levels[first].bb / 2)) mode = "half";
+    else return null;
+    for (i = first; i < levels.length; i++) {
+      if (levels[i].ante !== anteValue(levels[i].bb, i, mode, first + 1)) return null;
+    }
+    return { ante: mode, from: first + 1 };
+  }
+
   /** Run the full TSR grading on a parsed input set. */
   function grade(input) {
     var errs = [];
@@ -1680,7 +1957,11 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
     tname: $("tname"), buyin: $("buyin"), fees: $("fees"), stack: $("stack"),
     gtd: $("gtd"), addcost: $("addcost"), addchips: $("addchips"),
     levellen: $("levellen"), len2: $("len2"), len2from: $("len2from"),
-    structure: $("structure"),
+    structure: $("structure"), bbtext: $("bbtext"),
+    bbAnte: $("bbAnte"), bbAnteFrom: $("bbAnteFrom"),
+    fullPane: $("fullPane"), bbPane: $("bbPane"), structNote: $("structNote"),
+    previewWrap: $("previewWrap"), pvBody: $("pvBody"), pvRows: $("pvRows"),
+    pvCount: $("pvCount"), pvNote: $("pvNote"),
     errors: $("errors"), empty: $("empty"), result: $("result"),
     gradeLetter: $("gradeLetter"), scoreNum: $("scoreNum"), tierLabel: $("tierLabel"),
     vigVal: $("vigVal"), vigSub: $("vigSub"),
@@ -1692,6 +1973,11 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
   };
 
   var format = "nlh";
+  var entryMode = "full";
+  // The levels the preview is currently showing. Editing a cell mutates
+  // this array and writes the result back to whichever box is in use, so
+  // the text stays the single source of truth.
+  var pvLevels = [];
 
   function fmtNum(n) {
     return Math.round(n).toLocaleString("en-US");
@@ -1713,7 +1999,7 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
   }
 
   function readForm() {
-    var parsed = parseStructure(els.structure.value);
+    var parsed = currentParse();
     return {
       name: els.tname.value.trim(),
       buyin: parseMoney(els.buyin.value),
@@ -1737,6 +2023,227 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
       return "<li>" + e.replace(/&/g, "&amp;").replace(/</g, "&lt;") + "</li>";
     }).join("") + "</ul>";
     els.errors.hidden = false;
+  }
+
+  /* ==========================================================
+     ENTRY MODE + STRUCTURE PREVIEW
+     ========================================================== */
+
+  function currentParse() {
+    if (entryMode === "bb") {
+      return parseShorthand(
+        els.bbtext.value,
+        els.bbAnte.value,
+        parseInt(els.bbAnteFrom.value, 10) || 1
+      );
+    }
+    return parseStructure(els.structure.value);
+  }
+
+  function jumpColor(pct) {
+    if (pct > CFG.JUMP_HARD) return "var(--g-f)";
+    if (pct > CFG.JUMP_WARN) return "var(--g-c)";
+    return "var(--ink-3)";
+  }
+
+  /** Push the preview's levels back into the box that feeds it. */
+  function writeBack() {
+    if (entryMode === "bb") {
+      els.bbtext.value = pvLevels.map(function (l) { return l.bb; }).join("\n");
+    } else {
+      els.structure.value = pvLevels.map(function (l) {
+        return l.sb + " / " + l.bb + " / " + l.ante + (l.mins ? " / " + l.mins : "");
+      }).join("\n");
+    }
+  }
+
+  function numCell(i, k, v, editable) {
+    if (!editable) {
+      return '<td class="c-' + k + ' ro">' + fmtNum(v) + "</td>";
+    }
+    return '<td class="c-' + k + ' in"><input class="pv-in" type="text" inputmode="numeric" ' +
+      'data-r="' + i + '" data-k="' + k + '" value="' + fmtNum(v) + '" ' +
+      'aria-label="Level ' + (i + 1) + " " + k.toUpperCase() + '"></td>';
+  }
+
+  /* Refresh the derived columns without rebuilding rows, so an edit in
+     progress keeps its focus and cursor position. */
+  function recalcDerived() {
+    var rows = els.pvRows.rows;
+    var prev = 0;
+    for (var i = 0; i < rows.length && i < pvLevels.length; i++) {
+      var l = pvLevels[i];
+      l.orbit = l.sb + l.bb + l.ante;
+      var orb = rows[i].querySelector("[data-orb]");
+      var chg = rows[i].querySelector("[data-chg]");
+      if (orb) orb.textContent = fmtNum(l.orbit);
+      if (chg) {
+        if (i === 0 || !(prev > 0)) {
+          chg.textContent = "—";
+          chg.style.color = "";
+        } else {
+          var pct = (l.orbit / prev - 1) * 100;
+          chg.textContent = (pct >= 0 ? "+" : "") + Math.round(pct) + "%";
+          chg.style.color = jumpColor(pct);
+        }
+      }
+      prev = l.orbit;
+    }
+  }
+
+  function renderPreview() {
+    var p = currentParse();
+    pvLevels = p.levels;
+
+    els.previewWrap.classList.toggle("derived", entryMode === "bb");
+
+    if (!pvLevels.length) {
+      els.previewWrap.hidden = true;
+      els.pvRows.innerHTML = "";
+      return;
+    }
+    els.previewWrap.hidden = false;
+
+    /* In shorthand the small blind and ante are derived, so they are
+       shown but not editable - correcting one means the structure has
+       left the convention, which is what Full table is for. */
+    var derived = entryMode === "bb";
+    var html = "";
+    var prev = 0;
+
+    for (var i = 0; i < pvLevels.length; i++) {
+      var l = pvLevels[i];
+      var pct = (i === 0 || !(prev > 0)) ? null : (l.orbit / prev - 1) * 100;
+      prev = l.orbit;
+
+      html += "<tr" + (CFG.SAMPLE.indexOf(i + 1) !== -1 ? ' class="key"' : "") + ">" +
+        '<td class="c-lvl">' + (i + 1) + "</td>" +
+        numCell(i, "sb", l.sb, !derived) +
+        numCell(i, "bb", l.bb, true) +
+        numCell(i, "ante", l.ante, !derived) +
+        '<td class="c-orb" data-orb="' + i + '">' + fmtNum(l.orbit) + "</td>" +
+        '<td class="c-chg" data-chg="' + i + '"' +
+          (pct === null ? "" : ' style="color:' + jumpColor(pct) + '"') + ">" +
+          (pct === null ? "—" : (pct >= 0 ? "+" : "") + Math.round(pct) + "%") + "</td>" +
+        '<td class="c-x"><button type="button" class="pv-x" data-del="' + i +
+          '" aria-label="Remove level ' + (i + 1) + '">×</button></td>' +
+        "</tr>";
+    }
+    els.pvRows.innerHTML = html;
+
+    els.pvCount.innerHTML = "<b>" + pvLevels.length + "</b> level" +
+      (pvLevels.length === 1 ? "" : "s") + " read" +
+      (pvLevels.length < 18
+        ? ' &nbsp;·&nbsp; <span class="short">18 needed to score</span>'
+        : "");
+
+    var notes = [];
+    if (p.unparsed.length) {
+      notes.push(p.unparsed.length + " line" + (p.unparsed.length === 1 ? " was" : "s were") +
+        " skipped, starting with “" + p.unparsed[0].slice(0, 40) + "”.");
+    }
+    if (derived) {
+      /* Blinds that fall are the signature of a full table pasted into
+         the shorthand box, where every column got read as a big blind. */
+      for (var j = 1; j < pvLevels.length; j++) {
+        if (pvLevels[j].bb < pvLevels[j - 1].bb) {
+          notes.push("The big blinds stop rising at level " + (j + 1) +
+            ". If you pasted a full structure table here, switch to Full table instead.");
+          break;
+        }
+      }
+    }
+    if (notes.length) {
+      els.pvNote.textContent = notes.join(" ");
+      els.pvNote.hidden = false;
+    } else {
+      els.pvNote.hidden = true;
+    }
+  }
+
+  els.pvRows.addEventListener("input", function (e) {
+    var inp = e.target.closest && e.target.closest("input.pv-in");
+    if (!inp) return;
+    var r = parseInt(inp.getAttribute("data-r"), 10);
+    var k = inp.getAttribute("data-k");
+    var l = pvLevels[r];
+    if (!l) return;
+
+    var v = parseFloat(String(inp.value).replace(/[^0-9.]/g, ""));
+    l[k] = isNaN(v) ? 0 : v;
+
+    if (entryMode === "bb" && k === "bb") {
+      l.sb = Math.round(l.bb / 2);
+      l.ante = anteValue(l.bb, r, els.bbAnte.value, parseInt(els.bbAnteFrom.value, 10) || 1);
+      var row = els.pvRows.rows[r];
+      var sbCell = row.querySelector(".c-sb");
+      var anCell = row.querySelector(".c-ante");
+      if (sbCell) sbCell.textContent = fmtNum(l.sb);
+      if (anCell) anCell.textContent = fmtNum(l.ante);
+    }
+
+    recalcDerived();
+    writeBack();
+  });
+
+  /* Re-render on blur so thousands separators and row numbering tidy up
+     once the edit is finished rather than mid-keystroke. */
+  els.pvRows.addEventListener("focusout", function (e) {
+    if (e.target.classList && e.target.classList.contains("pv-in")) {
+      setTimeout(function () {
+        if (!els.pvRows.contains(document.activeElement)) renderPreview();
+      }, 0);
+    }
+  });
+
+  els.pvRows.addEventListener("click", function (e) {
+    var btn = e.target.closest && e.target.closest("button.pv-x");
+    if (!btn) return;
+    var idx = parseInt(btn.getAttribute("data-del"), 10);
+    if (isNaN(idx) || !pvLevels[idx]) return;
+    pvLevels.splice(idx, 1);
+    writeBack();
+    renderPreview();
+  });
+
+  function setMode(m, opts) {
+    opts = opts || {};
+    if (m === entryMode && !opts.force) return;
+
+    if (!opts.quiet) {
+      if (m === "bb" && entryMode === "full") {
+        var L = parseStructure(els.structure.value).levels;
+        if (L.length) {
+          var c = detectConvention(L);
+          if (!c) {
+            toast("These blinds don’t follow the half-blind pattern, so big-blinds-only entry can’t reproduce them exactly. Staying on the full table.");
+            return;
+          }
+          els.bbAnte.value = c.ante;
+          els.bbAnteFrom.value = String(c.from);
+          els.bbtext.value = L.map(function (l) { return l.bb; }).join("\n");
+        }
+      } else if (m === "full" && entryMode === "bb") {
+        var P = currentParse();
+        if (P.levels.length) {
+          els.structure.value = P.levels.map(function (l) {
+            return l.sb + " / " + l.bb + " / " + l.ante;
+          }).join("\n");
+        }
+      }
+    }
+
+    entryMode = m;
+    Array.prototype.forEach.call(document.querySelectorAll("#modeSeg button"), function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-mode") === m));
+    });
+    els.fullPane.hidden = m !== "full";
+    els.bbPane.hidden = m !== "bb";
+    els.bbAnteFrom.disabled = els.bbAnte.value === "none";
+    els.structNote.textContent = m === "bb"
+      ? "One big blind per level — the rest is filled in below."
+      : "Enter one level per line: SB / BB / Ante";
+    renderPreview();
   }
 
   function calculate(opts) {
@@ -1900,6 +2407,7 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
       var a = t.split("-");
       return a[0] + " / " + a[1] + " / " + (a[2] || 0);
     }).join("\n");
+    setMode("full", { quiet: true, force: true });
     return true;
   }
 
@@ -1920,6 +2428,7 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
     els.len2from.value = s.len2From ? String(s.len2From) : "";
     els.structure.value = s.structure;
     setFormat(s.fmt);
+    setMode("full", { quiet: true, force: true });
   }
 
   function scoreSample(s) {
@@ -1966,23 +2475,53 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
 
   function setFormat(f) {
     format = f;
-    Array.prototype.forEach.call(document.querySelectorAll(".seg button"), function (b) {
+    Array.prototype.forEach.call(document.querySelectorAll("#fmtSeg button"), function (b) {
       b.setAttribute("aria-pressed", String(b.getAttribute("data-fmt") === f));
     });
   }
 
-  Array.prototype.forEach.call(document.querySelectorAll(".seg button"), function (b) {
+  Array.prototype.forEach.call(document.querySelectorAll("#fmtSeg button"), function (b) {
     b.addEventListener("click", function () {
       setFormat(b.getAttribute("data-fmt"));
       if (!els.result.hidden) calculate({ scroll: false });
     });
   });
 
+  Array.prototype.forEach.call(document.querySelectorAll("#modeSeg button"), function (b) {
+    b.addEventListener("click", function () { setMode(b.getAttribute("data-mode")); });
+  });
+
+  els.structure.addEventListener("input", function () {
+    if (entryMode === "full") renderPreview();
+  });
+  els.bbtext.addEventListener("input", function () {
+    if (entryMode === "bb") renderPreview();
+  });
+
+  [els.bbAnte, els.bbAnteFrom].forEach(function (sel) {
+    sel.addEventListener("change", function () {
+      els.bbAnteFrom.disabled = els.bbAnte.value === "none";
+      renderPreview();
+      if (!els.result.hidden) calculate({ scroll: false });
+    });
+  });
+
+  $("pvToggle").addEventListener("click", function () {
+    var btn = $("pvToggle");
+    var open = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", String(!open));
+    els.pvBody.hidden = open;
+    btn.textContent = open ? "Show preview" : "Hide preview";
+  });
+
   $("calcBtn").addEventListener("click", function () { calculate(); });
 
   $("resetBtn").addEventListener("click", function () {
-    ["tname", "buyin", "fees", "stack", "gtd", "addcost", "addchips", "structure"]
+    ["tname", "buyin", "fees", "stack", "gtd", "addcost", "addchips", "structure", "bbtext"]
       .forEach(function (k) { els[k].value = ""; });
+    els.bbAnte.value = "bb";
+    els.bbAnteFrom.value = "1";
+    setMode("full", { quiet: true, force: true });
     els.levellen.value = "30";
     els.len2.value = "";
     els.len2from.value = "";
@@ -2044,6 +2583,7 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
      ========================================================== */
 
   buildRail();
+  setMode("full", { quiet: true, force: true });
   if (readHash()) calculate({ scroll: false });
 
   // Regression checks from the spec. Logged, never shown — if the
@@ -2068,8 +2608,27 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
         console.error("[TSR] regression FAILED:", c.name, { expected: c, got: r });
       }
     });
+    // Big-blinds-only entry must rebuild the full table exactly, or the
+    // two entry modes would hand out different grades for one structure.
+    SAMPLES.forEach(function (s) {
+      var full = parseStructure(s.structure).levels;
+      var shrt = parseShorthand(s.bbs.join("\n"), "bb", 1).levels;
+      var same = full.length === shrt.length && full.every(function (l, i) {
+        return l.sb === shrt[i].sb && l.bb === shrt[i].bb && l.ante === shrt[i].ante;
+      });
+      var conv = detectConvention(full);
+      if (!same || !conv || conv.ante !== "bb" || conv.from !== 1) {
+        pass = false;
+        console.error("[TSR] shorthand round-trip FAILED:", s.name, { same: same, conv: conv });
+      }
+    });
+
     console.log(pass ? "[TSR] all 3 spec regression cases pass." : "[TSR] REGRESSION FAILURES — see above.");
-    window.__TSR__ = { grade: grade, parseStructure: parseStructure, SAMPLES: SAMPLES, scoreSample: scoreSample, pass: pass };
+    window.__TSR__ = {
+      grade: grade, parseStructure: parseStructure, parseShorthand: parseShorthand,
+      detectConvention: detectConvention, SAMPLES: SAMPLES, scoreSample: scoreSample,
+      pass: pass
+    };
   })();
 })();
 </script>
