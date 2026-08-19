@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tournaments — The Sham Report</title>
-  <meta name="description" content="Results, best value picks, and tournament trail coverage from across Texas and beyond.">
+  <meta name="description" content="Every Texas tournament graded by TSR Score, plus results and tournament trail coverage.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -124,141 +124,179 @@
       gap: 24px;
     }
 
-    /* ── Best Value Cards ────────────────────────────────────── */
-    .value-card {
+    /* ── TSR-graded tournament list ───────────────────────────
+       Replaces the star-rated "Best Value" cards. One engine, one
+       grade, and the same colour ramp the calculator and the homepage
+       rail already use. */
+
+    .tsr-filterbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 26px;
+    }
+    .tsr-search {
+      flex: 1 1 220px;
+      min-width: 0;
       background: #111111;
       border: 1px solid #2A2A2A;
       border-radius: 4px;
-      overflow: hidden;
-      transition: border-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .value-card:hover {
-      border-color: #D4AF37;
-      transform: translateY(-3px);
-    }
-
-    /* Dark image placeholder */
-    .value-card-img {
-      aspect-ratio: 16 / 9;
-      background: #161616;
-      border-bottom: 1px solid #2A2A2A;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .value-card-img.t1 { background: #141414; }
-    .value-card-img.t2 { background: #131318; }
-    .value-card-img.t3 { background: #141210; }
-
-    .value-card-img-label {
-      position: absolute;
-      bottom: 10px;
-      left: 12px;
-      font-family: 'Inter', sans-serif;
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.18);
-    }
-
-    .tourn-card-img-photo {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .value-card-body {
-      padding: 22px 22px 24px;
-    }
-
-    .value-card-venue {
-      font-family: 'Inter', sans-serif;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #D4AF37;
-      margin-bottom: 8px;
-    }
-
-    .value-card-name {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(17px, 1.4vw, 20px);
-      font-weight: 700;
       color: #FFFFFF;
-      line-height: 1.25;
-      margin-bottom: 20px;
-    }
-
-    /* Two-column stat layout */
-    .value-card-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: #2A2A2A;
-      border: 1px solid #2A2A2A;
-      border-radius: 3px;
-      overflow: hidden;
-      margin-bottom: 18px;
-    }
-
-    .stat-cell {
-      background: #0F0F0F;
-      padding: 12px 14px;
-    }
-
-    .stat-cell-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #555555;
-      margin-bottom: 5px;
-    }
-
-    .stat-cell-value {
       font-family: 'Inter', sans-serif;
       font-size: 14px;
-      font-weight: 600;
-      color: #FFFFFF;
-      line-height: 1;
+      padding: 12px 14px;
     }
+    .tsr-search::placeholder { color: #555555; }
+    .tsr-search:focus { outline: none; border-color: #D4AF37; }
 
-    .stat-cell.full-width {
-      grid-column: 1 / -1;
-    }
+    .tsr-filterbody { display: contents; }
+    /* Desktop shows every control at once; the toggle is phone-only. */
+    .tsr-filtertoggle { display: none; }
 
-    /* Star rating */
-    .value-card-rating {
+    .tsr-chiprow {
       display: flex;
       align-items: center;
       gap: 10px;
+      flex-wrap: wrap;
+      flex: 1 1 100%;
     }
-
-    .rating-label {
+    .tsr-chips { display: flex; gap: 6px; }
+    .tsr-chips-label {
       font-family: 'Inter', sans-serif;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #555555;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: #777777;
+    }
+    .tsr-chipsep { width: 1px; height: 20px; background: #2A2A2A; flex: 0 0 auto; }
+    .tsr-chip {
+      background: #111111;
+      border: 1px solid #2A2A2A;
+      border-radius: 20px;
+      color: #999999;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px; font-weight: 600;
+      padding: 8px 15px;
+      cursor: pointer;
+      white-space: nowrap;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    .tsr-chip:hover { border-color: #3A3A3A; color: #FFFFFF; }
+    .tsr-chip.is-on { background: #D4AF37; border-color: #D4AF37; color: #1A1400; }
+    .tsr-chip:focus-visible { outline: 2px solid #D4AF37; outline-offset: 2px; }
+
+    .tsr-selects { display: flex; gap: 8px; flex: 1 1 auto; justify-content: flex-end; }
+    .tsr-selects select {
+      background: #111111;
+      border: 1px solid #2A2A2A;
+      border-radius: 4px;
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      padding: 12px;
+      cursor: pointer;
+    }
+    .tsr-selects select:disabled { opacity: 0.45; cursor: default; }
+    .tsr-vh {
+      position: absolute; width: 1px; height: 1px;
+      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
     }
 
-    .rating-stars {
-      color: #D4AF37;
-      font-size: 14px;
-      letter-spacing: 2px;
+    /* The tier is what makes a grade mean something, so the bands are
+       named once, up top, where they govern everything below. */
+    .tsr-tierline {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #777777;
+      border-left: 2px solid #D4AF37;
+      padding-left: 12px;
+      margin: -26px 0 26px;
+    }
+    .tsr-tierline b { color: #CCCCCC; font-weight: 600; }
+
+    .tsr-list { display: flex; flex-direction: column; gap: 12px; }
+
+    .tsr-grouphead {
+      display: flex; align-items: baseline; gap: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: #CCCCCC;
+      margin: 18px 0 -2px;
+    }
+    .tsr-grouphead:first-child { margin-top: 0; }
+    .tsr-grouphead span {
+      font-size: 11px; letter-spacing: 0.06em;
+      text-transform: none; color: #777777;
+    }
+
+    .tsr-tcard {
+      background: #111111;
+      border: 1px solid #2A2A2A;
+      border-radius: 4px;
+      padding: 18px 20px;
+      display: grid;
+      grid-template-columns: 58px 1fr auto;
+      gap: 18px;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s ease;
+    }
+    a.tsr-tcard:hover { border-color: #D4AF37; }
+
+    .tsr-grade {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 32px;
       line-height: 1;
+      text-align: center;
+    }
+    /* The shipped ramp - identical to the calculator and the homepage. */
+    .tsr-g-A { color: #4FD675; }
+    .tsr-g-B { color: #9BD24C; }
+    .tsr-g-C { color: #D4AF37; }
+    .tsr-g-D { color: #E07A3A; }
+    .tsr-g-F { color: #CC0000; }
+
+    .tsr-tier {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: #777777; text-align: center;
+      margin-top: 5px; white-space: nowrap;
     }
 
-    .rating-stars .dim {
-      color: #333333;
+    .tsr-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px; font-weight: 600;
+      color: #FFFFFF; margin-bottom: 2px;
     }
+    .tsr-room { font-family: 'Inter', sans-serif; font-size: 13px; color: #999999; }
+    .tsr-meta { font-family: 'Inter', sans-serif; font-size: 12px; color: #777777; margin-top: 6px; }
+
+    .tsr-stats {
+      font-family: 'Inter', sans-serif;
+      text-align: right; font-size: 13px; color: #777777;
+    }
+    .tsr-score { color: #D4AF37; font-weight: 700; font-size: 15px; }
+    .tsr-stats .tsr-row { margin-top: 2px; }
+
+    .tsr-empty {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px; color: #777777;
+      text-align: center; padding: 40px 0;
+    }
+    .tsr-footnote {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px; color: #777777;
+      line-height: 1.6; margin-top: 24px;
+    }
+    .tsr-footnote a { color: #D4AF37; }
 
     /* ── Results Cards ───────────────────────────────────────── */
     .result-card {
@@ -384,6 +422,43 @@
     }
 
     @media (max-width: 768px) {
+      /* Four filters and a sort is more than half a phone screen, and the
+         reader came for the list. They fold behind one control that says
+         how many are on, so nothing hides without a signal. */
+      .tsr-filterbar { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
+      .tsr-search { grid-column: 1 / -1; font-size: 16px; }
+      .tsr-filtertoggle {
+        display: flex; align-items: center; gap: 8px;
+        background: #111111; border: 1px solid #2A2A2A; border-radius: 4px;
+        color: #CCCCCC;
+        font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600;
+        padding: 12px 14px; cursor: pointer; min-height: 48px;
+      }
+      .tsr-filtertoggle[aria-expanded="true"] { border-color: #D4AF37; color: #FFFFFF; }
+      .tsr-fcount {
+        background: #D4AF37; color: #1A1400; border-radius: 10px;
+        font-size: 11px; font-weight: 700; padding: 2px 7px;
+      }
+      .tsr-filterbody { display: none; grid-column: 1 / -1; }
+      .tsr-filterbody.is-open { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+      /* One scrolling strip: type, a hairline, then grade. */
+      .tsr-chiprow {
+        flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none;
+        -webkit-overflow-scrolling: touch; gap: 8px; padding-bottom: 2px;
+        grid-column: 1 / -1;
+      }
+      .tsr-chiprow::-webkit-scrollbar { display: none; }
+      .tsr-chips-label, .tsr-chipsep { flex: 0 0 auto; }
+      .tsr-selects { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; grid-column: 1 / -1; }
+      .tsr-selects select { width: 100%; font-size: 16px; }
+      .tsr-selects #tsrSort { grid-column: 1 / -1; }
+      .tsr-tierline { font-size: 12.5px; margin: -18px 0 20px; }
+      .tsr-tcard { grid-template-columns: 46px 1fr; padding: 16px; }
+      .tsr-stats {
+        grid-column: 1 / -1; text-align: left;
+        display: flex; gap: 16px;
+        padding-top: 8px; border-top: 1px solid #1E1E1E; margin-top: 8px;
+      }
       .page-hero { padding: 48px 0 44px; }
       .tourn-grid { grid-template-columns: 1fr; }
       .tourn-section { padding: 52px 0 60px; }
@@ -466,113 +541,77 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════
-       SECTION 1 — BEST VALUE TOURNAMENTS
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 1 — GRADED TOURNAMENTS
   ═══════════════════════════════════════════════════════════ -->
-  <section class="tourn-section" style="background:#0A0A0A;">
+  <section class="tourn-section" id="graded" style="background:#0A0A0A;">
     <div class="container">
 
-      <p class="tourn-section-label">Best Value &nbsp;·&nbsp; Updated Monthly</p>
-      <h2 class="tourn-section-title">Best Value Tournaments in DFW</h2>
-      <p class="tourn-section-sub">Ranked by prize pool, structure, and buy-in value</p>
+      <p class="tourn-section-label">TSR Score &nbsp;·&nbsp; Graded Structures</p>
+      <h2 class="tourn-section-title">Every Tournament We've Graded</h2>
+      <p class="tourn-section-sub">Ranked by structure &mdash; how much poker you get to play before the blinds take over</p>
 
-      <div class="tourn-grid">
+      <p class="tsr-tierline">Graded on two curves: <b>Tier 1</b> is $300 and under, <b>Tier 2</b> is over $300.
+        An A means a different thing on each, so compare inside a tier, not across.</p>
 
-        <!-- Card 1 -->
-        <div class="value-card">
-          <div class="value-card-img t1">
-            <img src="images/IMG_2434.jpg" alt="Wednesday Deep Stack" class="tourn-card-img-photo">
+      <div class="tsr-filterbar">
+        <input class="tsr-search" id="tsrSearch" type="text" placeholder="Search by room or event name" aria-label="Search tournaments">
+
+        <button type="button" class="tsr-filtertoggle" id="tsrFilterToggle" aria-expanded="false" aria-controls="tsrFilterBody">
+          Filters <span class="tsr-fcount" id="tsrFcount" hidden></span>
+        </button>
+
+        <div class="tsr-filterbody" id="tsrFilterBody">
+          <div class="tsr-chiprow">
+            <span class="tsr-chips-label">Type</span>
+            <div class="tsr-chips" id="tsrTypeChips">
+              <button type="button" class="tsr-chip is-on" data-type="all" aria-pressed="true">All</button>
+              <button type="button" class="tsr-chip" data-type="weekly" aria-pressed="false">Weekly recurring</button>
+              <button type="button" class="tsr-chip" data-type="series" aria-pressed="false">Series &amp; special</button>
+            </div>
+            <span class="tsr-chipsep" aria-hidden="true"></span>
+            <span class="tsr-chips-label">Grade</span>
+            <div class="tsr-chips" id="tsrGradeChips">
+              <button type="button" class="tsr-chip is-on" data-grade="all" aria-pressed="true">All</button>
+              <button type="button" class="tsr-chip" data-grade="A" aria-pressed="false">A</button>
+              <button type="button" class="tsr-chip" data-grade="B" aria-pressed="false">B</button>
+              <button type="button" class="tsr-chip" data-grade="C" aria-pressed="false">C</button>
+              <button type="button" class="tsr-chip" data-grade="D" aria-pressed="false">D</button>
+              <button type="button" class="tsr-chip" data-grade="F" aria-pressed="false">F</button>
+            </div>
           </div>
-          <div class="value-card-body">
-            <p class="value-card-venue">Poker Club of Texas</p>
-            <h3 class="value-card-name">Wednesday Deep Stack</h3>
-            <div class="value-card-stats">
-              <div class="stat-cell">
-                <p class="stat-cell-label">Buy-In</p>
-                <p class="stat-cell-value">$125</p>
-              </div>
-              <div class="stat-cell">
-                <p class="stat-cell-label">Guarantee</p>
-                <p class="stat-cell-value">$3,000</p>
-              </div>
-              <div class="stat-cell full-width">
-                <p class="stat-cell-label">Structure</p>
-                <p class="stat-cell-value">30-min levels</p>
-              </div>
-            </div>
-            <div class="value-card-rating">
-              <span class="rating-label">Value</span>
-              <span class="rating-stars">★★★★★</span>
-            </div>
+
+          <div class="tsr-selects">
+            <label class="tsr-vh" for="tsrCity">City</label>
+            <select id="tsrCity"><option value="all">All cities</option></select>
+            <label class="tsr-vh" for="tsrDay">Day</label>
+            <select id="tsrDay"><option value="all">Any day</option></select>
+            <label class="tsr-vh" for="tsrSort">Sort</label>
+            <select id="tsrSort">
+              <option value="score-desc">Best grade first</option>
+              <option value="score-asc">Worst grade first</option>
+              <option value="buyin-asc">Buy-in: low to high</option>
+              <option value="buyin-desc">Buy-in: high to low</option>
+            </select>
           </div>
         </div>
-
-        <!-- Card 2 -->
-        <div class="value-card">
-          <div class="value-card-img t2">
-            <img src="images/Sunday_Funday.jpg" alt="Sunday Funday" class="tourn-card-img-photo">
-          </div>
-          <div class="value-card-body">
-            <p class="value-card-venue">TCH Dallas</p>
-            <h3 class="value-card-name">Sunday Funday</h3>
-            <div class="value-card-stats">
-              <div class="stat-cell">
-                <p class="stat-cell-label">Buy-In</p>
-                <p class="stat-cell-value">$200</p>
-              </div>
-              <div class="stat-cell">
-                <p class="stat-cell-label">Guarantee</p>
-                <p class="stat-cell-value">$5,000</p>
-              </div>
-              <div class="stat-cell full-width">
-                <p class="stat-cell-label">Structure</p>
-                <p class="stat-cell-value">25-min levels</p>
-              </div>
-            </div>
-            <div class="value-card-rating">
-              <span class="rating-label">Value</span>
-              <span class="rating-stars">★★★★<span class="dim">★</span></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="value-card">
-          <div class="value-card-img t3">
-            <img src="images/DSC00356.jpg" alt="Friday Night Special" class="tourn-card-img-photo">
-          </div>
-          <div class="value-card-body">
-            <p class="value-card-venue">The Lodge</p>
-            <h3 class="value-card-name">Friday Night Special</h3>
-            <div class="value-card-stats">
-              <div class="stat-cell">
-                <p class="stat-cell-label">Buy-In</p>
-                <p class="stat-cell-value">$300</p>
-              </div>
-              <div class="stat-cell">
-                <p class="stat-cell-label">Guarantee</p>
-                <p class="stat-cell-value">$10,000</p>
-              </div>
-              <div class="stat-cell full-width">
-                <p class="stat-cell-label">Structure</p>
-                <p class="stat-cell-value">40-min levels</p>
-              </div>
-            </div>
-            <div class="value-card-rating">
-              <span class="rating-label">Value</span>
-              <span class="rating-stars">★★★★★</span>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <div class="tsr-list" id="tsrList"></div>
+      <div class="tsr-empty" id="tsrEmpty" hidden>Nothing graded matches that yet. Try a different grade, or clear the search.</div>
+
+      <p class="tsr-footnote">Looking for who won and for how much? That's in
+        <a href="#results">Tournament Results</a> below. This section grades structures, not finishes &mdash;
+        and an event only appears once it has been graded.
+        <a href="tsr-score-calculator.html">Grade one yourself &rarr;</a></p>
+
     </div>
   </section>
 
   <!-- ══════════════════════════════════════════════════════════
        SECTION 2 — RECENT RESULTS
   ═══════════════════════════════════════════════════════════ -->
-  <section class="tourn-section" style="background:#0D0D0D;">
+  <section class="tourn-section" id="results" style="background:#0D0D0D;">
     <div class="container">
 
       <p class="tourn-section-label">Recent Results</p>
@@ -717,5 +756,205 @@
 
   <script src="js/main.js"></script>
 
+  <script>
+  /* ══════════════════════════════════════════════════════════════
+     GRADED TOURNAMENTS
+     Reads the same /api/grades feed the homepage rail reads, so a
+     tournament published from the calculator appears here at once.
+     ══════════════════════════════════════════════════════════════ */
+  (function () {
+    var listEl = document.getElementById('tsrList');
+    if (!listEl || !window.fetch) return;
+
+    var emptyEl  = document.getElementById('tsrEmpty');
+    var searchEl = document.getElementById('tsrSearch');
+    var cityEl   = document.getElementById('tsrCity');
+    var dayEl    = document.getElementById('tsrDay');
+    var sortEl   = document.getElementById('tsrSort');
+    var toggleEl = document.getElementById('tsrFilterToggle');
+    var bodyEl   = document.getElementById('tsrFilterBody');
+    var countEl  = document.getElementById('tsrFcount');
+
+    var DAY_ORDER = ['Mondays','Tuesdays','Wednesdays','Thursdays','Fridays','Saturdays','Sundays'];
+    var BAND = { A: 0, B: 1, C: 2, D: 3, F: 4 };
+
+    var rows = [];
+    var activeType = 'all';
+    var activeGrade = 'all';
+
+    function esc(v) {
+      return String(v == null ? '' : v)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function fillSelect(el, values, allLabel) {
+      var keep = el.value;
+      el.innerHTML = '<option value="all">' + allLabel + '</option>' +
+        values.map(function (v) { return '<option value="' + esc(v) + '">' + esc(v) + '</option>'; }).join('');
+      el.value = values.indexOf(keep) !== -1 ? keep : 'all';
+    }
+
+    /* Options come from the data, so a city or a night only appears once
+       something graded actually runs there. */
+    function fillFilters() {
+      var cities = [], days = [];
+      rows.forEach(function (t) {
+        if (t.city && cities.indexOf(t.city) === -1) cities.push(t.city);
+        if (t.type === 'weekly' && t.day && days.indexOf(t.day) === -1) days.push(t.day);
+      });
+      cities.sort();
+      days.sort(function (a, b) { return DAY_ORDER.indexOf(a) - DAY_ORDER.indexOf(b); });
+      fillSelect(cityEl, cities, 'All cities');
+      fillSelect(dayEl, days, 'Any day');
+      cityEl.parentNode.style.display = cities.length ? '' : 'none';
+    }
+
+    function updateCount() {
+      var n = [activeType !== 'all', activeGrade !== 'all',
+               cityEl.value !== 'all', dayEl.value !== 'all'].filter(Boolean).length;
+      countEl.textContent = n;
+      countEl.hidden = n === 0;
+    }
+
+    function card(t) {
+      var tag = t.hash ? 'a' : 'div';
+      var href = t.hash ? ' href="tsr-score-calculator.html#' + esc(t.hash) + '"' : '';
+      var bits = [];
+      if (t.buyin) bits.push('<span>$' + esc(Math.round(t.buyin).toLocaleString('en-US')) + ' buy-in</span>');
+      if (typeof t.fee === 'number') bits.push('<span>' + esc(t.fee.toFixed(0)) + '% fee</span>');
+      var meta = (t.day ? t.day + ' · ' : '') + (t.extra || '');
+
+      return '<' + tag + ' class="tsr-tcard"' + href + '>' +
+        '<div>' +
+          '<div class="tsr-grade tsr-g-' + esc(t.band) + '">' + esc(t.grade) + '</div>' +
+          '<div class="tsr-tier">Tier ' + esc(t.tier) + '</div>' +
+        '</div>' +
+        '<div>' +
+          '<div class="tsr-name">' + esc(t.name) + '</div>' +
+          '<div class="tsr-room">' + esc(t.room) + '</div>' +
+          (meta ? '<div class="tsr-meta">' + esc(meta) + '</div>' : '') +
+        '</div>' +
+        '<div class="tsr-stats">' +
+          '<div class="tsr-score">TSR ' + esc(Number(t.score || 0).toFixed(1)) + '</div>' +
+          (bits.length ? '<div class="tsr-row">' + bits.join(' · ') + '</div>' : '') +
+        '</div>' +
+      '</' + tag + '>';
+    }
+
+    function render() {
+      /* A series event has no weeknight, so the day filter switches off
+         rather than silently returning nothing. */
+      dayEl.disabled = activeType === 'series';
+      if (dayEl.disabled) dayEl.value = 'all';
+      updateCount();
+
+      var q = searchEl.value.toLowerCase();
+      var city = cityEl.value;
+      var day = dayEl.value;
+      var sort = sortEl.value;
+
+      var shown = rows.filter(function (t) {
+        if (activeType !== 'all' && t.type !== activeType) return false;
+        if (activeGrade !== 'all' && t.band !== activeGrade) return false;
+        if (city !== 'all' && t.city !== city) return false;
+        if (day !== 'all' && t.day !== day) return false;
+        if (q && (t.name + ' ' + t.room).toLowerCase().indexOf(q) === -1) return false;
+        return true;
+      });
+
+      /* A raw score only means something inside its own tier: 54.3 is a C
+         on the series curve and a runaway A on the weekly one. Ranking on
+         the number alone would put a C above an A and contradict the tier
+         note above. So grade leads and the score breaks ties within a
+         letter, which is what "best grade first" means to a reader anyway. */
+      function cmp(a, b) {
+        if (sort === 'score-desc') return (BAND[a.band] - BAND[b.band]) || (b.score - a.score);
+        if (sort === 'score-asc')  return (BAND[b.band] - BAND[a.band]) || (a.score - b.score);
+        if (sort === 'buyin-asc')  return a.buyin - b.buyin;
+        if (sort === 'buyin-desc') return b.buyin - a.buyin;
+        return 0;
+      }
+      shown.sort(cmp);
+
+      /* Grouping must not quietly override the sort: rooms are ordered by
+         their own best row, then their games sit together underneath. */
+      var grouped = activeType !== 'series';
+      if (grouped) {
+        var order = [];
+        shown.forEach(function (t) { if (order.indexOf(t.room) === -1) order.push(t.room); });
+        shown.sort(function (a, b) {
+          return (order.indexOf(a.room) - order.indexOf(b.room)) || cmp(a, b);
+        });
+      }
+
+      var html = '', lastRoom = null;
+      shown.forEach(function (t) {
+        if (grouped && t.room !== lastRoom) {
+          lastRoom = t.room;
+          html += '<div class="tsr-grouphead">' + esc(t.room) +
+                  (t.city ? '<span>' + esc(t.city) + '</span>' : '') + '</div>';
+        }
+        html += card(t);
+      });
+
+      listEl.innerHTML = html;
+      emptyEl.hidden = shown.length > 0;
+    }
+
+    function wireChips(id, onPick) {
+      var group = document.getElementById(id);
+      group.addEventListener('click', function (e) {
+        var btn = e.target.closest && e.target.closest('.tsr-chip');
+        if (!btn || !group.contains(btn)) return;
+        /* Each group is its own single-choice set, so type and grade
+           narrow independently. */
+        Array.prototype.forEach.call(group.querySelectorAll('.tsr-chip'), function (c) {
+          c.classList.remove('is-on');
+          c.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('is-on');
+        btn.setAttribute('aria-pressed', 'true');
+        onPick(btn);
+        render();
+      });
+    }
+
+    wireChips('tsrTypeChips',  function (b) { activeType = b.getAttribute('data-type'); });
+    wireChips('tsrGradeChips', function (b) { activeGrade = b.getAttribute('data-grade'); });
+
+    toggleEl.addEventListener('click', function () {
+      var open = toggleEl.getAttribute('aria-expanded') === 'true';
+      toggleEl.setAttribute('aria-expanded', String(!open));
+      bodyEl.classList.toggle('is-open', !open);
+    });
+
+    searchEl.addEventListener('input', render);
+    [sortEl, cityEl, dayEl].forEach(function (el) { el.addEventListener('change', render); });
+
+    fetch('/api/grades?limit=50')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (out) {
+        if (!out || !out.grades) return;
+        rows = out.grades.map(function (g) {
+          return {
+            name: g.name, room: g.room || 'Unlisted room', city: g.city || '',
+            type: g.type === 'series' ? 'series' : 'weekly',
+            day: g.day || '', grade: g.grade,
+            band: String(g.base || g.grade || 'C').charAt(0),
+            score: g.score, buyin: g.buyin, fee: g.vig,
+            tier: g.tier || (g.buyin > 300 ? 2 : 1),
+            extra: g.date || '', hash: g.hash || ''
+          };
+        });
+        fillFilters();
+        render();
+      })
+      .catch(function () {
+        emptyEl.textContent = 'Grades could not be loaded just now. Please refresh.';
+        emptyEl.hidden = false;
+      });
+  })();
+  </script>
 </body>
 </html>
