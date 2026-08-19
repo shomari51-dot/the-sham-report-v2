@@ -1014,9 +1014,9 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
 }
 
 @media (max-width: 520px) {
-  .preview.derived .c-sb, .preview.derived .c-ante { display: none; }
-  /* With those two columns gone the shorthand table fits outright. */
-  .preview.derived .pv-table { min-width: 0; }
+  /* Only the ante is fully derived, so only it is dropped; the small
+     blind stays because a room can deviate and it is editable. */
+  .preview.derived .c-ante { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1282,10 +1282,11 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
         <div class="guide" id="guidePanel" hidden>
           <p><b style="color:var(--ink)">Full table</b> — one level per line: small blind, big blind, then the big blind ante. Any separator works — slashes, commas, or spaces.</p>
           <p><code>100 / 200 / 200</code> &nbsp; <code>100,200,200</code> &nbsp; <code>6&nbsp;&nbsp;100 200 200</code></p>
-          <p>Leading level numbers are detected and ignored, so you can paste a structure sheet straight in. No ante? Leave it off: <code>100 / 200</code>. Lines containing the word "break" are skipped.</p>
+          <p>Leading level numbers and a level-length column are both detected and ignored, so you can paste a structure sheet straight in. No ante? Leave it off: <code>100 / 200</code>. Lines containing the word "break" are skipped.</p>
           <p>If the level length varies from level to level, add it as a fourth number — <code>100 / 200 / 200 / 30</code> — on every line. For a single change partway through, the Level Length Change field above is easier.</p>
           <p><b style="color:var(--ink)">Big blinds only</b> — built for a phone. Enter just the big blind for each level; the small blind is taken as half the big blind, and the ante follows the two settings beside the box. Every level is still read, so the structure gets the same full check as a typed-out table.</p>
-          <p>Type them one per line or separated by commas: <code>100, 200, 300, 400</code>. If one level breaks the pattern, switch to Full table — your levels come with you.</p>
+          <p>Type them one per line or separated by commas: <code>100, 200, 300, 400</code>.</p>
+          <p>Where a room breaks the half-blind rule — an opening <code>100/100</code> level, or the <code>1000/1500</code> that shows up once the small chips are coloured up — write that level as small blind, slash, big blind. Everything else stays a single number: <code>100/100, 200, 400, 600, 800, 1000, 1000/1500, 2000</code>.</p>
           <p>Either way, the preview below shows every level exactly as it will be graded, and you can correct any number right in the table. The score samples levels 6, 10, 14 and 18, so <b style="color:var(--ink)">at least 18 levels are required</b>.</p>
         </div>
       </div>
@@ -1572,6 +1573,26 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
     });
     if (hasIndex) rows = rows.map(function (r) { return r.slice(1); });
 
+    // Structure sheets usually carry the level length in its own column,
+    // right after the level number. Left in place it reads as the small
+    // blind, so every orbit cost comes out wrong while still looking
+    // entirely plausible. Recognise that column and drop it too.
+    var lengthCol = rows.length > 1 && rows.every(function (r) {
+      return r.length >= 4 && r[0] >= 3 && r[0] <= 180;
+    });
+    if (lengthCol) {
+      var maxLen = 0, minSb = Infinity, rising = true;
+      for (var k = 0; k < rows.length; k++) {
+        if (rows[k][0] > maxLen) maxLen = rows[k][0];
+        if (rows[k][1] < minSb) minSb = rows[k][1];
+        if (k > 0 && rows[k][2] < rows[k - 1][2]) rising = false;
+      }
+      // A level length sits below the smallest small blind and, unlike a
+      // blind, does not climb through the structure. Both must hold.
+      lengthCol = maxLen < minSb && rising;
+    }
+    if (lengthCol) rows = rows.map(function (r) { return r.slice(1); });
+
     // An optional 4th column is that level's length in minutes. Only
     // trust it when every row carries one and they all look like a
     // plausible duration — otherwise it is an ante we would be misreading.
@@ -1587,7 +1608,10 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
       };
     });
 
-    return { levels: levels, unparsed: bad, perLevelMins: perLevelMins };
+    return {
+      levels: levels, unparsed: bad,
+      perLevelMins: perLevelMins, droppedLengthCol: lengthCol
+    };
   }
 
   /**
@@ -1613,43 +1637,64 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
   function parseShorthand(text, anteMode, anteFrom) {
     var raw = String(text || "").replace(/(\d),(?=\d{3}\b)/g, "$1");
     var lines = raw.split(/\r?\n/);
-    var bbs = [];
+    var kept = [];
     var bad = [];
 
     for (var i = 0; i < lines.length; i++) {
       var line = lines[i].trim();
       if (!line) continue;
       if (/break|colou?r\s*up|registration\s*closes/i.test(line)) continue;
-      // Numbers may be one per line or run together on one line, so a
-      // comma-separated list typed on a phone works as well as a column.
-      var nums = line.match(/\d+(?:\.\d+)?/g);
-      if (!nums) { bad.push(line); continue; }
-      for (var j = 0; j < nums.length; j++) bbs.push(Number(nums[j]));
+      if (!/\d/.test(line)) { bad.push(line); continue; }
+      kept.push(line);
     }
 
-    var levels = bbs.map(function (bb, k) {
-      var sb = Math.round(bb / 2);
+    // A token is either a lone big blind or an explicit "SB/BB" pair.
+    // Rooms break the half-blind rule where the chips make it awkward -
+    // TCH Dallas opens 100/100 and runs a 1000/1500 level - so the pair
+    // form exists to state those exactly rather than approximate them.
+    // Everything else stays one number per level, which is the point.
+    var tokens = kept.join("\n").match(
+      /\d+(?:\.\d+)?\s*\/\s*\d+(?:\.\d+)?|\d+(?:\.\d+)?/g) || [];
+
+    var levels = tokens.map(function (tok, k) {
+      var bb, sb, explicit = false;
+      var slash = tok.indexOf("/");
+      if (slash !== -1) {
+        sb = Number(tok.slice(0, slash));
+        bb = Number(tok.slice(slash + 1));
+        explicit = sb !== Math.round(bb / 2);
+      } else {
+        bb = Number(tok);
+        sb = Math.round(bb / 2);
+      }
       var ante = anteValue(bb, k, anteMode, anteFrom);
       return {
         level: k + 1, sb: sb, bb: bb, ante: ante,
-        orbit: sb + bb + ante, mins: 0
+        orbit: sb + bb + ante, mins: 0, sbExplicit: explicit
       };
     });
 
     return { levels: levels, unparsed: bad, perLevelMins: false };
   }
 
+  /** Render one level as shorthand: a lone BB, or "SB/BB" when the small
+      blind does not follow from it. */
+  function shorthandToken(l) {
+    return l.sb === Math.round(l.bb / 2) ? String(l.bb) : l.sb + "/" + l.bb;
+  }
+
   /**
    * Can a full table be re-expressed as big blinds only? Returns the
-   * matching ante settings, or null when the structure does not follow
-   * the convention and shorthand would silently change the grade.
+   * matching ante settings, or null when the antes follow no convention
+   * the selectors can state - in which case shorthand would silently
+   * change the grade and the switch is refused.
+   *
+   * Small blinds are not checked here: any that break the half-blind
+   * rule survive the trip as explicit "SB/BB" tokens.
    */
   function detectConvention(levels) {
     if (!levels.length) return { ante: "bb", from: 1 };
     var i;
-    for (i = 0; i < levels.length; i++) {
-      if (levels[i].sb !== Math.round(levels[i].bb / 2)) return null;
-    }
     var first = -1;
     for (i = 0; i < levels.length; i++) {
       if (levels[i].ante > 0) { first = i; break; }
@@ -2051,7 +2096,7 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
   /** Push the preview's levels back into the box that feeds it. */
   function writeBack() {
     if (entryMode === "bb") {
-      els.bbtext.value = pvLevels.map(function (l) { return l.bb; }).join("\n");
+      els.bbtext.value = pvLevels.map(shorthandToken).join("\n");
     } else {
       els.structure.value = pvLevels.map(function (l) {
         return l.sb + " / " + l.bb + " / " + l.ante + (l.mins ? " / " + l.mins : "");
@@ -2106,9 +2151,10 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
     }
     els.previewWrap.hidden = false;
 
-    /* In shorthand the small blind and ante are derived, so they are
-       shown but not editable - correcting one means the structure has
-       left the convention, which is what Full table is for. */
+    /* In shorthand the ante is fully derived from the two selectors, so
+       it stays read-only. The small blind does not: a room can deviate
+       from the half-blind rule, so it is editable in both modes and the
+       text keeps whichever form matches. */
     var derived = entryMode === "bb";
     var html = "";
     var prev = 0;
@@ -2120,7 +2166,7 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
 
       html += "<tr" + (CFG.SAMPLE.indexOf(i + 1) !== -1 ? ' class="key"' : "") + ">" +
         '<td class="c-lvl">' + (i + 1) + "</td>" +
-        numCell(i, "sb", l.sb, !derived) +
+        numCell(i, "sb", l.sb, true) +
         numCell(i, "bb", l.bb, true) +
         numCell(i, "ante", l.ante, !derived) +
         '<td class="c-orb" data-orb="' + i + '">' + fmtNum(l.orbit) + "</td>" +
@@ -2143,6 +2189,9 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
     if (p.unparsed.length) {
       notes.push(p.unparsed.length + " line" + (p.unparsed.length === 1 ? " was" : "s were") +
         " skipped, starting with “" + p.unparsed[0].slice(0, 40) + "”.");
+    }
+    if (p.droppedLengthCol) {
+      notes.push("A level-length column was detected and ignored — set the length in Level Length above.");
     }
     if (derived) {
       /* Blinds that fall are the signature of a full table pasted into
@@ -2174,14 +2223,21 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
     var v = parseFloat(String(inp.value).replace(/[^0-9.]/g, ""));
     l[k] = isNaN(v) ? 0 : v;
 
-    if (entryMode === "bb" && k === "bb") {
-      l.sb = Math.round(l.bb / 2);
-      l.ante = anteValue(l.bb, r, els.bbAnte.value, parseInt(els.bbAnteFrom.value, 10) || 1);
-      var row = els.pvRows.rows[r];
-      var sbCell = row.querySelector(".c-sb");
-      var anCell = row.querySelector(".c-ante");
-      if (sbCell) sbCell.textContent = fmtNum(l.sb);
-      if (anCell) anCell.textContent = fmtNum(l.ante);
+    if (entryMode === "bb") {
+      if (k === "sb") {
+        // Typing a small blind that is not half the big blind pins it;
+        // typing one that is hands the level back to the convention.
+        l.sbExplicit = l.sb !== Math.round(l.bb / 2);
+      } else if (k === "bb") {
+        if (!l.sbExplicit) {
+          l.sb = Math.round(l.bb / 2);
+          var sbIn = els.pvRows.rows[r].querySelector(".c-sb input.pv-in");
+          if (sbIn && document.activeElement !== sbIn) sbIn.value = fmtNum(l.sb);
+        }
+        l.ante = anteValue(l.bb, r, els.bbAnte.value, parseInt(els.bbAnteFrom.value, 10) || 1);
+        var anCell = els.pvRows.rows[r].querySelector(".c-ante");
+        if (anCell) anCell.textContent = fmtNum(l.ante);
+      }
     }
 
     recalcDerived();
@@ -2218,12 +2274,12 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
         if (L.length) {
           var c = detectConvention(L);
           if (!c) {
-            toast("These blinds don’t follow the half-blind pattern, so big-blinds-only entry can’t reproduce them exactly. Staying on the full table.");
+            toast("These antes don’t follow a pattern the Ante settings can state, so big-blinds-only entry can’t reproduce them exactly. Staying on the full table.");
             return;
           }
           els.bbAnte.value = c.ante;
           els.bbAnteFrom.value = String(c.from);
-          els.bbtext.value = L.map(function (l) { return l.bb; }).join("\n");
+          els.bbtext.value = L.map(shorthandToken).join("\n");
         }
       } else if (m === "full" && entryMode === "bb") {
         var P = currentParse();
@@ -2624,6 +2680,52 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
         console.error("[TSR] shorthand round-trip FAILED:", s.name, { same: same, conv: conv });
       }
     });
+
+    // A real TCH Dallas sheet: a level-length column, breaks, an opening
+    // 100/100 level and a 1000/1500 level. Both the paste path and the
+    // shorthand round-trip have to survive it intact.
+    (function tchDallas() {
+      var want = [
+        [100,100,100],[100,200,200],[200,400,400],[300,600,600],[400,800,800],
+        [500,1000,1000],[1000,1500,1500],[1000,2000,2000],[1500,3000,3000],
+        [2000,4000,4000],[3000,6000,6000],[4000,8000,8000],[5000,10000,10000],
+        [6000,12000,12000],[8000,16000,16000],[10000,20000,20000],
+        [15000,30000,30000],[20000,40000,40000]
+      ];
+      function same(got, label) {
+        var ok = got.length === want.length && want.every(function (w, i) {
+          return got[i].sb === w[0] && got[i].bb === w[1] && got[i].ante === w[2];
+        });
+        if (!ok) {
+          pass = false;
+          console.error("[TSR] TCH Dallas " + label + " FAILED:",
+            got.slice(0, 3).map(function (l) { return [l.sb, l.bb, l.ante]; }));
+        }
+        return ok;
+      }
+
+      // Pasted with its Name and Length columns, breaks included.
+      var sheet = want.map(function (w, i) {
+        return "Level " + (i + 1) + "\t20\t" + w[0] + "\t" + w[1] + "\t" + w[2];
+      });
+      sheet.splice(12, 0, "Break\t15");
+      sheet.splice(6, 0, "Break\t15");
+      var pasted = parseStructure(sheet.join("\n"));
+      same(pasted.levels, "paste");
+      if (!pasted.droppedLengthCol) {
+        pass = false;
+        console.error("[TSR] TCH Dallas paste FAILED: level-length column not detected");
+      }
+
+      // Full table -> shorthand -> back must be lossless.
+      var conv = detectConvention(pasted.levels);
+      var short = pasted.levels.map(shorthandToken).join("\n");
+      same(parseShorthand(short, conv.ante, conv.from).levels, "shorthand round-trip");
+      if (short.indexOf("1000/1500") === -1 || short.indexOf("100/100") === -1) {
+        pass = false;
+        console.error("[TSR] TCH Dallas FAILED: deviating small blinds not preserved:", short);
+      }
+    })();
 
     console.log(pass ? "[TSR] all 3 spec regression cases pass." : "[TSR] REGRESSION FAILURES — see above.");
     window.__TSR__ = {
