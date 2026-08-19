@@ -1135,6 +1135,48 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
           <label for="troom">Room <span style="color:var(--ink-3)">(optional)</span></label>
           <div class="control"><input type="text" id="troom" placeholder="e.g. TCH Dallas"></div>
         </div>
+        <div class="field">
+          <label for="tcity">City <span style="color:var(--ink-3)">(optional)</span></label>
+          <div class="control">
+            <input type="text" id="tcity" list="tcities" placeholder="e.g. Dallas">
+          </div>
+          <datalist id="tcities">
+            <option value="Dallas"></option><option value="Fort Worth"></option>
+            <option value="Houston"></option><option value="Austin"></option>
+            <option value="San Antonio"></option><option value="El Paso"></option>
+            <option value="Corpus Christi"></option><option value="Lubbock"></option>
+            <option value="Amarillo"></option><option value="Waco"></option>
+          </datalist>
+        </div>
+
+        <div class="field full">
+          <span class="lbl" id="freqlbl">How often it runs</span>
+          <div class="seg" id="freqSeg" role="group" aria-labelledby="freqlbl">
+            <button type="button" data-freq="weekly" aria-pressed="true">Weekly recurring</button>
+            <button type="button" data-freq="series" aria-pressed="false">Series &amp; special</button>
+          </div>
+          <p class="subnote" id="freqNote">A game on the regular schedule. Publishing it lists the night it runs.</p>
+        </div>
+
+        <div class="field" id="dayField">
+          <label for="tday">Runs on</label>
+          <div class="control sel">
+            <select id="tday">
+                  <option value="Mondays">Mondays</option>
+                  <option value="Tuesdays">Tuesdays</option>
+                  <option value="Wednesdays">Wednesdays</option>
+                  <option value="Thursdays">Thursdays</option>
+                  <option value="Fridays">Fridays</option>
+                  <option value="Saturdays">Saturdays</option>
+                  <option value="Sundays">Sundays</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field" id="dateField" hidden>
+          <label for="tdate">Event date</label>
+          <div class="control"><input type="date" id="tdate"></div>
+        </div>
 
         <div class="field">
           <label for="buyin">Total Buy-In (USD)
@@ -2066,7 +2108,10 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
   var $ = function (id) { return document.getElementById(id); };
 
   var els = {
-    tname: $("tname"), troom: $("troom"), buyin: $("buyin"), fees: $("fees"), stack: $("stack"),
+    tname: $("tname"), troom: $("troom"), tcity: $("tcity"),
+    tday: $("tday"), tdate: $("tdate"), freqNote: $("freqNote"),
+    dayField: $("dayField"), dateField: $("dateField"),
+    buyin: $("buyin"), fees: $("fees"), stack: $("stack"),
     gtd: $("gtd"), addcost: $("addcost"), addchips: $("addchips"),
     levellen: $("levellen"), len2: $("len2"), len2from: $("len2from"),
     structure: $("structure"), bbtext: $("bbtext"),
@@ -2087,6 +2132,10 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
   };
 
   var format = "nlh";
+  // How the event recurs. It decides which detail the Index needs from
+  // this card: a weekly game is looked up by the night it runs, a series
+  // event by the date it ran.
+  var frequency = "weekly";
   var entryMode = "full";
   // The most recent successful grade, so Publish sends what is on screen
   // rather than re-reading a form the user may have edited since.
@@ -2505,6 +2554,10 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
     var p = new URLSearchParams();
     if (input.name) p.set("n", input.name);
     if (els.troom.value.trim()) p.set("r", els.troom.value.trim());
+    if (els.tcity.value.trim()) p.set("c", els.tcity.value.trim());
+    p.set("fq", frequency);
+    if (frequency === "weekly") p.set("d", els.tday.value);
+    else if (els.tdate.value) p.set("dt", els.tdate.value);
     p.set("b", input.buyin);
     p.set("f", input.fees);
     p.set("s", input.stack);
@@ -2524,6 +2577,10 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
     if (!p.get("v")) return false;
     els.tname.value = p.get("n") || "";
     els.troom.value = p.get("r") || "";
+    els.tcity.value = p.get("c") || "";
+    setFrequency(p.get("fq") === "series" ? "series" : "weekly");
+    if (p.get("d")) els.tday.value = p.get("d");
+    if (p.get("dt")) els.tdate.value = p.get("dt");
     els.buyin.value = p.get("b") || "";
     els.fees.value = p.get("f") || "";
     els.stack.value = p.get("s") || "";
@@ -2649,7 +2706,7 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
   $("calcBtn").addEventListener("click", function () { calculate(); });
 
   $("resetBtn").addEventListener("click", function () {
-    ["tname", "troom", "buyin", "fees", "stack", "gtd", "addcost", "addchips", "structure", "bbtext"]
+    ["tname", "troom", "tcity", "tdate", "buyin", "fees", "stack", "gtd", "addcost", "addchips", "structure", "bbtext"]
       .forEach(function (k) { els[k].value = ""; });
     els.bbAnte.value = "bb";
     els.bbAnteFrom.value = "1";
@@ -2658,6 +2715,7 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
     els.len2.value = "";
     els.len2from.value = "";
     setFormat("nlh");
+    setFrequency("weekly");
     els.result.hidden = true;
     els.empty.hidden = false;
     showErrors([]);
@@ -2761,6 +2819,10 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
              .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 48),
       name: input.name,
       room: els.troom.value.trim(),
+      city: els.tcity.value.trim(),
+      type: frequency,
+      day: frequency === "weekly" ? els.tday.value : "",
+      eventDate: frequency === "series" ? els.tdate.value : "",
       grade: r.letter,
       base: r.base,
       score: r.score,
@@ -2769,7 +2831,13 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
       tier: r.tier,
       smooth: !!r.smooth,
       fmt: input.fmt,
-      date: months[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear(),
+      date: (function () {
+        if (frequency === "series" && els.tdate.value) {
+          var e = new Date(els.tdate.value + "T12:00:00");
+          return "Played " + months[e.getMonth()] + " " + e.getDate() + ", " + e.getFullYear();
+        }
+        return "Last verified " + months[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+      })(),
       hash: location.hash.replace(/^#/, "")
     };
   }
@@ -2836,6 +2904,23 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
       setPublishNote("Could not reach the server.", "err");
     });
   }
+
+  function setFrequency(f) {
+    frequency = f;
+    Array.prototype.forEach.call(document.querySelectorAll("#freqSeg button"), function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-freq") === f));
+    });
+    els.dayField.hidden = f !== "weekly";
+    els.dateField.hidden = f === "weekly";
+    els.freqNote.textContent = f === "weekly"
+      ? "A game on the regular schedule. Publishing it lists the night it runs."
+      : "A one-off or a few times a year. Publishing it lists the date it ran.";
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll("#freqSeg button"), function (b) {
+    b.addEventListener("click", function () { setFrequency(b.getAttribute("data-freq")); });
+  });
+  setFrequency("weekly");
 
   els.publishBtn.addEventListener("click", doPublish);
   $("publishGo").addEventListener("click", adminSignIn);

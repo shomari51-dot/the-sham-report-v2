@@ -35,11 +35,11 @@ async function getDb() {
    so the homepage rail is never blank. Publishing anything replaces
    them in the feed.                                                */
 const SEED = [
-  { id: 'seed-lone-star',   name: 'Lone Star Showdown',     room: 'TCH Dallas',              grade: 'A',  base: 'A', score: 51.4, buyin: 250, vig: 16.0, smooth: true, date: 'Aug 9, 2026',  seed: true },
-  { id: 'seed-thirty',      name: 'Thirty Throwdown',       room: 'Palace Poker',            grade: 'C',  base: 'C', score: 35.1, buyin: 150, vig: 20.0, smooth: true, date: 'Aug 9, 2026',  seed: true },
-  { id: 'seed-champ-9',     name: 'Championship Series #9', room: 'Series & Special Events', grade: 'C−', base: 'C', score: 54.3, buyin: 310, vig: 20.0, smooth: true, date: 'Aug 8, 2026',  seed: true },
-  { id: 'seed-friday',      name: 'Friday Night Lights',    room: 'San Antonio Card House',  grade: 'D+', base: 'D', score: 30.6, buyin: 200, vig: 19.0, smooth: true, date: 'Aug 7, 2026',  seed: true },
-  { id: 'seed-mega-turbo',  name: 'Mega Stack Turbo',       room: 'Local Room',              grade: 'F',  base: 'F', score: 14.2, buyin: 120, vig: 23.3, smooth: true, date: 'Aug 7, 2026',  seed: true }
+  { id: 'seed-lone-star',  name: 'Lone Star Showdown',     room: 'TCH Dallas',             city: 'Dallas',      type: 'weekly', day: 'Thursdays',  grade: 'A',  base: 'A', score: 51.4, buyin: 250, vig: 16.0, tier: 1, smooth: true, date: 'Last verified Aug 9, 2026',  seed: true },
+  { id: 'seed-thirty',     name: 'Thirty Throwdown',       room: 'Palace Poker',           city: 'Houston',     type: 'weekly', day: 'Tuesdays',   grade: 'C',  base: 'C', score: 35.1, buyin: 150, vig: 20.0, tier: 1, smooth: true, date: 'Last verified Aug 9, 2026',  seed: true },
+  { id: 'seed-champ-9',    name: 'Championship Series #9', room: 'Lodge Card Club',        city: 'Austin',      type: 'series', day: '',           grade: 'C−', base: 'C', score: 54.3, buyin: 310, vig: 20.0, tier: 2, smooth: true, date: 'Played Aug 8, 2026',         seed: true },
+  { id: 'seed-friday',     name: 'Friday Night Lights',    room: 'San Antonio Card House', city: 'San Antonio', type: 'weekly', day: 'Fridays',    grade: 'D+', base: 'D', score: 30.6, buyin: 200, vig: 19.0, tier: 1, smooth: true, date: 'Last verified Aug 7, 2026',  seed: true },
+  { id: 'seed-mega-turbo', name: 'Mega Stack Turbo',       room: 'Local Room',             city: 'Austin',      type: 'weekly', day: 'Wednesdays', grade: 'F',  base: 'F', score: 14.2, buyin: 120, vig: 23.3, tier: 1, smooth: true, date: 'Last verified Aug 7, 2026',  seed: true }
 ];
 
 function authed(req) {
@@ -61,6 +61,13 @@ function clean(body) {
     id: str(body.id, 64) || 'g' + Date.now().toString(36),
     name,
     room: str(body.room, 90),
+    city: str(body.city, 60),
+    // How the event recurs. It drives the Type filter on the Tournaments
+    // page, and decides whether the card is looked up by the night it
+    // runs or the date it ran.
+    type: body.type === 'series' ? 'series' : 'weekly',
+    day: str(body.day, 12),
+    eventDate: str(body.eventDate, 24),
     grade: str(body.grade, 3),
     base: str(body.base, 1),
     score: Math.round(num(body.score) * 10) / 10,
