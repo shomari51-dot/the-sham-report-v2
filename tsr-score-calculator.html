@@ -1517,9 +1517,21 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
     PENALTY_HARD: 8,
     // First transition the jump detector examines. 2 means "compare
     // level 2 against level 1", i.e. read every level, per spec.
-    // Raise to 3 to stop the opening 100/100 -> 100/200 double from
-    // flagging almost every real structure. See notes in the README.
     JUMP_SCAN_FROM_LEVEL: 2,
+    // A jump only counts once the extra it costs per orbit is at least
+    // this share of the starting stack.
+    //
+    // Without it the detector measured almost nothing but the opening
+    // level. Blind steps are quantised by the chips on the table - there
+    // is no denomination between 100 and 200 - so the first two or three
+    // transitions are forced into 67-100% rises that take well under 2%
+    // of a stack. Every one of the five reference structures, the A and
+    // the F alike, had its largest "jump" at level 2 for that reason, so
+    // the flag separated nothing and cost honest structures 4 points.
+    // Materiality is what the guard was always reaching for: a spike
+    // matters when it shortens the event, and one that takes 1% of your
+    // stack does not.
+    JUMP_MATERIAL_PCT: 5,
     // Tier split on buy-in (prize-pool portion), in dollars.
     TIER_SPLIT: 300
   };
@@ -1776,9 +1788,15 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
     var rawBase = dBase.depthMin / denom;
 
     // Spoofing guard: read every level, not just the four samples.
+    // Every transition is still examined - the scan is never truncated,
+    // which is the whole point of it - but a rise is only counted once
+    // it is material against the stack the player actually holds.
+    var jumpStack = stack + addonChips;
     var maxJump = 0, maxJumpAt = null;
     for (var j = CFG.JUMP_SCAN_FROM_LEVEL - 1; j < O.length; j++) {
       if (!(O[j - 1] > 0)) continue;
+      var costs = ((O[j] - O[j - 1]) / jumpStack) * 100;
+      if (costs < CFG.JUMP_MATERIAL_PCT) continue;
       var pct = ((O[j] - O[j - 1]) / O[j - 1]) * 100;
       if (pct > maxJump) { maxJump = pct; maxJumpAt = j + 1; }
     }
@@ -2369,7 +2387,7 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
     if (r.smooth) {
       els.qualVal.innerHTML = "<svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M8 12.4l2.7 2.7L16 9.6\"/></svg> Smooth structure";
       els.qualVal.style.color = "var(--g-a)";
-      els.qualSub.textContent = "No level rises more than " + CFG.JUMP_WARN + "% over the last";
+      els.qualSub.textContent = "No level lifts the orbit cost sharply enough to shorten the event";
     } else {
       els.qualVal.innerHTML = "<svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"><path d=\"M12 4l9 16H3z\"/><path d=\"M12 10v4\"/><path d=\"M12 17.3v.1\"/></svg> Uneven structure";
       els.qualVal.style.color = r.maxJump > CFG.JUMP_HARD ? "var(--g-f)" : "var(--g-c)";
