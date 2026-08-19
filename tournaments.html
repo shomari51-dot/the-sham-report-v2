@@ -313,6 +313,18 @@
     }
 
     /* Dark placeholder */
+    /* Shared by every card image on this page. It previously sat inside
+       the Best Value block and was lost when those cards were removed,
+       which left the result photos unstyled inside a padded flex box. */
+    .tourn-card-img-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
     .result-card-img {
       aspect-ratio: 16 / 9;
       background: #141414;
