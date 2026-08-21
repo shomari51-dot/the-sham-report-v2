@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Bulk Publish — TSR Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0A0A; --panel: #111111; --panel-2: #1A1A1A;
+    --line: #2A2A2A; --line-soft: #1E1E1E;
+    --ink: #FFFFFF; --ink-2: #CCCCCC; --ink-3: #888888;
+    --gold: #D4AF37; --gold-hi: #B8962E;
+    --g-a: #4FD675; --g-b: #9BD24C; --g-c: #D4AF37; --g-d: #E07A3A; --g-f: #CC0000;
+    --warn: #E0A34A; --err: #CC0000; --ok: #4FD675;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: 'Inter', sans-serif; margin: 0;
+    padding: 36px 24px 80px;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  h1 {
+    font-family: 'Playfair Display', serif; font-weight: 800;
+    font-size: 30px; margin: 0 0 4px;
+  }
+  .sub { color: var(--ink-3); font-size: 14px; margin: 0 0 28px; max-width: 68ch; line-height: 1.6; }
+  .sub b { color: var(--ink-2); }
+
+  /* ── Sign-in gate ─────────────────────────────────────────── */
+  #gate {
+    max-width: 380px; margin: 80px auto; background: var(--panel);
+    border: 1px solid var(--line); border-radius: 8px; padding: 28px;
+  }
+  #gate h2 { font-size: 16px; margin: 0 0 14px; }
+  #gate input {
+    width: 100%; background: #0C0C0C; border: 1px solid var(--line);
+    border-radius: 4px; color: var(--ink); font: inherit; font-size: 14px;
+    padding: 11px 13px; margin-bottom: 10px;
+  }
+  #gate button {
+    width: 100%; background: var(--gold); border: 0; border-radius: 4px;
+    color: #1A1400; font: inherit; font-weight: 700; font-size: 13px;
+    letter-spacing: 0.05em; text-transform: uppercase; padding: 12px; cursor: pointer;
+  }
+  #gate .err { color: var(--err); font-size: 13px; margin-top: 8px; min-height: 1em; }
+
+  /* ── Toolbar ──────────────────────────────────────────────── */
+  .toolbar {
+    display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line-soft);
+  }
+  .toolbar .count { font-size: 13px; color: var(--ink-3); }
+  .toolbar .count b { color: var(--ink); }
+  .btn {
+    background: var(--gold-tint, rgba(212,175,55,.1)); border: 1px solid var(--gold);
+    color: var(--gold); font: inherit; font-size: 12.5px; font-weight: 700;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    padding: 10px 16px; border-radius: 4px; cursor: pointer;
+  }
+  .btn:hover { background: rgba(212,175,55,.18); }
+  .btn:disabled { opacity: 0.4; cursor: default; }
+  .btn.ghost { background: none; border-color: var(--line); color: var(--ink-2); }
+  .btn.ghost:hover { border-color: #3A3A3A; }
+
+  /* ── Rows ─────────────────────────────────────────────────── */
+  .rows { display: flex; flex-direction: column; gap: 12px; }
+  .row {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+    padding: 18px 20px; display: grid;
+    grid-template-columns: 54px 1fr 260px 120px; gap: 18px; align-items: start;
+  }
+  .row.done { opacity: 0.55; }
+  .row.warn { border-color: rgba(224,163,74,.5); }
+
+  .grade { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 28px; text-align: center; line-height: 1; }
+  .g-A { color: var(--g-a); } .g-B { color: var(--g-b); } .g-C { color: var(--g-c); }
+  .g-D { color: var(--g-d); } .g-F { color: var(--g-f); }
+  .tier { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); text-align: center; margin-top: 4px; }
+
+  .name { font-size: 15px; font-weight: 700; margin: 0 0 2px; }
+  .meta { font-size: 12.5px; color: var(--ink-3); margin: 0 0 8px; }
+  .flag {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; color: var(--warn); background: rgba(224,163,74,.1);
+    border: 1px solid rgba(224,163,74,.35); border-radius: 4px;
+    padding: 6px 9px; margin-bottom: 8px;
+  }
+  .stats { font-size: 12px; color: var(--ink-3); display: flex; gap: 14px; flex-wrap: wrap; }
+  .stats b { color: var(--ink-2); }
+
+  .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; align-content: start; }
+  .fields label { grid-column: 1 / -1; font-size: 11px; color: var(--ink-3); margin: 4px 0 -4px; }
+  .fields input, .fields select {
+    background: #0C0C0C; border: 1px solid var(--line); border-radius: 4px;
+    color: var(--ink); font: inherit; font-size: 13px; padding: 8px 10px;
+  }
+  .fields input:focus, .fields select:focus { outline: none; border-color: #454545; }
+  .fields .full { grid-column: 1 / -1; }
+  .fields .fee-wrap { position: relative; }
+  .fields .fee-wrap input.missing { border-color: var(--warn); }
+
+  .rowaction { display: flex; flex-direction: column; align-items: stretch; gap: 8px; }
+  .rowaction button {
+    background: none; border: 1px solid var(--gold); color: var(--gold);
+    font: inherit; font-size: 12px; font-weight: 700; letter-spacing: 0.03em;
+    padding: 9px 10px; border-radius: 4px; cursor: pointer;
+  }
+  .rowaction button:hover { background: rgba(212,175,55,.1); }
+  .rowaction button:disabled { opacity: 0.4; cursor: default; border-color: var(--line); color: var(--ink-3); }
+  .status { font-size: 11.5px; text-align: center; min-height: 1.4em; }
+  .status.ok { color: var(--ok); } .status.err { color: var(--err); }
+
+  @media (max-width: 900px) {
+    .row { grid-template-columns: 44px 1fr; }
+    .row > div:nth-child(2) { grid-column: 2; }
+    .row > .fields { grid-column: 1 / -1; grid-template-columns: 1fr 1fr; }
+    .row > .rowaction { grid-column: 1 / -1; flex-direction: row; }
+  }
+  @media (max-width: 480px) {
+    body { padding: 24px 14px 64px; }
+    /* Same specificity as .row > .fields above (900px query), or this
+       loses the cascade regardless of source order and the two-column
+       layout never actually collapses at phone width. */
+    .row > .fields { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div id="gate">
+    <h2>Sign in</h2>
+    <input type="password" id="pw" placeholder="Admin password" autocomplete="current-password">
+    <button type="button" onclick="doSignIn()">Sign In</button>
+    <p class="err" id="gateErr"></p>
+  </div>
+
+  <div id="app" hidden>
+    <h1>Bulk Publish — TCH Dallas / Trailblazer Stop 01</h1>
+    <p class="sub">
+      Pulled from TCH's own Trailblazer schedule page (their published JSON, not a third party). Every score below is computed by the live grading engine using each event's real per-level structure — nothing is estimated.
+      <b>TCH's schedule does not publish the entry fee</b>, only the total buy-in, so the fee field on every row starts empty and is required before that row can publish — the score doesn't depend on it, but the Vig% shown on the card does, and I won't guess a number that isn't sourced.
+    </p>
+
+    <div class="toolbar">
+      <button type="button" class="btn" id="publishAllBtn" onclick="publishAll()">Publish All Ready Rows</button>
+      <button type="button" class="btn ghost" onclick="doSignOut()">Sign out</button>
+      <span class="count" id="count"></span>
+    </div>
+
+    <div class="rows" id="rows"></div>
+  </div>
+
+</div>
+
+<script>
+/* ================================================================
+   BULK PUBLISH — TCH Dallas / Trailblazer Stop 01
+   Reuses the site's existing /api/auth and /api/grades endpoints and
+   the same sessionStorage token the calculator and CMS admin use, so
+   signing in once here (or already being signed in elsewhere) is all
+   that is needed.
+   ================================================================ */
+
+var ADMIN_KEY = 'tsr_admin_token';
+
+/* Precomputed by the live engine (window.__TSR__.grade) against each
+   event's real per-level structure, pulled from TCH's own Trailblazer
+   schedule JSON on 2026-08-21. Score and grade do not depend on fee -
+   only the displayed vig% does - so these numbers are final regardless
+   of what fee gets entered below. */
+var EVENTS = [
+  { name: "$400 Kick Off", buyin: 400, gtd: 100000, date: "2026-08-25", stack: 30000,
+    score: 48.2, grade: "D+", base: "D", tier: 2, fmt: "nlh" },
+  { name: "$150 Deepstack", buyin: 150, gtd: 15000, date: "2026-08-26", stack: 40000,
+    score: 29.0, grade: "D", base: "D", tier: 1, fmt: "nlh" },
+  { name: "Even Bigger One $250K GTD", buyin: 300, gtd: 250000, date: "2026-08-26", stack: 30000,
+    score: 73.0, grade: "A+", base: "A", tier: 1, fmt: "nlh",
+    flag: "A grade under a different name (“The Bigger One $250K GTD”) is already published for this event, scored 78.4 - a level-length input error that has since been corrected here. Publishing this row adds a second, correct entry rather than fixing the old one. Remove the old one from the calculator afterward so the event isn’t listed twice." },
+  { name: "Donkey Derby $200", buyin: 200, gtd: 20000, date: "2026-08-30", stack: 30000,
+    score: 40.2, grade: "B−", base: "B", tier: 1, fmt: "nlh",
+    flag: "TCH’s own structure sheet has a level that drops from 300,000/600,000 to 150,000/300,000 then jumps back — almost certainly a copy-paste artifact on their end, not a real blind cut. It's what's triggering this row's jump penalty (−48, ‘uneven’). Verify against TCH before publishing; the clean score without that artifact would likely be smooth." },
+  { name: "$300 Mega Stack", buyin: 300, gtd: 20000, date: "2026-08-31", stack: 40000,
+    score: 51.4, grade: "A", base: "A", tier: 1, fmt: "nlh" },
+  { name: "$300 2-7 Single Draw", buyin: 300, gtd: 7200, date: "2026-09-01", stack: 25000,
+    score: 46.7, grade: "B+", base: "B", tier: 1, fmt: "nlh" },
+  { name: "$200 Lone Star Stand-Off", buyin: 200, gtd: 15000, date: "2026-09-01", stack: 30000,
+    score: 48.2, grade: "A−", base: "A", tier: 1, fmt: "nlh" },
+  { name: "$2,500 NLH High Roller", buyin: 2500, gtd: 50000, date: "2026-09-02", stack: 50000,
+    score: 93.9, grade: "A", base: "A", tier: 2, fmt: "nlh" },
+  { name: "Lone Star PLO", buyin: 300, gtd: 25000, date: "2026-09-02", stack: 40000,
+    score: 29.0, grade: "D", base: "D", tier: 1, fmt: "plo",
+    flag: "TCH’s sheet repeats two levels verbatim (125,000/250,000 and 150,000/300,000, twice each) partway through. Doesn’t change this score - the repeat sits well past this event’s playable depth - but worth a glance before publishing." },
+  { name: "MAIN EVENT", buyin: 600, gtd: 500000, date: "2026-09-03", stack: 30000,
+    score: 81.4, grade: "B+", base: "B", tier: 2, fmt: "nlh" },
+  { name: "$400 Big Tex Giant Stack", buyin: 400, gtd: 40000, date: "2026-09-07", stack: 40000,
+    score: 51.4, grade: "C−", base: "C", tier: 2, fmt: "nlh" },
+  { name: "Randy's Six Shooter $250", buyin: 250, gtd: 10000, date: "2026-09-08", stack: 25000,
+    score: 39.2, grade: "C+", base: "C", tier: 1, fmt: "nlh" },
+  { name: "Send Off", buyin: 200, gtd: 20000, date: "2026-09-08", stack: 30000,
+    score: 48.2, grade: "A−", base: "A", tier: 1, fmt: "nlh" }
+];
+
+function fmtDate(iso) {
+  var d = new Date(iso + "T12:00:00");
+  var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  return "Played " + months[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+}
+
+function slug(name) {
+  return "g-" + name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 48);
+}
+
+function render() {
+  var rowsEl = document.getElementById("rows");
+  rowsEl.innerHTML = EVENTS.map(function (ev, i) {
+    return (
+      '<div class="row' + (ev.flag ? " warn" : "") + '" id="row' + i + '">' +
+        '<div><div class="grade g-' + ev.base + '">' + ev.grade + '</div>' +
+          '<div class="tier">Tier ' + ev.tier + '</div></div>' +
+        '<div>' +
+          '<p class="name">' + ev.name + '</p>' +
+          '<p class="meta">TCH Dallas &middot; ' + fmtDate(ev.date) + '</p>' +
+          (ev.flag ? '<div class="flag">⚠ ' + ev.flag + '</div>' : "") +
+          '<div class="stats"><span><b>$' + ev.buyin.toLocaleString() + '</b> buy-in</span>' +
+            '<span><b>$' + ev.gtd.toLocaleString() + '</b> GTD</span>' +
+            '<span><b>' + ev.stack.toLocaleString() + '</b> stack</span>' +
+            '<span>TSR <b>' + ev.score.toFixed(1) + '</b></span></div>' +
+        '</div>' +
+        '<div class="fields">' +
+          '<div class="fee-wrap"><input type="text" inputmode="numeric" id="fee' + i + '" placeholder="Fee $ (required)" class="missing" oninput="onFeeInput(' + i + ')"></div>' +
+          '<div><input type="text" id="room' + i + '" value="TCH Dallas"></div>' +
+          '<label>Vig %</label><div class="full" id="vig' + i + '" style="font-size:12px;color:var(--ink-3);padding:8px 0;">enter fee first</div>' +
+        '</div>' +
+        '<div class="rowaction">' +
+          '<button type="button" id="btn' + i + '" onclick="publishOne(' + i + ')" disabled>Publish</button>' +
+          '<div class="status" id="status' + i + '"></div>' +
+        '</div>' +
+      '</div>'
+    );
+  }).join("");
+  updateCount();
+}
+
+function onFeeInput(i) {
+  var feeEl = document.getElementById("fee" + i);
+  var v = parseFloat(feeEl.value.replace(/[^0-9.]/g, ""));
+  var ok = v >= 0 && v < EVENTS[i].buyin;
+  feeEl.classList.toggle("missing", !ok);
+  document.getElementById("btn" + i).disabled = !ok;
+  document.getElementById("vig" + i).textContent = ok
+    ? ((v / EVENTS[i].buyin) * 100).toFixed(1) + "% of the $" + EVENTS[i].buyin + " buy-in"
+    : "enter fee first";
+  document.getElementById("vig" + i).style.color = ok ? "var(--gold)" : "var(--ink-3)";
+  updateCount();
+}
+
+function updateCount() {
+  var ready = EVENTS.filter(function (_, i) { return !document.getElementById("btn" + i).disabled; }).length;
+  var done = EVENTS.filter(function (_, i) { return document.getElementById("row" + i).classList.contains("done"); }).length;
+  document.getElementById("count").innerHTML =
+    "<b>" + ready + "</b> ready to publish &middot; <b>" + done + "</b> of " + EVENTS.length + " done";
+  document.getElementById("publishAllBtn").disabled = ready === 0;
+}
+
+function adminToken() {
+  try { return sessionStorage.getItem(ADMIN_KEY) || ""; } catch (e) { return ""; }
+}
+
+function publishOne(i) {
+  var ev = EVENTS[i];
+  var fee = parseFloat(document.getElementById("fee" + i).value.replace(/[^0-9.]/g, ""));
+  var room = document.getElementById("room" + i).value.trim();
+  var statusEl = document.getElementById("status" + i);
+  var btn = document.getElementById("btn" + i);
+
+  var payload = {
+    id: slug(ev.name), name: ev.name, room: room, city: "Dallas",
+    type: "series", day: "", grade: ev.grade, base: ev.base, score: ev.score,
+    buyin: ev.buyin, vig: (fee / ev.buyin) * 100, tier: ev.tier, smooth: !ev.flag || !/jump penalty/i.test(ev.flag),
+    fmt: ev.fmt, date: fmtDate(ev.date)
+  };
+
+  btn.disabled = true;
+  statusEl.textContent = "Publishing…";
+  statusEl.className = "status";
+
+  return fetch("/api/grades", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "X-Admin-Secret": adminToken() },
+    body: JSON.stringify(payload)
+  }).then(function (res) {
+    if (res.status === 401) {
+      try { sessionStorage.removeItem(ADMIN_KEY); } catch (e) {}
+      statusEl.textContent = "Session expired";
+      statusEl.className = "status err";
+      showGate();
+      return false;
+    }
+    return res.json();
+  }).then(function (out) {
+    if (!out) return false;
+    if (out.success) {
+      statusEl.textContent = "Published ✓";
+      statusEl.className = "status ok";
+      document.getElementById("row" + i).classList.add("done");
+      updateCount();
+      return true;
+    }
+    statusEl.textContent = out.error || "Failed";
+    statusEl.className = "status err";
+    btn.disabled = false;
+    return false;
+  }).catch(function () {
+    statusEl.textContent = "Could not reach the server";
+    statusEl.className = "status err";
+    btn.disabled = false;
+    return false;
+  });
+}
+
+function publishAll() {
+  var btn = document.getElementById("publishAllBtn");
+  btn.disabled = true;
+  var ready = [];
+  EVENTS.forEach(function (_, i) {
+    if (!document.getElementById("btn" + i).disabled) ready.push(i);
+  });
+  // Sequential, not parallel - keeps status per row legible and does not
+  // hammer the API with a burst of simultaneous writes.
+  var chain = Promise.resolve();
+  ready.forEach(function (i) {
+    chain = chain.then(function () { return publishOne(i); });
+  });
+  chain.then(function () { updateCount(); });
+}
+
+/* ── Sign-in gate ─────────────────────────────────────────────── */
+function showGate() {
+  document.getElementById("gate").style.display = "block";
+  document.getElementById("app").hidden = true;
+}
+function showApp() {
+  document.getElementById("gate").style.display = "none";
+  document.getElementById("app").hidden = false;
+  render();
+}
+
+function doSignIn() {
+  var pw = document.getElementById("pw").value;
+  var err = document.getElementById("gateErr");
+  err.textContent = "";
+  if (!pw) { err.textContent = "Enter your password."; return; }
+  fetch("/api/auth", {
+    method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ password: pw })
+  }).then(function (r) { return r.json(); }).then(function (out) {
+    if (out && out.token) {
+      try { sessionStorage.setItem(ADMIN_KEY, out.token); } catch (e) {}
+      showApp();
+    } else {
+      err.textContent = "That password was not accepted.";
+    }
+  }).catch(function () { err.textContent = "Could not reach the server."; });
+}
+function doSignOut() {
+  try { sessionStorage.removeItem(ADMIN_KEY); } catch (e) {}
+  showGate();
+}
+document.getElementById("pw").addEventListener("keydown", function (e) {
+  if (e.key === "Enter") { e.preventDefault(); doSignIn(); }
+});
+
+if (adminToken()) { showApp(); } else { showGate(); }
+</script>
+</body>
+</html>
