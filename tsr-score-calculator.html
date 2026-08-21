@@ -1158,7 +1158,7 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
             <button type="button" data-freq="weekly" aria-pressed="true">Weekly recurring</button>
             <button type="button" data-freq="series" aria-pressed="false">Series &amp; special</button>
           </div>
-          <p class="subnote" id="freqNote">A game on the regular schedule. Publishing it lists the night it runs.</p>
+          <p class="subnote" id="freqNote">A game on the weekly schedule. Publishing it lists the night it runs.</p>
         </div>
 
         <div class="field" id="dayField">
@@ -2920,8 +2920,8 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
     els.dayField.hidden = f !== "weekly";
     els.dateField.hidden = f === "weekly";
     els.freqNote.textContent = f === "weekly"
-      ? "A game on the regular schedule. Publishing it lists the night it runs."
-      : "A one-off or a few times a year. Publishing it lists the date it ran.";
+      ? "A game on the weekly schedule. Publishing it lists the night it runs."
+      : "Monthly, a series event, or a one-off. Add the date if it ran once; leave it blank if it recurs.";
   }
 
   Array.prototype.forEach.call(document.querySelectorAll("#freqSeg button"), function (b) {
