@@ -579,6 +579,9 @@ input.pv-in:focus { border-color: var(--gold-soft); background: #0C0C0C; }
 .publish-note { font-size: 12px; color: var(--ink-3); margin: 9px 0 0; }
 .publish-note.ok { color: var(--g-a); }
 .publish-note.err { color: var(--g-d); }
+.linky.danger { color: var(--ink-3); }
+.linky.danger:hover { color: var(--red-bright); }
+.linky.danger.armed { color: var(--red-bright); font-weight: 600; }
 .publish-auth { display: flex; gap: 10px; margin-top: 11px; max-width: 380px; }
 .publish-auth .control { flex: 1; }
 
@@ -1449,6 +1452,7 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
         <div class="publish" id="publishWrap" hidden>
           <div class="publish-row">
             <button type="button" class="publish-btn" id="publishBtn">Publish to Index</button>
+            <button type="button" class="linky danger" id="unpublishBtn" hidden>Remove from Index</button>
             <button type="button" class="linky" id="publishSignOut" hidden>Sign out</button>
           </div>
           <div class="publish-auth" id="publishAuth" hidden>
@@ -2128,7 +2132,8 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
     ploNote: $("ploNote"), contextBody: $("contextBody"),
     rail: $("rail"), toast: $("toast"), printRows: $("printRows"),
     publishWrap: $("publishWrap"), publishBtn: $("publishBtn"), publishNote: $("publishNote"),
-    publishAuth: $("publishAuth"), publishPw: $("publishPw"), publishSignOut: $("publishSignOut")
+    publishAuth: $("publishAuth"), publishPw: $("publishPw"), publishSignOut: $("publishSignOut"),
+    unpublishBtn: $("unpublishBtn")
   };
 
   var format = "nlh";
@@ -2793,7 +2798,9 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
     var signedIn = !!adminToken();
     els.publishAuth.hidden = signedIn;
     els.publishSignOut.hidden = !signedIn;
+    els.unpublishBtn.hidden = !signedIn;
     els.publishBtn.disabled = !signedIn;
+    disarmRemove();
     if (signedIn) {
       setPublishNote("Publishing adds this grade to Recently Graded on the homepage.");
     } else {
@@ -2921,6 +2928,63 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
     b.addEventListener("click", function () { setFrequency(b.getAttribute("data-freq")); });
   });
   setFrequency("weekly");
+
+  /* Removing a grade takes it off a public page, so it asks twice rather
+     than acting on a single stray tap. The id comes from the tournament
+     name, exactly as publishing derives it - so to remove a record you
+     load the name it was published under. */
+  var removeArmed = false;
+
+  function disarmRemove() {
+    removeArmed = false;
+    els.unpublishBtn.classList.remove("armed");
+    els.unpublishBtn.textContent = "Remove from Index";
+  }
+
+  function doUnpublish() {
+    var payload = publishPayload();
+    if (!payload || !payload.name) {
+      setPublishNote("Load the tournament you want to remove first.", "err");
+      return;
+    }
+    if (!removeArmed) {
+      removeArmed = true;
+      els.unpublishBtn.classList.add("armed");
+      els.unpublishBtn.textContent = "Really remove?";
+      setPublishNote("This takes “" + payload.name + "” off the homepage. Click again to confirm.", "err");
+      return;
+    }
+    disarmRemove();
+    setPublishNote("Removing…");
+
+    fetch("/api/grades?id=" + encodeURIComponent(payload.id), {
+      method: "DELETE",
+      headers: { "X-Admin-Secret": adminToken() }
+    }).then(function (res) {
+      if (res.status === 401) {
+        try { sessionStorage.removeItem(ADMIN_KEY); } catch (e) {}
+        refreshPublish();
+        setPublishNote("That session expired — sign in again.", "err");
+        return null;
+      }
+      return res.json();
+    }).then(function (out) {
+      if (!out) return;
+      if (out.success && out.removed) {
+        setPublishNote("Removed from the Index.", "ok");
+        toast("“" + payload.name + "” removed from the Index.");
+      } else if (out.success) {
+        setPublishNote("Nothing published under that name — check the tournament name matches.", "err");
+      } else {
+        setPublishNote(out.error || "Could not remove that grade.", "err");
+      }
+    }).catch(function () {
+      setPublishNote("Could not reach the server.", "err");
+    });
+  }
+
+  els.unpublishBtn.addEventListener("click", doUnpublish);
+  els.tname.addEventListener("input", disarmRemove);
 
   els.publishBtn.addEventListener("click", doPublish);
   $("publishGo").addEventListener("click", adminSignIn);
