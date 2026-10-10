@@ -377,6 +377,23 @@
 
       <div class="card-grid">
 
+        <article class="article-card" id="kickoff-report-card">
+          <a href="trailblazer-stop-2-kick-off-results.html" style="display:block;">
+            <div class="card-img tone-1">
+              <img src="images/2026-10-09-tch-kickoff-final-payout-board-stream.png" alt="Final Kick Off payout board on the TCH Dallas live stream showing a $114,510 prize pool and $20,980 for first place" class="card-img-photo">
+            </div>
+            <div class="card-body">
+              <p class="card-tags">Tournaments&nbsp;&nbsp;|&nbsp;&nbsp;Texas Poker</p>
+              <h3 class="card-headline">Jesse J Wins the Trailblazer Kick Off: Stop 2 Opens With a 347-Entry Field at TCH Dallas</h3>
+              <div class="card-divider"></div>
+              <div class="card-meta">
+                <span class="card-date">Oct 9, 2026</span>
+                <span class="card-arrow" aria-hidden="true">↗</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
         <!-- Card 1 -->
         <article class="article-card">
           <div class="card-img tone-1">
@@ -409,21 +426,6 @@
           </div>
         </article>
 
-        <!-- Card 3 -->
-        <article class="article-card">
-          <div class="card-img tone-3">
-            <img src="images/DSC00359.JPG" alt="New Texas Regulations: The Death of the Social Club?" class="card-img-photo">
-          </div>
-          <div class="card-body">
-            <p class="card-tags">Legal&nbsp;&nbsp;|&nbsp;&nbsp;Analysis</p>
-            <h3 class="card-headline">New Texas Regulations: The Death of the Social Club?</h3>
-            <div class="card-divider"></div>
-            <div class="card-meta">
-              <span class="card-date">Nov 10, 2024</span>
-              <span class="card-arrow" aria-hidden="true">↗</span>
-            </div>
-          </div>
-        </article>
 
       </div>
     </div>
@@ -598,6 +600,25 @@
 
   <script src="js/main.js"></script>
   <script src="js/cms-content.js"></script>
+  <script>
+    // Keep the published lead report first when the CMS refreshes this grid.
+    (function () {
+      var featured = document.getElementById('kickoff-report-card');
+      var grid = featured.parentElement;
+      var observer = new MutationObserver(function () {
+        if (grid.firstElementChild === featured) return;
+        observer.disconnect();
+        Array.from(grid.children).forEach(function (card) {
+          if (card.querySelector('a[href="trailblazer-stop-2-kick-off-results.html"]')) card.remove();
+        });
+        grid.prepend(featured);
+        while (grid.children.length > 3) grid.lastElementChild.remove();
+        observer.observe(grid, { childList: true });
+      });
+      observer.observe(grid, { childList: true });
+    })();
+  </script>
+
   <script>
   /* ── Recently Graded ────────────────────────────────────────
      Published grades come from /api/grades. The cards already in
