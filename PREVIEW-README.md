@@ -46,3 +46,5 @@ Remaining data/decisions:
 - Choose how redesigned pages should read fresh production CMS data before any eventual merge. Snapshot APIs are deliberately read-only and are not a production CMS replacement.
 
 Validation: 19 HTML pages at 1440px and 390px, no horizontal page overflow, loaded images, calculator parity against original engine including invalid and altered inputs, comparison selection, filters/search, three-stage calculation and honest email status. Main and original local checkout remain untouched.
+
+Homepage refinement: compact layout follows the supplied concept board, with locally hosted Oswald Bold for its heavier headline, a bordered tournament panel, date/region controls, a photo-backed editorial card, adjacent score explainer and compact newsletter strip. Real results photography replaces the illustrative board photograph. The Published tab displays historic records; date tabs honestly report the absence of verified current schedules. Additional checks: `node scripts/test-homepage.cjs` at 1440, 1024, 800 and 390px, including date/region controls and collapsed mobile signup.
