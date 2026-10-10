@@ -1,6 +1,27 @@
 {
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ],
   "rewrites": [
-    { "source": "/admin", "destination": "/admin/index.html" },
-    { "source": "/post/:slug", "destination": "/api/post?slug=:slug" }
+    {
+      "source": "/admin",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/post/:slug",
+      "destination": "/article.html?slug=:slug"
+    }
   ]
 }
