@@ -377,6 +377,23 @@
 
       <div class="card-grid">
 
+        <article class="article-card" id="rungood-report-card">
+          <a href="rungood-houston-preview.html" style="display:block;">
+            <div class="card-img tone-2">
+              <img src="images/rungood-official-champions-club-1200.jpg" alt="RunGood Poker Series Golden Expedition at Champions Club Houston, October 12-18" class="card-img-photo">
+            </div>
+            <div class="card-body">
+              <p class="card-tags">Tournaments&nbsp;&nbsp;|&nbsp;&nbsp;Texas Poker</p>
+              <h3 class="card-headline">RunGood Poker Series Hits Houston This Week</h3>
+              <div class="card-divider"></div>
+              <div class="card-meta">
+                <span class="card-date">Oct 12, 2026</span>
+                <span class="card-arrow" aria-hidden="true">↗</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
         <article class="article-card" id="kickoff-report-card">
           <a href="trailblazer-stop-2-kick-off-results.html" style="display:block;">
             <div class="card-img tone-1">
@@ -410,21 +427,6 @@
           </div>
         </article>
 
-        <!-- Card 2 -->
-        <article class="article-card">
-          <div class="card-img tone-2">
-            <img src="images/IMG_2338.JPG" alt="Unmasking 'The Ghost': Poker's Most Private Pro" class="card-img-photo">
-          </div>
-          <div class="card-body">
-            <p class="card-tags">Players&nbsp;&nbsp;|&nbsp;&nbsp;Profile</p>
-            <h3 class="card-headline">Unmasking 'The Ghost': Poker's Most Private Pro</h3>
-            <div class="card-divider"></div>
-            <div class="card-meta">
-              <span class="card-date">Nov 12, 2024</span>
-              <span class="card-arrow" aria-hidden="true">↗</span>
-            </div>
-          </div>
-        </article>
 
 
       </div>
@@ -601,21 +603,33 @@
   <script src="js/main.js"></script>
   <script src="js/cms-content.js"></script>
   <script>
-    // Keep the published lead report first when the CMS refreshes this grid.
+    // Keep both featured reports first when the CMS refreshes this grid.
     (function () {
-      var featured = document.getElementById('kickoff-report-card');
-      var grid = featured.parentElement;
-      var observer = new MutationObserver(function () {
-        if (grid.firstElementChild === featured) return;
-        observer.disconnect();
-        Array.from(grid.children).forEach(function (card) {
-          if (card.querySelector('a[href="trailblazer-stop-2-kick-off-results.html"]')) card.remove();
-        });
-        grid.prepend(featured);
-        while (grid.children.length > 3) grid.lastElementChild.remove();
-        observer.observe(grid, { childList: true });
+      var featured = ['rungood-report-card', 'kickoff-report-card'].map(function (id) {
+        return document.getElementById(id);
       });
-      observer.observe(grid, { childList: true });
+      if (featured.some(function (card) { return !card; })) return;
+      var grid = featured[0].parentElement;
+      var pages = ['rungood-houston-preview.html', 'trailblazer-stop-2-kick-off-results.html'];
+      var observer = new MutationObserver(keepFeatured);
+      function keepFeatured() {
+        observer.disconnect();
+        try {
+          Array.from(grid.children).forEach(function (card) {
+            if (featured.indexOf(card) !== -1) return;
+            var duplicate = Array.from(card.querySelectorAll('a[href]')).some(function (link) {
+              var path = new URL(link.getAttribute('href'), document.baseURI).pathname;
+              return pages.indexOf(path.split('/').pop()) !== -1;
+            });
+            if (duplicate) card.remove();
+          });
+          featured.slice().reverse().forEach(function (card) { grid.prepend(card); });
+          while (grid.children.length > 3) grid.lastElementChild.remove();
+        } finally {
+          observer.observe(grid, { childList: true });
+        }
+      }
+      keepFeatured();
     })();
   </script>
 
