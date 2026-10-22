@@ -84,7 +84,10 @@ module.exports = async (req, res) => {
     try {
       const db  = await getDb();
       const doc = await db.collection('pages').findOne({ page }, { projection: { _id: 0 } });
-      return res.json({ ...(doc || DEFAULT_CONTENT), page, ticker: [] });
+      const out = { ...(doc || DEFAULT_CONTENT), page, ticker: [] };
+      out.latestReports = (out.latestReports || []).filter(r => /trailblazer-stop-2|rungood-houston/.test(r.link || ''));
+      if (out.tournamentResults) out.tournamentResults = { ...out.tournamentResults, results: [] };
+      return res.json(out);
     } catch (err) {
       console.error('DB read error:', err.message);
       // Graceful fallback — site still works if DB is down
