@@ -1,45 +1,7 @@
 /* ============================================================
    THE SHAM REPORT — main.js
-   Handles: ticker build, subscribe modal, mobile nav
+   Handles: subscribe modal, mobile nav
    ============================================================ */
-
-// ── Ticker ──────────────────────────────────────────────────
-async function buildTicker() {
-  const track = document.getElementById('ticker-track');
-  if (!track) return;
-
-  let headlines = [];
-
-  try {
-    const res = await fetch('content/ticker.txt');
-    const text = await res.text();
-    headlines = text.split('|').map(s => s.trim()).filter(Boolean);
-  } catch {
-    headlines = [
-      'Houston\'s Lone Star Social Club reports record $2.1M in tournament payouts',
-      'Dallas underground circuit faces third consecutive raid in Uptown corridor',
-      'WSOP Circuit stop confirmed for San Antonio — first Texas satellite in four years',
-      'House Bill 4417 stalls in committee — legal poker clubs remain in limbo',
-      'Legendary road gambler "Tex" Morada surfaces in Austin after two-year absence'
-    ];
-  }
-
-  const SEP = '<span class="ticker-sep">&#9830;</span>';
-
-  // Double the list so seamless loop works
-  const allHeadlines = [...headlines, ...headlines];
-  track.innerHTML = allHeadlines
-    .map(h => `<span class="ticker-item">${h}</span>${SEP}`)
-    .join('');
-
-  // Measure natural width and set animation duration proportionally
-  requestAnimationFrame(() => {
-    const halfWidth = track.scrollWidth / 2;
-    const speed = 80; // px per second
-    const duration = halfWidth / speed;
-    track.style.animationDuration = `${duration}s`;
-  });
-}
 
 // ── Subscribe Modal ──────────────────────────────────────────
 function initModal() {
@@ -141,7 +103,6 @@ function initNavScroll() {
 
 // ── Init ─────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  buildTicker();
   initModal();
   initEmailCapture();
   initMobileNav();

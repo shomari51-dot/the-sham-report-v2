@@ -23,23 +23,6 @@
     } catch { return; }
     if (!content) return;
 
-    /* Store globally so main.js ticker can use it */
-    window.__TSR_CMS = content;
-
-    /* ── 1. Ticker ───────────────────────────────────────────── */
-    if (content.ticker && content.ticker.length) {
-      const track = document.getElementById('ticker-track');
-      if (track) {
-        const sep = '<span class="ticker-sep">&#9830;</span>';
-        const all = [...content.ticker, ...content.ticker];
-        track.innerHTML = all.map(h => `<span class="ticker-item">${esc(h)}</span>${sep}`).join('');
-        requestAnimationFrame(() => {
-          const halfWidth = track.scrollWidth / 2;
-          track.style.animationDuration = `${halfWidth / 80}s`;
-        });
-      }
-    }
-
     /* ── 2. Logo (nav + footer) ─────────────────────────────── */
     if (content.logo) {
       const l = content.logo;
@@ -126,6 +109,7 @@
               <img src="${esc(card.image)}" alt="${esc(card.headline)}" class="card-img-photo" loading="lazy">
             </div>
             <div class="card-body">
+              ${/trailblazer-stop-2|rungood-houston/.test(card.link || card.href || '') ? '' : '<span class="sample-label">SAMPLE — not verified reporting</span>'}
               <p class="card-tags">${(card.categories || []).map(esc).join('&nbsp;&nbsp;|&nbsp;&nbsp;')}</p>
               <h3 class="card-headline">${esc(card.headline)}</h3>
               <div class="card-divider"></div>
@@ -141,6 +125,11 @@
     /* ── 7. Tournament Results ───────────────────────────────── */
     if (content.tournamentResults) {
       const tr = content.tournamentResults;
+
+      const resultsCol = document.querySelector('.results-col');
+      if (resultsCol && !resultsCol.querySelector('.sample-label')) {
+        resultsCol.insertAdjacentHTML('afterbegin', '<span class="sample-label">SAMPLE — not verified reporting</span>');
+      }
 
       const list = document.querySelector('.results-list');
       if (list && tr.results) {

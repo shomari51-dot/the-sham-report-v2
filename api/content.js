@@ -24,16 +24,7 @@ async function getDb() {
 /* ── Default content (mirrors current live homepage) ───────── */
 const DEFAULT_CONTENT = {
   page: 'homepage',
-  ticker: [
-    "Houston's Lone Star Social Club reports record $2.1M in tournament payouts for Q1 2026",
-    "Dallas underground circuit faces third consecutive raid in Uptown corridor",
-    "WSOP Circuit stop confirmed for San Antonio — first Texas satellite in four years",
-    "High-stakes PLO game at private Midland club draws federal scrutiny",
-    "Legendary road gambler \"Tex\" Morada surfaces in Austin after two-year absence",
-    "House Bill 4417 stalls in committee — legal poker clubs remain in limbo",
-    "Beaumont card room operator charged with running unlicensed game exceeding $500K rake",
-    "Texas Hold'em legend Creed \"The Iceman\" Holloway announces retirement after 22-year circuit run"
-  ],
+  ticker: [],
   hero: {
     categories: ['Investigation', 'Exclusive'],
     headline: 'The Texas High<br>Roller Circuit',
@@ -124,11 +115,11 @@ module.exports = async (req, res) => {
     try {
       const db  = await getDb();
       const doc = await db.collection('pages').findOne({ page }, { projection: { _id: 0 } });
-      return res.json(doc || { ...DEFAULT_CONTENT, page });
+      return res.json({ ...(doc || DEFAULT_CONTENT), page, ticker: [] });
     } catch (err) {
       console.error('DB read error:', err.message);
       // Graceful fallback — site still works if DB is down
-      return res.json({ ...DEFAULT_CONTENT, page });
+      return res.json({ ...DEFAULT_CONTENT, page, ticker: [] });
     }
   }
 

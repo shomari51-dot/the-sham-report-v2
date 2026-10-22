@@ -1138,3 +1138,15 @@ body {
 
   .ticker-label { padding-left: 16px; }
 }
+
+.sample-label {
+  display: inline-block;
+  margin: 6px 8px 6px 0;
+  padding: 4px 8px;
+  border-radius: 3px;
+  background: #fbbf24;
+  color: #171717;
+  font: 700 11px/1.4 'Inter', sans-serif;
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+}
