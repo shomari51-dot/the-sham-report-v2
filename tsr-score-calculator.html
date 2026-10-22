@@ -6,18 +6,6 @@
 <title>TSR Score Calculator — The Sham Report</title>
 
 <style>
-.sample-label {
-  display: inline-block;
-  margin: 6px 8px 6px 0;
-  padding: 4px 8px;
-  border-radius: 3px;
-  background: #fbbf24;
-  color: #171717;
-  font: 700 11px/1.4 'Inter', sans-serif;
-  font-variant: small-caps;
-  letter-spacing: 0.03em;
-}
-
 /* ============================================================
    THE SHAM REPORT — TSR SCORE CALCULATOR
    Self-contained page. Drop into the existing repo as its own
@@ -51,7 +39,7 @@
   --gold-soft:     rgba(212, 175, 55, 0.35);
   --gold-tint:     rgba(212, 175, 55, 0.08);
 
-  /* Red — reserved for the live ticker, subscribe CTA, and grade F,
+  /* Red — reserved for the subscribe CTA, and grade F,
      exactly as red is used on the main site. */
   --red-bright:    #CC0000;
   --red-deep:      #8B0000;
@@ -179,43 +167,6 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
 }
 .login:hover { background: #aa0000; }
-
-.ticker {
-  border-bottom: 1px solid var(--line);
-  background: #0D0D0D;
-  font-size: 12.5px;
-}
-.ticker .wrap {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  min-height: 44px;
-  overflow-x: auto;
-  white-space: nowrap;
-  scrollbar-width: none;
-}
-.ticker .wrap::-webkit-scrollbar { display: none; }
-.live {
-  display: inline-flex; align-items: center; gap: 7px;
-  color: var(--red-bright);
-  font-weight: 700; font-size: 11px;
-  letter-spacing: 0.11em; text-transform: uppercase;
-}
-.dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--red-bright);
-  animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
-.ticker .headline { color: var(--ink); font-weight: 600; }
-.ticker .stat { color: var(--ink-2); }
-.ticker .all {
-  margin-left: auto;
-  color: var(--ink);
-  font-weight: 600; font-size: 11.5px;
-  letter-spacing: 0.09em; text-transform: uppercase;
-}
-.ticker .all:hover { color: var(--gold); }
 
 /* ---------- Page head --------------------------------------- */
 
@@ -1071,7 +1022,7 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
 @media print {
   :root { --bg: #fff; --panel: #fff; --panel-2: #fff; --ink: #000; --ink-2: #333; --ink-3: #555; --line: #bbb; --line-soft: #ddd; }
   body { background: #fff; color: #000; }
-  .masthead, .ticker, .ghost, .actions, .score-actions, .news, footer,
+  .masthead, .ghost, .actions, .score-actions, .news, footer,
   .recent, .explain, #formPanel, .toast, .privacy, .guide { display: none !important; }
   .pagehead .wrap { padding-top: 0; }
   .panel { border: 1px solid #bbb; }
@@ -1113,17 +1064,6 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; }
     </div>
   </div>
 </header>
-
-<div class="ticker">
-  <div class="wrap">
-    <span class="sample-label">SAMPLE — not verified reporting</span>
-    <span class="live"><span class="dot"></span>Live Updates</span>
-    <span class="headline">WSOP Circuit Dallas $1,700 Main Event — Day 2</span>
-    <span class="stat">327 players remaining</span>
-    <span class="stat">$412,530 prize pool</span>
-    <a class="all" href="/live">View all live events →</a>
-  </div>
-</div>
 
 <section class="pagehead">
   <div class="wrap">

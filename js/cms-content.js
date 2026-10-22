@@ -98,54 +98,11 @@
       }
     }
 
-    /* ── 6. Latest Reports ───────────────────────────────────── */
-    if (content.latestReports && content.latestReports.length) {
-      const grid = document.querySelector('.card-grid');
-      if (grid) {
-        const tones = ['tone-1', 'tone-2', 'tone-3'];
-        grid.innerHTML = content.latestReports.map((card, i) => `
-          <article class="article-card" style="cursor:${card.link && card.link !== '#' ? 'pointer' : 'default'}" onclick="${card.link && card.link !== '#' ? `window.location='${card.link}'` : ''}">
-            <div class="card-img ${tones[i % 3]}">
-              <img src="${esc(card.image)}" alt="${esc(card.headline)}" class="card-img-photo" loading="lazy">
-            </div>
-            <div class="card-body">
-              ${/trailblazer-stop-2|rungood-houston/.test(card.link || card.href || '') ? '' : '<span class="sample-label">SAMPLE — not verified reporting</span>'}
-              <p class="card-tags">${(card.categories || []).map(esc).join('&nbsp;&nbsp;|&nbsp;&nbsp;')}</p>
-              <h3 class="card-headline">${esc(card.headline)}</h3>
-              <div class="card-divider"></div>
-              <div class="card-meta">
-                <span class="card-date">${esc(card.date)}</span>
-                <span class="card-arrow" aria-hidden="true">↗</span>
-              </div>
-            </div>
-          </article>`).join('');
-      }
-    }
+    /* Latest Reports are curated in index.html and kept in place across CMS loads. */
 
-    /* ── 7. Tournament Results ───────────────────────────────── */
+    /* Preserve CMS updates to Player Spotlight without rendering results. */
     if (content.tournamentResults) {
       const tr = content.tournamentResults;
-
-      const resultsCol = document.querySelector('.results-col');
-      if (resultsCol && !resultsCol.querySelector('.sample-label')) {
-        resultsCol.insertAdjacentHTML('afterbegin', '<span class="sample-label">SAMPLE — not verified reporting</span>');
-      }
-
-      const list = document.querySelector('.results-list');
-      if (list && tr.results) {
-        list.innerHTML = tr.results.map((r, i) => `
-          <li class="result-entry">
-            <span class="result-num">${String(i + 1).padStart(2, '0')}</span>
-            <div>
-              <p class="result-player">${esc(r.champion)}</p>
-              <p class="result-detail">${esc(r.tournament)}</p>
-            </div>
-            <span class="result-prize">${esc(r.prize)}</span>
-          </li>`).join('');
-      }
-
-      const standingsA = document.querySelector('.results-footer a');
-      if (standingsA && tr.standingsLink) standingsA.href = tr.standingsLink;
 
       if (tr.spotlight) {
         const sp = tr.spotlight;

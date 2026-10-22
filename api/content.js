@@ -33,39 +33,8 @@ const DEFAULT_CONTENT = {
     ctaLink: '#',
     backgroundImage: 'images/IMG_3745.jpg'
   },
-  latestReports: [
-    {
-      id: 1,
-      image: 'images/DSC00353.jpg',
-      categories: ['Tournaments', 'Exclusive'],
-      headline: 'The $50M Pot That Changed Everything in Dallas',
-      date: 'Nov 14, 2024',
-      link: '#'
-    },
-    {
-      id: 2,
-      image: 'images/IMG_2338.JPG',
-      categories: ['Players', 'Profile'],
-      headline: "Unmasking 'The Ghost': Poker's Most Private Pro",
-      date: 'Nov 12, 2024',
-      link: '#'
-    },
-    {
-      id: 3,
-      image: 'images/DSC00359.JPG',
-      categories: ['Legal', 'Analysis'],
-      headline: 'New Texas Regulations: The Death of the Social Club?',
-      date: 'Nov 10, 2024',
-      link: '#'
-    }
-  ],
+  latestReports: [],
   tournamentResults: {
-    results: [
-      { champion: '[Champion TBD]', tournament: 'TCH Dallas Main Event',       prize: '$42,000' },
-      { champion: '[Champion TBD]', tournament: 'Poker Club of Texas Series',  prize: '$18,500' },
-      { champion: '[Champion TBD]', tournament: 'Houston Poker Open',          prize: '$24,000' }
-    ],
-    standingsLink: '#',
     spotlight: {
       image:    'images/anthony-tch-kickoff.jpg',
       headline: 'Anthony Takes Down the Lone Star Kick Off — TCH Signature Series',
