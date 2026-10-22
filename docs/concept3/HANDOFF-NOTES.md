@@ -77,3 +77,8 @@ The references use fabricated rooms, stock scenes, sample reporting, inconsisten
 No release occurred, so no production rollback is needed. Before a separately authorized launch: obtain policy/content approval, supply verified contacts, remove or clearly retain sample labels, run the deferred browser checks and capture the full screenshot set, then record the approved revision and prior deployment for rollback. Do not publish this preview without explicit approval.
 
 Ready for Shomari's review. The live website has not been replaced. Publication requires Shomari's explicit approval.
+
+## Pass 4 (Cyborg, Oct 22 2026 ~5:57 PM CT)
+- Fixed inside-page hero forcing ~1298px width at 768/1024 (aspect-ratio + min-height); fixed 27px overflow at 320 (logo/images). Layout check: 7 pages x 320/390/768/1024/1440 = 35/35 no horizontal overflow, 0 broken images.
+- Headless Chrome screenshots now captured by coordinator: /workspace/shots-concept3/{page}-{desktop,mobile}.png + concept3-screenshots.zip.
+- Engine tests: 53/53 pass. Preview: https://the-sham-report-v2-r0ftzumi5-sham-god-media-s-projects.vercel.app (Vercel login required). No production deploy.
