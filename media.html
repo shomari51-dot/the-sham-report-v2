@@ -260,6 +260,14 @@
       letter-spacing: 0.04em;
     }
 
+    /* ── Facebook reel link cards ── */
+    .reel-card { display:block; text-decoration:none; }
+    .reel-thumb { display:flex; align-items:center; justify-content:center; }
+    .reel-thumb .play-btn { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:56px; height:56px; border-radius:50%; border:2px solid #D4AF37; color:#D4AF37; display:flex; align-items:center; justify-content:center; font-size:20px; transition:transform .2s ease; }
+    .reel-src { position:absolute; top:10px; left:10px; font-family:'Inter',sans-serif; font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:#888; }
+    .reel-cta { display:block; margin-top:12px; font-family:'Inter',sans-serif; font-size:12px; font-weight:600; color:#D4AF37; letter-spacing:.04em; }
+    .media-section-note { font-family:'Inter',sans-serif; font-size:14px; color:#888; margin:-12px 0 28px; }
+
     /* ── Section 3 — Podcast strip ───────────────────────────── */
     .podcast-strip {
       background: #111111;
@@ -413,7 +421,73 @@
       <p class="media-section-label">Featured</p>
       <h2 class="media-section-title">Latest from The Sham Report</h2>
 
-      <p class="content-empty">Videos coming soon.</p>
+      <p class="media-section-note">Poker reels from Sham&rsquo;s Facebook page.</p>
+      <div class="video-grid">
+        <a class="video-card reel-card" href="https://www.facebook.com/reel/1398989519959467/" target="_blank" rel="noopener noreferrer">
+          <div class="video-thumb reel-thumb v1"><span class="reel-src">Facebook Reel</span><span class="play-btn" aria-hidden="true">&#9654;</span></div>
+          <div class="video-card-body">
+            <h3 class="video-card-title">AMY vs JB, $10.4K pot</h3>
+            <time class="video-card-date" datetime="2026-10-10">Oct 10, 2026</time>
+            <span class="reel-cta">Watch on Facebook &rarr;</span>
+          </div>
+        </a>
+        <a class="video-card reel-card" href="https://www.facebook.com/reel/1085303500976218/" target="_blank" rel="noopener noreferrer">
+          <div class="video-thumb reel-thumb v2"><span class="reel-src">Facebook Reel</span><span class="play-btn" aria-hidden="true">&#9654;</span></div>
+          <div class="video-card-body">
+            <h3 class="video-card-title">We&rsquo;re back at it tonight!</h3>
+            <time class="video-card-date" datetime="2026-10-07">Oct 7, 2026</time>
+            <span class="reel-cta">Watch on Facebook &rarr;</span>
+          </div>
+        </a>
+        <a class="video-card reel-card" href="https://www.facebook.com/reel/1084950954282668/" target="_blank" rel="noopener noreferrer">
+          <div class="video-thumb reel-thumb v3"><span class="reel-src">Facebook Reel</span><span class="play-btn" aria-hidden="true">&#9654;</span></div>
+          <div class="video-card-body">
+            <h3 class="video-card-title">Kyle puts Dr&hellip;</h3>
+            <time class="video-card-date" datetime="2026-10-04">Oct 4, 2026</time>
+            <span class="reel-cta">Watch on Facebook &rarr;</span>
+          </div>
+        </a>
+        <a class="video-card reel-card" href="https://www.facebook.com/reel/1985887152094115/" target="_blank" rel="noopener noreferrer">
+          <div class="video-thumb reel-thumb v4"><span class="reel-src">Facebook Reel</span><span class="play-btn" aria-hidden="true">&#9654;</span></div>
+          <div class="video-card-body">
+            <h3 class="video-card-title">Spooky&rsquo;s 72 vs Kyle&rsquo;s AA, 20k pot</h3>
+            <time class="video-card-date" datetime="2026-10-02">Oct 2, 2026</time>
+            <span class="reel-cta">Watch on Facebook &rarr;</span>
+          </div>
+        </a>
+        <a class="video-card reel-card" href="https://www.facebook.com/reel/1612745596487168/" target="_blank" rel="noopener noreferrer">
+          <div class="video-thumb reel-thumb v1"><span class="reel-src">Facebook Reel</span><span class="play-btn" aria-hidden="true">&#9654;</span></div>
+          <div class="video-card-body">
+            <h3 class="video-card-title">I have to play Day 2 tomorrow</h3>
+            <time class="video-card-date" datetime="2026-05-03">May 3, 2026</time>
+            <span class="reel-cta">Watch on Facebook &rarr;</span>
+          </div>
+        </a>
+        <a class="video-card reel-card" href="https://www.facebook.com/reel/3148062308729546/" target="_blank" rel="noopener noreferrer">
+          <div class="video-thumb reel-thumb v2"><span class="reel-src">Facebook Reel</span><span class="play-btn" aria-hidden="true">&#9654;</span></div>
+          <div class="video-card-body">
+            <h3 class="video-card-title">KK at it again</h3>
+            <time class="video-card-date" datetime="2026-04-28">Apr 28, 2026</time>
+            <span class="reel-cta">Watch on Facebook &rarr;</span>
+          </div>
+        </a>
+        <a class="video-card reel-card" href="https://www.facebook.com/reel/1623841535321868/" target="_blank" rel="noopener noreferrer">
+          <div class="video-thumb reel-thumb v3"><span class="reel-src">Facebook Reel</span><span class="play-btn" aria-hidden="true">&#9654;</span></div>
+          <div class="video-card-body">
+            <h3 class="video-card-title">Wolfgang, Brad, Benji, Scott, Amy</h3>
+            <time class="video-card-date" datetime="2026-03-18">Mar 18, 2026</time>
+            <span class="reel-cta">Watch on Facebook &rarr;</span>
+          </div>
+        </a>
+        <a class="video-card reel-card" href="https://www.facebook.com/reel/2045881562627473/" target="_blank" rel="noopener noreferrer">
+          <div class="video-thumb reel-thumb v4"><span class="reel-src">Facebook Reel</span><span class="play-btn" aria-hidden="true">&#9654;</span></div>
+          <div class="video-card-body">
+            <h3 class="video-card-title">Ran deep at The Shuffle 214</h3>
+            <time class="video-card-date" datetime="2026-03-17">Mar 17, 2026</time>
+            <span class="reel-cta">Watch on Facebook &rarr;</span>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 
