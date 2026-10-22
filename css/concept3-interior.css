@@ -13,3 +13,7 @@
 .host-row img{aspect-ratio:16/9}.c3-interior :where(section,div,form,label,article,aside,fieldset){min-width:0}.c3-interior h1,.c3-interior h2,.c3-interior h3{overflow-wrap:anywhere}
 @media(max-width:780px){.interior-hero .page-intro{width:85%}.two-columns.guide{grid-template-columns:1fr}}
 @media(max-width:520px){.interior-hero{aspect-ratio:auto;min-height:350px}.interior-hero-photo{width:100%;object-position:65% center}.interior-hero:after{background:linear-gradient(90deg,#000e,#0008)}.interior-hero .page-intro{width:100%}.field-grid{grid-template-columns:1fr}.filter-form label{min-width:0;flex-basis:100%}.filter-grid{grid-template-columns:1fr}.reels-grid{grid-template-columns:1fr}.format-card{grid-template-columns:1fr 1fr}}
+
+/* Pass 4 layout fixes: aspect-ratio + min-height was forcing hero width >1280px at tablet widths */
+.interior-hero{min-width:0;max-width:100%}
+@media(max-width:1180px){.interior-hero{aspect-ratio:auto;min-height:340px}.interior-hero .page-intro{width:70%}}

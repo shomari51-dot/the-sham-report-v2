@@ -10,3 +10,7 @@
 @media(max-width:520px){.c3-bigread-inner{grid-template-columns:1fr}.c3-bigread img{height:auto}}
 /* Pass 3: stack the score table on narrow phones rather than compressing columns. */
 @media(max-width:380px){.c3-score-table table,.c3-score-table tbody,.c3-score-table tr,.c3-score-table td{display:block;width:100%}.c3-score-table thead{display:none}.c3-score-table tr{border-bottom:1px solid var(--c3-rule);padding:10px 0}.c3-score-table td{border:0;padding:4px 0;overflow-wrap:anywhere}.c3-score-table td:nth-child(4){display:block}.c3-score-table td:before{display:inline-block;min-width:78px;color:white;font:14px var(--c3-heading)}.c3-score-table td:nth-child(1):before{content:'Grade'}.c3-score-table td:nth-child(2):before{content:'TSR score'}.c3-score-table td:nth-child(3):before{content:'Event'}.c3-score-table td:nth-child(4):before{content:'Venue'}.c3-score-table td:nth-child(5):before{content:'Buy-in'}.c3-score-table td:nth-child(6):before{content:'Time'}.c3-home h1{overflow-wrap:anywhere}.c3-home :where(section,div,form){min-width:0}}
+
+/* Pass 4: 320px overflow */
+img{max-width:100%}
+@media(max-width:360px){.c3-logo{font-size:28px;letter-spacing:-1px}.c3-mast{gap:12px;flex-wrap:wrap}.c3-top>span{max-width:150px}.c3-socials{gap:4px}}
