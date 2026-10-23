@@ -52,7 +52,7 @@ window.C3_REELS = [
     "image": "images/reels/2026-03-18_reel-1623841535321868.jpg",
     "alt": "Player in a dark hoodie at a poker table with chip stacks",
     "title": "Wolfgang, Brad, Benji, Scott, Amy",
-    "description": "\u201cMy table selection was a little off this time. A bunch of 5-10 crushers.\u201d",
+    "description": "\u201cMy table selection was a little off this time. A bunch of 5-10 crushers.\u201d Sitting down with Wolfgang, Brad, Benji, Scott, and Amy.",
     "date": "Mar 18, 2026"
   },
   {

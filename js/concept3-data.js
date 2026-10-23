@@ -1,7 +1,7 @@
 window.CONCEPT3_DATA = {
   "stories": [
     {
-      "seq": 13,
+      "seq": 19,
       "title": "RunGood Poker Series Hits Houston",
       "image": "images/rungood-official-champions-club-1200.jpg",
       "alt": "RunGood Golden Expedition at Champions Club Houston",
@@ -13,7 +13,7 @@ window.CONCEPT3_DATA = {
       "author": "Shomari Williams"
     },
     {
-      "seq": 12,
+      "seq": 18,
       "title": "Jesse J Wins the Trailblazer Kick Off",
       "image": "images/2026-10-09-tch-kickoff-final-payout-board-stream.png",
       "alt": "Final Kick Off payout board on the TCH Dallas stream",
@@ -22,6 +22,78 @@ window.CONCEPT3_DATA = {
       "description": "Stop 2 opens with a 347-entry field and a $114,510 prize pool at TCH Dallas.",
       "date": "October 9, 2026",
       "original_fb_date": "2026-10-09",
+      "author": "Shomari Williams"
+    },
+    {
+      "seq": 17,
+      "title": "Champions Social Club Just Raised the Bar for the Best-Looking Poker Room in DFW",
+      "image": "images/IMG_3745.jpg",
+      "alt": "Exterior of Champions Social Club at 17776 Dallas Parkway in Dallas, Texas \u2014 the restored former III Forks landmark featuring its signature gold dome and brick facade.",
+      "url": "article-template.html?slug=champions-social-club-first-look-dfw-poker-room-founding-member-april-26-2026",
+      "category": "Texas Poker",
+      "description": "Inside the former III Forks landmark at 17776 Dallas Parkway: a founding member's first look at Champions Social Club, its stained-glass lounge, and how the $800/month membership math compares to hourly seat fees.",
+      "date": "April 26, 2026",
+      "original_fb_date": "2026-04-26",
+      "author": "Shomari Williams"
+    },
+    {
+      "seq": 16,
+      "title": "901 Players and $297,330 on the Line: WSOP Circuit Lands in Texas for the First Time at TCH Austin",
+      "image": "images/DSC00353.jpg",
+      "alt": "Tournament action on the WSOP Circuit / Texas Card House Austin felt (April 22 \u2013 May 4, 2026 series).",
+      "url": "article-template.html?slug=wsop-circuit-texas-card-house-austin-901-players-first-lone-star-ring-april-24-2026",
+      "category": "Tournaments",
+      "description": "The first Lone Star Ring event of the inaugural WSOP Circuit series at Texas Card House Austin drew an insane 901-entry turnout and a $297,330 prize pool \u2014 and I'm making the drive down I-35.",
+      "date": "April 24, 2026",
+      "original_fb_date": "2026-04-24",
+      "author": "Shomari Williams"
+    },
+    {
+      "seq": 15,
+      "title": "He Won $143,000 at The Lodge. Then They Were Raided the Next Day: Harvey Castro Speaks to The Sham Report",
+      "image": "images/2026-04-21_1.jpg",
+      "alt": "Broadcast frame from the Lodge Championship Series (LCS) Final Table (Hand 79, 5 of 752 remaining, blinds 50K/100K), where Harvey Castro finished runner-up for $143,336 on March 9, 2026.",
+      "url": "article-template.html?slug=harvey-castro-won-143000-at-the-lodge-raided-next-day-april-21-2026",
+      "category": "Players",
+      "description": "23-year-old Flower Mound pro Harvey Castro finished second in the Lodge Championship Series Main Event for $143,336 on March 9 \u2014 less than 24 hours before the raid froze his payout check.",
+      "date": "April 21, 2026",
+      "original_fb_date": "2026-04-21",
+      "author": "Shomari Williams"
+    },
+    {
+      "seq": 14,
+      "title": "What Is Selective Enforcement? Why Some Texas Poker Rooms Get Raided While Others Stay Open",
+      "image": "images/2026-04-20_1.jpg",
+      "alt": "Jeopardy!-style game board graphic reading \"WHAT IS SELECTIVE ENFORCEMENT\" accompanying Shomari Williams's April 20, 2026 commentary.",
+      "url": "article-template.html?slug=what-is-selective-enforcement-texas-poker-rooms-april-20-2026",
+      "category": "Legal",
+      "description": "In Texas, poker rooms operate under the same statute and the same legal gray area \u2014 so when one club is raided while others take a pot rake in plain sight, the real question isn't \"was the law broken?\" It's \"why was this room chosen?\"",
+      "date": "April 20, 2026",
+      "original_fb_date": "2026-04-20",
+      "author": "Shomari Williams"
+    },
+    {
+      "seq": 13,
+      "title": "Running Good on the Poker House Fort Worth Livestream: Round of Each PLO and Congress",
+      "image": "images/2026-03-19_2.jpg",
+      "alt": "Deep chip stacks on the Poker House Fort Worth feature table during the March 19, 2026 Round of Each PLO and Congress livestream.",
+      "url": "article-template.html?slug=running-good-poker-house-fort-worth-livestream-plo-congress-march-19-2026",
+      "category": "Players",
+      "description": "Taking a seat on the Poker House Live feature table in Fort Worth for a mixed Round of Each session of Pot-Limit Omaha and 5-Card PLO (Congress) \u2014 and stacking up deep.",
+      "date": "March 19, 2026",
+      "original_fb_date": "2026-03-19",
+      "author": "Shomari Williams"
+    },
+    {
+      "seq": 12,
+      "title": "When Your Table Selection Is Off: Sitting Down With a Lineup of $5/$10 Crushers",
+      "image": "images/2026-03-18_reel-1623841535321868.jpg",
+      "alt": "At the $5/$10 table with a lineup of crushers \u2014 \"My table selection was a little off this time. A bunch of 5-10 crushers.\" (March 18, 2026).",
+      "url": "article-template.html?slug=table-selection-5-10-crushers-wolfgang-brad-benji-scott-amy-march-18-2026",
+      "category": "Players",
+      "description": "Walking into a $5/$10 session and realizing the lineup includes Wolfgang, Brad, Benji, Scott, and Amy \u2014 sometimes the best play at the table is recognizing a stacked lineup.",
+      "date": "March 18, 2026",
+      "original_fb_date": "2026-03-18",
       "author": "Shomari Williams"
     },
     {
@@ -312,7 +384,7 @@ window.CONCEPT3_DATA = {
   ],
   "articles": [
     {
-      "seq": 13,
+      "seq": 19,
       "slug": "rungood-houston-preview",
       "url": "rungood-houston-preview.html",
       "title": "RunGood Poker Series Hits Houston",
@@ -334,7 +406,7 @@ window.CONCEPT3_DATA = {
       "status": "published"
     },
     {
-      "seq": 12,
+      "seq": 18,
       "slug": "trailblazer-stop-2-kick-off-results",
       "url": "trailblazer-stop-2-kick-off-results.html",
       "title": "Jesse J Wins the Trailblazer Kick Off",
@@ -354,6 +426,193 @@ window.CONCEPT3_DATA = {
       "context": "Original October 2026 reporting. See the linked original article for full source links, schedules and results.",
       "disclosures": "Original October 2026 tournament reporting by Shomari Williams from the official Texas Card House Dallas live stream and published series schedule. Shomari Williams participates in live tournament play in Texas.",
       "status": "published"
+    },
+    {
+      "seq": 17,
+      "slug": "champions-social-club-first-look-dfw-poker-room-founding-member-april-26-2026",
+      "title": "Champions Social Club Just Raised the Bar for the Best-Looking Poker Room in DFW",
+      "deck": "Inside the former III Forks landmark at 17776 Dallas Parkway: a founding member's first look at Champions Social Club, its stained-glass lounge, and how the $800/month membership math compares to hourly seat fees.",
+      "categories": [
+        "Texas Poker",
+        "Players"
+      ],
+      "heroImage": "images/IMG_3745.jpg",
+      "secondaryImage": "images/IMG_3753.jpg",
+      "author": "Shomari Williams",
+      "date": "April 26, 2026",
+      "body": "Originally posted April 26, 2026.\n\nChampions Social Club just raised the bar for the best-looking poker room in DFW.\n\nFirst Copa Club\u2026 RIP. Then Palace Poker set the standard. Now Champions Social Club is stepping into the conversation, and after being privileged enough to become one of the early founding members and getting a first look inside, I can tell you: the bar has been raised.\n\nMan oh man.\n\nThe exterior alone looks like something out of a different era, and that's because it is. This is the former home of III Forks, one of Dallas's most legendary steakhouses, which operated here for 23 years before relocating to Frisco in 2020. That gold dome, the brick facade, and the grand entrance canopy \u2014 it's all still here, restored and reimagined. Champions didn't build something from scratch; they breathed new life into a Dallas landmark that had fallen silent.\n\nInside, the bar area features a stunning stained-glass ceiling installation and a full upscale lounge setup. The poker room itself has clean modern lighting, dedicated screens at every section, and premium seating that feels closer to a high-end casino than anything DFW has seen.\n\nBut let's be clear about something first: Champions Social Club is not just a poker room.\n\nChampions is a full-scale entertainment venue and social lounge that happens to have one of the most beautiful poker rooms in DFW. Your $800/month membership isn't just buying you a seat at the table \u2014 it's buying you access to an entire lifestyle experience, including:\n\u2022 A world-class restaurant\n\u2022 A high-end bar with a stunning stained-glass ceiling\n\u2022 Private high-stakes games\n\u2022 Live band and music entertainment\n\u2022 A top-of-the-line streaming room\n\u2022 Chess competitions\n\u2022 And much more\n\nWhen you frame it that way, the math starts to look different.\n\nYes, at $800/month you're no longer paying an hourly seat fee every time you sit down \u2014 that cost is folded into your membership. To put that in perspective, players logging roughly 61.5 hours a month at Texas Card House's $13/hr rate are already spending that much just in time charges. At rooms running $11\u2013$12/hr, you'd need 66 to 72+ hours before the membership math equalizes. The more you play, the more the membership pays for itself.\n\nYou'll still cover food and drinks separately, though membership may also include discounted rates on dining and beverages (a detail I'm still confirming). Either way, the value proposition here goes well beyond poker: you're paying for the restaurant, the bar, the entertainment, the exclusivity, and the environment.\n\nThere is also a $500 one-time initiation fee that is potentially being waived through June during the opening window, giving early members a significant advantage before the Founding Members Celebration and Grand Opening set for May 30, 2026 at 17776 Dallas Parkway, Dallas, Texas.\n\nChampions isn't competing with Texas Card House or Palace Poker \u2014 they're playing a completely different game. This is for the player, and the person, who wants more than just a felt table and a chip runner. This is for someone who wants a home base.\n\nDFW poker has never seen anything like this. And honestly? I cannot wait to see how this turns out.\n\nOn the scene \u2014 Shomari Williams, The Sham Report. Stay tuned.\n\n\u2014 Sham",
+      "status": "published",
+      "fb_post_id": "pfbid02DqMoMTSr1vxb8vRArvydFpMjLXiL2QJgwPwzSb2vtGo6YM4gVcQzayGn1EcGG3Ccl",
+      "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02DqMoMTSr1vxb8vRArvydFpMjLXiL2QJgwPwzSb2vtGo6YM4gVcQzayGn1EcGG3Ccl/",
+      "original_fb_date": "2026-04-26",
+      "original_post_text": "\ud835\udc02\ud835\udc21\ud835\udc1a\ud835\udc26\ud835\udc29\ud835\udc22\ud835\udc28\ud835\udc27\ud835\udc2c \ud835\udc12\ud835\udc28\ud835\udc1c\ud835\udc22\ud835\udc1a\ud835\udc25 \ud835\udc02\ud835\udc25\ud835\udc2e\ud835\udc1b \ud835\udc23\ud835\udc2e\ud835\udc2c\ud835\udc2d \ud835\udc2b\ud835\udc1a\ud835\udc22\ud835\udc2c\ud835\udc1e\ud835\udc1d \ud835\udc2d\ud835\udc21\ud835\udc1e \ud835\udc1b\ud835\udc1a\ud835\udc2b \ud835\udc1f\ud835\udc28\ud835\udc2b \ud835\udc2d\ud835\udc21\ud835\udc1e \ud835\udc1b\ud835\udc1e\ud835\udc2c\ud835\udc2d \ud835\udc25\ud835\udc28\ud835\udc28\ud835\udc24\ud835\udc22\ud835\udc27\ud835\udc20 \ud835\udc29\ud835\udc28\ud835\udc24\ud835\udc1e\ud835\udc2b \ud835\udc2b\ud835\udc28\ud835\udc28\ud835\udc26 \ud835\udc22\ud835\udc27 \ud835\udc03\ud835\udc05\ud835\udc16.\n\nFirst Copa Club\u2026 RIP. Then Palace Poker set the standard. Now \ud835\udc02\ud835\udc21\ud835\udc1a\ud835\udc26\ud835\udc29\ud835\udc22\ud835\udc28\ud835\udc27\ud835\udc2c \ud835\udc12\ud835\udc28\ud835\udc1c\ud835\udc22\ud835\udc1a\ud835\udc25 \ud835\udc02\ud835\udc25\ud835\udc2e\ud835\udc1b is stepping into the conversation, and after being privileged enough to become one of the early founding members and getting a first look inside, I can tell you: the bar has been raised.\n\nMan oh man.\n\nThe exterior alone looks like something out of a different era, and that\u2019s because it is. This is the former home of \ud835\udc08\ud835\udc08\ud835\udc08 \ud835\udc05\ud835\udc28\ud835\udc2b\ud835\udc24\ud835\udc2c, one of Dallas\u2019s most legendary steakhouses, which operated here for 23 years before relocating to Frisco in 2020. That gold dome, the brick facade, the grand entrance canopy it\u2019s all still here, restored and reimagined. Champions didn\u2019t build something new. They breathed new life into a Dallas landmark that had fallen silent.\n\nInside, the bar area features a stunning stained glass ceiling installation and a full upscale lounge setup. The poker room itself has clean modern lighting, dedicated screens at every section, and premium seating that feels closer to a high-end casino than anything DFW has seen.\n\n\ud835\udc01\ud835\udc2e\ud835\udc2d \ud835\udc25\ud835\udc1e\ud835\udc2d\u2019\ud835\udc2c \ud835\udc1b\ud835\udc1e \ud835\udc1c\ud835\udc25\ud835\udc1e\ud835\udc1a\ud835\udc2b \ud835\udc1a\ud835\udc1b\ud835\udc28\ud835\udc2e\ud835\udc2d \ud835\udc2c\ud835\udc28\ud835\udc26\ud835\udc1e\ud835\udc2d\ud835\udc21\ud835\udc22\ud835\udc27\ud835\udc20 \ud835\udc1f\ud835\udc22\ud835\udc2b\ud835\udc2c\ud835\udc2d \n\ud835\udc02\ud835\udc21\ud835\udc1a\ud835\udc26\ud835\udc29\ud835\udc22\ud835\udc28\ud835\udc27\ud835\udc2c \ud835\udc12\ud835\udc28\ud835\udc1c\ud835\udc22\ud835\udc1a\ud835\udc25 \ud835\udc02\ud835\udc25\ud835\udc2e\ud835\udc1b \ud835\udc22\ud835\udc2c \ud835\udc27\ud835\udc28\ud835\udc2d \ud835\udc23\ud835\udc2e\ud835\udc2c\ud835\udc2d \ud835\udc1a \ud835\udc29\ud835\udc28\ud835\udc24\ud835\udc1e\ud835\udc2b \ud835\udc2b\ud835\udc28\ud835\udc28\ud835\udc26.\n\nChampions is a full-scale entertainment venue and social lounge that happens to have one of the most beautiful poker rooms in DFW. Your $800/month membership isn\u2019t just buying you a seat at the table \u2014 it\u2019s buying you access to an entire lifestyle experience including:\n\n \u2022 \ud835\udc00 \ud835\udc30\ud835\udc28\ud835\udc2b\ud835\udc25\ud835\udc1d-\ud835\udc1c\ud835\udc25\ud835\udc1a\ud835\udc2c\ud835\udc2c \ud835\udc2b\ud835\udc1e\ud835\udc2c\ud835\udc2d\ud835\udc1a\ud835\udc2e\ud835\udc2b\ud835\udc1a\ud835\udc27\ud835\udc2d\n \u2022 \ud835\udc00 \ud835\udc21\ud835\udc22\ud835\udc20\ud835\udc21-\ud835\udc1e\ud835\udc27\ud835\udc1d \ud835\udc1b\ud835\udc1a\ud835\udc2b \ud835\udc30\ud835\udc22\ud835\udc2d\ud835\udc21 \ud835\udc1a \ud835\udc2c\ud835\udc2d\ud835\udc2e\ud835\udc27\ud835\udc27\ud835\udc22\ud835\udc27\ud835\udc20 \ud835\udc2c\ud835\udc2d\ud835\udc1a\ud835\udc22\ud835\udc27\ud835\udc1e\ud835\udc1d \ud835\udc20\ud835\udc25\ud835\udc1a\ud835\udc2c\ud835\udc2c        \n \u2022 \ud835\udc0f\ud835\udc2b\ud835\udc22\ud835\udc2f\ud835\udc1a\ud835\udc2d\ud835\udc1e \ud835\udc21\ud835\udc22\ud835\udc20\ud835\udc21-\ud835\udc2c\ud835\udc2d\ud835\udc1a\ud835\udc24\ud835\udc1e\ud835\udc2c \ud835\udc20\ud835\udc1a\ud835\udc26\ud835\udc1e\ud835\udc2c\n \u2022 \ud835\udc0b\ud835\udc22\ud835\udc2f\ud835\udc1e \ud835\udc1b\ud835\udc1a\ud835\udc27\ud835\udc1d \ud835\udc1a\ud835\udc27\ud835\udc1d \ud835\udc26\ud835\udc2e\ud835\udc2c\ud835\udc22\ud835\udc1c \ud835\udc1e\ud835\udc27\ud835\udc2d\ud835\udc1e\ud835\udc2b\ud835\udc2d\ud835\udc1a\ud835\udc22\ud835\udc27\ud835\udc26\ud835\udc1e\ud835\udc27\ud835\udc2d\n \u2022 \ud835\udc00 \ud835\udc2d\ud835\udc28\ud835\udc29-\ud835\udc28\ud835\udc1f-\ud835\udc2d\ud835\udc21\ud835\udc1e-\ud835\udc25\ud835\udc22\ud835\udc27\ud835\udc1e \ud835\udc2c\ud835\udc2d\ud835\udc2b\ud835\udc1e\ud835\udc1a\ud835\udc26\ud835\udc22\ud835\udc27\ud835\udc20 \ud835\udc2b\ud835\udc28\ud835\udc28\ud835\udc26\n \u2022 \ud835\udc02\ud835\udc21\ud835\udc1e\ud835\udc2c\ud835\udc2c \ud835\udc1c\ud835\udc28\ud835\udc26\ud835\udc29\ud835\udc1e\ud835\udc2d\ud835\udc22\ud835\udc2d\ud835\udc22\ud835\udc28\ud835\udc27\ud835\udc2c\n \u2022 \ud835\udc00\ud835\udc27\ud835\udc1d \ud835\udc2c\ud835\udc28 \ud835\udc26\ud835\udc2e\ud835\udc1c\ud835\udc21 \ud835\udc26\ud835\udc28\ud835\udc2b\ud835\udc1e\n\n\ud835\udc16\ud835\udc21\ud835\udc1e\ud835\udc27 \ud835\udc32\ud835\udc28\ud835\udc2e \ud835\udc1f\ud835\udc2b\ud835\udc1a\ud835\udc26\ud835\udc1e \ud835\udc22\ud835\udc2d \ud835\udc2d\ud835\udc21\ud835\udc1a\ud835\udc2d \ud835\udc30\ud835\udc1a\ud835\udc32, \ud835\udc2d\ud835\udc21\ud835\udc1e \ud835\udc26\ud835\udc1a\ud835\udc2d\ud835\udc21 \ud835\udc2c\ud835\udc2d\ud835\udc1a\ud835\udc2b\ud835\udc2d\ud835\udc2c \ud835\udc2d\ud835\udc28 \ud835\udc25\ud835\udc28\ud835\udc28\ud835\udc24 \ud835\udc1d\ud835\udc22\ud835\udc1f\ud835\udc1f\ud835\udc1e\ud835\udc2b\ud835\udc1e\ud835\udc27\ud835\udc2d.\n\nYes, at $800/month you\u2019re no longer paying an hourly seat fee every time you sit down, that cost is folded into your membership. To put that in perspective, players logging ~ \ud835\udfd4\ud835\udfcf.\ud835\udfd3 hours a month at Texas Card House\u2019s $13/hr rate are already spending that much just in time charges. At rooms running $11\u2013$12/hr, you\u2019d need 66 to 72+ hours before the membership math equalizes. The more you play, the more the membership pays for itself.\n\nYou\u2019ll still cover food and drinks separately, but from what I understand, membership may also come with discounted rates on food and possibly drinks as well something I\u2019m still confirming. Either way, the value proposition here goes well beyond just poker.\n\nBut you\u2019re not just paying for poker. You\u2019re paying for the full experience. The restaurant. The bar. The entertainment. The exclusivity. The environment.\n\nThere\u2019s also a $\ud835\udfd3\ud835\udfce\ud835\udfce \ud835\udc28\ud835\udc27\ud835\udc1e-\ud835\udc2d\ud835\udc22\ud835\udc26\ud835\udc1e \ud835\udc22\ud835\udc27\ud835\udc22\ud835\udc2d\ud835\udc22\ud835\udc1a\ud835\udc2d\ud835\udc22\ud835\udc28\ud835\udc27 \ud835\udc1f\ud835\udc1e\ud835\udc1e\nthat potentially is being waived through June during the opening window, so early members get a significant advantage. That window won\u2019t be open forever.\n\n\ud835\udc0c\ud835\udc1a\ud835\udc2b\ud835\udc24 \ud835\udc32\ud835\udc28\ud835\udc2e\ud835\udc2b \ud835\udc1c\ud835\udc1a\ud835\udc25\ud835\udc1e\ud835\udc27\ud835\udc1d\ud835\udc1a\ud835\udc2b\ud835\udc2c \u2014 \ud835\udc2d\ud835\udc21\ud835\udc1e \ud835\udc05\ud835\udc28\ud835\udc2e\ud835\udc27\ud835\udc1d\ud835\udc22\ud835\udc27\ud835\udc20 \ud835\udc0c\ud835\udc1e\ud835\udc26\ud835\udc1b\ud835\udc1e\ud835\udc2b\ud835\udc2c \ud835\udc02\ud835\udc1e\ud835\udc25\ud835\udc1e\ud835\udc1b\ud835\udc2b\ud835\udc1a\ud835\udc2d\ud835\udc22\ud835\udc28\ud835\udc27 & \ud835\udc06\ud835\udc2b\ud835\udc1a\ud835\udc27\ud835\udc1d \ud835\udc0e\ud835\udc29\ud835\udc1e\ud835\udc27\ud835\udc22\ud835\udc27\ud835\udc20 \ud835\udc22\ud835\udc2c \ud835\udc2c\ud835\udc1e\ud835\udc2d \ud835\udc1f\ud835\udc28\ud835\udc2b \ud835\udc0c\ud835\udc1a\ud835\udc32 \ud835\udfd1\ud835\udfce\ud835\udc2d\ud835\udc21, \ud835\udfd0\ud835\udfce\ud835\udfd0\ud835\udfd4 \ud835\udc1a\ud835\udc2d \ud835\udfcf\ud835\udfd5\ud835\udfd5\ud835\udfd5\ud835\udfd4 \ud835\udc03\ud835\udc1a\ud835\udc25\ud835\udc25\ud835\udc1a\ud835\udc2c \ud835\udc0f\ud835\udc1a\ud835\udc2b\ud835\udc24\ud835\udc30\ud835\udc1a\ud835\udc32, \ud835\udc03\ud835\udc1a\ud835\udc25\ud835\udc25\ud835\udc1a\ud835\udc2c, \ud835\udc13\ud835\udc1e\ud835\udc31\ud835\udc1a\ud835\udc2c.\nIf you want to be in the room when history is made and lock in your membership before that $500 initiation fee kicks in, sign up for membership to RSVP.\n\nChampions isn\u2019t competing with Texas Card House or Palace Poker. They\u2019re playing a completely different game. This is for the player, and the person, who wants more than just a felt table and a chip runner. This is for someone who wants a home base.\n\nDFW poker has never seen anything like this. And honestly? I cannot wait to see how this turns out.\n\nGrand Opening: May 30th, 2026 | 17776 Dallas Parkway, Dallas, TX\n\nFounding Members Celebration \u2014 sign up for membership to RSVP. Link in the comments.\n\nOn the scene \u2014 Shomari Williams, The Sham Report. Stay tuned.\n\n#ChampionsSocialClub #DFWPoker #DallasPoker #GrandOpening #FoundingMember #TheShamReport",
+      "original_post_sha256": "d62e54e3e7083b287d096b421c9f43e97fdceb6264a8c7ba4ce7988c34049f06",
+      "seo": {
+        "metaTitle": "Champions Social Club Dallas First Look: Inside DFW's New Poker & Social Venue | The Sham Report",
+        "metaDescription": "Shomari Williams shares a founding member's first look inside Champions Social Club at 17776 Dallas Parkway in Dallas and breaks down its $800/month membership math.",
+        "keyphrase": "Champions Social Club Dallas poker"
+      },
+      "context": "Editorial Context / Update Note: Originally published April 26, 2026 as a pre-opening first look ahead of Champions Social Club's May 30, 2026 Grand Opening at 17776 Dallas Parkway, Dallas, TX. References to pre-opening initiation-fee waivers and May 30, 2026 RSVP details reflect April 2026 pre-launch conditions.",
+      "credit": "Shomari Williams / The Sham Report",
+      "caption": "Exterior of Champions Social Club at 17776 Dallas Parkway in Dallas, Texas \u2014 the restored former III Forks landmark featuring its signature gold dome and brick facade.",
+      "disclosures": "Firsthand attendance verified: Shomari Williams attended the pre-opening walkthrough as an early founding member of Champions Social Club and has subsequently performed commentary work at Champions Social Club with Hayden Fortini. No paid promotional consideration was received for this article.",
+      "secondaryCaption": "Inside the upscale bar and lounge at Champions Social Club in Dallas, featuring the ornate stained-glass ceiling installation.",
+      "secondaryCredit": "Shomari Williams / The Sham Report"
+    },
+    {
+      "seq": 16,
+      "slug": "wsop-circuit-texas-card-house-austin-901-players-first-lone-star-ring-april-24-2026",
+      "title": "901 Players and $297,330 on the Line: WSOP Circuit Lands in Texas for the First Time at TCH Austin",
+      "deck": "The first Lone Star Ring event of the inaugural WSOP Circuit series at Texas Card House Austin drew an insane 901-entry turnout and a $297,330 prize pool \u2014 and I'm making the drive down I-35.",
+      "categories": [
+        "Tournaments",
+        "Texas Poker"
+      ],
+      "heroImage": "images/DSC00353.jpg",
+      "secondaryImage": null,
+      "author": "Shomari Williams",
+      "date": "April 24, 2026",
+      "body": "Originally posted April 24, 2026.\n\nThese numbers are pretty insane: 901 players showed up for the first Lone Star Ring event at Texas Card House Austin, putting $297,330 on the line as the World Series of Poker Circuit landed in Texas for the first time ever.\n\nBetween everything this state has been through with poker over the last few months, seeing the WSOP Circuit finally plant its flag in Austin means something for the entire Texas poker community.\n\nI'm making the drive down tomorrow morning to get in the mix.\n\n\u2014 Sham",
+      "status": "published",
+      "fb_post_id": "pfbid0b1KT5Uav33R25uHx5iD2g6cXJrqF8zs4CyyCLFKpP1ru4to4zGrA1GRvFU8XxvK3l",
+      "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid0b1KT5Uav33R25uHx5iD2g6cXJrqF8zs4CyyCLFKpP1ru4to4zGrA1GRvFU8XxvK3l/",
+      "original_fb_date": "2026-04-24",
+      "original_post_text": "901 players showed up for the First Lone Star Ring at TCH Austin. $297,330 on the line. WSOP Circuit, in Texas, for the first time ever.\n\nBetween everything this state has been through with poker over the last few months, WSOP landing here means something. I'm making the drive tomorrow morning.\ud83e\udd37\ud83c\udffe\u200d\u2642\ufe0f\n\n#WSOP #WSOPCircuit #LoneStarRing #TexasPoker #TCH #TheShamReport",
+      "original_post_sha256": "ca53f2e44274087916eeb3d4ccaf5dfa8e0730a401e35b9550f36cf22d9a3ea3",
+      "seo": {
+        "metaTitle": "901 Players in First WSOP Circuit Lone Star Ring Event at TCH Austin | The Sham Report",
+        "metaDescription": "The inaugural WSOP Circuit series in Texas opens at Texas Card House Austin with 901 entries and a $297,330 prize pool in the first Lone Star Ring event.",
+        "keyphrase": "WSOP Circuit TCH Austin Lone Star Ring"
+      },
+      "context": "Original April 24, 2026 tournament dispatch by Shomari Williams covering the inaugural WSOP Circuit series at Texas Card House Austin (April 22 \u2013 May 4, 2026).",
+      "credit": "Shomari Williams / The Sham Report",
+      "caption": "Tournament action on the WSOP Circuit / Texas Card House Austin felt (April 22 \u2013 May 4, 2026 series).",
+      "disclosures": "Original tournament reporting by Shomari Williams."
+    },
+    {
+      "seq": 15,
+      "slug": "harvey-castro-won-143000-at-the-lodge-raided-next-day-april-21-2026",
+      "title": "He Won $143,000 at The Lodge. Then They Were Raided the Next Day: Harvey Castro Speaks to The Sham Report",
+      "deck": "23-year-old Flower Mound pro Harvey Castro finished second in the Lodge Championship Series Main Event for $143,336 on March 9 \u2014 less than 24 hours before the raid froze his payout check.",
+      "categories": [
+        "Players",
+        "Investigation",
+        "Tournaments",
+        "Texas Poker"
+      ],
+      "heroImage": "images/2026-04-21_1.jpg",
+      "secondaryImage": null,
+      "author": "Shomari Williams",
+      "date": "April 21, 2026",
+      "body": "Originally posted April 21, 2026.\n\nHe won $143,000 at The Lodge. Then they were raided the next day.\n\nI saw a story post from 23-year-old Harvey Castro saying he was looking forward to getting back to grinding since The Lodge incident. That caught my attention.\n\nHarvey Castro finished second in the Lodge Championship Series Main Event on March 9, 2026. His prize? $143,336.\n\nAt the time of the raid, he had been paid zero dollars. His check was still at The Lodge when agents walked in that Tuesday morning, March 10. The timing couldn't have been worse.\n\nI reached out to Harvey for a statement, and he was kind enough to speak directly with The Sham Report. In his own words:\n\n\"They told me they would mail me the check. The day later they were raided. Doug has told me he will pay should it come to that. But it sucks right now man.\"\n\nEver since Harvey came into the DFW poker scene, it's been hard not to like this kid. He's from Flower Mound, Texas, and started out playing weekly tournaments at Texas Card House Dallas and Shuffle 214. Those rooms were his training ground. Now he has over $1,850,000 in live tournament earnings at 23 years old.\n\nAlmost $2 million at 23 \u2014 and he's probably one of the most humble players on the circuit.\n\nWe're rooting for you, Harvey. You earned that money at the table.\n\n\u2014 Sham",
+      "status": "published",
+      "fb_post_id": "pfbid02Wo89f66gmiubjPntjZmrvXTq9p86oQHqRFjY3veEgvpjcbUUv1WL2zuQqgFVSdojl",
+      "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02Wo89f66gmiubjPntjZmrvXTq9p86oQHqRFjY3veEgvpjcbUUv1WL2zuQqgFVSdojl/",
+      "original_fb_date": "2026-04-21",
+      "original_post_text": "\ud835\udc07\ud835\udc1e \ud835\udc16\ud835\udc28\ud835\udc27 $\ud835\udfcf\ud835\udfd2\ud835\udfd1,\ud835\udfce\ud835\udfce\ud835\udfce \ud835\udc1a\ud835\udc2d \ud835\udc13\ud835\udc21\ud835\udc1e \ud835\udc0b\ud835\udc28\ud835\udc1d\ud835\udc20\ud835\udc1e. \ud835\udc13\ud835\udc21\ud835\udc1e\ud835\udc27 \ud835\udc13\ud835\udc21\ud835\udc1e\ud835\udc32 \ud835\udc16\ud835\udc1e\ud835\udc2b\ud835\udc1e \ud835\udc11\ud835\udc1a\ud835\udc22\ud835\udc1d\ud835\udc1e\ud835\udc1d \ud835\udc2d\ud835\udc21\ud835\udc1e \ud835\udc0d\ud835\udc1e\ud835\udc31\ud835\udc2d \ud835\udc03\ud835\udc1a\ud835\udc32.\n\nI saw a story post from 23-year-old Harvey Castro saying he was looking forward to getting back to grinding since the Lodge incident. That caught my attention.\n\nHarvey Castro finished 2nd in the Lodge Championship Series Main Event on March 9th, 2026. His prize? $143,336.\nHe was paid zero dollars.\n\nHis check was still at the Lodge when the raid happened that morning. The timing couldn't have been worse.\n\nI reached out to Harvey for a statement and he was kind enough to speak with The Sham Report.\n\nIn his own words:\n\n\"They told me they would mail me the check. The day later they were raided. Doug has told me he will pay should it come to that. But it sucks right now man.\"\n\nEver since Harvey came into the DFW poker scene it's been hard not to like this kid. He's from Flower Mound, Texas. Started out playing weekly tournaments at Texas Card House Dallas and Shuffle 214. Those rooms were his training ground. Now he has over $1,850,000 in live tournament earnings at 23 years old.\n\nAlmost $2 million. At 23. And he's probably one of the most humble players on the circuit.\n\nWe're rooting for you Harvey. You earned that money at the table. Hopefully the Lodge makes it right.\n\nClick Like to show some love for one of Texas's brightest poker stars.\n\n#HarveyCastro #TheLodge #TexasPoker #TheShamReport",
+      "original_post_sha256": "4c2942c02434cf5c50b395555c276cb7a9e986995fb85a0951f56ea5794211fd",
+      "seo": {
+        "metaTitle": "Harvey Castro Won $143,336 at The Lodge a Day Before the Raid | The Sham Report",
+        "metaDescription": "23-year-old Flower Mound poker pro Harvey Castro speaks with Shomari Williams after his $143,336 Lodge Championship Series runner-up check was caught in the March 10 raid.",
+        "keyphrase": "Harvey Castro Lodge Championship Series 143000"
+      },
+      "context": "Editorial Context / Update Note: Originally reported April 21, 2026 via direct interview with Harvey Castro while The Lodge's accounts remained frozen following the March 10 raid. On April 28, 2026, a Williamson County grand jury returned a no-bill declining all proposed charges, and The Lodge reopened in May 2026.",
+      "credit": "Lodge Championship Series / ClubWPT Gold broadcast screenshot via The Sham Report",
+      "caption": "Broadcast frame from the Lodge Championship Series (LCS) Final Table (Hand 79, 5 of 752 remaining, blinds 50K/100K), where Harvey Castro finished runner-up for $143,336 on March 9, 2026.",
+      "disclosures": "Original reporting and direct player interview by Shomari Williams for The Sham Report."
+    },
+    {
+      "seq": 14,
+      "slug": "what-is-selective-enforcement-texas-poker-rooms-april-20-2026",
+      "title": "What Is Selective Enforcement? Why Some Texas Poker Rooms Get Raided While Others Stay Open",
+      "deck": "In Texas, poker rooms operate under the same statute and the same legal gray area \u2014 so when one club is raided while others take a pot rake in plain sight, the real question isn't \"was the law broken?\" It's \"why was this room chosen?\"",
+      "categories": [
+        "Legal",
+        "Investigation",
+        "Texas Poker"
+      ],
+      "heroImage": "images/2026-04-20_1.jpg",
+      "secondaryImage": null,
+      "author": "Shomari Williams",
+      "date": "April 20, 2026",
+      "body": "Originally posted April 20, 2026.\n\nWhat is selective enforcement?\n\nPeople keep asking why some Texas poker rooms get raided while others stay open. The laws are the same; however, some poker rooms use a membership model and charge time, while others take a pot rake in plain sight with no consequence. It's called selective enforcement \u2014 and no, I didn't make this up. It's a legal term.\n\nSelective enforcement happens when authorities \u2014 law enforcement, regulators, or licensing boards \u2014 inconsistently apply the rules. Same activity. Different treatment. That's not justice; that's discretion being used as a weapon.\n\nIn Texas, poker rooms operate in the same legal gray area. Same statute. Same structure. But not the same outcomes. When one room gets raided and another doesn't, one of the questions worth asking isn't \"was the law broken?\" It's \"why was this room chosen?\"\n\n\u2014 Sham",
+      "status": "published",
+      "fb_post_id": "pfbid0VZhgD13LtafjynVbaGLhLG1U8ayBNETDpbW41tF6PVaM3zac7PckHshMzcpmaEH4l",
+      "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid0VZhgD13LtafjynVbaGLhLG1U8ayBNETDpbW41tF6PVaM3zac7PckHshMzcpmaEH4l/",
+      "original_fb_date": "2026-04-20",
+      "original_post_text": "\ud835\udc16\ud835\udc21\ud835\udc1a\ud835\udc2d \ud835\udc22\ud835\udc2c \ud835\udc12\ud835\udc1e\ud835\udc25\ud835\udc1e\ud835\udc1c\ud835\udc2d\ud835\udc22\ud835\udc2f\ud835\udc1e \ud835\udc04\ud835\udc27\ud835\udc1f\ud835\udc28\ud835\udc2b\ud835\udc1c\ud835\udc1e\ud835\udc26\ud835\udc1e\ud835\udc27\ud835\udc2d?\n\nPeople keep asking why some Texas poker rooms get raided while others stay open. The laws are the same, however some poker rooms use a membership model and charge time. Others take a pot rake in plain sight with no consequence. It's called Selective Enforcement and no, I didn't make this up. It's a legal term.\n\nSelective enforcement happens when authorities, law enforcement, regulators, or licensing boards, inconsistently apply the rules. Same activity. Different treatment. That's not justice, that's discretion being used as a weapon.\n\nIn Texas, poker rooms operate in the same legal gray area. Same statute. Same structure. But not the same outcomes. When one room gets raided and another doesn't, one of the questions worth asking isn't \"was the law broken?\" It's \"why was this room chosen?\"\n\nShomari Williams | The Sham Report\n#TexasPoker #SelectiveEnforcement #TheShamReport #pokerlife",
+      "original_post_sha256": "2de214a595ac5164b822b70b2601f1c0a25f8b391a4bf960148c710f0ef234b7",
+      "seo": {
+        "metaTitle": "What Is Selective Enforcement in Texas Poker? | The Sham Report",
+        "metaDescription": "Shomari Williams examines selective enforcement in Texas poker and why some membership card clubs face raids while others operate untouched.",
+        "keyphrase": "selective enforcement Texas poker rooms"
+      },
+      "context": "Editorial Context / Update Note: Originally published April 20, 2026 during the closure of The Lodge Card Club in Round Rock. Eight days later, on April 28, 2026, a Williamson County grand jury declined to authorize proposed charges (a no-bill), and The Lodge reopened in May 2026.",
+      "credit": "Shomari Williams / The Sham Report",
+      "caption": "Jeopardy!-style game board graphic reading \"WHAT IS SELECTIVE ENFORCEMENT\" accompanying Shomari Williams's April 20, 2026 commentary.",
+      "disclosures": "Original legal and industry commentary by Shomari Williams."
+    },
+    {
+      "seq": 13,
+      "slug": "running-good-poker-house-fort-worth-livestream-plo-congress-march-19-2026",
+      "title": "Running Good on the Poker House Fort Worth Livestream: Round of Each PLO and Congress",
+      "deck": "Taking a seat on the Poker House Live feature table in Fort Worth for a mixed Round of Each session of Pot-Limit Omaha and 5-Card PLO (Congress) \u2014 and stacking up deep.",
+      "categories": [
+        "Players",
+        "Texas Poker"
+      ],
+      "heroImage": "images/2026-03-19_2.jpg",
+      "secondaryImage": "images/2026-03-19_1.jpg",
+      "author": "Shomari Williams",
+      "date": "March 19, 2026",
+      "body": "Originally posted March 19, 2026.\n\nPulled up to Poker House Fort Worth to play on the Poker House Live stream (@POKERHOUSELIVESTREAM on YouTube) in a Round of Each mix of Pot-Limit Omaha (PLO) and Congress (5-Card PLO).\n\nOnce the action got rolling under the lights on the feature felt, the stacks started building fast. Looking down at the racks of red and green chips in front of me mid-session, I could only sum it up one way: I'm running good on stream, I think.\n\n\u2014 Sham",
+      "status": "published",
+      "fb_post_id": "pfbid06V1CMTrs6QKPKaptKX5BnwRJCFnnxpwWGPx5CneuKUHtJ2DHPZVAHKEoRnaaQprpl",
+      "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid06V1CMTrs6QKPKaptKX5BnwRJCFnnxpwWGPx5CneuKUHtJ2DHPZVAHKEoRnaaQprpl/",
+      "original_fb_date": "2026-03-19",
+      "original_post_text": "I\u2019m running good on stream I think.",
+      "original_post_sha256": "0e87a1755c0b15bc60aa17448eed464d1c46dade0dd984c27b9adb1d3fadba6a",
+      "seo": {
+        "metaTitle": "Running Good on the Poker House Fort Worth Livestream: PLO & Congress | The Sham Report",
+        "metaDescription": "Shomari Williams plays Round of Each Pot-Limit Omaha and Congress on the Poker House Fort Worth livestream (@POKERHOUSELIVESTREAM).",
+        "keyphrase": "Poker House Fort Worth livestream PLO Congress"
+      },
+      "context": "Original March 19, 2026 live-stream session dispatches and photographs by Shomari Williams from Poker House Fort Worth.",
+      "credit": "Shomari Williams / The Sham Report",
+      "caption": "Deep chip stacks on the Poker House Fort Worth feature table during the March 19, 2026 Round of Each PLO and Congress livestream.",
+      "disclosures": "Firsthand attendance verified (played): Shomari Williams played on the Poker House Fort Worth livestream on March 19, 2026.",
+      "secondaryCaption": "The Poker House YouTube livestream channel (@POKERHOUSELIVESTREAM) where the March 19, 2026 Fort Worth session aired.",
+      "secondaryCredit": "Screenshot via YouTube (@POKERHOUSELIVESTREAM)"
+    },
+    {
+      "seq": 12,
+      "slug": "table-selection-5-10-crushers-wolfgang-brad-benji-scott-amy-march-18-2026",
+      "title": "When Your Table Selection Is Off: Sitting Down With a Lineup of $5/$10 Crushers",
+      "deck": "Walking into a $5/$10 session and realizing the lineup includes Wolfgang, Brad, Benji, Scott, and Amy \u2014 sometimes the best play at the table is recognizing a stacked lineup.",
+      "categories": [
+        "Players",
+        "Texas Poker"
+      ],
+      "heroImage": "images/2026-03-18_reel-1623841535321868.jpg",
+      "secondaryImage": null,
+      "author": "Shomari Williams",
+      "date": "March 18, 2026",
+      "body": "Originally posted March 18, 2026.\n\nMy table selection was a little off this time \u2014 I sat down and looked around at a lineup of $5/$10 crushers: Wolfgang, Brad, Benji, Scott, and Amy.\n\nSometimes in cash-game poker, the sharpest read you can make happens before the cards are even in the air. As the clip on Facebook (https://www.facebook.com/reel/1623841535321868/) captures, when every seat around you is occupied by a tough regular, you have to laugh and tell yourself: just choose another game, Sham.\n\n\u2014 Sham",
+      "status": "published",
+      "fb_post_id": "reel-1623841535321868",
+      "fb_source_url": "https://facebook.com/reel/1623841535321868/",
+      "original_fb_date": "2026-03-18",
+      "original_post_text": "Wolfgang, Brad, Benji, Scott, Amy. Just choose another game Sham \ud83d\ude02.   \n #texaspoker  #PokerCommunity #DFWPoker",
+      "original_post_sha256": "a5e4eb64b8fab5b758df78cd94826c1dd9d4c920d18775bd8c50d1af964c602e",
+      "seo": {
+        "metaTitle": "Table Selection at $5/$10: Sitting Down With Crushers | The Sham Report",
+        "metaDescription": "Shomari Williams shares a March 18, 2026 $5/$10 cash-game moment after sitting down at a table stacked with Wolfgang, Brad, Benji, Scott, and Amy.",
+        "keyphrase": "Texas poker 5-10 table selection"
+      },
+      "context": "Original March 18, 2026 cash-game dispatch and Facebook Reel by Shomari Williams.",
+      "credit": "Shomari Williams / The Sham Report",
+      "caption": "At the $5/$10 table with a lineup of crushers \u2014 \"My table selection was a little off this time. A bunch of 5-10 crushers.\" (March 18, 2026).",
+      "disclosures": "Firsthand attendance verified (played): Shomari Williams played in the March 2026 $5/$10 session."
     },
     {
       "seq": 11,

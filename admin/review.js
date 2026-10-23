@@ -2,7 +2,7 @@
 'use strict';
 const $=id=>document.getElementById(id),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const workflow=['Imported','Draft','Needs Verification','Ready for Review','Approved','Published','Archived'];
-const key='tsr-prelaunch-review-v3';let saved;try{saved=JSON.parse(localStorage.getItem(key)||'null')}catch{}
+const key='tsr-prelaunch-review-v4';let saved;try{saved=JSON.parse(localStorage.getItem(key)||'null')}catch{}
 let state=saved||{stories:[...window.CONCEPT3_DATA.stories.filter(s=>!s.url.startsWith('article-template.html')).map(s=>({...s,...window.CONCEPT3_DATA.articles.find(a=>a.title===s.title),slug:window.CONCEPT3_DATA.articles.find(a=>a.title===s.title)?.slug||s.url,title:s.title,editorial_status:'Published',author:'Shomari Williams'})),...(window.C3_FB_IMPORTS||[window.C3_FB_IMPORT]).map((imp,idx)=>({...imp,slug:imp.slug||'fb-import-'+(idx+1)}))].sort((a,b)=>(Date.parse(b.original_fb_date||b.date||'')||0)-(Date.parse(a.original_fb_date||a.date||'')||0)||(b.seq||0)-(a.seq||0)),grades:structuredClone(window.C3_REGRADE),experiences:{},corrections:[]};
 // Reletter retained browser drafts and include newly sourced review records.
 for(const row of window.C3_REGRADE) if(!state.grades.some(g=>g.id===row.id)) state.grades.push(structuredClone(row));
