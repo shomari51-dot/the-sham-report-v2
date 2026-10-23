@@ -1,32 +1,31 @@
-# Methodology v1.0 regrade preview
+# Methodology v1.1 · 3-Curve A–D Scale
 
-Staged only. No database reads or writes were used. Numeric inputs are retained from tests/fixtures/grades.json; hashes, where supplied, are recomputed by the unchanged engine. Missing classification is never inferred from a hash. Historical “Played” labels do not establish publisher-verified firsthand experience.
+Numeric score math is unchanged. Stored scores are relettered; full hashes retain engine recomputation. No production database connection or writes. Weekly uses Curve 1; strictly sub-$400 single-day series use Curve 2; $400+ and multi-day series and Major use Curve 3. All curves have a D− floor. Unknown classification withholds letters.
 
-| ID / Event | Before score | Before grade / tier | v1.0 score | v1.0 grade / tier | Classification / status |
-| --- | --- | --- | --- | --- | --- |
-| g-send-off — Send Off | 48.2 | A− / 1 | 48.2 | D+ / 2 | series / published |
-| g-randy-s-six-shooter-250 — Randy's Six Shooter $250 | 39.2 | C+ / 1 | 39.2 | D− / 2 | series / published |
-| g-400-big-tex-giant-stack — $400 Big Tex Giant Stack | 51.4 | C− / 2 | 51.4 | C− / 2 | series / published |
-| g-main-event — MAIN EVENT | 81.4 | B+ / 2 | 81.4 | B+ / 2 | series / published |
-| g-lone-star-plo — Lone Star PLO | 29 | D / 1 | 29.0 | F / 2 | series / published |
-| g-2-500-nlh-high-roller — $2,500 NLH High Roller | 93.9 | A / 2 | 93.9 | A / 2 | series / published |
-| g-200-lone-star-stand-off — $200 Lone Star Stand-Off | 48.2 | A− / 1 | 48.2 | D+ / 2 | series / published |
-| g-300-2-7-single-draw — $300 2-7 Single Draw | 46.7 | B+ / 1 | 46.7 | D+ / 2 | series / published |
-| g-300-mega-stack — $300 Mega Stack | 51.4 | A / 1 | 51.4 | C− / 2 | series / published |
-| g-donkey-derby-200 — Donkey Derby $200 | 40.2 | B− / 1 | 40.2 | D− / 2 | series / published |
-| g-even-bigger-one-250k-gtd — Even Bigger One $250K GTD | 73 | A+ / 1 | 73.0 | B / 2 | series / published |
-| g-150-deepstack — $150 Deepstack | 29 | D / 1 | 29.0 | F / 2 | series / published |
-| g-400-kick-off — $400 Kick Off | 48.2 | D+ / 2 | 48.2 | D+ / 2 | series / published |
-| g-the-bigger-one-250k-gtd — The Bigger One $250K GTD | 78.4 | A+ / 1 | 78.4 | A+ / 1 | weekly / published |
-| g-plo-deepstack — PLO-Deepstack | 31 | D+ / 1 | 31.0 | No grade / None | unknown / needs_review |
-| g-the-bigger-one — The Bigger One | 78.4 | A+ / 1 | 78.4 | No grade / None | unknown / needs_review |
-| g-the-rungood-main-event — The RunGood Main Event | 69.8 | B− / 2 | 69.8 | No grade / None | unknown / needs_review |
+| Event / ID | Before score / grade / tier | v1.1 score / grade / tier | Classification / status |
+| --- | --- | --- | --- |
+| Send Off / g-send-off | 48.2 / A− / 1 | 48.2 / B / 2 | series / published |
+| Randy's Six Shooter $250 / g-randy-s-six-shooter-250 | 39.2 / C+ / 1 | 39.2 / C / 2 | series / published |
+| $400 Big Tex Giant Stack / g-400-big-tex-giant-stack | 51.4 / C− / 2 | 51.4 / C− / 3 | series / published |
+| MAIN EVENT / g-main-event | 81.4 / B+ / 2 | 81.4 / B+ / 3 | series / published |
+| Lone Star PLO / g-lone-star-plo | 29 / D / 1 | 29.0 / D / 2 | series / published |
+| $2,500 NLH High Roller / g-2-500-nlh-high-roller | 93.9 / A / 2 | 93.9 / A / 3 | series / published |
+| $200 Lone Star Stand-Off / g-200-lone-star-stand-off | 48.2 / A− / 1 | 48.2 / B / 2 | series / published |
+| $300 2-7 Single Draw / g-300-2-7-single-draw | 46.7 / B+ / 1 | 46.7 / B− / 2 | series / published |
+| $300 Mega Stack / g-300-mega-stack | 51.4 / A / 1 | 51.4 / B+ / 2 | series / published |
+| Donkey Derby $200 / g-donkey-derby-200 | 40.2 / B− / 1 | 40.2 / C / 2 | series / published |
+| Even Bigger One $250K GTD / g-even-bigger-one-250k-gtd | 73 / A+ / 1 | 73.0 / A+ / 2 | series / published |
+| $150 Deepstack / g-150-deepstack | 29 / D / 1 | 29.0 / D / 2 | series / published |
+| $400 Kick Off / g-400-kick-off | 48.2 / D+ / 2 | 48.2 / D+ / 3 | series / published |
+| The Bigger One $250K GTD / g-the-bigger-one-250k-gtd | 78.4 / A+ / 1 | 78.4 / A+ / 1 | weekly / published |
+| PLO-Deepstack / g-plo-deepstack | 31 / D+ / 1 | 31.0 / No grade / None | unknown / needs_review |
+| The Bigger One / g-the-bigger-one | 78.4 / A+ / 1 | 78.4 / No grade / None | unknown / needs_review |
+| The RunGood Main Event / g-the-rungood-main-event | 69.8 / B− / 2 | 69.8 / No grade / None | unknown / needs_review |
+| RunGood Monster Stack Opener / rg-1 | 69.8 / B− / 2 | 69.8 / B− / 3 | series / published |
+| RunGood PokerNews PowerStack / rg-5 | 46.6 / D+ / 2 | 46.6 / D+ / 3 | series / published |
+| RunGood Main Event / rg-8 | 66 / B− / 2 | 66.0 / B− / 3 | series / published |
 
-## Review groups
-
-Nine low-buy-in series records move from Weekly/Tier 1 to Series/Tier 2: Send Off, Randy’s Six Shooter, Lone Star PLO, Lone Star Stand-Off, 2-7 Single Draw, Mega Stack, Donkey Derby, Even Bigger One and $150 Deepstack. Four existing Tier 2 series records retain their curve: Big Tex Giant Stack, MAIN EVENT, High Roller and Kick Off.
-
-The explicitly weekly g-the-bigger-one-250k-gtd remains on the Weekly curve pending identity verification. Three records have no classification: PLO-Deepstack, The Bigger One and The RunGood Main Event. They receive needs_review / Needs Verification, no tier and no letter. Do not confuse the historical Palace Poker record with the separately sourced Champions Houston RunGood Main Event (66.0).
+Even Bigger One $250K GTD ($300, 73.0) is A+ on Curve 2 single-day; if multi_day is true, it is B on Curve 3. The explicitly weekly Bigger One record is held out of public weekly grading until verified sheets are published.
 
 ## The Bigger One duplicate cluster
 

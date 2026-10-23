@@ -1,24 +1,24 @@
-┌─────────┬──────────────────────────────┬─────────────────────────────┬───────────────────────┬───────┬────────────────────┬────────────────┬──────────────────────────┐
-│ (index) │ id                           │ name                        │ type → event_type     │ buyin │ score              │ old tier/grade │ new curve/grade/status   │
-├─────────┼──────────────────────────────┼─────────────────────────────┼───────────────────────┼───────┼────────────────────┼────────────────┼──────────────────────────┤
-│ 0       │ 'g-send-off'                 │ 'Send Off'                  │ 'series → series'     │ 200   │ 48.2               │ '1/A−'         │ 'series/D+/published'    │
-│ 1       │ 'g-randy-s-six-shooter-250'  │ "Randy's Six Shooter $250"  │ 'series → series'     │ 250   │ 39.2               │ '1/C+'         │ 'series/D−/published'    │
-│ 2       │ 'g-400-big-tex-giant-stack'  │ '$400 Big Tex Giant Stack'  │ 'series → series'     │ 400   │ 51.4               │ '2/C−'         │ 'series/C−/published'    │
-│ 3       │ 'g-main-event'               │ 'MAIN EVENT'                │ 'series → series'     │ 600   │ 81.4               │ '2/B+'         │ 'series/B+/published'    │
-│ 4       │ 'g-lone-star-plo'            │ 'Lone Star PLO'             │ 'series → series'     │ 300   │ 29                 │ '1/D'          │ 'series/F/published'     │
-│ 5       │ 'g-2-500-nlh-high-roller'    │ '$2,500 NLH High Roller'    │ 'series → series'     │ 2500  │ 93.9               │ '2/A'          │ 'series/A/published'     │
-│ 6       │ 'g-200-lone-star-stand-off'  │ '$200 Lone Star Stand-Off'  │ 'series → series'     │ 200   │ 48.2               │ '1/A−'         │ 'series/D+/published'    │
-│ 7       │ 'g-300-2-7-single-draw'      │ '$300 2-7 Single Draw'      │ 'series → series'     │ 300   │ 46.7               │ '1/B+'         │ 'series/D+/published'    │
-│ 8       │ 'g-300-mega-stack'           │ '$300 Mega Stack'           │ 'series → series'     │ 300   │ 51.4               │ '1/A'          │ 'series/C−/published'    │
-│ 9       │ 'g-donkey-derby-200'         │ 'Donkey Derby $200'         │ 'series → series'     │ 200   │ 40.2               │ '1/B−'         │ 'series/D−/published'    │
-│ 10      │ 'g-even-bigger-one-250k-gtd' │ 'Even Bigger One $250K GTD' │ 'series → series'     │ 300   │ 73                 │ '1/A+'         │ 'series/B/published'     │
-│ 11      │ 'g-150-deepstack'            │ '$150 Deepstack'            │ 'series → series'     │ 150   │ 29                 │ '1/D'          │ 'series/F/published'     │
-│ 12      │ 'g-400-kick-off'             │ '$400 Kick Off'             │ 'series → series'     │ 400   │ 48.2               │ '2/D+'         │ 'series/D+/published'    │
-│ 13      │ 'g-the-bigger-one-250k-gtd'  │ 'The Bigger One $250K GTD'  │ 'weekly → weekly'     │ 300   │ 78.37837837837837  │ '1/A+'         │ 'weekly/A+/published'    │
-│ 14      │ 'g-plo-deepstack'            │ 'PLO-Deepstack'             │ '(missing) → unknown' │ 150   │ 31.034482758620687 │ '1/D+'         │ 'null/null/needs_review' │
-│ 15      │ 'g-the-bigger-one'           │ 'The Bigger One'            │ '(missing) → unknown' │ 300   │ 78.37837837837837  │ '1/A+'         │ 'null/null/needs_review' │
-│ 16      │ 'g-the-rungood-main-event'   │ 'The RunGood Main Event'    │ '(missing) → unknown' │ 600   │ 69.79591836734694  │ '2/B−'         │ 'null/null/needs_review' │
-└─────────┴──────────────────────────────┴─────────────────────────────┴───────────────────────┴───────┴────────────────────┴────────────────┴──────────────────────────┘
+┌─────────┬──────────────────────────────┬─────────────────────────────┬───────────────────────┬───────┬───────────┬─────────────┬────────────────────┬────────────────┬─────────────────────────────────┐
+│ (index) │ id                           │ name                        │ type → event_type     │ buyin │ multi_day │ methodology │ score              │ old tier/grade │ new curve/grade/status          │
+├─────────┼──────────────────────────────┼─────────────────────────────┼───────────────────────┼───────┼───────────┼─────────────┼────────────────────┼────────────────┼─────────────────────────────────┤
+│ 0       │ 'g-send-off'                 │ 'Send Off'                  │ 'series → series'     │ 200   │ false     │ 'v1.1'      │ 48.2               │ '1/A−'         │ 'series_under_400/B/published'  │
+│ 1       │ 'g-randy-s-six-shooter-250'  │ "Randy's Six Shooter $250"  │ 'series → series'     │ 250   │ false     │ 'v1.1'      │ 39.2               │ '1/C+'         │ 'series_under_400/C/published'  │
+│ 2       │ 'g-400-big-tex-giant-stack'  │ '$400 Big Tex Giant Stack'  │ 'series → series'     │ 400   │ false     │ 'v1.1'      │ 51.4               │ '2/C−'         │ 'series/C−/published'           │
+│ 3       │ 'g-main-event'               │ 'MAIN EVENT'                │ 'series → series'     │ 600   │ false     │ 'v1.1'      │ 81.4               │ '2/B+'         │ 'series/B+/published'           │
+│ 4       │ 'g-lone-star-plo'            │ 'Lone Star PLO'             │ 'series → series'     │ 300   │ false     │ 'v1.1'      │ 29                 │ '1/D'          │ 'series_under_400/D/published'  │
+│ 5       │ 'g-2-500-nlh-high-roller'    │ '$2,500 NLH High Roller'    │ 'series → series'     │ 2500  │ false     │ 'v1.1'      │ 93.9               │ '2/A'          │ 'series/A/published'            │
+│ 6       │ 'g-200-lone-star-stand-off'  │ '$200 Lone Star Stand-Off'  │ 'series → series'     │ 200   │ false     │ 'v1.1'      │ 48.2               │ '1/A−'         │ 'series_under_400/B/published'  │
+│ 7       │ 'g-300-2-7-single-draw'      │ '$300 2-7 Single Draw'      │ 'series → series'     │ 300   │ false     │ 'v1.1'      │ 46.7               │ '1/B+'         │ 'series_under_400/B−/published' │
+│ 8       │ 'g-300-mega-stack'           │ '$300 Mega Stack'           │ 'series → series'     │ 300   │ false     │ 'v1.1'      │ 51.4               │ '1/A'          │ 'series_under_400/B+/published' │
+│ 9       │ 'g-donkey-derby-200'         │ 'Donkey Derby $200'         │ 'series → series'     │ 200   │ false     │ 'v1.1'      │ 40.2               │ '1/B−'         │ 'series_under_400/C/published'  │
+│ 10      │ 'g-even-bigger-one-250k-gtd' │ 'Even Bigger One $250K GTD' │ 'series → series'     │ 300   │ false     │ 'v1.1'      │ 73                 │ '1/A+'         │ 'series_under_400/A+/published' │
+│ 11      │ 'g-150-deepstack'            │ '$150 Deepstack'            │ 'series → series'     │ 150   │ false     │ 'v1.1'      │ 29                 │ '1/D'          │ 'series_under_400/D/published'  │
+│ 12      │ 'g-400-kick-off'             │ '$400 Kick Off'             │ 'series → series'     │ 400   │ false     │ 'v1.1'      │ 48.2               │ '2/D+'         │ 'series/D+/published'           │
+│ 13      │ 'g-the-bigger-one-250k-gtd'  │ 'The Bigger One $250K GTD'  │ 'weekly → weekly'     │ 300   │ false     │ 'v1.1'      │ 78.37837837837837  │ '1/A+'         │ 'weekly/A+/published'           │
+│ 14      │ 'g-plo-deepstack'            │ 'PLO-Deepstack'             │ '(missing) → unknown' │ 150   │ false     │ 'v1.1'      │ 31.034482758620687 │ '1/D+'         │ 'null/null/needs_review'        │
+│ 15      │ 'g-the-bigger-one'           │ 'The Bigger One'            │ '(missing) → unknown' │ 300   │ false     │ 'v1.1'      │ 78.37837837837837  │ '1/A+'         │ 'null/null/needs_review'        │
+│ 16      │ 'g-the-rungood-main-event'   │ 'The RunGood Main Event'    │ '(missing) → unknown' │ 600   │ false     │ 'v1.1'      │ 69.79591836734694  │ '2/B−'         │ 'null/null/needs_review'        │
+└─────────┴──────────────────────────────┴─────────────────────────────┴───────────────────────┴───────┴───────────┴─────────────┴────────────────────┴────────────────┴─────────────────────────────────┘
 ┌─────────────────────────────────────────┬───────────────────────────────────────────────────────────────────────────┐
 │ (index)                                 │ Values                                                                    │
 ├─────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────┤

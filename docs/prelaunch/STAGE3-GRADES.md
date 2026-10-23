@@ -5,7 +5,7 @@ Existing fields remain, including type, buyin, score, tier, grade, base, calcula
 New fields:
 
 - event_type: weekly, series, major, or unknown. Explicit valid value wins, then legacy type weekly/series, otherwise unknown. Price never classifies an event.
-- curve: weekly (Tier 1) or series (Tier 2, including major); null for unknown.
+- curve: weekly (Tier 1), series_under_400 (Tier 2: strictly sub-$400 single-day series), or series (Tier 3: $400+, multi-day series and major); null for unknown. Methodology v1.1 uses a D− floor on every curve; multi_day is stored as a boolean.
 - buyin_parts: total, prize_pool, fee, addons [{cost,chips,fee}], reentry_rules, guarantee, actual_prize_pool, entries, unique_players. Missing numeric values and reentry_rules are null; missing addons is an empty list. Legacy buyin supplies total only. Numeric values must be finite and nonnegative. When pool and fee are both known their sum becomes total; an explicit total must match within $1.
 - methodology_version: tsr-2026.10-curve-by-type.
 - status: published, draft, needs_review, retracted, superseded. Unknown event types force needs_review with a review_reason and null grade/base/tier.

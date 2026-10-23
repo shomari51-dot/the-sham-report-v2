@@ -26,11 +26,11 @@ async function calculate(e){if(e)e.preventDefault();if(busy)return;result.hidden
  if(!r.ok){status.textContent='Missing or invalid data — no definitive score. '+r.errors.join(' ');return;}
  if(!Number.isFinite(r.score))throw Error('Non-finite result');
  const type=form.elements.curve.value;
- r.tier=type==='weekly'?1:['series','major'].includes(type)?2:null;
+ Object.assign(r,TSREngine.resolveCurve({event_type:type,buyin:input.buyin,multi_day:$('multi_day')?.checked===true}));
  r.letter=r.tier?TSREngine.letterFor(r.score,r.tier).letter:'No letter grade';
  r.letterBase=r.tier?TSREngine.letterFor(r.scoreBase,r.tier).letter:'No letter grade';
- const curve=r.tier===1?'Weekly / Tier 1':r.tier===2?'Series / Tier 2':'Unknown / Ambiguous';
- const why='Methodology: v1.0 (Curve by Event Type). '+(r.tier?'Event type selects the grading curve.':'Manual classification review required; no letter grade issued.');
+ const curve=r.tier===1?'Curve 1 — Weekly Recurring':r.tier===2?'Curve 2 — Sub-$400 Single-Day Series':r.tier===3?'Curve 3 — $400+ & Multi-Day Series':'Unknown / Ambiguous';
+ const why='Methodology: v1.1 (3-Curve A–D Scale). '+(r.tier?'Event type selects the grading curve.':'Manual classification review required; no letter grade issued.');
  const mismatch='';
  const take=`The supplied structure has ${r.depthMin} minutes of playable depth through level ${r.lastDeep}. ${r.penalty?`A material blind jump subtracts ${r.penalty} points.`:'No material blind-jump penalty applies.'} Fees represent ${r.vig.toFixed(1)}% of effective spend. This is a structure assessment, not a forecast of results.`;
  summary=`${$('event').value||'Tournament'}\nTSR Score: ${r.letter} ${r.score.toFixed(1)}\nCurve: ${curve}\n${why}\n${mismatch}\n${take}\nData-Based Structure Analysis: Automated from structure inputs — not personal experience`;
@@ -50,6 +50,7 @@ try {
   for(const [key,id] of Object.entries(mapping))if(params.has(key))$(id).value=params.get(key);
   $('structure').value=params.get('v').split('_').map(row=>row.split('-').join(' / ')).join('\n');
   form.elements.curve.value=['weekly','series','major','unknown'].includes(params.get('fq'))?params.get('fq'):'unknown';
+  if($('multi_day')) $('multi_day').checked=params.get('md')==='1';
   clear('Shared structure loaded. Review inputs and calculate to refresh the result.');
  }
 }catch{status.textContent='Shared link could not be loaded. Enter the structure or load an example.';}

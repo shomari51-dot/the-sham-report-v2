@@ -1,7 +1,7 @@
 window.C3_EVENTS = [
   {
     "id": "rg-1",
-    "name": "RunGood \u00b7 Monster Stack Opener",
+    "name": "RunGood Monster Stack Opener",
     "venue": "Champions Club Houston",
     "location": "Houston",
     "game": "Not provided",
@@ -14,15 +14,19 @@ window.C3_EVENTS = [
     "minutes": "30 min",
     "start": "Mon, Oct 12, 11 AM CT",
     "score": 69.8,
-    "tier": 2,
+    "tier": 3,
     "source": "rungood-houston-preview.html",
     "official": "https://www.rungood.com/pages/rgps-golden-expedition-champions-club-houston",
     "structureURL": "https://cdn.shopify.com/s/files/1/0911/1108/files/Champions_Club_Structure_Sheets_October_2026_v3.0.pdf?v=1790317244",
-    "image": "images/rungood-official-champions-club-1200.jpg"
+    "image": "images/rungood-official-champions-club-1200.jpg",
+    "curve": "series",
+    "multi_day": false,
+    "methodology_version": "v1.1",
+    "grade": "B−"
   },
   {
     "id": "rg-2",
-    "name": "RunGood \u00b7 Seniors NLH",
+    "name": "RunGood · Seniors NLH",
     "venue": "Champions Club Houston",
     "location": "Houston",
     "game": "NLH",
@@ -43,7 +47,7 @@ window.C3_EVENTS = [
   },
   {
     "id": "rg-3",
-    "name": "RunGood \u00b7 Big Stack",
+    "name": "RunGood · Big Stack",
     "venue": "Champions Club Houston",
     "location": "Houston",
     "game": "Not provided",
@@ -64,7 +68,7 @@ window.C3_EVENTS = [
   },
   {
     "id": "rg-4",
-    "name": "RunGood \u00b7 Tag Team (2 players)",
+    "name": "RunGood · Tag Team (2 players)",
     "venue": "Champions Club Houston",
     "location": "Houston",
     "game": "Not provided",
@@ -86,7 +90,7 @@ window.C3_EVENTS = [
   },
   {
     "id": "rg-5",
-    "name": "RunGood \u00b7 PokerNews PowerStack",
+    "name": "RunGood PokerNews PowerStack",
     "venue": "Champions Club Houston",
     "location": "Houston",
     "game": "Not provided",
@@ -99,15 +103,19 @@ window.C3_EVENTS = [
     "minutes": "30 min",
     "start": "Wed, Oct 14, 11 AM and 6 PM; Final Oct 15, 12 PM CT",
     "score": 46.6,
-    "tier": 2,
+    "tier": 3,
     "source": "rungood-houston-preview.html",
     "official": "https://www.rungood.com/pages/rgps-golden-expedition-champions-club-houston",
     "structureURL": "https://cdn.shopify.com/s/files/1/0911/1108/files/Champions_Club_Structure_Sheets_October_2026_v3.0.pdf?v=1790317244",
-    "image": "images/rungood-official-champions-club-1200.jpg"
+    "image": "images/rungood-official-champions-club-1200.jpg",
+    "curve": "series",
+    "multi_day": false,
+    "methodology_version": "v1.1",
+    "grade": "D+"
   },
   {
     "id": "rg-6",
-    "name": "RunGood \u00b7 Black Chip Bounty",
+    "name": "RunGood · Black Chip Bounty",
     "venue": "Champions Club Houston",
     "location": "Houston",
     "game": "Not provided",
@@ -128,7 +136,7 @@ window.C3_EVENTS = [
   },
   {
     "id": "rg-7",
-    "name": "RunGood \u00b7 Pot-Limit Omaha",
+    "name": "RunGood · Pot-Limit Omaha",
     "venue": "Champions Club Houston",
     "location": "Houston",
     "game": "PLO",
@@ -149,7 +157,7 @@ window.C3_EVENTS = [
   },
   {
     "id": "rg-8",
-    "name": "RunGood \u00b7 RunGood Main Event",
+    "name": "RunGood Main Event",
     "venue": "Champions Club Houston",
     "location": "Houston",
     "game": "Not provided",
@@ -161,16 +169,20 @@ window.C3_EVENTS = [
     "stack": "60,000",
     "minutes": "30 min (Turbo 15 min)",
     "start": "Flights Oct 15 (6 PM), Oct 16 (12 PM, 6 PM), Oct 17 (11 AM, 6 PM), Turbo Oct 18 (9 AM); Day 2 Oct 18, 2 PM CT",
-    "score": 66.0,
-    "tier": 2,
+    "score": 66,
+    "tier": 3,
     "source": "rungood-houston-preview.html",
     "official": "https://www.rungood.com/pages/rgps-golden-expedition-champions-club-houston",
     "structureURL": "https://cdn.shopify.com/s/files/1/0911/1108/files/Champions_Club_Structure_Sheets_October_2026_v3.0.pdf?v=1790317244",
-    "image": "images/rungood-official-champions-club-1200.jpg"
+    "image": "images/rungood-official-champions-club-1200.jpg",
+    "curve": "series",
+    "multi_day": false,
+    "methodology_version": "v1.1",
+    "grade": "B−"
   },
   {
     "id": "rg-9",
-    "name": "RunGood \u00b7 Flip & Go",
+    "name": "RunGood · Flip & Go",
     "venue": "Champions Club Houston",
     "location": "Houston",
     "game": "Not provided",
@@ -191,7 +203,7 @@ window.C3_EVENTS = [
   },
   {
     "id": "rg-10",
-    "name": "RunGood \u00b7 Ladies NLH",
+    "name": "RunGood · Ladies NLH",
     "venue": "Champions Club Houston",
     "location": "Houston",
     "game": "NLH",
@@ -212,7 +224,7 @@ window.C3_EVENTS = [
   },
   {
     "id": "rg-11",
-    "name": "RunGood \u00b7 Last Chance NLH",
+    "name": "RunGood · Last Chance NLH",
     "venue": "Champions Club Houston",
     "location": "Houston",
     "game": "NLH",
@@ -242,9 +254,13 @@ window.C3_EVENTS = [
     "buyin": 200,
     "score": 48.2,
     "tier": 2,
-    "start": "Archive \u2014 see original source",
+    "start": "Archive — see original source",
     "image": "images/rungood-schedule.jpg",
-    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification."
+    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification.",
+    "curve": "series_under_400",
+    "multi_day": false,
+    "methodology_version": "v1.1",
+    "grade": "B"
   },
   {
     "id": "g-randy-s-six-shooter-250",
@@ -257,9 +273,13 @@ window.C3_EVENTS = [
     "buyin": 250,
     "score": 39.2,
     "tier": 2,
-    "start": "Archive \u2014 see original source",
+    "start": "Archive — see original source",
     "image": "images/rungood-schedule.jpg",
-    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification."
+    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification.",
+    "curve": "series_under_400",
+    "multi_day": false,
+    "methodology_version": "v1.1",
+    "grade": "C"
   },
   {
     "id": "g-400-big-tex-giant-stack",
@@ -271,10 +291,14 @@ window.C3_EVENTS = [
     "date": "",
     "buyin": 400,
     "score": 51.4,
-    "tier": 2,
-    "start": "Archive \u2014 see original source",
+    "tier": 3,
+    "start": "Archive — see original source",
     "image": "images/rungood-schedule.jpg",
-    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification."
+    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification.",
+    "curve": "series",
+    "multi_day": false,
+    "methodology_version": "v1.1",
+    "grade": "C−"
   },
   {
     "id": "g-main-event",
@@ -286,10 +310,14 @@ window.C3_EVENTS = [
     "date": "",
     "buyin": 600,
     "score": 81.4,
-    "tier": 2,
-    "start": "Archive \u2014 see original source",
+    "tier": 3,
+    "start": "Archive — see original source",
     "image": "images/rungood-schedule.jpg",
-    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification."
+    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification.",
+    "curve": "series",
+    "multi_day": false,
+    "methodology_version": "v1.1",
+    "grade": "B+"
   },
   {
     "id": "g-lone-star-plo",
@@ -302,9 +330,13 @@ window.C3_EVENTS = [
     "buyin": 300,
     "score": 29,
     "tier": 2,
-    "start": "Archive \u2014 see original source",
+    "start": "Archive — see original source",
     "image": "images/rungood-schedule.jpg",
-    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification."
+    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification.",
+    "curve": "series_under_400",
+    "multi_day": false,
+    "methodology_version": "v1.1",
+    "grade": "D"
   },
   {
     "id": "g-2-500-nlh-high-roller",
@@ -316,10 +348,14 @@ window.C3_EVENTS = [
     "date": "",
     "buyin": 2500,
     "score": 93.9,
-    "tier": 2,
-    "start": "Archive \u2014 see original source",
+    "tier": 3,
+    "start": "Archive — see original source",
     "image": "images/rungood-schedule.jpg",
-    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification."
+    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification.",
+    "curve": "series",
+    "multi_day": false,
+    "methodology_version": "v1.1",
+    "grade": "A"
   },
   {
     "id": "g-200-lone-star-stand-off",
@@ -332,9 +368,13 @@ window.C3_EVENTS = [
     "buyin": 200,
     "score": 48.2,
     "tier": 2,
-    "start": "Archive \u2014 see original source",
+    "start": "Archive — see original source",
     "image": "images/rungood-schedule.jpg",
-    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification."
+    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification.",
+    "curve": "series_under_400",
+    "multi_day": false,
+    "methodology_version": "v1.1",
+    "grade": "B"
   },
   {
     "id": "g-300-2-7-single-draw",
@@ -347,9 +387,13 @@ window.C3_EVENTS = [
     "buyin": 300,
     "score": 46.7,
     "tier": 2,
-    "start": "Archive \u2014 see original source",
+    "start": "Archive — see original source",
     "image": "images/rungood-schedule.jpg",
-    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification."
+    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification.",
+    "curve": "series_under_400",
+    "multi_day": false,
+    "methodology_version": "v1.1",
+    "grade": "B−"
   },
   {
     "id": "g-300-mega-stack",
@@ -362,9 +406,13 @@ window.C3_EVENTS = [
     "buyin": 300,
     "score": 51.4,
     "tier": 2,
-    "start": "Archive \u2014 see original source",
+    "start": "Archive — see original source",
     "image": "images/rungood-schedule.jpg",
-    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification."
+    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification.",
+    "curve": "series_under_400",
+    "multi_day": false,
+    "methodology_version": "v1.1",
+    "grade": "B+"
   },
   {
     "id": "g-donkey-derby-200",
@@ -377,9 +425,13 @@ window.C3_EVENTS = [
     "buyin": 200,
     "score": 40.2,
     "tier": 2,
-    "start": "Archive \u2014 see original source",
+    "start": "Archive — see original source",
     "image": "images/rungood-schedule.jpg",
-    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification."
+    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification.",
+    "curve": "series_under_400",
+    "multi_day": false,
+    "methodology_version": "v1.1",
+    "grade": "C"
   },
   {
     "id": "g-even-bigger-one-250k-gtd",
@@ -392,9 +444,14 @@ window.C3_EVENTS = [
     "buyin": 300,
     "score": 73,
     "tier": 2,
-    "start": "Archive \u2014 see original source",
+    "start": "Archive — see original source",
     "image": "images/rungood-schedule.jpg",
-    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification."
+    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification.",
+    "curve": "series_under_400",
+    "multi_day": false,
+    "methodology_version": "v1.1",
+    "grade": "A+",
+    "note": "Single-day: A+ on Curve 2; if multi-day: B on Curve 3."
   },
   {
     "id": "g-150-deepstack",
@@ -407,9 +464,13 @@ window.C3_EVENTS = [
     "buyin": 150,
     "score": 29,
     "tier": 2,
-    "start": "Archive \u2014 see original source",
+    "start": "Archive — see original source",
     "image": "images/rungood-schedule.jpg",
-    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification."
+    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification.",
+    "curve": "series_under_400",
+    "multi_day": false,
+    "methodology_version": "v1.1",
+    "grade": "D"
   },
   {
     "id": "g-400-kick-off",
@@ -421,10 +482,14 @@ window.C3_EVENTS = [
     "date": "",
     "buyin": 400,
     "score": 48.2,
-    "tier": 2,
-    "start": "Archive \u2014 see original source",
+    "tier": 3,
+    "start": "Archive — see original source",
     "image": "images/rungood-schedule.jpg",
-    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification."
+    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification.",
+    "curve": "series",
+    "multi_day": false,
+    "methodology_version": "v1.1",
+    "grade": "D+"
   },
   {
     "id": "g-the-bigger-one-250k-gtd",
@@ -437,9 +502,13 @@ window.C3_EVENTS = [
     "buyin": 300,
     "score": 78.4,
     "tier": 1,
-    "start": "Archive \u2014 see original source",
+    "start": "Archive — see original source",
     "image": "images/rungood-schedule.jpg",
-    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification."
+    "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification.",
+    "curve": "weekly",
+    "multi_day": false,
+    "methodology_version": "v1.1",
+    "grade": "A+"
   },
   {
     "id": "g-plo-deepstack",

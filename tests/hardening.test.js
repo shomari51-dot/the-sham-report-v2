@@ -31,7 +31,7 @@ test('buy-in normalization and validation',()=>{
   for(const parts of [{total:252,prize_pool:200,fee:50},{fee:-1},{entries:'no'},{addons:[{chips:-2}]}]) assert.throws(()=>grading.normalizeBuyin({buyin_parts:parts}),TypeError);
 });
 test('curve boundaries and client tier/letter ignored',()=>{
-  for(const [type,bounds] of [['weekly',[48,40,32,24]],['series',[85,65,50,38]]]) {
+  for(const [type,bounds] of [['weekly',[48,40,32]],['series',[85,65,50]]]) {
     bounds.forEach((score,i)=>{
       const r=grading.recompute({type,score,tier:99,grade:'Z',base:'Z',buyin:999});
       assert.equal(r.base,'ABCD'[i]);assert.equal(r.grade,'ABCD'[i]+'−');
@@ -40,7 +40,7 @@ test('curve boundaries and client tier/letter ignored',()=>{
   }
   assert.equal(grading.recompute({type:'weekly',score:73}).grade,'A+');
   assert.equal(grading.recompute({type:'series',score:73}).grade,'B');
-  assert.equal(grading.recompute({event_type:'major',score:73}).tier,2);
+  assert.equal(grading.recompute({event_type:'major',score:73}).tier,3);
 });
 const inputs={buyin:200,fees:20,stack:30000,levelLen:30,levels:engine.parseStructure(Array.from({length:18},(_,i)=>`${(i+1)*100} ${(i+1)*200} 0`).join('\n')).levels};
 test('recalculates inputs and calculator hash; malformed inputs fail',()=>{
@@ -111,7 +111,7 @@ t.before(async()=>{
 t.after(async()=>{await require('../lib/db').close();await client?.close();await server?.stop();});
 await t.test('grade endpoint recomputes, preserves fields, appends history and filters status',async()=>{
   let r=await call('grades',req('POST',{id:'endpoint',name:'Test',type:'series',score:73,tier:1,grade:'A+',custom:'retain'},admin()));assert.equal(r.code,200);
-  let doc=await db.collection('grades').findOne({id:'endpoint'});assert.equal(doc.grade,'B');assert.equal(doc.tier,2);assert.equal(doc.custom,'retain');assert.equal(doc.history.length,1);
+  let doc=await db.collection('grades').findOne({id:'endpoint'});assert.equal(doc.grade,'B');assert.equal(doc.tier,3);assert.equal(doc.custom,'retain');assert.equal(doc.history.length,1);
   r=await call('grades',req('POST',{id:'endpoint',name:'Test',status:'draft'},admin()));assert.equal(r.code,200);
   doc=await db.collection('grades').findOne({id:'endpoint'});assert.equal(doc.history.length,2);
   assert.equal((await call('grades',req('GET'))).body.grades.length,0);
@@ -163,10 +163,10 @@ test('preview API mutations return 409 before any database connection',async()=>
  for(const api of ['grades','articles','content'])for(const method of ['POST','DELETE']){const r=await call(api,req(method,{}, {...admin(),'x-forwarded-for':'write-guard-test'}));assert.equal(r.code,409);assert.equal(r.body.code,'PROD_DB_WRITE_BLOCKED');}
  }finally{for(const k of keys)if(old[k]===undefined)delete process.env[k];else process.env[k]=old[k];}
 });
-test('v1.0 version, unified workflow, event classification and separated accounting',()=>{
- for(const methodology_version of ['v1.0','tsr-2026.10-curve-by-type'])assert.equal(grading.recompute({type:'series',score:73,methodology_version}).methodology_version,'v1.0');
+test('v1.1 version, unified workflow, event classification and separated accounting',()=>{
+ for(const methodology_version of ['v1.1','v1.0','tsr-2026.10-curve-by-type'])assert.equal(grading.recompute({type:'series',score:73,methodology_version}).methodology_version,'v1.1');
  for(const status of ['Imported','Draft','Needs Verification','Ready for Review','Approved','Published','Archived','published','draft','needs_review','retracted','superseded']){const n=grading.recompute({type:'series',score:73,status});assert.equal(n.status,status);assert.ok(['Imported','Draft','Needs Verification','Ready for Review','Approved','Published','Archived'].includes(n.editorial_status));}
- for(const [event_type,tier] of [['weekly',1],['series',2],['major',2],['unknown',null]]){const n=grading.recompute({event_type,score:73,buyin:10});assert.equal(n.tier,tier);if(!tier){assert.equal(n.grade,null);assert.equal(n.editorial_status,'Needs Verification');}}
+ for(const [event_type,tier] of [['weekly',1],['series',2],['major',3],['unknown',null]]){const n=grading.recompute({event_type,score:73,buyin:10});assert.equal(n.tier,tier);if(!tier){assert.equal(n.grade,null);assert.equal(n.editorial_status,'Needs Verification');}}
  const parts={total:400,fee:70,addons:[{cost:20,chips:10000,fee:0}],reentry_rules:'Unlimited during registration',guarantee:100000,actual_prize_pool:120000,entries:400,unique_players:240};
  assert.deepEqual(grading.normalizeBuyin({buyin_parts:parts}),{...parts,prize_pool:330});
 });
@@ -175,7 +175,7 @@ test('experience and publisher approval never affect score; unverified takes can
  const experience_record={attendance_status:'played',verified_by_publisher:true,ratings:{room_atmosphere:4},freeform_notes:'Recorded firsthand notes',recorded_at:'2026-10-22',recorded_by:'Shomari Williams'};
  const shams_take={status:'Published',ai_draft:'Draft',edited_text:'Reviewed personal assessment',approved_by:'Shomari Williams',approved_at:'2026-10-22T12:00:00Z',history:[]};
  for(const status of ['Approved','Published'])for(const invalid of [{attendance_status:'not_attended',verified_by_publisher:true},{attendance_status:'played',verified_by_publisher:false}])assert.throws(()=>grading.recompute({...base,experience_record:{...experience_record,...invalid},shams_take:{...shams_take,status}}),e=>e instanceof TypeError&&e.message==="Sham's Take requires verified firsthand experience (played, attended, or observed) and publisher approval");
- for(const attendance_status of ['played','attended','observed']){const n=grading.recompute({...base,experience_record:{...experience_record,attendance_status},shams_take});assert.equal(n.score,73);assert.equal(n.grade,'B');assert.deepEqual(grading.publicAnalysisLabel(n),{heading:"Sham's Take",badge:'Verified firsthand experience · Approved by Shomari Williams',text:shams_take.edited_text});}
+ for(const attendance_status of ['played','attended','observed']){const n=grading.recompute({...base,experience_record:{...experience_record,attendance_status},shams_take});assert.equal(n.score,73);assert.equal(n.grade,'A+');assert.deepEqual(grading.publicAnalysisLabel(n),{heading:"Sham's Take",badge:'Verified firsthand experience · Approved by Shomari Williams',text:shams_take.edited_text});}
  assert.equal(grading.publicAnalysisLabel(base).heading,'Data-Based Structure Analysis');
  assert.equal(grading.publicAnalysisLabel({...base,experience_record,shams_take:{...shams_take,status:'Draft'}}).heading,'Data-Based Structure Analysis');
  for(const patch of [{edited_text:''},{approved_by:null},{approved_at:null},{approved_by:'Other editor'}])assert.throws(()=>grading.recompute({...base,experience_record,shams_take:{...shams_take,...patch}}),TypeError);
@@ -200,9 +200,9 @@ test('public pages remove unverified navigation, social links, mailboxes and fic
  for(const file of ['index.html','news.html','tournaments.html','js/concept3.js','js/concept3-interior.js'])assert.doesNotMatch(read(file),/Reading the structure sheet|Around the Texas tables|The tournament notebook|Behind the broadcast|The weekly structure notebook/);
  for(const file of ['tsr-score-calculator.html','js/concept3-calculator.js']){assert.match(read(file),/Data-Based Structure Analysis/);assert.doesNotMatch(read(file),/Sham[’']s Take/);}
  const context={window:{}};for(const file of ['js/concept3-config.js','js/concept3-data.js','js/concept3-events.js','js/concept3-hosts.js','js/concept3-regrade.js'])vm.runInNewContext(read(file),context);
- assert.equal(context.window.TSR_CONFIG.features.hostedGamesNav,false);assert.equal(context.window.CONCEPT3_DATA.stories.length,4);assert.equal(context.window.CONCEPT3_DATA.grades.length,7);assert.equal(context.window.C3_REGRADE.length,17);
+ assert.equal(context.window.TSR_CONFIG.features.hostedGamesNav,false);assert.equal(context.window.CONCEPT3_DATA.stories.length,4);assert.equal(context.window.CONCEPT3_DATA.grades.length,16);assert.equal(context.window.C3_REGRADE.length,20);
  for(const host of context.window.C3_HOSTS){assert.equal(host.verified,false);assert.equal(host.status,'Needs Verification');}
- for(const score of [69.8,66,46.6])assert.ok(context.window.C3_EVENTS.some(e=>e.score===score&&e.venue==='Champions Club Houston'&&e.tier===2));
+ for(const score of [69.8,66,46.6])assert.ok(context.window.C3_EVENTS.some(e=>e.score===score&&e.venue==='Champions Club Houston'&&e.tier===3));
  for(const id of ['editorial-standards','independence','methodology','corrections','contact','score-revisions'])assert.ok(read('about.html').includes('id="'+id+'"'));
  assert.doesNotMatch(read('trailblazer-stop-2-kick-off-results.html'),/hour and 35 minutes/);
  assert.match(read('admin/index.html'),/PROD_DB_WRITE_BLOCKED/);assert.match(read('admin/review.js'),/Approve & Publish/);
@@ -220,8 +220,8 @@ test('public renderers use real articles, correct curve groups and verified host
  assert.match(r.nodes['grade-rows'].innerHTML,/93.9/);assert.match(r.nodes['grade-rows'].innerHTML,/66/);assert.doesNotMatch(r.nodes['latest-stories'].innerHTML,/Sample/);
  const filters=['search','date','location','venue','game','type','buyin','sort'].map(k=>'event-'+k);
  r=run([...filters,'event-count','event-rows','event-detail','tournament-filters'],['js/concept3-events.js','js/concept3-regrade.js','js/concept3-interior.js']);
- assert.match(r.nodes['event-rows'].innerHTML,/No verified weekly structures published yet/);assert.match(r.nodes['event-rows'].innerHTML,/Series Curve \(v1.0\)/);assert.match(r.nodes['event-rows'].innerHTML,/Real Event Archive/);
- assert.match(r.nodes['event-detail'].innerHTML,/Data-Based Structure Analysis/);assert.doesNotMatch(r.nodes['event-detail'].innerHTML,/Sham[’']s Take/);assert.match(r.nodes['event-detail'].innerHTML,/Methodology v1.0 Regrade Preview/);
+ assert.match(r.nodes['event-rows'].innerHTML,/No verified weekly structures published yet/);assert.match(r.nodes['event-rows'].innerHTML,/Curve 3 — \$400\+ & Multi-Day Series \(v1.1\)/);assert.match(r.nodes['event-rows'].innerHTML,/Real Event Archive/);
+ assert.match(r.nodes['event-detail'].innerHTML,/Data-Based Structure Analysis/);assert.doesNotMatch(r.nodes['event-detail'].innerHTML,/Sham[’']s Take/);assert.match(r.nodes['event-detail'].innerHTML,/Methodology v1.1 Regrade Preview/);
  r=run(['host-rows','host-detail'],['js/concept3-hosts.js','js/concept3-interior.js']);assert.match(r.nodes['host-rows'].innerHTML,/Verification in Progress/);assert.doesNotMatch(r.nodes['host-rows'].innerHTML,/Rebecca|Aaron/);
  for(const slug of ['the-lodge-raid-first-reaction-march-11-2026','lodge-raid-coverage-tom-dwan-enters-the-chat']){
   r=run(['article-content','main-content'],['js/concept3-data.js','js/concept3-article.js'],'?slug='+slug);
@@ -238,15 +238,40 @@ test('Facebook import CLI dry run validates without accessing MongoDB',async()=>
 });
 test('calculator uses event type for both grades and withholds all letters for unknown',async()=>{
  const fs=require('node:fs'),vm=require('node:vm');
- for(const type of ['weekly','series','major','unknown']){
+ for(const [type,buyin,multi_day] of [['weekly',200,false],['series',399.99,false],['series',400,false],['series',300,true],['major',200,false],['unknown',200,false]]){
   const nodes={};const get=id=>nodes[id]||(nodes[id]={value:'',innerHTML:'',textContent:'',hidden:false,validity:{valid:true},addEventListener(){},focus(){}});
   for(const [k,v] of Object.entries({buyin:'200',fees:'20',stack:'30000',levelLen:'30',structure:inputs.levels.map(l=>`${l.sb} / ${l.bb} / ${l.ante}`).join('\n'),fmt:'nlh'}))get(k).value=v;
-  get('score-form').elements={curve:{value:type}};
+  get('score-form').elements={curve:{value:type}};get('buyin').value=String(buyin);get('multi_day').checked=multi_day;
   vm.runInNewContext(fs.readFileSync('js/concept3-calculator.js','utf8'),{document:{getElementById:get},TSREngine:engine,location:{hash:''},URLSearchParams,setTimeout:fn=>fn()});
   await get('score-form').onsubmit({preventDefault(){}});
-  const html=get('score-result').innerHTML;assert.equal(get('score-result').hidden,false);assert.match(html,/Methodology: v1.0 \(Curve by Event Type\)/);assert.match(html,/Data-Based Structure Analysis/);
+  const html=get('score-result').innerHTML;assert.equal(get('score-result').hidden,false);assert.match(html,/Methodology: v1.1 \(3-Curve A–D Scale\)/);assert.match(html,/Data-Based Structure Analysis/);
   if(type==='unknown'){assert.match(html,/No letter grade/);assert.doesNotMatch(html,/Base score \/ grade<\/dt><dd>[^<]* \/ [ABCDF]/);}
-  else assert.ok(html.includes((type==='weekly'?'Weekly / Tier 1':'Series / Tier 2')+' curve'));
-  assert.equal(get('prize_pool').value,180);
+  else assert.ok(html.includes((type==='weekly'?'Curve 1 — Weekly Recurring':type==='series'&&buyin<400&&!multi_day?'Curve 2 — Sub-$400 Single-Day Series':'Curve 3 — $400+ & Multi-Day Series')+' curve'));
+  assert.equal(get('prize_pool').value,buyin-20);
  }
+});
+
+test('strict single-day price split, explicit fallback and unknown review',()=>{
+ for(const [doc,curve,tier] of [
+  [{event_type:'series',buyin:399.99},'series_under_400',2],
+  [{event_type:'series',buyin:400},'series',3],
+  [{event_type:'series',buyin:300,multi_day:true},'series',3],
+  [{event_type:'series',curve:'series_under_400'},'series_under_400',2],
+  [{event_type:'series'},'series',3],
+  [{event_type:'weekly',buyin:999,multi_day:true},'weekly',1],
+  [{event_type:'major',buyin:1},'series',3],
+  [{event_type:'unknown',curve:'weekly'},null,null]
+ ]){const r=grading.recompute({...doc,score:73});assert.equal(r.curve,curve);assert.equal(r.tier,tier);assert.equal(r.multi_day,Boolean(doc.multi_day));}
+ for(const [tier,score] of [[1,23.99],[2,24.99],[3,39.99]])for(const n of [0,-100,10,score])assert.deepEqual(engine.letterFor(n,tier),{letter:'D−',base:'D'});
+});
+test('all sixteen approved examples match engine, backend and both published datasets',()=>{
+ const examples=[['Even Bigger One $250K GTD',300,73,'A+'],['$300 Mega Stack',300,51.4,'B+'],['Send Off',200,48.2,'B'],['$200 Lone Star Stand-Off',200,48.2,'B'],['$300 2-7 Single Draw',300,46.7,'B−'],['Donkey Derby $200',200,40.2,'C'],["Randy's Six Shooter $250",250,39.2,'C'],['Lone Star PLO',300,29,'D'],['$150 Deepstack',150,29,'D'],['$2,500 NLH High Roller',2500,93.9,'A'],['MAIN EVENT',600,81.4,'B+'],['RunGood Monster Stack Opener',400,69.8,'B−'],['RunGood Main Event',600,66,'B−'],['$400 Big Tex Giant Stack',400,51.4,'C−'],['$400 Kick Off',400,48.2,'D+'],['RunGood PokerNews PowerStack',400,46.6,'D+']];
+ const fs=require('node:fs'),vm=require('node:vm'),ctx={window:{}};
+ for(const f of ['events','regrade'])vm.runInNewContext(fs.readFileSync('js/concept3-'+f+'.js','utf8'),ctx);
+ for(const [name,buyin,score,grade]of examples){const r=grading.recompute({event_type:'series',buyin,score});assert.equal(r.grade,grade,name);assert.equal(engine.letterFor(score,r.tier).letter,grade);for(const rows of [ctx.window.C3_EVENTS,ctx.window.C3_REGRADE]){const row=rows.find(e=>e.name===name);assert.ok(row,name);assert.equal(row.grade,grade,name);assert.equal(row.score,score);assert.equal(row.tier,r.tier);}}
+ assert.equal(grading.recompute({event_type:'series',buyin:300,score:73,multi_day:true}).grade,'B');
+});
+
+test('migration rejects production database before accessing collections',async()=>{
+ await assert.rejects(require('../scripts/migrate-grades-v2').migrate({databaseName:'tsrcms',collection(){throw Error('Must not access production');}}),e=>e.code==='PROD_DB_WRITE_BLOCKED');
 });

@@ -21,36 +21,39 @@ function fmtNum(n){return Number(n).toLocaleString("en-US");}
     // is no denomination between 100 and 200 - so the first two or three
     // transitions are forced into 67-100% rises that take well under 2%
     // of a stack. Every one of the five reference structures, the A and
-    // the F alike, had its largest "jump" at level 2 for that reason, so
+    // the lowest grade alike, had its largest "jump" at level 2 for that reason, so
     // the flag separated nothing and cost honest structures 4 points.
     // Materiality is what the guard was always reaching for: a spike
     // matters when it shortens the event, and one that takes 1% of your
     // stack does not.
     JUMP_MATERIAL_PCT: 5,
     // Tier split on total advertised buy-in (fees included), in dollars.
-    TIER_SPLIT: 300
+    SERIES_SPLIT: 400,
+    TIER_SPLIT: 400
   };
 
   // Grade bands per tier. `max` on the top band is not a ceiling on the
   // score, only the span used to place the +/- modifier.
   var BANDS = {
-    1: [
-      { g: "A", min: 48, max: 56 },
-      { g: "B", min: 40, max: 48 },
-      { g: "C", min: 32, max: 40 },
-      { g: "D", min: 24, max: 32 },
-      { g: "F", min: -Infinity, max: 24 }
-    ],
-    2: [
-      { g: "A", min: 85, max: 105 },
-      { g: "B", min: 65, max: 85 },
-      { g: "C", min: 50, max: 65 },
-      { g: "D", min: 38, max: 50 },
-      { g: "F", min: -Infinity, max: 38 }
-    ]
+    1: [{g:"A",min:48,max:56,cuts:[50.67,53.34]}, {g:"B",min:40,max:48,cuts:[42.67,45.34]}, {g:"C",min:32,max:40,cuts:[34.67,37.34]}, {g:"D",min:-Infinity,max:32,cuts:[24,28]}],
+    2: [{g:"A",min:55,max:67,cuts:[59,63]}, {g:"B",min:44,max:55,cuts:[47.67,51.34]}, {g:"C",min:34,max:44,cuts:[37.34,40.67]}, {g:"D",min:-Infinity,max:34,cuts:[25,30]}],
+    3: [{g:"A",min:85,max:105,cuts:[91.67,98.34]}, {g:"B",min:65,max:85,cuts:[71.67,78.34]}, {g:"C",min:50,max:65,cuts:[55,60]}, {g:"D",min:-Infinity,max:50,cuts:[40,45]}]
   };
-
-  var GRADE_COLOR = { A: "var(--g-a)", B: "var(--g-b)", C: "var(--g-c)", D: "var(--g-d)", F: "var(--g-f)" };
+  BANDS.weekly=BANDS[1];
+  BANDS.series_under_400=BANDS.series_sub400=BANDS[2];
+  BANDS.series=BANDS.major=BANDS[3];
+  var GRADE_COLOR = { A:"var(--g-a)", B:"var(--g-b)", C:"var(--g-c)", D:"var(--g-d)" };
+  function resolveCurve(doc) {
+    var type=doc.event_type || doc.curve || 'unknown';
+    var total=doc.buyin_parts ? doc.buyin_parts.total : doc.buyin;
+    if(type==='weekly') return {curve:'weekly',tier:1};
+    if(type==='major') return {curve:'series',tier:3};
+    if(type==='series' || type==='series_under_400' || type==='series_sub400') {
+      var middle=doc.multi_day!==true && (total!=null ? total<CFG.SERIES_SPLIT : doc.curve==='series_under_400');
+      return {curve:middle?'series_under_400':'series',tier:middle?2:3};
+    }
+    return {curve:null,tier:null,status:'needs_review',editorial_status:'Needs Verification'};
+  }
 
   /**
    * Parse a pasted blind structure into levels.
@@ -301,9 +304,10 @@ function fmtNum(n){return Number(n).toLocaleString("en-US");}
 
     var score = raw - penalty;
     var scoreBase = rawBase - penalty;
-    var tier = buyin > CFG.TIER_SPLIT ? 2 : 1;
-    var g = letterFor(score, tier);
-    var gBase = letterFor(scoreBase, tier);
+    var resolved = resolveCurve(input);
+    var tier = resolved.tier;
+    var g = tier ? letterFor(score, tier) : {letter:null,base:null};
+    var gBase = tier ? letterFor(scoreBase, tier) : {letter:null,base:null};
 
     // Entry vig is fees over the advertised buy-in. Effective vig spreads
     // the same fees over everything the player actually hands over, since
@@ -314,6 +318,8 @@ function fmtNum(n){return Number(n).toLocaleString("en-US");}
     return {
       ok: true,
       tier: tier,
+      curve: resolved.curve,
+      methodology_version: "v1.1",
       score: score,
       raw: raw,
       penalty: penalty,
@@ -345,21 +351,17 @@ function fmtNum(n){return Number(n).toLocaleString("en-US");}
     };
   }
 
-  /** Place a score in its band, then split the band into thirds for +/-. */
-  function letterFor(score, tier) {
-    var bands = BANDS[tier];
-    for (var i = 0; i < bands.length; i++) {
-      var b = bands[i];
-      if (score >= b.min) {
-        if (b.g === "F") return { letter: "F", base: "F" };
-        var t = (score - b.min) / (b.max - b.min);
-        var mod = t < 1 / 3 ? "−" : (t < 2 / 3 ? "" : "+");
-        return { letter: b.g + mod, base: b.g };
-      }
+  /** Methodology v1.1: explicit inclusive letter thresholds; D− is the floor. */
+  function letterFor(score, curveOrTier) {
+    var bands=BANDS[curveOrTier];
+    if(!bands) throw new TypeError("Unknown grading curve");
+    for(var i=0;i<bands.length;i++) {
+      var b=bands[i];
+      if(score>=b.min) return {letter:b.g+(score<b.cuts[0]?"−":score<b.cuts[1]?"":"+"),base:b.g};
     }
-    return { letter: "F", base: "F" };
+    return {letter:"D−",base:"D"};
   }
 
 
-const api={CFG,BANDS,parseStructure,grade,letterFor}; if(typeof module!=="undefined") module.exports=api; else root.TSREngine=api;
+const api={VERSION:"v1.1",CFG,BANDS,GRADE_COLOR,resolveCurve,parseStructure,grade,letterFor}; if(typeof module!=="undefined") module.exports=api; else root.TSREngine=api;
 })(typeof window!=="undefined"?window:globalThis);
