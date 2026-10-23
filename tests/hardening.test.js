@@ -182,7 +182,7 @@ test('experience and publisher approval never affect score; unverified takes can
  assert.throws(()=>grading.recompute({...base,experience_record:{...experience_record,ratings:{dealer_quality:8}}}),TypeError);
 });
 test('Facebook import validates full fixture, preserves original text verbatim and restricts workflow',()=>{
- const {createImport,required}=require('../lib/fb-import');const sample=require('./fixtures/fb-import-lodge-mar11.json'),original=require('./fixtures/articles.json').find(a=>a.slug==='the-lodge-raid-first-reaction-march-11-2026').body;
+ const {createImport,required}=require('../lib/fb-import');const sample=require('./fixtures/fb-import-lodge-mar11.json'),original=require('./fixtures/articles.json').find(a=>a.slug==='the-lodge-raid-first-reaction-march-11-2026').original_post_text;
  const result=createImport(sample);assert.equal(result.original_post_text,original);assert.equal(result.status,'draft');assert.equal(result.editorial_status,'Ready for Review');assert.equal(result.original_post_sha256.length,64);
  result.original_post_text='mutated';assert.equal(result.original_post_text,original);
  assert.throws(()=>createImport({...sample,original_post_text:'changed'},result),/immutable/);
@@ -232,7 +232,7 @@ test('public renderers use real articles, correct curve groups and verified host
 test('Facebook import CLI dry run validates without accessing MongoDB',async()=>{
  const {main}=require('../scripts/import-fb-post');let output='';
  const doc=await main(['--dry-run','--input','tests/fixtures/fb-import-lodge-mar11.json'],v=>{output=v;});
- assert.equal(doc.original_post_text,require('./fixtures/articles.json').find(a=>a.slug==='the-lodge-raid-first-reaction-march-11-2026').body);
+ assert.equal(doc.original_post_text,require('./fixtures/articles.json').find(a=>a.slug==='the-lodge-raid-first-reaction-march-11-2026').original_post_text);
  assert.equal(JSON.parse(output).editorial_status,'Ready for Review');
  await assert.rejects(()=>main([],()=>{}),/Usage/);
 });
@@ -316,4 +316,19 @@ test('Part 1 & Part 2 Facebook imports (all 11 fixtures) validate, render with i
  checkNewestFirst(ctx.window.C3_FB_IMPORTS,'C3_FB_IMPORTS');
  checkNewestFirst(require('./fixtures/articles.json'),'fixtures/articles.json');
  checkNewestFirst(ctx.window.C3_EVENTS.filter(e=>e.date),'C3_EVENTS dated');
+ checkNewestFirst(ctx.window.C3_ARCHIVE_EVENTS.filter(e=>e.date),'C3_ARCHIVE_EVENTS dated');
+ // Verify QA-017: admin/bulk-publish.html EVENTS are newest-first and match v1.1 grades
+ const bpHtml=fs.readFileSync('admin/bulk-publish.html','utf8');
+ const bpCtx={};vm.runInNewContext(bpHtml.slice(bpHtml.indexOf('var EVENTS ='),bpHtml.indexOf('];',bpHtml.indexOf('var EVENTS ='))+2),bpCtx);
+ assert.equal(bpCtx.EVENTS.length,13);
+ checkNewestFirst(bpCtx.EVENTS,'admin/bulk-publish.html EVENTS');
+ assert.equal(bpCtx.EVENTS[0].name,'Send Off');assert.equal(bpCtx.EVENTS[0].grade,'B');assert.equal(bpCtx.EVENTS[0].tier,2);
+ // Verify QA-018: seq 8 context includes March 17 affidavit release, seq 12 disclosures reference TCH Dallas, and fixtures/articles.json body matches concept3-data.js
+ const seq8=ctx.window.CONCEPT3_DATA.articles.find(a=>a.slug==='no-affidavit-lodge-card-club-due-process-doug-polk-march-16-2026');
+ assert.match(seq8.context,/March 17, 2026/);
+ const seq12=ctx.window.CONCEPT3_DATA.articles.find(a=>a.slug==='trailblazer-stop-2-kick-off-results');
+ assert.match(seq12.disclosures,/Texas Card House Dallas/);
+ const seq1=ctx.window.CONCEPT3_DATA.articles.find(a=>a.slug==='the-lodge-raid-first-reaction-march-11-2026');
+ const fixSeq1=require('./fixtures/articles.json').find(a=>a.slug==='the-lodge-raid-first-reaction-march-11-2026');
+ assert.equal(fixSeq1.body,seq1.body);
 });

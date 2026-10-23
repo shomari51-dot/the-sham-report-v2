@@ -352,7 +352,7 @@ window.CONCEPT3_DATA = {
       "credit": "TCH Dallas stream",
       "body": "Jesse J is the Trailblazer Stop 2 Kick Off champion. The $400 #1 Kick Off ($100K GTD) at TCH Dallas drew 347 entries for a $114,510 prize pool (TCH live report). That beat the guarantee easily, and 44 places were paid.\n\nFinal results (as shown on TCH's live stream):\n1. Jesse J: $20,980\n2. Natalia: $20,250\n3. BJ: $10,950\n4. Chase Bricker: $7,090\n\nIt came down to Jesse J and Natalia. At Hand 44, with blinds at 50,000/100,000/100,000, the stream's chip-count graphic had Jesse J on 5,870,000 and Natalia on 4,810,000. Jesse J and Natalia struck a heads-up deal, and Jesse J took the title.\n\nFourth place went to Chase Bricker. He's the Dallas-area player who beat Jason Christopher heads-up at Wynn Las Vegas in December 2024 to win the $1 million first prize in the ClubWPT Gold $5M Invitational Freeroll (PokerNews, WPT). No trophy this time, but a deep run on home felt.\n\nThe Kick Off was just the opener. Trailblazer Stop 2's $800 Main Event ($1,000,000 GTD) starts its first flight at TCH Dallas on Monday, Oct 12 at 5 PM, with flights through Oct 17 and the final table Oct 19 (official schedule). I'll be on it.\n\n\u2014 Sham",
       "context": "Original October 2026 reporting. See the linked original article for full source links, schedules and results.",
-      "disclosures": "Shomari Williams has performed commentary work at Champions Social Club with Hayden Fortini and participates in live tournament play. No firsthand experience at this event is claimed by its automated structure analysis.",
+      "disclosures": "Original October 2026 tournament reporting by Shomari Williams from the official Texas Card House Dallas live stream and published series schedule. Shomari Williams participates in live tournament play in Texas.",
       "status": "published"
     },
     {
@@ -473,7 +473,7 @@ window.CONCEPT3_DATA = {
         "metaDescription": "Shomari Williams examines due process concerns after Doug Polk reveals The Lodge Card Club had not yet received the search-warrant affidavit.",
         "keyphrase": "Doug Polk Lodge Card Club affidavit"
       },
-      "context": "Editorial Context / Update Note: This preserves reporting and commentary from March 2026. On April 28, 2026, a Williamson County grand jury declined to authorize proposed charges (a no-bill), and The Lodge subsequently reopened in May 2026. Closure references describe March 2026 conditions, not current status.",
+      "context": "Editorial Context / Update Note: Originally posted March 16, 2026. The 22-page search-warrant affidavit was subsequently released on March 17, 2026. On April 28, 2026, a Williamson County grand jury declined to authorize proposed charges (a no-bill), and The Lodge subsequently reopened in May 2026. Closure references describe March 2026 conditions, not current status.",
       "credit": "Screenshot via Facebook (Doug Polk)",
       "caption": "Doug Polk's public Facebook statement on The Lodge Card Club investigation (March 16, 2026), noting that the search-warrant affidavit had not been given to The Lodge or made public.",
       "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed."
