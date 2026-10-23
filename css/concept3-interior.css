@@ -34,3 +34,6 @@
 .article-body p{font-size:16px;line-height:1.65;margin:14px 0}
 @media(max-width:680px){.article-figures.two-figures{grid-template-columns:1fr}}
 .article-copy,.article-copy p,.article-copy a,.article-copy figcaption{overflow-wrap:anywhere;word-break:break-word}
+
+/* QA-013: inline links inside paragraphs are underlined and high-contrast */
+.c3-interior p a:not(.c3-button):not(.c3-text-link){text-decoration:underline;color:#ff615a}

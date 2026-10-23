@@ -84,37 +84,16 @@ function stripMd(md) {
     .replace(/\s+/g, ' ').trim();
 }
 
-/* ── nav + footer (site-consistent, absolute paths) ───────── */
-const NAV = `
-<div class="utility-bar"><div class="container"><div class="util-icons">
-  <a href="/" aria-label="Facebook"><img src="/assets/icons/facebook.svg" alt="Facebook" width="18" height="18"></a>
-  <a href="/" aria-label="Instagram"><img src="/assets/icons/instagram.svg" alt="Instagram" width="18" height="18"></a>
-  <a href="/" aria-label="X"><img src="/assets/icons/x.svg" alt="X" width="18" height="18"></a>
-  <a href="/" aria-label="TikTok"><img src="/assets/icons/tiktok.svg" alt="TikTok" width="18" height="18"></a>
-  <a href="/" aria-label="YouTube"><img src="/assets/icons/youtube.svg" alt="YouTube" width="18" height="18"></a>
-</div></div></div>
-<nav class="primary-nav"><div class="nav-inner">
-  <a href="/index.html" style="text-decoration:none;line-height:0;"><img src="/logo.svg" alt="The Sham Report" height="50"></a>
-  <ul class="nav-links" role="list">
-    <li><a href="/news.html">NEWS</a></li>
-    <li><a href="/tournaments.html">TOURNAMENTS</a></li>
-    <li><a href="/hosted-games.html">HOSTED GAMES</a></li>
-    <li><a href="/media.html">MEDIA</a></li>
-    <li><a href="/about.html">ABOUT</a></li>
-  </ul>
-  <a href="/news.html" class="btn-nav-subscribe" style="text-decoration:none;">SUBSCRIBE</a>
-</div></nav>`;
+/* ── nav + footer (Concept 3 site-consistent, absolute paths) ───────── */
+const NAV = `<a class="c3-skip" href="#main-content">Skip to content</a><header class="c3-header c3-shell">
+<div class="c3-top"><span>THE SHAM REPORT · INDEPENDENT TEXAS POKER JOURNALISM &amp; STRUCTURE INTELLIGENCE</span></div>
+<div class="c3-mast"><a class="c3-logo" href="/index.html" aria-label="The Sham Report home">THE SHAM <span>REPORT</span></a>
+<nav class="c3-nav" aria-label="Main navigation"><a href="/index.html">Home</a><a href="/news.html" aria-current="page">News</a><a href="/tsr-score-calculator.html">TSR Score</a><a href="/tournaments.html">Tournaments</a><a href="/media.html">Media</a><a href="/about.html">About</a></nav><a class="c3-search" href="/news.html#news-search" aria-label="Search news"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10" cy="10" r="7"/><path d="m15 15 7 7"/></svg></a></div></header>`;
 
-const FOOTER = `
-<footer class="site-footer" role="contentinfo"><div class="container">
-  <a href="/index.html" style="display:inline-block;line-height:0;margin-bottom:28px;"><img src="/logo.svg" alt="The Sham Report" height="50"></a>
-  <nav class="footer-nav" aria-label="Footer navigation">
-    <a href="/news.html">News</a><a href="/tournaments.html">Tournaments</a>
-    <a href="/hosted-games.html">Hosted Games</a><a href="/media.html">Media</a><a href="/about.html">About</a>
-  </nav>
-  <div class="footer-divider"></div>
-  <p class="footer-copy">&copy; 2026 The Sham Report. All Rights Reserved. Texas Poker. Unfiltered.</p>
-</div></footer>`;
+const FOOTER = `<footer class="c3-footer c3-shell">
+<div class="c3-footrow"><a class="c3-logo" href="/index.html" aria-label="The Sham Report home">THE SHAM <span>REPORT</span></a>
+<nav aria-label="Editorial information"><a href="/about.html#editorial-standards">Editorial Standards</a><a href="/about.html#methodology">Methodology</a><a href="/about.html#corrections">Corrections</a><a href="/about.html#contact">Contact</a></nav></div>
+<div class="c3-footnote"><span>© 2026 The Sham Report.</span><span>Concept 3 · Development preview</span></div></footer>`;
 
 const STYLES = `
   .post-wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
@@ -160,14 +139,14 @@ function page({ head, bodyHtml, status }) {
 ${head}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/concept3.css">
+<link rel="stylesheet" href="/css/concept3-interior.css">
 <style>${STYLES}</style>
-</head><body>
+</head><body class="c3-home c3-interior">
 ${NAV}
-${bodyHtml}
+<main id="main-content" class="c3-shell article-copy">${bodyHtml}</main>
 ${FOOTER}
-<script src="/js/main.js"></script>
 </body></html>`;
 }
 

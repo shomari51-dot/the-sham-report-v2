@@ -4,16 +4,18 @@ window.C3_REELS = [
     "image": "images/reels/2026-10-10_reel-1398989519959467.jpg",
     "alt": "Cover reading AMY vs JB $10.4K POT, Amy H at the Champions table",
     "title": "AMY vs JB, $10.4K pot",
-    "description": "Amy H at the Champions table in a Dallas Stars cap, mid stare-down. Hand 47, $5/$10/$25 at Champions Social Club.",
-    "date": "Oct 10, 2026"
+    "description": "Amy H at the Champions table in a Dallas Stars cap, mid stare-down against JB in a $10.4K pot (Hand 47, $5/$10/$25 at Champions Social Club Dallas).",
+    "date": "Oct 10, 2026",
+    "articleUrl": "article-template.html?slug=amy-vs-jb-10400-pot-no-backing-down-champions-social-club-dallas-october-10-2026"
   },
   {
     "url": "https://www.facebook.com/reel/1085303500976218/",
     "image": "images/reels/2026-10-07_reel-1085303500976218.jpg",
     "alt": "The Sham Report title card: We&#x27;re back at it tonight!",
     "title": "We&rsquo;re back at it tonight!",
-    "description": "Wednesday night live stream promo from the tables.",
-    "date": "Oct 7, 2026"
+    "description": "Wednesday night $5/$10 No-Limit Hold'em stream at Champions Social Club Dallas with Shomari Williams and Hayden Fortini in the booth.",
+    "date": "Oct 7, 2026",
+    "articleUrl": "article-template.html?slug=wednesday-night-5-10-nlh-stream-booth-hayden-fortini-champions-dallas-october-7-2026"
   },
   {
     "url": "https://www.facebook.com/reel/1084950954282668/",

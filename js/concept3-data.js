@@ -1,7 +1,7 @@
 window.CONCEPT3_DATA = {
   "stories": [
     {
-      "seq": 32,
+      "seq": 35,
       "title": "RunGood Poker Series Hits Houston",
       "image": "images/rungood-official-champions-club-1200.jpg",
       "alt": "RunGood Golden Expedition at Champions Club Houston",
@@ -13,7 +13,31 @@ window.CONCEPT3_DATA = {
       "author": "Shomari Williams"
     },
     {
-      "seq": 31,
+      "seq": 34,
+      "title": "Wolfgang Flops a Set With Pocket Deuces at Champions Social Club Dallas: How Did He Know Something Was Wrong?",
+      "image": "images/2026-10-11_reel-1662206285253519.jpg",
+      "alt": "Champions Social Club Dallas hand highlight (October 11, 2026): Wolfgang Poker flops bottom set with pocket deuces (2\u2660 2\u2665) on a 2\u2663 8\u2666 4\u2665 board.",
+      "url": "article-template.html?slug=wolfgang-flops-a-set-with-pocket-deuces-champions-social-club-dallas-october-11-2026",
+      "category": "Players",
+      "description": "Holding pocket deuces (2\u2660 2\u2665) on a 2\u2663 8\u2666 4\u2665 flop at Champions Social Club in Dallas, Wolfgang Poker hits bottom set \u2014 and senses danger on the feature felt.",
+      "date": "October 11, 2026",
+      "original_fb_date": "2026-10-11",
+      "author": "Shomari Williams"
+    },
+    {
+      "seq": 33,
+      "title": "Amy vs. JB in a $10.4K Pot: No Backing Down on the $5/$10/$25 Felt at Champions Social Club Dallas",
+      "image": "images/2026-10-10_reel-1398989519959467.jpg",
+      "alt": "Champions Social Club Dallas stream highlight (October 10, 2026): Amy H locked in during a $10,400 pot against JB on Hand 47 of the $5/$10/$25 game.",
+      "url": "article-template.html?slug=amy-vs-jb-10400-pot-no-backing-down-champions-social-club-dallas-october-10-2026",
+      "category": "Players",
+      "description": "Locked in during Hand 47 of the $5/$10/$25 cash-game broadcast at Champions Social Club in Dallas, Amy H goes head-to-head with JB in a $10,400 pot.",
+      "date": "October 10, 2026",
+      "original_fb_date": "2026-10-10",
+      "author": "Shomari Williams"
+    },
+    {
+      "seq": 32,
       "title": "Jesse J Wins the Trailblazer Kick Off",
       "image": "images/2026-10-09-tch-kickoff-final-payout-board-stream.png",
       "alt": "Final Kick Off payout board on the TCH Dallas stream",
@@ -22,6 +46,18 @@ window.CONCEPT3_DATA = {
       "description": "Stop 2 opens with a 347-entry field and a $114,510 prize pool at TCH Dallas.",
       "date": "October 9, 2026",
       "original_fb_date": "2026-10-09",
+      "author": "Shomari Williams"
+    },
+    {
+      "seq": 31,
+      "title": "We\u2019re Back at It Tonight: Wednesday Night $5/$10 NLH Stream With Hayden Fortini at Champions Dallas",
+      "image": "images/2026-10-07_reel-1085303500976218.jpg",
+      "alt": "Glazed lamb lollipops from the Champions Social Club kitchen in Dallas, featured in Sham's October 7, 2026 Wednesday night $5/$10 stream preview.",
+      "url": "article-template.html?slug=wednesday-night-5-10-nlh-stream-booth-hayden-fortini-champions-dallas-october-7-2026",
+      "category": "Players",
+      "description": "Back in the Champions Social Club Dallas commentary booth with Hayden Fortini for Wednesday night $5/$10 No-Limit Hold'em \u2014 plus a look at the kitchen's signature glazed lamb lollipops.",
+      "date": "October 7, 2026",
+      "original_fb_date": "2026-10-07",
       "author": "Shomari Williams"
     },
     {
@@ -540,7 +576,7 @@ window.CONCEPT3_DATA = {
   ],
   "articles": [
     {
-      "seq": 32,
+      "seq": 35,
       "slug": "rungood-houston-preview",
       "url": "rungood-houston-preview.html",
       "title": "RunGood Poker Series Hits Houston",
@@ -562,7 +598,67 @@ window.CONCEPT3_DATA = {
       "status": "published"
     },
     {
-      "seq": 31,
+      "seq": 34,
+      "slug": "wolfgang-flops-a-set-with-pocket-deuces-champions-social-club-dallas-october-11-2026",
+      "title": "Wolfgang Flops a Set With Pocket Deuces at Champions Social Club Dallas: How Did He Know Something Was Wrong?",
+      "deck": "Holding pocket deuces (2\u2660 2\u2665) on a 2\u2663 8\u2666 4\u2665 flop at Champions Social Club in Dallas, Wolfgang Poker hits bottom set \u2014 and senses danger on the feature felt.",
+      "categories": [
+        "Players",
+        "Texas Poker"
+      ],
+      "heroImage": "images/2026-10-11_reel-1662206285253519.jpg",
+      "secondaryImage": null,
+      "author": "Shomari Williams",
+      "date": "October 11, 2026",
+      "body": "Originally posted October 11, 2026.\n\nWolfgang flops a set with pocket deuces at Champions Social Club in Dallas\u2026 how did he know something was wrong?!\n\nIn this feature-table highlight from Champions Social Club Dallas (https://www.facebook.com/reel/1662206285253519/), poker vlogger Wolfgang Poker woke up with pocket deuces (2\u2660 2\u2665) and spiked bottom set right on the 2\u2663 8\u2666 4\u2665 rainbow flop \u2014 only for his instincts to kick in as the action unfolded.\n\nWatch the full hand on Facebook and tell us how you would play bottom set in Wolfgang's spot.\n\n\u2014 Sham",
+      "status": "published",
+      "fb_post_id": "reel-1662206285253519",
+      "fb_source_url": "https://facebook.com/reel/1662206285253519/",
+      "original_fb_date": "2026-10-11",
+      "original_post_text": "Here is a paste ready one:\n\nWolfgang flops a SET with pocket deuces... How did he know something was wrong??\n\n\ud83d\udccd Champions Social Club, Dallas\n\n#WolfgangPoker #PocketDeuces #TexasPoker #DallasPoker #ChampionsSocialClub",
+      "original_post_sha256": "b4f21e7d9fc0b7024fdefbca9a76cf8eed3cac501c39a912d33a17d2919b7739",
+      "seo": {
+        "metaTitle": "Wolfgang Poker Flops a Set With Pocket Deuces at Champions Social Club Dallas | The Sham Report",
+        "metaDescription": "Wolfgang Poker flops bottom set with pocket deuces (2\u2660 2\u2665) on a 2\u2663 8\u2666 4\u2665 board at Champions Social Club in Dallas.",
+        "keyphrase": "Wolfgang Poker pocket deuces Champions Social Club"
+      },
+      "context": "Original October 11, 2026 hand-highlight dispatch and Facebook Reel from Champions Social Club in Dallas.",
+      "credit": "Champions Social Club Dallas / The Sham Report",
+      "caption": "Champions Social Club Dallas hand highlight (October 11, 2026): Wolfgang Poker flops bottom set with pocket deuces (2\u2660 2\u2665) on a 2\u2663 8\u2666 4\u2665 board.",
+      "disclosures": "Shomari Williams has performed commentary work at Champions Social Club in Dallas and is a founding member of the club."
+    },
+    {
+      "seq": 33,
+      "slug": "amy-vs-jb-10400-pot-no-backing-down-champions-social-club-dallas-october-10-2026",
+      "title": "Amy vs. JB in a $10.4K Pot: No Backing Down on the $5/$10/$25 Felt at Champions Social Club Dallas",
+      "deck": "Locked in during Hand 47 of the $5/$10/$25 cash-game broadcast at Champions Social Club in Dallas, Amy H goes head-to-head with JB in a $10,400 pot.",
+      "categories": [
+        "Players",
+        "Texas Poker"
+      ],
+      "heroImage": "images/2026-10-10_reel-1398989519959467.jpg",
+      "secondaryImage": null,
+      "author": "Shomari Williams",
+      "date": "October 10, 2026",
+      "body": "Originally posted October 10, 2026.\n\nAmy vs. JB for a $10,400 pot \u2014 no backing down at Champions Social Club in Dallas!\n\nOn Hand 47 of the $5/$10/$25 No-Limit Hold'em feature broadcast at Champions Social Club (https://www.facebook.com/reel/1398989519959467/), Amy H ($5.2K in the small blind, sporting her Dallas Stars cap with arms crossed and completely locked in) squared off against JB with a $10.4K pot on the line at a table featuring Spooky ($6.9K in the cutoff), Scott L ($5.9K in the big blind), and Scott H ($4.3K on the button).\n\nWatch the full $10,400 confrontation on Facebook.\n\n\u2014 Sham",
+      "status": "published",
+      "fb_post_id": "reel-1398989519959467",
+      "fb_source_url": "https://facebook.com/reel/1398989519959467/",
+      "original_fb_date": "2026-10-10",
+      "original_post_text": "AMY vs JB \ud83d\udd25 $10.4K POT\n\nNo backing down at Champions. She\u2019s locked in\ud83d\udc47\n\n\ud83d\udccd Champions Social Club \u2014 Dallas, TX\n#Poker #TexasPoker #DallasPoker #ChampionsSocialClub #NoLimitHoldem #PokerClips",
+      "original_post_sha256": "822d2c1aaaa35c669ade91525f545741ee3437827145262ea44704de18f5c91f",
+      "seo": {
+        "metaTitle": "Amy vs JB in a $10.4K Pot at Champions Social Club Dallas | The Sham Report",
+        "metaDescription": "Amy H faces JB in a $10,400 pot during Hand 47 of the $5/$10/$25 cash-game livestream at Champions Social Club in Dallas.",
+        "keyphrase": "Amy vs JB 10.4K pot Champions Social Club"
+      },
+      "context": "Original October 10, 2026 hand-highlight dispatch and Facebook Reel from the $5/$10/$25 livestream at Champions Social Club in Dallas.",
+      "credit": "Champions Social Club Dallas / The Sham Report",
+      "caption": "Champions Social Club Dallas stream highlight (October 10, 2026): Amy H locked in during a $10,400 pot against JB on Hand 47 of the $5/$10/$25 game.",
+      "disclosures": "Shomari Williams has performed commentary work at Champions Social Club in Dallas and is a founding member of the club."
+    },
+    {
+      "seq": 32,
       "slug": "trailblazer-stop-2-kick-off-results",
       "url": "trailblazer-stop-2-kick-off-results.html",
       "title": "Jesse J Wins the Trailblazer Kick Off",
@@ -582,6 +678,36 @@ window.CONCEPT3_DATA = {
       "context": "Original October 2026 reporting. See the linked original article for full source links, schedules and results.",
       "disclosures": "Original October 2026 tournament reporting by Shomari Williams from the official Texas Card House Dallas live stream and published series schedule. Shomari Williams participates in live tournament play in Texas.",
       "status": "published"
+    },
+    {
+      "seq": 31,
+      "slug": "wednesday-night-5-10-nlh-stream-booth-hayden-fortini-champions-dallas-october-7-2026",
+      "title": "We\u2019re Back at It Tonight: Wednesday Night $5/$10 NLH Stream With Hayden Fortini at Champions Dallas",
+      "deck": "Back in the Champions Social Club Dallas commentary booth with Hayden Fortini for Wednesday night $5/$10 No-Limit Hold'em \u2014 plus a look at the kitchen's signature glazed lamb lollipops.",
+      "categories": [
+        "Players",
+        "Texas Poker"
+      ],
+      "heroImage": "images/2026-10-07_reel-1085303500976218.jpg",
+      "secondaryImage": null,
+      "author": "Shomari Williams",
+      "date": "October 7, 2026",
+      "body": "Originally posted October 7, 2026.\n\nWe're back at it tonight!\n\nIt's Wednesday night $5/$10 No-Limit Hold'em on the feature stream at Champions Social Club in Dallas, and I'm back in the commentary booth alongside Hayden Fortini \u2014 so you already know it's going to be a good one.\n\nAnd if you haven't played at Champions Social Club yet, then you probably haven't tried the kitchen's glazed lamb lollipops (featured in the promo reel on Facebook at https://www.facebook.com/reel/1085303500976218/). Trust me, you're missing out.\n\nCome pull up a seat at the tables, or tune in to the broadcast and jump in the live chat. Let's go!\n\n\u2014 Sham",
+      "status": "published",
+      "fb_post_id": "reel-1085303500976218",
+      "fb_source_url": "https://facebook.com/reel/1085303500976218/",
+      "original_fb_date": "2026-10-07",
+      "original_post_text": "We're back at it tonight!\n\nWednesday night $5/$10 No Limit Hold'em stream at Champions Dallas. I'll be in the booth commentating with @[1193106094:2048:Hayden Fortini], so you know it's gonna be a good one.\n\nAnd if you haven't played at Champions yet, then you probably haven't tried these delicious lamb lollipops. Trust me, you're missing out. \ud83e\udd24\n\nCome pull up a seat and play, or tune in and jump in the chat.\n\nStream link in the comments \ud83d\udc47\nLet's goooo!\n\n\ud83d\udccd Champions Social Club \u2022 Dallas\n#Poker #PokerLive #ChampionsClubLive #TexasHoldem #DallasPoker #CashGamePoker",
+      "original_post_sha256": "2a617b7140be3e6360ace558581922e90746e37dcfbbcd2a923b0329163be57f",
+      "seo": {
+        "metaTitle": "Wednesday Night $5/$10 NLH Stream With Hayden Fortini at Champions Dallas | The Sham Report",
+        "metaDescription": "Shomari Williams joins Hayden Fortini in the commentary booth for Wednesday night $5/$10 No-Limit Hold'em at Champions Social Club in Dallas.",
+        "keyphrase": "Champions Dallas 5-10 stream Hayden Fortini"
+      },
+      "context": "Original October 7, 2026 livestream commentary announcement and Facebook Reel by Shomari Williams from Champions Social Club in Dallas.",
+      "credit": "Shomari Williams / The Sham Report",
+      "caption": "Glazed lamb lollipops from the Champions Social Club kitchen in Dallas, featured in Sham's October 7, 2026 Wednesday night $5/$10 stream preview.",
+      "disclosures": "Firsthand attendance verified: Shomari Williams performed live commentary at Champions Social Club in Dallas alongside Hayden Fortini on October 7, 2026."
     },
     {
       "seq": 30,

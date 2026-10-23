@@ -1162,3 +1162,5 @@ body {
   table.report-schedule tr{border-bottom:1px solid rgba(255,255,255,0.15);padding:8px 0}
   table.report-schedule td{border:0;padding:3px 0}
 }
+
+:where(a,button,input,select,textarea):focus-visible{outline:3px solid #ff615a!important;outline-offset:2px}
