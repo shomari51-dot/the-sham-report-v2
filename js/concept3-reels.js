@@ -12,14 +12,14 @@ window.C3_REELS = [
     "image": "images/reels/2026-10-07_reel-1085303500976218.jpg",
     "alt": "The Sham Report title card: We&#x27;re back at it tonight!",
     "title": "We&rsquo;re back at it tonight!",
-    "description": "",
+    "description": "Wednesday night live stream promo from the tables.",
     "date": "Oct 7, 2026"
   },
   {
     "url": "https://www.facebook.com/reel/1084950954282668/",
     "image": "images/reels/2026-10-04_reel-1084950954282668.jpg",
     "alt": "Cover reading Kyle puts Dr. Andy in the blender, KJ vs A4, $15K pot",
-    "title": "Kyle puts Dr&hellip;",
+    "title": "Kyle puts Dr. Andy in the blender, $15K pot",
     "description": "Dr. Andy&#x27;s K-J against Kyle&#x27;s A-4 for a $15K pot at Champions Social Club, Dallas.",
     "date": "Oct 4, 2026"
   },
@@ -60,7 +60,7 @@ window.C3_REELS = [
     "image": "images/reels/2026-03-17_reel-2045881562627473.jpg",
     "alt": "Shuffle 214 100K Guaranteed hand highlights cover, A-K vs K-J all in",
     "title": "Ran deep at The Shuffle 214",
-    "description": "Shuffle 214 $100K Guaranteed hand highlights: A-K against K-J, all in.",
+    "description": "Shuffle 214 $100K Guaranteed hand highlights: A\u2663 K\u2665 against K\u2663 J\u2665, all in. Min-cash secured, and the story was worth way more than the payout.",
     "date": "Mar 17, 2026"
   }
 ];

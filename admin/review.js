@@ -2,8 +2,8 @@
 'use strict';
 const $=id=>document.getElementById(id),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const workflow=['Imported','Draft','Needs Verification','Ready for Review','Approved','Published','Archived'];
-const key='tsr-prelaunch-review-v2';let saved;try{saved=JSON.parse(localStorage.getItem(key)||'null')}catch{}
-let state=saved||{stories:[...(window.C3_FB_IMPORTS||[window.C3_FB_IMPORT]).map((imp,idx)=>({...imp,slug:imp.slug||'fb-import-part1-'+(idx+1)})),...window.CONCEPT3_DATA.stories.filter(s=>!s.url.startsWith('article-template.html')).map(s=>({...s,...window.CONCEPT3_DATA.articles.find(a=>a.title===s.title),slug:window.CONCEPT3_DATA.articles.find(a=>a.title===s.title)?.slug||s.url,title:s.title,editorial_status:'Published',author:'Shomari Williams'}))],grades:structuredClone(window.C3_REGRADE),experiences:{},corrections:[]};
+const key='tsr-prelaunch-review-v3';let saved;try{saved=JSON.parse(localStorage.getItem(key)||'null')}catch{}
+let state=saved||{stories:[...window.CONCEPT3_DATA.stories.filter(s=>!s.url.startsWith('article-template.html')).map(s=>({...s,...window.CONCEPT3_DATA.articles.find(a=>a.title===s.title),slug:window.CONCEPT3_DATA.articles.find(a=>a.title===s.title)?.slug||s.url,title:s.title,editorial_status:'Published',author:'Shomari Williams'})),...(window.C3_FB_IMPORTS||[window.C3_FB_IMPORT]).map((imp,idx)=>({...imp,slug:imp.slug||'fb-import-'+(idx+1)}))].sort((a,b)=>(Date.parse(b.original_fb_date||b.date||'')||0)-(Date.parse(a.original_fb_date||a.date||'')||0)||(b.seq||0)-(a.seq||0)),grades:structuredClone(window.C3_REGRADE),experiences:{},corrections:[]};
 // Reletter retained browser drafts and include newly sourced review records.
 for(const row of window.C3_REGRADE) if(!state.grades.some(g=>g.id===row.id)) state.grades.push(structuredClone(row));
 for(const g of state.grades){Object.assign(g,TSREngine.resolveCurve(g));g.grade=g.tier?TSREngine.letterFor(g.score,g.tier).letter:null;g.multi_day=Boolean(g.multi_day);g.methodology_version='v1.1';}
@@ -49,7 +49,7 @@ $('review-panel').addEventListener('click',async e=>{
  }catch(err){$('review-status').textContent=err.message;return;}
 const b=e.target.closest('[data-story-status],[data-cms]');if(!b)return;const i=Number(b.dataset.storyStatus??b.dataset.cms),s=state.stories[i];
  if(b.dataset.storyStatus!=null){const status=b.dataset.status;if(status==='Ready for Review'&&s.original_post_text&&(s.fact_verification_flags.some(f=>f.status==='needs_verification')||s.outdated_info_flags.some(f=>!f.editorial_note.trim()))){$('review-status').textContent='Resolve fact flags and outdated information notes first.';return;}
- if(status==='Approved'&&s.original_post_text&&(s.image_rights.permission_status==='permission_pending'||s.fb_post_id.includes('pending')||!s.fb_source_url.includes('/posts/'))){$('review-status').textContent='Approval blocked: confirm exact Facebook ID/permalink and image rights first.';return;}
+ if(status==='Approved'&&s.original_post_text&&(s.image_rights.permission_status==='permission_pending'||s.fb_post_id.includes('pending')||!/\/(posts|permalink|reel)\//.test(s.fb_source_url))){$('review-status').textContent='Approval blocked: confirm exact Facebook ID/permalink and image rights first.';return;}
  s.history=[...(s.history||[]),{at:new Date().toISOString(),previous:s.editorial_status,status}];s.editorial_status=status;persist();render();return;}
  try{const res=await adminFetch('/api/articles',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+AUTH_TOKEN},body:JSON.stringify({...s,title:s.expanded_title||s.title,deck:s.expanded_deck||s.description,body:s.expanded_body||s.body||'',status:'draft'})});const data=await res.json();if(!res.ok)throw Error((data.code?data.code+': ':'')+data.error);persist('Staged CMS draft saved.');}catch(err){$('review-status').textContent=err.message;}
 });

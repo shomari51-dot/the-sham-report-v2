@@ -49,6 +49,7 @@ module.exports = async (req, res) => {
         .find(filter, { projection: { _id: 0, body: 0 } })
         .sort({ publishedAt: -1, updatedAt: -1 })
         .toArray();
+      list.sort((a, b) => (Date.parse(b.original_fb_date || b.date || '') || 0) - (Date.parse(a.original_fb_date || a.date || '') || 0) || (b.seq || 0) - (a.seq || 0));
       return res.json(list);
     } catch (err) {
       console.error('Articles read error:', err.message);
@@ -86,7 +87,7 @@ module.exports = async (req, res) => {
         const validationStatus=['Approved','Published'].includes(editorial_status)?'Ready for Review':['Draft','Archived'].includes(editorial_status)?'Imported':editorial_status;
         imported=require('../lib/fb-import').createImport({...merged,editorial_status:validationStatus},existing);
         if(!existing && ['Approved','Published'].includes(editorial_status)) throw new TypeError('Imports cannot be Approved or Published directly');
-        if(['Approved','Published'].includes(editorial_status) && (merged.image_rights.permission_status==='permission_pending' || /pending/.test(merged.fb_post_id) || !/\/(posts|permalink)\//.test(new URL(merged.fb_source_url).pathname)))throw new TypeError('Confirm Facebook provenance and image rights before approval');
+        if(['Approved','Published'].includes(editorial_status) && (merged.image_rights.permission_status==='permission_pending' || /pending/.test(merged.fb_post_id) || !/\/(posts|permalink|reel)\//.test(new URL(merged.fb_source_url).pathname)))throw new TypeError('Confirm Facebook provenance and image rights before approval');
       }
       const doc = {
         ...imported,

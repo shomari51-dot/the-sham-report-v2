@@ -182,7 +182,7 @@ test('experience and publisher approval never affect score; unverified takes can
  assert.throws(()=>grading.recompute({...base,experience_record:{...experience_record,ratings:{dealer_quality:8}}}),TypeError);
 });
 test('Facebook import validates full fixture, preserves original text verbatim and restricts workflow',()=>{
- const {createImport,required}=require('../lib/fb-import');const sample=require('./fixtures/fb-import-lodge-mar11.json'),original=require('./fixtures/articles.json')[0].body;
+ const {createImport,required}=require('../lib/fb-import');const sample=require('./fixtures/fb-import-lodge-mar11.json'),original=require('./fixtures/articles.json').find(a=>a.slug==='the-lodge-raid-first-reaction-march-11-2026').body;
  const result=createImport(sample);assert.equal(result.original_post_text,original);assert.equal(result.status,'draft');assert.equal(result.editorial_status,'Ready for Review');assert.equal(result.original_post_sha256.length,64);
  result.original_post_text='mutated';assert.equal(result.original_post_text,original);
  assert.throws(()=>createImport({...sample,original_post_text:'changed'},result),/immutable/);
@@ -200,7 +200,7 @@ test('public pages remove unverified navigation, social links, mailboxes and fic
  for(const file of ['index.html','news.html','tournaments.html','js/concept3.js','js/concept3-interior.js'])assert.doesNotMatch(read(file),/Reading the structure sheet|Around the Texas tables|The tournament notebook|Behind the broadcast|The weekly structure notebook/);
  for(const file of ['tsr-score-calculator.html','js/concept3-calculator.js']){assert.match(read(file),/Data-Based Structure Analysis/);assert.doesNotMatch(read(file),/Sham[’']s Take/);}
  const context={window:{}};for(const file of ['js/concept3-config.js','js/concept3-data.js','js/concept3-events.js','js/concept3-hosts.js','js/concept3-regrade.js'])vm.runInNewContext(read(file),context);
- assert.equal(context.window.TSR_CONFIG.features.hostedGamesNav,false);assert.equal(context.window.CONCEPT3_DATA.stories.length,9);assert.equal(context.window.CONCEPT3_DATA.articles.length,9);assert.equal(context.window.CONCEPT3_DATA.grades.length,16);assert.equal(context.window.C3_REGRADE.length,20);
+ assert.equal(context.window.TSR_CONFIG.features.hostedGamesNav,false);assert.equal(context.window.CONCEPT3_DATA.stories.length,13);assert.equal(context.window.CONCEPT3_DATA.articles.length,13);assert.equal(context.window.CONCEPT3_DATA.grades.length,16);assert.equal(context.window.C3_REGRADE.length,20);
  for(const host of context.window.C3_HOSTS){assert.equal(host.verified,false);assert.equal(host.status,'Needs Verification');}
  for(const score of [69.8,66,46.6])assert.ok(context.window.C3_EVENTS.some(e=>e.score===score&&e.venue==='Champions Club Houston'&&e.tier===3));
  for(const id of ['editorial-standards','independence','methodology','corrections','contact','score-revisions'])assert.ok(read('about.html').includes('id="'+id+'"'));
@@ -227,12 +227,12 @@ test('public renderers use real articles, correct curve groups and verified host
   r=run(['article-content','main-content'],['js/concept3-data.js','js/concept3-article.js'],'?slug='+slug);
   for(const term of ['Shomari Williams','Editorial Context / Update Note','April 28','Disclosures','Corrections','figcaption'])assert.ok(r.nodes['main-content'].innerHTML.includes(term));
  }
- r=run(['article-content','main-content'],['js/concept3-data.js','js/concept3-article.js']);assert.equal((r.nodes['article-content'].innerHTML.match(/<a /g)||[]).length,9);
+ r=run(['article-content','main-content'],['js/concept3-data.js','js/concept3-article.js']);assert.equal((r.nodes['article-content'].innerHTML.match(/<a /g)||[]).length,13);
 });
 test('Facebook import CLI dry run validates without accessing MongoDB',async()=>{
  const {main}=require('../scripts/import-fb-post');let output='';
  const doc=await main(['--dry-run','--input','tests/fixtures/fb-import-lodge-mar11.json'],v=>{output=v;});
- assert.equal(doc.original_post_text,require('./fixtures/articles.json')[0].body);
+ assert.equal(doc.original_post_text,require('./fixtures/articles.json').find(a=>a.slug==='the-lodge-raid-first-reaction-march-11-2026').body);
  assert.equal(JSON.parse(output).editorial_status,'Ready for Review');
  await assert.rejects(()=>main([],()=>{}),/Usage/);
 });
@@ -276,17 +276,18 @@ test('migration rejects production database before accessing collections',async(
  await assert.rejects(require('../scripts/migrate-grades-v2').migrate({databaseName:'tsrcms',collection(){throw Error('Must not access production');}}),e=>e.code==='PROD_DB_WRITE_BLOCKED');
 });
 
-test('Part 1 Facebook imports (all 7 fixtures) validate and render with images and FB permalinks',()=>{
+test('Part 1 & Part 2 Facebook imports (all 11 fixtures) validate, render with images and FB permalinks, and maintain newest-first chronological order across the site',()=>{
  const {createImport}=require('../lib/fb-import');
  const fs=require('node:fs'),vm=require('node:vm');
- const files=['fb-import-1-lodge-mar11.json','fb-import-2-lodge-tom-dwan-mar12.json','fb-import-3-lodge-tabc-irs-mar12.json','fb-import-4-lodge-doug-polk-gray-area-mar13.json','fb-import-5-lodge-community-aml-kyc-mar14.json','fb-import-6-shuffle-214-100k-recap-mar14.json','fb-import-7-andrew-neeme-reaction-mar16.json'];
+ const files=['fb-import-1-lodge-mar11.json','fb-import-2-lodge-tom-dwan-mar12.json','fb-import-3-lodge-tabc-irs-mar12.json','fb-import-4-lodge-doug-polk-gray-area-mar13.json','fb-import-5-lodge-community-aml-kyc-mar14.json','fb-import-6-shuffle-214-100k-recap-mar14.json','fb-import-7-andrew-neeme-reaction-mar16.json','fb-import-8-lodge-no-affidavit-doug-polk-mar16.json','fb-import-9-shuffle-214-hand-highlights-mar17.json','fb-import-10-lodge-tabc-affidavit-undercover-agents-mar17.json','fb-import-11-st-patricks-day-green-beer-poker-mar17.json'];
  for(const f of files){
   const doc=createImport(require('./fixtures/'+f));
   assert.equal(doc.editorial_status,'Ready for Review');
-  assert.match(doc.fb_post_id,/^pfbid/);
-  assert.match(doc.fb_source_url,/^https:\/\/facebook\.com\/100000259835379\/posts\/pfbid/);
+  assert.match(doc.fb_post_id,/^(pfbid|reel-)/);
+  assert.match(doc.fb_source_url,/^https:\/\/facebook\.com\/(100000259835379\/posts\/pfbid|reel\/)/);
+  assert.ok(fs.existsSync(doc.image_rights.image_path),doc.image_rights.image_path);
  }
- const slugs=['the-lodge-raid-first-reaction-march-11-2026','lodge-raid-coverage-tom-dwan-enters-the-chat','lodge-raid-update-tabc-financial-crimes-irs-march-12-2026','lodge-raid-commentary-doug-polk-texas-poker-gray-area-march-13-2026','lodge-raid-community-context-aml-kyc-compliance-march-14-2026','shuffle-214-100k-series-recap-five-bullets-tournament-variance-march-2026','andrew-neeme-reaction-lodge-coverage-poker-vlogging-pioneer-march-16-2026'];
+ const slugs=['green-beer-and-poker-st-patricks-day-dfw-march-17-2026','tabc-affidavit-undercover-agents-lodge-card-club-march-17-2026','shuffle-214-100k-hand-highlights-ak-vs-kj-all-in-march-17-2026','no-affidavit-lodge-card-club-due-process-doug-polk-march-16-2026','andrew-neeme-reaction-lodge-coverage-poker-vlogging-pioneer-march-16-2026','shuffle-214-100k-series-recap-five-bullets-tournament-variance-march-2026','lodge-raid-community-context-aml-kyc-compliance-march-14-2026','lodge-raid-commentary-doug-polk-texas-poker-gray-area-march-13-2026','lodge-raid-update-tabc-financial-crimes-irs-march-12-2026','lodge-raid-coverage-tom-dwan-enters-the-chat','the-lodge-raid-first-reaction-march-11-2026'];
  for(const slug of slugs){
   const nodes={'article-content':{innerHTML:''},'main-content':{innerHTML:''}};
   const context={window:{},document:{getElementById:id=>nodes[id]||null},location:{search:'?slug='+slug},URLSearchParams};
@@ -298,4 +299,21 @@ test('Part 1 Facebook imports (all 7 fixtures) validate and render with images a
    assert.match(nodes['main-content'].innerHTML,/images\/2026-03-13_2\.jpg/);
   }
  }
+ // Verify strict newest-first chronological ordering across stories, articles, reels, and FB imports
+ const ctx={window:{}};
+ for(const f of ['js/concept3-data.js','js/concept3-reels.js','js/concept3-import-review.js','js/concept3-events.js'])vm.runInNewContext(fs.readFileSync(f,'utf8'),ctx);
+ const checkNewestFirst=(arr,label)=>{
+  for(let i=1;i<arr.length;i++){
+   const prev=Date.parse(arr[i-1].original_fb_date||arr[i-1].date),curr=Date.parse(arr[i].original_fb_date||arr[i].date);
+   assert.ok(prev>=curr,`${label} out of newest-first order at index ${i}: ${arr[i-1].date||arr[i-1].original_fb_date} before ${arr[i].date||arr[i].original_fb_date}`);
+   if(prev===curr && arr[i-1].seq!=null && arr[i].seq!=null)assert.ok(arr[i-1].seq>arr[i].seq,`${label} same-day tie-breaker out of order at index ${i}`);
+  }
+ };
+ checkNewestFirst(ctx.window.CONCEPT3_DATA.stories,'CONCEPT3_DATA.stories');
+ checkNewestFirst(ctx.window.CONCEPT3_DATA.articles,'CONCEPT3_DATA.articles');
+ checkNewestFirst(ctx.window.CONCEPT3_DATA.reels,'CONCEPT3_DATA.reels');
+ checkNewestFirst(ctx.window.C3_REELS,'C3_REELS');
+ checkNewestFirst(ctx.window.C3_FB_IMPORTS,'C3_FB_IMPORTS');
+ checkNewestFirst(require('./fixtures/articles.json'),'fixtures/articles.json');
+ checkNewestFirst(ctx.window.C3_EVENTS.filter(e=>e.date),'C3_EVENTS dated');
 });
