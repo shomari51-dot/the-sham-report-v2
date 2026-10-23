@@ -1,3 +1,4 @@
+const {guard, isAdmin} = require('../lib/auth');
 /* ================================================================
    TSR CMS — Articles API
    GET    /api/articles                 → list (published only;
@@ -6,18 +7,8 @@
    POST   /api/articles                  → create / update  (auth required)
    DELETE /api/articles?slug=xyz         → delete            (auth required)
    ================================================================ */
-const { MongoClient } = require('mongodb');
+const {getDb} = require('../lib/db');
 
-let _client = null;
-async function getDb() {
-  if (_client) {
-    try { await _client.db('admin').command({ ping: 1 }); return _client.db('tsrcms'); }
-    catch { _client = null; }
-  }
-  _client = new MongoClient(process.env.MONGODB_URI, { serverSelectionTimeoutMS: 6000 });
-  await _client.connect();
-  return _client.db('tsrcms');
-}
 
 function slugify(s) {
   return String(s || '')
@@ -27,16 +18,9 @@ function slugify(s) {
     .slice(0, 80);
 }
 
-function isAdmin(req) {
-  const secret = req.headers['x-admin-secret'];
-  return secret && secret === process.env.ADMIN_SECRET;
-}
 
 module.exports = async (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-Admin-Secret');
-  if (req.method === 'OPTIONS') return res.status(200).end();
+  if (!guard(req,res)) return;
 
   let db;
   try { db = await getDb(); }
@@ -52,7 +36,7 @@ module.exports = async (req, res) => {
     try {
       if (slug) {
         const doc = await col.findOne({ slug }, { projection: { _id: 0 } });
-        if (!doc) return res.status(404).json({ error: 'Article not found' });
+        if (!doc || (doc.status !== 'published' && !isAdmin(req))) return res.status(404).json({ error: 'Article not found' });
         return res.json(doc);
       }
       // Listing — drafts visible only to admin

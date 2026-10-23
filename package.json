@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "mongodb-memory-server": "^10.4.3"
+  },
+  "scripts": {
+    "test": "node --test tests/"
   }
 }

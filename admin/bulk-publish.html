@@ -292,7 +292,7 @@ function publishOne(i) {
 
   return fetch("/api/grades", {
     method: "POST",
-    headers: { "Content-Type": "application/json", "X-Admin-Secret": adminToken() },
+    headers: { "Content-Type": "application/json", "Authorization": "Bearer " + adminToken() },
     body: JSON.stringify(payload)
   }).then(function (res) {
     if (res.status === 401) {

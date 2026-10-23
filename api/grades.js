@@ -1,3 +1,4 @@
+const {guard, isAdmin} = require('../lib/auth');
 /* ================================================================
    TSR CMS — Published grades (the Tournament Index feed)
 
@@ -11,23 +12,8 @@
    admin, which is what keeps the rail an editorial surface rather
    than an open guestbook.
    ================================================================ */
-const { MongoClient } = require('mongodb');
+const {getDb} = require('../lib/db');
 
-let _client = null;
-
-async function getDb() {
-  if (_client) {
-    try {
-      await _client.db('admin').command({ ping: 1 });
-      return _client.db('tsrcms');
-    } catch {
-      _client = null;
-    }
-  }
-  _client = new MongoClient(process.env.MONGODB_URI, { serverSelectionTimeoutMS: 6000 });
-  await _client.connect();
-  return _client.db('tsrcms');
-}
 
 /* ── Seed set ──────────────────────────────────────────────────
    The five reference structures, scored by the engine as it stands.
@@ -42,65 +28,21 @@ const SEED = [
   { id: 'seed-mega-turbo', name: 'Mega Stack Turbo',       room: 'Local Room',             city: 'Austin',      type: 'weekly', day: 'Wednesdays', grade: 'F',  base: 'F', score: 14.2, buyin: 120, vig: 23.3, tier: 1, smooth: true, date: 'Last verified Aug 7, 2026',  seed: true }
 ];
 
-function authed(req) {
-  const secret = process.env.ADMIN_SECRET;
-  return !!secret && req.headers['x-admin-secret'] === secret;
-}
-
-/* Accept only the fields the rail and the calculator need, coerced to
-   the right types, so a malformed or oversized body cannot land in the
-   collection or reach the page as markup. */
-function clean(body) {
-  const str = (v, max) => String(v == null ? '' : v).replace(/\s+/g, ' ').trim().slice(0, max);
-  const num = (v) => { const n = Number(v); return Number.isFinite(n) ? n : 0; };
-
-  const name = str(body.name, 90);
-  if (!name) return null;
-
-  return {
-    id: str(body.id, 64) || 'g' + Date.now().toString(36),
-    name,
-    room: str(body.room, 90),
-    city: str(body.city, 60),
-    // How the event recurs. It drives the Type filter on the Tournaments
-    // page, and decides whether the card is looked up by the night it
-    // runs or the date it ran.
-    type: body.type === 'series' ? 'series' : 'weekly',
-    day: str(body.day, 12),
-    eventDate: str(body.eventDate, 24),
-    grade: str(body.grade, 3),
-    base: str(body.base, 1),
-    score: Math.round(num(body.score) * 10) / 10,
-    buyin: num(body.buyin),
-    vig: Math.round(num(body.vig) * 10) / 10,
-    tier: num(body.tier) === 2 ? 2 : 1,
-    smooth: !!body.smooth,
-    fmt: body.fmt === 'plo' ? 'plo' : 'nlh',
-    date: str(body.date, 24),
-    // The calculator's own share fragment, so a card reopens the exact
-    // tournament with every input intact and nothing re-keyed.
-    hash: str(body.hash, 4000),
-    publishedAt: new Date()
-  };
-}
-
 module.exports = async (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-Admin-Secret');
-  if (req.method === 'OPTIONS') return res.status(200).end();
+  if (!guard(req,res)) return;
 
   /* ── GET ─────────────────────────────────────────────────── */
   if (req.method === 'GET') {
+    if (req.query.include === 'all' && !isAdmin(req)) return res.status(401).json({error:'Unauthorized'});
     const limit = Math.min(Math.max(parseInt(req.query.limit, 10) || 6, 1), 50);
     try {
       const db = await getDb();
       const docs = await db.collection('grades')
-        .find({}, { projection: { _id: 0 } })
+        .find(req.query.include === 'all' ? {} : {$or:[{status:'published'},{status:{$exists:false}}]}, { projection: { _id: 0 } })
         .sort({ publishedAt: -1 })
         .limit(limit)
         .toArray();
-      return res.json({ grades: docs.length ? docs : SEED.slice(0, limit) });
+      return res.json({ grades: docs });
     } catch (err) {
       console.error('Grades read error:', err.message);
       return res.json({ grades: SEED.slice(0, limit) });
@@ -109,33 +51,42 @@ module.exports = async (req, res) => {
 
   /* ── POST ────────────────────────────────────────────────── */
   if (req.method === 'POST') {
-    if (!authed(req)) return res.status(401).json({ error: 'Unauthorized' });
+    if (!isAdmin(req)) return res.status(401).json({ error: 'Unauthorized' });
 
     let body = req.body;
     if (typeof body === 'string') { try { body = JSON.parse(body); } catch { body = {}; } }
 
-    const doc = clean(body || {});
-    if (!doc) return res.status(400).json({ error: 'A tournament name is required' });
-
     try {
       const db = await getDb();
-      await db.collection('grades').replaceOne({ id: doc.id }, doc, { upsert: true });
+      body = body || {};
+      if (!String(body.name || '').trim()) return res.status(400).json({error:'A tournament name is required'});
+      const id = String(body.id || 'g'+Date.now().toString(36)).slice(0,64);
+      const col = db.collection('grades');
+      const previous = await col.findOne({id});
+      const doc = require('../lib/grading').withHistory({...previous,...body,id, publishedAt:previous?.publishedAt || new Date()},previous,'admin');
+      delete doc._id;
+      await col.updateOne({id},{$set:doc},{upsert:true});
       return res.json({ success: true, id: doc.id });
     } catch (err) {
       console.error('Grades write error:', err.message);
-      return res.status(500).json({ error: 'Failed to publish grade' });
+      return res.status(err instanceof TypeError ? 400 : 500).json({ error: err instanceof TypeError ? err.message : 'Failed to publish grade' });
     }
   }
 
   /* ── DELETE ──────────────────────────────────────────────── */
   if (req.method === 'DELETE') {
-    if (!authed(req)) return res.status(401).json({ error: 'Unauthorized' });
+    if (!isAdmin(req)) return res.status(401).json({ error: 'Unauthorized' });
     const id = String(req.query.id || '').slice(0, 64);
     if (!id) return res.status(400).json({ error: 'An id is required' });
     try {
       const db = await getDb();
-      const r = await db.collection('grades').deleteOne({ id });
-      return res.json({ success: true, removed: r.deletedCount });
+      const col = db.collection('grades');
+      const previous = await col.findOne({id});
+      if (!previous) return res.json({success:true,removed:0});
+      const doc = require('../lib/grading').withHistory({...previous,status:'retracted'},previous,'admin');
+      delete doc._id;
+      const r = await col.updateOne({id},{$set:doc});
+      return res.json({ success: true, removed: r.modifiedCount });
     } catch (err) {
       console.error('Grades delete error:', err.message);
       return res.status(500).json({ error: 'Failed to remove grade' });

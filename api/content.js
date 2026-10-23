@@ -1,25 +1,11 @@
+const {guard, isAdmin} = require('../lib/auth');
 /* ================================================================
    TSR CMS — Content API
    GET  /api/content?page=homepage  →  returns page content
    POST /api/content                →  saves page content (auth required)
    ================================================================ */
-const { MongoClient } = require('mongodb');
+const {getDb} = require('../lib/db');
 
-let _client = null;
-
-async function getDb() {
-  if (_client) {
-    try {
-      await _client.db('admin').command({ ping: 1 });
-      return _client.db('tsrcms');
-    } catch {
-      _client = null;
-    }
-  }
-  _client = new MongoClient(process.env.MONGODB_URI, { serverSelectionTimeoutMS: 6000 });
-  await _client.connect();
-  return _client.db('tsrcms');
-}
 
 /* ── Default content (mirrors current live homepage) ───────── */
 const DEFAULT_CONTENT = {
@@ -72,10 +58,7 @@ const DEFAULT_CONTENT = {
 };
 
 module.exports = async (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-Admin-Secret');
-  if (req.method === 'OPTIONS') return res.status(200).end();
+  if (!guard(req,res)) return;
 
   const page = req.query.page || 'homepage';
 
@@ -97,9 +80,7 @@ module.exports = async (req, res) => {
 
   /* ── POST ────────────────────────────────────────────────── */
   if (req.method === 'POST') {
-    if (!req.headers['x-admin-secret'] || req.headers['x-admin-secret'] !== process.env.ADMIN_SECRET) {
-      return res.status(401).json({ error: 'Unauthorized' });
-    }
+
     try {
       const db   = await getDb();
       const body = { ...req.body, page: req.body.page || page, updatedAt: new Date() };

@@ -3,18 +3,8 @@
    Served at /post/:slug  (via vercel.json rewrite → /api/post?slug=:slug)
    Renders full HTML from MongoDB for SEO + social link previews.
    ================================================================ */
-const { MongoClient } = require('mongodb');
+const {getDb} = require('../lib/db');
 
-let _client = null;
-async function getDb() {
-  if (_client) {
-    try { await _client.db('admin').command({ ping: 1 }); return _client.db('tsrcms'); }
-    catch { _client = null; }
-  }
-  _client = new MongoClient(process.env.MONGODB_URI, { serverSelectionTimeoutMS: 6000 });
-  await _client.connect();
-  return _client.db('tsrcms');
-}
 
 /* ── helpers ──────────────────────────────────────────────── */
 function esc(s) {
