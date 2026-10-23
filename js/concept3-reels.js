@@ -36,7 +36,7 @@ window.C3_REELS = [
     "image": "images/reels/2026-05-03_reel-1612745596487168.jpg",
     "alt": "Poker House table with tall stacks of red chips",
     "title": "I have to play Day 2 tomorrow",
-    "description": "1:00 A.M. at Poker House: a Big O game just broke out.",
+    "description": "1:00 A.M. at Poker House: a five-card Big O game just broke out the night before Day 2.",
     "date": "May 3, 2026"
   },
   {

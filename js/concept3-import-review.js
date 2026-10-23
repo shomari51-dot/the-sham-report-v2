@@ -1,5 +1,347 @@
 window.C3_FB_IMPORTS = [
   {
+    "fb_post_id": "pfbid0vkc4YrVRrDFMe8P1uqHrWbU5MAC5zztEvhtEHfE1gaJ5JQAPdxWKYkKjc689v2zql",
+    "original_fb_date": "2026-09-29",
+    "website_import_date": "2026-10-23",
+    "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid0vkc4YrVRrDFMe8P1uqHrWbU5MAC5zztEvhtEHfE1gaJ5JQAPdxWKYkKjc689v2zql/",
+    "original_post_text": "I\u2019m in the booth tonight with a great poker mind. Coach @[1193106094:2048:Hayden Fortini]. Tune in for a special $1-$3 stream and get in Hayden\u2019s head. Jump in the chat and ask him anything. Cards fly at 6:30 CT. Let\u2019s goooo!",
+    "expanded_title": "In the Booth Tonight With Coach Hayden Fortini: Special $1/$3 Cash-Game Livestream at Champions Social Club",
+    "expanded_deck": "Joining poker coach Hayden Fortini in the Champions Social Club commentary booth for a special $1/$3 cash-game broadcast with live strategy Q&A in the chat.",
+    "expanded_body": "Originally posted September 29, 2026.\n\nI'm in the commentary booth tonight at Champions Social Club with a great poker mind: Coach Hayden Fortini.\n\nTune in for a special $1/$3 cash-game livestream as we break down the hands in real time and get inside Hayden's head on low-stakes cash-game adjustments. Jump in the live chat and ask him anything \u2014 cards fly at 6:30 p.m. CT. Let's go!\n\n\u2014 Sham",
+    "author": "Shomari Williams",
+    "categories": [
+      "Players",
+      "Texas Poker"
+    ],
+    "fact_verification_flags": [
+      {
+        "claim": "Shomari Williams and Coach Hayden Fortini co-hosted commentary on the Champions Social Club $1/$3 cash-game livestream on September 29, 2026 at 6:30 p.m. CT",
+        "status": "verified",
+        "source": "https://facebook.com/100000259835379/posts/pfbid0vkc4YrVRrDFMe8P1uqHrWbU5MAC5zztEvhtEHfE1gaJ5JQAPdxWKYkKjc689v2zql/",
+        "note": "First-party broadcast announcement and Champions Social Club stream graphic (images/2026-09-29_1.jpg)."
+      }
+    ],
+    "outdated_info_flags": [],
+    "image_rights": {
+      "image_path": "images/2026-09-29_1.jpg",
+      "source": "Champions Social Club $1/$3 cash-game livestream graphic attached to Sham's September 29, 2026 Facebook post",
+      "credit": "Champions Social Club / The Sham Report",
+      "permission_status": "owned",
+      "ai_processed": false,
+      "caption": "Champions Social Club $1/$3 cash-game livestream graphic for the September 29, 2026 broadcast with Shomari Williams and Coach Hayden Fortini in the booth."
+    },
+    "seo": {
+      "metaTitle": "In the Booth With Coach Hayden Fortini: Champions Social Club $1/$3 Stream | The Sham Report",
+      "metaDescription": "Shomari Williams joins poker coach Hayden Fortini in the commentary booth at Champions Social Club for a special $1/$3 cash-game livestream.",
+      "keyphrase": "Hayden Fortini Champions Social Club stream"
+    },
+    "editorial_status": "Ready for Review",
+    "publisher_approval_note": "Approved by Shomari Williams on Oct 23, 2026 at 4:29 AM CT for site placement.",
+    "seq": 28,
+    "slug": "in-the-booth-with-coach-hayden-fortini-champions-social-club-1-3-stream-september-29-2026"
+  },
+  {
+    "fb_post_id": "pfbid02YXbbqYTLsTXMKsXYe2P4SUpmEPiboaDfCE8XVSkLs2m1ACTyxfSZVDZgCAK85sPHl",
+    "original_fb_date": "2026-05-13",
+    "website_import_date": "2026-10-23",
+    "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02YXbbqYTLsTXMKsXYe2P4SUpmEPiboaDfCE8XVSkLs2m1ACTyxfSZVDZgCAK85sPHl/",
+    "original_post_text": "\"\ud835\udc7a\ud835\udc90\ud835\udc8e\ud835\udc86\ud835\udc95\ud835\udc89\ud835\udc8a\ud835\udc8f\ud835\udc88 \ud835\udc89\ud835\udc82\ud835\udc94 \ud835\udc83\ud835\udc86\ud835\udc86\ud835\udc8f \ud835\udc8a\ud835\udc8f \ud835\udc95\ud835\udc89\ud835\udc86 \ud835\udc98\ud835\udc90\ud835\udc93\ud835\udc8c\ud835\udc94 \ud835\udc83\ud835\udc86\ud835\udc89\ud835\udc8a\ud835\udc8f\ud835\udc85 \ud835\udc95\ud835\udc89\ud835\udc86 \ud835\udc94\ud835\udc84\ud835\udc86\ud835\udc8f\ud835\udc86\ud835\udc94 \ud835\udc82\ud835\udc8f\ud835\udc85 \ud835\udc8a\ud835\udc95'\ud835\udc94 \ud835\udc82\ud835\udc8d\ud835\udc8e\ud835\udc90\ud835\udc94\ud835\udc95 \ud835\udc93\ud835\udc86\ud835\udc82\ud835\udc85\ud835\udc9a.\"\n\nThe Sham Report is getting a real home.\n\nFor those who've been following along on Facebook and now on my Substack, you already know what this publication is about. Texas poker. The real stories. The local coverage the national sites aren't doing. Champions Social Club. The Lodge. And legislation moving through Austin that could change poker in Texas forever.\n\nBut a newsletter alone only goes so far. What we've been building is a full media destination built specifically for the Texas poker community.\n\nPart of this journey has been teaching myself how to build it. Web design. Site architecture. How to take a vision in my head and turn it into something real on screen. No shortcuts, no outsourcing it, no excuses. Just figuring it out. That's what 2026 is about for me. No limits.\n\nThe screenshot above is just a sneak peek.\n\nHere's what's coming:\n\nLatest News and Investigations. Local DFW coverage and deep dives into the legal and political forces shaping Texas poker. The stories Card Player and PokerNews aren't touching.\n\nPlayer Recognition. Leaderboards, DFW winners and highlights, ring earners, community spotlights. The players in these rooms every week deserve to be seen. I'm going to make sure they are.\n\nTournament Calendar. Upcoming DFW events, WSOP Circuit stops, and editorial context you won't find on PokerAtlas.\n\nTexas Room Guide. Not a directory. An opinionated field guide. Texas Card House, Palace Poker, Poker House Fort Worth, Shuffle 214, Champions Social Club. Our honest take on every room.\n\nMedia Hub. The full ShamGod Media footprint. Facebook, YouTube, Instagram and more in development. One place for all of it.\n\nThis is what Texas poker media looks like when it's built out of passion by someone deeply entrenched in the poker community.\n\nI'm a procurement professional by day, a poker player by night, and apparently a web developer in whatever time is left.\n\nThe site is dropping soon. When it does, theshamreport.com will be the place Texas players come first.\n\nIf you're not subscribed yet, now is the time. You'll be first to know when we go live and first to see the stories we're working on right now.\n\nMore soon.\n\nShomari Williams\nThe Sham Report \u00b7 ShamGod Media LLC\n\n#NoLimits2026 #TexasPoker #theshamreport #tchlive",
+    "expanded_title": "The Sham Report Is Getting a Real Home: Building a Full Media Destination for Texas Poker",
+    "expanded_deck": "From Facebook dispatches and Substack deep dives to building theshamreport.com from scratch \u2014 here is the vision behind ShamGod Media's home for Texas poker news, investigations, player recognition, and room intelligence.",
+    "expanded_body": "Originally posted May 13, 2026.\n\n\"Something has been in the works behind the scenes and it's almost ready.\"\n\nThe Sham Report is getting a real home.\n\nFor those who have been following along on Facebook and on my Substack, you already know what this publication is about: Texas poker. The real stories. The local coverage the national sites aren't doing. Champions Social Club. The Lodge. And legislation moving through Austin that could change poker in Texas forever.\n\nBut a newsletter alone only goes so far. What we've been building is a full media destination built specifically for the Texas poker community.\n\nPart of this journey has been teaching myself how to build it \u2014 web design, site architecture, and how to take a vision in my head and turn it into something real on screen. No shortcuts, no outsourcing it, no excuses. Just figuring it out. That's what 2026 is about for me: no limits.\n\nHere's what we're building at theshamreport.com:\n\u2022 Latest News and Investigations: Local DFW coverage and deep dives into the legal and political forces shaping Texas poker \u2014 the stories Card Player and PokerNews aren't touching.\n\u2022 Player Recognition: Leaderboards, DFW winners and highlights, ring earners, and community spotlights. The players in these rooms every week deserve to be seen, and I'm going to make sure they are.\n\u2022 Tournament Intelligence & Calendar: Upcoming DFW and Texas series, WSOP Circuit stops, and structure analysis you won't find on PokerAtlas.\n\u2022 Texas Room Guide: An honest take on Texas Card House, Palace Poker, Poker House Fort Worth, Shuffle 214, Champions Social Club, and rooms across the state.\n\u2022 Media Hub: The full ShamGod Media footprint \u2014 Facebook reels, YouTube streams, and hand highlights in one place.\n\nThis is what Texas poker media looks like when it's built out of passion by someone deeply entrenched in the poker community. I'm a procurement professional by day, a poker player by night, and a web developer in whatever time is left.\n\n\u2014 Sham\nShomari Williams \u00b7 The Sham Report \u00b7 ShamGod Media LLC",
+    "author": "Shomari Williams",
+    "categories": [
+      "Texas Poker",
+      "Players"
+    ],
+    "fact_verification_flags": [
+      {
+        "claim": "Founder's announcement of theshamreport.com by Shomari Williams (ShamGod Media LLC) on May 13, 2026",
+        "status": "verified",
+        "source": "https://facebook.com/100000259835379/posts/pfbid02YXbbqYTLsTXMKsXYe2P4SUpmEPiboaDfCE8XVSkLs2m1ACTyxfSZVDZgCAK85sPHl/",
+        "note": "First-party announcement and early prototype screenshot by Shomari Williams (images/2026-05-13_1.jpg)."
+      }
+    ],
+    "outdated_info_flags": [],
+    "image_rights": {
+      "image_path": "images/2026-05-13_1.jpg",
+      "source": "First-party screenshot of The Sham Report prototype attached to Sham's May 13, 2026 Facebook post",
+      "credit": "Shomari Williams / The Sham Report",
+      "permission_status": "owned",
+      "ai_processed": false,
+      "caption": "Early May 13, 2026 sneak-peek screenshot of The Sham Report web prototype during development."
+    },
+    "seo": {
+      "metaTitle": "The Sham Report Is Getting a Real Home: Texas Poker Media Destination | The Sham Report",
+      "metaDescription": "Founder Shomari Williams announces theshamreport.com, a full media destination built from the ground up for the Texas poker community.",
+      "keyphrase": "The Sham Report Texas poker media"
+    },
+    "editorial_status": "Ready for Review",
+    "publisher_approval_note": "Approved by Shomari Williams on Oct 23, 2026 at 4:29 AM CT for site placement.",
+    "seq": 27,
+    "slug": "the-sham-report-is-getting-a-real-home-texas-poker-media-destination-may-13-2026"
+  },
+  {
+    "fb_post_id": "pfbid02g6jN6UF7qva9hwXXqHnWu2DpgbDdpHUtCvJsjUDLZno8bfnuHwSsNM57WFDYKKXil",
+    "original_fb_date": "2026-05-12",
+    "website_import_date": "2026-10-23",
+    "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02g6jN6UF7qva9hwXXqHnWu2DpgbDdpHUtCvJsjUDLZno8bfnuHwSsNM57WFDYKKXil/",
+    "original_post_text": "The Lodge is back in business.",
+    "expanded_title": "The Lodge Is Back in Business: Doors Reopen in Round Rock Two Months After the March Raid",
+    "expanded_deck": "Two weeks after a Williamson County grand jury declined all proposed charges, Texas's largest poker room officially reopens its doors in Round Rock.",
+    "expanded_body": "Originally posted May 12, 2026.\n\nThe Lodge is back in business.\n\nTwo months after the March 10 raid shuttered its Round Rock doors and froze its accounts \u2014 and two weeks after a Williamson County grand jury returned a no-bill on April 28 declining all proposed charges \u2014 The Lodge Card Club has officially reopened in May 2026, putting dealers, floor staff, and players back on the felt at Texas's largest poker room.\n\n\u2014 Sham",
+    "author": "Shomari Williams",
+    "categories": [
+      "Investigation",
+      "Texas Poker"
+    ],
+    "fact_verification_flags": [
+      {
+        "claim": "The Lodge Card Club in Round Rock reopened in May 2026 following the April 28, 2026 Williamson County grand jury no-bill",
+        "status": "verified",
+        "source": "https://facebook.com/100000259835379/posts/pfbid02g6jN6UF7qva9hwXXqHnWu2DpgbDdpHUtCvJsjUDLZno8bfnuHwSsNM57WFDYKKXil/",
+        "note": "Reported by Shomari Williams on May 12, 2026."
+      }
+    ],
+    "outdated_info_flags": [],
+    "image_rights": {
+      "image_path": "images/IMG_3176.jpg",
+      "source": "First-party site exterior photograph of The Lodge Card Club in Round Rock",
+      "credit": "Shomari Williams / The Sham Report",
+      "permission_status": "owned",
+      "ai_processed": false,
+      "caption": "The Lodge Card Club in Round Rock, Texas, back open for live poker action in May 2026."
+    },
+    "seo": {
+      "metaTitle": "The Lodge Card Club Is Back in Business in Round Rock | The Sham Report",
+      "metaDescription": "The Lodge Card Club in Round Rock officially reopens its doors in May 2026 following the Williamson County grand jury no-bill.",
+      "keyphrase": "The Lodge Card Club back in business"
+    },
+    "editorial_status": "Ready for Review",
+    "publisher_approval_note": "Approved by Shomari Williams on Oct 23, 2026 at 4:29 AM CT for site placement.",
+    "seq": 26,
+    "slug": "the-lodge-card-club-is-back-in-business-round-rock-reopening-may-12-2026"
+  },
+  {
+    "fb_post_id": "pfbid02JSvZDzYgXNixZU49Q2WMHK8XtUsvMSrAZKjRRQQkMHC7R6xCMjpvDUnLZXRRfUtul",
+    "original_fb_date": "2026-05-08",
+    "website_import_date": "2026-10-23",
+    "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02JSvZDzYgXNixZU49Q2WMHK8XtUsvMSrAZKjRRQQkMHC7R6xCMjpvDUnLZXRRfUtul/",
+    "original_post_text": "The city of Dallas blessed poker rooms. Then spent $500,000 trying to shut them down. They lost.\n\nI've been wanting to write longer-form pieces for a while, so I finally launched The Sham Report on Substack.\n\nThis first piece breaks down how Dallas approved poker rooms, reversed course, and ended up in a years-long legal battle that now sets a precedent for every card club in Texas.\n\nI also put together a full visual timeline showing how it all unfolded.\nLinks in the comments.\n#TexasCardHouse #dallaspoker #shuffle214\n\nShomari Williams | The Sham Report",
+    "expanded_title": "The City of Dallas Blessed Poker Rooms, Then Spent $500,000 Trying to Shut Them Down \u2014 and Lost",
+    "expanded_deck": "Launching The Sham Report's long-form investigative series with a visual timeline of the Dallas Certificate of Occupancy wars, from initial city approval to the Texas Supreme Court.",
+    "expanded_body": "Originally posted May 8, 2026.\n\nThe City of Dallas blessed poker rooms. Then spent $500,000 trying to shut them down. They lost.\n\nI've been wanting to write longer-form investigative pieces for a while, which led me to launch The Sham Report on Substack alongside a full visual timeline titled \"Dallas Poker Room Certificate of Occupancy Wars.\"\n\nThat first long-form breakdown traces how the City of Dallas initially approved the private membership card-club model in 2019\u20132020 (as Texas Card House Dallas, Shuffle 214, and Poker House Dallas opened with Certificates of Occupancy), abruptly reversed course in mid-2021 under City Attorney Chris Caso, and spent years and roughly $500,000 in public legal fees trying to revoke those approvals \u2014 culminating in the Texas Supreme Court's refusal to hear the city's appeal, a precedent that continues to shape every card club in Texas.\n\n\u2014 Sham",
+    "author": "Shomari Williams",
+    "categories": [
+      "Legal",
+      "Investigation",
+      "Texas Poker"
+    ],
+    "fact_verification_flags": [
+      {
+        "claim": "City of Dallas approved Certificates of Occupancy for poker rooms in 2019\u20132020 before reversing course in 2021 and losing a multi-year legal battle through the Texas Supreme Court",
+        "status": "verified",
+        "source": "https://facebook.com/100000259835379/posts/pfbid02JSvZDzYgXNixZU49Q2WMHK8XtUsvMSrAZKjRRQQkMHC7R6xCMjpvDUnLZXRRfUtul/",
+        "note": "Documented in The Sham Report's 'Dallas Poker Room Certificate of Occupancy Wars' research timeline (images/2026-05-08_1.jpg)."
+      }
+    ],
+    "outdated_info_flags": [],
+    "image_rights": {
+      "image_path": "images/2026-05-08_1.jpg",
+      "source": "First-party Sham Report research timeline graphic attached to Sham's May 8, 2026 Facebook post",
+      "credit": "Shomari Williams / The Sham Report",
+      "permission_status": "owned",
+      "ai_processed": false,
+      "caption": "The Sham Report's visual timeline of the \"Dallas Poker Room Certificate of Occupancy Wars\" (May 8, 2026)."
+    },
+    "seo": {
+      "metaTitle": "Dallas Poker Room Certificate of Occupancy Wars: How the City Spent $500K and Lost | The Sham Report",
+      "metaDescription": "Shomari Williams breaks down how the City of Dallas approved poker rooms, spent $500,000 trying to shut them down, and lost at the Texas Supreme Court.",
+      "keyphrase": "Dallas poker room Certificate of Occupancy wars"
+    },
+    "editorial_status": "Ready for Review",
+    "publisher_approval_note": "Approved by Shomari Williams on Oct 23, 2026 at 4:29 AM CT for site placement.",
+    "seq": 25,
+    "slug": "dallas-blessed-poker-rooms-spent-500000-trying-to-shut-them-down-may-8-2026"
+  },
+  {
+    "fb_post_id": "pfbid02ABGowskX8FUH1qw47s76UrWp1FLrZoeJT2a327WUEZkEzBLWtDj6GYN1b4bC9zx8l",
+    "original_fb_date": "2026-05-06",
+    "website_import_date": "2026-10-23",
+    "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02ABGowskX8FUH1qw47s76UrWp1FLrZoeJT2a327WUEZkEzBLWtDj6GYN1b4bC9zx8l/",
+    "original_post_text": "Had a great sit-down with Isaac Trumbo, President of Champions Group & Knighted Ventures. Full write-up coming soon to The Sham Report.\n\n\ud835\udc02\ud835\udc21\ud835\udc1a\ud835\udc26\ud835\udc29\ud835\udc22\ud835\udc28\ud835\udc27\ud835\udc2c \ud835\udc12\ud835\udc28\ud835\udc1c\ud835\udc22\ud835\udc1a\ud835\udc25 \ud835\udc02\ud835\udc25\ud835\udc2e\ud835\udc1b \ud835\udc2c\ud835\udc28\ud835\udc1f\ud835\udc2d \ud835\udc28\ud835\udc29\ud835\udc1e\ud835\udc27\ud835\udc22\ud835\udc27\ud835\udc20: \ud835\udc0c\ud835\udc1a\ud835\udc32 \ud835\udfcf\ud835\udfd2.",
+    "expanded_title": "Sit-Down With Isaac Trumbo, President of Champions Group & Knighted Ventures, Ahead of Champions Social Club\u2019s May 14 Soft Opening",
+    "expanded_deck": "Meeting inside Champions Social Club in Dallas with Isaac Trumbo, President of Champions Group and Knighted Ventures, ahead of the venue's May 14 soft opening.",
+    "expanded_body": "Originally posted May 6, 2026.\n\nHad a great sit-down inside Champions Social Club in Dallas with Isaac Trumbo, President of Champions Group and Knighted Ventures, ahead of the club's May 14, 2026 soft opening (and the May 30 Grand Opening celebration at 17776 Dallas Parkway).\n\nFrom the chess lounges to the live-stream production setup and the main poker floor, we talked through the vision behind bringing the Champions brand to North Texas.\n\nChampions Social Club soft opening: May 14, 2026.\n\n\u2014 Sham",
+    "author": "Shomari Williams",
+    "categories": [
+      "Texas Poker",
+      "Players"
+    ],
+    "fact_verification_flags": [
+      {
+        "claim": "Shomari Williams met with Isaac Trumbo, President of Champions Group & Knighted Ventures, inside Champions Social Club in Dallas on May 6, 2026 ahead of its May 14 soft opening",
+        "status": "verified",
+        "source": "https://facebook.com/100000259835379/posts/pfbid02ABGowskX8FUH1qw47s76UrWp1FLrZoeJT2a327WUEZkEzBLWtDj6GYN1b4bC9zx8l/",
+        "note": "Verified by first-party photograph of Isaac Trumbo and Shomari Williams inside Champions Social Club (images/2026-05-06_1.jpg)."
+      }
+    ],
+    "outdated_info_flags": [
+      {
+        "original_statement": "Champions Social Club soft opening: May 14.",
+        "current_status": "Historical May 6, 2026 pre-opening dispatch; the May 14, 2026 soft opening has since occurred",
+        "editorial_note": "Describes May 6, 2026 pre-opening schedule."
+      }
+    ],
+    "image_rights": {
+      "image_path": "images/2026-05-06_1.jpg",
+      "source": "First-party photograph attached to Sham's May 6, 2026 Facebook post",
+      "credit": "Shomari Williams / The Sham Report",
+      "permission_status": "owned",
+      "ai_processed": false,
+      "caption": "Isaac Trumbo (left), President of Champions Group & Knighted Ventures, and Shomari Williams (right) inside the chess lounge at Champions Social Club in Dallas (May 6, 2026)."
+    },
+    "seo": {
+      "metaTitle": "Sit-Down With Isaac Trumbo at Champions Social Club Dallas | The Sham Report",
+      "metaDescription": "Shomari Williams meets with Isaac Trumbo, President of Champions Group & Knighted Ventures, inside Champions Social Club Dallas ahead of its May 14 soft opening.",
+      "keyphrase": "Isaac Trumbo Champions Social Club"
+    },
+    "editorial_status": "Ready for Review",
+    "publisher_approval_note": "Approved by Shomari Williams on Oct 23, 2026 at 4:29 AM CT for site placement.",
+    "seq": 24,
+    "slug": "isaac-trumbo-sit-down-champions-social-club-soft-opening-may-6-2026"
+  },
+  {
+    "fb_post_id": "pfbid02rtcawxdWL8jYsjxZn7mvi7woJbdhg5zYsP3umCKgUvGUiWeZMynRuPiB3rLP6Q5Wl",
+    "original_fb_date": "2026-05-04",
+    "website_import_date": "2026-10-23",
+    "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02rtcawxdWL8jYsjxZn7mvi7woJbdhg5zYsP3umCKgUvGUiWeZMynRuPiB3rLP6Q5Wl/",
+    "original_post_text": "Shoutout to TCH Dallas for adding PLO Madness to the rotation and shoutout to the PLO tournament lovers for showing out.\n\n187 entries. $46,750 prize pool. On a $30K GTD. The players decided that one.\n\nI went deep and finished 18th but I honestly left a lot on the felt. Had a hand where I was a favorite that would've made me chip leader. I couldn\u2019t hold. That hurt.\n\nBut the bigger story is what TCH is doing right. More formats. More guarantees. More ways to compete. This is how you continue to build a scene.\n\nBack at it May 24th. Who's playing?",
+    "expanded_title": "PLO Madness at TCH Dallas Draws 187 Entries for $46,750: Why Adding New Formats Builds the Scene",
+    "expanded_deck": "Texas Card House Dallas's $30,000 GTD PLO Madness tournament drew 187 entries for a $46,750 prize pool \u2014 where I ran deep to 18th place after a chip-lead pot didn't hold.",
+    "expanded_body": "Originally posted May 4, 2026.\n\nShoutout to Texas Card House Dallas for adding PLO Madness to the tournament rotation, and shoutout to the Pot-Limit Omaha tournament lovers across DFW for showing out.\n\nThe numbers tell the story:\n\u2022 Event: TCH Dallas PLO Madness ($30,000 GTD, $300 buy-in)\n\u2022 Field: 187 entries\n\u2022 Final prize pool: $46,750\n\nOn a $30K guarantee, the players decided that one.\n\nI went deep and finished 18th, though I honestly left a lot on the felt. Late in the tournament I had a hand where I got it in as a favorite in a pot that would have made me chip leader \u2014 and couldn't hold. That hurt.\n\nBut the bigger story is what TCH Dallas is doing right: more formats, more guarantees, and more ways to compete. That is how you continue to build a scene.\n\nBack at it for the next PLO Madness on May 24. Who's playing?\n\n\u2014 Sham",
+    "author": "Shomari Williams",
+    "categories": [
+      "Tournaments",
+      "Players",
+      "Texas Poker"
+    ],
+    "fact_verification_flags": [
+      {
+        "claim": "TCH Dallas PLO Madness ($30,000 GTD) drew 187 entries for a $46,750 prize pool, with Shomari Williams finishing 18th",
+        "status": "verified",
+        "source": "https://facebook.com/100000259835379/posts/pfbid02rtcawxdWL8jYsjxZn7mvi7woJbdhg5zYsP3umCKgUvGUiWeZMynRuPiB3rLP6Q5Wl/",
+        "note": "Firsthand tournament report by Shomari Williams accompanied by TCH Dallas PokerAtlas schedule screenshot (images/2026-05-04_1.jpg)."
+      }
+    ],
+    "outdated_info_flags": [],
+    "image_rights": {
+      "image_path": "images/2026-05-04_1.jpg",
+      "source": "PokerAtlas TCH Dallas announcements screenshot attached to Sham's May 4, 2026 Facebook post",
+      "credit": "Screenshot via PokerAtlas / Texas Card House Dallas",
+      "permission_status": "owned",
+      "ai_processed": false,
+      "caption": "Texas Card House Dallas tournament announcements on PokerAtlas featuring PLO Madness ($30,000 GTD) and the May 2026 schedule."
+    },
+    "seo": {
+      "metaTitle": "PLO Madness at TCH Dallas Draws 187 Entries & $46,750 Prize Pool | The Sham Report",
+      "metaDescription": "Shomari Williams recaps his 18th-place finish in Texas Card House Dallas's PLO Madness tournament (187 entries, $46,750 prize pool on a $30K GTD).",
+      "keyphrase": "TCH Dallas PLO Madness tournament"
+    },
+    "editorial_status": "Ready for Review",
+    "publisher_approval_note": "Approved by Shomari Williams on Oct 23, 2026 at 4:29 AM CT for site placement.",
+    "seq": 23,
+    "slug": "tch-dallas-plo-madness-187-entries-46750-prize-pool-18th-place-may-4-2026"
+  },
+  {
+    "fb_post_id": "pfbid02ravSw8N1wHvmRwEcYNahEbhqb8cvVggypMrVBcepBJq2QL7Z1UKdVjzFrvrovhpjl",
+    "original_fb_date": "2026-05-03",
+    "website_import_date": "2026-10-23",
+    "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02ravSw8N1wHvmRwEcYNahEbhqb8cvVggypMrVBcepBJq2QL7Z1UKdVjzFrvrovhpjl/",
+    "original_post_text": "DEVELOPING | The Lodge Card Club\n\nWord is spreading fast through the Austin poker community and an official reopening announcement could be coming as early as tomorrow.\n\nThe doors have been temporarily closed since the March raid, but chatter in Austin circles is heating up. Stay locked in and let\u2019s see if the rumors are true. \n\nFollow for updates. Share if you're watching.\n\n#TheLodge #TexasPoker #TheShamReport #AustinPoker",
+    "expanded_title": "Developing: Austin Poker Chatter Heats Up Ahead of The Lodge Card Club\u2019s Reopening Announcement",
+    "expanded_deck": "Days after the Williamson County grand jury no-bill, word spread fast through Austin poker circles that an official reopening announcement from The Lodge Card Club could arrive within 24 hours.",
+    "expanded_body": "Originally posted May 3, 2026.\n\nDEVELOPING | The Lodge Card Club\n\nWord is spreading fast through the Austin poker community that an official reopening announcement could be coming as early as tomorrow.\n\nThe doors have been temporarily closed since the March 10 raid, but following the Williamson County grand jury's April 28 no-bill, chatter in Austin circles is heating up. Stay locked in and let's see if the rumors are true.\n\n\u2014 Sham",
+    "author": "Shomari Williams",
+    "categories": [
+      "Investigation",
+      "Texas Poker"
+    ],
+    "fact_verification_flags": [
+      {
+        "claim": "Austin community reports on May 3, 2026 anticipated an imminent reopening announcement from The Lodge Card Club following the April 28 grand jury no-bill",
+        "status": "verified",
+        "source": "https://facebook.com/100000259835379/posts/pfbid02ravSw8N1wHvmRwEcYNahEbhqb8cvVggypMrVBcepBJq2QL7Z1UKdVjzFrvrovhpjl/",
+        "note": "Reported as developing community chatter on May 3, 2026; The Lodge subsequently reopened in May 2026."
+      }
+    ],
+    "outdated_info_flags": [
+      {
+        "original_statement": "The doors have been temporarily closed since the March raid, but chatter in Austin circles is heating up.",
+        "current_status": "The Lodge Card Club in Round Rock officially reopened in May 2026",
+        "editorial_note": "Describes May 3, 2026 conditions immediately preceding The Lodge's May 2026 reopening."
+      }
+    ],
+    "image_rights": {
+      "image_path": "images/2026-05-03_1.jpg",
+      "source": "Exterior photograph of The Lodge Card Club attached to Sham's May 3, 2026 Facebook post",
+      "credit": "Shomari Williams / The Sham Report",
+      "permission_status": "owned",
+      "ai_processed": false,
+      "caption": "The exterior of The Lodge Card Club in Round Rock, Texas ahead of its May 2026 reopening announcement."
+    },
+    "seo": {
+      "metaTitle": "Developing: The Lodge Card Club Reopening Chatter Heats Up in Austin | The Sham Report",
+      "metaDescription": "Shomari Williams reports on Austin poker community chatter on May 3, 2026 ahead of The Lodge Card Club's official reopening announcement.",
+      "keyphrase": "Lodge Card Club reopening announcement Austin"
+    },
+    "editorial_status": "Ready for Review",
+    "publisher_approval_note": "Approved by Shomari Williams on Oct 23, 2026 at 4:29 AM CT for site placement.",
+    "seq": 22,
+    "slug": "developing-lodge-card-club-reopening-announcement-rumors-austin-may-3-2026"
+  },
+  {
+    "fb_post_id": "reel-1612745596487168",
+    "original_fb_date": "2026-05-03",
+    "website_import_date": "2026-10-23",
+    "fb_source_url": "https://facebook.com/reel/1612745596487168/",
+    "original_post_text": "I have to play Day 2 tomorrow. But a \nBig O game just broke out at 1:00 am. Looks like we are playing through the night.",
+    "expanded_title": "I Have to Play Day 2 Tomorrow, But a 1:00 A.M. Big O Game Just Broke Out at Poker House",
+    "expanded_deck": "With Day 2 of the $25,000 Guaranteed tournament waiting in the morning, a late-night five-card Big O cash game broke out at 1:00 a.m. at Poker House \u2014 and it looked like an all-nighter.",
+    "expanded_body": "Originally posted May 3, 2026.\n\nI have to play Day 2 tomorrow.\n\nBut at 1:00 a.m. inside Poker House, a Big O game just broke out (captured in the late-night clip on Facebook at https://www.facebook.com/reel/1612745596487168/), with tall racks of red $5 and green $25 chips hitting the felt and a Peach Edition energy drink in the cup holder.\n\nLooks like we are playing through the night.\n\n\u2014 Sham",
+    "author": "Shomari Williams",
+    "categories": [
+      "Players",
+      "Texas Poker"
+    ],
+    "fact_verification_flags": [
+      {
+        "claim": "First-party late-night Big O cash-game reel and table photograph at Poker House on May 3, 2026",
+        "status": "verified",
+        "source": "https://facebook.com/reel/1612745596487168/",
+        "note": "Verified by first-party reel video and table photograph (images/2026-05-03_reel-1612745596487168.jpg)."
+      }
+    ],
+    "outdated_info_flags": [],
+    "image_rights": {
+      "image_path": "images/2026-05-03_reel-1612745596487168.jpg",
+      "source": "First-party Facebook Reel cover photograph by Shomari Williams (May 3, 2026)",
+      "credit": "Shomari Williams / The Sham Report",
+      "permission_status": "owned",
+      "ai_processed": false,
+      "caption": "1:00 a.m. Big O cash game at Poker House with tall stacks of red $5 and green $25 chips before Day 2 (May 3, 2026)."
+    },
+    "seo": {
+      "metaTitle": "1:00 A.M. Big O Game at Poker House Before Day 2 | The Sham Report",
+      "metaDescription": "Shomari Williams shares a 1:00 a.m. Big O cash-game session at Poker House the night before playing Day 2.",
+      "keyphrase": "Poker House Big O cash game"
+    },
+    "editorial_status": "Ready for Review",
+    "publisher_approval_note": "Approved by Shomari Williams on Oct 23, 2026 at 4:29 AM CT for site placement.",
+    "seq": 21,
+    "slug": "big-o-game-broke-out-1am-before-day-2-poker-house-may-3-2026"
+  },
+  {
     "fb_post_id": "pfbid02KqdX7mJ8bCYZAGvifDfUoKZALxF3kqnobSHgAgxxxqWM1ANkPQQ14vpuVJMzSieml",
     "original_fb_date": "2026-05-01",
     "website_import_date": "2026-10-23",
