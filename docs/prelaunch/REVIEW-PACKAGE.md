@@ -1,7 +1,7 @@
 # Pre-Launch Staging Review Package (Phase 8, Steps 5 & 6)
 **Owner:** Cyborg (Technical Lead & Website Developer) · **Date:** Thursday, Oct 22, 2026, ~7:56 PM CT
 **Branch:** `prelaunch/staging` (`0502ec1`, merges `redesign/concept3`, `prelaunch/api-hardening`, and `rungood-tsr-grades` into `/workspace/wt-prelaunch`)
-**Staging Preview URL:** https://the-sham-report-v2-cso57zuqd-sham-god-media-s-projects.vercel.app (Deployment ID `dpl_EyirRjEXBR9Fvd3NxQEcJnWhWxJD`, target `preview` — Vercel login required as `shomari51-dot`)
+**Staging Preview URL:** https://the-sham-report-v2-35cl2wg0q-sham-god-media-s-projects.vercel.app (Deployment ID `dpl_BQeoC9uKi5Fqk1TJitLYkFWxcYUN`, target `preview` — Vercel login required as `shomari51-dot`)
 **Production Status:** Untouched (`main` remains at `062700c`; zero production database writes; code-level `PROD_DB_WRITE_BLOCKED` guard active on non-production deployments).
 
 ---
