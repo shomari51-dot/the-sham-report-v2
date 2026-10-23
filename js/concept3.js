@@ -8,7 +8,7 @@
   }
   document.getElementById('lead-stories').innerHTML = data.stories.slice(1).map(story).join('');
   document.getElementById('latest-stories').innerHTML = data.stories.map(story).join('');
-  document.getElementById('grade-rows').innerHTML = data.grades.map(g => `<tr><td>${esc(g.grade)}</td><td>${esc(g.score)}</td><td>${esc(g.event)}<small>3-Curve A–D Scale · v1.1</small></td><td>${esc(g.venue)}</td><td>${esc(g.buyin)}</td><td>${esc(g.time)}</td></tr>`).join('');
+  document.getElementById('grade-rows').innerHTML = data.grades.slice(0, 5).map(g => `<tr><td>${esc(g.grade)}</td><td>${esc(g.score)}</td><td>${esc(g.event)}<small>3-Curve A–D Scale · v1.1</small></td><td>${esc(g.venue)}</td><td>${esc(g.buyin)}</td><td>${esc(g.time)}</td></tr>`).join('');
   document.getElementById('media-rows').innerHTML = data.reels.map(r => `<a class="c3-story" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer"><div class="c3-thumb"><img src="${esc(r.image)}" alt="${r.alt}" loading="lazy"><span class="c3-play" aria-hidden="true">▷</span></div><div><p class="c3-meta"><span>Facebook Reel ↗</span></p><h3>${r.title}</h3><p>Watch on Facebook (opens a new tab).</p></div></a>`).join('');
   document.getElementById('preview-newsletter').addEventListener('submit', event => {
     event.preventDefault();

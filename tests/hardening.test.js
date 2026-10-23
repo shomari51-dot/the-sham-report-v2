@@ -217,7 +217,7 @@ test('public renderers use real articles, correct curve groups and verified host
   return {nodes,context};
  }
  let r=run(['lead-stories','latest-stories','grade-rows','media-rows','preview-newsletter'],['js/concept3-data.js','js/concept3.js']);
- assert.match(r.nodes['grade-rows'].innerHTML,/93.9/);assert.match(r.nodes['grade-rows'].innerHTML,/66/);assert.doesNotMatch(r.nodes['latest-stories'].innerHTML,/Sample/);
+ assert.match(r.nodes['grade-rows'].innerHTML,/93.9/);assert.match(r.nodes['grade-rows'].innerHTML,/66/);assert.equal((r.nodes['grade-rows'].innerHTML.match(/<tr>/g)||[]).length,5);assert.doesNotMatch(r.nodes['latest-stories'].innerHTML,/Sample/);
  const filters=['search','date','location','venue','game','type','buyin','sort'].map(k=>'event-'+k);
  r=run([...filters,'event-count','event-rows','event-detail','tournament-filters'],['js/concept3-events.js','js/concept3-regrade.js','js/concept3-interior.js']);
  assert.match(r.nodes['event-rows'].innerHTML,/No verified weekly structures published yet/);assert.match(r.nodes['event-rows'].innerHTML,/Curve 3 — \$400\+ & Multi-Day Series \(v1.1\)/);assert.match(r.nodes['event-rows'].innerHTML,/Real Event Archive/);
