@@ -44,7 +44,7 @@ window.C3_REELS = [
     "image": "images/reels/2026-04-28_reel-3148062308729546.jpg",
     "alt": "Maroon Palace poker felt with board cards and chips",
     "title": "KK at it again",
-    "description": "The KK vs JJ vs 88 hand on the Palace felt.",
+    "description": "Three-way pocket-pair showdown (KK vs. JJ vs. 88) on the maroon Palace Poker felt.",
     "date": "Apr 28, 2026"
   },
   {

@@ -1,5 +1,136 @@
 window.C3_FB_IMPORTS = [
   {
+    "fb_post_id": "pfbid02KqdX7mJ8bCYZAGvifDfUoKZALxF3kqnobSHgAgxxxqWM1ANkPQQ14vpuVJMzSieml",
+    "original_fb_date": "2026-05-01",
+    "website_import_date": "2026-10-23",
+    "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02KqdX7mJ8bCYZAGvifDfUoKZALxF3kqnobSHgAgxxxqWM1ANkPQQ14vpuVJMzSieml/",
+    "original_post_text": "I write articles about poker. I also play poker. And sometimes\u2026 I bag Day 2. \n\nFired ONE bullet. $130 buy-in, at the Poker House Ft. Worth $25,000 Guaranteed and bagged 210,000 chips heading into Day 2 on Sunday. One and done.\n\nNow for the local weekend grinders. \nI already have Day 2 locked in for Sunday, so Saturday is free. And the options are outstanding:\n\nTCH Dallas \u2014 $50,000 Guaranteed $250 buy-in\n\nPalace Poker \u2014 $50,000 Guaranteed $250 buy-in\n\nBoth on Saturday. Pick one. Win both days. Have a fat weekend.\n\nThat\u2019s the move, people. Friday night \u2014 go bag Day 2 at Poker House Ft. Worth. Saturday \u2014 fire one of the $50K\u2019s at TCH or Palace. Sunday \u2014 cash out at Poker House.\n\nChip up, stack up, win big. The DFW poker scene is alive right now and the schedule is set up perfectly.\n\nPS. You could also bag the WSOP Circuit Main at TCH Austin then drive back down to DFW for the Saturday 50K but that\u2019s only \ufffcreal warriors.\n\nThe Sham Report | Shomari Williams \n#PokerHouseFtWorth #TCHDallas #PalacePoker #DFWPoker #TheShamReport #SkillIsNotACrime",
+    "expanded_title": "One Bullet, 210,000 Chips: Bagging Day 2 at Poker House Fort Worth\u2019s $25K GTD and the DFW Weekend Grinder\u2019s Blueprint",
+    "expanded_deck": "I write articles about poker, I play poker, and sometimes I bag Day 2 on a single $130 bullet \u2014 locking up 210,000 chips in Flight 1B at Poker House Fort Worth to free up Saturday for DFW's $50K guarantees.",
+    "expanded_body": "Originally posted May 1, 2026.\n\nI write articles about poker. I also play poker. And sometimes\u2026 I bag Day 2.\n\nFired ONE bullet \u2014 a $130 buy-in \u2014 in Flight 1B of the Poker House Fort Worth $25,000 Guaranteed No-Limit Hold'em tournament and bagged 210,000 chips heading into Day 2 on Sunday (finishing second among the seven Flight 1B survivors when play paused at Level 16, blinds 5,000/10,000: Mark W 304,000, Sham 210,000, Jim 191,000, Ryno 148,000, Tommy W 144,000, Bryan T 92,000, and Janice R 28,000). One and done.\n\nNow for the local weekend grinders: with Sunday's Day 2 already locked in, Saturday is wide open, and the DFW schedule options are outstanding:\n\u2022 Texas Card House Dallas \u2014 $50,000 Guaranteed ($250 buy-in)\n\u2022 Palace Poker \u2014 $50,000 Guaranteed ($250 buy-in)\n\nBoth run on Saturday. Pick one, win both days, and have a fat weekend.\n\nThat's the move, people:\n\u2022 Friday night \u2014 Go bag Day 2 at Poker House Fort Worth.\n\u2022 Saturday \u2014 Fire one of the $50K guarantees at TCH Dallas or Palace Poker.\n\u2022 Sunday \u2014 Cash out on Day 2 at Poker House Fort Worth.\n\nChip up, stack up, win big. The DFW poker scene is alive right now and the schedule is set up perfectly.\n\nP.S. You could also bag the WSOP Circuit Main Event at TCH Austin and then drive back up to DFW for a Saturday $50K \u2014 but that's only for real warriors.\n\n\u2014 Sham",
+    "author": "Shomari Williams",
+    "categories": [
+      "Tournaments",
+      "Players",
+      "Texas Poker"
+    ],
+    "fact_verification_flags": [
+      {
+        "claim": "Shomari Williams bagged 210,000 chips on one $130 entry in Day 1B of the Poker House Fort Worth $25,000 Guaranteed tournament on May 1, 2026",
+        "status": "verified",
+        "source": "https://facebook.com/100000259835379/posts/pfbid02KqdX7mJ8bCYZAGvifDfUoKZALxF3kqnobSHgAgxxxqWM1ANkPQQ14vpuVJMzSieml/",
+        "note": "Verified by official Poker House Ft. Worth Day 1B survivors graphic (images/2026-05-01_1.jpg) listing Sham with 210,000 chips."
+      }
+    ],
+    "outdated_info_flags": [],
+    "image_rights": {
+      "image_path": "images/2026-05-01_1.jpg",
+      "source": "Poker House Fort Worth Day 1B survivors graphic attached to Sham's May 1, 2026 Facebook post",
+      "credit": "Poker House Fort Worth / The Sham Report",
+      "permission_status": "owned",
+      "ai_processed": false,
+      "caption": "Poker House Fort Worth $25,000 Guaranteed Day 1B survivors leaderboard (May 1, 2026), with Sham bagging 210,000 chips in second place behind flight leader Mark W (304,000)."
+    },
+    "seo": {
+      "metaTitle": "Bagging 210,000 Chips at Poker House Fort Worth $25K GTD | The Sham Report",
+      "metaDescription": "Shomari Williams bags 210,000 chips on a single $130 bullet in Flight 1B of Poker House Fort Worth's $25,000 Guaranteed tournament and maps out the DFW weekend grinder schedule.",
+      "keyphrase": "Poker House Fort Worth 25000 Guaranteed"
+    },
+    "editorial_status": "Ready for Review",
+    "publisher_approval_note": "Approved by Shomari Williams on Oct 23, 2026 at 4:15 AM CT for site placement.",
+    "seq": 20,
+    "slug": "one-bullet-210000-chips-bagging-day-2-poker-house-fort-worth-25k-gtd-may-1-2026"
+  },
+  {
+    "fb_post_id": "pfbid02tmw78q7udSdFxznB1BSscNHxUHKk6xm6yJmzpgRktFJAwbJcMEwhrcrEmyY31iPFl",
+    "original_fb_date": "2026-04-29",
+    "website_import_date": "2026-10-23",
+    "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02tmw78q7udSdFxznB1BSscNHxUHKk6xm6yJmzpgRktFJAwbJcMEwhrcrEmyY31iPFl/",
+    "original_post_text": "\ud835\udc16\ud835\udc21\ud835\udc1e\ud835\udc2d\ud835\udc21\ud835\udc1e\ud835\udc2b \ud835\udc32\ud835\udc28\ud835\udc2e \ud835\udc25\ud835\udc22\ud835\udc24\ud835\udc1e \ud835\udc03\ud835\udc28\ud835\udc2e\ud835\udc20 \ud835\udc0f\ud835\udc28\ud835\udc25\ud835\udc24 \ud835\udc28\ud835\udc2b \ud835\udc27\ud835\udc28\ud835\udc2d, \ud835\udc2d\ud835\udc21\ud835\udc22\ud835\udc2c \ud835\udc22\ud835\udc2c \ud835\udc1a \ud835\udc30\ud835\udc22\ud835\udc27 \ud835\udc1f\ud835\udc28\ud835\udc2b \ud835\udc13\ud835\udc1e\ud835\udc31\ud835\udc1a\ud835\udc2c \ud835\udc0f\ud835\udc28\ud835\udc24\ud835\udc1e\ud835\udc2b.\n\nThe community knows the truth: when a room gets raided, it\u2019s usually a death sentence. We\u2019ve watched it happen. Copa Club. Watauga. Social Lounge. Wild Cards. Poker House Dallas (now operating as PH Social under new ownership). All of these rooms gone. \ufffc\n\nComebacks are rare and what the Lodge just did is historic. They are potentially coming back in three months after being shut down. \ud835\udc13\ud835\udc21\ud835\udc2b\ud835\udc1e\ud835\udc1e \ud835\udc26\ud835\udc28\ud835\udc27\ud835\udc2d\ud835\udc21\ud835\udc2c. That is monumental, and something absolutely nobody thought was possible.\n\nOn Monday night I heard through a source the Lodge would reopen June 1st. I said to myself, that\u2019s fake news. No way. Well\u2026 here we are.\n\nBut beyond the legal win, let\u2019s talk about what nobody else is saying: the employees get to come back to work. \ud835\udc13\ud835\udc21\ud835\udc1e \ud835\udc1d\ud835\udc1e\ud835\udc1a\ud835\udc25\ud835\udc1e\ud835\udc2b\ud835\udc2c. \ud835\udc13\ud835\udc21\ud835\udc1e \ud835\udc2c\ud835\udc2d\ud835\udc1a\ud835\udc1f\ud835\udc1f. \ud835\udc13\ud835\udc21\ud835\udc1e \ud835\udc1f\ud835\udc1a\ud835\udc26\ud835\udc22\ud835\udc25\ud835\udc22\ud835\udc1e\ud835\udc2c who didn\u2019t have to pack up and move to Vegas just to keep food on the table. That\u2019s the real story.\n\nThe community showed up with fury, passion, rage, love, and yeah, some hate too. But that\u2019s what families do. Collectively, we gave the Lodge our voice. Let\u2019s keep that same energy every time any room gets shut down anywhere in Texas.\n\nDFW. Austin. Houston. San Antonio. We are one family. What happens to one of us happens to all of us.\n\nThe charges were bull. The fight isn\u2019t over. And The Sham Report will be here raising hell every step of the way.\n\nCongratulations to the Lodge. Welcome back. \n\u2014 Shomari Williams | The Sham Report\n\n#TexasPoker #TheLodgeCardClub #ShamReport #TexasPokerCommunity #JusticeForTexasPoker",
+    "expanded_title": "Whether You Like Doug Polk or Not, The Lodge\u2019s Comeback Is a Historic Win for Texas Poker",
+    "expanded_deck": "When a Texas card room gets raided, it is usually a death sentence \u2014 which is why the Williamson County grand jury's decision clearing the way for The Lodge to reopen and bring its dealers and staff back to work matters for every room in the state.",
+    "expanded_body": "Originally posted April 29, 2026.\n\nWhether you like Doug Polk or not, this is a win for Texas poker.\n\nThe community knows the truth: when a room gets raided, it's usually a death sentence. We've watched it happen \u2014 Copa Club, Watauga Social Lounge, Wild Cards, and Poker House Dallas (now operating as PH Social under new ownership). All of those rooms were gone.\n\nComebacks are rare, and what The Lodge just did is historic. Coming back roughly three months after being shut down is monumental, and something almost nobody thought was possible.\n\nOn Monday night I heard through a source that The Lodge was targeting a June 1 reopening. At first I said to myself, \"That's fake news \u2014 no way.\" Well\u2026 here we are.\n\nBut beyond the legal win, let's talk about what nobody else is saying: the employees get to come back to work. The dealers. The staff. The families who didn't have to pack up and move to Las Vegas just to keep food on the table. That's the real story.\n\nThe community showed up with fury, passion, rage, love, and yeah, some hate too. But that's what families do. Collectively, we gave The Lodge our voice. Let's keep that same energy every time any room gets shut down anywhere in Texas.\n\nDFW. Austin. Houston. San Antonio. We are one family. What happens to one of us happens to all of us.\n\nThe charges were bull. The fight isn't over. And The Sham Report will be here raising hell every step of the way.\n\nCongratulations to The Lodge. Welcome back.\n\n\u2014 Sham",
+    "author": "Shomari Williams",
+    "categories": [
+      "Legal",
+      "Investigation",
+      "Texas Poker"
+    ],
+    "fact_verification_flags": [
+      {
+        "claim": "On April 28, 2026, a Williamson County grand jury declined to authorize proposed charges (a no-bill), clearing the way for The Lodge Card Club in Round Rock to reopen",
+        "status": "verified",
+        "source": "https://www.pokernews.com/news/2026/04/lodge-card-club-poker-room-to-reopen-51144.htm",
+        "note": "Verified by April 28\u201329, 2026 reporting and Shomari Williams's April 29 commentary."
+      }
+    ],
+    "outdated_info_flags": [
+      {
+        "original_statement": "On Monday night I heard through a source the Lodge would reopen June 1st.",
+        "current_status": "Following the April 28 grand jury no-bill and initial June 1 target date, The Lodge officially reopened in May 2026",
+        "editorial_note": "Describes the initial target reopening window reported on April 29, 2026."
+      }
+    ],
+    "image_rights": {
+      "image_path": "images/2026-04-29_1.jpg",
+      "source": "Photo attached to Sham's April 29, 2026 Facebook post",
+      "credit": "Doug Polk via Shomari Williams Facebook post",
+      "permission_status": "owned",
+      "ai_processed": false,
+      "caption": "Doug Polk gives a thumbs-up following the Williamson County grand jury decision clearing the way for The Lodge Card Club to reopen (April 29, 2026)."
+    },
+    "seo": {
+      "metaTitle": "The Lodge Card Club Comeback Is a Historic Win for Texas Poker | The Sham Report",
+      "metaDescription": "Shomari Williams on why The Lodge Card Club's grand jury victory and return for dealers, staff, and players is a historic win for Texas poker.",
+      "keyphrase": "Lodge Card Club comeback Texas poker"
+    },
+    "editorial_status": "Ready for Review",
+    "publisher_approval_note": "Approved by Shomari Williams on Oct 23, 2026 at 4:15 AM CT for site placement.",
+    "seq": 19,
+    "slug": "whether-you-like-doug-polk-or-not-lodge-comeback-win-for-texas-poker-april-29-2026"
+  },
+  {
+    "fb_post_id": "reel-3148062308729546",
+    "original_fb_date": "2026-04-28",
+    "website_import_date": "2026-10-23",
+    "fb_source_url": "https://facebook.com/reel/3148062308729546/",
+    "original_post_text": "KK at it again. KK vs JJ vs 88",
+    "expanded_title": "KK at It Again: Pocket Kings vs. Pocket Jacks vs. Pocket Eights on the Palace Felt",
+    "expanded_deck": "A three-way pocket-pair collision on the maroon Palace Poker felt \u2014 Pocket Kings up against Pocket Jacks and Pocket Eights with a pile of red, green, and blue chips in the middle.",
+    "expanded_body": "Originally posted April 28, 2026.\n\nPocket Kings at it again \u2014 this time in a three-way pocket-pair collision on the maroon Palace Poker felt: KK vs. JJ vs. 88.\n\nWhen three players wake up with wired pairs in the same hand and the chips go flying into the middle (captured in the hand-highlight reel on Facebook at https://www.facebook.com/reel/3148062308729546/), all you can do is table the cowboys and sweat the runout across the Palace felt.\n\n\u2014 Sham",
+    "author": "Shomari Williams",
+    "categories": [
+      "Players",
+      "Texas Poker"
+    ],
+    "fact_verification_flags": [
+      {
+        "claim": "First-party hand-highlight reel and table photograph from Palace Poker (KK vs. JJ vs. 88) on April 28, 2026",
+        "status": "verified",
+        "source": "https://facebook.com/reel/3148062308729546/",
+        "note": "Verified by first-party reel video and table photograph (images/2026-04-28_reel-3148062308729546.jpg)."
+      }
+    ],
+    "outdated_info_flags": [],
+    "image_rights": {
+      "image_path": "images/2026-04-28_reel-3148062308729546.jpg",
+      "source": "First-party Facebook Reel cover photograph by Shomari Williams (April 28, 2026)",
+      "credit": "Shomari Williams / The Sham Report",
+      "permission_status": "owned",
+      "ai_processed": false,
+      "caption": "Three-way pocket-pair showdown (KK vs. JJ vs. 88) on the maroon Palace Poker felt on April 28, 2026."
+    },
+    "seo": {
+      "metaTitle": "KK vs JJ vs 88 on the Palace Poker Felt | The Sham Report",
+      "metaDescription": "Shomari Williams shares a three-way pocket-pair collision (Pocket Kings vs. Pocket Jacks vs. Pocket Eights) on the maroon Palace Poker felt.",
+      "keyphrase": "KK vs JJ vs 88 Palace Poker"
+    },
+    "editorial_status": "Ready for Review",
+    "publisher_approval_note": "Approved by Shomari Williams on Oct 23, 2026 at 4:15 AM CT for site placement.",
+    "seq": 18,
+    "slug": "kk-at-it-again-kk-vs-jj-vs-88-three-way-all-in-palace-poker-april-28-2026"
+  },
+  {
     "fb_post_id": "pfbid02DqMoMTSr1vxb8vRArvydFpMjLXiL2QJgwPwzSb2vtGo6YM4gVcQzayGn1EcGG3Ccl",
     "original_fb_date": "2026-04-26",
     "website_import_date": "2026-10-23",
