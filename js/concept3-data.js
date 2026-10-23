@@ -21,23 +21,73 @@ window.CONCEPT3_DATA = {
       "author": "Shomari Williams"
     },
     {
-      "title": "The Lodge Raid: First Reaction (March 11, 2026)",
-      "image": "images/The_Lodge_Photo.jpg",
-      "alt": "Archival image accompanying the original March 2026 article.",
-      "url": "article-template.html?slug=the-lodge-raid-first-reaction-march-11-2026",
-      "category": "Texas Poker",
-      "description": "My first reaction when news broke that TABC raided The Lodge in Round Rock — before any official statement or confirmed details.",
-      "date": "March 11, 2026",
+      "title": "When You Speak With Honesty and Compassion, People Feel It: A Nod From Andrew Neeme",
+      "image": "images/2026-03-16_1.jpg",
+      "alt": "Facebook notification showing Andrew Neeme reacting to Sham's post in JV's Poker Squad on March 16, 2026.",
+      "url": "article-template.html?slug=andrew-neeme-reaction-lodge-coverage-poker-vlogging-pioneer-march-16-2026",
+      "category": "Players",
+      "description": "In the middle of the hardest week in The Lodge's history, poker vlogging pioneer and Lodge co-owner Andrew Neeme took a moment to acknowledge our coverage.",
+      "date": "March 16, 2026",
+      "author": "Shomari Williams"
+    },
+    {
+      "title": "Shuffle 214 $100K Series Recap: Five Bullets, One Min-Cash, and the Truth About Tournament Variance",
+      "image": "images/2026-03-14_2.jpg",
+      "alt": "Five bullets at $150 each: Sham's Flight 1H entry receipt (Table 10, Seat 8) and starting stack at Shuffle 214 on March 13, 2026.",
+      "url": "article-template.html?slug=shuffle-214-100k-series-recap-five-bullets-tournament-variance-march-2026",
+      "category": "Tournaments",
+      "description": "Five $150 entries into Shuffle 214's $100K GTD series came back with one $250 min-cash for a -$500 net \u2014 and a reminder of why cash games pay the bills.",
+      "date": "March 14, 2026",
+      "author": "Shomari Williams"
+    },
+    {
+      "title": "Operational Gaps vs. Criminal Intent: The Community Adds Real AML & KYC Context to the Lodge Story",
+      "image": "images/2026-03-14_1.jpg",
+      "alt": "Reader comments from Jon Waters and Abram Evan Fontana on Sham's March 2026 Facebook thread discussing AML and KYC compliance.",
+      "url": "article-template.html?slug=lodge-raid-community-context-aml-kyc-compliance-march-14-2026",
+      "category": "Legal",
+      "description": "Readers Jon Waters and Abram Evan Fontana pointed to a crucial distinction in the Lodge investigation: how Texas's unregulated gray area leaves rooms exposed on Anti-Money Laundering and Know Your Customer compliance.",
+      "date": "March 14, 2026",
+      "author": "Shomari Williams"
+    },
+    {
+      "title": "My Two Cents on The Lodge Situation: Why the Gray Area Is the Real Weapon Against Texas Poker",
+      "image": "images/2026-03-13_1.jpg",
+      "alt": "At the table in DFW: 'Member of Too Many Social Clubs.'",
+      "url": "article-template.html?slug=lodge-raid-commentary-doug-polk-texas-poker-gray-area-march-13-2026",
+      "category": "Legal",
+      "description": "Doug Polk became the most visible, politically organized voice pushing for legal clarity in Texas poker \u2014 and that context matters when looking at what's happening in Round Rock.",
+      "date": "March 13, 2026",
+      "author": "Shomari Williams"
+    },
+    {
+      "title": "Lodge Card Club Update: TABC Financial Crimes and the IRS Were Behind the Raid",
+      "image": "images/2026-03-12_2.jpg",
+      "alt": "The Lodge Card Club in Round Rock, Texas.",
+      "url": "article-template.html?slug=lodge-raid-update-tabc-financial-crimes-irs-march-12-2026",
+      "category": "Investigation",
+      "description": "TABC confirmed its Financial Crimes Unit, the Williamson County Sheriff's Office, and the IRS executed the search warrant at The Lodge over suspected money laundering and illegal gambling \u2014 not a liquor-license check.",
+      "date": "March 12, 2026",
       "author": "Shomari Williams"
     },
     {
       "title": "Lodge Raid Coverage: Tom Dwan Enters the Chat",
-      "image": "images/Tom_Dwan.jpg",
-      "alt": "Archival image accompanying the original March 2026 article.",
+      "image": "images/2026-03-12_1.jpg",
+      "alt": "Tom Dwan (@TomDwan) replies to Doug Polk (@DougPolkVids) on X on March 12, 2026.",
       "url": "article-template.html?slug=lodge-raid-coverage-tom-dwan-enters-the-chat",
-      "category": "Texas Poker",
-      "description": "A day after the raid, Tom Dwan jumped into a tense Twitter thread with Brad Owen, Doug Polk, and others — and the story started splitting into two different versions.",
+      "category": "Investigation",
+      "description": "A day after the raid, Tom Dwan jumped into a tense X exchange with Doug Polk \u2014 and the story started splitting into two different versions.",
       "date": "March 12, 2026",
+      "author": "Shomari Williams"
+    },
+    {
+      "title": "The Lodge Raid: First Reaction (March 11, 2026)",
+      "image": "images/The_Lodge_Photo.jpg",
+      "alt": "The Lodge Card Club in Round Rock, Texas.",
+      "url": "article-template.html?slug=the-lodge-raid-first-reaction-march-11-2026",
+      "category": "Investigation",
+      "description": "My first reaction when news broke that TABC raided The Lodge in Round Rock \u2014 before any official statement or confirmed details.",
+      "date": "March 11, 2026",
       "author": "Shomari Williams"
     }
   ],
@@ -68,7 +118,7 @@ window.CONCEPT3_DATA = {
       "score": "93.9",
       "grade": "A",
       "buyin": "$2,500",
-      "time": "Curve 3 · v1.1"
+      "time": "Curve 3 \u00b7 v1.1"
     },
     {
       "event": "Trailblazer MAIN EVENT",
@@ -76,31 +126,31 @@ window.CONCEPT3_DATA = {
       "score": "81.4",
       "grade": "B+",
       "buyin": "$600",
-      "time": "Curve 3 · v1.1"
+      "time": "Curve 3 \u00b7 v1.1"
     },
     {
       "event": "RunGood Monster Stack Opener",
       "venue": "Champions Club Houston",
       "score": "69.8",
-      "grade": "B−",
+      "grade": "B\u2212",
       "buyin": "$400",
-      "time": "Curve 3 · v1.1"
+      "time": "Curve 3 \u00b7 v1.1"
     },
     {
       "event": "RunGood Main Event",
       "venue": "Champions Club Houston",
       "score": "66.0",
-      "grade": "B−",
+      "grade": "B\u2212",
       "buyin": "$600",
-      "time": "Curve 3 · v1.1"
+      "time": "Curve 3 \u00b7 v1.1"
     },
     {
       "event": "$400 Big Tex Giant Stack",
       "venue": "TCH Dallas",
       "score": "51.4",
-      "grade": "C−",
+      "grade": "C\u2212",
       "buyin": "$400",
-      "time": "Curve 3 · v1.1"
+      "time": "Curve 3 \u00b7 v1.1"
     },
     {
       "event": "$400 Kick Off",
@@ -108,7 +158,7 @@ window.CONCEPT3_DATA = {
       "score": "48.2",
       "grade": "D+",
       "buyin": "$400",
-      "time": "Curve 3 · v1.1"
+      "time": "Curve 3 \u00b7 v1.1"
     },
     {
       "event": "PokerNews PowerStack",
@@ -116,7 +166,7 @@ window.CONCEPT3_DATA = {
       "score": "46.6",
       "grade": "D+",
       "buyin": "$400",
-      "time": "Curve 3 · v1.1"
+      "time": "Curve 3 \u00b7 v1.1"
     },
     {
       "event": "Send Off",
@@ -124,7 +174,7 @@ window.CONCEPT3_DATA = {
       "score": "48.2",
       "grade": "B",
       "buyin": "$200",
-      "time": "Curve 2 · v1.1"
+      "time": "Curve 2 \u00b7 v1.1"
     },
     {
       "event": "Randy's Six Shooter $250",
@@ -132,7 +182,7 @@ window.CONCEPT3_DATA = {
       "score": "39.2",
       "grade": "C",
       "buyin": "$250",
-      "time": "Curve 2 · v1.1"
+      "time": "Curve 2 \u00b7 v1.1"
     },
     {
       "event": "Lone Star PLO",
@@ -140,7 +190,7 @@ window.CONCEPT3_DATA = {
       "score": "29.0",
       "grade": "D",
       "buyin": "$300",
-      "time": "Curve 2 · v1.1"
+      "time": "Curve 2 \u00b7 v1.1"
     },
     {
       "event": "$200 Lone Star Stand-Off",
@@ -148,15 +198,15 @@ window.CONCEPT3_DATA = {
       "score": "48.2",
       "grade": "B",
       "buyin": "$200",
-      "time": "Curve 2 · v1.1"
+      "time": "Curve 2 \u00b7 v1.1"
     },
     {
       "event": "$300 2-7 Single Draw",
       "venue": "TCH Dallas",
       "score": "46.7",
-      "grade": "B−",
+      "grade": "B\u2212",
       "buyin": "$300",
-      "time": "Curve 2 · v1.1"
+      "time": "Curve 2 \u00b7 v1.1"
     },
     {
       "event": "$300 Mega Stack",
@@ -164,7 +214,7 @@ window.CONCEPT3_DATA = {
       "score": "51.4",
       "grade": "B+",
       "buyin": "$300",
-      "time": "Curve 2 · v1.1"
+      "time": "Curve 2 \u00b7 v1.1"
     },
     {
       "event": "Donkey Derby $200",
@@ -172,7 +222,7 @@ window.CONCEPT3_DATA = {
       "score": "40.2",
       "grade": "C",
       "buyin": "$200",
-      "time": "Curve 2 · v1.1"
+      "time": "Curve 2 \u00b7 v1.1"
     },
     {
       "event": "Even Bigger One $250K GTD",
@@ -180,7 +230,7 @@ window.CONCEPT3_DATA = {
       "score": "73.0",
       "grade": "A+",
       "buyin": "$300",
-      "time": "Curve 2 · v1.1"
+      "time": "Curve 2 \u00b7 v1.1"
     },
     {
       "event": "$150 Deepstack",
@@ -188,62 +238,10 @@ window.CONCEPT3_DATA = {
       "score": "29.0",
       "grade": "D",
       "buyin": "$150",
-      "time": "Curve 2 · v1.1"
+      "time": "Curve 2 \u00b7 v1.1"
     }
   ],
   "articles": [
-    {
-      "slug": "the-lodge-raid-first-reaction-march-11-2026",
-      "title": "The Lodge Raid: First Reaction (March 11, 2026)",
-      "deck": "My first reaction when news broke that TABC raided The Lodge in Round Rock — before any official statement or confirmed details.",
-      "categories": [
-        "Investigation",
-        "Texas Poker"
-      ],
-      "heroImage": "images/The_Lodge_Photo.jpg",
-      "author": "Shomari Williams",
-      "date": "March 11, 2026",
-      "body": "Originally posted March 11, 2026. By now most of y'all have probably seen the news. TABC and state police rolled up on The Lodge in Round Rock Tuesday morning around 11 a.m. Biggest poker room in Texas, co-owned by Doug Polk, Brad Owen, and Andrew Neeme. Players were told to take their chips home and come back when they reopen. Staff told tournament players they'd be refunded entries. The WPT Wildcard event that was supposed to happen this weekend has been postponed.\nNo official statement from the owners yet. No confirmed citation details that I've seen.\nNow here's the part that's been on my mind since I heard about this. The Lodge is an 18+ room. That's something a lot of people didn't realize, including me honestly. When you mix 18 and 19 year olds in the building with alcohol service, TABC showing up starts to make a lot of sense. Whether it was underage drinking, a license issue, how alcohol was being distributed, whether it was free or sold, all of that matters legally and none of it has been confirmed yet.\nTexas poker rooms already operate in a gray area. Add alcohol into the equation with players who are legal to gamble but not legal to drink and that's a real compliance problem for any club.\nIf anybody has actual confirmed info on what the citation was for, drop it in the comments. This situation has implications for every poker room in Texas and we need to be paying attention.",
-      "status": "published",
-      "seo": {
-        "metaTitle": "TABC Raids The Lodge Card Club | The Sham Report",
-        "metaDescription": "TABC and state police shut down The Lodge Card Club in Round Rock, Texas' largest poker room. Sham's first reaction as the story broke.",
-        "keyphrase": "Lodge Card Club raid"
-      },
-      "updatedAt": "2026-06-14T15:58:15.862Z",
-      "createdAt": "2026-06-14T15:58:15.862Z",
-      "publishedAt": "2026-06-14T15:58:15.862Z",
-      "context": "Editorial Context / Update Note: This preserves reporting and reaction from March 2026. An April 28, 2026 Williamson County grand jury declined to authorize proposed charges, clearing the way for The Lodge to reopen subsequently. Closure and postponed-event references describe the original date, not current conditions. Dwan’s statements are allegations, not established findings. The original reaction’s speculation about alcohol and age was not a confirmed explanation of the raid.",
-      "credit": "Existing CMS asset; original photographer and reuse permission pending publisher verification.",
-      "caption": "Archival image accompanying the original March 2026 article.",
-      "disclosures": "Original social commentary is distinguished from verified reporting. No firsthand attendance is claimed in this article. Relevant commercial relationships require publisher review."
-    },
-    {
-      "slug": "lodge-raid-coverage-tom-dwan-enters-the-chat",
-      "title": "Lodge Raid Coverage: Tom Dwan Enters the Chat",
-      "deck": "A day after the raid, Tom Dwan jumped into a tense Twitter thread with Brad Owen, Doug Polk, and others — and the story started splitting into two different versions.",
-      "categories": [
-        "Investigation",
-        "Texas Poker"
-      ],
-      "heroImage": "images/Tom_Dwan.jpg",
-      "author": "Shomari Williams",
-      "date": "March 12, 2026",
-      "body": "Lodge Card Club Update — Now Tom Dwan Has Entered The Chat\nThe Lodge Card Club in Round Rock remains closed following Tuesday’s search warrant executed by state police and TABC. The Lodge’s official statement says their attorneys are still working to understand the reasons behind the search, meaning even they don’t fully know why yet.\nNow poker legend Tom Dwan has inserted himself into the conversation, with his own separate allegations.\nDwan is claiming he warned Doug Polk years ago about a game integrity vulnerability at The Lodge and that Doug chose not to address it. Dwan has been careful to say he does not believe the TABC raid is connected to that issue, but the timing has the poker world asking questions.\nWorth noting, Dwan has also acknowledged personal friction with Doug, so we’re not dealing with a completely neutral party here.\nBottom line: Two separate stories colliding at the worst possible time for The Lodge. The TABC situation is still unresolved. And now there are integrity questions being raised publicly by one of the most respected names in the game.\nWe’re watching this closely. I’d love to see your comments.",
-      "status": "published",
-      "seo": {
-        "metaTitle": "Tom Dwan vs Doug Polk: Lodge Card Club Integrity Claims",
-        "metaDescription": "Tom Dwan raises game integrity allegations against Doug Polk as The Lodge Card Club remains closed following a TABC raid in Round Rock.",
-        "keyphrase": "Tom Dwan Lodge Card Club"
-      },
-      "updatedAt": "2026-06-15T02:30:45.145Z",
-      "createdAt": "2026-06-15T02:30:45.145Z",
-      "publishedAt": "2026-06-15T02:30:45.145Z",
-      "context": "Editorial Context / Update Note: This preserves reporting and reaction from March 2026. An April 28, 2026 Williamson County grand jury declined to authorize proposed charges, clearing the way for The Lodge to reopen subsequently. Closure and postponed-event references describe the original date, not current conditions. Dwan’s statements are allegations, not established findings. The original reaction’s speculation about alcohol and age was not a confirmed explanation of the raid.",
-      "credit": "Existing CMS asset; original photographer and reuse permission pending publisher verification.",
-      "caption": "Archival image accompanying the original March 2026 article.",
-      "disclosures": "Original social commentary is distinguished from verified reporting. No firsthand attendance is claimed in this article. Relevant commercial relationships require publisher review."
-    },
     {
       "slug": "trailblazer-stop-2-kick-off-results",
       "url": "trailblazer-stop-2-kick-off-results.html",
@@ -257,7 +255,7 @@ window.CONCEPT3_DATA = {
       "heroImage": "images/2026-10-09-tch-kickoff-final-payout-board-stream.png",
       "caption": "Final Kick Off payout board on the TCH Dallas stream",
       "credit": "TCH Dallas stream",
-      "body": "Tournaments  |  Texas Poker\nBy Shomari Williams  |  October 9, 2026\nJesse J is the Trailblazer Stop 2 Kick Off champion. The $400 #1 Kick Off ($100K GTD) at TCH Dallas drew 347 entries for a $114,510 prize pool (TCH live report). That beat the guarantee easily, and 44 places were paid.\nFinal results (as shown on TCH's live stream):\nIt came down to Jesse J and Natalia. At Hand 44, with blinds at 50,000/100,000/100,000, the stream's chip-count graphic had Jesse J on 5,870,000 and Natalia on 4,810,000. Jesse J and Natalia struck a heads-up deal, and Jesse J took the title.\nFourth place went to Chase Bricker. He's the Dallas-area player who beat Jason Christopher heads-up at Wynn Las Vegas in December 2024 to win the $1 million first prize in the ClubWPT Gold $5M Invitational Freeroll (PokerNews, WPT). No trophy this time, but a deep run on home felt.\nThe Kick Off was just the opener. Trailblazer Stop 2's $800 Main Event ($1,000,000 GTD) starts its first flight at TCH Dallas on Monday, Oct 12 at 5 PM, with flights through Oct 17 and the final table Oct 19 (official schedule). I'll be on it.\n— Sham",
+      "body": "Tournaments\u00a0\u00a0|\u00a0\u00a0Texas Poker\nBy Shomari Williams \u00a0|\u00a0 October 9, 2026\nJesse J is the Trailblazer Stop 2 Kick Off champion. The $400 #1 Kick Off ($100K GTD) at TCH Dallas drew 347 entries for a $114,510 prize pool (TCH live report). That beat the guarantee easily, and 44 places were paid.\nFinal results (as shown on TCH's live stream):\nIt came down to Jesse J and Natalia. At Hand 44, with blinds at 50,000/100,000/100,000, the stream's chip-count graphic had Jesse J on 5,870,000 and Natalia on 4,810,000. Jesse J and Natalia struck a heads-up deal, and Jesse J took the title.\nFourth place went to Chase Bricker. He's the Dallas-area player who beat Jason Christopher heads-up at Wynn Las Vegas in December 2024 to win the $1 million first prize in the ClubWPT Gold $5M Invitational Freeroll (PokerNews, WPT). No trophy this time, but a deep run on home felt.\nThe Kick Off was just the opener. Trailblazer Stop 2's $800 Main Event ($1,000,000 GTD) starts its first flight at TCH Dallas on Monday, Oct 12 at 5 PM, with flights through Oct 17 and the final table Oct 19 (official schedule). I'll be on it.\n\u2014 Sham",
       "context": "Original October 2026 reporting. See the linked original article for full source links, schedules and results.",
       "disclosures": "Shomari Williams has performed commentary work at Champions Social Club with Hayden Fortini and participates in live tournament play. No firsthand experience at this event is claimed by its automated structure analysis.",
       "status": "published"
@@ -275,10 +273,214 @@ window.CONCEPT3_DATA = {
       "heroImage": "images/rungood-official-champions-club-1200.jpg",
       "caption": "RunGood Golden Expedition at Champions Club Houston",
       "credit": "RunGood official event artwork",
-      "body": "Tournaments  |  Texas Poker\nBy Shomari Williams  |  October 12, 2026\nFor the first time ever, the RunGood Poker Series is coming to Houston. The RGPS Golden Expedition runs October 12-18, exclusively at Champions Club (6440 W Sam Houston Pkwy S, Houston), with $510K in published guarantees and 11 championship rings up for grabs. The headliner is a $600 Main Event with a $250,000 guarantee.\nChampions Club is offering a tournament room rate starting at $79 a night for players who want to stay and play. Club membership is required to play, and the structure sheet lists the fee portion of each buy-in as a \"facility access fee.\"\nThe Main Event is the best-priced event on the schedule, with a 16.7% fee on a $600 buy-in, a 60,000 stack, and 30-minute levels. The $400 events (Monster Stack, PowerStack, Last Chance) run 17.5%, and the $300 events run 20%. If you're picking one event this week, the Main gives you the most structure for your money.\nGraded from the Champions Club structure sheets with the TSR Score calculator.\nFee percentage still favors the Main, but structure favors the Monster Stack. The PowerStack is the softest of the three on skill depth.\nSources: RunGood event page, Champions Club structure sheets (PDF), PokerNews preview, and the Champions Club Texas email announcement (Oct 10, 2026).",
+      "body": "Tournaments\u00a0\u00a0|\u00a0\u00a0Texas Poker\nBy Shomari Williams \u00a0|\u00a0 October 12, 2026\nFor the first time ever, the RunGood Poker Series is coming to Houston. The RGPS Golden Expedition runs October 12-18, exclusively at Champions Club (6440 W Sam Houston Pkwy S, Houston), with $510K in published guarantees and 11 championship rings up for grabs. The headliner is a $600 Main Event with a $250,000 guarantee.\nChampions Club is offering a tournament room rate starting at $79 a night for players who want to stay and play. Club membership is required to play, and the structure sheet lists the fee portion of each buy-in as a \"facility access fee.\"\nThe Main Event is the best-priced event on the schedule, with a 16.7% fee on a $600 buy-in, a 60,000 stack, and 30-minute levels. The $400 events (Monster Stack, PowerStack, Last Chance) run 17.5%, and the $300 events run 20%. If you're picking one event this week, the Main gives you the most structure for your money.\nGraded from the Champions Club structure sheets with the TSR Score calculator.\nFee percentage still favors the Main, but structure favors the Monster Stack. The PowerStack is the softest of the three on skill depth.\nSources: RunGood event page, Champions Club structure sheets (PDF), PokerNews preview, and the Champions Club Texas email announcement (Oct 10, 2026).",
       "context": "Original October 2026 reporting. See the linked original article for full source links, schedules and results.",
       "disclosures": "Shomari Williams has performed commentary work at Champions Social Club with Hayden Fortini and participates in live tournament play. No firsthand experience at this event is claimed by its automated structure analysis.",
       "status": "published"
+    },
+    {
+      "slug": "andrew-neeme-reaction-lodge-coverage-poker-vlogging-pioneer-march-16-2026",
+      "title": "When You Speak With Honesty and Compassion, People Feel It: A Nod From Andrew Neeme",
+      "deck": "In the middle of the hardest week in The Lodge's history, poker vlogging pioneer and Lodge co-owner Andrew Neeme took a moment to acknowledge our coverage.",
+      "categories": [
+        "Players",
+        "Texas Poker"
+      ],
+      "heroImage": "images/2026-03-16_1.jpg",
+      "secondaryImage": null,
+      "author": "Shomari Williams",
+      "date": "March 16, 2026",
+      "body": "Originally posted March 16, 2026.\n\nI want to share a small but meaningful moment with you all.\n\nWhen I wrote my post about The Lodge situation, I made a conscious decision to lead with fairness and compassion rather than speculation and judgment. I didn't know if anyone beyond the DFW poker community would even see it.\n\nWell, Andrew Neeme reacted to the post.\n\nFor those who don't know who Andrew Neeme is, he is widely considered the godfather of poker vlogging. He is the pioneer who showed the world that the poker lifestyle was worth capturing and sharing. He inspired an entire generation of content creators \u2014 myself included \u2014 to pick up a camera and tell their stories. Without Andrew Neeme, the poker content community as we know it looks completely different.\n\nAndrew is also one of the principal partners of The Lodge Card Club. So when I say this situation hits close to home for him, I mean that in every sense of the word. This is his business, his passion, and his livelihood.\n\nThe fact that he took a moment in the middle of what has to be an incredibly stressful and difficult time to acknowledge this post means more to me than I can fully express. I want him and his wife Busi to know that the poker community sees everything they have built and we are rooting for them.\n\nSpeak with honesty. Lead with compassion. People will always feel when something is genuine.\n\nAndrew, we're with you. I hope The Lodge finds its way back to the felt very soon.\n\n\u2014 Sham",
+      "status": "published",
+      "fb_post_id": "pfbid02G9aWpY1rz68gv2aWXid4rwmXbwW5Xg8Pi6w1ng8ZTsNz3jb8UDPyCrnJVCHY6vFal",
+      "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02G9aWpY1rz68gv2aWXid4rwmXbwW5Xg8Pi6w1ng8ZTsNz3jb8UDPyCrnJVCHY6vFal/",
+      "original_fb_date": "2026-03-16",
+      "original_post_text": "When You Speak With Honesty and Compassion, People Feel It\n\nI want to share a small but meaningful moment with you all.\n\nWhen I wrote my post about The Lodge situation, I made a conscious decision to lead with fairness and compassion rather than speculation and judgment. I didn\u2019t know if anyone beyond the DFW poker community would even see it.\n\nWell, Andrew Neeme reacted to the post.\n\nFor those who don\u2019t know who Andrew Neeme is, he is widely considered the godfather of poker vlogging. He is the pioneer who showed the world that the poker lifestyle was worth capturing and sharing. He inspired an entire generation of content creators, myself included, to pick up a camera and tell their stories. Without Andrew Neeme, the poker content community as we know it looks completely different.\nAndrew is also one of the principal partners of The Lodge Card Club. So when I say this situation hits close to home for him, I mean that in every sense of the word. This is his business, his passion, and his livelihood.\n\nThe fact that he took a moment in the middle of what has to be an incredibly stressful and difficult time to acknowledge this post means more to me than I can fully express. I want him and his wife Busi to know that the poker community sees everything they have built and we are rooting for them.\n\nSpeak with honesty. Lead with compassion. People will always feel when something is genuine.\nAndrew, we\u2019re with you. I hope The Lodge finds its way back to the felt very soon. \n\n#AndrewNeeme #TheLodge #TexasPoker #ShamGodPoker",
+      "seo": {
+        "metaTitle": "A Nod From Andrew Neeme During The Lodge Closure | The Sham Report",
+        "metaDescription": "Poker vlogging pioneer and Lodge Card Club partner Andrew Neeme acknowledges Shomari Williams's commentary on The Lodge.",
+        "keyphrase": "Andrew Neeme The Lodge Card Club"
+      },
+      "context": "Editorial Context / Update Note: This preserves reporting and commentary from March 2026. On April 28, 2026, a Williamson County grand jury declined to authorize proposed charges (a no-bill), and The Lodge subsequently reopened in May 2026. Closure references describe March 2026 conditions, not current status.",
+      "credit": "Shomari Williams / The Sham Report",
+      "caption": "Facebook notification showing Andrew Neeme reacting to Sham's post in JV's Poker Squad on March 16, 2026.",
+      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed."
+    },
+    {
+      "slug": "shuffle-214-100k-series-recap-five-bullets-tournament-variance-march-2026",
+      "title": "Shuffle 214 $100K Series Recap: Five Bullets, One Min-Cash, and the Truth About Tournament Variance",
+      "deck": "Five $150 entries into Shuffle 214's $100K GTD series came back with one $250 min-cash for a -$500 net \u2014 and a reminder of why cash games pay the bills.",
+      "categories": [
+        "Tournaments",
+        "Players",
+        "Texas Poker"
+      ],
+      "heroImage": "images/2026-03-14_2.jpg",
+      "secondaryImage": "images/2026-03-13_2.jpg",
+      "author": "Shomari Williams",
+      "date": "March 14, 2026",
+      "body": "Originally posted March 13\u201314, 2026.\n\nWalked into Shuffle 214 on Friday night with $100,000 on the line \u2014 Flight 1H at 6 PM on Friday, March 13, followed by Saturday's Flight 1I at 11 AM and Flight 1J at 6 PM. Call a $150 buy-in a donation if you want; going in, I called it an investment.\n\nHere's the final ledger:\n\u2022 Event: Shuffle 214 $100K GTD Series\n\u2022 Bullets fired: 5 entries at $150 each\n\u2022 Total invested: $750\n\u2022 Return: 1 min-cash for $250\n\u2022 Net result: -$500\n\nThat's poker. No shame in it.\n\nBut here's how I look at it: I'm not a tournament-to-tournament grinder. For players who go hard every single week chasing big fields, tournament variance can be absolutely brutal on your bankroll and your mindset. I've seen it. I respect the dedication, but that's not my game plan.\n\nMy next move is back to cash games. A solid week of grinding $1/$2, $1/$3, and $2/$5 and that $500 is very easily recovered, with profit on top. That's how you keep poker manageable and repeatable.\n\nAnd honestly? When I wrapped the tournament at 6 PM, the night was still young.\n\n\u2014 Sham",
+      "status": "published",
+      "fb_post_id": "pfbid0Wdd8pgLTSCWmLDSiajrbUVcZLaAtgwvHQy7e1qnnuGY2yrtwpUjFVDrkzzaRhg95l",
+      "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid0Wdd8pgLTSCWmLDSiajrbUVcZLaAtgwvHQy7e1qnnuGY2yrtwpUjFVDrkzzaRhg95l/",
+      "original_fb_date": "2026-03-14",
+      "original_post_text": "Shuffle $100k Series recap \u2014 5 bullets, $150 each. \n$750 invested. One min cash that returned $250. \n\nNet: -$500.\n\nThat\u2019s poker. No shame in it.\n\nBut here\u2019s how I look at it: I\u2019m not a tournament-to-tournament grinder. For players who go hard every single week chasing big fields, tournament variance can be absolutely brutal on your bankroll and your mindset. I\u2019ve seen it. I respect the dedication, but that\u2019s not my game plan.\n\nMy next move is back to cash games. A solid week of grinding $1/$2, $1/$3, $2/$5 and that $500 is very easily recovered, with profit on top. That\u2019s how you keep poker manageable and repeatable.\n\nAnd honestly? It\u2019s only 6 PM. The night is young. I might make that $500 back tonight.\n\n#ShamGodPoker #DFWPoker #PokerLifestyle",
+      "seo": {
+        "metaTitle": "Shuffle 214 $100K Series Recap & Tournament Variance | The Sham Report",
+        "metaDescription": "Shomari Williams recaps firing five $150 bullets in Shuffle 214's $100K GTD series in DFW and breaks down tournament variance vs. cash-game grinding.",
+        "keyphrase": "Shuffle 214 100K series recap"
+      },
+      "context": "Original March 2026 tournament recap and bankroll commentary by Shomari Williams.",
+      "credit": "Shomari Williams / The Sham Report",
+      "caption": "Five bullets at $150 each: Sham's Flight 1H entry receipt (Table 10, Seat 8) and starting stack at Shuffle 214 on March 13, 2026.",
+      "disclosures": "Firsthand attendance verified (played): Shomari Williams played the Shuffle 214 $100K GTD Series (Flight 1H entry receipt #24, Table 10, Seat 8, March 13, 2026).",
+      "secondaryCaption": "Sham's starting chip stack on the Shuffle 214 tournament felt in DFW (March 13, 2026).",
+      "secondaryCredit": "Shomari Williams / The Sham Report"
+    },
+    {
+      "slug": "lodge-raid-community-context-aml-kyc-compliance-march-14-2026",
+      "title": "Operational Gaps vs. Criminal Intent: The Community Adds Real AML & KYC Context to the Lodge Story",
+      "deck": "Readers Jon Waters and Abram Evan Fontana pointed to a crucial distinction in the Lodge investigation: how Texas's unregulated gray area leaves rooms exposed on Anti-Money Laundering and Know Your Customer compliance.",
+      "categories": [
+        "Legal",
+        "Investigation",
+        "Texas Poker"
+      ],
+      "heroImage": "images/2026-03-14_1.jpg",
+      "secondaryImage": null,
+      "author": "Shomari Williams",
+      "date": "March 14, 2026",
+      "body": "Originally posted March 14, 2026.\n\nI want to take a moment to thank everyone who has been engaging in the comments around The Lodge situation. The poker community knows how to band together, and you're not just reacting emotionally \u2014 you're bringing real knowledge and perspective to a complicated story.\n\nTwo comments in particular stood out to me, and I want to highlight them because they add important context that may reframe how we should be looking at this.\n\nJon Waters made a really interesting point: Resorts World in Las Vegas faced a similar money-laundering investigation and they were never shut down. His take is that this doesn't necessarily mean Doug Polk or anyone on his team was directly involved in laundering money. It's more likely that a few dishonest players found small loopholes in the operation that didn't have strong enough barriers in place to stop them. That's a very important distinction between criminal intent and operational vulnerability.\n\nAbram Evan Fontana then took it a step further by bringing up AML \u2014 Anti-Money Laundering laws \u2014 and Know Your Customer (KYC) compliance protocols. Here's what that means for those who may be unfamiliar: licensed casinos in regulated states are required to have entire compliance departments dedicated to monitoring suspicious financial activity. They are heavily regulated and legally forced to build those protections. The Lodge, operating in Texas's legal gray area, never had that same regulatory structure forcing them to build that infrastructure to the same standard.\n\nSo what both of these gentlemen are essentially saying is that it's very possible The Lodge became vulnerable not because of deliberate criminal activity by ownership, but because operating in an unregulated environment left gaps that someone took advantage of. And in the eyes of the IRS and TABC's Financial Crimes Unit, a gap is a gap regardless of intent.\n\nThis doesn't excuse anything if laws were broken. But it does add important nuance to a story that has a lot of people speculating.\n\nKeep the dialogue coming. This is what the poker community is about. And yes, I read all the comments.\n\n\u2014 Sham",
+      "status": "published",
+      "fb_post_id": "pfbid027kB3N2dhftLVQiTZBKT7KkFujx29FJbci7ghmt3EVLQ1qhAumZbxWCePkpp2JMnal",
+      "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid027kB3N2dhftLVQiTZBKT7KkFujx29FJbci7ghmt3EVLQ1qhAumZbxWCePkpp2JMnal/",
+      "original_fb_date": "2026-03-14",
+      "original_post_text": "The Community Is Speaking, and Y\u2019all Are Adding Real Context To This Story\n\nI just want to take a moment to thank everyone who has been engaging in the comments around The Lodge situation. The poker community as a whole really knows how to band together, and you\u2019re not just reacting emotionally, you\u2019re bringing real knowledge and perspective to a complicated story.\n\nTwo comments in particular stood out to me and I want to highlight them because they add important context that may honestly reframe how we should be looking at this.\n\nJon Waters made a really interesting point, Resorts World in Las Vegas faced a similar money laundering investigation and they were never shut down. His take is that this doesn\u2019t necessarily mean Doug Polk or anyone on his team was directly involved in laundering money. It\u2019s more likely that a few dishonest players found small loopholes in the operation that didn\u2019t have strong enough barriers in place to stop them. That\u2019s a very important distinction between criminal intent and operational vulnerability.\n\nAbram Evan Fontana then took it a step further by bringing up AML, Anti Money Laundering laws \u2014 and Know Your Customer compliance protocols. Here\u2019s what that means for those who may be unfamiliar. Licensed casinos in regulated states are required to have entire compliance departments dedicated to monitoring suspicious financial activity. They are heavily regulated and legally forced to build those protections. The Lodge, operating in Texas\u2019 legal gray area, never had that same regulatory pressure forcing them to build that infrastructure to the same standard.\n\nSo what both of these gentlemen are essentially saying is that it\u2019s very possible The Lodge became vulnerable not because of deliberate criminal activity by ownership, but because operating in an unregulated environment left gaps that someone took advantage of. And in the eyes of the IRS and TABC\u2019s Financial Crimes Unit, a gap is a gap regardless of intent.\n\nThis doesn\u2019t excuse anything if laws were broken. But it does add important nuance to a story that has a lot of people speculating.\n\nKeep the dialogue coming. This is exactly what the poker community is about. And yes, I read all the comments. \n\n#TexasPoker #TheLodge #ShamGodPoker #TexansForTexasHoldEm",
+      "seo": {
+        "metaTitle": "AML & KYC Compliance in Texas Poker Rooms: Community Context on The Lodge | The Sham Report",
+        "metaDescription": "Texas poker players weigh in on Anti-Money Laundering (AML) and Know Your Customer (KYC) compliance challenges in unregulated social poker clubs.",
+        "keyphrase": "AML KYC Texas poker rooms"
+      },
+      "context": "Editorial Context / Update Note: This preserves reporting and commentary from March 2026. On April 28, 2026, a Williamson County grand jury declined to authorize proposed charges (a no-bill), and The Lodge subsequently reopened in May 2026. Closure references describe March 2026 conditions, not current status.",
+      "credit": "Shomari Williams / The Sham Report",
+      "caption": "Reader comments from Jon Waters and Abram Evan Fontana on Sham's March 2026 Facebook thread discussing AML and KYC compliance.",
+      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed."
+    },
+    {
+      "slug": "lodge-raid-commentary-doug-polk-texas-poker-gray-area-march-13-2026",
+      "title": "My Two Cents on The Lodge Situation: Why the Gray Area Is the Real Weapon Against Texas Poker",
+      "deck": "Doug Polk became the most visible, politically organized voice pushing for legal clarity in Texas poker \u2014 and that context matters when looking at what's happening in Round Rock.",
+      "categories": [
+        "Legal",
+        "Investigation",
+        "Texas Poker"
+      ],
+      "heroImage": "images/2026-03-13_1.jpg",
+      "secondaryImage": null,
+      "author": "Shomari Williams",
+      "date": "March 13, 2026",
+      "body": "Originally posted March 13, 2026.\n\nLet me be clear upfront: I don't know Doug Polk personally. Never met the man. So I'm reserving full judgment on the current investigation until the facts come out. No arrests. No charges. Just an ongoing investigation at this point.\n\nBut here's what I DO know.\n\nWhen Doug Polk came to Texas, he didn't just come to run a poker room. He came with ambition and he put his money where his mouth was. He and his partners, Andrew Neeme and Brad Owen, acquired majority ownership of The Lodge Card Club in Round Rock in 2022, building it into the largest poker room in Texas. Then in 2024 they purchased Rounders Card Club in San Antonio, rebranding it as The Lodge Card Club San Antonio and expanding their footprint even further.\n\nBut beyond the business moves, Doug became something Texas poker didn't really have before: a legitimate, organized political voice.\n\nHe helped launch Texans for Texas Hold'em, a lobbying group created to protect the social poker club model and push for legal clarity in Texas gambling law. He worked directly with state legislators on bills like HB 2345 to formally legalize membership poker clubs. He appeared before city councils, including in Farmers Branch right here in DFW, fighting for zoning rights so new rooms could open. He used his massive YouTube and social media platform to educate players, mobilize the community, and keep pressure on lawmakers. That's not nothing. That's real advocacy work.\n\nNow here's my theory \u2014 and I want to stress this is just a theory.\n\nTexas poker has been under attack long before Doug Polk ever showed up. I've been playing in this state since 2014, and the legal gray area has always been a weapon used against this community. The uncertainty isn't an accident; there are powerful interests who benefit from keeping Texas poker in limbo because it means they can shut you down at any moment.\n\nDoug Polk became the most visible, most vocal, most politically organized threat to that gray area. And now his room is the one being investigated by a financial crimes unit with the IRS involved.\n\nDo I think Doug, Brad Owen, and Andrew Neeme are suddenly the Texas Poker Mafia? Naw. I don't buy that at all. Is it possible there are financial issues within the operation that need to be addressed? Sure \u2014 and if laws were broken, then handle it accordingly. We need poker rooms that set the right example.\n\nBut let's not lose sight of the bigger picture. Texas poker is under attack. It was under attack before Doug got here, and it'll be under attack after this situation resolves. The people who want this industry gone are still out there and they are still organized.\n\nI hope for the sake of the employees, the players, and the future of Texas poker that The Lodge finds its way back to the felt in Austin. And to Doug, Brad, Andrew, and the entire Lodge team, I wish you all the best of luck, because honestly this fight is far from over.\n\nIf you own a poker room in Texas right now, just know: you could be next. This isn't paranoia \u2014 it's the reality of operating in a state where the law still hasn't given this industry the protection it deserves. Stay sharp. Stay clean. Be safe out there.\n\nThis is Sham, aka ShamGod Poker, signing off. I'm proud to be part of this Texas poker community, and I'm looking forward to staying in this fight with all of you.\n\n\u2014 Sham",
+      "status": "published",
+      "fb_post_id": "pfbid02T14njwwuwrJ9kYsorZeH6F6qtxzC18MPXHhRY9WwCPkmbfUidjYYHMCJM2YiZH3cl",
+      "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02T14njwwuwrJ9kYsorZeH6F6qtxzC18MPXHhRY9WwCPkmbfUidjYYHMCJM2YiZH3cl/",
+      "original_fb_date": "2026-03-13",
+      "original_post_text": "My Two Cents on The Lodge Situation \u2014 Just a Theory, But Hear Me Out\n\nLet me be clear upfront, I don't know Doug Polk personally. Never met the man. So I'm reserving full judgment on the current investigation until the facts come out. No arrests. No charges. Just an ongoing investigation at this point.\nBut here's what I DO know.\n\nWhen Doug Polk came to Texas, he didn't just come to run a poker room. He came with ambition and he put his money where his mouth was. He and his partners, Andrew Neeme and Brad Owen, acquired majority ownership of The Lodge Card Club in Round Rock in 2022, building it into the largest poker room in Texas. Then in 2024 they purchased Rounders Card Club in San Antonio, rebranding it as The Lodge Card Club San Antonio and expanding their footprint even further.\n\nBut beyond the business moves, Doug became something Texas poker didn't really have before, a legitimate, organized political voice.\n\nHe helped launch Texans for Texas Hold'em, a lobbying group created to protect the social poker club model and push for legal clarity in Texas gambling law. He worked directly with state legislators on bills like HB 2345 to formally legalize membership poker clubs. He appeared before city councils, including in Farmers Branch right here in DFW, fighting for zoning rights so new rooms could open. He used his massive YouTube and social media platform to educate players, mobilize the community, and keep pressure on lawmakers. That's not nothing. That's real advocacy work.\n\nNow here's my theory, and I want to stress this is just a theory.\nTexas poker has been under attack long before Doug Polk ever showed up. I've been playing in this state since 2014 and the legal gray area has always been a weapon used against this community. The uncertainty isn't an accident, there are powerful interests who benefit from keeping Texas poker in limbo because it means they can shut you down at any moment.\n\nDoug Polk became the most visible, most vocal, most politically organized threat to that gray area. And now his room is the one being investigated by a financial crimes unit with the IRS involved.\nDo I think Doug, Brad Owen and Andrew Neeme are suddenly the Texas Poker Mafia? Naw. I don't buy that at all. Is it possible there are financial issues within the operation that need to be addressed? Sure, and if laws were broken, then handle it accordingly. We need poker rooms that set the right example.\n\nBut let's not lose sight of the bigger picture. Texas poker is under attack. It was under attack before Doug got here and it'll be under attack after this situation resolves. The people who want this industry gone are still out there and they are still organized.\n\nI hope for the sake of the employees, the players, and the future of Texas poker that The Lodge finds its way back to the felt in Austin. And to Doug, Brad, Andrew and the entire Lodge team, I wish you all the best of luck, because honestly this fight is far from over.\nIf you own a poker room in Texas right now, just know, you could be next. This isn't paranoia, it's the reality of operating in a state where the law still hasn't given this industry the protection it deserves. Stay sharp. Stay clean. Be safe out there.\n\nThis is Sham, aka ShamGod Poker,  signing off. I'm proud to be part of this Texas poker community and I'm looking forward to staying in this fight with all of you.\n\n#TexasPoker #TheLodge #ShamGodPoker #TexansForTexasHoldEm",
+      "seo": {
+        "metaTitle": "My Two Cents on The Lodge Situation & Texas Poker's Gray Area | The Sham Report",
+        "metaDescription": "Shomari Williams on Doug Polk's Texas poker advocacy, Texans for Texas Hold'em, and how the legal gray area affects every card room in the state.",
+        "keyphrase": "Texas poker legal gray area Doug Polk"
+      },
+      "context": "Editorial Context / Update Note: This preserves reporting and commentary from March 2026. On April 28, 2026, a Williamson County grand jury declined to authorize proposed charges (a no-bill), and The Lodge subsequently reopened in May 2026. Closure references describe March 2026 conditions, not current status.",
+      "credit": "Shomari Williams / The Sham Report",
+      "caption": "At the table in DFW: 'Member of Too Many Social Clubs.'",
+      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed."
+    },
+    {
+      "slug": "lodge-raid-update-tabc-financial-crimes-irs-march-12-2026",
+      "title": "Lodge Card Club Update: TABC Financial Crimes and the IRS Were Behind the Raid",
+      "deck": "TABC confirmed its Financial Crimes Unit, the Williamson County Sheriff's Office, and the IRS executed the search warrant at The Lodge over suspected money laundering and illegal gambling \u2014 not a liquor-license check.",
+      "categories": [
+        "Investigation",
+        "Legal",
+        "Texas Poker"
+      ],
+      "heroImage": "images/2026-03-12_2.jpg",
+      "secondaryImage": null,
+      "author": "Shomari Williams",
+      "date": "March 12, 2026",
+      "body": "Originally posted March 12, 2026.\n\nThanks to the DFW poker community for keeping me plugged in as this develops.\n\nWe now have answers on why TABC raided The Lodge Card Club in Round Rock on Tuesday, March 10 \u2014 and it's bigger than anyone initially assumed.\n\nAccording to a statement from TABC Director of Communications Chris Porter to PokerNews (https://www.pokernews.com/news/2026/03/lodge-card-club-money-laundering-charges-50804.htm), the agency's Financial Crimes Unit, along with its Special Investigations Unit and Operations Bureau, executed a search and seizure warrant as part of an ongoing investigation into suspected money laundering and illegal gambling.\n\nEarly speculation centered around liquor licensing issues or underage drinking, which makes sense given TABC's name. Those assumptions appear to have been incorrect.\n\nApproximately 20 TABC agents were involved in the operation, along with officers from the Williamson County Sheriff's Office and the IRS. The IRS being involved is significant \u2014 this is a federal-level matter.\n\nNo arrests have been made and no charges have been filed against the business at this time. The investigation remains ongoing, and The Lodge remains closed with no reopening timetable announced.\n\nWe will continue to follow this story closely.\n\n\u2014 Sham",
+      "status": "published",
+      "fb_post_id": "pfbid0rpFH75LgdTVo9fZ4DJvYqbMzEe9CTpdNXmw1gRuSabccRwGKCtxU2pbJuwuaRZH6l",
+      "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid0rpFH75LgdTVo9fZ4DJvYqbMzEe9CTpdNXmw1gRuSabccRwGKCtxU2pbJuwuaRZH6l/",
+      "original_fb_date": "2026-03-12",
+      "original_post_text": "Thanks to the DFW poker community for keeping me plugged in as this develops. \n\nLodge Card Club Update \u2014 This Just Got Much More Serious\n\nWe now have answers on why TABC raided The Lodge Card Club in Round Rock this past Tuesday \u2014 and it\u2019s bigger than anyone initially assumed.\n\nAccording to a statement from TABC Director of Communications Chris Porter, the agency\u2019s Financial Crimes Unit, along with its Special Investigations Unit and Operations Bureau, executed a search and seizure warrant as part of an ongoing investigation into suspected money laundering and illegal gambling. \n\nEarly speculation centered around liquor licensing issues or underage drinking, which makes sense given TABC\u2019s name. Those assumptions appear to have been incorrect. \n\nApproximately 20 TABC agents were involved in the operation, along with officers from the Williamson County Sheriff\u2019s Office and the IRS.  The IRS being involved is significant, this is now a federal level matter.\n\nNo arrests have been made and no charges have been filed against the business at this time.  The investigation remains ongoing.\n\nThe Lodge remains closed with no reopening timetable announced.\n\nWe will continue to follow this story closely.\n\n#TheLodge #PokerNews #GameIntegrity #TexasPoker\n\nhttps://www.pokernews.com/news/2026/03/lodge-card-club-money-laundering-charges-50804.htm",
+      "seo": {
+        "metaTitle": "TABC Financial Crimes and IRS Behind Lodge Raid | The Sham Report",
+        "metaDescription": "TABC confirms its Financial Crimes Unit, Williamson County Sheriff's Office, and the IRS raided The Lodge Card Club in Round Rock.",
+        "keyphrase": "TABC Financial Crimes Lodge Card Club IRS"
+      },
+      "context": "Editorial Context / Update Note: This preserves reporting and commentary from March 2026. On April 28, 2026, a Williamson County grand jury declined to authorize proposed charges (a no-bill), and The Lodge subsequently reopened in May 2026. Closure references describe March 2026 conditions, not current status.",
+      "credit": "The Lodge Card Club exterior sign",
+      "caption": "The Lodge Card Club in Round Rock, Texas.",
+      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed."
+    },
+    {
+      "slug": "lodge-raid-coverage-tom-dwan-enters-the-chat",
+      "title": "Lodge Raid Coverage: Tom Dwan Enters the Chat",
+      "deck": "A day after the raid, Tom Dwan jumped into a tense X exchange with Doug Polk \u2014 and the story started splitting into two different versions.",
+      "categories": [
+        "Investigation",
+        "Players",
+        "Texas Poker"
+      ],
+      "heroImage": "images/2026-03-12_1.jpg",
+      "secondaryImage": null,
+      "author": "Shomari Williams",
+      "date": "March 12, 2026",
+      "body": "Originally posted March 12, 2026.\n\nThe Lodge Card Club in Round Rock remains closed following Tuesday's search warrant executed by state police and TABC. The Lodge's official statement says their attorneys are still working to understand the reasons behind the search, meaning even they don't fully know why yet.\n\nNow poker legend Tom Dwan has inserted himself into the conversation, with his own separate allegations.\n\nDwan is claiming he warned Doug Polk years ago about a game integrity vulnerability at The Lodge and that Doug chose not to address it. Dwan has been careful to say he does not believe the TABC raid is connected to that issue, but the timing has the poker world asking questions.\n\nWorth noting, Dwan has also acknowledged personal friction with Doug, so we're not dealing with a completely neutral party here.\n\nBottom line: Two separate stories colliding at the worst possible time for The Lodge. The TABC situation is still unresolved. And now there are integrity questions being raised publicly by one of the most respected names in the game.\n\nWe're watching this closely. I'd love to see your comments.\n\n\u2014 Sham",
+      "status": "published",
+      "fb_post_id": "pfbid0BZKq1esV41A7ezowFQ5mc2kT7aa82qz8Pu4czHMzpE1DGgZ89cUHqpNGBS4DztbQl",
+      "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid0BZKq1esV41A7ezowFQ5mc2kT7aa82qz8Pu4czHMzpE1DGgZ89cUHqpNGBS4DztbQl/",
+      "original_fb_date": "2026-03-12",
+      "original_post_text": "Lodge Card Club Update \u2014 Now Tom Dwan Has Entered The Chat\n\nThe Lodge Card Club in Round Rock remains closed following Tuesday\u2019s search warrant executed by state police and TABC. The Lodge\u2019s official statement says their attorneys are still working to understand the reasons behind the search, meaning even they don\u2019t fully know why yet.\n\nNow poker legend Tom Dwan has inserted himself into the conversation, with his own separate allegations.\n\nDwan is claiming he warned Doug Polk years ago about a game integrity vulnerability at The Lodge and that Doug chose not to address it. Dwan has been careful to say he does not believe the TABC raid is connected to that issue, but the timing has the poker world asking questions.\n\nWorth noting, Dwan has also acknowledged personal friction with Doug, so we\u2019re not dealing with a completely neutral party here.\n\nBottom line: Two separate stories colliding at the worst possible time for The Lodge. The TABC situation is still unresolved. And now there are integrity questions being raised publicly by one of the most respected names in the game.\n\nWe\u2019re watching this closely. I\u2019d love to see your comments.\n\nTheLodge #PokerTwitter #GameIntegrity #TomDwan",
+      "seo": {
+        "metaTitle": "Tom Dwan vs Doug Polk: Lodge Card Club Integrity Claims | The Sham Report",
+        "metaDescription": "Tom Dwan raises game integrity allegations against Doug Polk as The Lodge Card Club remains closed following a TABC raid in Round Rock.",
+        "keyphrase": "Tom Dwan Lodge Card Club"
+      },
+      "context": "Editorial Context / Update Note: This preserves reporting and commentary from March 2026. On April 28, 2026, a Williamson County grand jury declined to authorize proposed charges (a no-bill), and The Lodge subsequently reopened in May 2026. Closure references describe March 2026 conditions, not current status.",
+      "credit": "Screenshot via X (@TomDwan / @DougPolkVids)",
+      "caption": "Tom Dwan (@TomDwan) replies to Doug Polk (@DougPolkVids) on X on March 12, 2026.",
+      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed."
+    },
+    {
+      "slug": "the-lodge-raid-first-reaction-march-11-2026",
+      "title": "The Lodge Raid: First Reaction (March 11, 2026)",
+      "deck": "My first reaction when news broke that TABC raided The Lodge in Round Rock \u2014 before any official statement or confirmed details.",
+      "categories": [
+        "Investigation",
+        "Legal",
+        "Texas Poker"
+      ],
+      "heroImage": "images/The_Lodge_Photo.jpg",
+      "secondaryImage": null,
+      "author": "Shomari Williams",
+      "date": "March 11, 2026",
+      "body": "Originally posted March 11, 2026.\n\nBy now most of y'all have probably seen the news. TABC and state police rolled up on The Lodge in Round Rock Tuesday morning around 11 a.m. Biggest poker room in Texas, co-owned by Doug Polk, Brad Owen, and Andrew Neeme. Players were told to take their chips home and come back when they reopen. Staff told tournament players they'd be refunded entries. The WPT Wildcard event that was supposed to happen this weekend has been postponed.\n\nNo official statement from the owners yet. No confirmed citation details that I've seen.\n\nNow here's the part that's been on my mind since I heard about this. The Lodge is an 18+ room. That's something a lot of people didn't realize, including me honestly. When you mix 18 and 19 year olds in the building with alcohol service, TABC showing up starts to make a lot of sense. Whether it was underage drinking, a license issue, how alcohol was being distributed, whether it was free or sold, all of that matters legally and none of it has been confirmed yet.\n\nTexas poker rooms already operate in a gray area. Add alcohol into the equation with players who are legal to gamble but not legal to drink and that's a real compliance problem for any club.\n\nIf anybody has actual confirmed info on what the citation was for, drop it in the comments. This situation has implications for every poker room in Texas and we need to be paying attention.\n\n\u2014 Sham",
+      "status": "published",
+      "fb_post_id": "pfbid02MkUifUMNtEkVD6gy65xD138Xh72mypYFNaKcBkHA15myLt7sjqtPfA8ZgpLFabQZl",
+      "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02MkUifUMNtEkVD6gy65xD138Xh72mypYFNaKcBkHA15myLt7sjqtPfA8ZgpLFabQZl/",
+      "original_fb_date": "2026-03-11",
+      "original_post_text": "Originally posted March 11, 2026. By now most of y'all have probably seen the news. TABC and state police rolled up on The Lodge in Round Rock Tuesday morning around 11 a.m. Biggest poker room in Texas, co-owned by Doug Polk, Brad Owen, and Andrew Neeme. Players were told to take their chips home and come back when they reopen. Staff told tournament players they'd be refunded entries. The WPT Wildcard event that was supposed to happen this weekend has been postponed.\nNo official statement from the owners yet. No confirmed citation details that I've seen.\nNow here's the part that's been on my mind since I heard about this. The Lodge is an 18+ room. That's something a lot of people didn't realize, including me honestly. When you mix 18 and 19 year olds in the building with alcohol service, TABC showing up starts to make a lot of sense. Whether it was underage drinking, a license issue, how alcohol was being distributed, whether it was free or sold, all of that matters legally and none of it has been confirmed yet.\nTexas poker rooms already operate in a gray area. Add alcohol into the equation with players who are legal to gamble but not legal to drink and that's a real compliance problem for any club.\nIf anybody has actual confirmed info on what the citation was for, drop it in the comments. This situation has implications for every poker room in Texas and we need to be paying attention.",
+      "seo": {
+        "metaTitle": "TABC Raids The Lodge Card Club | The Sham Report",
+        "metaDescription": "TABC and state police shut down The Lodge Card Club in Round Rock, Texas' largest poker room. Sham's first reaction as the story broke.",
+        "keyphrase": "Lodge Card Club raid"
+      },
+      "context": "Editorial Context / Update Note: This preserves reporting and commentary from March 2026. On April 28, 2026, a Williamson County grand jury declined to authorize proposed charges (a no-bill), and The Lodge subsequently reopened in May 2026. Closure references describe March 2026 conditions, not current status.",
+      "credit": "The Lodge archival CMS image",
+      "caption": "The Lodge Card Club in Round Rock, Texas.",
+      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed."
     }
   ]
 };

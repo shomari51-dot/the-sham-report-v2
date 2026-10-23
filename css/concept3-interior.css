@@ -25,3 +25,12 @@
   .c3-interior tr{border-bottom:1px solid var(--c3-rule);padding:8px 0}
   .c3-interior td{border:0;padding:3px 0;font-size:14px}
 }
+
+/* Part 1 FB Articles: preserve full screenshot/receipt/vertical image legibility */
+.article-copy figure img{max-height:580px;width:100%;height:auto;object-fit:contain;background:#080808;border:1px solid var(--c3-rule)}
+.article-figures{display:grid;grid-template-columns:1fr;gap:18px;margin:18px 0}
+.article-figures.two-figures{grid-template-columns:1fr 1fr}
+.article-deck{font-size:19px;color:#e6e6e6}
+.article-body p{font-size:16px;line-height:1.65;margin:14px 0}
+@media(max-width:680px){.article-figures.two-figures{grid-template-columns:1fr}}
+.article-copy,.article-copy p,.article-copy a,.article-copy figcaption{overflow-wrap:anywhere;word-break:break-word}

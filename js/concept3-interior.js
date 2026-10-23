@@ -6,13 +6,13 @@ const regradeTable=()=>'<div style="overflow:auto"><table><caption>Staged review
 const dl=rows=>'<dl>'+rows.map(([k,v])=>`<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')+'</dl>';
 if($('news-list')){
  const d=window.CONCEPT3_DATA;
- const stories=d.stories.map(x=>({...x,byline:'By Shomari Williams',topic:x.category.includes('Texas')?'Texas Poker':'Tournament'}));
+ const stories=d.stories.map(x=>{const a=(d.articles||[]).find(art=>x.url&&x.url.includes(art.slug));const cats=[x.category,...(a?.categories||[])];return {...x,byline:'By '+(x.author||'Shomari Williams'),cats,topic:cats.some(c=>/tournament/i.test(c))?'Tournament':x.category};});
  const story=x=>`<a class="c3-story" href="${esc(x.url||'article-template.html')}"><img src="${esc(x.image)}" alt="${esc(x.alt)}" loading="lazy"><div><p class="c3-meta"><span>${esc(x.category)}</span> · ${esc(x.date)}</p><h3>${esc(x.title)}</h3><p>${esc(x.description)}</p><p>${esc(x.byline)}</p></div></a>`;
  $('news-feature').innerHTML=`<article class="feature-story"><img src="${esc(stories[0].image)}" alt="${esc(stories[0].alt)}"><div class="feature-copy"><p class="c3-kicker">Featured reporting</p><h2>${esc(stories[0].title)}</h2><p>${esc(stories[0].description)}</p><p>${esc(stories[0].date)} · By Shomari Williams</p><a class="c3-button" href="${esc(stories[0].url)}">Read the full story →</a></div></article>`;
  $('news-side').innerHTML=stories.slice(1,4).map(story).join('');
- let limit=4;
- function render(){const q=$('news-search').value.toLowerCase(),cat=$('category').value;const list=stories.filter(x=>(!cat||x.topic===cat)&&`${x.title} ${x.description} ${x.category}`.toLowerCase().includes(q));$('news-list').innerHTML=list.slice(0,limit).map(story).join('');$('news-count').textContent=`${list.length} items · ${Math.min(limit,list.length)} shown`;$('news-empty').hidden=!!list.length;$('load-news').hidden=limit>=list.length;}
- $('news-filters').addEventListener('submit',e=>e.preventDefault());$('news-filters').addEventListener('input',()=>{limit=4;render()});$('news-filters').addEventListener('reset',()=>setTimeout(()=>{limit=4;render()},0));$('reset-news').onclick=()=>$('news-filters').reset();$('load-news').onclick=()=>{limit+=3;render()};render();
+ let limit=5;
+ function render(){const q=$('news-search').value.toLowerCase(),cat=$('category').value;const list=stories.filter(x=>(!cat||x.topic===cat||x.cats.includes(cat))&&`${x.title} ${x.description} ${x.category} ${x.date}`.toLowerCase().includes(q));$('news-list').innerHTML=list.slice(0,limit).map(story).join('');$('news-count').textContent=`${list.length} items · ${Math.min(limit,list.length)} shown`;$('news-empty').hidden=!!list.length;$('load-news').hidden=limit>=list.length;}
+ $('news-filters').addEventListener('submit',e=>e.preventDefault());$('news-filters').addEventListener('input',()=>{limit=5;render()});$('news-filters').addEventListener('reset',()=>setTimeout(()=>{limit=5;render()},0));$('reset-news').onclick=()=>$('news-filters').reset();$('load-news').onclick=()=>{limit+=4;render()};render();
 }
 if($('reels-grid')){
  const reels=window.C3_REELS;

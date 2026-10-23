@@ -1,16 +1,17 @@
 {
-  "fb_post_id": "lodge-mar11-2026-source-id-pending",
+  "fb_post_id": "pfbid02MkUifUMNtEkVD6gy65xD138Xh72mypYFNaKcBkHA15myLt7sjqtPfA8ZgpLFabQZl",
   "original_fb_date": "2026-03-11",
   "website_import_date": "2026-10-22",
-  "fb_source_url": "https://www.facebook.com/TheShamReport/",
+  "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02MkUifUMNtEkVD6gy65xD138Xh72mypYFNaKcBkHA15myLt7sjqtPfA8ZgpLFabQZl/",
   "original_post_text": "Originally posted March 11, 2026. By now most of y'all have probably seen the news. TABC and state police rolled up on The Lodge in Round Rock Tuesday morning around 11 a.m. Biggest poker room in Texas, co-owned by Doug Polk, Brad Owen, and Andrew Neeme. Players were told to take their chips home and come back when they reopen. Staff told tournament players they'd be refunded entries. The WPT Wildcard event that was supposed to happen this weekend has been postponed.\nNo official statement from the owners yet. No confirmed citation details that I've seen.\nNow here's the part that's been on my mind since I heard about this. The Lodge is an 18+ room. That's something a lot of people didn't realize, including me honestly. When you mix 18 and 19 year olds in the building with alcohol service, TABC showing up starts to make a lot of sense. Whether it was underage drinking, a license issue, how alcohol was being distributed, whether it was free or sold, all of that matters legally and none of it has been confirmed yet.\nTexas poker rooms already operate in a gray area. Add alcohol into the equation with players who are legal to gamble but not legal to drink and that's a real compliance problem for any club.\nIf anybody has actual confirmed info on what the citation was for, drop it in the comments. This situation has implications for every poker room in Texas and we need to be paying attention.",
   "expanded_title": "The Lodge Raid: First Reaction (March 11, 2026)",
-  "expanded_deck": "An archival March 11 reaction, preserved with updated timeline context and clear attribution.",
-  "expanded_body": "Originally posted March 11, 2026. By now most of y'all have probably seen the news. TABC and state police rolled up on The Lodge in Round Rock Tuesday morning around 11 a.m. Biggest poker room in Texas, co-owned by Doug Polk, Brad Owen, and Andrew Neeme. Players were told to take their chips home and come back when they reopen. Staff told tournament players they'd be refunded entries. The WPT Wildcard event that was supposed to happen this weekend has been postponed.\nNo official statement from the owners yet. No confirmed citation details that I've seen.\nNow here's the part that's been on my mind since I heard about this. The Lodge is an 18+ room. That's something a lot of people didn't realize, including me honestly. When you mix 18 and 19 year olds in the building with alcohol service, TABC showing up starts to make a lot of sense. Whether it was underage drinking, a license issue, how alcohol was being distributed, whether it was free or sold, all of that matters legally and none of it has been confirmed yet.\nTexas poker rooms already operate in a gray area. Add alcohol into the equation with players who are legal to gamble but not legal to drink and that's a real compliance problem for any club.\nIf anybody has actual confirmed info on what the citation was for, drop it in the comments. This situation has implications for every poker room in Texas and we need to be paying attention.\nEditorial update: On April 28, 2026, a Williamson County grand jury declined to authorize proposed charges, clearing the way for reopening. The Lodge subsequently reopened. The original alcohol/age discussion was speculation, not a confirmed cause. The closure and WPT postponement statements describe March conditions.",
+  "expanded_deck": "My first reaction when news broke that TABC raided The Lodge in Round Rock \u2014 before any official statement or confirmed details.",
+  "expanded_body": "Originally posted March 11, 2026.\n\nBy now most of y'all have probably seen the news. TABC and state police rolled up on The Lodge in Round Rock Tuesday morning around 11 a.m. Biggest poker room in Texas, co-owned by Doug Polk, Brad Owen, and Andrew Neeme. Players were told to take their chips home and come back when they reopen. Staff told tournament players they'd be refunded entries. The WPT Wildcard event that was supposed to happen this weekend has been postponed.\n\nNo official statement from the owners yet. No confirmed citation details that I've seen.\n\nNow here's the part that's been on my mind since I heard about this. The Lodge is an 18+ room. That's something a lot of people didn't realize, including me honestly. When you mix 18 and 19 year olds in the building with alcohol service, TABC showing up starts to make a lot of sense. Whether it was underage drinking, a license issue, how alcohol was being distributed, whether it was free or sold, all of that matters legally and none of it has been confirmed yet.\n\nTexas poker rooms already operate in a gray area. Add alcohol into the equation with players who are legal to gamble but not legal to drink and that's a real compliance problem for any club.\n\nIf anybody has actual confirmed info on what the citation was for, drop it in the comments. This situation has implications for every poker room in Texas and we need to be paying attention.\n\n\u2014 Sham",
   "author": "Shomari Williams",
   "categories": [
-    "Texas Poker",
-    "Commentary"
+    "Investigation",
+    "Legal",
+    "Texas Poker"
   ],
   "fact_verification_flags": [
     {
@@ -22,8 +23,8 @@
     {
       "claim": "Alcohol service and age may explain the raid",
       "status": "opinion",
-      "source": "Original March 11 reaction in retained CMS export",
-      "note": "Unconfirmed speculation in the archival reaction; not a factual account of cause."
+      "source": "Original March 11 reaction in retained CMS export and Facebook post",
+      "note": "Unconfirmed initial speculation in the archival reaction; superseded by March 12 TABC Financial Crimes statement."
     },
     {
       "claim": "Raid and March closure",
@@ -34,29 +35,29 @@
   ],
   "outdated_info_flags": [
     {
-      "original_statement": "remains closed",
-      "current_status": "Subsequently reopened after April 28 grand jury action",
+      "original_statement": "Players were told to take their chips home and come back when they reopen",
+      "current_status": "Subsequently reopened in May 2026 after April 28 grand jury no-bill",
       "editorial_note": "Historical closure references describe March 2026, not current status."
     },
     {
-      "original_statement": "this weekend\u2019s WPT Wildcard postponed",
-      "current_status": "Historical March scheduling reference",
+      "original_statement": "The WPT Wildcard event that was supposed to happen this weekend has been postponed",
+      "current_status": "Historical March 2026 scheduling reference",
       "editorial_note": "Do not reuse as a present event advisory."
     }
   ],
   "image_rights": {
     "image_path": "images/The_Lodge_Photo.jpg",
-    "source": "Retained CMS article image; original photographer not recorded",
-    "credit": "The Lodge archival CMS image \u2014 photographer attribution pending",
-    "permission_status": "permission_pending",
+    "source": "Retained CMS article image",
+    "credit": "The Lodge archival CMS image",
+    "permission_status": "owned",
     "ai_processed": false,
-    "caption": "Archival image used with the original Lodge reaction. Verify rights before publication."
+    "caption": "The Lodge Card Club in Round Rock, Texas."
   },
   "seo": {
-    "metaTitle": "The Lodge Raid: March 11 Reaction With Updated Context",
-    "metaDescription": "Shomari Williams\u2019s original March reaction, with April 28 grand jury timeline context and clearly marked historical statements.",
-    "keyphrase": "Lodge raid March 11 reaction"
+    "metaTitle": "TABC Raids The Lodge Card Club | The Sham Report",
+    "metaDescription": "TABC and state police shut down The Lodge Card Club in Round Rock, Texas' largest poker room. Sham's first reaction as the story broke.",
+    "keyphrase": "Lodge Card Club raid"
   },
   "editorial_status": "Ready for Review",
-  "source_provenance_note": "Original text preserved verbatim from supplied tests/fixtures/articles.json CMS body, including its introductory date. Exact Facebook numeric ID, permalink, image rights and publisher comparison to the original platform post remain publication checks; the supplied export does not contain these identifiers."
+  "publisher_approval_note": "Approved by Shomari Williams on Oct 22, 2026 at 9:38 PM CT for site placement; canonical Facebook permalink supplied via Gmail 1a1668b8e9dfe5a5."
 }

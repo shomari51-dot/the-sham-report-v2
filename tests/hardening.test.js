@@ -200,7 +200,7 @@ test('public pages remove unverified navigation, social links, mailboxes and fic
  for(const file of ['index.html','news.html','tournaments.html','js/concept3.js','js/concept3-interior.js'])assert.doesNotMatch(read(file),/Reading the structure sheet|Around the Texas tables|The tournament notebook|Behind the broadcast|The weekly structure notebook/);
  for(const file of ['tsr-score-calculator.html','js/concept3-calculator.js']){assert.match(read(file),/Data-Based Structure Analysis/);assert.doesNotMatch(read(file),/Sham[’']s Take/);}
  const context={window:{}};for(const file of ['js/concept3-config.js','js/concept3-data.js','js/concept3-events.js','js/concept3-hosts.js','js/concept3-regrade.js'])vm.runInNewContext(read(file),context);
- assert.equal(context.window.TSR_CONFIG.features.hostedGamesNav,false);assert.equal(context.window.CONCEPT3_DATA.stories.length,4);assert.equal(context.window.CONCEPT3_DATA.grades.length,16);assert.equal(context.window.C3_REGRADE.length,20);
+ assert.equal(context.window.TSR_CONFIG.features.hostedGamesNav,false);assert.equal(context.window.CONCEPT3_DATA.stories.length,9);assert.equal(context.window.CONCEPT3_DATA.articles.length,9);assert.equal(context.window.CONCEPT3_DATA.grades.length,16);assert.equal(context.window.C3_REGRADE.length,20);
  for(const host of context.window.C3_HOSTS){assert.equal(host.verified,false);assert.equal(host.status,'Needs Verification');}
  for(const score of [69.8,66,46.6])assert.ok(context.window.C3_EVENTS.some(e=>e.score===score&&e.venue==='Champions Club Houston'&&e.tier===3));
  for(const id of ['editorial-standards','independence','methodology','corrections','contact','score-revisions'])assert.ok(read('about.html').includes('id="'+id+'"'));
@@ -227,7 +227,7 @@ test('public renderers use real articles, correct curve groups and verified host
   r=run(['article-content','main-content'],['js/concept3-data.js','js/concept3-article.js'],'?slug='+slug);
   for(const term of ['Shomari Williams','Editorial Context / Update Note','April 28','Disclosures','Corrections','figcaption'])assert.ok(r.nodes['main-content'].innerHTML.includes(term));
  }
- r=run(['article-content','main-content'],['js/concept3-data.js','js/concept3-article.js']);assert.equal((r.nodes['article-content'].innerHTML.match(/<a /g)||[]).length,4);
+ r=run(['article-content','main-content'],['js/concept3-data.js','js/concept3-article.js']);assert.equal((r.nodes['article-content'].innerHTML.match(/<a /g)||[]).length,9);
 });
 test('Facebook import CLI dry run validates without accessing MongoDB',async()=>{
  const {main}=require('../scripts/import-fb-post');let output='';
@@ -274,4 +274,28 @@ test('all sixteen approved examples match engine, backend and both published dat
 
 test('migration rejects production database before accessing collections',async()=>{
  await assert.rejects(require('../scripts/migrate-grades-v2').migrate({databaseName:'tsrcms',collection(){throw Error('Must not access production');}}),e=>e.code==='PROD_DB_WRITE_BLOCKED');
+});
+
+test('Part 1 Facebook imports (all 7 fixtures) validate and render with images and FB permalinks',()=>{
+ const {createImport}=require('../lib/fb-import');
+ const fs=require('node:fs'),vm=require('node:vm');
+ const files=['fb-import-1-lodge-mar11.json','fb-import-2-lodge-tom-dwan-mar12.json','fb-import-3-lodge-tabc-irs-mar12.json','fb-import-4-lodge-doug-polk-gray-area-mar13.json','fb-import-5-lodge-community-aml-kyc-mar14.json','fb-import-6-shuffle-214-100k-recap-mar14.json','fb-import-7-andrew-neeme-reaction-mar16.json'];
+ for(const f of files){
+  const doc=createImport(require('./fixtures/'+f));
+  assert.equal(doc.editorial_status,'Ready for Review');
+  assert.match(doc.fb_post_id,/^pfbid/);
+  assert.match(doc.fb_source_url,/^https:\/\/facebook\.com\/100000259835379\/posts\/pfbid/);
+ }
+ const slugs=['the-lodge-raid-first-reaction-march-11-2026','lodge-raid-coverage-tom-dwan-enters-the-chat','lodge-raid-update-tabc-financial-crimes-irs-march-12-2026','lodge-raid-commentary-doug-polk-texas-poker-gray-area-march-13-2026','lodge-raid-community-context-aml-kyc-compliance-march-14-2026','shuffle-214-100k-series-recap-five-bullets-tournament-variance-march-2026','andrew-neeme-reaction-lodge-coverage-poker-vlogging-pioneer-march-16-2026'];
+ for(const slug of slugs){
+  const nodes={'article-content':{innerHTML:''},'main-content':{innerHTML:''}};
+  const context={window:{},document:{getElementById:id=>nodes[id]||null},location:{search:'?slug='+slug},URLSearchParams};
+  vm.runInNewContext(fs.readFileSync('js/concept3-data.js','utf8'),context);
+  vm.runInNewContext(fs.readFileSync('js/concept3-article.js','utf8'),context);
+  assert.match(nodes['main-content'].innerHTML,/View original post on Facebook/);
+  if(slug==='shuffle-214-100k-series-recap-five-bullets-tournament-variance-march-2026'){
+   assert.match(nodes['main-content'].innerHTML,/images\/2026-03-14_2\.jpg/);
+   assert.match(nodes['main-content'].innerHTML,/images\/2026-03-13_2\.jpg/);
+  }
+ }
 });

@@ -2,8 +2,8 @@
 'use strict';
 const $=id=>document.getElementById(id),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const workflow=['Imported','Draft','Needs Verification','Ready for Review','Approved','Published','Archived'];
-const key='tsr-prelaunch-review-v1';let saved;try{saved=JSON.parse(localStorage.getItem(key)||'null')}catch{}
-let state=saved||{stories:[{...window.C3_FB_IMPORT,slug:'lodge-mar11-import'},...window.CONCEPT3_DATA.stories.map(s=>({...s,...window.CONCEPT3_DATA.articles.find(a=>a.title===s.title),slug:window.CONCEPT3_DATA.articles.find(a=>a.title===s.title)?.slug||s.url,title:s.title,editorial_status:'Published',author:'Shomari Williams'}))],grades:structuredClone(window.C3_REGRADE),experiences:{},corrections:[]};
+const key='tsr-prelaunch-review-v2';let saved;try{saved=JSON.parse(localStorage.getItem(key)||'null')}catch{}
+let state=saved||{stories:[...(window.C3_FB_IMPORTS||[window.C3_FB_IMPORT]).map((imp,idx)=>({...imp,slug:imp.slug||'fb-import-part1-'+(idx+1)})),...window.CONCEPT3_DATA.stories.filter(s=>!s.url.startsWith('article-template.html')).map(s=>({...s,...window.CONCEPT3_DATA.articles.find(a=>a.title===s.title),slug:window.CONCEPT3_DATA.articles.find(a=>a.title===s.title)?.slug||s.url,title:s.title,editorial_status:'Published',author:'Shomari Williams'}))],grades:structuredClone(window.C3_REGRADE),experiences:{},corrections:[]};
 // Reletter retained browser drafts and include newly sourced review records.
 for(const row of window.C3_REGRADE) if(!state.grades.some(g=>g.id===row.id)) state.grades.push(structuredClone(row));
 for(const g of state.grades){Object.assign(g,TSREngine.resolveCurve(g));g.grade=g.tier?TSREngine.letterFor(g.score,g.tier).letter:null;g.multi_day=Boolean(g.multi_day);g.methodology_version='v1.1';}
