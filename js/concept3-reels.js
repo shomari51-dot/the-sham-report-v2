@@ -20,16 +20,18 @@ window.C3_REELS = [
     "image": "images/reels/2026-10-04_reel-1084950954282668.jpg",
     "alt": "Cover reading Kyle puts Dr. Andy in the blender, KJ vs A4, $15K pot",
     "title": "Kyle puts Dr. Andy in the blender, $15K pot",
-    "description": "Dr. Andy&#x27;s K-J against Kyle&#x27;s A-4 for a $15K pot at Champions Social Club, Dallas.",
-    "date": "Oct 4, 2026"
+    "description": "Dr. Andy's K\u2665 J\u2665 against Kyle's A\u2665 4\u2663 for a $15,000 pot at Champions Social Club, Dallas.",
+    "date": "Oct 4, 2026",
+    "articleUrl": "article-template.html?slug=kyle-puts-dr-andy-in-the-blender-kj-vs-a4-15k-pot-champions-social-club-dallas-october-4-2026"
   },
   {
     "url": "https://www.facebook.com/reel/1985887152094115/",
     "image": "images/reels/2026-10-02_reel-1985887152094115.jpg",
     "alt": "Cover reading SPOOKY vs KYLE, 72 vs AA, 20k pot",
     "title": "Spooky&rsquo;s 72 vs Kyle&rsquo;s AA, 20k pot",
-    "description": "Spooky raises with 7-2 into Kyle&#x27;s pocket aces. Champions Club Live.",
-    "date": "Oct 2, 2026"
+    "description": "Spooky raises to $250 with 7\u2665 2\u2666 into Kyle's pocket aces (A\u2660 A\u2666) in a wild $20,000 pot on Champions Club Live.",
+    "date": "Oct 2, 2026",
+    "articleUrl": "article-template.html?slug=spooky-72-vs-kyle-aa-wild-20k-pot-champions-club-live-october-2-2026"
   },
   {
     "url": "https://www.facebook.com/reel/1612745596487168/",
@@ -37,7 +39,8 @@ window.C3_REELS = [
     "alt": "Poker House table with tall stacks of red chips",
     "title": "I have to play Day 2 tomorrow",
     "description": "1:00 A.M. at Poker House: a five-card Big O game just broke out the night before Day 2.",
-    "date": "May 3, 2026"
+    "date": "May 3, 2026",
+    "articleUrl": "article-template.html?slug=big-o-game-broke-out-1am-before-day-2-poker-house-may-3-2026"
   },
   {
     "url": "https://www.facebook.com/reel/3148062308729546/",
@@ -45,7 +48,8 @@ window.C3_REELS = [
     "alt": "Maroon Palace poker felt with board cards and chips",
     "title": "KK at it again",
     "description": "Three-way pocket-pair showdown (KK vs. JJ vs. 88) on the maroon Palace Poker felt.",
-    "date": "Apr 28, 2026"
+    "date": "Apr 28, 2026",
+    "articleUrl": "article-template.html?slug=kk-at-it-again-kk-vs-jj-vs-88-three-way-all-in-palace-poker-april-28-2026"
   },
   {
     "url": "https://www.facebook.com/reel/1623841535321868/",
@@ -53,7 +57,8 @@ window.C3_REELS = [
     "alt": "Player in a dark hoodie at a poker table with chip stacks",
     "title": "Wolfgang, Brad, Benji, Scott, Amy",
     "description": "\u201cMy table selection was a little off this time. A bunch of 5-10 crushers.\u201d Sitting down with Wolfgang, Brad, Benji, Scott, and Amy.",
-    "date": "Mar 18, 2026"
+    "date": "Mar 18, 2026",
+    "articleUrl": "article-template.html?slug=table-selection-5-10-crushers-wolfgang-brad-benji-scott-amy-march-18-2026"
   },
   {
     "url": "https://www.facebook.com/reel/2045881562627473/",
@@ -61,6 +66,7 @@ window.C3_REELS = [
     "alt": "Shuffle 214 100K Guaranteed hand highlights cover, A-K vs K-J all in",
     "title": "Ran deep at The Shuffle 214",
     "description": "Shuffle 214 $100K Guaranteed hand highlights: A\u2663 K\u2665 against K\u2663 J\u2665, all in. Min-cash secured, and the story was worth way more than the payout.",
-    "date": "Mar 17, 2026"
+    "date": "Mar 17, 2026",
+    "articleUrl": "article-template.html?slug=shuffle-214-100k-hand-highlights-ak-vs-kj-all-in-march-17-2026"
   }
 ];

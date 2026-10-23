@@ -1,5 +1,87 @@
 window.C3_FB_IMPORTS = [
   {
+    "fb_post_id": "reel-1084950954282668",
+    "original_fb_date": "2026-10-04",
+    "website_import_date": "2026-10-23",
+    "fb_source_url": "https://facebook.com/reel/1084950954282668/",
+    "original_post_text": "Kyle puts Dr. Andy in the BLENDER!\n\nKJ vs. A4 for a $15,000 pot.\n\nHow would you play Andy\u2019s hand?\n\n\ud83d\udccd Champions Social Club \u2022 Dallas\n\n#Poker #PokerReels #TexasHoldem #PokerHands #DallasPoker",
+    "expanded_title": "Kyle Puts Dr. Andy in the Blender: K-J vs. A-4 for a $15,000 Pot at Champions Social Club Dallas",
+    "expanded_deck": "Dr. Andy holds King-Jack suited (K\u2665 J\u2665) against Kyle's Ace-Four (A\u2665 4\u2663) with $15,000 in the middle on the Champions Social Club Dallas livestream \u2014 how would you play Andy's hand?",
+    "expanded_body": "Originally posted October 4, 2026.\n\nKyle puts Dr. Andy in the blender at Champions Social Club in Dallas!\n\nIn a high-pressure $15,000 pot on the Champions Social Club Dallas feature stream (https://www.facebook.com/reel/1084950954282668/), Dr. Andy found himself put to the test holding King-Jack of hearts (K\u2665 J\u2665) against Kyle's Ace-Four offsuit (A\u2665 4\u2663) at a deep-stacked table alongside JB ($10.9K), RamseyTheRam ($7.0K), Scott L ($6.7K), and NDN ($4.3K).\n\nWatch the hand play out and tell us: how would you play Andy's hand?\n\n\u2014 Sham",
+    "author": "Shomari Williams",
+    "categories": [
+      "Players",
+      "Texas Poker"
+    ],
+    "fact_verification_flags": [
+      {
+        "claim": "Kyle (A\u2665 4\u2663) and Dr. Andy (K\u2665 J\u2665) clashed in a $15,000 pot on the Champions Social Club Dallas stream (October 4, 2026)",
+        "status": "verified",
+        "source": "https://facebook.com/reel/1084950954282668/",
+        "note": "Verified by Champions Social Club Dallas stream reel and HUD graphic (images/2026-10-04_reel-1084950954282668.jpg)."
+      }
+    ],
+    "outdated_info_flags": [],
+    "image_rights": {
+      "image_path": "images/2026-10-04_reel-1084950954282668.jpg",
+      "source": "Champions Social Club Dallas Facebook Reel cover graphic attached to Sham's October 4, 2026 post",
+      "credit": "Champions Social Club Dallas / The Sham Report",
+      "permission_status": "owned",
+      "ai_processed": false,
+      "caption": "Champions Social Club Dallas stream highlight (October 4, 2026): Dr. Andy (K\u2665 J\u2665) in the tank against Kyle (A\u2665 4\u2663) in a $15,000 pot."
+    },
+    "seo": {
+      "metaTitle": "Kyle Puts Dr. Andy in the Blender: KJ vs A4 for a $15K Pot | The Sham Report",
+      "metaDescription": "Kyle puts Dr. Andy in the blender in a $15,000 pot (KJ suited vs. A4) on the Champions Social Club Dallas livestream.",
+      "keyphrase": "Kyle Dr Andy KJ vs A4 Champions Social Club"
+    },
+    "editorial_status": "Ready for Review",
+    "publisher_approval_note": "Approved by Shomari Williams on Oct 23, 2026 at 4:58 AM CT for site placement.",
+    "seq": 30,
+    "slug": "kyle-puts-dr-andy-in-the-blender-kj-vs-a4-15k-pot-champions-social-club-dallas-october-4-2026"
+  },
+  {
+    "fb_post_id": "reel-1985887152094115",
+    "original_fb_date": "2026-10-02",
+    "website_import_date": "2026-10-23",
+    "fb_source_url": "https://facebook.com/reel/1985887152094115/",
+    "original_post_text": "Spooky takes 72 up against Kyle\u2019s AA in a wild 20k pot! Would you have played it differently?\n\n#Poker #PokerReels #ChampionsClubLive #TexasHoldem #PokerHands #72vsAA",
+    "expanded_title": "Spooky Takes 7-2 Up Against Kyle\u2019s Pocket Aces in a Wild $20K Pot on Champions Club Live",
+    "expanded_deck": "Spooky raises to $250 in the cutoff with seven-deuce offsuit (7\u2665 2\u2666) right into Kyle's pocket aces (A\u2660 A\u2666) on the button \u2014 setting up a wild $20,000 pot on the Champions Club Live stream.",
+    "expanded_body": "Originally posted October 2, 2026.\n\nSpooky takes 7-2 up against Kyle's pocket aces in a wild $20,000 pot on the Champions Club Live broadcast!\n\nWith deep five-figure stacks across the feature table \u2014 Kyle sitting on $13.2K on the button, Spooky with $10.5K in the cutoff, Scott L with $10.7K in the hijack (holding 10\u2660 8\u2665 after calling $50), and RamseyTheRam with $8.6K \u2014 Spooky decided to turn up the heat preflop by raising to $250 with 7\u2665 2\u2666, only to look straight into Kyle waking up with A\u2660 A\u2666 on the button.\n\nWatch the full $20,000 clash on Facebook (https://www.facebook.com/reel/1985887152094115/) \u2014 would you have played it differently?\n\n\u2014 Sham",
+    "author": "Shomari Williams",
+    "categories": [
+      "Players",
+      "Texas Poker"
+    ],
+    "fact_verification_flags": [
+      {
+        "claim": "Spooky played 7\u2665 2\u2666 against Kyle's A\u2660 A\u2666 in a $20,000 pot on Champions Club Live (October 2, 2026)",
+        "status": "verified",
+        "source": "https://facebook.com/reel/1985887152094115/",
+        "note": "Verified by Champions Club Live broadcast reel and HUD graphic (images/2026-10-02_reel-1985887152094115.jpg)."
+      }
+    ],
+    "outdated_info_flags": [],
+    "image_rights": {
+      "image_path": "images/2026-10-02_reel-1985887152094115.jpg",
+      "source": "Champions Club Live Facebook Reel cover graphic attached to Sham's October 2, 2026 post",
+      "credit": "Champions Club Live / The Sham Report",
+      "permission_status": "owned",
+      "ai_processed": false,
+      "caption": "Champions Club Live broadcast highlight (October 2, 2026): Spooky raises to $250 in the cutoff with 7\u2665 2\u2666 into Kyle's A\u2660 A\u2666 on the button on the way to a $20,000 pot."
+    },
+    "seo": {
+      "metaTitle": "Spooky's 7-2 vs Kyle's Pocket Aces in a $20K Pot | The Sham Report",
+      "metaDescription": "Watch Spooky take 7-2 offsuit up against Kyle's pocket aces in a wild $20,000 pot on Champions Club Live.",
+      "keyphrase": "Spooky 72 vs Kyle AA 20k pot"
+    },
+    "editorial_status": "Ready for Review",
+    "publisher_approval_note": "Approved by Shomari Williams on Oct 23, 2026 at 4:58 AM CT for site placement.",
+    "seq": 29,
+    "slug": "spooky-72-vs-kyle-aa-wild-20k-pot-champions-club-live-october-2-2026"
+  },
+  {
     "fb_post_id": "pfbid0vkc4YrVRrDFMe8P1uqHrWbU5MAC5zztEvhtEHfE1gaJ5JQAPdxWKYkKjc689v2zql",
     "original_fb_date": "2026-09-29",
     "website_import_date": "2026-10-23",
