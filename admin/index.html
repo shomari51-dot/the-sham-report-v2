@@ -439,7 +439,8 @@
     .check-row { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
     .check-row input[type="checkbox"] { width: 15px; height: 15px; cursor: pointer; accent-color: #D4AF37; }
     .check-row label { color: #CCC; font-size: 13px; cursor: pointer; }
-  </style>
+  #editorial-dashboard {line-height:1.6} #editorial-dashboard button,#editorial-dashboard input,#editorial-dashboard select,#editorial-dashboard textarea {margin:6px;padding:8px;max-width:100%} #editorial-dashboard textarea {display:block;width:100%;min-height:110px} #editorial-dashboard article {padding:16px;border:1px solid #555;margin:12px 0} #editorial-dashboard table {width:100%;border-collapse:collapse} #editorial-dashboard td,#editorial-dashboard th {padding:8px;text-align:left;border:1px solid #555} #editorial-dashboard pre {white-space:pre-wrap;overflow-wrap:anywhere} .review-pair {display:grid;grid-template-columns:1fr 1fr;gap:20px} @media(max-width:800px){.review-pair{grid-template-columns:1fr}} #review-panel {overflow:auto} #editorial-dashboard button:disabled {opacity:.5}
+</style>
 </head>
 <body>
 
@@ -463,6 +464,14 @@
      ADMIN DASHBOARD
 ══════════════════════════════════════════════ -->
 <div id="admin-app">
+<div role="status" style="padding:20px;border:2px solid #d4af37;background:#241b07"><strong>Staging / Preview Safety Mode: Direct writes to production tsrcms are blocked outside production (PROD_DB_WRITE_BLOCKED)</strong></div>
+<section id="editorial-dashboard" style="padding:24px">
+<h1>Editorial Review Dashboard</h1><p>Review fixtures and save browser drafts here. Save to CMS uses your existing authenticated session and the production write guard. Browser drafts are private to this browser; export them for review.</p>
+<label>Workflow status <select id="review-filter"><option value="">All statuses</option></select></label>
+<nav id="review-tabs" aria-label="Editorial review sections"></nav>
+<p id="review-status" role="status"></p><div id="review-panel"></div>
+<button id="review-export" type="button">Export review drafts</button>
+</section>
 
   <!-- Header -->
   <header class="admin-header">
@@ -1531,5 +1540,5 @@ async function deleteArticle(slug) {
 function escAttr(s) { return String(s||'').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
 function escHTML(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 </script>
-</body>
+<script src="../assets/tsr-engine.js"></script><script src="../js/concept3-config.js"></script><script src="../js/concept3-data.js"></script><script src="../js/concept3-regrade.js"></script><script src="../js/concept3-import-review.js"></script><script src="review.js"></script></body>
 </html>

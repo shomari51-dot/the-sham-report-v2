@@ -7,7 +7,7 @@ const {guard, isAdmin} = require('../lib/auth');
    POST   /api/articles                  → create / update  (auth required)
    DELETE /api/articles?slug=xyz         → delete            (auth required)
    ================================================================ */
-const {getDb} = require('../lib/db');
+const {getDb,assertWritableDb} = require('../lib/db');
 
 
 function slugify(s) {
@@ -21,6 +21,10 @@ function slugify(s) {
 
 module.exports = async (req, res) => {
   if (!guard(req,res)) return;
+  if (['POST','DELETE'].includes(req.method)) {
+    if (!isAdmin(req)) return res.status(401).json({error:'Unauthorized'});
+    try { assertWritableDb(); } catch(err) {return res.status(409).json({error:err.message,code:err.code});}
+  }
 
   let db;
   try { db = await getDb(); }
@@ -67,12 +71,27 @@ module.exports = async (req, res) => {
     if (!slug) slug = 'article-' + Date.now();
 
     const now = new Date();
-    const status = body.status === 'published' ? 'published' : 'draft';
+    const workflow=['Imported','Draft','Needs Verification','Ready for Review','Approved','Published','Archived'];
+    const editorial_status=body.editorial_status || (body.status==='published'?'Published':'Draft');
+    if(!workflow.includes(editorial_status))return res.status(400).json({error:'Invalid editorial status'});
+    const status=editorial_status==='Published'?'published':editorial_status==='Archived'?'archived':'draft';
 
     try {
       const existing = await col.findOne({ slug });
 
+      let imported={};
+      if(body.original_post_text != null || existing?.original_post_text != null) {
+        const merged={...existing,...body,editorial_status};
+        if(!['Imported','Needs Verification','Ready for Review','Draft','Approved','Published','Archived'].includes(editorial_status)) throw new TypeError('Invalid import workflow');
+        const validationStatus=['Approved','Published'].includes(editorial_status)?'Ready for Review':['Draft','Archived'].includes(editorial_status)?'Imported':editorial_status;
+        imported=require('../lib/fb-import').createImport({...merged,editorial_status:validationStatus},existing);
+        if(!existing && ['Approved','Published'].includes(editorial_status)) throw new TypeError('Imports cannot be Approved or Published directly');
+        if(['Approved','Published'].includes(editorial_status) && (merged.image_rights.permission_status==='permission_pending' || /pending/.test(merged.fb_post_id) || !/\/(posts|permalink)\//.test(new URL(merged.fb_source_url).pathname)))throw new TypeError('Confirm Facebook provenance and image rights before approval');
+      }
       const doc = {
+        ...imported,
+        editorial_status,
+        history:[...(existing?.history || []),{at:now,by:'admin',previous_status:existing?.editorial_status || existing?.status || null,status:editorial_status}],
         slug,
         title,
         deck:       String(body.deck || '').trim(),
@@ -100,7 +119,7 @@ module.exports = async (req, res) => {
       return res.json({ success: true, slug, url: '/post/' + slug });
     } catch (err) {
       console.error('Articles write error:', err.message);
-      return res.status(500).json({ error: 'Failed to save article' });
+      return res.status(err instanceof TypeError?400:500).json({ error:err instanceof TypeError?err.message:'Failed to save article' });
     }
   }
 
@@ -110,7 +129,7 @@ module.exports = async (req, res) => {
     const slug = req.query.slug;
     if (!slug) return res.status(400).json({ error: 'slug required' });
     try {
-      await col.deleteOne({ slug });
+      await col.updateOne({slug},{$set:{status:'archived',editorial_status:'Archived',updatedAt:new Date()},$push:{history:{at:new Date(),by:'admin',change:'Article archived; original retained'}}});
       return res.json({ success: true });
     } catch (err) {
       console.error('Articles delete error:', err.message);

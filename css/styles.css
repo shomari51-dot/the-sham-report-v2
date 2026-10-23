@@ -1156,3 +1156,9 @@ body {
   max-width: 460px;
   justify-self: center;
 }
+@media(max-width:520px){
+  table.report-schedule,table.report-schedule tbody,table.report-schedule tr,table.report-schedule td,table.report-schedule th{display:block;width:100%;max-width:100%;box-sizing:border-box;overflow-wrap:anywhere}
+  table.report-schedule thead{display:none}
+  table.report-schedule tr{border-bottom:1px solid rgba(255,255,255,0.15);padding:8px 0}
+  table.report-schedule td{border:0;padding:3px 0}
+}

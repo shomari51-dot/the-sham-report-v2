@@ -146,3 +146,107 @@ test('preview scripts refuse production targets and require explicit authorizati
   assert.throws(()=>target(base,{PREVIEW_MONGODB_URI:'mongodb://127.0.0.1:27017/preview',MONGODB_DB:'tsrcms'}));
   assert.equal(target([...base,'--db','preview','--allow-db=preview'],{PREVIEW_MONGODB_URI:'mongodb://127.0.0.1:27017/tsrcms',MONGODB_DB:'tsrcms'}).dbName,'preview');
 });
+
+test('production write policy allows only explicit isolation, loopback or production opt-in',()=>{
+ const {isWritableEnv,assertWritableDb,protectDb}=require('../lib/db');
+ const blocked={MONGODB_URI:'mongodb+srv://cluster.example/tsrcms',MONGODB_DB:'tsrcms',VERCEL_ENV:'preview'};
+ for(const env of [{},blocked,{...blocked,ALLOW_PROD_DB_WRITES:'true'},{...blocked,VERCEL_ENV:'production'},{...blocked,MONGODB_URI:'mongodb://localhost.evil/tsrcms'}]){
+  assert.equal(isWritableEnv(env),false);assert.throws(()=>assertWritableDb(env),e=>e.statusCode===409&&e.code==='PROD_DB_WRITE_BLOCKED'&&e.message.includes('MONGODB_DB=tsrcms_preview'));
+ }
+ for(const env of [{...blocked,MONGODB_URI:'mongodb://127.0.0.1:1234/test'},{...blocked,MONGODB_URI:'mongodb://localhost:1234/test'},{...blocked,MONGODB_DB:'tsrcms_preview'},{...blocked,VERCEL_ENV:'production',ALLOW_PROD_DB_WRITES:'true'}]){assert.equal(isWritableEnv(env),true);assert.doesNotThrow(()=>assertWritableDb(env));}
+ const collection={find(){return this;},name:'grades'};const db=protectDb({collection:()=>collection});assert.equal(db.collection('grades').find(),collection);
+ for(const method of ['insertOne','insertMany','updateOne','updateMany','replaceOne','deleteOne','deleteMany','findOneAndUpdate','findOneAndReplace','findOneAndDelete','bulkWrite','drop'])assert.throws(()=>db.collection('grades')[method]({}),{code:'PROD_DB_WRITE_BLOCKED'});
+});
+test('preview API mutations return 409 before any database connection',async()=>{
+ const keys=['MONGODB_URI','MONGODB_DB','VERCEL_ENV','ALLOW_PROD_DB_WRITES'];const old=Object.fromEntries(keys.map(k=>[k,process.env[k]]));
+ try{Object.assign(process.env,{MONGODB_URI:'mongodb+srv://cluster.example/tsrcms',MONGODB_DB:'tsrcms',VERCEL_ENV:'preview',ALLOW_PROD_DB_WRITES:'false'});
+ for(const api of ['grades','articles','content'])for(const method of ['POST','DELETE']){const r=await call(api,req(method,{}, {...admin(),'x-forwarded-for':'write-guard-test'}));assert.equal(r.code,409);assert.equal(r.body.code,'PROD_DB_WRITE_BLOCKED');}
+ }finally{for(const k of keys)if(old[k]===undefined)delete process.env[k];else process.env[k]=old[k];}
+});
+test('v1.0 version, unified workflow, event classification and separated accounting',()=>{
+ for(const methodology_version of ['v1.0','tsr-2026.10-curve-by-type'])assert.equal(grading.recompute({type:'series',score:73,methodology_version}).methodology_version,'v1.0');
+ for(const status of ['Imported','Draft','Needs Verification','Ready for Review','Approved','Published','Archived','published','draft','needs_review','retracted','superseded']){const n=grading.recompute({type:'series',score:73,status});assert.equal(n.status,status);assert.ok(['Imported','Draft','Needs Verification','Ready for Review','Approved','Published','Archived'].includes(n.editorial_status));}
+ for(const [event_type,tier] of [['weekly',1],['series',2],['major',2],['unknown',null]]){const n=grading.recompute({event_type,score:73,buyin:10});assert.equal(n.tier,tier);if(!tier){assert.equal(n.grade,null);assert.equal(n.editorial_status,'Needs Verification');}}
+ const parts={total:400,fee:70,addons:[{cost:20,chips:10000,fee:0}],reentry_rules:'Unlimited during registration',guarantee:100000,actual_prize_pool:120000,entries:400,unique_players:240};
+ assert.deepEqual(grading.normalizeBuyin({buyin_parts:parts}),{...parts,prize_pool:330});
+});
+test('experience and publisher approval never affect score; unverified takes cannot publish',()=>{
+ const base={event_type:'series',score:73,buyin:300};
+ const experience_record={attendance_status:'played',verified_by_publisher:true,ratings:{room_atmosphere:4},freeform_notes:'Recorded firsthand notes',recorded_at:'2026-10-22',recorded_by:'Shomari Williams'};
+ const shams_take={status:'Published',ai_draft:'Draft',edited_text:'Reviewed personal assessment',approved_by:'Shomari Williams',approved_at:'2026-10-22T12:00:00Z',history:[]};
+ for(const status of ['Approved','Published'])for(const invalid of [{attendance_status:'not_attended',verified_by_publisher:true},{attendance_status:'played',verified_by_publisher:false}])assert.throws(()=>grading.recompute({...base,experience_record:{...experience_record,...invalid},shams_take:{...shams_take,status}}),e=>e instanceof TypeError&&e.message==="Sham's Take requires verified firsthand experience (played, attended, or observed) and publisher approval");
+ for(const attendance_status of ['played','attended','observed']){const n=grading.recompute({...base,experience_record:{...experience_record,attendance_status},shams_take});assert.equal(n.score,73);assert.equal(n.grade,'B');assert.deepEqual(grading.publicAnalysisLabel(n),{heading:"Sham's Take",badge:'Verified firsthand experience · Approved by Shomari Williams',text:shams_take.edited_text});}
+ assert.equal(grading.publicAnalysisLabel(base).heading,'Data-Based Structure Analysis');
+ assert.equal(grading.publicAnalysisLabel({...base,experience_record,shams_take:{...shams_take,status:'Draft'}}).heading,'Data-Based Structure Analysis');
+ for(const patch of [{edited_text:''},{approved_by:null},{approved_at:null},{approved_by:'Other editor'}])assert.throws(()=>grading.recompute({...base,experience_record,shams_take:{...shams_take,...patch}}),TypeError);
+ assert.throws(()=>grading.recompute({...base,experience_record:{...experience_record,ratings:{dealer_quality:8}}}),TypeError);
+});
+test('Facebook import validates full fixture, preserves original text verbatim and restricts workflow',()=>{
+ const {createImport,required}=require('../lib/fb-import');const sample=require('./fixtures/fb-import-lodge-mar11.json'),original=require('./fixtures/articles.json')[0].body;
+ const result=createImport(sample);assert.equal(result.original_post_text,original);assert.equal(result.status,'draft');assert.equal(result.editorial_status,'Ready for Review');assert.equal(result.original_post_sha256.length,64);
+ result.original_post_text='mutated';assert.equal(result.original_post_text,original);
+ assert.throws(()=>createImport({...sample,original_post_text:'changed'},result),/immutable/);
+ for(const field of required){const copy=structuredClone(sample);delete copy[field];assert.throws(()=>createImport(copy),TypeError);}
+ for(const editorial_status of ['Published','Approved','Draft','Archived'])assert.throws(()=>createImport({...sample,editorial_status}),TypeError);
+ assert.throws(()=>createImport({...sample,fact_verification_flags:[{claim:'Unresolved',status:'needs_verification',source:'Original source',note:''}]}),TypeError);
+ assert.throws(()=>createImport({...sample,outdated_info_flags:[{original_statement:'Closed',current_status:'Reopened',editorial_note:''}]}),TypeError);
+ assert.equal(createImport({...sample,editorial_status:'Needs Verification',fact_verification_flags:[{claim:'Unresolved',status:'needs_verification',source:'Original source',note:''}]}).editorial_status,'Needs Verification');
+ for(const patch of [{image_rights:{...sample.image_rights,permission_status:'unknown'}},{seo:{}},{fb_source_url:'https://evil.example/post'},{author:'Invented author'},{original_fb_date:'invalid'}])assert.throws(()=>createImport({...sample,...patch}));
+});
+test('public pages remove unverified navigation, social links, mailboxes and fictional content',()=>{
+ const fs=require('node:fs'),vm=require('node:vm');const read=p=>fs.readFileSync(p,'utf8');
+ for(const file of fs.readdirSync('.').filter(p=>p.endsWith('.html'))){const s=read(file);for(const nav of s.matchAll(/<nav class="c3-nav"[^>]*>([\s\S]*?)<\/nav>/g))assert.doesNotMatch(nav[1],/hosted-games\.html/);assert.doesNotMatch(s,/href=["']mailto:(editor|news|corrections)@/i);assert.doesNotMatch(s,/<a[^>]+href="about.html#social-links"/);}
+ for(const file of ['js/concept3-data.js','js/concept3-events.js'])assert.doesNotMatch(read(file),/sample["']?\s*:\s*true|Sample story|sample-weekly-|sample-series-/);
+ for(const file of ['index.html','news.html','tournaments.html','js/concept3.js','js/concept3-interior.js'])assert.doesNotMatch(read(file),/Reading the structure sheet|Around the Texas tables|The tournament notebook|Behind the broadcast|The weekly structure notebook/);
+ for(const file of ['tsr-score-calculator.html','js/concept3-calculator.js']){assert.match(read(file),/Data-Based Structure Analysis/);assert.doesNotMatch(read(file),/Sham[’']s Take/);}
+ const context={window:{}};for(const file of ['js/concept3-config.js','js/concept3-data.js','js/concept3-events.js','js/concept3-hosts.js','js/concept3-regrade.js'])vm.runInNewContext(read(file),context);
+ assert.equal(context.window.TSR_CONFIG.features.hostedGamesNav,false);assert.equal(context.window.CONCEPT3_DATA.stories.length,4);assert.equal(context.window.CONCEPT3_DATA.grades.length,7);assert.equal(context.window.C3_REGRADE.length,17);
+ for(const host of context.window.C3_HOSTS){assert.equal(host.verified,false);assert.equal(host.status,'Needs Verification');}
+ for(const score of [69.8,66,46.6])assert.ok(context.window.C3_EVENTS.some(e=>e.score===score&&e.venue==='Champions Club Houston'&&e.tier===2));
+ for(const id of ['editorial-standards','independence','methodology','corrections','contact','score-revisions'])assert.ok(read('about.html').includes('id="'+id+'"'));
+ assert.doesNotMatch(read('trailblazer-stop-2-kick-off-results.html'),/hour and 35 minutes/);
+ assert.match(read('admin/index.html'),/PROD_DB_WRITE_BLOCKED/);assert.match(read('admin/review.js'),/Approve & Publish/);
+});
+
+test('public renderers use real articles, correct curve groups and verified host filtering',()=>{
+ const fs=require('node:fs'),vm=require('node:vm');const read=f=>fs.readFileSync(f,'utf8');
+ function run(ids,files,search=''){
+  const nodes=Object.fromEntries(ids.map(id=>[id,{value:'',innerHTML:'',textContent:'',hidden:false,addEventListener(){},reset(){}}]));
+  const context={window:{},document:{getElementById:id=>nodes[id]||null},location:{search},URLSearchParams,setTimeout,TSREngine:engine};
+  for(const f of files)vm.runInNewContext(read(f),context);
+  return {nodes,context};
+ }
+ let r=run(['lead-stories','latest-stories','grade-rows','media-rows','preview-newsletter'],['js/concept3-data.js','js/concept3.js']);
+ assert.match(r.nodes['grade-rows'].innerHTML,/93.9/);assert.match(r.nodes['grade-rows'].innerHTML,/66/);assert.doesNotMatch(r.nodes['latest-stories'].innerHTML,/Sample/);
+ const filters=['search','date','location','venue','game','type','buyin','sort'].map(k=>'event-'+k);
+ r=run([...filters,'event-count','event-rows','event-detail','tournament-filters'],['js/concept3-events.js','js/concept3-regrade.js','js/concept3-interior.js']);
+ assert.match(r.nodes['event-rows'].innerHTML,/No verified weekly structures published yet/);assert.match(r.nodes['event-rows'].innerHTML,/Series Curve \(v1.0\)/);assert.match(r.nodes['event-rows'].innerHTML,/Real Event Archive/);
+ assert.match(r.nodes['event-detail'].innerHTML,/Data-Based Structure Analysis/);assert.doesNotMatch(r.nodes['event-detail'].innerHTML,/Sham[’']s Take/);assert.match(r.nodes['event-detail'].innerHTML,/Methodology v1.0 Regrade Preview/);
+ r=run(['host-rows','host-detail'],['js/concept3-hosts.js','js/concept3-interior.js']);assert.match(r.nodes['host-rows'].innerHTML,/Verification in Progress/);assert.doesNotMatch(r.nodes['host-rows'].innerHTML,/Rebecca|Aaron/);
+ for(const slug of ['the-lodge-raid-first-reaction-march-11-2026','lodge-raid-coverage-tom-dwan-enters-the-chat']){
+  r=run(['article-content','main-content'],['js/concept3-data.js','js/concept3-article.js'],'?slug='+slug);
+  for(const term of ['Shomari Williams','Editorial Context / Update Note','April 28','Disclosures','Corrections','figcaption'])assert.ok(r.nodes['main-content'].innerHTML.includes(term));
+ }
+ r=run(['article-content','main-content'],['js/concept3-data.js','js/concept3-article.js']);assert.equal((r.nodes['article-content'].innerHTML.match(/<a /g)||[]).length,4);
+});
+test('Facebook import CLI dry run validates without accessing MongoDB',async()=>{
+ const {main}=require('../scripts/import-fb-post');let output='';
+ const doc=await main(['--dry-run','--input','tests/fixtures/fb-import-lodge-mar11.json'],v=>{output=v;});
+ assert.equal(doc.original_post_text,require('./fixtures/articles.json')[0].body);
+ assert.equal(JSON.parse(output).editorial_status,'Ready for Review');
+ await assert.rejects(()=>main([],()=>{}),/Usage/);
+});
+test('calculator uses event type for both grades and withholds all letters for unknown',async()=>{
+ const fs=require('node:fs'),vm=require('node:vm');
+ for(const type of ['weekly','series','major','unknown']){
+  const nodes={};const get=id=>nodes[id]||(nodes[id]={value:'',innerHTML:'',textContent:'',hidden:false,validity:{valid:true},addEventListener(){},focus(){}});
+  for(const [k,v] of Object.entries({buyin:'200',fees:'20',stack:'30000',levelLen:'30',structure:inputs.levels.map(l=>`${l.sb} / ${l.bb} / ${l.ante}`).join('\n'),fmt:'nlh'}))get(k).value=v;
+  get('score-form').elements={curve:{value:type}};
+  vm.runInNewContext(fs.readFileSync('js/concept3-calculator.js','utf8'),{document:{getElementById:get},TSREngine:engine,location:{hash:''},URLSearchParams,setTimeout:fn=>fn()});
+  await get('score-form').onsubmit({preventDefault(){}});
+  const html=get('score-result').innerHTML;assert.equal(get('score-result').hidden,false);assert.match(html,/Methodology: v1.0 \(Curve by Event Type\)/);assert.match(html,/Data-Based Structure Analysis/);
+  if(type==='unknown'){assert.match(html,/No letter grade/);assert.doesNotMatch(html,/Base score \/ grade<\/dt><dd>[^<]* \/ [ABCDF]/);}
+  else assert.ok(html.includes((type==='weekly'?'Weekly / Tier 1':'Series / Tier 2')+' curve'));
+  assert.equal(get('prize_pool').value,180);
+ }
+});

@@ -17,3 +17,11 @@
 /* Pass 4 layout fixes: aspect-ratio + min-height was forcing hero width >1280px at tablet widths */
 .interior-hero{min-width:0;max-width:100%}
 @media(max-width:1180px){.interior-hero{aspect-ratio:auto;min-height:340px}.interior-hero .page-intro{width:70%}}
+
+/* Responsive table stacking on mobile so regrade/revision tables never overflow at 320px/390px */
+@media(max-width:520px){
+  .c3-interior table,.c3-interior tbody,.c3-interior tr,.c3-interior td,.c3-interior th{display:block;width:100%;max-width:100%;overflow-wrap:anywhere}
+  .c3-interior thead{display:none}
+  .c3-interior tr{border-bottom:1px solid var(--c3-rule);padding:8px 0}
+  .c3-interior td{border:0;padding:3px 0;font-size:14px}
+}

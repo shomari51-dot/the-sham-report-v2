@@ -4,7 +4,7 @@ const {guard, isAdmin} = require('../lib/auth');
    GET  /api/content?page=homepage  →  returns page content
    POST /api/content                →  saves page content (auth required)
    ================================================================ */
-const {getDb} = require('../lib/db');
+const {getDb,assertWritableDb} = require('../lib/db');
 
 
 /* ── Default content (mirrors current live homepage) ───────── */
@@ -59,6 +59,10 @@ const DEFAULT_CONTENT = {
 
 module.exports = async (req, res) => {
   if (!guard(req,res)) return;
+  if (['POST','DELETE'].includes(req.method)) {
+    if (!isAdmin(req)) return res.status(401).json({error:'Unauthorized'});
+    try { assertWritableDb(); } catch(err) {return res.status(409).json({error:err.message,code:err.code});}
+  }
 
   const page = req.query.page || 'homepage';
 
