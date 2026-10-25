@@ -1,7 +1,293 @@
 window.C3_EVENTS = [
   {
+    "id": "g-palace-saddle-up-sunday-20k",
+    "name": "Saddle Up Sunday $20K GTD",
+    "venue": "Palace Poker",
+    "location": "Grand Prairie",
+    "game": "NLH",
+    "type": "Weekly",
+    "event_type": "weekly",
+    "date": "",
+    "buyin": 120,
+    "fees": 30,
+    "guarantee": 20000,
+    "stack": "40,000",
+    "minutes": "30 min",
+    "start": "Every Sunday · confirm start time with Palace",
+    "score": 50.526315789473685,
+    "tier": 1,
+    "curve": "weekly",
+    "grade": "A−",
+    "methodology_version": "v1.1",
+    "verifiedAt": "2026-10-25",
+    "sourceNote": "PokerAtlas structure screenshots supplied Oct 25, 2026; 40K stack confirmed by publisher and official Palace listing.",
+    "official": "https://www.palacepoker.com/event-list-1",
+    "image": "images/palace-poker-saddle-up-sunday-details-oct25.jpg",
+    "imageAlt": "Palace Poker Saddle Up Sunday listing and buy-in breakdown",
+    "structureURL": "images/palace-poker-saddle-up-structure-levels-1-22-oct25.jpg",
+    "structureURLs": [
+      "images/palace-poker-saddle-up-structure-levels-1-22-oct25.jpg",
+      "images/palace-poker-saddle-up-structure-levels-9-30-oct25.jpg"
+    ],
+    "inputs": {
+      "buyin": 120,
+      "fees": 30,
+      "stack": 40000,
+      "levelLen": 30,
+      "event_type": "weekly",
+      "addonCost": 0,
+      "addonChips": 0,
+      "levels": [
+        {
+          "level": 1,
+          "sb": 100,
+          "bb": 200,
+          "ante": 200,
+          "orbit": 500,
+          "mins": 30
+        },
+        {
+          "level": 2,
+          "sb": 200,
+          "bb": 300,
+          "ante": 300,
+          "orbit": 800,
+          "mins": 30
+        },
+        {
+          "level": 3,
+          "sb": 200,
+          "bb": 400,
+          "ante": 400,
+          "orbit": 1000,
+          "mins": 30
+        },
+        {
+          "level": 4,
+          "sb": 300,
+          "bb": 600,
+          "ante": 600,
+          "orbit": 1500,
+          "mins": 30
+        },
+        {
+          "level": 5,
+          "sb": 400,
+          "bb": 800,
+          "ante": 800,
+          "orbit": 2000,
+          "mins": 30
+        },
+        {
+          "level": 6,
+          "sb": 500,
+          "bb": 1000,
+          "ante": 1000,
+          "orbit": 2500,
+          "mins": 30
+        },
+        {
+          "level": 7,
+          "sb": 1000,
+          "bb": 1500,
+          "ante": 1500,
+          "orbit": 4000,
+          "mins": 30
+        },
+        {
+          "level": 8,
+          "sb": 1000,
+          "bb": 2000,
+          "ante": 2000,
+          "orbit": 5000,
+          "mins": 30
+        },
+        {
+          "level": 9,
+          "sb": 1500,
+          "bb": 3000,
+          "ante": 3000,
+          "orbit": 7500,
+          "mins": 30
+        },
+        {
+          "level": 10,
+          "sb": 2000,
+          "bb": 4000,
+          "ante": 4000,
+          "orbit": 10000,
+          "mins": 30
+        },
+        {
+          "level": 11,
+          "sb": 2500,
+          "bb": 5000,
+          "ante": 5000,
+          "orbit": 12500,
+          "mins": 30
+        },
+        {
+          "level": 12,
+          "sb": 3000,
+          "bb": 6000,
+          "ante": 6000,
+          "orbit": 15000,
+          "mins": 30
+        },
+        {
+          "level": 13,
+          "sb": 4000,
+          "bb": 8000,
+          "ante": 8000,
+          "orbit": 20000,
+          "mins": 30
+        },
+        {
+          "level": 14,
+          "sb": 5000,
+          "bb": 10000,
+          "ante": 10000,
+          "orbit": 25000,
+          "mins": 30
+        },
+        {
+          "level": 15,
+          "sb": 6000,
+          "bb": 12000,
+          "ante": 12000,
+          "orbit": 30000,
+          "mins": 30
+        },
+        {
+          "level": 16,
+          "sb": 8000,
+          "bb": 16000,
+          "ante": 16000,
+          "orbit": 40000,
+          "mins": 30
+        },
+        {
+          "level": 17,
+          "sb": 10000,
+          "bb": 20000,
+          "ante": 20000,
+          "orbit": 50000,
+          "mins": 30
+        },
+        {
+          "level": 18,
+          "sb": 15000,
+          "bb": 30000,
+          "ante": 30000,
+          "orbit": 75000,
+          "mins": 30
+        },
+        {
+          "level": 19,
+          "sb": 20000,
+          "bb": 40000,
+          "ante": 40000,
+          "orbit": 100000,
+          "mins": 30
+        },
+        {
+          "level": 20,
+          "sb": 25000,
+          "bb": 50000,
+          "ante": 50000,
+          "orbit": 125000,
+          "mins": 30
+        },
+        {
+          "level": 21,
+          "sb": 30000,
+          "bb": 60000,
+          "ante": 60000,
+          "orbit": 150000,
+          "mins": 30
+        },
+        {
+          "level": 22,
+          "sb": 40000,
+          "bb": 80000,
+          "ante": 80000,
+          "orbit": 200000,
+          "mins": 30
+        },
+        {
+          "level": 23,
+          "sb": 50000,
+          "bb": 100000,
+          "ante": 100000,
+          "orbit": 250000,
+          "mins": 30
+        },
+        {
+          "level": 24,
+          "sb": 60000,
+          "bb": 120000,
+          "ante": 120000,
+          "orbit": 300000,
+          "mins": 30
+        },
+        {
+          "level": 25,
+          "sb": 75000,
+          "bb": 150000,
+          "ante": 150000,
+          "orbit": 375000,
+          "mins": 30
+        },
+        {
+          "level": 26,
+          "sb": 100000,
+          "bb": 200000,
+          "ante": 200000,
+          "orbit": 500000,
+          "mins": 30
+        },
+        {
+          "level": 27,
+          "sb": 125000,
+          "bb": 250000,
+          "ante": 250000,
+          "orbit": 625000,
+          "mins": 30
+        },
+        {
+          "level": 28,
+          "sb": 150000,
+          "bb": 300000,
+          "ante": 300000,
+          "orbit": 750000,
+          "mins": 30
+        },
+        {
+          "level": 29,
+          "sb": 200000,
+          "bb": 400000,
+          "ante": 400000,
+          "orbit": 1000000,
+          "mins": 30
+        },
+        {
+          "level": 30,
+          "sb": 250000,
+          "bb": 500000,
+          "ante": 500000,
+          "orbit": 1250000,
+          "mins": 30
+        }
+      ]
+    },
+    "analysis": "A strong weekly structure: 40,000 chips, 200 starting big blinds, and 30-minute levels. TSR structure score 50.5 (A− on the weekly curve), with no blind-jump penalty. The $30 fee is 25% of the $120 total and is reported separately from the structure grade. At $90 per entry, 223 entries cover the $20,000 guarantee, assuming no other contributions or deductions. No firsthand attendance claimed.",
+    "calculation": "Orbit costs at levels 6, 10, 14, 18: 2,500; 10,000; 25,000; 75,000. Growth denominator = 4 + 2.5 + 3 = 9.5. Starting stack covers orbit cost through level 16: 16 × 30 = 480 minutes, excluding breaks. Score = 480 ÷ 9.5 − 0 = 50.526 → A− on the weekly curve. This depth metric is not a prediction of survival time.",
+    "note": "Start time omitted: supplied PokerAtlas image says 11 AM; official website says 11:30 AM. No add-on included in this calculation; no add-on information supplied.",
+    "seq": 28
+  },
+  {
     "id": "rg-11",
-    "name": "RunGood \u00b7 Last Chance NLH",
+    "name": "RunGood · Last Chance NLH",
     "venue": "Champions Club Houston",
     "location": "Houston",
     "game": "NLH",
@@ -23,7 +309,7 @@ window.C3_EVENTS = [
   },
   {
     "id": "rg-10",
-    "name": "RunGood \u00b7 Ladies NLH",
+    "name": "RunGood · Ladies NLH",
     "venue": "Champions Club Houston",
     "location": "Houston",
     "game": "NLH",
@@ -66,12 +352,12 @@ window.C3_EVENTS = [
     "curve": "series",
     "multi_day": false,
     "methodology_version": "v1.1",
-    "grade": "B\u2212",
+    "grade": "B−",
     "seq": 25
   },
   {
     "id": "rg-7",
-    "name": "RunGood \u00b7 Pot-Limit Omaha",
+    "name": "RunGood · Pot-Limit Omaha",
     "venue": "Champions Club Houston",
     "location": "Houston",
     "game": "PLO",
@@ -93,7 +379,7 @@ window.C3_EVENTS = [
   },
   {
     "id": "rg-6",
-    "name": "RunGood \u00b7 Black Chip Bounty",
+    "name": "RunGood · Black Chip Bounty",
     "venue": "Champions Club Houston",
     "location": "Houston",
     "game": "Not provided",
@@ -141,7 +427,7 @@ window.C3_EVENTS = [
   },
   {
     "id": "rg-4",
-    "name": "RunGood \u00b7 Tag Team (2 players)",
+    "name": "RunGood · Tag Team (2 players)",
     "venue": "Champions Club Houston",
     "location": "Houston",
     "game": "Not provided",
@@ -164,7 +450,7 @@ window.C3_EVENTS = [
   },
   {
     "id": "rg-3",
-    "name": "RunGood \u00b7 Big Stack",
+    "name": "RunGood · Big Stack",
     "venue": "Champions Club Houston",
     "location": "Houston",
     "game": "Not provided",
@@ -186,7 +472,7 @@ window.C3_EVENTS = [
   },
   {
     "id": "rg-2",
-    "name": "RunGood \u00b7 Seniors NLH",
+    "name": "RunGood · Seniors NLH",
     "venue": "Champions Club Houston",
     "location": "Houston",
     "game": "NLH",
@@ -208,7 +494,7 @@ window.C3_EVENTS = [
   },
   {
     "id": "rg-9",
-    "name": "RunGood \u00b7 Flip & Go",
+    "name": "RunGood · Flip & Go",
     "venue": "Champions Club Houston",
     "location": "Houston",
     "game": "Not provided",
@@ -251,7 +537,7 @@ window.C3_EVENTS = [
     "curve": "series",
     "multi_day": false,
     "methodology_version": "v1.1",
-    "grade": "B\u2212",
+    "grade": "B−",
     "seq": 17
   },
   {
@@ -315,7 +601,7 @@ window.C3_EVENTS = [
     "curve": "series",
     "multi_day": false,
     "methodology_version": "v1.1",
-    "grade": "C\u2212",
+    "grade": "C−",
     "guarantee": 40000,
     "stack": "40,000",
     "seq": 14
@@ -425,7 +711,7 @@ window.C3_EVENTS = [
     "curve": "series_under_400",
     "multi_day": false,
     "methodology_version": "v1.1",
-    "grade": "B\u2212",
+    "grade": "B−",
     "guarantee": 7200,
     "stack": "25,000",
     "seq": 9
@@ -552,7 +838,7 @@ window.C3_EVENTS = [
     "buyin": 300,
     "score": 78.4,
     "tier": 1,
-    "start": "Archive \u2014 see original source",
+    "start": "Archive — see original source",
     "image": "images/rungood-schedule.jpg",
     "sourceNote": "Retained CMS grade fixture; historical event date and official structure source need verification.",
     "curve": "weekly",
@@ -619,4 +905,3 @@ window.C3_EVENTS = [
     "seq": 0
   }
 ];
-window.C3_ARCHIVE_EVENTS = window.C3_EVENTS.filter(e => e.tier == null || e.type === 'Weekly');
