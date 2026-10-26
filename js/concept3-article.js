@@ -2,9 +2,9 @@
  const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const ts=item=>{const t=Date.parse(item.original_fb_date||item.date||'');return Number.isFinite(t)?t:0;};
  const d=window.CONCEPT3_DATA,slug=new URLSearchParams(location.search).get('slug'),mount=document.getElementById('article-content');
- if(!slug){const sorted=[...(d.stories||[])].map((s,_idx)=>({...s,_idx})).sort((a,b)=>ts(b)-ts(a)||(b.seq||0)-(a.seq||0)||a._idx-b._idx);mount.innerHTML=sorted.map(s=>`<p><a href="${esc(s.url)}">${esc(s.title)}</a> · ${esc(s.date)}</p>`).join('');return;}
- const a=d.articles.find(a=>a.slug===slug);
- if(!a){mount.innerHTML='<h2>Article not found</h2><a href="news.html">Browse published reporting</a>';return;}
+ const notFound=()=>{document.title='Article not found — The Sham Report';if(typeof document.querySelector==='function'&&document.head&&typeof document.createElement==='function'){let r=document.querySelector('meta[name="robots"]');if(!r){r=document.createElement('meta');r.setAttribute('name','robots');document.head.appendChild(r);}r.setAttribute('content','noindex');}mount.innerHTML='<h1>Article not found</h1><p>This article does not exist or has moved.</p><a href="news.html">Browse published reporting</a>';};
+ const a=slug&&(d.articles||[]).find(a=>a.slug===slug);
+ if(!a){notFound();return;}
  document.title=(a.seo&&a.seo.metaTitle)?a.seo.metaTitle:(a.title+' — The Sham Report');
  const metaDesc=(a.seo&&a.seo.metaDescription)||a.deck||'';
  if(metaDesc&&typeof document.querySelector==='function'){let m=document.querySelector('meta[name="description"]');if(!m&&document.head&&typeof document.createElement==='function'){m=document.createElement('meta');m.setAttribute('name','description');document.head.appendChild(m);}if(m&&typeof m.setAttribute==='function')m.setAttribute('content',metaDesc);}

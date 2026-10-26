@@ -227,7 +227,7 @@ test('public renderers use real articles, correct curve groups and verified host
   r=run(['article-content','main-content'],['js/concept3-data.js','js/concept3-article.js'],'?slug='+slug);
   for(const term of ['Shomari Williams','Editorial Context / Update Note','April 28','Disclosures','Corrections','figcaption'])assert.ok(r.nodes['main-content'].innerHTML.includes(term));
  }
- r=run(['article-content','main-content'],['js/concept3-data.js','js/concept3-article.js']);assert.equal((r.nodes['article-content'].innerHTML.match(/<a /g)||[]).length,36);
+ r=run(['article-content','main-content'],['js/concept3-data.js','js/concept3-article.js']);assert.match(r.nodes['article-content'].innerHTML,/Article not found/);for(const q of ['','?slug=bogus']){r=run(['article-content','main-content'],['js/concept3-data.js','js/concept3-article.js'],q);assert.match(r.nodes['article-content'].innerHTML,/<h1>Article not found<\/h1>/);assert.doesNotMatch(r.nodes['main-content'].innerHTML,/layout specification/i);}
 });
 test('Facebook import CLI dry run validates without accessing MongoDB',async()=>{
  const {main}=require('../scripts/import-fb-post');let output='';
