@@ -69,3 +69,12 @@
 .katy-report{max-width:860px;padding-top:28px}.katy-report h1{font-size:clamp(36px,4.5vw,58px);line-height:1.12;text-transform:none;letter-spacing:-.5px}.katy-report .article-deck{font-size:23px;line-height:1.4;margin:18px 0}.katy-report .article-byline{font-size:16px;padding-bottom:18px;border-bottom:1px solid var(--c3-rule)}.katy-cover{margin:22px 0 28px}.katy-report .katy-cover img{height:auto;max-height:none;object-fit:contain;width:100%}.katy-report figcaption{font-size:14px;color:#bbb}.katy-report .article-body{max-width:720px;margin-inline:auto}.katy-report .article-body p{font-family:Inter,Arial,sans-serif;font-size:17px;line-height:1.8;margin:0 0 22px}.katy-report .article-body h2{font:600 29px/1.2 var(--c3-display);text-transform:none;margin:36px 0 18px}.katy-report .article-body a{text-decoration:underline;text-underline-offset:3px;color:#ff615a}.reporting-note{border-top:1px solid var(--c3-rule);padding:16px 0;margin:32px 0 20px}.reporting-note h2{font-size:20px}.reporting-note p{color:#ccc;font-size:15px}
 @media(max-width:520px){.c3-hero-katy h1{font-size:42px}.c3-hero-katy .c3-hero-copy{padding-bottom:52px}.katy-report{padding-top:24px}.katy-report .article-deck{font-size:20px}.katy-report .article-body p{font-size:16px;line-height:1.75}.katy-report .article-body h2{font-size:26px}}
 @media(max-width:360px){.c3-hero-katy h1{font-size:36px}}
+
+/* DES-003 (rc/dev-002) */
+main.article-copy:not(.katy-report){max-width:720px}
+.article-copy:not(.katy-report) figure img{width:auto;max-width:100%;display:block;margin:0 auto;background:none;border:0}
+.short-clips-grid .reel>p:not(.c3-kicker):last-child{display:block}
+.c3-hosted .interior-hero,.c3-about .interior-hero{border:0}
+table.report-schedule td,table.report-schedule td:nth-child(1),table.report-schedule td:nth-child(2){font-size:16px;font-weight:400;color:inherit}
+.article-copy ul,.article-copy ol{margin:10px 0 10px 22px;line-height:1.55}
+@media(max-width:520px){main.article-copy:not(.katy-report) h1{font-size:32px;line-height:1.1}}
