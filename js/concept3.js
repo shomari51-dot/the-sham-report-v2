@@ -11,11 +11,6 @@
   }
   document.getElementById('lead-stories').innerHTML = stories.slice(1, 5).map(story).join('');
   document.getElementById('latest-stories').innerHTML = stories.slice(5, 9).map(story).join('');
-  document.getElementById('grade-rows').innerHTML = data.grades.slice(0, 4).map(g => `<tr><td>${esc(g.grade)}</td><td>${esc(g.score)}</td><td>${esc(g.event)}<small>3-Curve A–D Scale · v1.1</small></td><td>${esc(g.venue)}</td><td>${esc(g.buyin)}</td><td>${esc(g.time)}</td></tr>`).join('');
-  document.getElementById('media-rows').innerHTML = reels.map(r => `<a class="c3-story" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer"><div class="c3-thumb"><img src="${esc(r.image)}" alt="${r.alt}" loading="lazy"><span class="c3-play" aria-hidden="true">▷</span></div><div><p class="c3-meta"><span>Facebook Reel ↗</span>${r.date ? ' · ' + esc(r.date) : ''}</p><h3>${r.title}</h3><p>Watch on Facebook (opens a new tab).</p></div></a>`).join('');
-  document.getElementById('preview-newsletter').addEventListener('submit', event => {
-    event.preventDefault();
-    document.getElementById('newsletter-status').textContent = 'Preview complete. No email was saved or submitted; subscriptions are not connected.';
-    event.target.reset();
-  });
+  document.getElementById('grade-rows').innerHTML = data.grades.slice(0, 4).map(g => `<tr><td>${esc(g.grade)}</td><td>${esc(g.score)}</td><td>${esc(g.event)}<small>Historical score · source review pending</small></td><td>${esc(g.venue)}</td><td>${esc(g.buyin)}</td><td>${esc(g.time)}</td></tr>`).join('');
+  window.TSRShorts.mount(document.getElementById('media-rows'));
 })();

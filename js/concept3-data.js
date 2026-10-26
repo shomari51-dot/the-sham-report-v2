@@ -39,22 +39,22 @@ window.CONCEPT3_DATA = {
       "seq": 30,
       "title": "Kyle Puts Dr. Andy in the Blender: K-J vs. A-4 for a $15,000 Pot at Champions Social Club Dallas",
       "image": "images/2026-10-04_reel-1084950954282668.jpg",
-      "alt": "Champions Social Club Dallas stream highlight (October 4, 2026): Dr. Andy (K\u2665 J\u2665) in the tank against Kyle (A\u2665 4\u2663) in a $15,000 pot.",
+      "alt": "Champions Social Club Dallas stream highlight (October 4, 2026): Dr. Andy (K♥ J♥) in the tank against Kyle (A♥ 4♣) in a $15,000 pot.",
       "url": "article-template.html?slug=kyle-puts-dr-andy-in-the-blender-kj-vs-a4-15k-pot-champions-social-club-dallas-october-4-2026",
       "category": "Players",
-      "description": "Dr. Andy holds King-Jack suited (K\u2665 J\u2665) against Kyle's Ace-Four (A\u2665 4\u2663) with $15,000 in the middle on the Champions Social Club Dallas livestream \u2014 how would you play Andy's hand?",
+      "description": "Dr. Andy holds King-Jack suited (K♥ J♥) against Kyle's Ace-Four (A♥ 4♣) with $15,000 in the middle on the Champions Social Club Dallas livestream — how would you play Andy's hand?",
       "date": "October 4, 2026",
       "original_fb_date": "2026-10-04",
       "author": "Shomari Williams"
     },
     {
       "seq": 29,
-      "title": "Spooky Takes 7-2 Up Against Kyle\u2019s Pocket Aces in a Wild $20K Pot on Champions Club Live",
+      "title": "Spooky Takes 7-2 Up Against Kyle’s Pocket Aces in a Wild $20K Pot on Champions Club Live",
       "image": "images/2026-10-02_reel-1985887152094115.jpg",
-      "alt": "Champions Club Live broadcast highlight (October 2, 2026): Spooky raises to $250 in the cutoff with 7\u2665 2\u2666 into Kyle's A\u2660 A\u2666 on the button on the way to a $20,000 pot.",
+      "alt": "Champions Club Live broadcast highlight (October 2, 2026): Spooky raises to $250 in the cutoff with 7♥ 2♦ into Kyle's A♠ A♦ on the button on the way to a $20,000 pot.",
       "url": "article-template.html?slug=spooky-72-vs-kyle-aa-wild-20k-pot-champions-club-live-october-2-2026",
       "category": "Players",
-      "description": "Spooky raises to $250 in the cutoff with seven-deuce offsuit (7\u2665 2\u2666) right into Kyle's pocket aces (A\u2660 A\u2666) on the button \u2014 setting up a wild $20,000 pot on the Champions Club Live stream.",
+      "description": "Spooky raises to $250 in the cutoff with seven-deuce offsuit (7♥ 2♦) right into Kyle's pocket aces (A♠ A♦) on the button — setting up a wild $20,000 pot on the Champions Club Live stream.",
       "date": "October 2, 2026",
       "original_fb_date": "2026-10-02",
       "author": "Shomari Williams"
@@ -78,7 +78,7 @@ window.CONCEPT3_DATA = {
       "alt": "Early May 13, 2026 sneak-peek screenshot of The Sham Report web prototype during development.",
       "url": "article-template.html?slug=the-sham-report-is-getting-a-real-home-texas-poker-media-destination-may-13-2026",
       "category": "Texas Poker",
-      "description": "From Facebook dispatches and Substack deep dives to building theshamreport.com from scratch \u2014 here is the vision behind ShamGod Media's home for Texas poker news, investigations, player recognition, and room intelligence.",
+      "description": "From Facebook dispatches and Substack deep dives to building theshamreport.com from scratch — here is the vision behind ShamGod Media's home for Texas poker news, investigations, player recognition, and room intelligence.",
       "date": "May 13, 2026",
       "original_fb_date": "2026-05-13",
       "author": "Shomari Williams"
@@ -97,7 +97,7 @@ window.CONCEPT3_DATA = {
     },
     {
       "seq": 25,
-      "title": "The City of Dallas Blessed Poker Rooms, Then Spent $500,000 Trying to Shut Them Down \u2014 and Lost",
+      "title": "The City of Dallas Blessed Poker Rooms, Then Spent $500,000 Trying to Shut Them Down — and Lost",
       "image": "images/2026-05-08_1.jpg",
       "alt": "The Sham Report's visual timeline of the \"Dallas Poker Room Certificate of Occupancy Wars\" (May 8, 2026).",
       "url": "article-template.html?slug=dallas-blessed-poker-rooms-spent-500000-trying-to-shut-them-down-may-8-2026",
@@ -109,7 +109,7 @@ window.CONCEPT3_DATA = {
     },
     {
       "seq": 24,
-      "title": "Sit-Down With Isaac Trumbo, President of Champions Group & Knighted Ventures, Ahead of Champions Social Club\u2019s May 14 Soft Opening",
+      "title": "Sit-Down With Isaac Trumbo, President of Champions Group & Knighted Ventures, Ahead of Champions Social Club’s May 14 Soft Opening",
       "image": "images/2026-05-06_1.jpg",
       "alt": "Isaac Trumbo (left), President of Champions Group & Knighted Ventures, and Shomari Williams (right) inside the chess lounge at Champions Social Club in Dallas (May 6, 2026).",
       "url": "article-template.html?slug=isaac-trumbo-sit-down-champions-social-club-soft-opening-may-6-2026",
@@ -126,14 +126,14 @@ window.CONCEPT3_DATA = {
       "alt": "Texas Card House Dallas tournament announcements on PokerAtlas featuring PLO Madness ($30,000 GTD) and the May 2026 schedule.",
       "url": "article-template.html?slug=tch-dallas-plo-madness-187-entries-46750-prize-pool-18th-place-may-4-2026",
       "category": "Tournaments",
-      "description": "Texas Card House Dallas's $30,000 GTD PLO Madness tournament drew 187 entries for a $46,750 prize pool \u2014 where I ran deep to 18th place after a chip-lead pot didn't hold.",
+      "description": "Texas Card House Dallas's $30,000 GTD PLO Madness tournament drew 187 entries for a $46,750 prize pool — where I ran deep to 18th place after a chip-lead pot didn't hold.",
       "date": "May 4, 2026",
       "original_fb_date": "2026-05-04",
       "author": "Shomari Williams"
     },
     {
       "seq": 22,
-      "title": "Developing: Austin Poker Chatter Heats Up Ahead of The Lodge Card Club\u2019s Reopening Announcement",
+      "title": "Developing: Austin Poker Chatter Heats Up Ahead of The Lodge Card Club’s Reopening Announcement",
       "image": "images/2026-05-03_1.jpg",
       "alt": "The exterior of The Lodge Card Club in Round Rock, Texas ahead of its May 2026 reopening announcement.",
       "url": "article-template.html?slug=developing-lodge-card-club-reopening-announcement-rumors-austin-may-3-2026",
@@ -150,31 +150,31 @@ window.CONCEPT3_DATA = {
       "alt": "1:00 a.m. Big O cash game at Poker House with tall stacks of red $5 and green $25 chips before Day 2 (May 3, 2026).",
       "url": "article-template.html?slug=big-o-game-broke-out-1am-before-day-2-poker-house-may-3-2026",
       "category": "Players",
-      "description": "With Day 2 of the $25,000 Guaranteed tournament waiting in the morning, a late-night five-card Big O cash game broke out at 1:00 a.m. at Poker House \u2014 and it looked like an all-nighter.",
+      "description": "With Day 2 of the $25,000 Guaranteed tournament waiting in the morning, a late-night five-card Big O cash game broke out at 1:00 a.m. at Poker House — and it looked like an all-nighter.",
       "date": "May 3, 2026",
       "original_fb_date": "2026-05-03",
       "author": "Shomari Williams"
     },
     {
       "seq": 20,
-      "title": "One Bullet, 210,000 Chips: Bagging Day 2 at Poker House Fort Worth\u2019s $25K GTD and the DFW Weekend Grinder\u2019s Blueprint",
+      "title": "One Bullet, 210,000 Chips: Bagging Day 2 at Poker House Fort Worth’s $25K GTD and the DFW Weekend Grinder’s Blueprint",
       "image": "images/2026-05-01_1.jpg",
       "alt": "Poker House Fort Worth $25,000 Guaranteed Day 1B survivors leaderboard (May 1, 2026), with Sham bagging 210,000 chips in second place behind flight leader Mark W (304,000).",
       "url": "article-template.html?slug=one-bullet-210000-chips-bagging-day-2-poker-house-fort-worth-25k-gtd-may-1-2026",
       "category": "Tournaments",
-      "description": "I write articles about poker, I play poker, and sometimes I bag Day 2 on a single $130 bullet \u2014 locking up 210,000 chips in Flight 1B at Poker House Fort Worth to free up Saturday for DFW's $50K guarantees.",
+      "description": "I write articles about poker, I play poker, and sometimes I bag Day 2 on a single $130 bullet — locking up 210,000 chips in Flight 1B at Poker House Fort Worth to free up Saturday for DFW's $50K guarantees.",
       "date": "May 1, 2026",
       "original_fb_date": "2026-05-01",
       "author": "Shomari Williams"
     },
     {
       "seq": 19,
-      "title": "Whether You Like Doug Polk or Not, The Lodge\u2019s Comeback Is a Historic Win for Texas Poker",
+      "title": "Whether You Like Doug Polk or Not, The Lodge’s Comeback Is a Historic Win for Texas Poker",
       "image": "images/2026-04-29_1.jpg",
       "alt": "Doug Polk gives a thumbs-up following the Williamson County grand jury decision clearing the way for The Lodge Card Club to reopen (April 29, 2026).",
       "url": "article-template.html?slug=whether-you-like-doug-polk-or-not-lodge-comeback-win-for-texas-poker-april-29-2026",
-      "category": "Legal",
-      "description": "When a Texas card room gets raided, it is usually a death sentence \u2014 which is why the Williamson County grand jury's decision clearing the way for The Lodge to reopen and bring its dealers and staff back to work matters for every room in the state.",
+      "category": "Opinion",
+      "description": "When a Texas card room gets raided, it is usually a death sentence — which is why the Williamson County grand jury's decision clearing the way for The Lodge to reopen and bring its dealers and staff back to work matters for every room in the state.",
       "date": "April 29, 2026",
       "original_fb_date": "2026-04-29",
       "author": "Shomari Williams"
@@ -186,7 +186,7 @@ window.CONCEPT3_DATA = {
       "alt": "Three-way pocket-pair showdown (KK vs. JJ vs. 88) on the maroon Palace Poker felt on April 28, 2026.",
       "url": "article-template.html?slug=kk-at-it-again-kk-vs-jj-vs-88-three-way-all-in-palace-poker-april-28-2026",
       "category": "Players",
-      "description": "A three-way pocket-pair collision on the maroon Palace Poker felt \u2014 Pocket Kings up against Pocket Jacks and Pocket Eights with a pile of red, green, and blue chips in the middle.",
+      "description": "A three-way pocket-pair collision on the maroon Palace Poker felt — Pocket Kings up against Pocket Jacks and Pocket Eights with a pile of red, green, and blue chips in the middle.",
       "date": "April 28, 2026",
       "original_fb_date": "2026-04-28",
       "author": "Shomari Williams"
@@ -195,7 +195,7 @@ window.CONCEPT3_DATA = {
       "seq": 17,
       "title": "Champions Social Club Just Raised the Bar for the Best-Looking Poker Room in DFW",
       "image": "images/IMG_3745.jpg",
-      "alt": "Exterior of Champions Social Club at 17776 Dallas Parkway in Dallas, Texas \u2014 the restored former III Forks landmark featuring its signature gold dome and brick facade.",
+      "alt": "Exterior of Champions Social Club at 17776 Dallas Parkway in Dallas, Texas — the restored former III Forks landmark featuring its signature gold dome and brick facade.",
       "url": "article-template.html?slug=champions-social-club-first-look-dfw-poker-room-founding-member-april-26-2026",
       "category": "Texas Poker",
       "description": "Inside the former III Forks landmark at 17776 Dallas Parkway: a founding member's first look at Champions Social Club, its stained-glass lounge, and how the $800/month membership math compares to hourly seat fees.",
@@ -207,10 +207,10 @@ window.CONCEPT3_DATA = {
       "seq": 16,
       "title": "901 Players and $297,330 on the Line: WSOP Circuit Lands in Texas for the First Time at TCH Austin",
       "image": "images/DSC00353.jpg",
-      "alt": "Tournament action on the WSOP Circuit / Texas Card House Austin felt (April 22 \u2013 May 4, 2026 series).",
+      "alt": "Tournament action on the WSOP Circuit / Texas Card House Austin felt (April 22 – May 4, 2026 series).",
       "url": "article-template.html?slug=wsop-circuit-texas-card-house-austin-901-players-first-lone-star-ring-april-24-2026",
       "category": "Tournaments",
-      "description": "The first Lone Star Ring event of the inaugural WSOP Circuit series at Texas Card House Austin drew an insane 901-entry turnout and a $297,330 prize pool \u2014 and I'm making the drive down I-35.",
+      "description": "The first Lone Star Ring event of the inaugural WSOP Circuit series at Texas Card House Austin drew an insane 901-entry turnout and a $297,330 prize pool — and I'm making the drive down I-35.",
       "date": "April 24, 2026",
       "original_fb_date": "2026-04-24",
       "author": "Shomari Williams"
@@ -222,7 +222,7 @@ window.CONCEPT3_DATA = {
       "alt": "Broadcast frame from the Lodge Championship Series (LCS) Final Table (Hand 79, 5 of 752 remaining, blinds 50K/100K), where Harvey Castro finished runner-up for $143,336 on March 9, 2026.",
       "url": "article-template.html?slug=harvey-castro-won-143000-at-the-lodge-raided-next-day-april-21-2026",
       "category": "Players",
-      "description": "23-year-old Flower Mound pro Harvey Castro finished second in the Lodge Championship Series Main Event for $143,336 on March 9 \u2014 less than 24 hours before the raid froze his payout check.",
+      "description": "23-year-old Flower Mound pro Harvey Castro finished second in the Lodge Championship Series Main Event for $143,336 on March 9 — less than 24 hours before the raid froze his payout check.",
       "date": "April 21, 2026",
       "original_fb_date": "2026-04-21",
       "author": "Shomari Williams"
@@ -233,8 +233,8 @@ window.CONCEPT3_DATA = {
       "image": "images/2026-04-20_1.jpg",
       "alt": "Jeopardy!-style game board graphic reading \"WHAT IS SELECTIVE ENFORCEMENT\" accompanying Shomari Williams's April 20, 2026 commentary.",
       "url": "article-template.html?slug=what-is-selective-enforcement-texas-poker-rooms-april-20-2026",
-      "category": "Legal",
-      "description": "In Texas, poker rooms operate under the same statute and the same legal gray area \u2014 so when one club is raided while others take a pot rake in plain sight, the real question isn't \"was the law broken?\" It's \"why was this room chosen?\"",
+      "category": "Opinion",
+      "description": "In Texas, poker rooms operate under the same statute and the same legal gray area — so when one club is raided while others take a pot rake in plain sight, the real question isn't \"was the law broken?\" It's \"why was this room chosen?\"",
       "date": "April 20, 2026",
       "original_fb_date": "2026-04-20",
       "author": "Shomari Williams"
@@ -246,7 +246,7 @@ window.CONCEPT3_DATA = {
       "alt": "Deep chip stacks on the Poker House Fort Worth feature table during the March 19, 2026 Round of Each PLO and Congress livestream.",
       "url": "article-template.html?slug=running-good-poker-house-fort-worth-livestream-plo-congress-march-19-2026",
       "category": "Players",
-      "description": "Taking a seat on the Poker House Live feature table in Fort Worth for a mixed Round of Each session of Pot-Limit Omaha and 5-Card PLO (Congress) \u2014 and stacking up deep.",
+      "description": "Taking a seat on the Poker House Live feature table in Fort Worth for a mixed Round of Each session of Pot-Limit Omaha and 5-Card PLO (Congress) — and stacking up deep.",
       "date": "March 19, 2026",
       "original_fb_date": "2026-03-19",
       "author": "Shomari Williams"
@@ -255,17 +255,17 @@ window.CONCEPT3_DATA = {
       "seq": 12,
       "title": "When Your Table Selection Is Off: Sitting Down With a Lineup of $5/$10 Crushers",
       "image": "images/2026-03-18_reel-1623841535321868.jpg",
-      "alt": "At the $5/$10 table with a lineup of crushers \u2014 \"My table selection was a little off this time. A bunch of 5-10 crushers.\" (March 18, 2026).",
+      "alt": "At the $5/$10 table with a lineup of crushers — \"My table selection was a little off this time. A bunch of 5-10 crushers.\" (March 18, 2026).",
       "url": "article-template.html?slug=table-selection-5-10-crushers-wolfgang-brad-benji-scott-amy-march-18-2026",
       "category": "Players",
-      "description": "Walking into a $5/$10 session and realizing the lineup includes Wolfgang, Brad, Benji, Scott, and Amy \u2014 sometimes the best play at the table is recognizing a stacked lineup.",
+      "description": "Walking into a $5/$10 session and realizing the lineup includes Wolfgang, Brad, Benji, Scott, and Amy — sometimes the best play at the table is recognizing a stacked lineup.",
       "date": "March 18, 2026",
       "original_fb_date": "2026-03-18",
       "author": "Shomari Williams"
     },
     {
       "seq": 11,
-      "title": "Green Beer and Poker on St. Patrick\u2019s Day: Notes From the DFW Felt",
+      "title": "Green Beer and Poker on St. Patrick’s Day: Notes From the DFW Felt",
       "image": "images/2026-03-17_2.jpg",
       "alt": "Green beer on the poker table rail during a St. Patrick's Day session in DFW on March 17, 2026.",
       "url": "article-template.html?slug=green-beer-and-poker-st-patricks-day-dfw-march-17-2026",
@@ -277,11 +277,11 @@ window.CONCEPT3_DATA = {
     },
     {
       "seq": 10,
-      "title": "They Sent Undercover Agents to Play $1/$2\u2026 and THIS Is What They Came Up With?",
+      "title": "They Sent Undercover Agents to Play $1/$2… and THIS Is What They Came Up With?",
       "image": "images/2026-03-17_1.jpg",
       "alt": "Graphic from coverage of the 22-page search-warrant affidavit at The Lodge Card Club in Round Rock (March 17, 2026).",
       "url": "article-template.html?slug=tabc-affidavit-undercover-agents-lodge-card-club-march-17-2026",
-      "category": "Investigation",
+      "category": "Opinion",
       "description": "After a nine-month undercover investigation, six covert visits, bank records, the IRS, and a 22-page affidavit at The Lodge in Round Rock, here is how the case stacks up against the 2019 Houston raids.",
       "date": "March 17, 2026",
       "original_fb_date": "2026-03-17",
@@ -291,10 +291,10 @@ window.CONCEPT3_DATA = {
       "seq": 9,
       "title": "Ran Deep at The Shuffle 214: $100K Guaranteed Hand Highlights and a Min-Cash Story",
       "image": "images/2026-03-17_reel-2045881562627473.jpg",
-      "alt": "All-in hand highlight from Shuffle 214's $100K Guaranteed series in Dallas: Sham's A\u2663 K\u2665 up against K\u2663 J\u2665.",
+      "alt": "All-in hand highlight from Shuffle 214's $100K Guaranteed series in Dallas: Sham's A♣ K♥ up against K♣ J♥.",
       "url": "article-template.html?slug=shuffle-214-100k-hand-highlights-ak-vs-kj-all-in-march-17-2026",
       "category": "Tournaments",
-      "description": "Had the table talking deep in Shuffle 214's $100K Guaranteed series \u2014 including an all-in clash with Ace-King against King-Jack \u2014 before settling for a min-cash and a story worth more than the payout.",
+      "description": "Had the table talking deep in Shuffle 214's $100K Guaranteed series — including an all-in clash with Ace-King against King-Jack — before settling for a min-cash and a story worth more than the payout.",
       "date": "March 17, 2026",
       "original_fb_date": "2026-03-17",
       "author": "Shomari Williams"
@@ -305,7 +305,7 @@ window.CONCEPT3_DATA = {
       "image": "images/2026-03-16_2.jpg",
       "alt": "Doug Polk's public Facebook statement on The Lodge Card Club investigation (March 16, 2026), noting that the search-warrant affidavit had not been given to The Lodge or made public.",
       "url": "article-template.html?slug=no-affidavit-lodge-card-club-due-process-doug-polk-march-16-2026",
-      "category": "Legal",
+      "category": "Opinion",
       "description": "Doug Polk broke his silence on The Lodge Card Club raid with a detail that should concern every Texas poker player: the search-warrant affidavit still hadn't been given to The Lodge or made public.",
       "date": "March 16, 2026",
       "original_fb_date": "2026-03-16",
@@ -330,7 +330,7 @@ window.CONCEPT3_DATA = {
       "alt": "Five bullets at $150 each: Sham's Flight 1H entry receipt (Table 10, Seat 8) and starting stack at Shuffle 214 on March 13, 2026.",
       "url": "article-template.html?slug=shuffle-214-100k-series-recap-five-bullets-tournament-variance-march-2026",
       "category": "Tournaments",
-      "description": "Five $150 entries into Shuffle 214's $100K GTD series came back with one $250 min-cash for a -$500 net \u2014 and a reminder of why cash games pay the bills.",
+      "description": "Five $150 entries into Shuffle 214's $100K GTD series came back with one $250 min-cash for a -$500 net — and a reminder of why cash games pay the bills.",
       "date": "March 14, 2026",
       "original_fb_date": "2026-03-14",
       "author": "Shomari Williams"
@@ -341,7 +341,7 @@ window.CONCEPT3_DATA = {
       "image": "images/2026-03-14_1.jpg",
       "alt": "Reader comments from Jon Waters and Abram Evan Fontana on Sham's March 2026 Facebook thread discussing AML and KYC compliance.",
       "url": "article-template.html?slug=lodge-raid-community-context-aml-kyc-compliance-march-14-2026",
-      "category": "Legal",
+      "category": "Opinion",
       "description": "Readers Jon Waters and Abram Evan Fontana pointed to a crucial distinction in the Lodge investigation: how Texas's unregulated gray area leaves rooms exposed on Anti-Money Laundering and Know Your Customer compliance.",
       "date": "March 14, 2026",
       "original_fb_date": "2026-03-14",
@@ -353,8 +353,8 @@ window.CONCEPT3_DATA = {
       "image": "images/2026-03-13_1.jpg",
       "alt": "At the table in DFW: 'Member of Too Many Social Clubs.'",
       "url": "article-template.html?slug=lodge-raid-commentary-doug-polk-texas-poker-gray-area-march-13-2026",
-      "category": "Legal",
-      "description": "Doug Polk became the most visible, politically organized voice pushing for legal clarity in Texas poker \u2014 and that context matters when looking at what's happening in Round Rock.",
+      "category": "Opinion",
+      "description": "Doug Polk became the most visible, politically organized voice pushing for legal clarity in Texas poker — and that context matters when looking at what's happening in Round Rock.",
       "date": "March 13, 2026",
       "original_fb_date": "2026-03-13",
       "author": "Shomari Williams"
@@ -366,7 +366,7 @@ window.CONCEPT3_DATA = {
       "alt": "The Lodge Card Club in Round Rock, Texas.",
       "url": "article-template.html?slug=lodge-raid-update-tabc-financial-crimes-irs-march-12-2026",
       "category": "Investigation",
-      "description": "TABC confirmed its Financial Crimes Unit, the Williamson County Sheriff's Office, and the IRS executed the search warrant at The Lodge over suspected money laundering and illegal gambling \u2014 not a liquor-license check.",
+      "description": "TABC confirmed its Financial Crimes Unit, the Williamson County Sheriff's Office, and the IRS executed the search warrant at The Lodge over suspected money laundering and illegal gambling — not a liquor-license check.",
       "date": "March 12, 2026",
       "original_fb_date": "2026-03-12",
       "author": "Shomari Williams"
@@ -378,7 +378,7 @@ window.CONCEPT3_DATA = {
       "alt": "Tom Dwan (@TomDwan) replies to Doug Polk (@DougPolkVids) on X on March 12, 2026.",
       "url": "article-template.html?slug=lodge-raid-coverage-tom-dwan-enters-the-chat",
       "category": "Investigation",
-      "description": "A day after the raid, Tom Dwan jumped into a tense X exchange with Doug Polk \u2014 and the story started splitting into two different versions.",
+      "description": "A day after the raid, Tom Dwan jumped into a tense X exchange with Doug Polk — and the story started splitting into two different versions.",
       "date": "March 12, 2026",
       "original_fb_date": "2026-03-12",
       "author": "Shomari Williams"
@@ -389,8 +389,8 @@ window.CONCEPT3_DATA = {
       "image": "images/The_Lodge_Photo.jpg",
       "alt": "The Lodge Card Club in Round Rock, Texas.",
       "url": "article-template.html?slug=the-lodge-raid-first-reaction-march-11-2026",
-      "category": "Investigation",
-      "description": "My first reaction when news broke that TABC raided The Lodge in Round Rock \u2014 before any official statement or confirmed details.",
+      "category": "Opinion",
+      "description": "My first reaction when news broke that TABC raided The Lodge in Round Rock — before any official statement or confirmed details.",
       "date": "March 11, 2026",
       "original_fb_date": "2026-03-11",
       "author": "Shomari Williams"
@@ -426,7 +426,7 @@ window.CONCEPT3_DATA = {
       "score": "93.9",
       "grade": "A",
       "buyin": "$2,500",
-      "time": "Curve 3 \u00b7 v1.1"
+      "time": "Curve 3 · v1.1"
     },
     {
       "event": "Trailblazer MAIN EVENT",
@@ -434,31 +434,31 @@ window.CONCEPT3_DATA = {
       "score": "81.4",
       "grade": "B+",
       "buyin": "$600",
-      "time": "Curve 3 \u00b7 v1.1"
+      "time": "Curve 3 · v1.1"
     },
     {
       "event": "RunGood Monster Stack Opener",
       "venue": "Champions Club Houston",
       "score": "69.8",
-      "grade": "B\u2212",
+      "grade": "B−",
       "buyin": "$400",
-      "time": "Curve 3 \u00b7 v1.1"
+      "time": "Curve 3 · v1.1"
     },
     {
       "event": "RunGood Main Event",
       "venue": "Champions Club Houston",
       "score": "66.0",
-      "grade": "B\u2212",
+      "grade": "B−",
       "buyin": "$600",
-      "time": "Curve 3 \u00b7 v1.1"
+      "time": "Curve 3 · v1.1"
     },
     {
       "event": "$400 Big Tex Giant Stack",
       "venue": "TCH Dallas",
       "score": "51.4",
-      "grade": "C\u2212",
+      "grade": "C−",
       "buyin": "$400",
-      "time": "Curve 3 \u00b7 v1.1"
+      "time": "Curve 3 · v1.1"
     },
     {
       "event": "$400 Kick Off",
@@ -466,7 +466,7 @@ window.CONCEPT3_DATA = {
       "score": "48.2",
       "grade": "D+",
       "buyin": "$400",
-      "time": "Curve 3 \u00b7 v1.1"
+      "time": "Curve 3 · v1.1"
     },
     {
       "event": "PokerNews PowerStack",
@@ -474,7 +474,7 @@ window.CONCEPT3_DATA = {
       "score": "46.6",
       "grade": "D+",
       "buyin": "$400",
-      "time": "Curve 3 \u00b7 v1.1"
+      "time": "Curve 3 · v1.1"
     },
     {
       "event": "Send Off",
@@ -482,7 +482,7 @@ window.CONCEPT3_DATA = {
       "score": "48.2",
       "grade": "B",
       "buyin": "$200",
-      "time": "Curve 2 \u00b7 v1.1"
+      "time": "Curve 2 · v1.1"
     },
     {
       "event": "Randy's Six Shooter $250",
@@ -490,7 +490,7 @@ window.CONCEPT3_DATA = {
       "score": "39.2",
       "grade": "C",
       "buyin": "$250",
-      "time": "Curve 2 \u00b7 v1.1"
+      "time": "Curve 2 · v1.1"
     },
     {
       "event": "Lone Star PLO",
@@ -498,7 +498,7 @@ window.CONCEPT3_DATA = {
       "score": "29.0",
       "grade": "D",
       "buyin": "$300",
-      "time": "Curve 2 \u00b7 v1.1"
+      "time": "Curve 2 · v1.1"
     },
     {
       "event": "$200 Lone Star Stand-Off",
@@ -506,15 +506,15 @@ window.CONCEPT3_DATA = {
       "score": "48.2",
       "grade": "B",
       "buyin": "$200",
-      "time": "Curve 2 \u00b7 v1.1"
+      "time": "Curve 2 · v1.1"
     },
     {
       "event": "$300 2-7 Single Draw",
       "venue": "TCH Dallas",
       "score": "46.7",
-      "grade": "B\u2212",
+      "grade": "B−",
       "buyin": "$300",
-      "time": "Curve 2 \u00b7 v1.1"
+      "time": "Curve 2 · v1.1"
     },
     {
       "event": "$300 Mega Stack",
@@ -522,7 +522,7 @@ window.CONCEPT3_DATA = {
       "score": "51.4",
       "grade": "B+",
       "buyin": "$300",
-      "time": "Curve 2 \u00b7 v1.1"
+      "time": "Curve 2 · v1.1"
     },
     {
       "event": "Donkey Derby $200",
@@ -530,7 +530,7 @@ window.CONCEPT3_DATA = {
       "score": "40.2",
       "grade": "C",
       "buyin": "$200",
-      "time": "Curve 2 \u00b7 v1.1"
+      "time": "Curve 2 · v1.1"
     },
     {
       "event": "Even Bigger One $250K GTD",
@@ -538,7 +538,7 @@ window.CONCEPT3_DATA = {
       "score": "73.0",
       "grade": "A+",
       "buyin": "$300",
-      "time": "Curve 2 \u00b7 v1.1"
+      "time": "Curve 2 · v1.1"
     },
     {
       "event": "$150 Deepstack",
@@ -546,7 +546,7 @@ window.CONCEPT3_DATA = {
       "score": "29.0",
       "grade": "D",
       "buyin": "$150",
-      "time": "Curve 2 \u00b7 v1.1"
+      "time": "Curve 2 · v1.1"
     }
   ],
   "articles": [
@@ -570,7 +570,8 @@ window.CONCEPT3_DATA = {
       "seo": {
         "metaTitle": "Police Raid 101 Poker Club in Katy | The Sham Report",
         "metaDescription": "HPD says more than $118,000 was seized, four people were charged with engaging in organized criminal activity and a charge is pending against a fifth."
-      }
+      },
+      "format": "Dispatch"
     },
     {
       "seq": 32,
@@ -589,10 +590,11 @@ window.CONCEPT3_DATA = {
       "heroImage": "images/rungood-official-champions-club-1200.jpg",
       "caption": "RunGood Golden Expedition at Champions Club Houston",
       "credit": "RunGood official event artwork",
-      "body": "For the first time ever, the RunGood Poker Series is coming to Houston. The RGPS Golden Expedition runs October 12\u201318, exclusively at Champions Club (6440 W Sam Houston Pkwy S, Houston), with $510K in published guarantees and 11 championship rings up for grabs. The headliner is a $600 Main Event with a $250,000 guarantee.\n\nChampions Club is offering a tournament room rate starting at $79 a night for players who want to stay and play. Club membership is required to play, and the structure sheet lists the fee portion of each buy-in as a \"facility access fee.\"\n\nThe Main Event is the best-priced event on the schedule, with a 16.7% fee on a $600 buy-in, a 60,000 stack, and 30-minute levels. The $400 events (Monster Stack, PowerStack, Last Chance) run 17.5%, and the $300 events run 20%. If you're picking one event this week, the Main gives you the most structure for your money.\n\nGraded from the Champions Club structure sheets with the TSR Score calculator:\n\u2022 Monster Stack Opener ($400, 50,000 stack, 30-minute levels): TSR 69.8 (B\u2212). 17.5% fee, with playable depth through level 19.\n\u2022 RunGood Main Event ($600, 60,000 stack, 30-minute levels): TSR 66.0 (B\u2212). 16.7% fee. Same letter as the opener, slightly lower score, and the best fee of the three.\n\u2022 PokerNews PowerStack ($400, 40,000 stack, 30-minute levels): TSR 46.6 (D+). 17.5% fee. Same buy-in as the Monster Stack, but the 40,000 stack and faster blind climb cut depth to level 15.\n\nFee percentage still favors the Main, but structure favors the Monster Stack. The PowerStack is the softest of the three on skill depth.\n\nSources: RunGood event page, Champions Club structure sheets (PDF), PokerNews preview, and the Champions Club Texas email announcement (Oct 10, 2026).",
+      "body": "For the first time ever, the RunGood Poker Series is coming to Houston. The RGPS Golden Expedition runs October 12–18, exclusively at Champions Club (6440 W Sam Houston Pkwy S, Houston), with $510K in published guarantees and 11 championship rings up for grabs. The headliner is a $600 Main Event with a $250,000 guarantee.\n\nChampions Club is offering a tournament room rate starting at $79 a night for players who want to stay and play. Club membership is required to play, and the structure sheet lists the fee portion of each buy-in as a \"facility access fee.\"\n\nThe Main Event is the best-priced event on the schedule, with a 16.7% fee on a $600 buy-in, a 60,000 stack, and 30-minute levels. The $400 events (Monster Stack, PowerStack, Last Chance) run 17.5%, and the $300 events run 20%. If you're picking one event this week, the Main gives you the most structure for your money.\n\nGraded from the Champions Club structure sheets with the TSR Score calculator:\n• Monster Stack Opener ($400, 50,000 stack, 30-minute levels): TSR 69.8 (B−). 17.5% fee, with playable depth through level 19.\n• RunGood Main Event ($600, 60,000 stack, 30-minute levels): TSR 66.0 (B−). 16.7% fee. Same letter as the opener, slightly lower score, and the best fee of the three.\n• PokerNews PowerStack ($400, 40,000 stack, 30-minute levels): TSR 46.6 (D+). 17.5% fee. Same buy-in as the Monster Stack, but the 40,000 stack and faster blind climb cut depth to level 15.\n\nFee percentage still favors the Main, but structure favors the Monster Stack. The PowerStack is the softest of the three on skill depth.\n\nSources: RunGood event page, Champions Club structure sheets (PDF), PokerNews preview, and the Champions Club Texas email announcement (Oct 10, 2026).",
       "context": "Original October 2026 reporting. See the linked original article for full source links, schedules and results.",
       "disclosures": "Shomari Williams has performed commentary work at Champions Social Club with Hayden Fortini and participates in live tournament play. No firsthand experience at this event is claimed by its automated structure analysis.",
-      "status": "published"
+      "status": "published",
+      "format": "Dispatch"
     },
     {
       "seq": 31,
@@ -611,16 +613,17 @@ window.CONCEPT3_DATA = {
       "heroImage": "images/2026-10-09-tch-kickoff-final-payout-board-stream.png",
       "caption": "Final Kick Off payout board on the TCH Dallas stream",
       "credit": "TCH Dallas stream",
-      "body": "Jesse J is the Trailblazer Stop 2 Kick Off champion. The $400 #1 Kick Off ($100K GTD) at TCH Dallas drew 347 entries for a $114,510 prize pool (TCH live report). That beat the guarantee easily, and 44 places were paid.\n\nFinal results (as shown on TCH's live stream):\n1. Jesse J: $20,980\n2. Natalia: $20,250\n3. BJ: $10,950\n4. Chase Bricker: $7,090\n\nIt came down to Jesse J and Natalia. At Hand 44, with blinds at 50,000/100,000/100,000, the stream's chip-count graphic had Jesse J on 5,870,000 and Natalia on 4,810,000. Jesse J and Natalia struck a heads-up deal, and Jesse J took the title.\n\nFourth place went to Chase Bricker. He's the Dallas-area player who beat Jason Christopher heads-up at Wynn Las Vegas in December 2024 to win the $1 million first prize in the ClubWPT Gold $5M Invitational Freeroll (PokerNews, WPT). No trophy this time, but a deep run on home felt.\n\nThe Kick Off was just the opener. Trailblazer Stop 2's $800 Main Event ($1,000,000 GTD) starts its first flight at TCH Dallas on Monday, Oct 12 at 5 PM, with flights through Oct 17 and the final table Oct 19 (official schedule). I'll be on it.\n\n\u2014 Sham",
+      "body": "Jesse J is the Trailblazer Stop 2 Kick Off champion. The $400 #1 Kick Off ($100K GTD) at TCH Dallas drew 347 entries for a $114,510 prize pool (TCH live report). That beat the guarantee easily, and 44 places were paid.\n\nFinal results (as shown on TCH's live stream):\n1. Jesse J: $20,980\n2. Natalia: $20,250\n3. BJ: $10,950\n4. Chase Bricker: $7,090\n\nIt came down to Jesse J and Natalia. At Hand 44, with blinds at 50,000/100,000/100,000, the stream's chip-count graphic had Jesse J on 5,870,000 and Natalia on 4,810,000. Jesse J and Natalia struck a heads-up deal, and Jesse J took the title.\n\nFourth place went to Chase Bricker. He's the Dallas-area player who beat Jason Christopher heads-up at Wynn Las Vegas in December 2024 to win the $1 million first prize in the ClubWPT Gold $5M Invitational Freeroll (PokerNews, WPT). No trophy this time, but a deep run on home felt.\n\nThe Kick Off was just the opener. Trailblazer Stop 2's $800 Main Event ($1,000,000 GTD) starts its first flight at TCH Dallas on Monday, Oct 12 at 5 PM, with flights through Oct 17 and the final table Oct 19 (official schedule). I'll be on it.\n\n— Sham",
       "context": "Original October 2026 reporting. See the linked original article for full source links, schedules and results.",
       "disclosures": "Original October 2026 tournament reporting by Shomari Williams from the official Texas Card House Dallas live stream and published series schedule. Shomari Williams participates in live tournament play in Texas.",
-      "status": "published"
+      "status": "published",
+      "format": "Reporting"
     },
     {
       "seq": 30,
       "slug": "kyle-puts-dr-andy-in-the-blender-kj-vs-a4-15k-pot-champions-social-club-dallas-october-4-2026",
       "title": "Kyle Puts Dr. Andy in the Blender: K-J vs. A-4 for a $15,000 Pot at Champions Social Club Dallas",
-      "deck": "Dr. Andy holds King-Jack suited (K\u2665 J\u2665) against Kyle's Ace-Four (A\u2665 4\u2663) with $15,000 in the middle on the Champions Social Club Dallas livestream \u2014 how would you play Andy's hand?",
+      "deck": "Dr. Andy holds King-Jack suited (K♥ J♥) against Kyle's Ace-Four (A♥ 4♣) with $15,000 in the middle on the Champions Social Club Dallas livestream — how would you play Andy's hand?",
       "categories": [
         "Players",
         "Texas Poker"
@@ -629,12 +632,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "October 4, 2026",
-      "body": "Originally posted October 4, 2026.\n\nKyle puts Dr. Andy in the blender at Champions Social Club in Dallas!\n\nIn a high-pressure $15,000 pot on the Champions Social Club Dallas feature stream (https://www.facebook.com/reel/1084950954282668/), Dr. Andy found himself put to the test holding King-Jack of hearts (K\u2665 J\u2665) against Kyle's Ace-Four offsuit (A\u2665 4\u2663) at a deep-stacked table alongside JB ($10.9K), RamseyTheRam ($7.0K), Scott L ($6.7K), and NDN ($4.3K).\n\nWatch the hand play out and tell us: how would you play Andy's hand?\n\n\u2014 Sham",
+      "body": "Originally posted October 4, 2026.\n\nKyle puts Dr. Andy in the blender at Champions Social Club in Dallas!\n\nIn a high-pressure $15,000 pot on the Champions Social Club Dallas feature stream (https://www.facebook.com/reel/1084950954282668/), Dr. Andy found himself put to the test holding King-Jack of hearts (K♥ J♥) against Kyle's Ace-Four offsuit (A♥ 4♣) at a deep-stacked table alongside JB ($10.9K), RamseyTheRam ($7.0K), Scott L ($6.7K), and NDN ($4.3K).\n\nWatch the hand play out and tell us: how would you play Andy's hand?\n\n— Sham",
       "status": "published",
       "fb_post_id": "reel-1084950954282668",
       "fb_source_url": "https://facebook.com/reel/1084950954282668/",
       "original_fb_date": "2026-10-04",
-      "original_post_text": "Kyle puts Dr. Andy in the BLENDER!\n\nKJ vs. A4 for a $15,000 pot.\n\nHow would you play Andy\u2019s hand?\n\n\ud83d\udccd Champions Social Club \u2022 Dallas\n\n#Poker #PokerReels #TexasHoldem #PokerHands #DallasPoker",
+      "original_post_text": "Kyle puts Dr. Andy in the BLENDER!\n\nKJ vs. A4 for a $15,000 pot.\n\nHow would you play Andy’s hand?\n\n📍 Champions Social Club • Dallas\n\n#Poker #PokerReels #TexasHoldem #PokerHands #DallasPoker",
       "original_post_sha256": "97a652ea1ae91f1dba7872c7e44abad7d5f0275b36f4b6e2faa6619f24c6f384",
       "seo": {
         "metaTitle": "Kyle Puts Dr. Andy in the Blender: KJ vs A4 for a $15K Pot | The Sham Report",
@@ -643,14 +646,15 @@ window.CONCEPT3_DATA = {
       },
       "context": "Original October 4, 2026 hand-highlight dispatch and Facebook Reel from the Champions Social Club Dallas livestream.",
       "credit": "Champions Social Club Dallas / The Sham Report",
-      "caption": "Champions Social Club Dallas stream highlight (October 4, 2026): Dr. Andy (K\u2665 J\u2665) in the tank against Kyle (A\u2665 4\u2663) in a $15,000 pot.",
-      "disclosures": "Shomari Williams has performed commentary work at Champions Social Club in Dallas and is a founding member of the club."
+      "caption": "Champions Social Club Dallas stream highlight (October 4, 2026): Dr. Andy (K♥ J♥) in the tank against Kyle (A♥ 4♣) in a $15,000 pot.",
+      "disclosures": "Shomari Williams has performed commentary work at Champions Social Club in Dallas and is a founding member of the club.",
+      "format": "Reporting"
     },
     {
       "seq": 29,
       "slug": "spooky-72-vs-kyle-aa-wild-20k-pot-champions-club-live-october-2-2026",
-      "title": "Spooky Takes 7-2 Up Against Kyle\u2019s Pocket Aces in a Wild $20K Pot on Champions Club Live",
-      "deck": "Spooky raises to $250 in the cutoff with seven-deuce offsuit (7\u2665 2\u2666) right into Kyle's pocket aces (A\u2660 A\u2666) on the button \u2014 setting up a wild $20,000 pot on the Champions Club Live stream.",
+      "title": "Spooky Takes 7-2 Up Against Kyle’s Pocket Aces in a Wild $20K Pot on Champions Club Live",
+      "deck": "Spooky raises to $250 in the cutoff with seven-deuce offsuit (7♥ 2♦) right into Kyle's pocket aces (A♠ A♦) on the button — setting up a wild $20,000 pot on the Champions Club Live stream.",
       "categories": [
         "Players",
         "Texas Poker"
@@ -659,12 +663,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "October 2, 2026",
-      "body": "Originally posted October 2, 2026.\n\nSpooky takes 7-2 up against Kyle's pocket aces in a wild $20,000 pot on the Champions Club Live broadcast!\n\nWith deep five-figure stacks across the feature table \u2014 Kyle sitting on $13.2K on the button, Spooky with $10.5K in the cutoff, Scott L with $10.7K in the hijack (holding 10\u2660 8\u2665 after calling $50), and RamseyTheRam with $8.6K \u2014 Spooky decided to turn up the heat preflop by raising to $250 with 7\u2665 2\u2666, only to look straight into Kyle waking up with A\u2660 A\u2666 on the button.\n\nWatch the full $20,000 clash on Facebook (https://www.facebook.com/reel/1985887152094115/) \u2014 would you have played it differently?\n\n\u2014 Sham",
+      "body": "Originally posted October 2, 2026.\n\nSpooky takes 7-2 up against Kyle's pocket aces in a wild $20,000 pot on the Champions Club Live broadcast!\n\nWith deep five-figure stacks across the feature table — Kyle sitting on $13.2K on the button, Spooky with $10.5K in the cutoff, Scott L with $10.7K in the hijack (holding 10♠ 8♥ after calling $50), and RamseyTheRam with $8.6K — Spooky decided to turn up the heat preflop by raising to $250 with 7♥ 2♦, only to look straight into Kyle waking up with A♠ A♦ on the button.\n\nWatch the full $20,000 clash on Facebook (https://www.facebook.com/reel/1985887152094115/) — would you have played it differently?\n\n— Sham",
       "status": "published",
       "fb_post_id": "reel-1985887152094115",
       "fb_source_url": "https://facebook.com/reel/1985887152094115/",
       "original_fb_date": "2026-10-02",
-      "original_post_text": "Spooky takes 72 up against Kyle\u2019s AA in a wild 20k pot! Would you have played it differently?\n\n#Poker #PokerReels #ChampionsClubLive #TexasHoldem #PokerHands #72vsAA",
+      "original_post_text": "Spooky takes 72 up against Kyle’s AA in a wild 20k pot! Would you have played it differently?\n\n#Poker #PokerReels #ChampionsClubLive #TexasHoldem #PokerHands #72vsAA",
       "original_post_sha256": "04962526dc69ad9b19d7fa201d43fac40d0bd1588ef83c31bc88c3ebecce39f9",
       "seo": {
         "metaTitle": "Spooky's 7-2 vs Kyle's Pocket Aces in a $20K Pot | The Sham Report",
@@ -673,8 +677,9 @@ window.CONCEPT3_DATA = {
       },
       "context": "Original October 2, 2026 hand-highlight dispatch and Facebook Reel from the Champions Club Live stream.",
       "credit": "Champions Club Live / The Sham Report",
-      "caption": "Champions Club Live broadcast highlight (October 2, 2026): Spooky raises to $250 in the cutoff with 7\u2665 2\u2666 into Kyle's A\u2660 A\u2666 on the button on the way to a $20,000 pot.",
-      "disclosures": "Shomari Williams has performed commentary work at Champions Social Club in Dallas and is a founding member of the club."
+      "caption": "Champions Club Live broadcast highlight (October 2, 2026): Spooky raises to $250 in the cutoff with 7♥ 2♦ into Kyle's A♠ A♦ on the button on the way to a $20,000 pot.",
+      "disclosures": "Shomari Williams has performed commentary work at Champions Social Club in Dallas and is a founding member of the club.",
+      "format": "Reporting"
     },
     {
       "seq": 28,
@@ -689,12 +694,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "September 29, 2026",
-      "body": "Originally posted September 29, 2026.\n\nI'm in the commentary booth tonight at Champions Social Club with a great poker mind: Coach Hayden Fortini.\n\nTune in for a special $1/$3 cash-game livestream as we break down the hands in real time and get inside Hayden's head on low-stakes cash-game adjustments. Jump in the live chat and ask him anything \u2014 cards fly at 6:30 p.m. CT. Let's go!\n\n\u2014 Sham",
+      "body": "Originally posted September 29, 2026.\n\nI'm in the commentary booth tonight at Champions Social Club with a great poker mind: Coach Hayden Fortini.\n\nTune in for a special $1/$3 cash-game livestream as we break down the hands in real time and get inside Hayden's head on low-stakes cash-game adjustments. Jump in the live chat and ask him anything — cards fly at 6:30 p.m. CT. Let's go!\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid0vkc4YrVRrDFMe8P1uqHrWbU5MAC5zztEvhtEHfE1gaJ5JQAPdxWKYkKjc689v2zql",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid0vkc4YrVRrDFMe8P1uqHrWbU5MAC5zztEvhtEHfE1gaJ5JQAPdxWKYkKjc689v2zql/",
       "original_fb_date": "2026-09-29",
-      "original_post_text": "I\u2019m in the booth tonight with a great poker mind. Coach @[1193106094:2048:Hayden Fortini]. Tune in for a special $1-$3 stream and get in Hayden\u2019s head. Jump in the chat and ask him anything. Cards fly at 6:30 CT. Let\u2019s goooo!",
+      "original_post_text": "I’m in the booth tonight with a great poker mind. Coach @[1193106094:2048:Hayden Fortini]. Tune in for a special $1-$3 stream and get in Hayden’s head. Jump in the chat and ask him anything. Cards fly at 6:30 CT. Let’s goooo!",
       "original_post_sha256": "2a4b7677085428179f7a2cd9154d0b985b3d46c2559e23241a5573a3bf828984",
       "seo": {
         "metaTitle": "In the Booth With Coach Hayden Fortini: Champions Social Club $1/$3 Stream | The Sham Report",
@@ -704,13 +709,14 @@ window.CONCEPT3_DATA = {
       "context": "Original September 29, 2026 commentary broadcast announcement by Shomari Williams from Champions Social Club in Dallas.",
       "credit": "Champions Social Club / The Sham Report",
       "caption": "Champions Social Club $1/$3 cash-game livestream graphic for the September 29, 2026 broadcast with Shomari Williams and Coach Hayden Fortini in the booth.",
-      "disclosures": "Firsthand attendance verified: Shomari Williams performed live stream commentary at Champions Social Club alongside Coach Hayden Fortini on September 29, 2026."
+      "disclosures": "Firsthand attendance verified: Shomari Williams performed live stream commentary at Champions Social Club alongside Coach Hayden Fortini on September 29, 2026.",
+      "format": "Dispatch"
     },
     {
       "seq": 27,
       "slug": "the-sham-report-is-getting-a-real-home-texas-poker-media-destination-may-13-2026",
       "title": "The Sham Report Is Getting a Real Home: Building a Full Media Destination for Texas Poker",
-      "deck": "From Facebook dispatches and Substack deep dives to building theshamreport.com from scratch \u2014 here is the vision behind ShamGod Media's home for Texas poker news, investigations, player recognition, and room intelligence.",
+      "deck": "From Facebook dispatches and Substack deep dives to building theshamreport.com from scratch — here is the vision behind ShamGod Media's home for Texas poker news, investigations, player recognition, and room intelligence.",
       "categories": [
         "Texas Poker",
         "Players"
@@ -719,12 +725,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "May 13, 2026",
-      "body": "Originally posted May 13, 2026.\n\n\"Something has been in the works behind the scenes and it's almost ready.\"\n\nThe Sham Report is getting a real home.\n\nFor those who have been following along on Facebook and on my Substack, you already know what this publication is about: Texas poker. The real stories. The local coverage the national sites aren't doing. Champions Social Club. The Lodge. And legislation moving through Austin that could change poker in Texas forever.\n\nBut a newsletter alone only goes so far. What we've been building is a full media destination built specifically for the Texas poker community.\n\nPart of this journey has been teaching myself how to build it \u2014 web design, site architecture, and how to take a vision in my head and turn it into something real on screen. No shortcuts, no outsourcing it, no excuses. Just figuring it out. That's what 2026 is about for me: no limits.\n\nHere's what we're building at theshamreport.com:\n\u2022 Latest News and Investigations: Local DFW coverage and deep dives into the legal and political forces shaping Texas poker \u2014 the stories Card Player and PokerNews aren't touching.\n\u2022 Player Recognition: Leaderboards, DFW winners and highlights, ring earners, and community spotlights. The players in these rooms every week deserve to be seen, and I'm going to make sure they are.\n\u2022 Tournament Intelligence & Calendar: Upcoming DFW and Texas series, WSOP Circuit stops, and structure analysis you won't find on PokerAtlas.\n\u2022 Texas Room Guide: An honest take on Texas Card House, Palace Poker, Poker House Fort Worth, Shuffle 214, Champions Social Club, and rooms across the state.\n\u2022 Media Hub: The full ShamGod Media footprint \u2014 Facebook reels, YouTube streams, and hand highlights in one place.\n\nThis is what Texas poker media looks like when it's built out of passion by someone deeply entrenched in the poker community. I'm a procurement professional by day, a poker player by night, and a web developer in whatever time is left.\n\n\u2014 Sham\nShomari Williams \u00b7 The Sham Report \u00b7 ShamGod Media LLC",
+      "body": "Originally posted May 13, 2026.\n\n\"Something has been in the works behind the scenes and it's almost ready.\"\n\nThe Sham Report is getting a real home.\n\nFor those who have been following along on Facebook and on my Substack, you already know what this publication is about: Texas poker. The real stories. The local coverage the national sites aren't doing. Champions Social Club. The Lodge. And legislation moving through Austin that could change poker in Texas forever.\n\nBut a newsletter alone only goes so far. What we've been building is a full media destination built specifically for the Texas poker community.\n\nPart of this journey has been teaching myself how to build it — web design, site architecture, and how to take a vision in my head and turn it into something real on screen. No shortcuts, no outsourcing it, no excuses. Just figuring it out. That's what 2026 is about for me: no limits.\n\nHere's what we're building at theshamreport.com:\n• Latest News and Investigations: Local DFW coverage and deep dives into the legal and political forces shaping Texas poker — the stories Card Player and PokerNews aren't touching.\n• Player Recognition: Leaderboards, DFW winners and highlights, ring earners, and community spotlights. The players in these rooms every week deserve to be seen, and I'm going to make sure they are.\n• Tournament Intelligence & Calendar: Upcoming DFW and Texas series, WSOP Circuit stops, and structure analysis you won't find on PokerAtlas.\n• Texas Room Guide: An honest take on Texas Card House, Palace Poker, Poker House Fort Worth, Shuffle 214, Champions Social Club, and rooms across the state.\n• Media Hub: The full ShamGod Media footprint — Facebook reels, YouTube streams, and hand highlights in one place.\n\nThis is what Texas poker media looks like when it's built out of passion by someone deeply entrenched in the poker community. I'm a procurement professional by day, a poker player by night, and a web developer in whatever time is left.\n\n— Sham\nShomari Williams · The Sham Report · ShamGod Media LLC",
       "status": "published",
       "fb_post_id": "pfbid02YXbbqYTLsTXMKsXYe2P4SUpmEPiboaDfCE8XVSkLs2m1ACTyxfSZVDZgCAK85sPHl",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02YXbbqYTLsTXMKsXYe2P4SUpmEPiboaDfCE8XVSkLs2m1ACTyxfSZVDZgCAK85sPHl/",
       "original_fb_date": "2026-05-13",
-      "original_post_text": "\"\ud835\udc7a\ud835\udc90\ud835\udc8e\ud835\udc86\ud835\udc95\ud835\udc89\ud835\udc8a\ud835\udc8f\ud835\udc88 \ud835\udc89\ud835\udc82\ud835\udc94 \ud835\udc83\ud835\udc86\ud835\udc86\ud835\udc8f \ud835\udc8a\ud835\udc8f \ud835\udc95\ud835\udc89\ud835\udc86 \ud835\udc98\ud835\udc90\ud835\udc93\ud835\udc8c\ud835\udc94 \ud835\udc83\ud835\udc86\ud835\udc89\ud835\udc8a\ud835\udc8f\ud835\udc85 \ud835\udc95\ud835\udc89\ud835\udc86 \ud835\udc94\ud835\udc84\ud835\udc86\ud835\udc8f\ud835\udc86\ud835\udc94 \ud835\udc82\ud835\udc8f\ud835\udc85 \ud835\udc8a\ud835\udc95'\ud835\udc94 \ud835\udc82\ud835\udc8d\ud835\udc8e\ud835\udc90\ud835\udc94\ud835\udc95 \ud835\udc93\ud835\udc86\ud835\udc82\ud835\udc85\ud835\udc9a.\"\n\nThe Sham Report is getting a real home.\n\nFor those who've been following along on Facebook and now on my Substack, you already know what this publication is about. Texas poker. The real stories. The local coverage the national sites aren't doing. Champions Social Club. The Lodge. And legislation moving through Austin that could change poker in Texas forever.\n\nBut a newsletter alone only goes so far. What we've been building is a full media destination built specifically for the Texas poker community.\n\nPart of this journey has been teaching myself how to build it. Web design. Site architecture. How to take a vision in my head and turn it into something real on screen. No shortcuts, no outsourcing it, no excuses. Just figuring it out. That's what 2026 is about for me. No limits.\n\nThe screenshot above is just a sneak peek.\n\nHere's what's coming:\n\nLatest News and Investigations. Local DFW coverage and deep dives into the legal and political forces shaping Texas poker. The stories Card Player and PokerNews aren't touching.\n\nPlayer Recognition. Leaderboards, DFW winners and highlights, ring earners, community spotlights. The players in these rooms every week deserve to be seen. I'm going to make sure they are.\n\nTournament Calendar. Upcoming DFW events, WSOP Circuit stops, and editorial context you won't find on PokerAtlas.\n\nTexas Room Guide. Not a directory. An opinionated field guide. Texas Card House, Palace Poker, Poker House Fort Worth, Shuffle 214, Champions Social Club. Our honest take on every room.\n\nMedia Hub. The full ShamGod Media footprint. Facebook, YouTube, Instagram and more in development. One place for all of it.\n\nThis is what Texas poker media looks like when it's built out of passion by someone deeply entrenched in the poker community.\n\nI'm a procurement professional by day, a poker player by night, and apparently a web developer in whatever time is left.\n\nThe site is dropping soon. When it does, theshamreport.com will be the place Texas players come first.\n\nIf you're not subscribed yet, now is the time. You'll be first to know when we go live and first to see the stories we're working on right now.\n\nMore soon.\n\nShomari Williams\nThe Sham Report \u00b7 ShamGod Media LLC\n\n#NoLimits2026 #TexasPoker #theshamreport #tchlive",
+      "original_post_text": "\"𝑺𝒐𝒎𝒆𝒕𝒉𝒊𝒏𝒈 𝒉𝒂𝒔 𝒃𝒆𝒆𝒏 𝒊𝒏 𝒕𝒉𝒆 𝒘𝒐𝒓𝒌𝒔 𝒃𝒆𝒉𝒊𝒏𝒅 𝒕𝒉𝒆 𝒔𝒄𝒆𝒏𝒆𝒔 𝒂𝒏𝒅 𝒊𝒕'𝒔 𝒂𝒍𝒎𝒐𝒔𝒕 𝒓𝒆𝒂𝒅𝒚.\"\n\nThe Sham Report is getting a real home.\n\nFor those who've been following along on Facebook and now on my Substack, you already know what this publication is about. Texas poker. The real stories. The local coverage the national sites aren't doing. Champions Social Club. The Lodge. And legislation moving through Austin that could change poker in Texas forever.\n\nBut a newsletter alone only goes so far. What we've been building is a full media destination built specifically for the Texas poker community.\n\nPart of this journey has been teaching myself how to build it. Web design. Site architecture. How to take a vision in my head and turn it into something real on screen. No shortcuts, no outsourcing it, no excuses. Just figuring it out. That's what 2026 is about for me. No limits.\n\nThe screenshot above is just a sneak peek.\n\nHere's what's coming:\n\nLatest News and Investigations. Local DFW coverage and deep dives into the legal and political forces shaping Texas poker. The stories Card Player and PokerNews aren't touching.\n\nPlayer Recognition. Leaderboards, DFW winners and highlights, ring earners, community spotlights. The players in these rooms every week deserve to be seen. I'm going to make sure they are.\n\nTournament Calendar. Upcoming DFW events, WSOP Circuit stops, and editorial context you won't find on PokerAtlas.\n\nTexas Room Guide. Not a directory. An opinionated field guide. Texas Card House, Palace Poker, Poker House Fort Worth, Shuffle 214, Champions Social Club. Our honest take on every room.\n\nMedia Hub. The full ShamGod Media footprint. Facebook, YouTube, Instagram and more in development. One place for all of it.\n\nThis is what Texas poker media looks like when it's built out of passion by someone deeply entrenched in the poker community.\n\nI'm a procurement professional by day, a poker player by night, and apparently a web developer in whatever time is left.\n\nThe site is dropping soon. When it does, theshamreport.com will be the place Texas players come first.\n\nIf you're not subscribed yet, now is the time. You'll be first to know when we go live and first to see the stories we're working on right now.\n\nMore soon.\n\nShomari Williams\nThe Sham Report · ShamGod Media LLC\n\n#NoLimits2026 #TexasPoker #theshamreport #tchlive",
       "original_post_sha256": "f29d561e2b695ac882ed119db6d2fbbb5b5e430431ef7327b39c01ca1f39b8e1",
       "seo": {
         "metaTitle": "The Sham Report Is Getting a Real Home: Texas Poker Media Destination | The Sham Report",
@@ -734,7 +740,8 @@ window.CONCEPT3_DATA = {
       "context": "Original May 13, 2026 founder's announcement by Shomari Williams (ShamGod Media LLC) introducing the development of theshamreport.com. The prototype screenshot shown reflects an early May 2026 design mockup.",
       "credit": "Shomari Williams / The Sham Report",
       "caption": "Early May 13, 2026 sneak-peek screenshot of The Sham Report web prototype during development.",
-      "disclosures": "Published by Shomari Williams, founder of The Sham Report and ShamGod Media LLC."
+      "disclosures": "Published by Shomari Williams, founder of The Sham Report and ShamGod Media LLC.",
+      "format": "Reporting"
     },
     {
       "seq": 26,
@@ -749,7 +756,7 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "May 12, 2026",
-      "body": "Originally posted May 12, 2026.\n\nThe Lodge is back in business.\n\nTwo months after the March 10 raid shuttered its Round Rock doors and froze its accounts \u2014 and two weeks after a Williamson County grand jury returned a no-bill on April 28 declining all proposed charges \u2014 The Lodge Card Club has officially reopened in May 2026, putting dealers, floor staff, and players back on the felt at Texas's largest poker room.\n\n\u2014 Sham",
+      "body": "Originally posted May 12, 2026.\n\nThe Lodge is back in business.\n\nTwo months after the March 10 raid shuttered its Round Rock doors and froze its accounts — and two weeks after a Williamson County grand jury returned a no-bill on April 28 declining all proposed charges — The Lodge Card Club has officially reopened in May 2026, putting dealers, floor staff, and players back on the felt at Texas's largest poker room.\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid02g6jN6UF7qva9hwXXqHnWu2DpgbDdpHUtCvJsjUDLZno8bfnuHwSsNM57WFDYKKXil",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02g6jN6UF7qva9hwXXqHnWu2DpgbDdpHUtCvJsjUDLZno8bfnuHwSsNM57WFDYKKXil/",
@@ -764,12 +771,13 @@ window.CONCEPT3_DATA = {
       "context": "Editorial Context / Update Note: Originally posted May 12, 2026 as The Lodge Card Club in Round Rock reopened following the April 28, 2026 Williamson County grand jury no-bill.",
       "credit": "Shomari Williams / The Sham Report",
       "caption": "The Lodge Card Club in Round Rock, Texas, back open for live poker action in May 2026.",
-      "disclosures": "Original news dispatch by Shomari Williams."
+      "disclosures": "Original news dispatch by Shomari Williams.",
+      "format": "Reporting"
     },
     {
       "seq": 25,
       "slug": "dallas-blessed-poker-rooms-spent-500000-trying-to-shut-them-down-may-8-2026",
-      "title": "The City of Dallas Blessed Poker Rooms, Then Spent $500,000 Trying to Shut Them Down \u2014 and Lost",
+      "title": "The City of Dallas Blessed Poker Rooms, Then Spent $500,000 Trying to Shut Them Down — and Lost",
       "deck": "Launching The Sham Report's long-form investigative series with a visual timeline of the Dallas Certificate of Occupancy wars, from initial city approval to the Texas Supreme Court.",
       "categories": [
         "Legal",
@@ -780,7 +788,7 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "May 8, 2026",
-      "body": "Originally posted May 8, 2026.\n\nThe City of Dallas blessed poker rooms. Then spent $500,000 trying to shut them down. They lost.\n\nI've been wanting to write longer-form investigative pieces for a while, which led me to launch The Sham Report on Substack alongside a full visual timeline titled \"Dallas Poker Room Certificate of Occupancy Wars.\"\n\nThat first long-form breakdown traces how the City of Dallas initially approved the private membership card-club model in 2019\u20132020 (as Texas Card House Dallas, Shuffle 214, and Poker House Dallas opened with Certificates of Occupancy), abruptly reversed course in mid-2021 under City Attorney Chris Caso, and spent years and roughly $500,000 in public legal fees trying to revoke those approvals \u2014 culminating in the Texas Supreme Court's refusal to hear the city's appeal, a precedent that continues to shape every card club in Texas.\n\n\u2014 Sham",
+      "body": "Originally posted May 8, 2026.\n\nThe City of Dallas blessed poker rooms. Then spent $500,000 trying to shut them down. They lost.\n\nI've been wanting to write longer-form investigative pieces for a while, which led me to launch The Sham Report on Substack alongside a full visual timeline titled \"Dallas Poker Room Certificate of Occupancy Wars.\"\n\nThat first long-form breakdown traces how the City of Dallas initially approved the private membership card-club model in 2019–2020 (as Texas Card House Dallas, Shuffle 214, and Poker House Dallas opened with Certificates of Occupancy), abruptly reversed course in mid-2021 under City Attorney Chris Caso, and spent years and roughly $500,000 in public legal fees trying to revoke those approvals — culminating in the Texas Supreme Court's refusal to hear the city's appeal, a precedent that continues to shape every card club in Texas.\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid02JSvZDzYgXNixZU49Q2WMHK8XtUsvMSrAZKjRRQQkMHC7R6xCMjpvDUnLZXRRfUtul",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02JSvZDzYgXNixZU49Q2WMHK8XtUsvMSrAZKjRRQQkMHC7R6xCMjpvDUnLZXRRfUtul/",
@@ -795,12 +803,13 @@ window.CONCEPT3_DATA = {
       "context": "Original May 8, 2026 investigative dispatch and visual timeline by Shomari Williams documenting the City of Dallas Certificate of Occupancy litigation.",
       "credit": "Shomari Williams / The Sham Report",
       "caption": "The Sham Report's visual timeline of the \"Dallas Poker Room Certificate of Occupancy Wars\" (May 8, 2026).",
-      "disclosures": "Original legal and historical reporting by Shomari Williams."
+      "disclosures": "Original legal and historical reporting by Shomari Williams.",
+      "format": "Reporting"
     },
     {
       "seq": 24,
       "slug": "isaac-trumbo-sit-down-champions-social-club-soft-opening-may-6-2026",
-      "title": "Sit-Down With Isaac Trumbo, President of Champions Group & Knighted Ventures, Ahead of Champions Social Club\u2019s May 14 Soft Opening",
+      "title": "Sit-Down With Isaac Trumbo, President of Champions Group & Knighted Ventures, Ahead of Champions Social Club’s May 14 Soft Opening",
       "deck": "Meeting inside Champions Social Club in Dallas with Isaac Trumbo, President of Champions Group and Knighted Ventures, ahead of the venue's May 14 soft opening.",
       "categories": [
         "Texas Poker",
@@ -810,12 +819,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "May 6, 2026",
-      "body": "Originally posted May 6, 2026.\n\nHad a great sit-down inside Champions Social Club in Dallas with Isaac Trumbo, President of Champions Group and Knighted Ventures, ahead of the club's May 14, 2026 soft opening (and the May 30 Grand Opening celebration at 17776 Dallas Parkway).\n\nFrom the chess lounges to the live-stream production setup and the main poker floor, we talked through the vision behind bringing the Champions brand to North Texas.\n\nChampions Social Club soft opening: May 14, 2026.\n\n\u2014 Sham",
+      "body": "Originally posted May 6, 2026.\n\nHad a great sit-down inside Champions Social Club in Dallas with Isaac Trumbo, President of Champions Group and Knighted Ventures, ahead of the club's May 14, 2026 soft opening (and the May 30 Grand Opening celebration at 17776 Dallas Parkway).\n\nFrom the chess lounges to the live-stream production setup and the main poker floor, we talked through the vision behind bringing the Champions brand to North Texas.\n\nChampions Social Club soft opening: May 14, 2026.\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid02ABGowskX8FUH1qw47s76UrWp1FLrZoeJT2a327WUEZkEzBLWtDj6GYN1b4bC9zx8l",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02ABGowskX8FUH1qw47s76UrWp1FLrZoeJT2a327WUEZkEzBLWtDj6GYN1b4bC9zx8l/",
       "original_fb_date": "2026-05-06",
-      "original_post_text": "Had a great sit-down with Isaac Trumbo, President of Champions Group & Knighted Ventures. Full write-up coming soon to The Sham Report.\n\n\ud835\udc02\ud835\udc21\ud835\udc1a\ud835\udc26\ud835\udc29\ud835\udc22\ud835\udc28\ud835\udc27\ud835\udc2c \ud835\udc12\ud835\udc28\ud835\udc1c\ud835\udc22\ud835\udc1a\ud835\udc25 \ud835\udc02\ud835\udc25\ud835\udc2e\ud835\udc1b \ud835\udc2c\ud835\udc28\ud835\udc1f\ud835\udc2d \ud835\udc28\ud835\udc29\ud835\udc1e\ud835\udc27\ud835\udc22\ud835\udc27\ud835\udc20: \ud835\udc0c\ud835\udc1a\ud835\udc32 \ud835\udfcf\ud835\udfd2.",
+      "original_post_text": "Had a great sit-down with Isaac Trumbo, President of Champions Group & Knighted Ventures. Full write-up coming soon to The Sham Report.\n\n𝐂𝐡𝐚𝐦𝐩𝐢𝐨𝐧𝐬 𝐒𝐨𝐜𝐢𝐚𝐥 𝐂𝐥𝐮𝐛 𝐬𝐨𝐟𝐭 𝐨𝐩𝐞𝐧𝐢𝐧𝐠: 𝐌𝐚𝐲 𝟏𝟒.",
       "original_post_sha256": "61aedf9d94d0d137cced9fcce71e8e0048d94637308a65263ebb748fb0aad1c5",
       "seo": {
         "metaTitle": "Sit-Down With Isaac Trumbo at Champions Social Club Dallas | The Sham Report",
@@ -825,13 +834,14 @@ window.CONCEPT3_DATA = {
       "context": "Editorial Context / Update Note: Originally posted May 6, 2026 ahead of Champions Social Club's May 14, 2026 soft opening and May 30, 2026 Grand Opening in Dallas.",
       "credit": "Shomari Williams / The Sham Report",
       "caption": "Isaac Trumbo (left), President of Champions Group & Knighted Ventures, and Shomari Williams (right) inside the chess lounge at Champions Social Club in Dallas (May 6, 2026).",
-      "disclosures": "Firsthand attendance verified: Shomari Williams met with Isaac Trumbo inside Champions Social Club on May 6, 2026. Shomari Williams is a founding member of Champions Social Club and has subsequently performed commentary work at the venue."
+      "disclosures": "Firsthand attendance verified: Shomari Williams met with Isaac Trumbo inside Champions Social Club on May 6, 2026. Shomari Williams is a founding member of Champions Social Club and has subsequently performed commentary work at the venue.",
+      "format": "Dispatch"
     },
     {
       "seq": 23,
       "slug": "tch-dallas-plo-madness-187-entries-46750-prize-pool-18th-place-may-4-2026",
       "title": "PLO Madness at TCH Dallas Draws 187 Entries for $46,750: Why Adding New Formats Builds the Scene",
-      "deck": "Texas Card House Dallas's $30,000 GTD PLO Madness tournament drew 187 entries for a $46,750 prize pool \u2014 where I ran deep to 18th place after a chip-lead pot didn't hold.",
+      "deck": "Texas Card House Dallas's $30,000 GTD PLO Madness tournament drew 187 entries for a $46,750 prize pool — where I ran deep to 18th place after a chip-lead pot didn't hold.",
       "categories": [
         "Tournaments",
         "Players",
@@ -841,12 +851,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "May 4, 2026",
-      "body": "Originally posted May 4, 2026.\n\nShoutout to Texas Card House Dallas for adding PLO Madness to the tournament rotation, and shoutout to the Pot-Limit Omaha tournament lovers across DFW for showing out.\n\nThe numbers tell the story:\n\u2022 Event: TCH Dallas PLO Madness ($30,000 GTD, $300 buy-in)\n\u2022 Field: 187 entries\n\u2022 Final prize pool: $46,750\n\nOn a $30K guarantee, the players decided that one.\n\nI went deep and finished 18th, though I honestly left a lot on the felt. Late in the tournament I had a hand where I got it in as a favorite in a pot that would have made me chip leader \u2014 and couldn't hold. That hurt.\n\nBut the bigger story is what TCH Dallas is doing right: more formats, more guarantees, and more ways to compete. That is how you continue to build a scene.\n\nBack at it for the next PLO Madness on May 24. Who's playing?\n\n\u2014 Sham",
+      "body": "Originally posted May 4, 2026.\n\nShoutout to Texas Card House Dallas for adding PLO Madness to the tournament rotation, and shoutout to the Pot-Limit Omaha tournament lovers across DFW for showing out.\n\nThe numbers tell the story:\n• Event: TCH Dallas PLO Madness ($30,000 GTD, $300 buy-in)\n• Field: 187 entries\n• Final prize pool: $46,750\n\nOn a $30K guarantee, the players decided that one.\n\nI went deep and finished 18th, though I honestly left a lot on the felt. Late in the tournament I had a hand where I got it in as a favorite in a pot that would have made me chip leader — and couldn't hold. That hurt.\n\nBut the bigger story is what TCH Dallas is doing right: more formats, more guarantees, and more ways to compete. That is how you continue to build a scene.\n\nBack at it for the next PLO Madness on May 24. Who's playing?\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid02rtcawxdWL8jYsjxZn7mvi7woJbdhg5zYsP3umCKgUvGUiWeZMynRuPiB3rLP6Q5Wl",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02rtcawxdWL8jYsjxZn7mvi7woJbdhg5zYsP3umCKgUvGUiWeZMynRuPiB3rLP6Q5Wl/",
       "original_fb_date": "2026-05-04",
-      "original_post_text": "Shoutout to TCH Dallas for adding PLO Madness to the rotation and shoutout to the PLO tournament lovers for showing out.\n\n187 entries. $46,750 prize pool. On a $30K GTD. The players decided that one.\n\nI went deep and finished 18th but I honestly left a lot on the felt. Had a hand where I was a favorite that would've made me chip leader. I couldn\u2019t hold. That hurt.\n\nBut the bigger story is what TCH is doing right. More formats. More guarantees. More ways to compete. This is how you continue to build a scene.\n\nBack at it May 24th. Who's playing?",
+      "original_post_text": "Shoutout to TCH Dallas for adding PLO Madness to the rotation and shoutout to the PLO tournament lovers for showing out.\n\n187 entries. $46,750 prize pool. On a $30K GTD. The players decided that one.\n\nI went deep and finished 18th but I honestly left a lot on the felt. Had a hand where I was a favorite that would've made me chip leader. I couldn’t hold. That hurt.\n\nBut the bigger story is what TCH is doing right. More formats. More guarantees. More ways to compete. This is how you continue to build a scene.\n\nBack at it May 24th. Who's playing?",
       "original_post_sha256": "a2ec243c34787bd7d5278a5374ba6fb5b6028146e3d6d26e2f8596687480a9df",
       "seo": {
         "metaTitle": "PLO Madness at TCH Dallas Draws 187 Entries & $46,750 Prize Pool | The Sham Report",
@@ -856,12 +866,13 @@ window.CONCEPT3_DATA = {
       "context": "Original May 4, 2026 tournament recap and schedule commentary by Shomari Williams from Texas Card House Dallas.",
       "credit": "Screenshot via PokerAtlas / Texas Card House Dallas",
       "caption": "Texas Card House Dallas tournament announcements on PokerAtlas featuring PLO Madness ($30,000 GTD) and the May 2026 schedule.",
-      "disclosures": "Firsthand attendance verified (played): Shomari Williams played the TCH Dallas PLO Madness ($30,000 GTD) tournament and finished 18th of 187 entries."
+      "disclosures": "Firsthand attendance verified (played): Shomari Williams played the TCH Dallas PLO Madness ($30,000 GTD) tournament and finished 18th of 187 entries.",
+      "format": "Dispatch"
     },
     {
       "seq": 22,
       "slug": "developing-lodge-card-club-reopening-announcement-rumors-austin-may-3-2026",
-      "title": "Developing: Austin Poker Chatter Heats Up Ahead of The Lodge Card Club\u2019s Reopening Announcement",
+      "title": "Developing: Austin Poker Chatter Heats Up Ahead of The Lodge Card Club’s Reopening Announcement",
       "deck": "Days after the Williamson County grand jury no-bill, word spread fast through Austin poker circles that an official reopening announcement from The Lodge Card Club could arrive within 24 hours.",
       "categories": [
         "Investigation",
@@ -871,12 +882,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "May 3, 2026",
-      "body": "Originally posted May 3, 2026.\n\nDEVELOPING | The Lodge Card Club\n\nWord is spreading fast through the Austin poker community that an official reopening announcement could be coming as early as tomorrow.\n\nThe doors have been temporarily closed since the March 10 raid, but following the Williamson County grand jury's April 28 no-bill, chatter in Austin circles is heating up. Stay locked in and let's see if the rumors are true.\n\n\u2014 Sham",
+      "body": "Originally posted May 3, 2026.\n\nDEVELOPING | The Lodge Card Club\n\nWord is spreading fast through the Austin poker community that an official reopening announcement could be coming as early as tomorrow.\n\nThe doors have been temporarily closed since the March 10 raid, but following the Williamson County grand jury's April 28 no-bill, chatter in Austin circles is heating up. Stay locked in and let's see if the rumors are true.\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid02ravSw8N1wHvmRwEcYNahEbhqb8cvVggypMrVBcepBJq2QL7Z1UKdVjzFrvrovhpjl",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02ravSw8N1wHvmRwEcYNahEbhqb8cvVggypMrVBcepBJq2QL7Z1UKdVjzFrvrovhpjl/",
       "original_fb_date": "2026-05-03",
-      "original_post_text": "DEVELOPING | The Lodge Card Club\n\nWord is spreading fast through the Austin poker community and an official reopening announcement could be coming as early as tomorrow.\n\nThe doors have been temporarily closed since the March raid, but chatter in Austin circles is heating up. Stay locked in and let\u2019s see if the rumors are true. \n\nFollow for updates. Share if you're watching.\n\n#TheLodge #TexasPoker #TheShamReport #AustinPoker",
+      "original_post_text": "DEVELOPING | The Lodge Card Club\n\nWord is spreading fast through the Austin poker community and an official reopening announcement could be coming as early as tomorrow.\n\nThe doors have been temporarily closed since the March raid, but chatter in Austin circles is heating up. Stay locked in and let’s see if the rumors are true. \n\nFollow for updates. Share if you're watching.\n\n#TheLodge #TexasPoker #TheShamReport #AustinPoker",
       "original_post_sha256": "0d94c356c10213426f14b6aafdc2e47f7b2b0aae03668fd2751c23199d785cf2",
       "seo": {
         "metaTitle": "Developing: The Lodge Card Club Reopening Chatter Heats Up in Austin | The Sham Report",
@@ -886,13 +897,14 @@ window.CONCEPT3_DATA = {
       "context": "Editorial Context / Update Note: Originally posted May 3, 2026 following the April 28, 2026 Williamson County grand jury no-bill. The Lodge Card Club in Round Rock subsequently reopened in May 2026.",
       "credit": "Shomari Williams / The Sham Report",
       "caption": "The exterior of The Lodge Card Club in Round Rock, Texas ahead of its May 2026 reopening announcement.",
-      "disclosures": "Original reporting by Shomari Williams."
+      "disclosures": "Original reporting by Shomari Williams.",
+      "format": "Reporting"
     },
     {
       "seq": 21,
       "slug": "big-o-game-broke-out-1am-before-day-2-poker-house-may-3-2026",
       "title": "I Have to Play Day 2 Tomorrow, But a 1:00 A.M. Big O Game Just Broke Out at Poker House",
-      "deck": "With Day 2 of the $25,000 Guaranteed tournament waiting in the morning, a late-night five-card Big O cash game broke out at 1:00 a.m. at Poker House \u2014 and it looked like an all-nighter.",
+      "deck": "With Day 2 of the $25,000 Guaranteed tournament waiting in the morning, a late-night five-card Big O cash game broke out at 1:00 a.m. at Poker House — and it looked like an all-nighter.",
       "categories": [
         "Players",
         "Texas Poker"
@@ -901,7 +913,7 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "May 3, 2026",
-      "body": "Originally posted May 3, 2026.\n\nI have to play Day 2 tomorrow.\n\nBut at 1:00 a.m. inside Poker House, a Big O game just broke out (captured in the late-night clip on Facebook at https://www.facebook.com/reel/1612745596487168/), with tall racks of red $5 and green $25 chips hitting the felt and a Peach Edition energy drink in the cup holder.\n\nLooks like we are playing through the night.\n\n\u2014 Sham",
+      "body": "Originally posted May 3, 2026.\n\nI have to play Day 2 tomorrow.\n\nBut at 1:00 a.m. inside Poker House, a Big O game just broke out (captured in the late-night clip on Facebook at https://www.facebook.com/reel/1612745596487168/), with tall racks of red $5 and green $25 chips hitting the felt and a Peach Edition energy drink in the cup holder.\n\nLooks like we are playing through the night.\n\n— Sham",
       "status": "published",
       "fb_post_id": "reel-1612745596487168",
       "fb_source_url": "https://facebook.com/reel/1612745596487168/",
@@ -916,13 +928,14 @@ window.CONCEPT3_DATA = {
       "context": "Original May 3, 2026 late-night cash-game dispatch and Facebook Reel by Shomari Williams from Poker House.",
       "credit": "Shomari Williams / The Sham Report",
       "caption": "1:00 a.m. Big O cash game at Poker House with tall stacks of red $5 and green $25 chips before Day 2 (May 3, 2026).",
-      "disclosures": "Firsthand attendance verified (played): Shomari Williams played in the May 3, 2026 1:00 a.m. Big O session at Poker House."
+      "disclosures": "Firsthand attendance verified (played): Shomari Williams played in the May 3, 2026 1:00 a.m. Big O session at Poker House.",
+      "format": "Dispatch"
     },
     {
       "seq": 20,
       "slug": "one-bullet-210000-chips-bagging-day-2-poker-house-fort-worth-25k-gtd-may-1-2026",
-      "title": "One Bullet, 210,000 Chips: Bagging Day 2 at Poker House Fort Worth\u2019s $25K GTD and the DFW Weekend Grinder\u2019s Blueprint",
-      "deck": "I write articles about poker, I play poker, and sometimes I bag Day 2 on a single $130 bullet \u2014 locking up 210,000 chips in Flight 1B at Poker House Fort Worth to free up Saturday for DFW's $50K guarantees.",
+      "title": "One Bullet, 210,000 Chips: Bagging Day 2 at Poker House Fort Worth’s $25K GTD and the DFW Weekend Grinder’s Blueprint",
+      "deck": "I write articles about poker, I play poker, and sometimes I bag Day 2 on a single $130 bullet — locking up 210,000 chips in Flight 1B at Poker House Fort Worth to free up Saturday for DFW's $50K guarantees.",
       "categories": [
         "Tournaments",
         "Players",
@@ -932,12 +945,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "May 1, 2026",
-      "body": "Originally posted May 1, 2026.\n\nI write articles about poker. I also play poker. And sometimes\u2026 I bag Day 2.\n\nFired ONE bullet \u2014 a $130 buy-in \u2014 in Flight 1B of the Poker House Fort Worth $25,000 Guaranteed No-Limit Hold'em tournament and bagged 210,000 chips heading into Day 2 on Sunday (finishing second among the seven Flight 1B survivors when play paused at Level 16, blinds 5,000/10,000: Mark W 304,000, Sham 210,000, Jim 191,000, Ryno 148,000, Tommy W 144,000, Bryan T 92,000, and Janice R 28,000). One and done.\n\nNow for the local weekend grinders: with Sunday's Day 2 already locked in, Saturday is wide open, and the DFW schedule options are outstanding:\n\u2022 Texas Card House Dallas \u2014 $50,000 Guaranteed ($250 buy-in)\n\u2022 Palace Poker \u2014 $50,000 Guaranteed ($250 buy-in)\n\nBoth run on Saturday. Pick one, win both days, and have a fat weekend.\n\nThat's the move, people:\n\u2022 Friday night \u2014 Go bag Day 2 at Poker House Fort Worth.\n\u2022 Saturday \u2014 Fire one of the $50K guarantees at TCH Dallas or Palace Poker.\n\u2022 Sunday \u2014 Cash out on Day 2 at Poker House Fort Worth.\n\nChip up, stack up, win big. The DFW poker scene is alive right now and the schedule is set up perfectly.\n\nP.S. You could also bag the WSOP Circuit Main Event at TCH Austin and then drive back up to DFW for a Saturday $50K \u2014 but that's only for real warriors.\n\n\u2014 Sham",
+      "body": "Originally posted May 1, 2026.\n\nI write articles about poker. I also play poker. And sometimes… I bag Day 2.\n\nFired ONE bullet — a $130 buy-in — in Flight 1B of the Poker House Fort Worth $25,000 Guaranteed No-Limit Hold'em tournament and bagged 210,000 chips heading into Day 2 on Sunday (finishing second among the seven Flight 1B survivors when play paused at Level 16, blinds 5,000/10,000: Mark W 304,000, Sham 210,000, Jim 191,000, Ryno 148,000, Tommy W 144,000, Bryan T 92,000, and Janice R 28,000). One and done.\n\nNow for the local weekend grinders: with Sunday's Day 2 already locked in, Saturday is wide open, and the DFW schedule options are outstanding:\n• Texas Card House Dallas — $50,000 Guaranteed ($250 buy-in)\n• Palace Poker — $50,000 Guaranteed ($250 buy-in)\n\nBoth run on Saturday. Pick one, win both days, and have a fat weekend.\n\nThat's the move, people:\n• Friday night — Go bag Day 2 at Poker House Fort Worth.\n• Saturday — Fire one of the $50K guarantees at TCH Dallas or Palace Poker.\n• Sunday — Cash out on Day 2 at Poker House Fort Worth.\n\nChip up, stack up, win big. The DFW poker scene is alive right now and the schedule is set up perfectly.\n\nP.S. You could also bag the WSOP Circuit Main Event at TCH Austin and then drive back up to DFW for a Saturday $50K — but that's only for real warriors.\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid02KqdX7mJ8bCYZAGvifDfUoKZALxF3kqnobSHgAgxxxqWM1ANkPQQ14vpuVJMzSieml",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02KqdX7mJ8bCYZAGvifDfUoKZALxF3kqnobSHgAgxxxqWM1ANkPQQ14vpuVJMzSieml/",
       "original_fb_date": "2026-05-01",
-      "original_post_text": "I write articles about poker. I also play poker. And sometimes\u2026 I bag Day 2. \n\nFired ONE bullet. $130 buy-in, at the Poker House Ft. Worth $25,000 Guaranteed and bagged 210,000 chips heading into Day 2 on Sunday. One and done.\n\nNow for the local weekend grinders. \nI already have Day 2 locked in for Sunday, so Saturday is free. And the options are outstanding:\n\nTCH Dallas \u2014 $50,000 Guaranteed $250 buy-in\n\nPalace Poker \u2014 $50,000 Guaranteed $250 buy-in\n\nBoth on Saturday. Pick one. Win both days. Have a fat weekend.\n\nThat\u2019s the move, people. Friday night \u2014 go bag Day 2 at Poker House Ft. Worth. Saturday \u2014 fire one of the $50K\u2019s at TCH or Palace. Sunday \u2014 cash out at Poker House.\n\nChip up, stack up, win big. The DFW poker scene is alive right now and the schedule is set up perfectly.\n\nPS. You could also bag the WSOP Circuit Main at TCH Austin then drive back down to DFW for the Saturday 50K but that\u2019s only \ufffcreal warriors.\n\nThe Sham Report | Shomari Williams \n#PokerHouseFtWorth #TCHDallas #PalacePoker #DFWPoker #TheShamReport #SkillIsNotACrime",
+      "original_post_text": "I write articles about poker. I also play poker. And sometimes… I bag Day 2. \n\nFired ONE bullet. $130 buy-in, at the Poker House Ft. Worth $25,000 Guaranteed and bagged 210,000 chips heading into Day 2 on Sunday. One and done.\n\nNow for the local weekend grinders. \nI already have Day 2 locked in for Sunday, so Saturday is free. And the options are outstanding:\n\nTCH Dallas — $50,000 Guaranteed $250 buy-in\n\nPalace Poker — $50,000 Guaranteed $250 buy-in\n\nBoth on Saturday. Pick one. Win both days. Have a fat weekend.\n\nThat’s the move, people. Friday night — go bag Day 2 at Poker House Ft. Worth. Saturday — fire one of the $50K’s at TCH or Palace. Sunday — cash out at Poker House.\n\nChip up, stack up, win big. The DFW poker scene is alive right now and the schedule is set up perfectly.\n\nPS. You could also bag the WSOP Circuit Main at TCH Austin then drive back down to DFW for the Saturday 50K but that’s only ￼real warriors.\n\nThe Sham Report | Shomari Williams \n#PokerHouseFtWorth #TCHDallas #PalacePoker #DFWPoker #TheShamReport #SkillIsNotACrime",
       "original_post_sha256": "cbdf0a9525d60b1e1d208ee618b6e7e337d093fecbe16961b1b5fb73e4834069",
       "seo": {
         "metaTitle": "Bagging 210,000 Chips at Poker House Fort Worth $25K GTD | The Sham Report",
@@ -947,28 +960,29 @@ window.CONCEPT3_DATA = {
       "context": "Original May 1, 2026 tournament report and DFW weekend schedule breakdown by Shomari Williams.",
       "credit": "Poker House Fort Worth / The Sham Report",
       "caption": "Poker House Fort Worth $25,000 Guaranteed Day 1B survivors leaderboard (May 1, 2026), with Sham bagging 210,000 chips in second place behind flight leader Mark W (304,000).",
-      "disclosures": "Firsthand attendance verified (played): Shomari Williams played Flight 1B of the Poker House Fort Worth $25,000 Guaranteed tournament on May 1, 2026 ($130 buy-in), bagging 210,000 chips for Day 2."
+      "disclosures": "Firsthand attendance verified (played): Shomari Williams played Flight 1B of the Poker House Fort Worth $25,000 Guaranteed tournament on May 1, 2026 ($130 buy-in), bagging 210,000 chips for Day 2.",
+      "format": "Dispatch"
     },
     {
       "seq": 19,
       "slug": "whether-you-like-doug-polk-or-not-lodge-comeback-win-for-texas-poker-april-29-2026",
-      "title": "Whether You Like Doug Polk or Not, The Lodge\u2019s Comeback Is a Historic Win for Texas Poker",
-      "deck": "When a Texas card room gets raided, it is usually a death sentence \u2014 which is why the Williamson County grand jury's decision clearing the way for The Lodge to reopen and bring its dealers and staff back to work matters for every room in the state.",
+      "title": "Whether You Like Doug Polk or Not, The Lodge’s Comeback Is a Historic Win for Texas Poker",
+      "deck": "When a Texas card room gets raided, it is usually a death sentence — which is why the Williamson County grand jury's decision clearing the way for The Lodge to reopen and bring its dealers and staff back to work matters for every room in the state.",
       "categories": [
+        "Opinion",
         "Legal",
-        "Investigation",
         "Texas Poker"
       ],
       "heroImage": "images/2026-04-29_1.jpg",
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "April 29, 2026",
-      "body": "Originally posted April 29, 2026.\n\nWhether you like Doug Polk or not, this is a win for Texas poker.\n\nThe community knows the truth: when a room gets raided, it's usually a death sentence. We've watched it happen \u2014 Copa Club, Watauga Social Lounge, Wild Cards, and Poker House Dallas (now operating as PH Social under new ownership). All of those rooms were gone.\n\nComebacks are rare, and what The Lodge just did is historic. Coming back roughly three months after being shut down is monumental, and something almost nobody thought was possible.\n\nOn Monday night I heard through a source that The Lodge was targeting a June 1 reopening. At first I said to myself, \"That's fake news \u2014 no way.\" Well\u2026 here we are.\n\nBut beyond the legal win, let's talk about what nobody else is saying: the employees get to come back to work. The dealers. The staff. The families who didn't have to pack up and move to Las Vegas just to keep food on the table. That's the real story.\n\nThe community showed up with fury, passion, rage, love, and yeah, some hate too. But that's what families do. Collectively, we gave The Lodge our voice. Let's keep that same energy every time any room gets shut down anywhere in Texas.\n\nDFW. Austin. Houston. San Antonio. We are one family. What happens to one of us happens to all of us.\n\nThe charges were bull. The fight isn't over. And The Sham Report will be here raising hell every step of the way.\n\nCongratulations to The Lodge. Welcome back.\n\n\u2014 Sham",
+      "body": "Originally posted April 29, 2026.\n\nWhether you like Doug Polk or not, this is a win for Texas poker.\n\nThe community knows the truth: when a room gets raided, it's usually a death sentence. We've watched it happen — Copa Club, Watauga Social Lounge, Wild Cards, and Poker House Dallas (now operating as PH Social under new ownership). All of those rooms were gone.\n\nComebacks are rare, and what The Lodge just did is historic. Coming back roughly three months after being shut down is monumental, and something almost nobody thought was possible.\n\nOn Monday night I heard through a source that The Lodge was targeting a June 1 reopening. At first I said to myself, \"That's fake news — no way.\" Well… here we are.\n\nBut beyond the legal win, let's talk about what nobody else is saying: the employees get to come back to work. The dealers. The staff. The families who didn't have to pack up and move to Las Vegas just to keep food on the table. That's the real story.\n\nThe community showed up with fury, passion, rage, love, and yeah, some hate too. But that's what families do. Collectively, we gave The Lodge our voice. Let's keep that same energy every time any room gets shut down anywhere in Texas.\n\nDFW. Austin. Houston. San Antonio. We are one family. What happens to one of us happens to all of us.\n\nThe charges were bull. The fight isn't over. And The Sham Report will be here raising hell every step of the way.\n\nCongratulations to The Lodge. Welcome back.\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid02tmw78q7udSdFxznB1BSscNHxUHKk6xm6yJmzpgRktFJAwbJcMEwhrcrEmyY31iPFl",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02tmw78q7udSdFxznB1BSscNHxUHKk6xm6yJmzpgRktFJAwbJcMEwhrcrEmyY31iPFl/",
       "original_fb_date": "2026-04-29",
-      "original_post_text": "\ud835\udc16\ud835\udc21\ud835\udc1e\ud835\udc2d\ud835\udc21\ud835\udc1e\ud835\udc2b \ud835\udc32\ud835\udc28\ud835\udc2e \ud835\udc25\ud835\udc22\ud835\udc24\ud835\udc1e \ud835\udc03\ud835\udc28\ud835\udc2e\ud835\udc20 \ud835\udc0f\ud835\udc28\ud835\udc25\ud835\udc24 \ud835\udc28\ud835\udc2b \ud835\udc27\ud835\udc28\ud835\udc2d, \ud835\udc2d\ud835\udc21\ud835\udc22\ud835\udc2c \ud835\udc22\ud835\udc2c \ud835\udc1a \ud835\udc30\ud835\udc22\ud835\udc27 \ud835\udc1f\ud835\udc28\ud835\udc2b \ud835\udc13\ud835\udc1e\ud835\udc31\ud835\udc1a\ud835\udc2c \ud835\udc0f\ud835\udc28\ud835\udc24\ud835\udc1e\ud835\udc2b.\n\nThe community knows the truth: when a room gets raided, it\u2019s usually a death sentence. We\u2019ve watched it happen. Copa Club. Watauga. Social Lounge. Wild Cards. Poker House Dallas (now operating as PH Social under new ownership). All of these rooms gone. \ufffc\n\nComebacks are rare and what the Lodge just did is historic. They are potentially coming back in three months after being shut down. \ud835\udc13\ud835\udc21\ud835\udc2b\ud835\udc1e\ud835\udc1e \ud835\udc26\ud835\udc28\ud835\udc27\ud835\udc2d\ud835\udc21\ud835\udc2c. That is monumental, and something absolutely nobody thought was possible.\n\nOn Monday night I heard through a source the Lodge would reopen June 1st. I said to myself, that\u2019s fake news. No way. Well\u2026 here we are.\n\nBut beyond the legal win, let\u2019s talk about what nobody else is saying: the employees get to come back to work. \ud835\udc13\ud835\udc21\ud835\udc1e \ud835\udc1d\ud835\udc1e\ud835\udc1a\ud835\udc25\ud835\udc1e\ud835\udc2b\ud835\udc2c. \ud835\udc13\ud835\udc21\ud835\udc1e \ud835\udc2c\ud835\udc2d\ud835\udc1a\ud835\udc1f\ud835\udc1f. \ud835\udc13\ud835\udc21\ud835\udc1e \ud835\udc1f\ud835\udc1a\ud835\udc26\ud835\udc22\ud835\udc25\ud835\udc22\ud835\udc1e\ud835\udc2c who didn\u2019t have to pack up and move to Vegas just to keep food on the table. That\u2019s the real story.\n\nThe community showed up with fury, passion, rage, love, and yeah, some hate too. But that\u2019s what families do. Collectively, we gave the Lodge our voice. Let\u2019s keep that same energy every time any room gets shut down anywhere in Texas.\n\nDFW. Austin. Houston. San Antonio. We are one family. What happens to one of us happens to all of us.\n\nThe charges were bull. The fight isn\u2019t over. And The Sham Report will be here raising hell every step of the way.\n\nCongratulations to the Lodge. Welcome back. \n\u2014 Shomari Williams | The Sham Report\n\n#TexasPoker #TheLodgeCardClub #ShamReport #TexasPokerCommunity #JusticeForTexasPoker",
+      "original_post_text": "𝐖𝐡𝐞𝐭𝐡𝐞𝐫 𝐲𝐨𝐮 𝐥𝐢𝐤𝐞 𝐃𝐨𝐮𝐠 𝐏𝐨𝐥𝐤 𝐨𝐫 𝐧𝐨𝐭, 𝐭𝐡𝐢𝐬 𝐢𝐬 𝐚 𝐰𝐢𝐧 𝐟𝐨𝐫 𝐓𝐞𝐱𝐚𝐬 𝐏𝐨𝐤𝐞𝐫.\n\nThe community knows the truth: when a room gets raided, it’s usually a death sentence. We’ve watched it happen. Copa Club. Watauga. Social Lounge. Wild Cards. Poker House Dallas (now operating as PH Social under new ownership). All of these rooms gone. ￼\n\nComebacks are rare and what the Lodge just did is historic. They are potentially coming back in three months after being shut down. 𝐓𝐡𝐫𝐞𝐞 𝐦𝐨𝐧𝐭𝐡𝐬. That is monumental, and something absolutely nobody thought was possible.\n\nOn Monday night I heard through a source the Lodge would reopen June 1st. I said to myself, that’s fake news. No way. Well… here we are.\n\nBut beyond the legal win, let’s talk about what nobody else is saying: the employees get to come back to work. 𝐓𝐡𝐞 𝐝𝐞𝐚𝐥𝐞𝐫𝐬. 𝐓𝐡𝐞 𝐬𝐭𝐚𝐟𝐟. 𝐓𝐡𝐞 𝐟𝐚𝐦𝐢𝐥𝐢𝐞𝐬 who didn’t have to pack up and move to Vegas just to keep food on the table. That’s the real story.\n\nThe community showed up with fury, passion, rage, love, and yeah, some hate too. But that’s what families do. Collectively, we gave the Lodge our voice. Let’s keep that same energy every time any room gets shut down anywhere in Texas.\n\nDFW. Austin. Houston. San Antonio. We are one family. What happens to one of us happens to all of us.\n\nThe charges were bull. The fight isn’t over. And The Sham Report will be here raising hell every step of the way.\n\nCongratulations to the Lodge. Welcome back. \n— Shomari Williams | The Sham Report\n\n#TexasPoker #TheLodgeCardClub #ShamReport #TexasPokerCommunity #JusticeForTexasPoker",
       "original_post_sha256": "c929379b3286145129cdc53cdbf94783a2a0e82ded50e9e8254d6949ff26228b",
       "seo": {
         "metaTitle": "The Lodge Card Club Comeback Is a Historic Win for Texas Poker | The Sham Report",
@@ -978,13 +992,14 @@ window.CONCEPT3_DATA = {
       "context": "Editorial Context / Update Note: Originally published April 29, 2026, the day after a Williamson County grand jury declined to authorize proposed charges (a no-bill) on April 28, 2026. Following initial target dates of June 1, The Lodge Card Club in Round Rock officially reopened ahead of schedule in May 2026.",
       "credit": "Doug Polk via Shomari Williams Facebook post",
       "caption": "Doug Polk gives a thumbs-up following the Williamson County grand jury decision clearing the way for The Lodge Card Club to reopen (April 29, 2026).",
-      "disclosures": "Original legal and industry commentary by Shomari Williams."
+      "disclosures": "Original legal and industry commentary by Shomari Williams.",
+      "format": "Opinion"
     },
     {
       "seq": 18,
       "slug": "kk-at-it-again-kk-vs-jj-vs-88-three-way-all-in-palace-poker-april-28-2026",
       "title": "KK at It Again: Pocket Kings vs. Pocket Jacks vs. Pocket Eights on the Palace Felt",
-      "deck": "A three-way pocket-pair collision on the maroon Palace Poker felt \u2014 Pocket Kings up against Pocket Jacks and Pocket Eights with a pile of red, green, and blue chips in the middle.",
+      "deck": "A three-way pocket-pair collision on the maroon Palace Poker felt — Pocket Kings up against Pocket Jacks and Pocket Eights with a pile of red, green, and blue chips in the middle.",
       "categories": [
         "Players",
         "Texas Poker"
@@ -993,7 +1008,7 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "April 28, 2026",
-      "body": "Originally posted April 28, 2026.\n\nPocket Kings at it again \u2014 this time in a three-way pocket-pair collision on the maroon Palace Poker felt: KK vs. JJ vs. 88.\n\nWhen three players wake up with wired pairs in the same hand and the chips go flying into the middle (captured in the hand-highlight reel on Facebook at https://www.facebook.com/reel/3148062308729546/), all you can do is table the cowboys and sweat the runout across the Palace felt.\n\n\u2014 Sham",
+      "body": "Originally posted April 28, 2026.\n\nPocket Kings at it again — this time in a three-way pocket-pair collision on the maroon Palace Poker felt: KK vs. JJ vs. 88.\n\nWhen three players wake up with wired pairs in the same hand and the chips go flying into the middle (captured in the hand-highlight reel on Facebook at https://www.facebook.com/reel/3148062308729546/), all you can do is table the cowboys and sweat the runout across the Palace felt.\n\n— Sham",
       "status": "published",
       "fb_post_id": "reel-3148062308729546",
       "fb_source_url": "https://facebook.com/reel/3148062308729546/",
@@ -1008,7 +1023,8 @@ window.CONCEPT3_DATA = {
       "context": "Original April 28, 2026 cash-game hand highlight dispatch and Facebook Reel by Shomari Williams from Palace Poker.",
       "credit": "Shomari Williams / The Sham Report",
       "caption": "Three-way pocket-pair showdown (KK vs. JJ vs. 88) on the maroon Palace Poker felt on April 28, 2026.",
-      "disclosures": "Firsthand attendance verified (played): Shomari Williams played in the April 28, 2026 session at Palace Poker."
+      "disclosures": "Firsthand attendance verified (played): Shomari Williams played in the April 28, 2026 session at Palace Poker.",
+      "format": "Dispatch"
     },
     {
       "seq": 17,
@@ -1023,12 +1039,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": "images/IMG_3753.jpg",
       "author": "Shomari Williams",
       "date": "April 26, 2026",
-      "body": "Originally posted April 26, 2026.\n\nChampions Social Club just raised the bar for the best-looking poker room in DFW.\n\nFirst Copa Club\u2026 RIP. Then Palace Poker set the standard. Now Champions Social Club is stepping into the conversation, and after being privileged enough to become one of the early founding members and getting a first look inside, I can tell you: the bar has been raised.\n\nMan oh man.\n\nThe exterior alone looks like something out of a different era, and that's because it is. This is the former home of III Forks, one of Dallas's most legendary steakhouses, which operated here for 23 years before relocating to Frisco in 2020. That gold dome, the brick facade, and the grand entrance canopy \u2014 it's all still here, restored and reimagined. Champions didn't build something from scratch; they breathed new life into a Dallas landmark that had fallen silent.\n\nInside, the bar area features a stunning stained-glass ceiling installation and a full upscale lounge setup. The poker room itself has clean modern lighting, dedicated screens at every section, and premium seating that feels closer to a high-end casino than anything DFW has seen.\n\nBut let's be clear about something first: Champions Social Club is not just a poker room.\n\nChampions is a full-scale entertainment venue and social lounge that happens to have one of the most beautiful poker rooms in DFW. Your $800/month membership isn't just buying you a seat at the table \u2014 it's buying you access to an entire lifestyle experience, including:\n\u2022 A world-class restaurant\n\u2022 A high-end bar with a stunning stained-glass ceiling\n\u2022 Private high-stakes games\n\u2022 Live band and music entertainment\n\u2022 A top-of-the-line streaming room\n\u2022 Chess competitions\n\u2022 And much more\n\nWhen you frame it that way, the math starts to look different.\n\nYes, at $800/month you're no longer paying an hourly seat fee every time you sit down \u2014 that cost is folded into your membership. To put that in perspective, players logging roughly 61.5 hours a month at Texas Card House's $13/hr rate are already spending that much just in time charges. At rooms running $11\u2013$12/hr, you'd need 66 to 72+ hours before the membership math equalizes. The more you play, the more the membership pays for itself.\n\nYou'll still cover food and drinks separately, though membership may also include discounted rates on dining and beverages (a detail I'm still confirming). Either way, the value proposition here goes well beyond poker: you're paying for the restaurant, the bar, the entertainment, the exclusivity, and the environment.\n\nThere is also a $500 one-time initiation fee that is potentially being waived through June during the opening window, giving early members a significant advantage before the Founding Members Celebration and Grand Opening set for May 30, 2026 at 17776 Dallas Parkway, Dallas, Texas.\n\nChampions isn't competing with Texas Card House or Palace Poker \u2014 they're playing a completely different game. This is for the player, and the person, who wants more than just a felt table and a chip runner. This is for someone who wants a home base.\n\nDFW poker has never seen anything like this. And honestly? I cannot wait to see how this turns out.\n\nOn the scene \u2014 Shomari Williams, The Sham Report. Stay tuned.\n\n\u2014 Sham",
+      "body": "Originally posted April 26, 2026.\n\nChampions Social Club just raised the bar for the best-looking poker room in DFW.\n\nFirst Copa Club… RIP. Then Palace Poker set the standard. Now Champions Social Club is stepping into the conversation, and after being privileged enough to become one of the early founding members and getting a first look inside, I can tell you: the bar has been raised.\n\nMan oh man.\n\nThe exterior alone looks like something out of a different era, and that's because it is. This is the former home of III Forks, one of Dallas's most legendary steakhouses, which operated here for 23 years before relocating to Frisco in 2020. That gold dome, the brick facade, and the grand entrance canopy — it's all still here, restored and reimagined. Champions didn't build something from scratch; they breathed new life into a Dallas landmark that had fallen silent.\n\nInside, the bar area features a stunning stained-glass ceiling installation and a full upscale lounge setup. The poker room itself has clean modern lighting, dedicated screens at every section, and premium seating that feels closer to a high-end casino than anything DFW has seen.\n\nBut let's be clear about something first: Champions Social Club is not just a poker room.\n\nChampions is a full-scale entertainment venue and social lounge that happens to have one of the most beautiful poker rooms in DFW. Your $800/month membership isn't just buying you a seat at the table — it's buying you access to an entire lifestyle experience, including:\n• A world-class restaurant\n• A high-end bar with a stunning stained-glass ceiling\n• Private high-stakes games\n• Live band and music entertainment\n• A top-of-the-line streaming room\n• Chess competitions\n• And much more\n\nWhen you frame it that way, the math starts to look different.\n\nYes, at $800/month you're no longer paying an hourly seat fee every time you sit down — that cost is folded into your membership. To put that in perspective, players logging roughly 61.5 hours a month at Texas Card House's $13/hr rate are already spending that much just in time charges. At rooms running $11–$12/hr, you'd need 66 to 72+ hours before the membership math equalizes. The more you play, the more the membership pays for itself.\n\nYou'll still cover food and drinks separately, though membership may also include discounted rates on dining and beverages (a detail I'm still confirming). Either way, the value proposition here goes well beyond poker: you're paying for the restaurant, the bar, the entertainment, the exclusivity, and the environment.\n\nThere is also a $500 one-time initiation fee that is potentially being waived through June during the opening window, giving early members a significant advantage before the Founding Members Celebration and Grand Opening set for May 30, 2026 at 17776 Dallas Parkway, Dallas, Texas.\n\nChampions isn't competing with Texas Card House or Palace Poker — they're playing a completely different game. This is for the player, and the person, who wants more than just a felt table and a chip runner. This is for someone who wants a home base.\n\nDFW poker has never seen anything like this. And honestly? I cannot wait to see how this turns out.\n\nOn the scene — Shomari Williams, The Sham Report. Stay tuned.\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid02DqMoMTSr1vxb8vRArvydFpMjLXiL2QJgwPwzSb2vtGo6YM4gVcQzayGn1EcGG3Ccl",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02DqMoMTSr1vxb8vRArvydFpMjLXiL2QJgwPwzSb2vtGo6YM4gVcQzayGn1EcGG3Ccl/",
       "original_fb_date": "2026-04-26",
-      "original_post_text": "\ud835\udc02\ud835\udc21\ud835\udc1a\ud835\udc26\ud835\udc29\ud835\udc22\ud835\udc28\ud835\udc27\ud835\udc2c \ud835\udc12\ud835\udc28\ud835\udc1c\ud835\udc22\ud835\udc1a\ud835\udc25 \ud835\udc02\ud835\udc25\ud835\udc2e\ud835\udc1b \ud835\udc23\ud835\udc2e\ud835\udc2c\ud835\udc2d \ud835\udc2b\ud835\udc1a\ud835\udc22\ud835\udc2c\ud835\udc1e\ud835\udc1d \ud835\udc2d\ud835\udc21\ud835\udc1e \ud835\udc1b\ud835\udc1a\ud835\udc2b \ud835\udc1f\ud835\udc28\ud835\udc2b \ud835\udc2d\ud835\udc21\ud835\udc1e \ud835\udc1b\ud835\udc1e\ud835\udc2c\ud835\udc2d \ud835\udc25\ud835\udc28\ud835\udc28\ud835\udc24\ud835\udc22\ud835\udc27\ud835\udc20 \ud835\udc29\ud835\udc28\ud835\udc24\ud835\udc1e\ud835\udc2b \ud835\udc2b\ud835\udc28\ud835\udc28\ud835\udc26 \ud835\udc22\ud835\udc27 \ud835\udc03\ud835\udc05\ud835\udc16.\n\nFirst Copa Club\u2026 RIP. Then Palace Poker set the standard. Now \ud835\udc02\ud835\udc21\ud835\udc1a\ud835\udc26\ud835\udc29\ud835\udc22\ud835\udc28\ud835\udc27\ud835\udc2c \ud835\udc12\ud835\udc28\ud835\udc1c\ud835\udc22\ud835\udc1a\ud835\udc25 \ud835\udc02\ud835\udc25\ud835\udc2e\ud835\udc1b is stepping into the conversation, and after being privileged enough to become one of the early founding members and getting a first look inside, I can tell you: the bar has been raised.\n\nMan oh man.\n\nThe exterior alone looks like something out of a different era, and that\u2019s because it is. This is the former home of \ud835\udc08\ud835\udc08\ud835\udc08 \ud835\udc05\ud835\udc28\ud835\udc2b\ud835\udc24\ud835\udc2c, one of Dallas\u2019s most legendary steakhouses, which operated here for 23 years before relocating to Frisco in 2020. That gold dome, the brick facade, the grand entrance canopy it\u2019s all still here, restored and reimagined. Champions didn\u2019t build something new. They breathed new life into a Dallas landmark that had fallen silent.\n\nInside, the bar area features a stunning stained glass ceiling installation and a full upscale lounge setup. The poker room itself has clean modern lighting, dedicated screens at every section, and premium seating that feels closer to a high-end casino than anything DFW has seen.\n\n\ud835\udc01\ud835\udc2e\ud835\udc2d \ud835\udc25\ud835\udc1e\ud835\udc2d\u2019\ud835\udc2c \ud835\udc1b\ud835\udc1e \ud835\udc1c\ud835\udc25\ud835\udc1e\ud835\udc1a\ud835\udc2b \ud835\udc1a\ud835\udc1b\ud835\udc28\ud835\udc2e\ud835\udc2d \ud835\udc2c\ud835\udc28\ud835\udc26\ud835\udc1e\ud835\udc2d\ud835\udc21\ud835\udc22\ud835\udc27\ud835\udc20 \ud835\udc1f\ud835\udc22\ud835\udc2b\ud835\udc2c\ud835\udc2d \n\ud835\udc02\ud835\udc21\ud835\udc1a\ud835\udc26\ud835\udc29\ud835\udc22\ud835\udc28\ud835\udc27\ud835\udc2c \ud835\udc12\ud835\udc28\ud835\udc1c\ud835\udc22\ud835\udc1a\ud835\udc25 \ud835\udc02\ud835\udc25\ud835\udc2e\ud835\udc1b \ud835\udc22\ud835\udc2c \ud835\udc27\ud835\udc28\ud835\udc2d \ud835\udc23\ud835\udc2e\ud835\udc2c\ud835\udc2d \ud835\udc1a \ud835\udc29\ud835\udc28\ud835\udc24\ud835\udc1e\ud835\udc2b \ud835\udc2b\ud835\udc28\ud835\udc28\ud835\udc26.\n\nChampions is a full-scale entertainment venue and social lounge that happens to have one of the most beautiful poker rooms in DFW. Your $800/month membership isn\u2019t just buying you a seat at the table \u2014 it\u2019s buying you access to an entire lifestyle experience including:\n\n \u2022 \ud835\udc00 \ud835\udc30\ud835\udc28\ud835\udc2b\ud835\udc25\ud835\udc1d-\ud835\udc1c\ud835\udc25\ud835\udc1a\ud835\udc2c\ud835\udc2c \ud835\udc2b\ud835\udc1e\ud835\udc2c\ud835\udc2d\ud835\udc1a\ud835\udc2e\ud835\udc2b\ud835\udc1a\ud835\udc27\ud835\udc2d\n \u2022 \ud835\udc00 \ud835\udc21\ud835\udc22\ud835\udc20\ud835\udc21-\ud835\udc1e\ud835\udc27\ud835\udc1d \ud835\udc1b\ud835\udc1a\ud835\udc2b \ud835\udc30\ud835\udc22\ud835\udc2d\ud835\udc21 \ud835\udc1a \ud835\udc2c\ud835\udc2d\ud835\udc2e\ud835\udc27\ud835\udc27\ud835\udc22\ud835\udc27\ud835\udc20 \ud835\udc2c\ud835\udc2d\ud835\udc1a\ud835\udc22\ud835\udc27\ud835\udc1e\ud835\udc1d \ud835\udc20\ud835\udc25\ud835\udc1a\ud835\udc2c\ud835\udc2c        \n \u2022 \ud835\udc0f\ud835\udc2b\ud835\udc22\ud835\udc2f\ud835\udc1a\ud835\udc2d\ud835\udc1e \ud835\udc21\ud835\udc22\ud835\udc20\ud835\udc21-\ud835\udc2c\ud835\udc2d\ud835\udc1a\ud835\udc24\ud835\udc1e\ud835\udc2c \ud835\udc20\ud835\udc1a\ud835\udc26\ud835\udc1e\ud835\udc2c\n \u2022 \ud835\udc0b\ud835\udc22\ud835\udc2f\ud835\udc1e \ud835\udc1b\ud835\udc1a\ud835\udc27\ud835\udc1d \ud835\udc1a\ud835\udc27\ud835\udc1d \ud835\udc26\ud835\udc2e\ud835\udc2c\ud835\udc22\ud835\udc1c \ud835\udc1e\ud835\udc27\ud835\udc2d\ud835\udc1e\ud835\udc2b\ud835\udc2d\ud835\udc1a\ud835\udc22\ud835\udc27\ud835\udc26\ud835\udc1e\ud835\udc27\ud835\udc2d\n \u2022 \ud835\udc00 \ud835\udc2d\ud835\udc28\ud835\udc29-\ud835\udc28\ud835\udc1f-\ud835\udc2d\ud835\udc21\ud835\udc1e-\ud835\udc25\ud835\udc22\ud835\udc27\ud835\udc1e \ud835\udc2c\ud835\udc2d\ud835\udc2b\ud835\udc1e\ud835\udc1a\ud835\udc26\ud835\udc22\ud835\udc27\ud835\udc20 \ud835\udc2b\ud835\udc28\ud835\udc28\ud835\udc26\n \u2022 \ud835\udc02\ud835\udc21\ud835\udc1e\ud835\udc2c\ud835\udc2c \ud835\udc1c\ud835\udc28\ud835\udc26\ud835\udc29\ud835\udc1e\ud835\udc2d\ud835\udc22\ud835\udc2d\ud835\udc22\ud835\udc28\ud835\udc27\ud835\udc2c\n \u2022 \ud835\udc00\ud835\udc27\ud835\udc1d \ud835\udc2c\ud835\udc28 \ud835\udc26\ud835\udc2e\ud835\udc1c\ud835\udc21 \ud835\udc26\ud835\udc28\ud835\udc2b\ud835\udc1e\n\n\ud835\udc16\ud835\udc21\ud835\udc1e\ud835\udc27 \ud835\udc32\ud835\udc28\ud835\udc2e \ud835\udc1f\ud835\udc2b\ud835\udc1a\ud835\udc26\ud835\udc1e \ud835\udc22\ud835\udc2d \ud835\udc2d\ud835\udc21\ud835\udc1a\ud835\udc2d \ud835\udc30\ud835\udc1a\ud835\udc32, \ud835\udc2d\ud835\udc21\ud835\udc1e \ud835\udc26\ud835\udc1a\ud835\udc2d\ud835\udc21 \ud835\udc2c\ud835\udc2d\ud835\udc1a\ud835\udc2b\ud835\udc2d\ud835\udc2c \ud835\udc2d\ud835\udc28 \ud835\udc25\ud835\udc28\ud835\udc28\ud835\udc24 \ud835\udc1d\ud835\udc22\ud835\udc1f\ud835\udc1f\ud835\udc1e\ud835\udc2b\ud835\udc1e\ud835\udc27\ud835\udc2d.\n\nYes, at $800/month you\u2019re no longer paying an hourly seat fee every time you sit down, that cost is folded into your membership. To put that in perspective, players logging ~ \ud835\udfd4\ud835\udfcf.\ud835\udfd3 hours a month at Texas Card House\u2019s $13/hr rate are already spending that much just in time charges. At rooms running $11\u2013$12/hr, you\u2019d need 66 to 72+ hours before the membership math equalizes. The more you play, the more the membership pays for itself.\n\nYou\u2019ll still cover food and drinks separately, but from what I understand, membership may also come with discounted rates on food and possibly drinks as well something I\u2019m still confirming. Either way, the value proposition here goes well beyond just poker.\n\nBut you\u2019re not just paying for poker. You\u2019re paying for the full experience. The restaurant. The bar. The entertainment. The exclusivity. The environment.\n\nThere\u2019s also a $\ud835\udfd3\ud835\udfce\ud835\udfce \ud835\udc28\ud835\udc27\ud835\udc1e-\ud835\udc2d\ud835\udc22\ud835\udc26\ud835\udc1e \ud835\udc22\ud835\udc27\ud835\udc22\ud835\udc2d\ud835\udc22\ud835\udc1a\ud835\udc2d\ud835\udc22\ud835\udc28\ud835\udc27 \ud835\udc1f\ud835\udc1e\ud835\udc1e\nthat potentially is being waived through June during the opening window, so early members get a significant advantage. That window won\u2019t be open forever.\n\n\ud835\udc0c\ud835\udc1a\ud835\udc2b\ud835\udc24 \ud835\udc32\ud835\udc28\ud835\udc2e\ud835\udc2b \ud835\udc1c\ud835\udc1a\ud835\udc25\ud835\udc1e\ud835\udc27\ud835\udc1d\ud835\udc1a\ud835\udc2b\ud835\udc2c \u2014 \ud835\udc2d\ud835\udc21\ud835\udc1e \ud835\udc05\ud835\udc28\ud835\udc2e\ud835\udc27\ud835\udc1d\ud835\udc22\ud835\udc27\ud835\udc20 \ud835\udc0c\ud835\udc1e\ud835\udc26\ud835\udc1b\ud835\udc1e\ud835\udc2b\ud835\udc2c \ud835\udc02\ud835\udc1e\ud835\udc25\ud835\udc1e\ud835\udc1b\ud835\udc2b\ud835\udc1a\ud835\udc2d\ud835\udc22\ud835\udc28\ud835\udc27 & \ud835\udc06\ud835\udc2b\ud835\udc1a\ud835\udc27\ud835\udc1d \ud835\udc0e\ud835\udc29\ud835\udc1e\ud835\udc27\ud835\udc22\ud835\udc27\ud835\udc20 \ud835\udc22\ud835\udc2c \ud835\udc2c\ud835\udc1e\ud835\udc2d \ud835\udc1f\ud835\udc28\ud835\udc2b \ud835\udc0c\ud835\udc1a\ud835\udc32 \ud835\udfd1\ud835\udfce\ud835\udc2d\ud835\udc21, \ud835\udfd0\ud835\udfce\ud835\udfd0\ud835\udfd4 \ud835\udc1a\ud835\udc2d \ud835\udfcf\ud835\udfd5\ud835\udfd5\ud835\udfd5\ud835\udfd4 \ud835\udc03\ud835\udc1a\ud835\udc25\ud835\udc25\ud835\udc1a\ud835\udc2c \ud835\udc0f\ud835\udc1a\ud835\udc2b\ud835\udc24\ud835\udc30\ud835\udc1a\ud835\udc32, \ud835\udc03\ud835\udc1a\ud835\udc25\ud835\udc25\ud835\udc1a\ud835\udc2c, \ud835\udc13\ud835\udc1e\ud835\udc31\ud835\udc1a\ud835\udc2c.\nIf you want to be in the room when history is made and lock in your membership before that $500 initiation fee kicks in, sign up for membership to RSVP.\n\nChampions isn\u2019t competing with Texas Card House or Palace Poker. They\u2019re playing a completely different game. This is for the player, and the person, who wants more than just a felt table and a chip runner. This is for someone who wants a home base.\n\nDFW poker has never seen anything like this. And honestly? I cannot wait to see how this turns out.\n\nGrand Opening: May 30th, 2026 | 17776 Dallas Parkway, Dallas, TX\n\nFounding Members Celebration \u2014 sign up for membership to RSVP. Link in the comments.\n\nOn the scene \u2014 Shomari Williams, The Sham Report. Stay tuned.\n\n#ChampionsSocialClub #DFWPoker #DallasPoker #GrandOpening #FoundingMember #TheShamReport",
+      "original_post_text": "𝐂𝐡𝐚𝐦𝐩𝐢𝐨𝐧𝐬 𝐒𝐨𝐜𝐢𝐚𝐥 𝐂𝐥𝐮𝐛 𝐣𝐮𝐬𝐭 𝐫𝐚𝐢𝐬𝐞𝐝 𝐭𝐡𝐞 𝐛𝐚𝐫 𝐟𝐨𝐫 𝐭𝐡𝐞 𝐛𝐞𝐬𝐭 𝐥𝐨𝐨𝐤𝐢𝐧𝐠 𝐩𝐨𝐤𝐞𝐫 𝐫𝐨𝐨𝐦 𝐢𝐧 𝐃𝐅𝐖.\n\nFirst Copa Club… RIP. Then Palace Poker set the standard. Now 𝐂𝐡𝐚𝐦𝐩𝐢𝐨𝐧𝐬 𝐒𝐨𝐜𝐢𝐚𝐥 𝐂𝐥𝐮𝐛 is stepping into the conversation, and after being privileged enough to become one of the early founding members and getting a first look inside, I can tell you: the bar has been raised.\n\nMan oh man.\n\nThe exterior alone looks like something out of a different era, and that’s because it is. This is the former home of 𝐈𝐈𝐈 𝐅𝐨𝐫𝐤𝐬, one of Dallas’s most legendary steakhouses, which operated here for 23 years before relocating to Frisco in 2020. That gold dome, the brick facade, the grand entrance canopy it’s all still here, restored and reimagined. Champions didn’t build something new. They breathed new life into a Dallas landmark that had fallen silent.\n\nInside, the bar area features a stunning stained glass ceiling installation and a full upscale lounge setup. The poker room itself has clean modern lighting, dedicated screens at every section, and premium seating that feels closer to a high-end casino than anything DFW has seen.\n\n𝐁𝐮𝐭 𝐥𝐞𝐭’𝐬 𝐛𝐞 𝐜𝐥𝐞𝐚𝐫 𝐚𝐛𝐨𝐮𝐭 𝐬𝐨𝐦𝐞𝐭𝐡𝐢𝐧𝐠 𝐟𝐢𝐫𝐬𝐭 \n𝐂𝐡𝐚𝐦𝐩𝐢𝐨𝐧𝐬 𝐒𝐨𝐜𝐢𝐚𝐥 𝐂𝐥𝐮𝐛 𝐢𝐬 𝐧𝐨𝐭 𝐣𝐮𝐬𝐭 𝐚 𝐩𝐨𝐤𝐞𝐫 𝐫𝐨𝐨𝐦.\n\nChampions is a full-scale entertainment venue and social lounge that happens to have one of the most beautiful poker rooms in DFW. Your $800/month membership isn’t just buying you a seat at the table — it’s buying you access to an entire lifestyle experience including:\n\n • 𝐀 𝐰𝐨𝐫𝐥𝐝-𝐜𝐥𝐚𝐬𝐬 𝐫𝐞𝐬𝐭𝐚𝐮𝐫𝐚𝐧𝐭\n • 𝐀 𝐡𝐢𝐠𝐡-𝐞𝐧𝐝 𝐛𝐚𝐫 𝐰𝐢𝐭𝐡 𝐚 𝐬𝐭𝐮𝐧𝐧𝐢𝐧𝐠 𝐬𝐭𝐚𝐢𝐧𝐞𝐝 𝐠𝐥𝐚𝐬𝐬        \n • 𝐏𝐫𝐢𝐯𝐚𝐭𝐞 𝐡𝐢𝐠𝐡-𝐬𝐭𝐚𝐤𝐞𝐬 𝐠𝐚𝐦𝐞𝐬\n • 𝐋𝐢𝐯𝐞 𝐛𝐚𝐧𝐝 𝐚𝐧𝐝 𝐦𝐮𝐬𝐢𝐜 𝐞𝐧𝐭𝐞𝐫𝐭𝐚𝐢𝐧𝐦𝐞𝐧𝐭\n • 𝐀 𝐭𝐨𝐩-𝐨𝐟-𝐭𝐡𝐞-𝐥𝐢𝐧𝐞 𝐬𝐭𝐫𝐞𝐚𝐦𝐢𝐧𝐠 𝐫𝐨𝐨𝐦\n • 𝐂𝐡𝐞𝐬𝐬 𝐜𝐨𝐦𝐩𝐞𝐭𝐢𝐭𝐢𝐨𝐧𝐬\n • 𝐀𝐧𝐝 𝐬𝐨 𝐦𝐮𝐜𝐡 𝐦𝐨𝐫𝐞\n\n𝐖𝐡𝐞𝐧 𝐲𝐨𝐮 𝐟𝐫𝐚𝐦𝐞 𝐢𝐭 𝐭𝐡𝐚𝐭 𝐰𝐚𝐲, 𝐭𝐡𝐞 𝐦𝐚𝐭𝐡 𝐬𝐭𝐚𝐫𝐭𝐬 𝐭𝐨 𝐥𝐨𝐨𝐤 𝐝𝐢𝐟𝐟𝐞𝐫𝐞𝐧𝐭.\n\nYes, at $800/month you’re no longer paying an hourly seat fee every time you sit down, that cost is folded into your membership. To put that in perspective, players logging ~ 𝟔𝟏.𝟓 hours a month at Texas Card House’s $13/hr rate are already spending that much just in time charges. At rooms running $11–$12/hr, you’d need 66 to 72+ hours before the membership math equalizes. The more you play, the more the membership pays for itself.\n\nYou’ll still cover food and drinks separately, but from what I understand, membership may also come with discounted rates on food and possibly drinks as well something I’m still confirming. Either way, the value proposition here goes well beyond just poker.\n\nBut you’re not just paying for poker. You’re paying for the full experience. The restaurant. The bar. The entertainment. The exclusivity. The environment.\n\nThere’s also a $𝟓𝟎𝟎 𝐨𝐧𝐞-𝐭𝐢𝐦𝐞 𝐢𝐧𝐢𝐭𝐢𝐚𝐭𝐢𝐨𝐧 𝐟𝐞𝐞\nthat potentially is being waived through June during the opening window, so early members get a significant advantage. That window won’t be open forever.\n\n𝐌𝐚𝐫𝐤 𝐲𝐨𝐮𝐫 𝐜𝐚𝐥𝐞𝐧𝐝𝐚𝐫𝐬 — 𝐭𝐡𝐞 𝐅𝐨𝐮𝐧𝐝𝐢𝐧𝐠 𝐌𝐞𝐦𝐛𝐞𝐫𝐬 𝐂𝐞𝐥𝐞𝐛𝐫𝐚𝐭𝐢𝐨𝐧 & 𝐆𝐫𝐚𝐧𝐝 𝐎𝐩𝐞𝐧𝐢𝐧𝐠 𝐢𝐬 𝐬𝐞𝐭 𝐟𝐨𝐫 𝐌𝐚𝐲 𝟑𝟎𝐭𝐡, 𝟐𝟎𝟐𝟔 𝐚𝐭 𝟏𝟕𝟕𝟕𝟔 𝐃𝐚𝐥𝐥𝐚𝐬 𝐏𝐚𝐫𝐤𝐰𝐚𝐲, 𝐃𝐚𝐥𝐥𝐚𝐬, 𝐓𝐞𝐱𝐚𝐬.\nIf you want to be in the room when history is made and lock in your membership before that $500 initiation fee kicks in, sign up for membership to RSVP.\n\nChampions isn’t competing with Texas Card House or Palace Poker. They’re playing a completely different game. This is for the player, and the person, who wants more than just a felt table and a chip runner. This is for someone who wants a home base.\n\nDFW poker has never seen anything like this. And honestly? I cannot wait to see how this turns out.\n\nGrand Opening: May 30th, 2026 | 17776 Dallas Parkway, Dallas, TX\n\nFounding Members Celebration — sign up for membership to RSVP. Link in the comments.\n\nOn the scene — Shomari Williams, The Sham Report. Stay tuned.\n\n#ChampionsSocialClub #DFWPoker #DallasPoker #GrandOpening #FoundingMember #TheShamReport",
       "original_post_sha256": "d62e54e3e7083b287d096b421c9f43e97fdceb6264a8c7ba4ce7988c34049f06",
       "seo": {
         "metaTitle": "Champions Social Club Dallas First Look: Inside DFW's New Poker & Social Venue | The Sham Report",
@@ -1037,16 +1053,17 @@ window.CONCEPT3_DATA = {
       },
       "context": "Editorial Context / Update Note: Originally published April 26, 2026 as a pre-opening first look ahead of Champions Social Club's May 30, 2026 Grand Opening at 17776 Dallas Parkway, Dallas, TX. References to pre-opening initiation-fee waivers and May 30, 2026 RSVP details reflect April 2026 pre-launch conditions.",
       "credit": "Shomari Williams / The Sham Report",
-      "caption": "Exterior of Champions Social Club at 17776 Dallas Parkway in Dallas, Texas \u2014 the restored former III Forks landmark featuring its signature gold dome and brick facade.",
+      "caption": "Exterior of Champions Social Club at 17776 Dallas Parkway in Dallas, Texas — the restored former III Forks landmark featuring its signature gold dome and brick facade.",
       "disclosures": "Firsthand attendance verified: Shomari Williams attended the pre-opening walkthrough as an early founding member of Champions Social Club and has subsequently performed commentary work at Champions Social Club with Hayden Fortini. No paid promotional consideration was received for this article.",
       "secondaryCaption": "Inside the upscale bar and lounge at Champions Social Club in Dallas, featuring the ornate stained-glass ceiling installation.",
-      "secondaryCredit": "Shomari Williams / The Sham Report"
+      "secondaryCredit": "Shomari Williams / The Sham Report",
+      "format": "Dispatch"
     },
     {
       "seq": 16,
       "slug": "wsop-circuit-texas-card-house-austin-901-players-first-lone-star-ring-april-24-2026",
       "title": "901 Players and $297,330 on the Line: WSOP Circuit Lands in Texas for the First Time at TCH Austin",
-      "deck": "The first Lone Star Ring event of the inaugural WSOP Circuit series at Texas Card House Austin drew an insane 901-entry turnout and a $297,330 prize pool \u2014 and I'm making the drive down I-35.",
+      "deck": "The first Lone Star Ring event of the inaugural WSOP Circuit series at Texas Card House Austin drew an insane 901-entry turnout and a $297,330 prize pool — and I'm making the drive down I-35.",
       "categories": [
         "Tournaments",
         "Texas Poker"
@@ -1055,28 +1072,29 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "April 24, 2026",
-      "body": "Originally posted April 24, 2026.\n\nThese numbers are pretty insane: 901 players showed up for the first Lone Star Ring event at Texas Card House Austin, putting $297,330 on the line as the World Series of Poker Circuit landed in Texas for the first time ever.\n\nBetween everything this state has been through with poker over the last few months, seeing the WSOP Circuit finally plant its flag in Austin means something for the entire Texas poker community.\n\nI'm making the drive down tomorrow morning to get in the mix.\n\n\u2014 Sham",
+      "body": "Originally posted April 24, 2026.\n\nThese numbers are pretty insane: 901 players showed up for the first Lone Star Ring event at Texas Card House Austin, putting $297,330 on the line as the World Series of Poker Circuit landed in Texas for the first time ever.\n\nBetween everything this state has been through with poker over the last few months, seeing the WSOP Circuit finally plant its flag in Austin means something for the entire Texas poker community.\n\nI'm making the drive down tomorrow morning to get in the mix.\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid0b1KT5Uav33R25uHx5iD2g6cXJrqF8zs4CyyCLFKpP1ru4to4zGrA1GRvFU8XxvK3l",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid0b1KT5Uav33R25uHx5iD2g6cXJrqF8zs4CyyCLFKpP1ru4to4zGrA1GRvFU8XxvK3l/",
       "original_fb_date": "2026-04-24",
-      "original_post_text": "901 players showed up for the First Lone Star Ring at TCH Austin. $297,330 on the line. WSOP Circuit, in Texas, for the first time ever.\n\nBetween everything this state has been through with poker over the last few months, WSOP landing here means something. I'm making the drive tomorrow morning.\ud83e\udd37\ud83c\udffe\u200d\u2642\ufe0f\n\n#WSOP #WSOPCircuit #LoneStarRing #TexasPoker #TCH #TheShamReport",
+      "original_post_text": "901 players showed up for the First Lone Star Ring at TCH Austin. $297,330 on the line. WSOP Circuit, in Texas, for the first time ever.\n\nBetween everything this state has been through with poker over the last few months, WSOP landing here means something. I'm making the drive tomorrow morning.🤷🏾‍♂️\n\n#WSOP #WSOPCircuit #LoneStarRing #TexasPoker #TCH #TheShamReport",
       "original_post_sha256": "ca53f2e44274087916eeb3d4ccaf5dfa8e0730a401e35b9550f36cf22d9a3ea3",
       "seo": {
         "metaTitle": "901 Players in First WSOP Circuit Lone Star Ring Event at TCH Austin | The Sham Report",
         "metaDescription": "The inaugural WSOP Circuit series in Texas opens at Texas Card House Austin with 901 entries and a $297,330 prize pool in the first Lone Star Ring event.",
         "keyphrase": "WSOP Circuit TCH Austin Lone Star Ring"
       },
-      "context": "Original April 24, 2026 tournament dispatch by Shomari Williams covering the inaugural WSOP Circuit series at Texas Card House Austin (April 22 \u2013 May 4, 2026).",
+      "context": "Original April 24, 2026 tournament dispatch by Shomari Williams covering the inaugural WSOP Circuit series at Texas Card House Austin (April 22 – May 4, 2026).",
       "credit": "Shomari Williams / The Sham Report",
-      "caption": "Tournament action on the WSOP Circuit / Texas Card House Austin felt (April 22 \u2013 May 4, 2026 series).",
-      "disclosures": "Original tournament reporting by Shomari Williams."
+      "caption": "Tournament action on the WSOP Circuit / Texas Card House Austin felt (April 22 – May 4, 2026 series).",
+      "disclosures": "Original tournament reporting by Shomari Williams.",
+      "format": "Reporting"
     },
     {
       "seq": 15,
       "slug": "harvey-castro-won-143000-at-the-lodge-raided-next-day-april-21-2026",
       "title": "He Won $143,000 at The Lodge. Then They Were Raided the Next Day: Harvey Castro Speaks to The Sham Report",
-      "deck": "23-year-old Flower Mound pro Harvey Castro finished second in the Lodge Championship Series Main Event for $143,336 on March 9 \u2014 less than 24 hours before the raid froze his payout check.",
+      "deck": "23-year-old Flower Mound pro Harvey Castro finished second in the Lodge Championship Series Main Event for $143,336 on March 9 — less than 24 hours before the raid froze his payout check.",
       "categories": [
         "Players",
         "Investigation",
@@ -1087,12 +1105,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "April 21, 2026",
-      "body": "Originally posted April 21, 2026.\n\nHe won $143,000 at The Lodge. Then they were raided the next day.\n\nI saw a story post from 23-year-old Harvey Castro saying he was looking forward to getting back to grinding since The Lodge incident. That caught my attention.\n\nHarvey Castro finished second in the Lodge Championship Series Main Event on March 9, 2026. His prize? $143,336.\n\nAt the time of the raid, he had been paid zero dollars. His check was still at The Lodge when agents walked in that Tuesday morning, March 10. The timing couldn't have been worse.\n\nI reached out to Harvey for a statement, and he was kind enough to speak directly with The Sham Report. In his own words:\n\n\"They told me they would mail me the check. The day later they were raided. Doug has told me he will pay should it come to that. But it sucks right now man.\"\n\nEver since Harvey came into the DFW poker scene, it's been hard not to like this kid. He's from Flower Mound, Texas, and started out playing weekly tournaments at Texas Card House Dallas and Shuffle 214. Those rooms were his training ground. Now he has over $1,850,000 in live tournament earnings at 23 years old.\n\nAlmost $2 million at 23 \u2014 and he's probably one of the most humble players on the circuit.\n\nWe're rooting for you, Harvey. You earned that money at the table.\n\n\u2014 Sham",
+      "body": "Originally posted April 21, 2026.\n\nHe won $143,000 at The Lodge. Then they were raided the next day.\n\nI saw a story post from 23-year-old Harvey Castro saying he was looking forward to getting back to grinding since The Lodge incident. That caught my attention.\n\nHarvey Castro finished second in the Lodge Championship Series Main Event on March 9, 2026. His prize? $143,336.\n\nAt the time of the raid, he had been paid zero dollars. His check was still at The Lodge when agents walked in that Tuesday morning, March 10. The timing couldn't have been worse.\n\nI reached out to Harvey for a statement, and he was kind enough to speak directly with The Sham Report. In his own words:\n\n\"They told me they would mail me the check. The day later they were raided. Doug has told me he will pay should it come to that. But it sucks right now man.\"\n\nEver since Harvey came into the DFW poker scene, it's been hard not to like this kid. He's from Flower Mound, Texas, and started out playing weekly tournaments at Texas Card House Dallas and Shuffle 214. Those rooms were his training ground. Now he has over $1,850,000 in live tournament earnings at 23 years old.\n\nAlmost $2 million at 23 — and he's probably one of the most humble players on the circuit.\n\nWe're rooting for you, Harvey. You earned that money at the table.\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid02Wo89f66gmiubjPntjZmrvXTq9p86oQHqRFjY3veEgvpjcbUUv1WL2zuQqgFVSdojl",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02Wo89f66gmiubjPntjZmrvXTq9p86oQHqRFjY3veEgvpjcbUUv1WL2zuQqgFVSdojl/",
       "original_fb_date": "2026-04-21",
-      "original_post_text": "\ud835\udc07\ud835\udc1e \ud835\udc16\ud835\udc28\ud835\udc27 $\ud835\udfcf\ud835\udfd2\ud835\udfd1,\ud835\udfce\ud835\udfce\ud835\udfce \ud835\udc1a\ud835\udc2d \ud835\udc13\ud835\udc21\ud835\udc1e \ud835\udc0b\ud835\udc28\ud835\udc1d\ud835\udc20\ud835\udc1e. \ud835\udc13\ud835\udc21\ud835\udc1e\ud835\udc27 \ud835\udc13\ud835\udc21\ud835\udc1e\ud835\udc32 \ud835\udc16\ud835\udc1e\ud835\udc2b\ud835\udc1e \ud835\udc11\ud835\udc1a\ud835\udc22\ud835\udc1d\ud835\udc1e\ud835\udc1d \ud835\udc2d\ud835\udc21\ud835\udc1e \ud835\udc0d\ud835\udc1e\ud835\udc31\ud835\udc2d \ud835\udc03\ud835\udc1a\ud835\udc32.\n\nI saw a story post from 23-year-old Harvey Castro saying he was looking forward to getting back to grinding since the Lodge incident. That caught my attention.\n\nHarvey Castro finished 2nd in the Lodge Championship Series Main Event on March 9th, 2026. His prize? $143,336.\nHe was paid zero dollars.\n\nHis check was still at the Lodge when the raid happened that morning. The timing couldn't have been worse.\n\nI reached out to Harvey for a statement and he was kind enough to speak with The Sham Report.\n\nIn his own words:\n\n\"They told me they would mail me the check. The day later they were raided. Doug has told me he will pay should it come to that. But it sucks right now man.\"\n\nEver since Harvey came into the DFW poker scene it's been hard not to like this kid. He's from Flower Mound, Texas. Started out playing weekly tournaments at Texas Card House Dallas and Shuffle 214. Those rooms were his training ground. Now he has over $1,850,000 in live tournament earnings at 23 years old.\n\nAlmost $2 million. At 23. And he's probably one of the most humble players on the circuit.\n\nWe're rooting for you Harvey. You earned that money at the table. Hopefully the Lodge makes it right.\n\nClick Like to show some love for one of Texas's brightest poker stars.\n\n#HarveyCastro #TheLodge #TexasPoker #TheShamReport",
+      "original_post_text": "𝐇𝐞 𝐖𝐨𝐧 $𝟏𝟒𝟑,𝟎𝟎𝟎 𝐚𝐭 𝐓𝐡𝐞 𝐋𝐨𝐝𝐠𝐞. 𝐓𝐡𝐞𝐧 𝐓𝐡𝐞𝐲 𝐖𝐞𝐫𝐞 𝐑𝐚𝐢𝐝𝐞𝐝 𝐭𝐡𝐞 𝐍𝐞𝐱𝐭 𝐃𝐚𝐲.\n\nI saw a story post from 23-year-old Harvey Castro saying he was looking forward to getting back to grinding since the Lodge incident. That caught my attention.\n\nHarvey Castro finished 2nd in the Lodge Championship Series Main Event on March 9th, 2026. His prize? $143,336.\nHe was paid zero dollars.\n\nHis check was still at the Lodge when the raid happened that morning. The timing couldn't have been worse.\n\nI reached out to Harvey for a statement and he was kind enough to speak with The Sham Report.\n\nIn his own words:\n\n\"They told me they would mail me the check. The day later they were raided. Doug has told me he will pay should it come to that. But it sucks right now man.\"\n\nEver since Harvey came into the DFW poker scene it's been hard not to like this kid. He's from Flower Mound, Texas. Started out playing weekly tournaments at Texas Card House Dallas and Shuffle 214. Those rooms were his training ground. Now he has over $1,850,000 in live tournament earnings at 23 years old.\n\nAlmost $2 million. At 23. And he's probably one of the most humble players on the circuit.\n\nWe're rooting for you Harvey. You earned that money at the table. Hopefully the Lodge makes it right.\n\nClick Like to show some love for one of Texas's brightest poker stars.\n\n#HarveyCastro #TheLodge #TexasPoker #TheShamReport",
       "original_post_sha256": "4c2942c02434cf5c50b395555c276cb7a9e986995fb85a0951f56ea5794211fd",
       "seo": {
         "metaTitle": "Harvey Castro Won $143,336 at The Lodge a Day Before the Raid | The Sham Report",
@@ -1102,28 +1120,29 @@ window.CONCEPT3_DATA = {
       "context": "Editorial Context / Update Note: Originally reported April 21, 2026 via direct interview with Harvey Castro while The Lodge's accounts remained frozen following the March 10 raid. On April 28, 2026, a Williamson County grand jury returned a no-bill declining all proposed charges, and The Lodge reopened in May 2026.",
       "credit": "Lodge Championship Series / ClubWPT Gold broadcast screenshot via The Sham Report",
       "caption": "Broadcast frame from the Lodge Championship Series (LCS) Final Table (Hand 79, 5 of 752 remaining, blinds 50K/100K), where Harvey Castro finished runner-up for $143,336 on March 9, 2026.",
-      "disclosures": "Original reporting and direct player interview by Shomari Williams for The Sham Report."
+      "disclosures": "Original reporting and direct player interview by Shomari Williams for The Sham Report.",
+      "format": "Reporting"
     },
     {
       "seq": 14,
       "slug": "what-is-selective-enforcement-texas-poker-rooms-april-20-2026",
       "title": "What Is Selective Enforcement? Why Some Texas Poker Rooms Get Raided While Others Stay Open",
-      "deck": "In Texas, poker rooms operate under the same statute and the same legal gray area \u2014 so when one club is raided while others take a pot rake in plain sight, the real question isn't \"was the law broken?\" It's \"why was this room chosen?\"",
+      "deck": "In Texas, poker rooms operate under the same statute and the same legal gray area — so when one club is raided while others take a pot rake in plain sight, the real question isn't \"was the law broken?\" It's \"why was this room chosen?\"",
       "categories": [
+        "Opinion",
         "Legal",
-        "Investigation",
         "Texas Poker"
       ],
       "heroImage": "images/2026-04-20_1.jpg",
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "April 20, 2026",
-      "body": "Originally posted April 20, 2026.\n\nWhat is selective enforcement?\n\nPeople keep asking why some Texas poker rooms get raided while others stay open. The laws are the same; however, some poker rooms use a membership model and charge time, while others take a pot rake in plain sight with no consequence. It's called selective enforcement \u2014 and no, I didn't make this up. It's a legal term.\n\nSelective enforcement happens when authorities \u2014 law enforcement, regulators, or licensing boards \u2014 inconsistently apply the rules. Same activity. Different treatment. That's not justice; that's discretion being used as a weapon.\n\nIn Texas, poker rooms operate in the same legal gray area. Same statute. Same structure. But not the same outcomes. When one room gets raided and another doesn't, one of the questions worth asking isn't \"was the law broken?\" It's \"why was this room chosen?\"\n\n\u2014 Sham",
+      "body": "Originally posted April 20, 2026.\n\nWhat is selective enforcement?\n\nPeople keep asking why some Texas poker rooms get raided while others stay open. The laws are the same; however, some poker rooms use a membership model and charge time, while others take a pot rake in plain sight with no consequence. It's called selective enforcement — and no, I didn't make this up. It's a legal term.\n\nSelective enforcement happens when authorities — law enforcement, regulators, or licensing boards — inconsistently apply the rules. Same activity. Different treatment. That's not justice; that's discretion being used as a weapon.\n\nIn Texas, poker rooms operate in the same legal gray area. Same statute. Same structure. But not the same outcomes. When one room gets raided and another doesn't, one of the questions worth asking isn't \"was the law broken?\" It's \"why was this room chosen?\"\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid0VZhgD13LtafjynVbaGLhLG1U8ayBNETDpbW41tF6PVaM3zac7PckHshMzcpmaEH4l",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid0VZhgD13LtafjynVbaGLhLG1U8ayBNETDpbW41tF6PVaM3zac7PckHshMzcpmaEH4l/",
       "original_fb_date": "2026-04-20",
-      "original_post_text": "\ud835\udc16\ud835\udc21\ud835\udc1a\ud835\udc2d \ud835\udc22\ud835\udc2c \ud835\udc12\ud835\udc1e\ud835\udc25\ud835\udc1e\ud835\udc1c\ud835\udc2d\ud835\udc22\ud835\udc2f\ud835\udc1e \ud835\udc04\ud835\udc27\ud835\udc1f\ud835\udc28\ud835\udc2b\ud835\udc1c\ud835\udc1e\ud835\udc26\ud835\udc1e\ud835\udc27\ud835\udc2d?\n\nPeople keep asking why some Texas poker rooms get raided while others stay open. The laws are the same, however some poker rooms use a membership model and charge time. Others take a pot rake in plain sight with no consequence. It's called Selective Enforcement and no, I didn't make this up. It's a legal term.\n\nSelective enforcement happens when authorities, law enforcement, regulators, or licensing boards, inconsistently apply the rules. Same activity. Different treatment. That's not justice, that's discretion being used as a weapon.\n\nIn Texas, poker rooms operate in the same legal gray area. Same statute. Same structure. But not the same outcomes. When one room gets raided and another doesn't, one of the questions worth asking isn't \"was the law broken?\" It's \"why was this room chosen?\"\n\nShomari Williams | The Sham Report\n#TexasPoker #SelectiveEnforcement #TheShamReport #pokerlife",
+      "original_post_text": "𝐖𝐡𝐚𝐭 𝐢𝐬 𝐒𝐞𝐥𝐞𝐜𝐭𝐢𝐯𝐞 𝐄𝐧𝐟𝐨𝐫𝐜𝐞𝐦𝐞𝐧𝐭?\n\nPeople keep asking why some Texas poker rooms get raided while others stay open. The laws are the same, however some poker rooms use a membership model and charge time. Others take a pot rake in plain sight with no consequence. It's called Selective Enforcement and no, I didn't make this up. It's a legal term.\n\nSelective enforcement happens when authorities, law enforcement, regulators, or licensing boards, inconsistently apply the rules. Same activity. Different treatment. That's not justice, that's discretion being used as a weapon.\n\nIn Texas, poker rooms operate in the same legal gray area. Same statute. Same structure. But not the same outcomes. When one room gets raided and another doesn't, one of the questions worth asking isn't \"was the law broken?\" It's \"why was this room chosen?\"\n\nShomari Williams | The Sham Report\n#TexasPoker #SelectiveEnforcement #TheShamReport #pokerlife",
       "original_post_sha256": "2de214a595ac5164b822b70b2601f1c0a25f8b391a4bf960148c710f0ef234b7",
       "seo": {
         "metaTitle": "What Is Selective Enforcement in Texas Poker? | The Sham Report",
@@ -1133,13 +1152,14 @@ window.CONCEPT3_DATA = {
       "context": "Editorial Context / Update Note: Originally published April 20, 2026 during the closure of The Lodge Card Club in Round Rock. Eight days later, on April 28, 2026, a Williamson County grand jury declined to authorize proposed charges (a no-bill), and The Lodge reopened in May 2026.",
       "credit": "Shomari Williams / The Sham Report",
       "caption": "Jeopardy!-style game board graphic reading \"WHAT IS SELECTIVE ENFORCEMENT\" accompanying Shomari Williams's April 20, 2026 commentary.",
-      "disclosures": "Original legal and industry commentary by Shomari Williams."
+      "disclosures": "Original legal and industry commentary by Shomari Williams.",
+      "format": "Opinion"
     },
     {
       "seq": 13,
       "slug": "running-good-poker-house-fort-worth-livestream-plo-congress-march-19-2026",
       "title": "Running Good on the Poker House Fort Worth Livestream: Round of Each PLO and Congress",
-      "deck": "Taking a seat on the Poker House Live feature table in Fort Worth for a mixed Round of Each session of Pot-Limit Omaha and 5-Card PLO (Congress) \u2014 and stacking up deep.",
+      "deck": "Taking a seat on the Poker House Live feature table in Fort Worth for a mixed Round of Each session of Pot-Limit Omaha and 5-Card PLO (Congress) — and stacking up deep.",
       "categories": [
         "Players",
         "Texas Poker"
@@ -1148,12 +1168,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": "images/2026-03-19_1.jpg",
       "author": "Shomari Williams",
       "date": "March 19, 2026",
-      "body": "Originally posted March 19, 2026.\n\nPulled up to Poker House Fort Worth to play on the Poker House Live stream (@POKERHOUSELIVESTREAM on YouTube) in a Round of Each mix of Pot-Limit Omaha (PLO) and Congress (5-Card PLO).\n\nOnce the action got rolling under the lights on the feature felt, the stacks started building fast. Looking down at the racks of red and green chips in front of me mid-session, I could only sum it up one way: I'm running good on stream, I think.\n\n\u2014 Sham",
+      "body": "Originally posted March 19, 2026.\n\nPulled up to Poker House Fort Worth to play on the Poker House Live stream (@POKERHOUSELIVESTREAM on YouTube) in a Round of Each mix of Pot-Limit Omaha (PLO) and Congress (5-Card PLO).\n\nOnce the action got rolling under the lights on the feature felt, the stacks started building fast. Looking down at the racks of red and green chips in front of me mid-session, I could only sum it up one way: I'm running good on stream, I think.\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid06V1CMTrs6QKPKaptKX5BnwRJCFnnxpwWGPx5CneuKUHtJ2DHPZVAHKEoRnaaQprpl",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid06V1CMTrs6QKPKaptKX5BnwRJCFnnxpwWGPx5CneuKUHtJ2DHPZVAHKEoRnaaQprpl/",
       "original_fb_date": "2026-03-19",
-      "original_post_text": "I\u2019m running good on stream I think.",
+      "original_post_text": "I’m running good on stream I think.",
       "original_post_sha256": "0e87a1755c0b15bc60aa17448eed464d1c46dade0dd984c27b9adb1d3fadba6a",
       "seo": {
         "metaTitle": "Running Good on the Poker House Fort Worth Livestream: PLO & Congress | The Sham Report",
@@ -1165,13 +1185,14 @@ window.CONCEPT3_DATA = {
       "caption": "Deep chip stacks on the Poker House Fort Worth feature table during the March 19, 2026 Round of Each PLO and Congress livestream.",
       "disclosures": "Firsthand attendance verified (played): Shomari Williams played on the Poker House Fort Worth livestream on March 19, 2026.",
       "secondaryCaption": "The Poker House YouTube livestream channel (@POKERHOUSELIVESTREAM) where the March 19, 2026 Fort Worth session aired.",
-      "secondaryCredit": "Screenshot via YouTube (@POKERHOUSELIVESTREAM)"
+      "secondaryCredit": "Screenshot via YouTube (@POKERHOUSELIVESTREAM)",
+      "format": "Dispatch"
     },
     {
       "seq": 12,
       "slug": "table-selection-5-10-crushers-wolfgang-brad-benji-scott-amy-march-18-2026",
       "title": "When Your Table Selection Is Off: Sitting Down With a Lineup of $5/$10 Crushers",
-      "deck": "Walking into a $5/$10 session and realizing the lineup includes Wolfgang, Brad, Benji, Scott, and Amy \u2014 sometimes the best play at the table is recognizing a stacked lineup.",
+      "deck": "Walking into a $5/$10 session and realizing the lineup includes Wolfgang, Brad, Benji, Scott, and Amy — sometimes the best play at the table is recognizing a stacked lineup.",
       "categories": [
         "Players",
         "Texas Poker"
@@ -1180,12 +1201,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "March 18, 2026",
-      "body": "Originally posted March 18, 2026.\n\nMy table selection was a little off this time \u2014 I sat down and looked around at a lineup of $5/$10 crushers: Wolfgang, Brad, Benji, Scott, and Amy.\n\nSometimes in cash-game poker, the sharpest read you can make happens before the cards are even in the air. As the clip on Facebook (https://www.facebook.com/reel/1623841535321868/) captures, when every seat around you is occupied by a tough regular, you have to laugh and tell yourself: just choose another game, Sham.\n\n\u2014 Sham",
+      "body": "Originally posted March 18, 2026.\n\nMy table selection was a little off this time — I sat down and looked around at a lineup of $5/$10 crushers: Wolfgang, Brad, Benji, Scott, and Amy.\n\nSometimes in cash-game poker, the sharpest read you can make happens before the cards are even in the air. As the clip on Facebook (https://www.facebook.com/reel/1623841535321868/) captures, when every seat around you is occupied by a tough regular, you have to laugh and tell yourself: just choose another game, Sham.\n\n— Sham",
       "status": "published",
       "fb_post_id": "reel-1623841535321868",
       "fb_source_url": "https://facebook.com/reel/1623841535321868/",
       "original_fb_date": "2026-03-18",
-      "original_post_text": "Wolfgang, Brad, Benji, Scott, Amy. Just choose another game Sham \ud83d\ude02.   \n #texaspoker  #PokerCommunity #DFWPoker",
+      "original_post_text": "Wolfgang, Brad, Benji, Scott, Amy. Just choose another game Sham 😂.   \n #texaspoker  #PokerCommunity #DFWPoker",
       "original_post_sha256": "a5e4eb64b8fab5b758df78cd94826c1dd9d4c920d18775bd8c50d1af964c602e",
       "seo": {
         "metaTitle": "Table Selection at $5/$10: Sitting Down With Crushers | The Sham Report",
@@ -1194,13 +1215,14 @@ window.CONCEPT3_DATA = {
       },
       "context": "Original March 18, 2026 cash-game dispatch and Facebook Reel by Shomari Williams.",
       "credit": "Shomari Williams / The Sham Report",
-      "caption": "At the $5/$10 table with a lineup of crushers \u2014 \"My table selection was a little off this time. A bunch of 5-10 crushers.\" (March 18, 2026).",
-      "disclosures": "Firsthand attendance verified (played): Shomari Williams played in the March 2026 $5/$10 session."
+      "caption": "At the $5/$10 table with a lineup of crushers — \"My table selection was a little off this time. A bunch of 5-10 crushers.\" (March 18, 2026).",
+      "disclosures": "Firsthand attendance verified (played): Shomari Williams played in the March 2026 $5/$10 session.",
+      "format": "Dispatch"
     },
     {
       "seq": 11,
       "slug": "green-beer-and-poker-st-patricks-day-dfw-march-17-2026",
-      "title": "Green Beer and Poker on St. Patrick\u2019s Day: Notes From the DFW Felt",
+      "title": "Green Beer and Poker on St. Patrick’s Day: Notes From the DFW Felt",
       "deck": "Checking in from the DFW cash-game tables on St. Patrick's Day with a cold green beer on the rail and chips in play.",
       "categories": [
         "Texas Poker",
@@ -1210,12 +1232,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "March 17, 2026",
-      "body": "Originally posted March 17, 2026.\n\nGreen beer and poker on St. Patrick's Day.\n\nBetween following every twist of The Lodge story in Round Rock and grinding the local rooms across Dallas\u2013Fort Worth, Tuesday night was for getting back on the live felt with a cold green beer on the rail and stacks in play.\n\nMay the luck of the Irish be on your side at the tables today.\n\n\u2014 Sham",
+      "body": "Originally posted March 17, 2026.\n\nGreen beer and poker on St. Patrick's Day.\n\nBetween following every twist of The Lodge story in Round Rock and grinding the local rooms across Dallas–Fort Worth, Tuesday night was for getting back on the live felt with a cold green beer on the rail and stacks in play.\n\nMay the luck of the Irish be on your side at the tables today.\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid0ti7VeCF4QbckmFbnHxRve8mk3LuYz7RLDiNZrQxXZruUkutuuUswmMKHu6dAc66ql",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid0ti7VeCF4QbckmFbnHxRve8mk3LuYz7RLDiNZrQxXZruUkutuuUswmMKHu6dAc66ql/",
       "original_fb_date": "2026-03-17",
-      "original_post_text": "Green beer and poker on St. Patrick\u2019s Day. \ud83c\udf40\u2660\ufe0f\n\nMay the luck of the Irish be on your side at the tables today.\n\n#StPatricksDay #PokerLife #ShamGodPoker #DFWPoker",
+      "original_post_text": "Green beer and poker on St. Patrick’s Day. 🍀♠️\n\nMay the luck of the Irish be on your side at the tables today.\n\n#StPatricksDay #PokerLife #ShamGodPoker #DFWPoker",
       "original_post_sha256": "220ae92b2f7b4ab21aefcfc263068affb7df9f9c7c49f4ac70e3872fb7aa6217",
       "seo": {
         "metaTitle": "Green Beer and Poker on St. Patrick's Day in DFW | The Sham Report",
@@ -1225,15 +1247,16 @@ window.CONCEPT3_DATA = {
       "context": "Original March 17, 2026 St. Patrick's Day table dispatch and photograph by Shomari Williams.",
       "credit": "Shomari Williams / The Sham Report",
       "caption": "Green beer on the poker table rail during a St. Patrick's Day session in DFW on March 17, 2026.",
-      "disclosures": "Original social reporting and photography by Shomari Williams from live play in DFW."
+      "disclosures": "Original social reporting and photography by Shomari Williams from live play in DFW.",
+      "format": "Reporting"
     },
     {
       "seq": 10,
       "slug": "tabc-affidavit-undercover-agents-lodge-card-club-march-17-2026",
-      "title": "They Sent Undercover Agents to Play $1/$2\u2026 and THIS Is What They Came Up With?",
+      "title": "They Sent Undercover Agents to Play $1/$2… and THIS Is What They Came Up With?",
       "deck": "After a nine-month undercover investigation, six covert visits, bank records, the IRS, and a 22-page affidavit at The Lodge in Round Rock, here is how the case stacks up against the 2019 Houston raids.",
       "categories": [
-        "Investigation",
+        "Opinion",
         "Legal",
         "Texas Poker"
       ],
@@ -1241,12 +1264,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "March 17, 2026",
-      "body": "Originally posted March 17, 2026.\n\nWhen I first read the March 17 update on the TABC search-warrant affidavit regarding The Lodge, I almost didn't want to give my opinion right away \u2014 I needed a moment to calm down first, because something about this looked really, really fishy.\n\nOnce I sat down with the details, one question stood out: They sent undercover agents to play $1/$2\u2026 and THIS is what they came up with?\n\nBy now you've seen the headlines. The Lodge Card Club in Round Rock is dark. Assets frozen. Hundreds of employees displaced. And after a nine-month undercover investigation, six covert visits, bank records, the IRS, and a 22-page affidavit, the biggest case they could build rests largely on large deposits from a cash business and one agent who got lucky enough to play without a membership.\n\n\"Call the floor because we need a new setup.\"\n\nNow let me be clear: nobody has been charged with anything. No arrests have been made. And in America, you are innocent until proven guilty. But when you stack this situation up against the 2019 Houston raids on Post Oak Poker Club and Prime Social \u2014 where nine people were actually arrested, $10 million was frozen, and all of those charges were eventually dropped \u2014 you start to wonder exactly what standard is being applied here.\n\nOne thing is certain: competition in Texas poker is fierce, on the felt AND off the felt.\n\nThe Lodge San Antonio? Still open. Same company. Same ownership. Make that make sense.\n\nTexas poker has always survived on skill, resilience, and community. The rooms are still running across DFW and the games are good. But stories like this remind us that the legal landscape in this state remains gray by design.\n\nWe're watching this one closely. The Sham Report is where we cover Texas poker the way it deserves to be covered \u2014 real analysis, real talk, no fluff. Stay locked in.\n\n\u2014 Sham",
+      "body": "Originally posted March 17, 2026.\n\nWhen I first read the March 17 update on the TABC search-warrant affidavit regarding The Lodge, I almost didn't want to give my opinion right away — I needed a moment to calm down first, because something about this looked really, really fishy.\n\nOnce I sat down with the details, one question stood out: They sent undercover agents to play $1/$2… and THIS is what they came up with?\n\nBy now you've seen the headlines. The Lodge Card Club in Round Rock is dark. Assets frozen. Hundreds of employees displaced. And after a nine-month undercover investigation, six covert visits, bank records, the IRS, and a 22-page affidavit, the biggest case they could build rests largely on large deposits from a cash business and one agent who got lucky enough to play without a membership.\n\n\"Call the floor because we need a new setup.\"\n\nNow let me be clear: nobody has been charged with anything. No arrests have been made. And in America, you are innocent until proven guilty. But when you stack this situation up against the 2019 Houston raids on Post Oak Poker Club and Prime Social — where nine people were actually arrested, $10 million was frozen, and all of those charges were eventually dropped — you start to wonder exactly what standard is being applied here.\n\nOne thing is certain: competition in Texas poker is fierce, on the felt AND off the felt.\n\nThe Lodge San Antonio? Still open. Same company. Same ownership. Make that make sense.\n\nTexas poker has always survived on skill, resilience, and community. The rooms are still running across DFW and the games are good. But stories like this remind us that the legal landscape in this state remains gray by design.\n\nWe're watching this one closely. The Sham Report is where we cover Texas poker the way it deserves to be covered — real analysis, real talk, no fluff. Stay locked in.\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid02P3wfckWkEDYp6S4zdAoZ9sbejsK7csvKJE7yPZcaERCkbaMV1K9cH8QKBNcjtfUWl",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02P3wfckWkEDYp6S4zdAoZ9sbejsK7csvKJE7yPZcaERCkbaMV1K9cH8QKBNcjtfUWl/",
       "original_fb_date": "2026-03-17",
-      "original_post_text": "They Sent Undercover Agents to Play $1/$2\u2026 and THIS is What They Came Up With? \ud83d\ude02 \n\nBy now you\u2019ve seen the headlines. The Lodge Card Club in Round Rock is dark. Assets frozen. Hundreds of employees displaced. And after a nine-month undercover investigation, six covert visits, bank records, the IRS, and a 22-page affidavit, the biggest charge they could build rests largely on\u2026 large deposits from a cash business and one agent who got Lucky to play without a membership.\n\n\u201cCall the floor because we need a new setup\u201d.\n\nNow let me be clear, nobody has been charged with anything. No arrests have been made. And in America, you are innocent until proven guilty. But when you stack this situation up against the 2019 Houston raids on Post Oak Poker Club and Prime Social, where nine people were actually arrested and $10 million was frozen, and all of those charges were eventually dropped, you start to wonder exactly what standard is being applied here.\n\nOne thing is certain. Competition in Texas poker is fierce. On the felt AND off the felt.\n\nThe Lodge San Antonio? Still open. Same company. Same ownership. Make that make sense.\n\nTexas poker has always survived on skill, resilience, and community. The rooms are still running across DFW and the games are good. But stories like this remind us that the legal landscape in this state remains grey by design.\n\nWe\u2019re watching this one closely.\n\nThe ShamGod Poker Report is coming soon, where we cover Texas poker the way it deserves to be covered. Real analysis. Real talk. No fluff. Stay locked in.\n\nFull article linked below. Read it and drop your thoughts. \n\n#ShamGodPoker #TexasPoker #TheLodge #DFWPoker",
+      "original_post_text": "They Sent Undercover Agents to Play $1/$2… and THIS is What They Came Up With? 😂 \n\nBy now you’ve seen the headlines. The Lodge Card Club in Round Rock is dark. Assets frozen. Hundreds of employees displaced. And after a nine-month undercover investigation, six covert visits, bank records, the IRS, and a 22-page affidavit, the biggest charge they could build rests largely on… large deposits from a cash business and one agent who got Lucky to play without a membership.\n\n“Call the floor because we need a new setup”.\n\nNow let me be clear, nobody has been charged with anything. No arrests have been made. And in America, you are innocent until proven guilty. But when you stack this situation up against the 2019 Houston raids on Post Oak Poker Club and Prime Social, where nine people were actually arrested and $10 million was frozen, and all of those charges were eventually dropped, you start to wonder exactly what standard is being applied here.\n\nOne thing is certain. Competition in Texas poker is fierce. On the felt AND off the felt.\n\nThe Lodge San Antonio? Still open. Same company. Same ownership. Make that make sense.\n\nTexas poker has always survived on skill, resilience, and community. The rooms are still running across DFW and the games are good. But stories like this remind us that the legal landscape in this state remains grey by design.\n\nWe’re watching this one closely.\n\nThe ShamGod Poker Report is coming soon, where we cover Texas poker the way it deserves to be covered. Real analysis. Real talk. No fluff. Stay locked in.\n\nFull article linked below. Read it and drop your thoughts. \n\n#ShamGodPoker #TexasPoker #TheLodge #DFWPoker",
       "original_post_sha256": "299da95220de18c8cc13b1d455eb45271375afb3e5d554450e76e52826e50652",
       "seo": {
         "metaTitle": "Undercover Agents at $1/$2: Inside The Lodge 22-Page Affidavit | The Sham Report",
@@ -1256,13 +1279,14 @@ window.CONCEPT3_DATA = {
       "context": "Editorial Context / Update Note: This preserves reporting and commentary from March 2026. On April 28, 2026, a Williamson County grand jury declined to authorize proposed charges (a no-bill), and The Lodge subsequently reopened in May 2026. Closure references describe March 2026 conditions, not current status.",
       "credit": "Shared video graphic via Shomari Williams Facebook post",
       "caption": "Graphic from coverage of the 22-page search-warrant affidavit at The Lodge Card Club in Round Rock (March 17, 2026).",
-      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed."
+      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed.",
+      "format": "Opinion"
     },
     {
       "seq": 9,
       "slug": "shuffle-214-100k-hand-highlights-ak-vs-kj-all-in-march-17-2026",
       "title": "Ran Deep at The Shuffle 214: $100K Guaranteed Hand Highlights and a Min-Cash Story",
-      "deck": "Had the table talking deep in Shuffle 214's $100K Guaranteed series \u2014 including an all-in clash with Ace-King against King-Jack \u2014 before settling for a min-cash and a story worth more than the payout.",
+      "deck": "Had the table talking deep in Shuffle 214's $100K Guaranteed series — including an all-in clash with Ace-King against King-Jack — before settling for a min-cash and a story worth more than the payout.",
       "categories": [
         "Tournaments",
         "Players",
@@ -1272,12 +1296,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "March 17, 2026",
-      "body": "Originally posted March 17, 2026.\n\nRan deep at The Shuffle 214 in the $100K Guaranteed series and had the table talking\u2026 until the poker gods had other plans.\n\nIn one of the key all-in pots from the session (captured in the hand-highlights reel on Facebook at https://www.facebook.com/reel/2045881562627473/), my Ace of Clubs and King of Hearts went to war preflop against an opponent's King of Clubs and Jack of Hearts with a big stack of tournament chips in the middle.\n\nThat's tournament poker. Min-cash secured, but the story was worth way more than the payout. Back at it soon.\n\n\u2014 Sham",
+      "body": "Originally posted March 17, 2026.\n\nRan deep at The Shuffle 214 in the $100K Guaranteed series and had the table talking… until the poker gods had other plans.\n\nIn one of the key all-in pots from the session (captured in the hand-highlights reel on Facebook at https://www.facebook.com/reel/2045881562627473/), my Ace of Clubs and King of Hearts went to war preflop against an opponent's King of Clubs and Jack of Hearts with a big stack of tournament chips in the middle.\n\nThat's tournament poker. Min-cash secured, but the story was worth way more than the payout. Back at it soon.\n\n— Sham",
       "status": "published",
       "fb_post_id": "reel-2045881562627473",
       "fb_source_url": "https://facebook.com/reel/2045881562627473/",
       "original_fb_date": "2026-03-17",
-      "original_post_text": "Ran deep at The Shuffle 214 and had the table talking\u2026 until the poker gods had other plans. That\u2019s tournament poker. Min cash secured, but the story was worth way more than the payout. Back at it soon.\n\n#ShamGodPoker #TournamentPoker #PokerHighlights #DFWPoker",
+      "original_post_text": "Ran deep at The Shuffle 214 and had the table talking… until the poker gods had other plans. That’s tournament poker. Min cash secured, but the story was worth way more than the payout. Back at it soon.\n\n#ShamGodPoker #TournamentPoker #PokerHighlights #DFWPoker",
       "original_post_sha256": "e6c59d2bd3e68b38b3980878097169d7440458d7e6d277f7ac7e79ef1771a918",
       "seo": {
         "metaTitle": "Shuffle 214 $100K Guaranteed Hand Highlights: AK vs KJ All-In | The Sham Report",
@@ -1286,8 +1310,9 @@ window.CONCEPT3_DATA = {
       },
       "context": "Original March 17, 2026 tournament hand-highlight dispatch and video reel by Shomari Williams from Shuffle 214's $100K Guaranteed series in DFW.",
       "credit": "Shomari Williams / The Sham Report",
-      "caption": "All-in hand highlight from Shuffle 214's $100K Guaranteed series in Dallas: Sham's A\u2663 K\u2665 up against K\u2663 J\u2665.",
-      "disclosures": "Firsthand attendance verified (played): Shomari Williams played the Shuffle 214 $100K GTD Series in March 2026."
+      "caption": "All-in hand highlight from Shuffle 214's $100K Guaranteed series in Dallas: Sham's A♣ K♥ up against K♣ J♥.",
+      "disclosures": "Firsthand attendance verified (played): Shomari Williams played the Shuffle 214 $100K GTD Series in March 2026.",
+      "format": "Dispatch"
     },
     {
       "seq": 8,
@@ -1295,20 +1320,20 @@ window.CONCEPT3_DATA = {
       "title": "No Affidavit. A Business Shut Down. Assets Frozen. Is This How Due Process Works?",
       "deck": "Doug Polk broke his silence on The Lodge Card Club raid with a detail that should concern every Texas poker player: the search-warrant affidavit still hadn't been given to The Lodge or made public.",
       "categories": [
+        "Opinion",
         "Legal",
-        "Investigation",
         "Texas Poker"
       ],
       "heroImage": "images/2026-03-16_2.jpg",
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "March 16, 2026",
-      "body": "Originally posted March 16, 2026.\n\nNo affidavit. A business shut down. Assets frozen. Hundreds of employees displaced. Is this how due process works?\n\nDoug Polk finally broke his silence on The Lodge Card Club raid, and what he revealed should concern every Texas poker player.\n\nIn his written statement, Polk emphasized that he did not participate in, and had no knowledge of, any money laundering in the operation of The Lodge, while pledging that members with chip balances and tournament payouts would be made whole in coordination with his attorneys.\n\nThe most important line in his entire statement? \"That affidavit has not been given to the Lodge or made public.\"\n\nThe people whose business was shut down didn't even know the specific allegations against them at that point. No arrests. No charges. Just a closed door and hundreds of employees out of work.\n\nA search warrant is not a conviction. But right now it's being treated like one.\n\nI would love to hear your thoughts and opinions on this ongoing issue.\n\n\u2014 Sham",
+      "body": "Originally posted March 16, 2026.\n\nNo affidavit. A business shut down. Assets frozen. Hundreds of employees displaced. Is this how due process works?\n\nDoug Polk finally broke his silence on The Lodge Card Club raid, and what he revealed should concern every Texas poker player.\n\nIn his written statement, Polk emphasized that he did not participate in, and had no knowledge of, any money laundering in the operation of The Lodge, while pledging that members with chip balances and tournament payouts would be made whole in coordination with his attorneys.\n\nThe most important line in his entire statement? \"That affidavit has not been given to the Lodge or made public.\"\n\nThe people whose business was shut down didn't even know the specific allegations against them at that point. No arrests. No charges. Just a closed door and hundreds of employees out of work.\n\nA search warrant is not a conviction. But right now it's being treated like one.\n\nI would love to hear your thoughts and opinions on this ongoing issue.\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid0nTyLG9YPw5WPhEi9VZVbsT7N6P8icjrkL19dXNxUwJxhJTdhEnPjCB2rV3Cke458l",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid0nTyLG9YPw5WPhEi9VZVbsT7N6P8icjrkL19dXNxUwJxhJTdhEnPjCB2rV3Cke458l/",
       "original_fb_date": "2026-03-16",
-      "original_post_text": "No Affidavit. A Business Shut Down. Assets Frozen. Hundreds of Employees Displaced. Is This How Due Process Works?\n\nDoug Polk finally broke his silence on the Lodge Card Club raid and what he revealed should concern every Texas poker player.\n\nThe most important line in his entire statement? That affidavit has not been given to The Lodge or made public.\n\nThe people whose business was shut down don\u2019t even know the specific allegations against them. No arrests. No charges. Just a closed door and hundreds of employees out of work.\n\nA search warrant is not a conviction. But right now it\u2019s being treated like one.\n\nI would love to hear your thoughts and opinions on this ongoing issue. \n\n-ShamGod Poker Report\n\n#TheLodge #DougPolk #PokerNews #TexasPokerRights #PokerCommunity",
+      "original_post_text": "No Affidavit. A Business Shut Down. Assets Frozen. Hundreds of Employees Displaced. Is This How Due Process Works?\n\nDoug Polk finally broke his silence on the Lodge Card Club raid and what he revealed should concern every Texas poker player.\n\nThe most important line in his entire statement? That affidavit has not been given to The Lodge or made public.\n\nThe people whose business was shut down don’t even know the specific allegations against them. No arrests. No charges. Just a closed door and hundreds of employees out of work.\n\nA search warrant is not a conviction. But right now it’s being treated like one.\n\nI would love to hear your thoughts and opinions on this ongoing issue. \n\n-ShamGod Poker Report\n\n#TheLodge #DougPolk #PokerNews #TexasPokerRights #PokerCommunity",
       "original_post_sha256": "44e037145debc26bee32a4ba5dce37b74b4847e511f895d2621144ff3951fdde",
       "seo": {
         "metaTitle": "Doug Polk Statement on The Lodge Raid & Missing Affidavit | The Sham Report",
@@ -1318,7 +1343,8 @@ window.CONCEPT3_DATA = {
       "context": "Editorial Context / Update Note: Originally posted March 16, 2026. The 22-page search-warrant affidavit was subsequently released on March 17, 2026. On April 28, 2026, a Williamson County grand jury declined to authorize proposed charges (a no-bill), and The Lodge subsequently reopened in May 2026. Closure references describe March 2026 conditions, not current status.",
       "credit": "Screenshot via Facebook (Doug Polk)",
       "caption": "Doug Polk's public Facebook statement on The Lodge Card Club investigation (March 16, 2026), noting that the search-warrant affidavit had not been given to The Lodge or made public.",
-      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed."
+      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed.",
+      "format": "Opinion"
     },
     {
       "seq": 7,
@@ -1333,12 +1359,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "March 16, 2026",
-      "body": "Originally posted March 16, 2026.\n\nI want to share a small but meaningful moment with you all.\n\nWhen I wrote my post about The Lodge situation, I made a conscious decision to lead with fairness and compassion rather than speculation and judgment. I didn't know if anyone beyond the DFW poker community would even see it.\n\nWell, Andrew Neeme reacted to the post.\n\nFor those who don't know who Andrew Neeme is, he is widely considered the godfather of poker vlogging. He is the pioneer who showed the world that the poker lifestyle was worth capturing and sharing. He inspired an entire generation of content creators \u2014 myself included \u2014 to pick up a camera and tell their stories. Without Andrew Neeme, the poker content community as we know it looks completely different.\n\nAndrew is also one of the principal partners of The Lodge Card Club. So when I say this situation hits close to home for him, I mean that in every sense of the word. This is his business, his passion, and his livelihood.\n\nThe fact that he took a moment in the middle of what has to be an incredibly stressful and difficult time to acknowledge this post means more to me than I can fully express. I want him and his wife Busi to know that the poker community sees everything they have built and we are rooting for them.\n\nSpeak with honesty. Lead with compassion. People will always feel when something is genuine.\n\nAndrew, we're with you. I hope The Lodge finds its way back to the felt very soon.\n\n\u2014 Sham",
+      "body": "Originally posted March 16, 2026.\n\nI want to share a small but meaningful moment with you all.\n\nWhen I wrote my post about The Lodge situation, I made a conscious decision to lead with fairness and compassion rather than speculation and judgment. I didn't know if anyone beyond the DFW poker community would even see it.\n\nWell, Andrew Neeme reacted to the post.\n\nFor those who don't know who Andrew Neeme is, he is widely considered the godfather of poker vlogging. He is the pioneer who showed the world that the poker lifestyle was worth capturing and sharing. He inspired an entire generation of content creators — myself included — to pick up a camera and tell their stories. Without Andrew Neeme, the poker content community as we know it looks completely different.\n\nAndrew is also one of the principal partners of The Lodge Card Club. So when I say this situation hits close to home for him, I mean that in every sense of the word. This is his business, his passion, and his livelihood.\n\nThe fact that he took a moment in the middle of what has to be an incredibly stressful and difficult time to acknowledge this post means more to me than I can fully express. I want him and his wife Busi to know that the poker community sees everything they have built and we are rooting for them.\n\nSpeak with honesty. Lead with compassion. People will always feel when something is genuine.\n\nAndrew, we're with you. I hope The Lodge finds its way back to the felt very soon.\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid02G9aWpY1rz68gv2aWXid4rwmXbwW5Xg8Pi6w1ng8ZTsNz3jb8UDPyCrnJVCHY6vFal",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02G9aWpY1rz68gv2aWXid4rwmXbwW5Xg8Pi6w1ng8ZTsNz3jb8UDPyCrnJVCHY6vFal/",
       "original_fb_date": "2026-03-16",
-      "original_post_text": "When You Speak With Honesty and Compassion, People Feel It\n\nI want to share a small but meaningful moment with you all.\n\nWhen I wrote my post about The Lodge situation, I made a conscious decision to lead with fairness and compassion rather than speculation and judgment. I didn\u2019t know if anyone beyond the DFW poker community would even see it.\n\nWell, Andrew Neeme reacted to the post.\n\nFor those who don\u2019t know who Andrew Neeme is, he is widely considered the godfather of poker vlogging. He is the pioneer who showed the world that the poker lifestyle was worth capturing and sharing. He inspired an entire generation of content creators, myself included, to pick up a camera and tell their stories. Without Andrew Neeme, the poker content community as we know it looks completely different.\nAndrew is also one of the principal partners of The Lodge Card Club. So when I say this situation hits close to home for him, I mean that in every sense of the word. This is his business, his passion, and his livelihood.\n\nThe fact that he took a moment in the middle of what has to be an incredibly stressful and difficult time to acknowledge this post means more to me than I can fully express. I want him and his wife Busi to know that the poker community sees everything they have built and we are rooting for them.\n\nSpeak with honesty. Lead with compassion. People will always feel when something is genuine.\nAndrew, we\u2019re with you. I hope The Lodge finds its way back to the felt very soon. \n\n#AndrewNeeme #TheLodge #TexasPoker #ShamGodPoker",
+      "original_post_text": "When You Speak With Honesty and Compassion, People Feel It\n\nI want to share a small but meaningful moment with you all.\n\nWhen I wrote my post about The Lodge situation, I made a conscious decision to lead with fairness and compassion rather than speculation and judgment. I didn’t know if anyone beyond the DFW poker community would even see it.\n\nWell, Andrew Neeme reacted to the post.\n\nFor those who don’t know who Andrew Neeme is, he is widely considered the godfather of poker vlogging. He is the pioneer who showed the world that the poker lifestyle was worth capturing and sharing. He inspired an entire generation of content creators, myself included, to pick up a camera and tell their stories. Without Andrew Neeme, the poker content community as we know it looks completely different.\nAndrew is also one of the principal partners of The Lodge Card Club. So when I say this situation hits close to home for him, I mean that in every sense of the word. This is his business, his passion, and his livelihood.\n\nThe fact that he took a moment in the middle of what has to be an incredibly stressful and difficult time to acknowledge this post means more to me than I can fully express. I want him and his wife Busi to know that the poker community sees everything they have built and we are rooting for them.\n\nSpeak with honesty. Lead with compassion. People will always feel when something is genuine.\nAndrew, we’re with you. I hope The Lodge finds its way back to the felt very soon. \n\n#AndrewNeeme #TheLodge #TexasPoker #ShamGodPoker",
       "original_post_sha256": "2030219dfaa18a350fa9f99c3861b8eb43ccff3f97fe68b09d292099e2f27d76",
       "seo": {
         "metaTitle": "A Nod From Andrew Neeme During The Lodge Closure | The Sham Report",
@@ -1348,13 +1374,14 @@ window.CONCEPT3_DATA = {
       "context": "Editorial Context / Update Note: This preserves reporting and commentary from March 2026. On April 28, 2026, a Williamson County grand jury declined to authorize proposed charges (a no-bill), and The Lodge subsequently reopened in May 2026. Closure references describe March 2026 conditions, not current status.",
       "credit": "Shomari Williams / The Sham Report",
       "caption": "Facebook notification showing Andrew Neeme reacting to Sham's post in JV's Poker Squad on March 16, 2026.",
-      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed."
+      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed.",
+      "format": "Dispatch"
     },
     {
       "seq": 6,
       "slug": "shuffle-214-100k-series-recap-five-bullets-tournament-variance-march-2026",
       "title": "Shuffle 214 $100K Series Recap: Five Bullets, One Min-Cash, and the Truth About Tournament Variance",
-      "deck": "Five $150 entries into Shuffle 214's $100K GTD series came back with one $250 min-cash for a -$500 net \u2014 and a reminder of why cash games pay the bills.",
+      "deck": "Five $150 entries into Shuffle 214's $100K GTD series came back with one $250 min-cash for a -$500 net — and a reminder of why cash games pay the bills.",
       "categories": [
         "Tournaments",
         "Players",
@@ -1364,12 +1391,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": "images/2026-03-13_2.jpg",
       "author": "Shomari Williams",
       "date": "March 14, 2026",
-      "body": "Originally posted March 13\u201314, 2026.\n\nWalked into Shuffle 214 on Friday night with $100,000 on the line \u2014 Flight 1H at 6 PM on Friday, March 13, followed by Saturday's Flight 1I at 11 AM and Flight 1J at 6 PM. Call a $150 buy-in a donation if you want; going in, I called it an investment.\n\nHere's the final ledger:\n\u2022 Event: Shuffle 214 $100K GTD Series\n\u2022 Bullets fired: 5 entries at $150 each\n\u2022 Total invested: $750\n\u2022 Return: 1 min-cash for $250\n\u2022 Net result: -$500\n\nThat's poker. No shame in it.\n\nBut here's how I look at it: I'm not a tournament-to-tournament grinder. For players who go hard every single week chasing big fields, tournament variance can be absolutely brutal on your bankroll and your mindset. I've seen it. I respect the dedication, but that's not my game plan.\n\nMy next move is back to cash games. A solid week of grinding $1/$2, $1/$3, and $2/$5 and that $500 is very easily recovered, with profit on top. That's how you keep poker manageable and repeatable.\n\nAnd honestly? When I wrapped the tournament at 6 PM, the night was still young.\n\n\u2014 Sham",
+      "body": "Originally posted March 13–14, 2026.\n\nWalked into Shuffle 214 on Friday night with $100,000 on the line — Flight 1H at 6 PM on Friday, March 13, followed by Saturday's Flight 1I at 11 AM and Flight 1J at 6 PM. Call a $150 buy-in a donation if you want; going in, I called it an investment.\n\nHere's the final ledger:\n• Event: Shuffle 214 $100K GTD Series\n• Bullets fired: 5 entries at $150 each\n• Total invested: $750\n• Return: 1 min-cash for $250\n• Net result: -$500\n\nThat's poker. No shame in it.\n\nBut here's how I look at it: I'm not a tournament-to-tournament grinder. For players who go hard every single week chasing big fields, tournament variance can be absolutely brutal on your bankroll and your mindset. I've seen it. I respect the dedication, but that's not my game plan.\n\nMy next move is back to cash games. My plan is to return to $1/$2, $1/$3, and $2/$5 cash games. That does not guarantee recovering the $500: cash games have variance too. That's how you keep poker manageable and repeatable.\n\nAnd honestly? When I wrapped the tournament at 6 PM, the night was still young.\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid0Wdd8pgLTSCWmLDSiajrbUVcZLaAtgwvHQy7e1qnnuGY2yrtwpUjFVDrkzzaRhg95l",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid0Wdd8pgLTSCWmLDSiajrbUVcZLaAtgwvHQy7e1qnnuGY2yrtwpUjFVDrkzzaRhg95l/",
       "original_fb_date": "2026-03-14",
-      "original_post_text": "Shuffle $100k Series recap \u2014 5 bullets, $150 each. \n$750 invested. One min cash that returned $250. \n\nNet: -$500.\n\nThat\u2019s poker. No shame in it.\n\nBut here\u2019s how I look at it: I\u2019m not a tournament-to-tournament grinder. For players who go hard every single week chasing big fields, tournament variance can be absolutely brutal on your bankroll and your mindset. I\u2019ve seen it. I respect the dedication, but that\u2019s not my game plan.\n\nMy next move is back to cash games. A solid week of grinding $1/$2, $1/$3, $2/$5 and that $500 is very easily recovered, with profit on top. That\u2019s how you keep poker manageable and repeatable.\n\nAnd honestly? It\u2019s only 6 PM. The night is young. I might make that $500 back tonight.\n\n#ShamGodPoker #DFWPoker #PokerLifestyle",
+      "original_post_text": "Shuffle $100k Series recap — 5 bullets, $150 each. \n$750 invested. One min cash that returned $250. \n\nNet: -$500.\n\nThat’s poker. No shame in it.\n\nBut here’s how I look at it: I’m not a tournament-to-tournament grinder. For players who go hard every single week chasing big fields, tournament variance can be absolutely brutal on your bankroll and your mindset. I’ve seen it. I respect the dedication, but that’s not my game plan.\n\nMy next move is back to cash games. A solid week of grinding $1/$2, $1/$3, $2/$5 and that $500 is very easily recovered, with profit on top. That’s how you keep poker manageable and repeatable.\n\nAnd honestly? It’s only 6 PM. The night is young. I might make that $500 back tonight.\n\n#ShamGodPoker #DFWPoker #PokerLifestyle",
       "original_post_sha256": "429f9faea2d9395e57a38b2e2cd1e957f1b9b20e27f0c03023c6cddbe5f13611",
       "seo": {
         "metaTitle": "Shuffle 214 $100K Series Recap & Tournament Variance | The Sham Report",
@@ -1381,7 +1408,8 @@ window.CONCEPT3_DATA = {
       "caption": "Five bullets at $150 each: Sham's Flight 1H entry receipt (Table 10, Seat 8) and starting stack at Shuffle 214 on March 13, 2026.",
       "disclosures": "Firsthand attendance verified (played): Shomari Williams played the Shuffle 214 $100K GTD Series (Flight 1H entry receipt #24, Table 10, Seat 8, March 13, 2026).",
       "secondaryCaption": "Sham's starting chip stack on the Shuffle 214 tournament felt in DFW (March 13, 2026).",
-      "secondaryCredit": "Shomari Williams / The Sham Report"
+      "secondaryCredit": "Shomari Williams / The Sham Report",
+      "format": "Dispatch"
     },
     {
       "seq": 5,
@@ -1389,20 +1417,20 @@ window.CONCEPT3_DATA = {
       "title": "Operational Gaps vs. Criminal Intent: The Community Adds Real AML & KYC Context to the Lodge Story",
       "deck": "Readers Jon Waters and Abram Evan Fontana pointed to a crucial distinction in the Lodge investigation: how Texas's unregulated gray area leaves rooms exposed on Anti-Money Laundering and Know Your Customer compliance.",
       "categories": [
+        "Opinion",
         "Legal",
-        "Investigation",
         "Texas Poker"
       ],
       "heroImage": "images/2026-03-14_1.jpg",
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "March 14, 2026",
-      "body": "Originally posted March 14, 2026.\n\nI want to take a moment to thank everyone who has been engaging in the comments around The Lodge situation. The poker community knows how to band together, and you're not just reacting emotionally \u2014 you're bringing real knowledge and perspective to a complicated story.\n\nTwo comments in particular stood out to me, and I want to highlight them because they add important context that may reframe how we should be looking at this.\n\nJon Waters made a really interesting point: Resorts World in Las Vegas faced a similar money-laundering investigation and they were never shut down. His take is that this doesn't necessarily mean Doug Polk or anyone on his team was directly involved in laundering money. It's more likely that a few dishonest players found small loopholes in the operation that didn't have strong enough barriers in place to stop them. That's a very important distinction between criminal intent and operational vulnerability.\n\nAbram Evan Fontana then took it a step further by bringing up AML \u2014 Anti-Money Laundering laws \u2014 and Know Your Customer (KYC) compliance protocols. Here's what that means for those who may be unfamiliar: licensed casinos in regulated states are required to have entire compliance departments dedicated to monitoring suspicious financial activity. They are heavily regulated and legally forced to build those protections. The Lodge, operating in Texas's legal gray area, never had that same regulatory structure forcing them to build that infrastructure to the same standard.\n\nSo what both of these gentlemen are essentially saying is that it's very possible The Lodge became vulnerable not because of deliberate criminal activity by ownership, but because operating in an unregulated environment left gaps that someone took advantage of. And in the eyes of the IRS and TABC's Financial Crimes Unit, a gap is a gap regardless of intent.\n\nThis doesn't excuse anything if laws were broken. But it does add important nuance to a story that has a lot of people speculating.\n\nKeep the dialogue coming. This is what the poker community is about. And yes, I read all the comments.\n\n\u2014 Sham",
+      "body": "Originally posted March 14, 2026.\n\nI want to take a moment to thank everyone who has been engaging in the comments around The Lodge situation. The poker community knows how to band together, and you're not just reacting emotionally — you're bringing real knowledge and perspective to a complicated story.\n\nTwo comments in particular stood out to me, and I want to highlight them because they add important context that may reframe how we should be looking at this.\n\nJon Waters made a really interesting point: Resorts World in Las Vegas faced a similar money-laundering investigation and they were never shut down. His take is that this doesn't necessarily mean Doug Polk or anyone on his team was directly involved in laundering money. It's more likely that a few dishonest players found small loopholes in the operation that didn't have strong enough barriers in place to stop them. That's a very important distinction between criminal intent and operational vulnerability.\n\nAbram Evan Fontana then took it a step further by bringing up AML — Anti-Money Laundering laws — and Know Your Customer (KYC) compliance protocols. Here's what that means for those who may be unfamiliar: licensed casinos in regulated states are required to have entire compliance departments dedicated to monitoring suspicious financial activity. They are heavily regulated and legally forced to build those protections. The Lodge, operating in Texas's legal gray area, never had that same regulatory structure forcing them to build that infrastructure to the same standard.\n\nSo what both of these gentlemen are essentially saying is that it's very possible The Lodge became vulnerable not because of deliberate criminal activity by ownership, but because operating in an unregulated environment left gaps that someone took advantage of. And in the eyes of the IRS and TABC's Financial Crimes Unit, a gap is a gap regardless of intent.\n\nThis doesn't excuse anything if laws were broken. But it does add important nuance to a story that has a lot of people speculating.\n\nKeep the dialogue coming. This is what the poker community is about. And yes, I read all the comments.\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid027kB3N2dhftLVQiTZBKT7KkFujx29FJbci7ghmt3EVLQ1qhAumZbxWCePkpp2JMnal",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid027kB3N2dhftLVQiTZBKT7KkFujx29FJbci7ghmt3EVLQ1qhAumZbxWCePkpp2JMnal/",
       "original_fb_date": "2026-03-14",
-      "original_post_text": "The Community Is Speaking, and Y\u2019all Are Adding Real Context To This Story\n\nI just want to take a moment to thank everyone who has been engaging in the comments around The Lodge situation. The poker community as a whole really knows how to band together, and you\u2019re not just reacting emotionally, you\u2019re bringing real knowledge and perspective to a complicated story.\n\nTwo comments in particular stood out to me and I want to highlight them because they add important context that may honestly reframe how we should be looking at this.\n\nJon Waters made a really interesting point, Resorts World in Las Vegas faced a similar money laundering investigation and they were never shut down. His take is that this doesn\u2019t necessarily mean Doug Polk or anyone on his team was directly involved in laundering money. It\u2019s more likely that a few dishonest players found small loopholes in the operation that didn\u2019t have strong enough barriers in place to stop them. That\u2019s a very important distinction between criminal intent and operational vulnerability.\n\nAbram Evan Fontana then took it a step further by bringing up AML, Anti Money Laundering laws \u2014 and Know Your Customer compliance protocols. Here\u2019s what that means for those who may be unfamiliar. Licensed casinos in regulated states are required to have entire compliance departments dedicated to monitoring suspicious financial activity. They are heavily regulated and legally forced to build those protections. The Lodge, operating in Texas\u2019 legal gray area, never had that same regulatory pressure forcing them to build that infrastructure to the same standard.\n\nSo what both of these gentlemen are essentially saying is that it\u2019s very possible The Lodge became vulnerable not because of deliberate criminal activity by ownership, but because operating in an unregulated environment left gaps that someone took advantage of. And in the eyes of the IRS and TABC\u2019s Financial Crimes Unit, a gap is a gap regardless of intent.\n\nThis doesn\u2019t excuse anything if laws were broken. But it does add important nuance to a story that has a lot of people speculating.\n\nKeep the dialogue coming. This is exactly what the poker community is about. And yes, I read all the comments. \n\n#TexasPoker #TheLodge #ShamGodPoker #TexansForTexasHoldEm",
+      "original_post_text": "The Community Is Speaking, and Y’all Are Adding Real Context To This Story\n\nI just want to take a moment to thank everyone who has been engaging in the comments around The Lodge situation. The poker community as a whole really knows how to band together, and you’re not just reacting emotionally, you’re bringing real knowledge and perspective to a complicated story.\n\nTwo comments in particular stood out to me and I want to highlight them because they add important context that may honestly reframe how we should be looking at this.\n\nJon Waters made a really interesting point, Resorts World in Las Vegas faced a similar money laundering investigation and they were never shut down. His take is that this doesn’t necessarily mean Doug Polk or anyone on his team was directly involved in laundering money. It’s more likely that a few dishonest players found small loopholes in the operation that didn’t have strong enough barriers in place to stop them. That’s a very important distinction between criminal intent and operational vulnerability.\n\nAbram Evan Fontana then took it a step further by bringing up AML, Anti Money Laundering laws — and Know Your Customer compliance protocols. Here’s what that means for those who may be unfamiliar. Licensed casinos in regulated states are required to have entire compliance departments dedicated to monitoring suspicious financial activity. They are heavily regulated and legally forced to build those protections. The Lodge, operating in Texas’ legal gray area, never had that same regulatory pressure forcing them to build that infrastructure to the same standard.\n\nSo what both of these gentlemen are essentially saying is that it’s very possible The Lodge became vulnerable not because of deliberate criminal activity by ownership, but because operating in an unregulated environment left gaps that someone took advantage of. And in the eyes of the IRS and TABC’s Financial Crimes Unit, a gap is a gap regardless of intent.\n\nThis doesn’t excuse anything if laws were broken. But it does add important nuance to a story that has a lot of people speculating.\n\nKeep the dialogue coming. This is exactly what the poker community is about. And yes, I read all the comments. \n\n#TexasPoker #TheLodge #ShamGodPoker #TexansForTexasHoldEm",
       "original_post_sha256": "04a3843f1b2e128f526ccb7b0444371e0e2eb63cc226d976162d0640f17d1aad",
       "seo": {
         "metaTitle": "AML & KYC Compliance in Texas Poker Rooms: Community Context on The Lodge | The Sham Report",
@@ -1412,28 +1440,29 @@ window.CONCEPT3_DATA = {
       "context": "Editorial Context / Update Note: This preserves reporting and commentary from March 2026. On April 28, 2026, a Williamson County grand jury declined to authorize proposed charges (a no-bill), and The Lodge subsequently reopened in May 2026. Closure references describe March 2026 conditions, not current status.",
       "credit": "Shomari Williams / The Sham Report",
       "caption": "Reader comments from Jon Waters and Abram Evan Fontana on Sham's March 2026 Facebook thread discussing AML and KYC compliance.",
-      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed."
+      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed.",
+      "format": "Opinion"
     },
     {
       "seq": 4,
       "slug": "lodge-raid-commentary-doug-polk-texas-poker-gray-area-march-13-2026",
       "title": "My Two Cents on The Lodge Situation: Why the Gray Area Is the Real Weapon Against Texas Poker",
-      "deck": "Doug Polk became the most visible, politically organized voice pushing for legal clarity in Texas poker \u2014 and that context matters when looking at what's happening in Round Rock.",
+      "deck": "Doug Polk became the most visible, politically organized voice pushing for legal clarity in Texas poker — and that context matters when looking at what's happening in Round Rock.",
       "categories": [
+        "Opinion",
         "Legal",
-        "Investigation",
         "Texas Poker"
       ],
       "heroImage": "images/2026-03-13_1.jpg",
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "March 13, 2026",
-      "body": "Originally posted March 13, 2026.\n\nLet me be clear upfront: I don't know Doug Polk personally. Never met the man. So I'm reserving full judgment on the current investigation until the facts come out. No arrests. No charges. Just an ongoing investigation at this point.\n\nBut here's what I DO know.\n\nWhen Doug Polk came to Texas, he didn't just come to run a poker room. He came with ambition and he put his money where his mouth was. He and his partners, Andrew Neeme and Brad Owen, acquired majority ownership of The Lodge Card Club in Round Rock in 2022, building it into the largest poker room in Texas. Then in 2024 they purchased Rounders Card Club in San Antonio, rebranding it as The Lodge Card Club San Antonio and expanding their footprint even further.\n\nBut beyond the business moves, Doug became something Texas poker didn't really have before: a legitimate, organized political voice.\n\nHe helped launch Texans for Texas Hold'em, a lobbying group created to protect the social poker club model and push for legal clarity in Texas gambling law. He worked directly with state legislators on bills like HB 2345 to formally legalize membership poker clubs. He appeared before city councils, including in Farmers Branch right here in DFW, fighting for zoning rights so new rooms could open. He used his massive YouTube and social media platform to educate players, mobilize the community, and keep pressure on lawmakers. That's not nothing. That's real advocacy work.\n\nNow here's my theory \u2014 and I want to stress this is just a theory.\n\nTexas poker has been under attack long before Doug Polk ever showed up. I've been playing in this state since 2014, and the legal gray area has always been a weapon used against this community. The uncertainty isn't an accident; there are powerful interests who benefit from keeping Texas poker in limbo because it means they can shut you down at any moment.\n\nDoug Polk became the most visible, most vocal, most politically organized threat to that gray area. And now his room is the one being investigated by a financial crimes unit with the IRS involved.\n\nDo I think Doug, Brad Owen, and Andrew Neeme are suddenly the Texas Poker Mafia? Naw. I don't buy that at all. Is it possible there are financial issues within the operation that need to be addressed? Sure \u2014 and if laws were broken, then handle it accordingly. We need poker rooms that set the right example.\n\nBut let's not lose sight of the bigger picture. Texas poker is under attack. It was under attack before Doug got here, and it'll be under attack after this situation resolves. The people who want this industry gone are still out there and they are still organized.\n\nI hope for the sake of the employees, the players, and the future of Texas poker that The Lodge finds its way back to the felt in Austin. And to Doug, Brad, Andrew, and the entire Lodge team, I wish you all the best of luck, because honestly this fight is far from over.\n\nIf you own a poker room in Texas right now, just know: you could be next. This isn't paranoia \u2014 it's the reality of operating in a state where the law still hasn't given this industry the protection it deserves. Stay sharp. Stay clean. Be safe out there.\n\nThis is Sham, aka ShamGod Poker, signing off. I'm proud to be part of this Texas poker community, and I'm looking forward to staying in this fight with all of you.\n\n\u2014 Sham",
+      "body": "Originally posted March 13, 2026.\n\nLet me be clear upfront: I don't know Doug Polk personally. Never met the man. So I'm reserving full judgment on the current investigation until the facts come out. No arrests. No charges. Just an ongoing investigation at this point.\n\nBut here's what I DO know.\n\nWhen Doug Polk came to Texas, he didn't just come to run a poker room. He came with ambition and he put his money where his mouth was. He and his partners, Andrew Neeme and Brad Owen, acquired majority ownership of The Lodge Card Club in Round Rock in 2022, building it into the largest poker room in Texas. Then in 2024 they purchased Rounders Card Club in San Antonio, rebranding it as The Lodge Card Club San Antonio and expanding their footprint even further.\n\nBut beyond the business moves, Doug became something Texas poker didn't really have before: a legitimate, organized political voice.\n\nHe helped launch Texans for Texas Hold'em, a lobbying group created to protect the social poker club model and push for legal clarity in Texas gambling law. He worked directly with state legislators on bills like HB 2345 to formally legalize membership poker clubs. He appeared before city councils, including in Farmers Branch right here in DFW, fighting for zoning rights so new rooms could open. He used his massive YouTube and social media platform to educate players, mobilize the community, and keep pressure on lawmakers. That's not nothing. That's real advocacy work.\n\nNow here's my theory — and I want to stress this is just a theory.\n\nTexas poker has been under attack long before Doug Polk ever showed up. I've been playing in this state since 2014, and the legal gray area has always been a weapon used against this community. The uncertainty isn't an accident; there are powerful interests who benefit from keeping Texas poker in limbo because it means they can shut you down at any moment.\n\nDoug Polk became the most visible, most vocal, most politically organized threat to that gray area. And now his room is the one being investigated by a financial crimes unit with the IRS involved.\n\nDo I think Doug, Brad Owen, and Andrew Neeme are suddenly the Texas Poker Mafia? Naw. I don't buy that at all. Is it possible there are financial issues within the operation that need to be addressed? Sure — and if laws were broken, then handle it accordingly. We need poker rooms that set the right example.\n\nBut let's not lose sight of the bigger picture. Texas poker is under attack. It was under attack before Doug got here, and it'll be under attack after this situation resolves. The people who want this industry gone are still out there and they are still organized.\n\nI hope for the sake of the employees, the players, and the future of Texas poker that The Lodge finds its way back to the felt in Austin. And to Doug, Brad, Andrew, and the entire Lodge team, I wish you all the best of luck, because honestly this fight is far from over.\n\nIf you own a poker room in Texas right now, just know: you could be next. This isn't paranoia — it's the reality of operating in a state where the law still hasn't given this industry the protection it deserves. Stay sharp. Stay clean. Be safe out there.\n\nThis is Sham, aka ShamGod Poker, signing off. I'm proud to be part of this Texas poker community, and I'm looking forward to staying in this fight with all of you.\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid02T14njwwuwrJ9kYsorZeH6F6qtxzC18MPXHhRY9WwCPkmbfUidjYYHMCJM2YiZH3cl",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02T14njwwuwrJ9kYsorZeH6F6qtxzC18MPXHhRY9WwCPkmbfUidjYYHMCJM2YiZH3cl/",
       "original_fb_date": "2026-03-13",
-      "original_post_text": "My Two Cents on The Lodge Situation \u2014 Just a Theory, But Hear Me Out\n\nLet me be clear upfront, I don't know Doug Polk personally. Never met the man. So I'm reserving full judgment on the current investigation until the facts come out. No arrests. No charges. Just an ongoing investigation at this point.\nBut here's what I DO know.\n\nWhen Doug Polk came to Texas, he didn't just come to run a poker room. He came with ambition and he put his money where his mouth was. He and his partners, Andrew Neeme and Brad Owen, acquired majority ownership of The Lodge Card Club in Round Rock in 2022, building it into the largest poker room in Texas. Then in 2024 they purchased Rounders Card Club in San Antonio, rebranding it as The Lodge Card Club San Antonio and expanding their footprint even further.\n\nBut beyond the business moves, Doug became something Texas poker didn't really have before, a legitimate, organized political voice.\n\nHe helped launch Texans for Texas Hold'em, a lobbying group created to protect the social poker club model and push for legal clarity in Texas gambling law. He worked directly with state legislators on bills like HB 2345 to formally legalize membership poker clubs. He appeared before city councils, including in Farmers Branch right here in DFW, fighting for zoning rights so new rooms could open. He used his massive YouTube and social media platform to educate players, mobilize the community, and keep pressure on lawmakers. That's not nothing. That's real advocacy work.\n\nNow here's my theory, and I want to stress this is just a theory.\nTexas poker has been under attack long before Doug Polk ever showed up. I've been playing in this state since 2014 and the legal gray area has always been a weapon used against this community. The uncertainty isn't an accident, there are powerful interests who benefit from keeping Texas poker in limbo because it means they can shut you down at any moment.\n\nDoug Polk became the most visible, most vocal, most politically organized threat to that gray area. And now his room is the one being investigated by a financial crimes unit with the IRS involved.\nDo I think Doug, Brad Owen and Andrew Neeme are suddenly the Texas Poker Mafia? Naw. I don't buy that at all. Is it possible there are financial issues within the operation that need to be addressed? Sure, and if laws were broken, then handle it accordingly. We need poker rooms that set the right example.\n\nBut let's not lose sight of the bigger picture. Texas poker is under attack. It was under attack before Doug got here and it'll be under attack after this situation resolves. The people who want this industry gone are still out there and they are still organized.\n\nI hope for the sake of the employees, the players, and the future of Texas poker that The Lodge finds its way back to the felt in Austin. And to Doug, Brad, Andrew and the entire Lodge team, I wish you all the best of luck, because honestly this fight is far from over.\nIf you own a poker room in Texas right now, just know, you could be next. This isn't paranoia, it's the reality of operating in a state where the law still hasn't given this industry the protection it deserves. Stay sharp. Stay clean. Be safe out there.\n\nThis is Sham, aka ShamGod Poker,  signing off. I'm proud to be part of this Texas poker community and I'm looking forward to staying in this fight with all of you.\n\n#TexasPoker #TheLodge #ShamGodPoker #TexansForTexasHoldEm",
+      "original_post_text": "My Two Cents on The Lodge Situation — Just a Theory, But Hear Me Out\n\nLet me be clear upfront, I don't know Doug Polk personally. Never met the man. So I'm reserving full judgment on the current investigation until the facts come out. No arrests. No charges. Just an ongoing investigation at this point.\nBut here's what I DO know.\n\nWhen Doug Polk came to Texas, he didn't just come to run a poker room. He came with ambition and he put his money where his mouth was. He and his partners, Andrew Neeme and Brad Owen, acquired majority ownership of The Lodge Card Club in Round Rock in 2022, building it into the largest poker room in Texas. Then in 2024 they purchased Rounders Card Club in San Antonio, rebranding it as The Lodge Card Club San Antonio and expanding their footprint even further.\n\nBut beyond the business moves, Doug became something Texas poker didn't really have before, a legitimate, organized political voice.\n\nHe helped launch Texans for Texas Hold'em, a lobbying group created to protect the social poker club model and push for legal clarity in Texas gambling law. He worked directly with state legislators on bills like HB 2345 to formally legalize membership poker clubs. He appeared before city councils, including in Farmers Branch right here in DFW, fighting for zoning rights so new rooms could open. He used his massive YouTube and social media platform to educate players, mobilize the community, and keep pressure on lawmakers. That's not nothing. That's real advocacy work.\n\nNow here's my theory, and I want to stress this is just a theory.\nTexas poker has been under attack long before Doug Polk ever showed up. I've been playing in this state since 2014 and the legal gray area has always been a weapon used against this community. The uncertainty isn't an accident, there are powerful interests who benefit from keeping Texas poker in limbo because it means they can shut you down at any moment.\n\nDoug Polk became the most visible, most vocal, most politically organized threat to that gray area. And now his room is the one being investigated by a financial crimes unit with the IRS involved.\nDo I think Doug, Brad Owen and Andrew Neeme are suddenly the Texas Poker Mafia? Naw. I don't buy that at all. Is it possible there are financial issues within the operation that need to be addressed? Sure, and if laws were broken, then handle it accordingly. We need poker rooms that set the right example.\n\nBut let's not lose sight of the bigger picture. Texas poker is under attack. It was under attack before Doug got here and it'll be under attack after this situation resolves. The people who want this industry gone are still out there and they are still organized.\n\nI hope for the sake of the employees, the players, and the future of Texas poker that The Lodge finds its way back to the felt in Austin. And to Doug, Brad, Andrew and the entire Lodge team, I wish you all the best of luck, because honestly this fight is far from over.\nIf you own a poker room in Texas right now, just know, you could be next. This isn't paranoia, it's the reality of operating in a state where the law still hasn't given this industry the protection it deserves. Stay sharp. Stay clean. Be safe out there.\n\nThis is Sham, aka ShamGod Poker,  signing off. I'm proud to be part of this Texas poker community and I'm looking forward to staying in this fight with all of you.\n\n#TexasPoker #TheLodge #ShamGodPoker #TexansForTexasHoldEm",
       "original_post_sha256": "8540d79b7cb661358a91a5b3ae002e1a2d0f43171e733694a83461d4feef4492",
       "seo": {
         "metaTitle": "My Two Cents on The Lodge Situation & Texas Poker's Gray Area | The Sham Report",
@@ -1443,13 +1472,14 @@ window.CONCEPT3_DATA = {
       "context": "Editorial Context / Update Note: This preserves reporting and commentary from March 2026. On April 28, 2026, a Williamson County grand jury declined to authorize proposed charges (a no-bill), and The Lodge subsequently reopened in May 2026. Closure references describe March 2026 conditions, not current status.",
       "credit": "Shomari Williams / The Sham Report",
       "caption": "At the table in DFW: 'Member of Too Many Social Clubs.'",
-      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed."
+      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed.",
+      "format": "Opinion"
     },
     {
       "seq": 3,
       "slug": "lodge-raid-update-tabc-financial-crimes-irs-march-12-2026",
       "title": "Lodge Card Club Update: TABC Financial Crimes and the IRS Were Behind the Raid",
-      "deck": "TABC confirmed its Financial Crimes Unit, the Williamson County Sheriff's Office, and the IRS executed the search warrant at The Lodge over suspected money laundering and illegal gambling \u2014 not a liquor-license check.",
+      "deck": "TABC confirmed its Financial Crimes Unit, the Williamson County Sheriff's Office, and the IRS executed the search warrant at The Lodge over suspected money laundering and illegal gambling — not a liquor-license check.",
       "categories": [
         "Investigation",
         "Legal",
@@ -1459,12 +1489,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "March 12, 2026",
-      "body": "Originally posted March 12, 2026.\n\nThanks to the DFW poker community for keeping me plugged in as this develops.\n\nWe now have answers on why TABC raided The Lodge Card Club in Round Rock on Tuesday, March 10 \u2014 and it's bigger than anyone initially assumed.\n\nAccording to a statement from TABC Director of Communications Chris Porter to PokerNews (https://www.pokernews.com/news/2026/03/lodge-card-club-money-laundering-charges-50804.htm), the agency's Financial Crimes Unit, along with its Special Investigations Unit and Operations Bureau, executed a search and seizure warrant as part of an ongoing investigation into suspected money laundering and illegal gambling.\n\nEarly speculation centered around liquor licensing issues or underage drinking, which makes sense given TABC's name. Those assumptions appear to have been incorrect.\n\nApproximately 20 TABC agents were involved in the operation, along with officers from the Williamson County Sheriff's Office and the IRS. The IRS being involved is significant \u2014 this is a federal-level matter.\n\nNo arrests have been made and no charges have been filed against the business at this time. The investigation remains ongoing, and The Lodge remains closed with no reopening timetable announced.\n\nWe will continue to follow this story closely.\n\n\u2014 Sham",
+      "body": "Originally posted March 12, 2026.\n\nThanks to the DFW poker community for keeping me plugged in as this develops.\n\nWe now have answers on why TABC raided The Lodge Card Club in Round Rock on Tuesday, March 10 — and it's bigger than anyone initially assumed.\n\nAccording to a statement from TABC Director of Communications Chris Porter to PokerNews (https://www.pokernews.com/news/2026/03/lodge-card-club-money-laundering-charges-50804.htm), the agency's Financial Crimes Unit, along with its Special Investigations Unit and Operations Bureau, executed a search and seizure warrant as part of an ongoing investigation into suspected money laundering and illegal gambling.\n\nEarly speculation centered around liquor licensing issues or underage drinking, which makes sense given TABC's name. Those assumptions appear to have been incorrect.\n\nApproximately 20 TABC agents were involved in the operation, along with officers from the Williamson County Sheriff's Office and the IRS. The IRS being involved is significant — this is a federal-level matter.\n\nNo arrests have been made and no charges have been filed against the business at this time. The investigation remains ongoing, and The Lodge remains closed with no reopening timetable announced.\n\nWe will continue to follow this story closely.\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid0rpFH75LgdTVo9fZ4DJvYqbMzEe9CTpdNXmw1gRuSabccRwGKCtxU2pbJuwuaRZH6l",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid0rpFH75LgdTVo9fZ4DJvYqbMzEe9CTpdNXmw1gRuSabccRwGKCtxU2pbJuwuaRZH6l/",
       "original_fb_date": "2026-03-12",
-      "original_post_text": "Thanks to the DFW poker community for keeping me plugged in as this develops. \n\nLodge Card Club Update \u2014 This Just Got Much More Serious\n\nWe now have answers on why TABC raided The Lodge Card Club in Round Rock this past Tuesday \u2014 and it\u2019s bigger than anyone initially assumed.\n\nAccording to a statement from TABC Director of Communications Chris Porter, the agency\u2019s Financial Crimes Unit, along with its Special Investigations Unit and Operations Bureau, executed a search and seizure warrant as part of an ongoing investigation into suspected money laundering and illegal gambling. \n\nEarly speculation centered around liquor licensing issues or underage drinking, which makes sense given TABC\u2019s name. Those assumptions appear to have been incorrect. \n\nApproximately 20 TABC agents were involved in the operation, along with officers from the Williamson County Sheriff\u2019s Office and the IRS.  The IRS being involved is significant, this is now a federal level matter.\n\nNo arrests have been made and no charges have been filed against the business at this time.  The investigation remains ongoing.\n\nThe Lodge remains closed with no reopening timetable announced.\n\nWe will continue to follow this story closely.\n\n#TheLodge #PokerNews #GameIntegrity #TexasPoker\n\nhttps://www.pokernews.com/news/2026/03/lodge-card-club-money-laundering-charges-50804.htm",
+      "original_post_text": "Thanks to the DFW poker community for keeping me plugged in as this develops. \n\nLodge Card Club Update — This Just Got Much More Serious\n\nWe now have answers on why TABC raided The Lodge Card Club in Round Rock this past Tuesday — and it’s bigger than anyone initially assumed.\n\nAccording to a statement from TABC Director of Communications Chris Porter, the agency’s Financial Crimes Unit, along with its Special Investigations Unit and Operations Bureau, executed a search and seizure warrant as part of an ongoing investigation into suspected money laundering and illegal gambling. \n\nEarly speculation centered around liquor licensing issues or underage drinking, which makes sense given TABC’s name. Those assumptions appear to have been incorrect. \n\nApproximately 20 TABC agents were involved in the operation, along with officers from the Williamson County Sheriff’s Office and the IRS.  The IRS being involved is significant, this is now a federal level matter.\n\nNo arrests have been made and no charges have been filed against the business at this time.  The investigation remains ongoing.\n\nThe Lodge remains closed with no reopening timetable announced.\n\nWe will continue to follow this story closely.\n\n#TheLodge #PokerNews #GameIntegrity #TexasPoker\n\nhttps://www.pokernews.com/news/2026/03/lodge-card-club-money-laundering-charges-50804.htm",
       "original_post_sha256": "231302820215fbcebedc0518d7be98bddb6035b74132c92a2114aa4681e90822",
       "seo": {
         "metaTitle": "TABC Financial Crimes and IRS Behind Lodge Raid | The Sham Report",
@@ -1474,13 +1504,14 @@ window.CONCEPT3_DATA = {
       "context": "Editorial Context / Update Note: This preserves reporting and commentary from March 2026. On April 28, 2026, a Williamson County grand jury declined to authorize proposed charges (a no-bill), and The Lodge subsequently reopened in May 2026. Closure references describe March 2026 conditions, not current status.",
       "credit": "The Lodge Card Club exterior sign",
       "caption": "The Lodge Card Club in Round Rock, Texas.",
-      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed."
+      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed.",
+      "format": "Dispatch"
     },
     {
       "seq": 2,
       "slug": "lodge-raid-coverage-tom-dwan-enters-the-chat",
       "title": "Lodge Raid Coverage: Tom Dwan Enters the Chat",
-      "deck": "A day after the raid, Tom Dwan jumped into a tense X exchange with Doug Polk \u2014 and the story started splitting into two different versions.",
+      "deck": "A day after the raid, Tom Dwan jumped into a tense X exchange with Doug Polk — and the story started splitting into two different versions.",
       "categories": [
         "Investigation",
         "Players",
@@ -1490,12 +1521,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "March 12, 2026",
-      "body": "Originally posted March 12, 2026.\n\nThe Lodge Card Club in Round Rock remains closed following Tuesday's search warrant executed by state police and TABC. The Lodge's official statement says their attorneys are still working to understand the reasons behind the search, meaning even they don't fully know why yet.\n\nNow poker legend Tom Dwan has inserted himself into the conversation, with his own separate allegations.\n\nDwan is claiming he warned Doug Polk years ago about a game integrity vulnerability at The Lodge and that Doug chose not to address it. Dwan has been careful to say he does not believe the TABC raid is connected to that issue, but the timing has the poker world asking questions.\n\nWorth noting, Dwan has also acknowledged personal friction with Doug, so we're not dealing with a completely neutral party here.\n\nBottom line: Two separate stories colliding at the worst possible time for The Lodge. The TABC situation is still unresolved. And now there are integrity questions being raised publicly by one of the most respected names in the game.\n\nWe're watching this closely. I'd love to see your comments.\n\n\u2014 Sham",
+      "body": "Originally posted March 12, 2026.\n\nThe Lodge Card Club in Round Rock remains closed following Tuesday's search warrant executed by state police and TABC. The Lodge's official statement says their attorneys are still working to understand the reasons behind the search, meaning even they don't fully know why yet.\n\nNow poker legend Tom Dwan has inserted himself into the conversation, with his own separate allegations.\n\nDwan is claiming he warned Doug Polk years ago about a game integrity vulnerability at The Lodge and that Doug chose not to address it. Dwan has been careful to say he does not believe the TABC raid is connected to that issue, but the timing has the poker world asking questions.\n\nWorth noting, Dwan has also acknowledged personal friction with Doug, so we're not dealing with a completely neutral party here.\n\nBottom line: Two separate stories colliding at the worst possible time for The Lodge. The TABC situation is still unresolved. And now there are integrity questions being raised publicly by one of the most respected names in the game.\n\nWe're watching this closely. I'd love to see your comments.\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid0BZKq1esV41A7ezowFQ5mc2kT7aa82qz8Pu4czHMzpE1DGgZ89cUHqpNGBS4DztbQl",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid0BZKq1esV41A7ezowFQ5mc2kT7aa82qz8Pu4czHMzpE1DGgZ89cUHqpNGBS4DztbQl/",
       "original_fb_date": "2026-03-12",
-      "original_post_text": "Lodge Card Club Update \u2014 Now Tom Dwan Has Entered The Chat\n\nThe Lodge Card Club in Round Rock remains closed following Tuesday\u2019s search warrant executed by state police and TABC. The Lodge\u2019s official statement says their attorneys are still working to understand the reasons behind the search, meaning even they don\u2019t fully know why yet.\n\nNow poker legend Tom Dwan has inserted himself into the conversation, with his own separate allegations.\n\nDwan is claiming he warned Doug Polk years ago about a game integrity vulnerability at The Lodge and that Doug chose not to address it. Dwan has been careful to say he does not believe the TABC raid is connected to that issue, but the timing has the poker world asking questions.\n\nWorth noting, Dwan has also acknowledged personal friction with Doug, so we\u2019re not dealing with a completely neutral party here.\n\nBottom line: Two separate stories colliding at the worst possible time for The Lodge. The TABC situation is still unresolved. And now there are integrity questions being raised publicly by one of the most respected names in the game.\n\nWe\u2019re watching this closely. I\u2019d love to see your comments.\n\nTheLodge #PokerTwitter #GameIntegrity #TomDwan",
+      "original_post_text": "Lodge Card Club Update — Now Tom Dwan Has Entered The Chat\n\nThe Lodge Card Club in Round Rock remains closed following Tuesday’s search warrant executed by state police and TABC. The Lodge’s official statement says their attorneys are still working to understand the reasons behind the search, meaning even they don’t fully know why yet.\n\nNow poker legend Tom Dwan has inserted himself into the conversation, with his own separate allegations.\n\nDwan is claiming he warned Doug Polk years ago about a game integrity vulnerability at The Lodge and that Doug chose not to address it. Dwan has been careful to say he does not believe the TABC raid is connected to that issue, but the timing has the poker world asking questions.\n\nWorth noting, Dwan has also acknowledged personal friction with Doug, so we’re not dealing with a completely neutral party here.\n\nBottom line: Two separate stories colliding at the worst possible time for The Lodge. The TABC situation is still unresolved. And now there are integrity questions being raised publicly by one of the most respected names in the game.\n\nWe’re watching this closely. I’d love to see your comments.\n\nTheLodge #PokerTwitter #GameIntegrity #TomDwan",
       "original_post_sha256": "35c61a18347e005b9424b4fe251c93a2c2374109f04abf8993a68d86ed953042",
       "seo": {
         "metaTitle": "Tom Dwan vs Doug Polk: Lodge Card Club Integrity Claims | The Sham Report",
@@ -1505,15 +1536,16 @@ window.CONCEPT3_DATA = {
       "context": "Editorial Context / Update Note: This preserves reporting and commentary from March 2026. On April 28, 2026, a Williamson County grand jury declined to authorize proposed charges (a no-bill), and The Lodge subsequently reopened in May 2026. Closure references describe March 2026 conditions, not current status.",
       "credit": "Screenshot via X (@TomDwan / @DougPolkVids)",
       "caption": "Tom Dwan (@TomDwan) replies to Doug Polk (@DougPolkVids) on X on March 12, 2026.",
-      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed."
+      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed.",
+      "format": "Dispatch"
     },
     {
       "seq": 1,
       "slug": "the-lodge-raid-first-reaction-march-11-2026",
       "title": "The Lodge Raid: First Reaction (March 11, 2026)",
-      "deck": "My first reaction when news broke that TABC raided The Lodge in Round Rock \u2014 before any official statement or confirmed details.",
+      "deck": "My first reaction when news broke that TABC raided The Lodge in Round Rock — before any official statement or confirmed details.",
       "categories": [
-        "Investigation",
+        "Opinion",
         "Legal",
         "Texas Poker"
       ],
@@ -1521,7 +1553,7 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "March 11, 2026",
-      "body": "Originally posted March 11, 2026.\n\nBy now most of y'all have probably seen the news. TABC and state police rolled up on The Lodge in Round Rock Tuesday morning around 11 a.m. Biggest poker room in Texas, co-owned by Doug Polk, Brad Owen, and Andrew Neeme. Players were told to take their chips home and come back when they reopen. Staff told tournament players they'd be refunded entries. The WPT Wildcard event that was supposed to happen this weekend has been postponed.\n\nNo official statement from the owners yet. No confirmed citation details that I've seen.\n\nNow here's the part that's been on my mind since I heard about this. The Lodge is an 18+ room. That's something a lot of people didn't realize, including me honestly. When you mix 18- and 19-year-olds in the building with alcohol service, TABC showing up starts to make a lot of sense. Whether it was underage drinking, a license issue, how alcohol was being distributed, whether it was free or sold, all of that matters legally and none of it has been confirmed yet.\n\nTexas poker rooms already operate in a gray area. Add alcohol into the equation with players who are legal to gamble but not legal to drink and that's a real compliance problem for any club.\n\nIf anybody has actual confirmed info on what the citation was for, drop it in the comments. This situation has implications for every poker room in Texas and we need to be paying attention.\n\n\u2014 Sham",
+      "body": "Originally posted March 11, 2026.\n\nBy now most of y'all have probably seen the news. TABC and state police rolled up on The Lodge in Round Rock Tuesday morning around 11 a.m. Biggest poker room in Texas, co-owned by Doug Polk, Brad Owen, and Andrew Neeme. Players were told to take their chips home and come back when they reopen. Staff told tournament players they'd be refunded entries. The WPT Wildcard event that was supposed to happen this weekend has been postponed.\n\nNo official statement from the owners yet. No confirmed citation details that I've seen.\n\nNow here's the part that's been on my mind since I heard about this. The Lodge is an 18+ room. That's something a lot of people didn't realize, including me honestly. When you mix 18- and 19-year-olds in the building with alcohol service, TABC showing up starts to make a lot of sense. Whether it was underage drinking, a license issue, how alcohol was being distributed, whether it was free or sold, all of that matters legally and none of it has been confirmed yet.\n\nTexas poker rooms already operate in a gray area. Add alcohol into the equation with players who are legal to gamble but not legal to drink and that's a real compliance problem for any club.\n\nIf anybody has actual confirmed info on what the citation was for, drop it in the comments. This situation has implications for every poker room in Texas and we need to be paying attention.\n\n— Sham",
       "status": "published",
       "fb_post_id": "pfbid02MkUifUMNtEkVD6gy65xD138Xh72mypYFNaKcBkHA15myLt7sjqtPfA8ZgpLFabQZl",
       "fb_source_url": "https://facebook.com/100000259835379/posts/pfbid02MkUifUMNtEkVD6gy65xD138Xh72mypYFNaKcBkHA15myLt7sjqtPfA8ZgpLFabQZl/",
@@ -1536,7 +1568,8 @@ window.CONCEPT3_DATA = {
       "context": "Editorial Context / Update Note: This preserves reporting and commentary from March 2026. On April 28, 2026, a Williamson County grand jury declined to authorize proposed charges (a no-bill), and The Lodge subsequently reopened in May 2026. Closure references describe March 2026 conditions, not current status.",
       "credit": "The Lodge archival CMS image",
       "caption": "The Lodge Card Club in Round Rock, Texas.",
-      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed."
+      "disclosures": "Original social reporting and commentary by Shomari Williams. No firsthand attendance at the March 10 Round Rock raid is claimed.",
+      "format": "Opinion"
     }
   ]
 };
