@@ -9,6 +9,10 @@
  if(!a){notFound();return;}
  document.title=(a.seo&&a.seo.metaTitle)?a.seo.metaTitle:(a.title+' — The Sham Report');
  const metaDesc=(a.seo&&a.seo.metaDescription)||a.deck||'';
+ const setMeta=(attr,key,val)=>{if(!val||typeof document.querySelector!=='function'||!document.head||typeof document.createElement!=='function')return;let m=document.querySelector(`meta[${attr}="${key}"]`);if(!m){m=document.createElement('meta');m.setAttribute(attr,key);document.head.appendChild(m);}m.setAttribute('content',val);};
+ {const B='https://www.theshamreport.com/',url=B+'article-template.html?slug='+encodeURIComponent(a.slug),img=a.heroImage?B+String(a.heroImage).replace(/^\/+/,''):'',t=a.title;
+  setMeta('property','og:type','article');setMeta('property','og:title',t);setMeta('property','og:description',metaDesc);setMeta('property','og:url',url);setMeta('property','og:image',img);setMeta('name','twitter:card','summary_large_image');setMeta('name','twitter:title',t);setMeta('name','twitter:description',metaDesc);setMeta('name','twitter:image',img);
+  if(typeof document.querySelector==='function'){const c=document.querySelector('link[rel="canonical"]');if(c&&typeof c.setAttribute==='function')c.setAttribute('href',url);}}
  if(metaDesc&&typeof document.querySelector==='function'){let m=document.querySelector('meta[name="description"]');if(!m&&document.head&&typeof document.createElement==='function'){m=document.createElement('meta');m.setAttribute('name','description');document.head.appendChild(m);}if(m&&typeof m.setAttribute==='function')m.setAttribute('content',metaDesc);}
  const fbLink=a.fb_source_url?`<p class="c3-meta"><span>Original Facebook Post (${esc(a.original_fb_date||a.date)})</span> · <a class="c3-text-link" href="${esc(a.fb_source_url)}" target="_blank" rel="noopener noreferrer">View original post on Facebook ↗</a></p>`:'';
  const secondaryFig=a.secondaryImage?`<figure><img src="${esc(a.secondaryImage)}" alt="${esc(a.secondaryCaption||a.caption)}"><figcaption>${esc(a.secondaryCaption||a.caption)} Credit: ${esc(a.secondaryCredit||a.credit)}</figcaption></figure>`:'';
