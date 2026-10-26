@@ -188,7 +188,7 @@ module.exports = async (req, res) => {
   const ogImg  = absUrl(origin, art.heroImage);
 
   const head = `
-<title>${esc(title)} — The Sham Report</title>
+<title>${esc(/the sham report/i.test(title) ? title : title + " — The Sham Report")}</title>
 <meta name="description" content="${escAttr(desc)}">
 <link rel="canonical" href="${escAttr(canon)}">
 <meta property="og:type" content="article">

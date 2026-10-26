@@ -1,0 +1,8 @@
+# QA-034: internal files are not deployed
+/docs
+/tests
+/scripts
+/content
+*.md
+.env
+.env.*
