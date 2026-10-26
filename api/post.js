@@ -93,7 +93,7 @@ const NAV = `<a class="c3-skip" href="#main-content">Skip to content</a><header 
 const FOOTER = `<footer class="c3-footer c3-shell">
 <div class="c3-footrow"><a class="c3-logo" href="/index.html" aria-label="The Sham Report home">THE SHAM <span>REPORT</span></a>
 <nav aria-label="Editorial information"><a href="/about.html#editorial-standards">Editorial Standards</a><a href="/about.html#methodology">Methodology</a><a href="/about.html#corrections">Corrections</a><a href="/about.html#contact">Contact</a></nav></div>
-<div class="c3-footnote"><span>© 2026 The Sham Report.</span><span>Concept 3 · Development preview</span></div></footer>`;
+<div class="c3-footnote"><span>© 2026 The Sham Report.</span></div></footer>`;
 
 const STYLES = `
   .post-wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
