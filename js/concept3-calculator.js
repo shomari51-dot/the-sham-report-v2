@@ -20,6 +20,7 @@ async function calculate(e){if(e)e.preventDefault();if(busy)return;result.hidden
  if(parsed.unparsed.length){status.textContent='Validation: could not read every structure line. Check: '+parsed.unparsed.join('; ');return;}
  const input={};for(const k of numeric)input[k]=$(k).value===''?0:Number($(k).value);input.fmt=$('fmt').value;input.levels=parsed.levels;
  if(!(input.levelLen>0)){status.textContent='Validation: level length must be positive.';return;}
+ if($('prize_pool').value!=='' && Math.abs(input.prize_pool-(input.buyin-input.fees))>1){status.textContent='Validation: prize-pool contribution plus fees must equal total buy-in (within $1).';$('prize_pool').focus();return;}
  input.prize_pool=input.buyin-input.fees;$('prize_pool').value=input.prize_pool;
  const r=TSREngine.grade(input);
  if(stamp!==revision){status.textContent='Inputs changed during calculation — calculate again.';return;}

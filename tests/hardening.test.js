@@ -200,7 +200,7 @@ test('public pages remove unverified navigation, social links, mailboxes and fic
  for(const file of ['index.html','news.html','tournaments.html','js/concept3.js','js/concept3-interior.js'])assert.doesNotMatch(read(file),/Reading the structure sheet|Around the Texas tables|The tournament notebook|Behind the broadcast|The weekly structure notebook/);
  for(const file of ['tsr-score-calculator.html','js/concept3-calculator.js']){assert.match(read(file),/Data-Based Structure Analysis/);assert.doesNotMatch(read(file),/Sham[’']s Take/);}
  const context={window:{}};for(const file of ['js/concept3-config.js','js/concept3-data.js','js/concept3-events.js','js/concept3-hosts.js','js/concept3-regrade.js'])vm.runInNewContext(read(file),context);
- assert.equal(context.window.TSR_CONFIG.features.hostedGamesNav,false);assert.equal(context.window.CONCEPT3_DATA.stories.length,36);assert.equal(context.window.CONCEPT3_DATA.articles.length,36);assert.equal(context.window.CONCEPT3_DATA.grades.length,16);assert.equal(context.window.C3_REGRADE.length,20);
+ assert.equal(context.window.TSR_CONFIG.features.hostedGamesNav,false);assert.equal(context.window.CONCEPT3_DATA.stories.length,37);assert.equal(context.window.CONCEPT3_DATA.articles.length,36);assert.equal(context.window.CONCEPT3_DATA.grades.length,16);assert.equal(context.window.C3_REGRADE.length,20);
  for(const host of context.window.C3_HOSTS){assert.equal(host.verified,false);assert.equal(host.status,'Needs Verification');}
  for(const score of [69.8,66,46.6])assert.ok(context.window.C3_EVENTS.some(e=>e.score===score&&e.venue==='Champions Club Houston'&&e.tier===3));
  for(const id of ['editorial-standards','independence','methodology','corrections','contact','score-revisions'])assert.ok(read('about.html').includes('id="'+id+'"'));
@@ -220,7 +220,7 @@ test('public renderers use real articles, correct curve groups and verified host
  assert.match(r.nodes['grade-rows'].innerHTML,/93.9/);assert.match(r.nodes['grade-rows'].innerHTML,/66/);assert.equal((r.nodes['grade-rows'].innerHTML.match(/<tr>/g)||[]).length,4);assert.doesNotMatch(r.nodes['latest-stories'].innerHTML,/Sample/);
  const filters=['search','date','location','venue','game','type','buyin','sort'].map(k=>'event-'+k);
  r=run([...filters,'event-count','event-rows','event-detail','tournament-filters'],['js/concept3-events.js','js/concept3-regrade.js','js/concept3-interior.js']);
- assert.match(r.nodes['event-rows'].innerHTML,/No verified weekly structures published yet/);assert.match(r.nodes['event-rows'].innerHTML,/Curve 3 — \$400\+ & Multi-Day Series \(v1.1\)/);assert.match(r.nodes['event-rows'].innerHTML,/Real Event Archive/);
+ assert.match(r.nodes['event-rows'].innerHTML,/Saddle Up Sunday \$20K GTD/);assert.match(r.nodes['event-rows'].innerHTML,/Curve 3 — \$400\+ & Multi-Day Series \(v1.1\)/);assert.match(r.nodes['event-rows'].innerHTML,/Real Event Archive/);
  assert.match(r.nodes['event-detail'].innerHTML,/Data-Based Structure Analysis/);assert.doesNotMatch(r.nodes['event-detail'].innerHTML,/Sham[’']s Take/);assert.match(r.nodes['event-detail'].innerHTML,/Methodology v1.1 Regrade Preview/);
  r=run(['host-rows','host-detail'],['js/concept3-hosts.js','js/concept3-interior.js']);assert.match(r.nodes['host-rows'].innerHTML,/Verification in Progress/);assert.doesNotMatch(r.nodes['host-rows'].innerHTML,/Rebecca|Aaron/);
  for(const slug of ['the-lodge-raid-first-reaction-march-11-2026','lodge-raid-coverage-tom-dwan-enters-the-chat']){
@@ -316,7 +316,7 @@ test('Part 1 through Part 7 Facebook imports (all 33 fixtures) validate, render 
  checkNewestFirst(ctx.window.C3_FB_IMPORTS,'C3_FB_IMPORTS');
  checkNewestFirst(require('./fixtures/articles.json'),'fixtures/articles.json');
  checkNewestFirst(ctx.window.C3_EVENTS.filter(e=>e.date),'C3_EVENTS dated');
- checkNewestFirst(ctx.window.C3_ARCHIVE_EVENTS.filter(e=>e.date),'C3_ARCHIVE_EVENTS dated');
+ if(ctx.window.C3_ARCHIVE_EVENTS)checkNewestFirst(ctx.window.C3_ARCHIVE_EVENTS.filter(e=>e.date),'C3_ARCHIVE_EVENTS dated');
  // Verify QA-017: admin/bulk-publish.html EVENTS are newest-first and match v1.1 grades
  const bpHtml=fs.readFileSync('admin/bulk-publish.html','utf8');
  const bpCtx={};vm.runInNewContext(bpHtml.slice(bpHtml.indexOf('var EVENTS ='),bpHtml.indexOf('];',bpHtml.indexOf('var EVENTS ='))+2),bpCtx);

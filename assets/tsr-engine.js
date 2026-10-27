@@ -68,6 +68,7 @@ function fmtNum(n){return Number(n).toLocaleString("en-US");}
     for (var i = 0; i < lines.length; i++) {
       var line = lines[i].trim();
       if (!line) continue;
+      if (/(^|[\s/,])[-−]\s*\d/.test(line)) { bad.push(line); continue; }
       if (/break|colou?r\s*up|registration\s*closes/i.test(line)) continue;
 
       // 1,000 -> 1000 so thousands separators don't split into tokens.
@@ -153,6 +154,7 @@ function fmtNum(n){return Number(n).toLocaleString("en-US");}
     for (var i = 0; i < lines.length; i++) {
       var line = lines[i].trim();
       if (!line) continue;
+      if (/(^|[\s/,])[-−]\s*\d/.test(line)) { bad.push(line); continue; }
       if (/break|colou?r\s*up|registration\s*closes/i.test(line)) continue;
       if (!/\d/.test(line)) { bad.push(line); continue; }
       kept.push(line);
@@ -235,7 +237,7 @@ function fmtNum(n){return Number(n).toLocaleString("en-US");}
     else if (levels.length < 18) {
       errs.push("The score samples levels 6, 10, 14 and 18, so it needs at least 18 levels. You entered " + levels.length + ".");
     }
-    if (levels.length && levels.some(function (l) { return !(l.orbit > 0); })) {
+    if (levels.length && levels.some(function (l) { return !(l.sb > 0) || !(l.bb > 0) || !(l.ante >= 0) || !(l.orbit > 0); })) {
       errs.push("Every level needs a small blind and a big blind greater than zero.");
     }
     if (input.len2 > 0 && !(input.len2From >= 2)) {
