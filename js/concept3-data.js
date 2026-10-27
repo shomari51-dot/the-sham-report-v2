@@ -1,6 +1,17 @@
 window.CONCEPT3_DATA = {
   "stories": [
     {
+      "seq": 34,
+      "title": "The Robot Dealer Is Back. Will Poker Players Take a Seat?",
+      "image": "images/pechanga-ribbon-cutting-2026-10-27.jpg",
+      "alt": "A ribbon-cutting gathering around a Jackpot Blitz electronic poker table at Pechanga.",
+      "url": "pechanga-electronic-poker-jackpot-blitz.html",
+      "category": "Poker technology",
+      "description": "Pechanga has opened eight electronic poker tables in California. Some players say they enjoy the experience. Others want to know what happens to the cards, the chips, and the human side of the game.",
+      "date": "October 27, 2026",
+      "author": "Shomari Williams"
+    },
+    {
       "seq": 33,
       "title": "Police Raid 101 Poker Club in Katy",
       "image": "images/2026-10-22-101-poker-katy-raid-scene.jpg",
