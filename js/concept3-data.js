@@ -1,6 +1,17 @@
 window.CONCEPT3_DATA = {
   "stories": [
     {
+      "seq": 38,
+      "title": "The Choctaw Hot List: TSR Grades the WSOP Circuit Durant Schedule",
+      "image": "images/choctaw-hot-list-2026-10-28.jpg",
+      "alt": "TSR Choctaw Hot List: TSR Score letter grades for 15 WSOP Circuit Choctaw Durant events.",
+      "url": "choctaw-hot-list-tsr-grades-wsop-circuit-durant.html",
+      "category": "Tournaments",
+      "description": "The WSOP Circuit is in Durant Oct 28 through Nov 9. We ran all 43 events through the TSR Score. Here are the 15 that graded C+ or better, what the grades mean, and where the structures play faster, so you can pick your spots.",
+      "date": "October 28, 2026",
+      "author": "Shomari Williams"
+    },
+    {
       "seq": 37,
       "title": "The Robot Dealer Is Back. Will Poker Players Take a Seat?",
       "image": "images/pechanga-ribbon-cutting-2026-10-27.jpg",
