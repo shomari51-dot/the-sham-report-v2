@@ -3,8 +3,9 @@ window.CONCEPT3_DATA = {
     {
       "seq": 38,
       "title": "The Choctaw Hot List: TSR Grades the WSOP Circuit Durant Schedule",
-      "image": "images/choctaw-hot-list-2026-10-28.jpg",
-      "alt": "TSR Choctaw Hot List: TSR Score letter grades for 15 WSOP Circuit Choctaw Durant events.",
+      "image": "images/choctaw-casino-durant-2023-hero.jpg",
+      "alt": "The curved Choctaw Casino & Resort hotel tower in Durant, Oklahoma, with the C logo near the top.",
+      "imageCredit": {"prefix": "Photo", "author": "Fkbowen / Wikimedia Commons", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Choctaw_Casino_Durant_2023.jpg", "license": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/", "note": "cropped"},
       "url": "choctaw-hot-list-tsr-grades-wsop-circuit-durant.html",
       "category": "Tournaments",
       "description": "The WSOP Circuit is in Durant Oct 28 through Nov 9. We ran all 43 events through the TSR Score. Here are the 15 that graded C+ or better, what the grades mean, and where the structures play faster, so you can pick your spots.",
