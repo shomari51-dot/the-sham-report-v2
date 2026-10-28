@@ -103,3 +103,4 @@ table.report-schedule td,table.report-schedule td:nth-child(1),table.report-sche
 /* DES-006-1: Oswald on base h1/h2/h3 only (body font unchanged, C6 open) */
 :root{--c3-headline:'Oswald','Archivo Narrow','Arial Narrow',sans-serif}h1,h2,h3{font-family:var(--c3-headline)!important}
 @media(max-width:520px){.hero-controls{flex-wrap:nowrap;gap:5px}.hero-choices{gap:4px;min-width:0}.hero-controls #hero-prev,.hero-controls #hero-next{display:none}.hero-controls button{font-size:13px;padding:6px 7px;white-space:nowrap}#hero-pause{margin-left:auto}}
+@media(max-width:520px){.hero-controls button{min-height:44px}}@media(max-width:400px){.hero-controls{flex-wrap:wrap;row-gap:6px}.hero-choices{flex:1 1 100%}.hero-choices button{flex:1 1 auto}#hero-pause{margin-left:0;flex:1 1 100%}}
