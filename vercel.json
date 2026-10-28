@@ -1,4 +1,31 @@
 {
+  "redirects": [
+    {
+      "source": "/choctaw-hot-list-tsr-grades-wsop-circuit-durant",
+      "destination": "/choctaw-hot-list-tsr-grades-wsop-circuit-durant.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/pechanga-electronic-poker-jackpot-blitz",
+      "destination": "/pechanga-electronic-poker-jackpot-blitz.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/hpd-harris-county-da-raid-101-poker-club-katy",
+      "destination": "/hpd-harris-county-da-raid-101-poker-club-katy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/rungood-houston-preview",
+      "destination": "/rungood-houston-preview.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/trailblazer-stop-2-kick-off-results",
+      "destination": "/trailblazer-stop-2-kick-off-results.html",
+      "statusCode": 301
+    }
+  ],
   "rewrites": [
     {
       "source": "/admin",
