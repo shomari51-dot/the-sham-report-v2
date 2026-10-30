@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/wsop-circuit-choctaw-durant-dfw-guide-2026",
+      "destination": "/wsop-circuit-choctaw-durant-dfw-guide-2026.html",
+      "statusCode": 301
+    },
+    {
       "source": "/choctaw-hot-list-tsr-grades-wsop-circuit-durant",
       "destination": "/choctaw-hot-list-tsr-grades-wsop-circuit-durant.html",
       "statusCode": 301

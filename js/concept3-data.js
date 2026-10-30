@@ -1,6 +1,17 @@
 window.CONCEPT3_DATA = {
   "stories": [
     {
+      "seq": 39,
+      "title": "Choctaw Circuit Is Live: The DFW Grinder's Guide to Durant",
+      "image": "images/choctaw-wsop-circuit/tsr-text-graphic.png",
+      "alt": "The Sham Report graphic: WSOP Circuit Choctaw Durant, Oct 28 \u2013 Nov 9, 2026. 18 ring events. $1,700 Main Event, $1M guaranteed. Texas poker. Reported.",
+      "url": "wsop-circuit-choctaw-durant-dfw-guide-2026.html",
+      "category": "Tournaments",
+      "description": "The WSOP Circuit is in Durant Oct 28 through Nov 9: 18 ring events, a $250K Gargantuan and a $1,700 Main Event with a $1M guarantee, per WSOP.com. Here's the official schedule, the operator's fees, and what July's numbers tell you.",
+      "date": "October 29, 2026",
+      "author": "Shomari Williams"
+    },
+    {
       "seq": 38,
       "title": "The Choctaw Hot List: TSR Grades the WSOP Circuit Durant Schedule",
       "image": "images/choctaw-casino-durant-2023-hero.jpg",
