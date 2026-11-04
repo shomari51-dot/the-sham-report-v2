@@ -14,7 +14,8 @@
   const shown = new Set(typeof document.querySelectorAll === 'function' ? [...document.querySelectorAll('.c3-hero a[href], .c3-bigread a[href]')].map(a => a.getAttribute('href')) : []);
   const rest = stories.slice(1).filter(s => !shown.has(s.url));
   document.getElementById('lead-stories').innerHTML = rest.slice(0, 4).map(story).join('');
-  document.getElementById('latest-stories').innerHTML = rest.slice(4, 8).map(story).join('');
+  const dateISO=item=>{const d=new Date(ts(item));return Number.isFinite(d.valueOf())?d.toISOString().slice(0,10):'';};
+  document.getElementById('latest-stories').innerHTML = stories.slice(0,3).map(item=>`<article class="latest-item"><a class="latest-card" href="${esc(item.url)}"><div class="latest-image"><img src="${esc(item.image)}" alt="${esc(item.alt)}" loading="lazy" width="800" height="450"></div><div class="latest-copy"><p class="latest-meta"><span>${esc(item.category)}</span><time datetime="${dateISO(item)}">${esc(item.date)}</time></p><h3>${esc(item.title)}</h3><p class="latest-dek">${esc(item.description)}</p><span class="latest-read">Read the report <span aria-hidden="true">↗</span></span></div></a>${creditHtml(item.imageCredit,esc)}</article>`).join('');
   document.getElementById('grade-rows').innerHTML = data.grades.slice(0, 4).map(g => `<tr><td>${esc(g.grade)}</td><td>${esc(g.score)}</td><td>${esc(g.event)}<small>Historical score · source review pending</small></td><td>${esc(g.venue)}</td><td>${esc(g.buyin)}</td><td>${esc(g.time)}</td></tr>`).join('');
   if (window.TSRShorts) window.TSRShorts.mount(document.getElementById('media-rows'));
   const newsletterForm = document.getElementById('preview-newsletter');

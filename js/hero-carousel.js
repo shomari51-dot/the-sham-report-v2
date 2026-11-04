@@ -2,7 +2,7 @@
 'use strict';
 const root=document.querySelector('.hero-carousel');if(!root)return;
 const slides=[...root.querySelectorAll('.c3-hero')],choices=[...root.querySelectorAll('[data-slide]')],toggle=document.getElementById('hero-pause'),status=document.getElementById('hero-status');
-const reduced=matchMedia('(prefers-reduced-motion:reduce)');let current=0,paused=reduced.matches,timer;
+const reduced=matchMedia('(prefers-reduced-motion:reduce)');let current=0,paused=true,timer;
 function show(index,announce=false){current=(index+slides.length)%slides.length;slides.forEach((slide,i)=>{slide.hidden=i!==current;});choices.forEach((button,i)=>button.setAttribute('aria-pressed',String(i===current)));if(announce)status.textContent='Story '+(current+1)+' of '+slides.length+': '+(choices[current]?choices[current].textContent:'');}
 function schedule(){clearInterval(timer);toggle.textContent=paused?'Start rotation':'Pause rotation';if(!paused&&!document.hidden)timer=setInterval(()=>show(current+1),9000);}
 function pause(){paused=true;schedule();}

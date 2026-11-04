@@ -29,6 +29,11 @@
       "source": "/trailblazer-stop-2-kick-off-results",
       "destination": "/trailblazer-stop-2-kick-off-results.html",
       "statusCode": 301
+    },
+    {
+      "source": "/texas-election-2026-gambling-poker-clubs",
+      "destination": "/texas-election-2026-gambling-poker-clubs.html",
+      "permanent": true
     }
   ],
   "rewrites": [

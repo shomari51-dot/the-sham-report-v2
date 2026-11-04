@@ -1,10 +1,22 @@
 window.CONCEPT3_DATA = {
   "stories": [
     {
+      "seq": 40,
+      "title": "Patrick's Wall Fell. The Gambling Fight Isn't Over.",
+      "image": "images/election-2026-texas-poker-illustration.png",
+      "alt": "Election 2026 editorial illustration: four Texas races and the next gambling debate",
+      "url": "texas-election-2026-gambling-poker-clubs.html",
+      "category": "Legal",
+      "description": "Dan Patrick is out. What changes for casinos, sports betting and membership poker clubs—and what still has to happen in Austin.",
+      "date": "November 4, 2026",
+      "original_fb_date": "2026-11-04",
+      "author": "Shomari Williams"
+    },
+    {
       "seq": 39,
       "title": "Choctaw Circuit Is Live: The DFW Grinder's Guide to Durant",
       "image": "images/choctaw-wsop-circuit/tsr-text-graphic.png",
-      "alt": "The Sham Report graphic: WSOP Circuit Choctaw Durant, Oct 28 \u2013 Nov 9, 2026. 18 ring events. $1,700 Main Event, $1M guaranteed. Texas poker. Reported.",
+      "alt": "The Sham Report graphic: WSOP Circuit Choctaw Durant, Oct 28 – Nov 9, 2026. 18 ring events. $1,700 Main Event, $1M guaranteed. Texas poker. Reported.",
       "url": "wsop-circuit-choctaw-durant-dfw-guide-2026.html",
       "category": "Tournaments",
       "description": "The WSOP Circuit is in Durant Oct 28 through Nov 9: 18 ring events, a $250K Gargantuan and a $1,700 Main Event with a $1M guarantee, per WSOP.com. Here's the official schedule, the operator's fees, and what July's numbers tell you.",
@@ -16,7 +28,14 @@ window.CONCEPT3_DATA = {
       "title": "The Choctaw Hot List: TSR Grades the WSOP Circuit Durant Schedule",
       "image": "images/choctaw-casino-durant-2023-hero.jpg",
       "alt": "The curved Choctaw Casino & Resort hotel tower in Durant, Oklahoma, with the C logo near the top.",
-      "imageCredit": {"prefix": "Photo", "author": "Fkbowen / Wikimedia Commons", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Choctaw_Casino_Durant_2023.jpg", "license": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/", "note": "cropped"},
+      "imageCredit": {
+        "prefix": "Photo",
+        "author": "Fkbowen / Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Choctaw_Casino_Durant_2023.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "note": "cropped"
+      },
       "url": "choctaw-hot-list-tsr-grades-wsop-circuit-durant.html",
       "category": "Tournaments",
       "description": "The WSOP Circuit is in Durant Oct 28 through Nov 9. We ran all 43 events through the TSR Score. Here are the 15 that graded C+ or better, what the grades mean, and where the structures play faster, so you can pick your spots.",
@@ -61,10 +80,10 @@ window.CONCEPT3_DATA = {
       "seq": 34,
       "title": "Wolfgang Flops a Set With Pocket Deuces at Champions Social Club Dallas: How Did He Know Something Was Wrong?",
       "image": "images/2026-10-11_reel-1662206285253519.jpg",
-      "alt": "Champions Social Club Dallas hand highlight (October 11, 2026): Wolfgang Poker flops bottom set with pocket deuces (2\u2660 2\u2665) on a 2\u2663 8\u2666 4\u2665 board.",
+      "alt": "Champions Social Club Dallas hand highlight (October 11, 2026): Wolfgang Poker flops bottom set with pocket deuces (2♠ 2♥) on a 2♣ 8♦ 4♥ board.",
       "url": "article-template.html?slug=wolfgang-flops-a-set-with-pocket-deuces-champions-social-club-dallas-october-11-2026",
       "category": "Players",
-      "description": "Holding pocket deuces (2\u2660 2\u2665) on a 2\u2663 8\u2666 4\u2665 flop at Champions Social Club in Dallas, Wolfgang Poker hits bottom set \u2014 and senses danger on the feature felt.",
+      "description": "Holding pocket deuces (2♠ 2♥) on a 2♣ 8♦ 4♥ flop at Champions Social Club in Dallas, Wolfgang Poker hits bottom set — and senses danger on the feature felt.",
       "date": "October 11, 2026",
       "original_fb_date": "2026-10-11",
       "author": "Shomari Williams"
@@ -95,12 +114,12 @@ window.CONCEPT3_DATA = {
     },
     {
       "seq": 31,
-      "title": "We\u2019re Back at It Tonight: Wednesday Night $5/$10 NLH Stream With Hayden Fortini at Champions Dallas",
+      "title": "We’re Back at It Tonight: Wednesday Night $5/$10 NLH Stream With Hayden Fortini at Champions Dallas",
       "image": "images/2026-10-07_reel-1085303500976218.jpg",
       "alt": "Glazed lamb lollipops from the Champions Social Club kitchen in Dallas, featured in Sham's October 7, 2026 Wednesday night $5/$10 stream preview.",
       "url": "article-template.html?slug=wednesday-night-5-10-nlh-stream-booth-hayden-fortini-champions-dallas-october-7-2026",
       "category": "Players",
-      "description": "Back in the Champions Social Club Dallas commentary booth with Hayden Fortini for Wednesday night $5/$10 No-Limit Hold'em \u2014 plus a look at the kitchen's signature glazed lamb lollipops.",
+      "description": "Back in the Champions Social Club Dallas commentary booth with Hayden Fortini for Wednesday night $5/$10 No-Limit Hold'em — plus a look at the kitchen's signature glazed lamb lollipops.",
       "date": "October 7, 2026",
       "original_fb_date": "2026-10-07",
       "author": "Shomari Williams"
@@ -621,8 +640,8 @@ window.CONCEPT3_DATA = {
   ],
   "articles": [
     {
-"seq": 36,
-"slug": "hpd-harris-county-da-raid-101-poker-club-katy",
+      "seq": 36,
+      "slug": "hpd-harris-county-da-raid-101-poker-club-katy",
       "url": "hpd-harris-county-da-raid-101-poker-club-katy.html",
       "title": "Police Raid 101 Poker Club in Katy",
       "deck": "HPD says more than $118,000 was seized, four people were charged with engaging in organized criminal activity and a charge is pending against a fifth.",
@@ -672,7 +691,7 @@ window.CONCEPT3_DATA = {
       "seq": 34,
       "slug": "wolfgang-flops-a-set-with-pocket-deuces-champions-social-club-dallas-october-11-2026",
       "title": "Wolfgang Flops a Set With Pocket Deuces at Champions Social Club Dallas: How Did He Know Something Was Wrong?",
-      "deck": "Holding pocket deuces (2\u2660 2\u2665) on a 2\u2663 8\u2666 4\u2665 flop at Champions Social Club in Dallas, Wolfgang Poker hits bottom set \u2014 and senses danger on the feature felt.",
+      "deck": "Holding pocket deuces (2♠ 2♥) on a 2♣ 8♦ 4♥ flop at Champions Social Club in Dallas, Wolfgang Poker hits bottom set — and senses danger on the feature felt.",
       "categories": [
         "Players",
         "Texas Poker"
@@ -681,21 +700,21 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "October 11, 2026",
-      "body": "Originally posted October 11, 2026.\n\nWolfgang flops a set with pocket deuces at Champions Social Club in Dallas\u2026 how did he know something was wrong?!\n\nIn this feature-table highlight from Champions Social Club Dallas (https://www.facebook.com/reel/1662206285253519/), poker vlogger Wolfgang Poker woke up with pocket deuces (2\u2660 2\u2665) and spiked bottom set right on the 2\u2663 8\u2666 4\u2665 rainbow flop \u2014 only for his instincts to kick in as the action unfolded.\n\nWatch the full hand on Facebook and tell us how you would play bottom set in Wolfgang's spot.\n\n\u2014 Sham",
+      "body": "Originally posted October 11, 2026.\n\nWolfgang flops a set with pocket deuces at Champions Social Club in Dallas… how did he know something was wrong?!\n\nIn this feature-table highlight from Champions Social Club Dallas (https://www.facebook.com/reel/1662206285253519/), poker vlogger Wolfgang Poker woke up with pocket deuces (2♠ 2♥) and spiked bottom set right on the 2♣ 8♦ 4♥ rainbow flop — only for his instincts to kick in as the action unfolded.\n\nWatch the full hand on Facebook and tell us how you would play bottom set in Wolfgang's spot.\n\n— Sham",
       "status": "published",
       "fb_post_id": "reel-1662206285253519",
       "fb_source_url": "https://facebook.com/reel/1662206285253519/",
       "original_fb_date": "2026-10-11",
-      "original_post_text": "Here is a paste ready one:\n\nWolfgang flops a SET with pocket deuces... How did he know something was wrong??\n\n\ud83d\udccd Champions Social Club, Dallas\n\n#WolfgangPoker #PocketDeuces #TexasPoker #DallasPoker #ChampionsSocialClub",
+      "original_post_text": "Here is a paste ready one:\n\nWolfgang flops a SET with pocket deuces... How did he know something was wrong??\n\n📍 Champions Social Club, Dallas\n\n#WolfgangPoker #PocketDeuces #TexasPoker #DallasPoker #ChampionsSocialClub",
       "original_post_sha256": "b4f21e7d9fc0b7024fdefbca9a76cf8eed3cac501c39a912d33a17d2919b7739",
       "seo": {
         "metaTitle": "Wolfgang Poker Flops a Set With Pocket Deuces at Champions Social Club Dallas | The Sham Report",
-        "metaDescription": "Wolfgang Poker flops bottom set with pocket deuces (2\u2660 2\u2665) on a 2\u2663 8\u2666 4\u2665 board at Champions Social Club in Dallas.",
+        "metaDescription": "Wolfgang Poker flops bottom set with pocket deuces (2♠ 2♥) on a 2♣ 8♦ 4♥ board at Champions Social Club in Dallas.",
         "keyphrase": "Wolfgang Poker pocket deuces Champions Social Club"
       },
       "context": "Original October 11, 2026 hand-highlight dispatch and Facebook Reel from Champions Social Club in Dallas.",
       "credit": "Champions Social Club Dallas / The Sham Report",
-      "caption": "Champions Social Club Dallas hand highlight (October 11, 2026): Wolfgang Poker flops bottom set with pocket deuces (2\u2660 2\u2665) on a 2\u2663 8\u2666 4\u2665 board.",
+      "caption": "Champions Social Club Dallas hand highlight (October 11, 2026): Wolfgang Poker flops bottom set with pocket deuces (2♠ 2♥) on a 2♣ 8♦ 4♥ board.",
       "disclosures": "Shomari Williams has performed commentary work at Champions Social Club in Dallas and is a founding member of the club."
     },
     {
@@ -711,12 +730,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "October 10, 2026",
-      "body": "Originally posted October 10, 2026.\n\nAmy vs. JB for a $10,400 pot \u2014 no backing down at Champions Social Club in Dallas!\n\nOn Hand 47 of the $5/$10/$25 No-Limit Hold'em feature broadcast at Champions Social Club (https://www.facebook.com/reel/1398989519959467/), Amy H ($5.2K in the small blind, sporting her Dallas Stars cap with arms crossed and completely locked in) squared off against JB with a $10.4K pot on the line at a table featuring Spooky ($6.9K in the cutoff), Scott L ($5.9K in the big blind), and Scott H ($4.3K on the button).\n\nWatch the full $10,400 confrontation on Facebook.\n\n\u2014 Sham",
+      "body": "Originally posted October 10, 2026.\n\nAmy vs. JB for a $10,400 pot — no backing down at Champions Social Club in Dallas!\n\nOn Hand 47 of the $5/$10/$25 No-Limit Hold'em feature broadcast at Champions Social Club (https://www.facebook.com/reel/1398989519959467/), Amy H ($5.2K in the small blind, sporting her Dallas Stars cap with arms crossed and completely locked in) squared off against JB with a $10.4K pot on the line at a table featuring Spooky ($6.9K in the cutoff), Scott L ($5.9K in the big blind), and Scott H ($4.3K on the button).\n\nWatch the full $10,400 confrontation on Facebook.\n\n— Sham",
       "status": "published",
       "fb_post_id": "reel-1398989519959467",
       "fb_source_url": "https://facebook.com/reel/1398989519959467/",
       "original_fb_date": "2026-10-10",
-      "original_post_text": "AMY vs JB \ud83d\udd25 $10.4K POT\n\nNo backing down at Champions. She\u2019s locked in\ud83d\udc47\n\n\ud83d\udccd Champions Social Club \u2014 Dallas, TX\n#Poker #TexasPoker #DallasPoker #ChampionsSocialClub #NoLimitHoldem #PokerClips",
+      "original_post_text": "AMY vs JB 🔥 $10.4K POT\n\nNo backing down at Champions. She’s locked in👇\n\n📍 Champions Social Club — Dallas, TX\n#Poker #TexasPoker #DallasPoker #ChampionsSocialClub #NoLimitHoldem #PokerClips",
       "original_post_sha256": "822d2c1aaaa35c669ade91525f545741ee3437827145262ea44704de18f5c91f",
       "seo": {
         "metaTitle": "Amy vs JB in a $10.4K Pot at Champions Social Club Dallas | The Sham Report",
@@ -754,8 +773,8 @@ window.CONCEPT3_DATA = {
     {
       "seq": 31,
       "slug": "wednesday-night-5-10-nlh-stream-booth-hayden-fortini-champions-dallas-october-7-2026",
-      "title": "We\u2019re Back at It Tonight: Wednesday Night $5/$10 NLH Stream With Hayden Fortini at Champions Dallas",
-      "deck": "Back in the Champions Social Club Dallas commentary booth with Hayden Fortini for Wednesday night $5/$10 No-Limit Hold'em \u2014 plus a look at the kitchen's signature glazed lamb lollipops.",
+      "title": "We’re Back at It Tonight: Wednesday Night $5/$10 NLH Stream With Hayden Fortini at Champions Dallas",
+      "deck": "Back in the Champions Social Club Dallas commentary booth with Hayden Fortini for Wednesday night $5/$10 No-Limit Hold'em — plus a look at the kitchen's signature glazed lamb lollipops.",
       "categories": [
         "Players",
         "Texas Poker"
@@ -764,12 +783,12 @@ window.CONCEPT3_DATA = {
       "secondaryImage": null,
       "author": "Shomari Williams",
       "date": "October 7, 2026",
-      "body": "Originally posted October 7, 2026.\n\nWe're back at it tonight!\n\nIt's Wednesday night $5/$10 No-Limit Hold'em on the feature stream at Champions Social Club in Dallas, and I'm back in the commentary booth alongside Hayden Fortini \u2014 so you already know it's going to be a good one.\n\nAnd if you haven't played at Champions Social Club yet, then you probably haven't tried the kitchen's glazed lamb lollipops (featured in the promo reel on Facebook at https://www.facebook.com/reel/1085303500976218/). Trust me, you're missing out.\n\nCome pull up a seat at the tables, or tune in to the broadcast and jump in the live chat. Let's go!\n\n\u2014 Sham",
+      "body": "Originally posted October 7, 2026.\n\nWe're back at it tonight!\n\nIt's Wednesday night $5/$10 No-Limit Hold'em on the feature stream at Champions Social Club in Dallas, and I'm back in the commentary booth alongside Hayden Fortini — so you already know it's going to be a good one.\n\nAnd if you haven't played at Champions Social Club yet, then you probably haven't tried the kitchen's glazed lamb lollipops (featured in the promo reel on Facebook at https://www.facebook.com/reel/1085303500976218/). Trust me, you're missing out.\n\nCome pull up a seat at the tables, or tune in to the broadcast and jump in the live chat. Let's go!\n\n— Sham",
       "status": "published",
       "fb_post_id": "reel-1085303500976218",
       "fb_source_url": "https://facebook.com/reel/1085303500976218/",
       "original_fb_date": "2026-10-07",
-      "original_post_text": "We're back at it tonight!\n\nWednesday night $5/$10 No Limit Hold'em stream at Champions Dallas. I'll be in the booth commentating with @[1193106094:2048:Hayden Fortini], so you know it's gonna be a good one.\n\nAnd if you haven't played at Champions yet, then you probably haven't tried these delicious lamb lollipops. Trust me, you're missing out. \ud83e\udd24\n\nCome pull up a seat and play, or tune in and jump in the chat.\n\nStream link in the comments \ud83d\udc47\nLet's goooo!\n\n\ud83d\udccd Champions Social Club \u2022 Dallas\n#Poker #PokerLive #ChampionsClubLive #TexasHoldem #DallasPoker #CashGamePoker",
+      "original_post_text": "We're back at it tonight!\n\nWednesday night $5/$10 No Limit Hold'em stream at Champions Dallas. I'll be in the booth commentating with @[1193106094:2048:Hayden Fortini], so you know it's gonna be a good one.\n\nAnd if you haven't played at Champions yet, then you probably haven't tried these delicious lamb lollipops. Trust me, you're missing out. 🤤\n\nCome pull up a seat and play, or tune in and jump in the chat.\n\nStream link in the comments 👇\nLet's goooo!\n\n📍 Champions Social Club • Dallas\n#Poker #PokerLive #ChampionsClubLive #TexasHoldem #DallasPoker #CashGamePoker",
       "original_post_sha256": "2a617b7140be3e6360ace558581922e90746e37dcfbbcd2a923b0329163be57f",
       "seo": {
         "metaTitle": "Wednesday Night $5/$10 NLH Stream With Hayden Fortini at Champions Dallas | The Sham Report",
