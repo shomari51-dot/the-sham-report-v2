@@ -72,11 +72,15 @@
 .election-related>a{display:block;border-bottom:1px solid #333;padding:0 0 22px}
 .election-related a>span:first-child{font:12px/1.5 Inter,Arial,sans-serif;color:#999}.election-related h2{font:700 28px/1.15 var(--c3-heading);margin:12px 0}.election-related .read-arrow{color:#ff4c60;font:700 14px var(--c3-heading)}
 /* Keep the lead illustration legible in the News archive as well. */
-.c3-news #news-feature .feature-story{height:auto;min-height:0;background:#0b0b0b;overflow:visible}
-.c3-news #news-feature .feature-story>img{position:static;display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:contain;opacity:1}
+.c3-news #news-feature .feature-story{display:block;height:auto;min-height:0;background:#0b0b0b;overflow:visible}
+.c3-news #news-feature .feature-story>img{position:static;z-index:auto;display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:contain;opacity:1}
 .c3-news #news-feature .feature-story:after{display:none}
 .c3-news #news-feature .feature-copy{position:static;padding:24px}
 .c3-news #news-feature .feature-copy h2{font-size:38px}.c3-news #news-feature .feature-copy p{max-width:none}
+.c3-news #news-side{height:auto;grid-template-rows:none;align-content:start}
+.c3-news #news-side .c3-story{overflow:visible}
+.c3-news #news-side .c3-story h3{display:block;overflow:visible}
+.c3-news #news-side img[src$="tsr-text-graphic.png"]{object-fit:contain;background:#080808}
 @media(min-width:1500px){.election-home .election-cover h1{font-size:52px}}
 @media(max-width:1000px){.election-home .hero-carousel .election-cover{grid-template-columns:1fr 1.2fr}.election-cover .c3-hero-copy{padding:24px}.election-home .election-cover h1{font-size:38px}.election-reading-grid{grid-template-columns:170px minmax(0,1fr);gap:34px}.latest-card{grid-template-columns:34% minmax(0,1fr);gap:16px}.latest-card h3{font-size:24px}.latest-dek{-webkit-line-clamp:2}}
 @media(max-width:780px){.election-home .hero-carousel .election-cover{display:flex;flex-direction:column-reverse;align-items:stretch}.election-cover-art{padding:0}.election-cover .c3-hero-copy{padding:24px}.election-home .election-cover h1{font-size:42px;max-width:600px}.election-home .election-cover h1 br{display:none}.election-home .election-cover .c3-hero-copy>p:not(.c3-kicker){max-width:600px}.election-home .hero-controls{flex-wrap:wrap}.election-home .hero-choices{order:0;flex:1;gap:4px}.election-home .hero-controls button{padding:8px 10px;font-size:13px}.latest-grid{grid-template-columns:1fr}.latest-card{grid-template-columns:35% minmax(0,1fr)}.latest-card h3{font-size:28px}.latest-image,.latest-item:first-child .latest-card .latest-image{aspect-ratio:16/10}.latest-dek{-webkit-line-clamp:3;font-size:14px}.election-reading-grid{display:block;max-width:720px}.election-contents{position:static;margin-bottom:32px;padding:16px;background:#0c0c0c}.election-contents nav{display:grid;grid-template-columns:1fr 1fr;column-gap:20px}.election-contents nav a{font-size:12px}.election-back{display:none!important}.election-article-header{margin-bottom:22px}.election-art{margin-bottom:28px}.election-body{font-size:16px;line-height:1.8}.election-dek{font-size:19px}.election-article h1{font-size:48px}}
